@@ -1,0 +1,45 @@
+@startuml
+'https://plantuml.com/use-case-diagram
+left to right direction
+
+actor "Producer (Bruger)" as producer
+actor Administrator as administrator
+actor Seer as seer
+rectangle "<<aktør>>\nEPG-system" as epg
+
+rectangle "Credit Management System" {
+    usecase (Slette program)
+    usecase (Login)
+    usecase (Oprette program)
+    usecase (Redigere program)
+    usecase (Oprette bruger)
+    usecase (Slette bruger)
+    usecase (Redigere bruger)
+    usecase (Se krediteringer)
+    usecase (Filtrere krediteringer)
+    (Filtrere krediteringer) .> (Se krediteringer) : <<extends>>
+}
+
+producer --> (Login)
+producer --> (Slette program)
+
+administrator --> (Login)
+administrator --> (Slette program)
+administrator --> (Oprette program)
+administrator --> (Redigere program)
+
+producer --> (Oprette program)
+producer --> (Redigere program)
+producer --> (Se krediteringer)
+
+administrator --> (Oprette bruger)
+administrator --> (Slette bruger)
+administrator --> (Redigere bruger)
+administrator --> (Se krediteringer)
+
+seer --> (Se krediteringer)
+
+administrator --|> producer : extends
+producer --|> seer : extends
+
+@enduml
