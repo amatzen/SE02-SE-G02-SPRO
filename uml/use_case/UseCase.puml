@@ -3,7 +3,7 @@
 left to right direction
 
 actor "Producer (Bruger)" as producer
-actor Administrator as administrator
+actor Systemadministrator as administrator
 actor Seer as seer
 actor Virksomhedsadministrator as virksomhedsadministrator
 rectangle "<<aktør>>\nEPG-system" as epg
@@ -29,7 +29,7 @@ virksomhedsadministrator --> (Håndtere producere)
 
 seer --> (Se krediteringer)
 
-(Se krediteringer) --> epg
+(Se krediteringer) <-- epg
 
 
 administrator -l-|> virksomhedsadministrator : "<<extends>>"
