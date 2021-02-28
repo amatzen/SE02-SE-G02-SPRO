@@ -9,32 +9,32 @@ actor Virksomhedsadministrator as virksomhedsadministrator
 rectangle "<<aktør>>\nEPG-system" as epg
 
 rectangle "Credit Management System" {
-    usecase (Login)
     usecase "Håndtere producere" as (Håndtere producere)
     usecase "Håndtere programmer" as (Håndtere programmer)
     usecase "Håndtere brugere" as (Håndtere brugere)
     usecase "Håndtere krediteringer" as (Håndtere krediteringer)
     usecase "Se krediteringer" as (Se krediteringer)
     usecase "Filtrere krediteringer" as (Filtrere krediteringer)
-    (Filtrere krediteringer) .> (Se krediteringer) : <<extends>>
+    (Filtrere krediteringer) .> (Se krediteringer) : <<extend>>
 }
 
 producer --> (Håndtere programmer)
 producer --> (Håndtere krediteringer)
-producer --> (Login)
 
 administrator --> (Håndtere brugere)
 
 virksomhedsadministrator --> (Håndtere producere)
 
 seer --> (Se krediteringer)
+seer --> (Filtrere krediteringer)
 
 (Se krediteringer) <-- epg
 
 
-administrator -l-|> virksomhedsadministrator : "<<extends>>"
-virksomhedsadministrator -l-|> producer : "<<extends>>"
-producer -l-|> seer : "<<extends>>"
+administrator -l-|> virksomhedsadministrator
+virksomhedsadministrator -l-|> producer
+producer -l-|> seer
+(Håndtere krediteringer) .l-> (Se krediteringer) : "<<include>>"
 
 
 
