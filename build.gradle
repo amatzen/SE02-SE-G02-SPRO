@@ -15,8 +15,7 @@ dependencies {
 }
 
 application {
-    // TODO: Define the main class for the application.
-    //mainClass = 'App'
+    mainClass = 'dk.sdu.swe.Application'
 }
 
 tasks.named('test') {
