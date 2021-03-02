@@ -1,0 +1,98 @@
+@startuml
+'https://plantuml.com/use-case-diagram
+left to right direction
+
+actor "Producer (Bruger)" as producer
+actor Systemadministrator as administrator
+actor Seer as seer
+
+actor Virksomhedsadministrator as virksomhedsadministrator
+note left of virksomhedsadministrator
+    Denne bruger
+    er ansat af et
+    produktionsselskab
+
+    F.eks. //Banijay//
+end note
+
+rectangle "<<aktør>>\nEPG-system" as epg
+rectangle "<<aktør>>\nCVR-registeret" as cvr
+
+rectangle "Consumer System" {
+    usecase "Se krediteringer" as (CS:Se krediteringer)
+    usecase "Filtrere krediteringer" as (CS:Filtrere krediteringer)
+}
+
+rectangle "Credit Management System" {
+    'Krediteringer
+    usecase "Se krediteringer" as (Se krediteringer)
+    usecase "Filtrere krediteringer" as (Filtrere krediteringer)
+    usecase "Godkende krediteringer" as (Godkende krediteringer)
+    usecase "Opret kreditering" as (Opret kreditering)
+    usecase "Redigér kreditering" as (Rediger kreditering)
+    usecase "Slet kreditering" as (Slet kreditering)
+
+    'Programmer
+    usecase "Opret program" as (Opret program)
+    usecase "Redigér program" as (Rediger program)
+    usecase "Slet program" as (Slet program)
+
+    'Brugere
+    usecase "Opret bruger" as (Opret bruger)
+    usecase "Slet bruger" as (Slet bruger)
+    usecase "Redigér bruger" as (Rediger bruger)
+
+    usecase "Opret producer" as (Opret producer)
+    usecase "Redigér producer" as (Rediger producer)
+    usecase "Slet producer" as (Slet producer)
+
+
+    usecase "Håndtere virksomheder" as (Håndtere virksomheder)
+
+    usecase "Eksportere data" as (Eksportere data)
+}
+
+(Filtrere krediteringer) .> (Se krediteringer) : <<extend>>
+
+'Seer
+seer --> (CS:Se krediteringer)
+seer --> (CS:Filtrere krediteringer)
+
+'Producer
+producer --> (Se krediteringer)
+producer --> (Opret kreditering)
+producer --> (Rediger kreditering)
+producer --> (Slet kreditering)
+
+producer --> (Opret program)
+producer --> (Rediger program)
+producer --> (Slet program)
+
+'Virksomhedsadministrator
+virksomhedsadministrator --> (Opret producer)
+virksomhedsadministrator --> (Rediger producer)
+virksomhedsadministrator --> (Slet producer)
+
+virksomhedsadministrator --> (Håndtere virksomheder)
+
+'EPG
+(Se krediteringer) <-- epg
+(CS:Se krediteringer) <-- epg
+
+'CVR
+(Opret producer) -- cvr
+(Slet producer) -- cvr
+(Rediger producer) -- cvr
+
+'Systemadministrator
+administrator --> (Eksportere data)
+administrator --> (Godkende krediteringer)
+administrator --> (Opret bruger)
+administrator --> (Rediger bruger)
+administrator --> (Slet bruger)
+
+'Generalisering
+virksomhedsadministrator -l-|> producer
+administrator -l-|> virksomhedsadministrator
+
+@enduml
