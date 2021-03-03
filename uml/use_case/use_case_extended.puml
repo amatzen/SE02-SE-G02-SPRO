@@ -28,9 +28,7 @@ rectangle "Credit Management System" {
     usecase "Se krediteringer" as (Se krediteringer)
     usecase "Filtrere krediteringer" as (Filtrere krediteringer)
     usecase "Godkende krediteringer" as (Godkende krediteringer)
-    usecase "Opret kreditering" as (Opret kreditering)
-    usecase "Redigér kreditering" as (Rediger kreditering)
-    usecase "Slet kreditering" as (Slet kreditering)
+    usecase "Håndtér kreditering" as (Håndter kreditering)
 
     'Programmer
     usecase "Opret program" as (Opret program)
@@ -38,20 +36,16 @@ rectangle "Credit Management System" {
     usecase "Slet program" as (Slet program)
 
     'Brugere
-    usecase "Opret bruger" as (Opret bruger)
-    usecase "Slet bruger" as (Slet bruger)
-    usecase "Redigér bruger" as (Rediger bruger)
+    usecase "Administrér brugere" as (Administrer brugere)
 
-    usecase "Opret producer" as (Opret producer)
-    usecase "Redigér producer" as (Rediger producer)
-    usecase "Slet producer" as (Slet producer)
+    usecase "Håndtér producer" as (Håndter producer)
 
-
-    usecase "Håndtere virksomheder" as (Håndtere virksomheder)
+    usecase "Håndter virksomhed" as (Håndter virksomhed)
 
     usecase "Eksportere data" as (Eksportere data)
 }
 
+(Håndter kreditering) .> (Se krediteringer) : <<include>>
 (Filtrere krediteringer) .> (Se krediteringer) : <<extend>>
 
 'Seer
@@ -60,36 +54,27 @@ seer --> (CS:Filtrere krediteringer)
 
 'Producer
 producer --> (Se krediteringer)
-producer --> (Opret kreditering)
-producer --> (Rediger kreditering)
-producer --> (Slet kreditering)
+producer --> (Håndter kreditering)
 
 producer --> (Opret program)
 producer --> (Rediger program)
-producer --> (Slet program)
 
 'Virksomhedsadministrator
-virksomhedsadministrator --> (Opret producer)
-virksomhedsadministrator --> (Rediger producer)
-virksomhedsadministrator --> (Slet producer)
-
-virksomhedsadministrator --> (Håndtere virksomheder)
+virksomhedsadministrator --> (Håndter producer)
+virksomhedsadministrator --> (Håndter virksomhed)
+virksomhedsadministrator --> (Slet program)
 
 'EPG
 (Se krediteringer) <-- epg
 (CS:Se krediteringer) <-- epg
 
 'CVR
-(Opret producer) -- cvr
-(Slet producer) -- cvr
-(Rediger producer) -- cvr
+(Håndter virksomhed) -- cvr
 
 'Systemadministrator
 administrator --> (Eksportere data)
 administrator --> (Godkende krediteringer)
-administrator --> (Opret bruger)
-administrator --> (Rediger bruger)
-administrator --> (Slet bruger)
+administrator --> (Administrer brugere)
 
 'Generalisering
 virksomhedsadministrator -l-|> producer
