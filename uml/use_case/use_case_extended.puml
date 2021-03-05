@@ -29,13 +29,13 @@ rectangle "Credit Management System" {
     usecase "Filtrere krediteringer" as (Filtrere krediteringer)
     usecase "Godkende krediteringer" as (Godkende krediteringer)
     usecase "Håndtér kreditering" as (Håndter kreditering)
+    usecase "Linke personer" as (Linke personer)
 
     'Programmer
     usecase "Opret program" as (Opret program)
     usecase "Redigér program" as (Rediger program)
     usecase "Slet program" as (Slet program)
 
-    'Brugere
     usecase "Administrér brugere" as (Administrer brugere)
 
     usecase "Håndtér producer" as (Håndter producer)
@@ -43,8 +43,11 @@ rectangle "Credit Management System" {
     usecase "Håndter virksomhed" as (Håndter virksomhed)
 
     usecase "Eksportere data" as (Eksportere data)
+
+    usecase "Nulstil adgangskode" as (Nulstil adgangskode)
 }
 
+(CS:Filtrere krediteringer) .> (CS:Se krediteringer) : <<extend>>
 (Håndter kreditering) .> (Se krediteringer) : <<include>>
 (Filtrere krediteringer) .> (Se krediteringer) : <<extend>>
 
@@ -55,9 +58,11 @@ seer --> (CS:Filtrere krediteringer)
 'Producer
 producer --> (Se krediteringer)
 producer --> (Håndter kreditering)
+producer --> (Nulstil adgangskode)
 
 producer --> (Opret program)
 producer --> (Rediger program)
+producer --> (Linke personer)
 
 'Virksomhedsadministrator
 virksomhedsadministrator --> (Håndter producer)
@@ -65,8 +70,8 @@ virksomhedsadministrator --> (Håndter virksomhed)
 virksomhedsadministrator --> (Slet program)
 
 'EPG
-(Se krediteringer) <-- epg
 (CS:Se krediteringer) <-- epg
+(Se krediteringer) <-- epg
 
 'CVR
 (Håndter virksomhed) -- cvr
