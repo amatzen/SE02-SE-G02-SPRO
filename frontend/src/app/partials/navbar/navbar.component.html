@@ -1,0 +1,27 @@
+<div class="container-fluid custom-navbar">
+  <div class="left">
+    <span class="custom-navbar-brand">CrMS</span>
+    <ul class="custom-navbar-links">
+      <li class="nav-item" [class.active]="router.isActive('/programs', false)">
+        <a class="nav-link" routerLink="/programs">Programmer</a>
+      </li>
+      <li class="nav-item" [class.active]="router.isActive('/companies', false)">
+        <a class="nav-link" routerLink="/companies">Virksomheder</a>
+      </li>
+      <li class="nav-item"  [class.active]="router.isActive('/people', false)">
+        <a class="nav-link"routerLink="/people">Personer</a>
+      </li>
+    </ul>
+  </div>
+  <div class="right">
+    <ul class="custom-navbar-links">
+      <li class="nav-item" [class.active]="router.isActive('/admin', false)">
+        <a class="nav-link" routerLink="/admin">Admin</a>
+      </li>
+    </ul>
+    <div class="user-snippet">
+      <img src="https://eu.ui-avatars.com/api/?name=John+Doe" height="32px" alt="">
+      <span>Esben Sørensen</span>
+    </div>
+  </div>
+</div>

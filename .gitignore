@@ -1,9 +1,40 @@
 
-# Created by https://www.toptal.com/developers/gitignore/api/macos,windows,intellij,java,gradle,dotenv
-# Edit at https://www.toptal.com/developers/gitignore?templates=macos,windows,intellij,java,gradle,dotenv
+# Created by https://www.toptal.com/developers/gitignore/api/macos,windows,intellij,java,gradle,dotenv,angular
+# Edit at https://www.toptal.com/developers/gitignore?templates=macos,windows,intellij,java,gradle,dotenv,angular
 
 ### dotenv ###
 .env
+
+### Angular ###
+## Angular ##
+# compiled output
+dist/
+tmp/
+app/**/*.js
+app/**/*.js.map
+
+# dependencies
+node_modules/
+bower_components/
+
+# IDEs and editors
+.idea/
+
+# misc
+.sass-cache/
+connect.lock/
+coverage/
+libpeerconnection.log/
+npm-debug.log
+testem.log
+typings/
+
+# e2e
+e2e/*.js
+e2e/*.map
+
+# System Files
+.DS_Store/
 
 ### Intellij ###
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio, WebStorm and Rider

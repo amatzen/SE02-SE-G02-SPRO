@@ -1,16 +1,50 @@
 package dk.sdu.swe;
 
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
+import io.javalin.Javalin;
 import javafx.scene.Scene;
+import javafx.scene.control.ContextMenu;
+import javafx.scene.control.MenuItem;
+import javafx.scene.control.TextField;
+import javafx.scene.input.MouseButton;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.web.WebView;
 import javafx.stage.Stage;
+import org.eclipse.jetty.server.Server;
+import org.eclipse.jetty.util.resource.Resource;
+import org.eclipse.jetty.webapp.WebAppContext;
 
-import java.util.Objects;
-
+import javax.swing.*;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class Application extends javafx.application.Application {
+    public static final int FRONTEND_PORT = 23335;
+
     public static void main(String[] args) {
-        launch();
+        // Backend Thread
+
+
+        // Frontend Thread
+        new Thread(() -> {
+            Server server = new Server(FRONTEND_PORT);
+
+            WebAppContext webapp = new WebAppContext();
+            webapp.setContextPath("/");
+            webapp.setBaseResource(Resource.newClassPathResource("/frontend"));
+
+            server.setHandler(webapp);
+            try {
+                server.start();
+                server.join();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }).start();
+
+        // GUI Thread
+        launch(args);
+
     }
 
     /**
@@ -22,23 +56,24 @@ public class Application extends javafx.application.Application {
      * NOTE: This method is called on the JavaFX Application Thread.
      * </p>
      *
-     * @param stage the primary stage for this application, onto which
+     * @param primaryStage the primary stage for this application, onto which
      *                     the application scene can be set.
      *                     Applications may create other stages, if needed, but they will not be
      *                     primary stages.
      * @throws Exception if something goes wrong
      */
     @Override
-    public void start(Stage stage) throws Exception {
-        stage.setTitle("CrMS");
+    public void start(Stage primaryStage) throws Exception {
+        System.setProperty("sun.net.http.allowRestrictedHeaders", "true");
 
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("ui/app.fxml")));
-        Scene scene = new Scene(root);
+        String START_URL = "http://localhost:"+String.valueOf(FRONTEND_PORT)+"/";
 
-        //scene.getStylesheets().add(getClass().getResource("ui/assets/style.css").toString());
+        WebView webView = new WebView();
+        webView.getEngine().load(START_URL);
 
-        stage.setScene(scene);
-        stage.show();
-
+        BorderPane root = new BorderPane(webView, null, null, null, null);
+        primaryStage.setScene(new Scene(root, 800, 800));
+        primaryStage.setTitle("CrMS");
+        primaryStage.show();
     }
 }

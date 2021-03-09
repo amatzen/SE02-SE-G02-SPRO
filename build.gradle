@@ -21,13 +21,19 @@ dependencies {
 
     implementation 'com.google.guava:guava:29.0-jre'
     implementation 'org.json:json:20201115'
-    implementation 'org.openjfx:javafx-fxml:15'
-    implementation 'com.jfoenix:jfoenix:9.0.10'
+
+    implementation 'org.openjfx:javafx-web:15'
+    implementation 'jetty:jetty:6.0.2'
+    implementation 'io.javalin:javalin:3.13.3'
+
+
+    implementation 'org.slf4j:slf4j-api:1.7.5'
+    implementation 'org.slf4j:slf4j-log4j12:1.7.5'
 }
 
 javafx {
     version = "15.0.1"
-    modules = [ 'javafx.controls', 'javafx.fxml' ]
+    modules = [ 'javafx.controls', 'javafx.web' ]
 }
 
 tasks.named('test') {
