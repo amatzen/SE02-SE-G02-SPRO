@@ -6,8 +6,8 @@
     display: grid;
     grid-template: 1fr / repeat(2, 1fr);
     align-items: center;
-    padding-left: 2rem;
-    padding-right: 2rem;
+
+    padding: 0;
 
     height: 62px;
 
@@ -23,6 +23,8 @@
     &-brand {
       font-size: 16pt;
       margin-right: 1rem;
+      margin-left: 2rem;
+      color: #ffffff;
     }
 
     ul {
@@ -66,7 +68,7 @@
   background: orange;
   color: #ffffff;
   height: 100%;
-  padding: 0 1rem;
+  padding: 0 2rem;
   display: flex;
   align-items: center;
 

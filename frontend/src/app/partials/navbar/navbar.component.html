@@ -1,6 +1,6 @@
 <div class="container-fluid custom-navbar">
   <div class="left">
-    <span class="custom-navbar-brand">CrMS</span>
+    <a routerLink="/" class="custom-navbar-brand">CrMS</a>
     <ul class="custom-navbar-links">
       <li class="nav-item" [class.active]="router.isActive('/programs', false)">
         <a class="nav-link" routerLink="/programs">Programmer</a>
@@ -9,7 +9,7 @@
         <a class="nav-link" routerLink="/companies">Virksomheder</a>
       </li>
       <li class="nav-item"  [class.active]="router.isActive('/people', false)">
-        <a class="nav-link"routerLink="/people">Personer</a>
+        <a class="nav-link" routerLink="/people">Personer</a>
       </li>
     </ul>
   </div>

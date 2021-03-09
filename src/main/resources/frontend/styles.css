@@ -21555,5 +21555,10 @@ body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+.hero {
+  width: 100%;
+  padding: 4rem 2rem;
+  background: aliceblue;
+}
 
 /*# sourceMappingURL=styles.css.map*/
