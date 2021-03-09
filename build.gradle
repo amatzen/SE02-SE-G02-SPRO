@@ -1,5 +1,6 @@
 plugins {
     id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.9'
 }
 
 mainClassName = 'dk.sdu.swe.Application'
@@ -19,7 +20,14 @@ dependencies {
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
 
     implementation 'com.google.guava:guava:29.0-jre'
-    implementation group: 'org.openjfx', name: 'javafx-fxml', version: '15'
+    implementation 'org.json:json:20201115'
+    implementation 'org.openjfx:javafx-fxml:15'
+    implementation 'com.jfoenix:jfoenix:9.0.10'
+}
+
+javafx {
+    version = "15.0.1"
+    modules = [ 'javafx.controls', 'javafx.fxml' ]
 }
 
 tasks.named('test') {
