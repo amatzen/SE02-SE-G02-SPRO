@@ -2,6 +2,13 @@ plugins {
     id 'application'
 }
 
+mainClassName = 'dk.sdu.swe.Application'
+sourceCompatibility = 15
+targetCompatibility = 15
+
+group 'dk.sdu.swe'
+version '1.0-SNAPSHOT'
+
 repositories {
     mavenCentral()
     jcenter()
@@ -12,10 +19,7 @@ dependencies {
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
 
     implementation 'com.google.guava:guava:29.0-jre'
-}
-
-application {
-    mainClass = 'dk.sdu.swe.Application'
+    implementation group: 'org.openjfx', name: 'javafx-fxml', version: '15'
 }
 
 tasks.named('test') {
