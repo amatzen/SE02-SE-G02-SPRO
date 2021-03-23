@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+               <HBox style="-fx-background-color: #263238;">
+                   <children>
+                       <HBox prefHeight="62.0" prefWidth="1000.0" style="-fx-background-color: #263238;" HBox.hgrow="ALWAYS">
+                           <children>
+                               <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="62.0" prefWidth="200.0" text="CrMS" textFill="WHITE">
+                                   <font>
+                                       <Font size="24.0" />
+                                   </font>
+                                   <HBox.margin>
+                                       <Insets left="25.0" />
+                                   </HBox.margin>
+                               </Label>
+                               <JFXButton alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="62.0" prefWidth="200.0" text="Programmer" textFill="WHITE">
+                                   <font>
+                                       <Font size="18.0" />
+                                   </font>
+                                   <HBox.margin>
+                                       <Insets />
+                                   </HBox.margin>
+                               </JFXButton>
+                               <JFXButton alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="62.0" prefWidth="200.0" text="Virksomheder" textFill="WHITE">
+                                   <font>
+                                       <Font size="18.0" />
+                                   </font>
+                                   <HBox.margin>
+                                       <Insets />
+                                   </HBox.margin>
+                               </JFXButton>
+                               <JFXButton alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="62.0" prefWidth="200.0" text="Personer" textFill="WHITE">
+                                   <font>
+                                       <Font size="18.0" />
+                                   </font>
+                                   <HBox.margin>
+                                       <Insets />
+                                   </HBox.margin>
+                               </JFXButton>
+                           </children>
+                       </HBox>
+                       <HBox alignment="TOP_RIGHT" prefHeight="62.0" prefWidth="440.0" HBox.hgrow="ALWAYS">
+                           <children>
+                               <JFXButton alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="62.0" prefWidth="200.0" text="Admin" textFill="WHITE">
+                                   <font>
+                                       <Font size="18.0" />
+                                   </font>
+                                   <HBox.margin>
+                                       <Insets />
+                                   </HBox.margin>
+                               </JFXButton>
+                               <JFXButton alignment="CENTER_RIGHT" contentDisplay="RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="62.0" prefWidth="150.0" style="-fx-background-color: #FF9800;" text=" " />
+                           </children>
+                       </HBox>
+                   </children>
+               </HBox>
+   </children>
+</VBox>
