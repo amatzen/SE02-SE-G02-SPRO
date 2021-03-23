@@ -15,55 +15,8 @@
    <top>
       <VBox prefHeight="366.0" prefWidth="1440.0" BorderPane.alignment="CENTER">
          <children>
-            <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="62.0" prefWidth="1440.0" style="-fx-background-color: #263238;">
-               <children>
-                  <Label prefHeight="46.0" prefWidth="130.0" text="CrMS" textFill="WHITE">
-                     <HBox.margin>
-                        <Insets left="50.0" top="5.0" />
-                     </HBox.margin>
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                  </Label>
-                  <JFXButton prefHeight="33.0" prefWidth="201.0" text="Programmer" textFill="WHITE">
-                     <HBox.margin>
-                        <Insets left="100.0" top="10.0" />
-                     </HBox.margin>
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </JFXButton>
-                  <JFXButton prefHeight="33.0" prefWidth="212.0" text="Virksomheder" textFill="WHITE">
-                     <HBox.margin>
-                        <Insets left="50.0" top="10.0" />
-                     </HBox.margin>
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </JFXButton>
-                  <JFXButton prefHeight="33.0" prefWidth="167.0" text="Personer" textFill="WHITE">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                     <HBox.margin>
-                        <Insets left="50.0" top="10.0" />
-                     </HBox.margin>
-                  </JFXButton>
-                  <JFXButton prefHeight="33.0" prefWidth="153.0" text="Admin" textFill="WHITE">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                     <HBox.margin>
-                        <Insets left="525.0" top="10.0" />
-                     </HBox.margin>
-                  </JFXButton>
-                  <JFXButton prefHeight="62.0" prefWidth="134.0" style="-fx-background-color: #FF9800;" text=" ">
-                     <HBox.margin>
-                        <Insets left="40.0" />
-                     </HBox.margin>
-                  </JFXButton>
-               </children>
-            </HBox>
+            <fx:include source="../../../../../../../IdeaProjects/SE02-SE-G02-SPRO/src/main/resources/ui/Nav.fxml" />
+            <HBox style="-fx-background-color: #263238;" />
             <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="178.0" prefWidth="1440.0" style="-fx-background-color: #E0E0E0;">
                <children>
                   <Label text="Programmer">
@@ -160,7 +113,16 @@
          </children>
       </VBox>
    </top>
-   <left>
-      <VBox prefHeight="658.0" prefWidth="248.0" style="-fx-background-color: #37474F;" BorderPane.alignment="CENTER" />
-   </left>
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox prefHeight="66.0" prefWidth="1440.0" style="-fx-background-color: #CFD8DC;">
+               <children>
+                  <Label prefHeight="24.0" prefWidth="94.0" text="Programtitel" translateX="41.0" />
+                  <Label layoutX="10.0" layoutY="10.0" prefHeight="66.0" prefWidth="92.0" text="Kanal(er)" translateX="344.0" />
+                  <Label layoutX="10.0" layoutY="10.0" prefHeight="66.0" prefWidth="92.0" text="Kanal(er)" translateX="569.0" />
+               </children></HBox>
+         </children>
+      </VBox>
+   </center>
 </BorderPane>
