@@ -12,7 +12,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1024.0" prefWidth="1440.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <left>
       <VBox prefHeight="1024.0" prefWidth="332.0" style="-fx-background-color: dbdbdb;" BorderPane.alignment="CENTER">
@@ -33,7 +32,7 @@
                         </JFXTextArea>
                         <JFXButton prefHeight="32.0" prefWidth="63.0" style="-fx-background-color: orange;" text="Nulstil" textFill="WHITE">
                            <VBox.margin>
-                              <Insets top="20.0" />
+                              <Insets top="50.0" />
                            </VBox.margin>
                            <font>
                               <Font name="System Bold" size="12.0" />
@@ -141,6 +140,9 @@
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
                         </Label>
                         <Label alignment="TOP_LEFT" prefHeight="46.0" prefWidth="108.0" text="CVR: 11735894" />
                      </children>
@@ -158,6 +160,9 @@
                            </font>
                         </Label>
                      </children>
+                     <HBox.margin>
+                        <Insets left="50.0" />
+                     </HBox.margin>
                   </VBox>
                   <VBox prefHeight="100.0" prefWidth="191.0">
                      <children>
@@ -172,6 +177,9 @@
                            </font>
                         </Label>
                      </children>
+                     <HBox.margin>
+                        <Insets left="50.0" />
+                     </HBox.margin>
                   </VBox>
                   <VBox alignment="CENTER" prefHeight="100.0" prefWidth="165.0">
                      <children>
@@ -179,6 +187,9 @@
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>
+                           <VBox.margin>
+                              <Insets left="50.0" />
+                           </VBox.margin>
                         </JFXButton>
                      </children>
                   </VBox>
@@ -222,6 +233,9 @@
                            </font>
                         </Label>
                      </children>
+                     <HBox.margin>
+                        <Insets left="50.0" />
+                     </HBox.margin>
                   </VBox>
                   <VBox prefHeight="100.0" prefWidth="191.0">
                      <children>
@@ -236,6 +250,9 @@
                            </font>
                         </Label>
                      </children>
+                     <HBox.margin>
+                        <Insets left="50.0" />
+                     </HBox.margin>
                   </VBox>
                   <VBox alignment="CENTER" prefHeight="100.0" prefWidth="165.0">
                      <children>
@@ -243,8 +260,14 @@
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>
+                           <VBox.margin>
+                              <Insets left="50.0" />
+                           </VBox.margin>
                         </JFXButton>
                      </children>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
                   </VBox>
                </children>
             </HBox>
@@ -283,6 +306,9 @@
                            </font>
                         </Label>
                      </children>
+                     <HBox.margin>
+                        <Insets left="50.0" />
+                     </HBox.margin>
                   </VBox>
                   <VBox prefHeight="100.0" prefWidth="191.0">
                      <children>
@@ -297,6 +323,9 @@
                            </font>
                         </Label>
                      </children>
+                     <HBox.margin>
+                        <Insets left="50.0" />
+                     </HBox.margin>
                   </VBox>
                   <VBox alignment="CENTER" prefHeight="100.0" prefWidth="165.0">
                      <children>
@@ -304,6 +333,9 @@
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>
+                           <VBox.margin>
+                              <Insets left="50.0" />
+                           </VBox.margin>
                         </JFXButton>
                      </children>
                   </VBox>
