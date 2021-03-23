@@ -4,8 +4,6 @@
 <?import com.jfoenix.controls.JFXTextArea?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Separator?>
-<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
@@ -93,7 +91,7 @@
                         </JFXButton>
                      </children>
                   </HBox>
-                  <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="31.0" HBox.hgrow="ALWAYS">
+                  <HBox alignment="TOP_RIGHT" prefHeight="75.0" prefWidth="1086.0" HBox.hgrow="ALWAYS">
                      <children>
                         <JFXButton alignment="CENTER" prefHeight="44.0" prefWidth="148.0" text="Admin" textFill="WHITE">
                            <font>
@@ -103,7 +101,10 @@
                               <Insets top="16.0" />
                            </HBox.margin>
                         </JFXButton>
-                        <JFXButton alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="100.0" prefWidth="125.0" style="-fx-background-color: #FF9800;" text=" " />
+                        <JFXButton prefHeight="75.0" prefWidth="195.0" style="-fx-background-color: #FF9800;" text="Test">
+                           <graphic>
+                              <ImageView fitHeight="56.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true" />
+                           </graphic></JFXButton>
                      </children>
                   </HBox>
                </children>
@@ -125,95 +126,7 @@
       </VBox>
    </top>
    <center>
-      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
-         <children>
-            <HBox prefHeight="100.0" prefWidth="200.0">
-               <children>
-                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
-                     <children>
-                        <ImageView fitHeight="74.0" fitWidth="89.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../../../../../Desktop/TV2_Denmark_logo_2017.png" />
-                           </image></ImageView>
-                     </children>
-                     <HBox.margin>
-                        <Insets left="20.0" />
-                     </HBox.margin>
-                  </VBox>
-                  <VBox prefHeight="100.0" prefWidth="143.0">
-                     <children>
-                        <Label alignment="BOTTOM_LEFT" prefHeight="45.0" prefWidth="143.0" text="Nordisk Film TV A/S">
-                           <font>
-                              <Font name="System Bold" size="14.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets />
-                           </VBox.margin>
-                        </Label>
-                        <Label alignment="TOP_LEFT" prefHeight="46.0" prefWidth="143.0" text="CVR: 11735894" />
-                     </children>
-                     <HBox.margin>
-                        <Insets left="20.0" />
-                     </HBox.margin>
-                  </VBox>
-                  <VBox prefHeight="100.0" prefWidth="129.0">
-                     <children>
-                        <Label alignment="BOTTOM_LEFT" prefHeight="45.0" prefWidth="129.0" text="Direktør">
-                           <font>
-                              <Font name="System Bold" size="14.0" />
-                           </font>
-                        </Label>
-                        <Label alignment="TOP_LEFT" layoutX="10.0" layoutY="55.0" prefHeight="49.0" prefWidth="132.0" text="Ulrik Jørgensen">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </Label>
-                     </children>
-                     <HBox.margin>
-                        <Insets left="100.0" />
-                     </HBox.margin>
-                  </VBox>
-                  <VBox prefHeight="100.0" prefWidth="191.0">
-                     <children>
-                        <Label alignment="BOTTOM_LEFT" prefHeight="45.0" prefWidth="186.0" text="Virksomhedsadministrator">
-                           <font>
-                              <Font name="System Bold" size="14.0" />
-                           </font>
-                        </Label>
-                        <Label alignment="TOP_LEFT" prefHeight="49.0" prefWidth="202.0" text="Ulrik Jørgensen">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </Label>
-                     </children>
-                     <HBox.margin>
-                        <Insets left="30.0" />
-                     </HBox.margin>
-                  </VBox>
-                  <VBox alignment="CENTER" prefHeight="100.0" prefWidth="165.0">
-                     <children>
-                        <JFXButton alignment="CENTER" prefHeight="52.0" prefWidth="129.0" style="-fx-background-color: transparent;" text="Handlinger" textFill="#ff9800">
-                           <font>
-                              <Font name="System Bold" size="14.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets left="50.0" />
-                           </VBox.margin>
-                        </JFXButton>
-                     </children>
-                     <HBox.margin>
-                        <Insets left="100.0" />
-                     </HBox.margin>
-                  </VBox>
-               </children>
-            </HBox>
-            <Separator prefWidth="200.0">
-               <VBox.margin>
-                  <Insets left="20.0" right="20.0" />
-               </VBox.margin>
-            </Separator>
-         </children>
-      </VBox>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER" />
    </center>
    <bottom>
       <BorderPane prefHeight="61.0" prefWidth="1444.0" BorderPane.alignment="CENTER">
