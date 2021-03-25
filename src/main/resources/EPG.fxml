@@ -15,55 +15,8 @@
    <top>
       <VBox prefHeight="366.0" prefWidth="1440.0" BorderPane.alignment="CENTER">
          <children>
-            <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="62.0" prefWidth="1440.0" style="-fx-background-color: #263238;">
-               <children>
-                  <Label prefHeight="46.0" prefWidth="61.0" text="CrMS" textFill="WHITE">
-                     <HBox.margin>
-                        <Insets left="50.0" top="5.0" />
-                     </HBox.margin>
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                  </Label>
-                  <JFXButton prefHeight="18.0" prefWidth="124.0" text="Programmer" textFill="WHITE">
-                     <HBox.margin>
-                        <Insets left="100.0" top="10.0" />
-                     </HBox.margin>
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </JFXButton>
-                  <JFXButton text="Virksomheder" textFill="WHITE">
-                     <HBox.margin>
-                        <Insets left="50.0" top="10.0" />
-                     </HBox.margin>
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </JFXButton>
-                  <JFXButton text="Personer" textFill="WHITE">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                     <HBox.margin>
-                        <Insets left="50.0" top="10.0" />
-                     </HBox.margin>
-                  </JFXButton>
-                  <JFXButton text="Admin" textFill="WHITE">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                     <HBox.margin>
-                        <Insets left="525.0" top="10.0" />
-                     </HBox.margin>
-                  </JFXButton>
-                  <JFXButton prefHeight="62.0" prefWidth="134.0" style="-fx-background-color: #FF9800;" text=" ">
-                     <HBox.margin>
-                        <Insets left="40.0" />
-                     </HBox.margin>
-                  </JFXButton>
-               </children>
-            </HBox>
+            <fx:include source="ui/Nav.fxml" />
+            <VBox />
             <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="178.0" prefWidth="1440.0" style="-fx-background-color: #E0E0E0;">
                <children>
                   <Label text="Programmer">
