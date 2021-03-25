@@ -37,8 +37,17 @@ public class User {
         this.name = new Name(name);
     }
 
+    public String getUsername() {
+        return username;
+    }
 
+    public String getEmail() {
+        return email;
+    }
 
+    public Name getName() {
+        return name;
+    }
 }
 
 /**

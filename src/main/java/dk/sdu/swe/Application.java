@@ -18,8 +18,7 @@ public class Application extends javafx.application.Application {
         AuthController authController = AuthController.getInstance();
         boolean signedIn = authController.signIn("almat20", "alexander");
 
-        System.out.println(signedIn ? "Yes! Du loggede ind!" : "Øv, brugernavn eller kode forkert.");
-        //launch();
+        launch();
     }
 
     /**
@@ -41,7 +40,7 @@ public class Application extends javafx.application.Application {
     public void start(Stage stage) throws Exception {
         stage.setTitle("CrMS");
 
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("dk/sdu/swe/ui/app.fxml")));
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("dk/sdu/swe/ui/auth/auth-login.fxml")));
         Scene scene = new Scene(root);
 
         //scene.getStylesheets().add(getClass().getResource("ui/assets/style.css").toString());
