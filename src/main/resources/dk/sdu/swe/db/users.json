@@ -23,4 +23,16 @@
     "password": "",
     "permission": "User"
   }
+  {
+    "id": 2,
+    "username": "Berkan_ktk",
+    "name": {
+      "firstName": "Berkan",
+      "lastName": "Kütük",
+      "_combined": "Berkan Kütük"
+    },
+    "email": "bekut20@sdu.student.dk",
+    "password": "$2y$12$Z3qHJnnc10LZDKYveU3Swu.TaInaV.1zXHYa1T/DpGq8BoEMQylpm",
+    "permission": "CompanyAdministrator"
+  }
 ]
