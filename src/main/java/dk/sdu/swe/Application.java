@@ -1,5 +1,9 @@
 package dk.sdu.swe;
 
+import dk.sdu.swe.controllers.AuthController;
+import dk.sdu.swe.models.CompanyAdministrator;
+import dk.sdu.swe.models.SystemAdministrator;
+import dk.sdu.swe.models.User;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -9,8 +13,13 @@ import java.util.Objects;
 
 
 public class Application extends javafx.application.Application {
-    public static void main(String[] args) {
-        launch();
+    public static void main(String[] args) throws Exception {
+
+        AuthController authController = AuthController.getInstance();
+        boolean signedIn = authController.signIn("almat20", "alexander");
+
+        System.out.println(signedIn ? "Yes! Du loggede ind!" : "Øv, brugernavn eller kode forkert.");
+        //launch();
     }
 
     /**
@@ -32,7 +41,7 @@ public class Application extends javafx.application.Application {
     public void start(Stage stage) throws Exception {
         stage.setTitle("CrMS");
 
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("ui/app.fxml")));
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("dk/sdu/swe/ui/app.fxml")));
         Scene scene = new Scene(root);
 
         //scene.getStylesheets().add(getClass().getResource("ui/assets/style.css").toString());

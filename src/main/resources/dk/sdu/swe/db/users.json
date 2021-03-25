@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "username": "almat20",
+    "name": {
+      "firstName": "Alexander",
+      "lastName": "Matzen",
+      "_combined": "Alexander Matzen"
+    },
+    "email": "alexander@alexander.dk",
+    "password": "$2y$12$U3Tm1ZgJTL3m8jc2Beu1LeE/zq1xEbsYnYlf6eWG0Bv2x3ZfmHFYu",
+    "permission": "CompanyAdministrator"
+  },
+  {
+    "id": 2,
+    "username": "test",
+    "name": {
+      "firstName": "Test",
+      "lastName": "Testsen",
+      "_combined": "Test Testsen"
+    },
+    "email": "test@sdu.dk",
+    "password": "",
+    "permission": "User"
+  }
+]
