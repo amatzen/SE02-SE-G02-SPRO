@@ -25,6 +25,18 @@
   },
   {
     "id": 3,
+    "username": "dabah20",
+    "name": {
+      "firstName": "Daniel",
+      "lastName": "Bahrami",
+      "_combined": "Daniel Bahrami"
+    },
+    "email": "dabah20@student.sdu.dk",
+    "password": "$2y$12$/4BemQnIRCgC3wjTB9g9eum.EFKzspENG7Kmwj94oxBUBfz0T3876",
+    "permission": "CompanyAdministrator"
+  },
+  {
+    "id": 4,
     "username": "jafar20",
     "name": {
       "firstName": "Jasan",
@@ -36,7 +48,7 @@
     "permission": "CompanyAdministrator"
   },
   {
-    "id": 4,
+    "id": 5,
     "username": "bekut20",
     "name": {
       "firstName": "Berkan",
