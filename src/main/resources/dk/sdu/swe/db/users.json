@@ -70,5 +70,18 @@
     "email": "esben@damkjaergaard.com",
     "password": "$2y$12$pe338UeP5CqzgkMMsAcnUOAanyZcykDkc78FRB0X5tg3nidsWonua",
     "permission": "SystemAdministrator"
+  },
+  {
+    
+    "id": 6,
+    "username": "assiv20",
+    "name": {
+      "firstName": "Ashvikan",
+      "lastName": "Sivabalaa",
+      "_combined": "Ashvikan Sivabalaa"
+    },
+    "email": "assiv20@student.sdu.dk",
+    "password": "$2y$12$4V8P.ixxz9yVEWYuT/UDou0SI90bilJFma7L2BW7vjTKcz3OnxgPu",
+    "permission": "CompanyAdministrator"
   }
 ]
