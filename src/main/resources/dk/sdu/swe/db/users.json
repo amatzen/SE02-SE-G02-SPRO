@@ -58,5 +58,17 @@
     "email": "bekut20@student.sdu.dk",
     "password": "$2y$12$Z3qHJnnc10LZDKYveU3Swu.TaInaV.1zXHYa1T/DpGq8BoEMQylpm",
     "permission": "CompanyAdministrator"
+  },
+  {
+    "id": 7,
+    "username": "essoe20",
+    "name": {
+      "firstName": "Esben",
+      "lastName": "Sørensen",
+      "_combined": "Esben Sørensen"
+    },
+    "email": "esben@damkjaergaard.com",
+    "password": "$2y$12$pe338UeP5CqzgkMMsAcnUOAanyZcykDkc78FRB0X5tg3nidsWonua",
+    "permission": "SystemAdministrator"
   }
 ]
