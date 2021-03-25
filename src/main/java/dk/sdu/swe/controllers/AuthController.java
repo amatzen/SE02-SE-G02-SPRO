@@ -47,6 +47,10 @@ public class AuthController {
             return false;
         }
 
+        if(user.getString("password").isEmpty()) {
+            return false;
+        }
+
         // Bcrypt validation
         boolean pwOkay = BCrypt.verifyer().verify(password.toCharArray(), user.getString("password").toCharArray()).verified;
 
