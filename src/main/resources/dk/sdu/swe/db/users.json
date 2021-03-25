@@ -24,7 +24,7 @@
     "permission": "User"
   },
   {
-    "id": 0,
+    "id": 3,
     "username": "dabah20",
     "name": {
       "firstName": "Daniel",
@@ -35,4 +35,28 @@
     "password": "$2y$12$/4BemQnIRCgC3wjTB9g9eum.EFKzspENG7Kmwj94oxBUBfz0T3876",
     "permission": "CompanyAdministrator"
   },
+  {
+    "id": 4,
+    "username": "jafar20",
+    "name": {
+      "firstName": "Jasan",
+      "lastName": "Farah",
+      "_combined": "Jasan Farah"
+    },
+    "email": "jasan@jasan.dk",
+    "password": "$2y$12$M8Z6.QtWqmkwmgoD0PM7S.xN7RsqkvJ3kG7piuu7j1ZMpVvFPiVLG",
+    "permission": "CompanyAdministrator"
+  },
+  {
+    "id": 5,
+    "username": "bekut20",
+    "name": {
+      "firstName": "Berkan",
+      "lastName": "Kütük",
+      "_combined": "Berkan Kütük"
+    },
+    "email": "bekut20@student.sdu.dk",
+    "password": "$2y$12$Z3qHJnnc10LZDKYveU3Swu.TaInaV.1zXHYa1T/DpGq8BoEMQylpm",
+    "permission": "CompanyAdministrator"
+  }
 ]
