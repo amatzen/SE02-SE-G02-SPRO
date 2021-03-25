@@ -22,5 +22,17 @@
     "email": "test@sdu.dk",
     "password": "",
     "permission": "User"
-  }
+  },
+  {
+    "id": 3,
+    "username": "besben",
+    "name": {
+      "firstName": "Esben",
+      "lastName": "Sørensen",
+      "_combined": "Esben Sørensen"
+    },
+    "email": "esben@damkjaergaard.com",
+    "password": "$2y$12$pe338UeP5CqzgkMMsAcnUOAanyZcykDkc78FRB0X5tg3nidsWonua",
+    "permission": "SystemAdministrator"
+  },
 ]
