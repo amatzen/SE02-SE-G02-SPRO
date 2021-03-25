@@ -22,5 +22,17 @@
     "email": "test@sdu.dk",
     "password": "",
     "permission": "User"
-  }
+  },
+    {
+      "id": 4,
+      "username": "jafar20",
+      "name": {
+        "firstName": "Jasan",
+        "lastName": "Farah",
+        "_combined": "Jasan Farah"
+      },
+      "email": "jasan@jasan.dk",
+      "password": "$2y$12$M8Z6.QtWqmkwmgoD0PM7S.xN7RsqkvJ3kG7piuu7j1ZMpVvFPiVLG",
+      "permission": "CompanyAdministrator"
+    }
 ]
