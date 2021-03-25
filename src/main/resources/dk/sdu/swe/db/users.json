@@ -23,4 +23,16 @@
     "password": "",
     "permission": "User"
   },
+  {
+    "id": 0,
+    "username": "dabah20",
+    "name": {
+      "firstName": "Daniel",
+      "lastName": "Bahrami",
+      "_combined": "Daniel Bahrami"
+    },
+    "email": "dabah20@student.sdu.dk",
+    "password": "$2y$12$/4BemQnIRCgC3wjTB9g9eum.EFKzspENG7Kmwj94oxBUBfz0T3876",
+    "permission": "CompanyAdministrator"
+  },
 ]
