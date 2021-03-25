@@ -23,6 +23,12 @@ dependencies {
     implementation 'org.json:json:20201115'
     implementation 'org.openjfx:javafx-fxml:15'
     implementation 'com.jfoenix:jfoenix:9.0.10'
+    implementation 'commons-io:commons-io:2.8.0'
+
+    // https://mvnrepository.com/artifact/at.favre.lib/bcrypt
+    implementation group: 'at.favre.lib', name: 'bcrypt', version: '0.9.0'
+
+
 }
 
 javafx {
