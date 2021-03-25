@@ -24,8 +24,8 @@
     "permission": "User"
   },
   {
-    "id": 3,
-    "username": "besben",
+    "id": 7,
+    "username": "essoe20",
     "name": {
       "firstName": "Esben",
       "lastName": "Sørensen",
@@ -34,5 +34,5 @@
     "email": "esben@damkjaergaard.com",
     "password": "$2y$12$pe338UeP5CqzgkMMsAcnUOAanyZcykDkc78FRB0X5tg3nidsWonua",
     "permission": "SystemAdministrator"
-  },
+  }
 ]
