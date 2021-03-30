@@ -1,0 +1,88 @@
+@startuml
+'https://plantuml.com/use-case-diagram
+left to right direction
+
+actor "Producer (Bruger)" as producer
+actor Systemadministrator as administrator
+actor Seer as seer
+
+actor Virksomhedsadministrator as virksomhedsadministrator
+note left of virksomhedsadministrator
+    Denne bruger
+    er ansat af et
+    produktionsselskab
+
+    F.eks. //Banijay//
+end note
+
+rectangle "<<aktør>>\nEPG-system" as epg
+rectangle "<<aktør>>\nCVR-registeret" as cvr
+
+rectangle "Consumer System" {
+    usecase "Se krediteringer" as (CS:Se krediteringer)
+    usecase "Filtrere krediteringer" as (CS:Filtrere krediteringer)
+}
+
+rectangle "Credit Management System" {
+    'Krediteringer
+    usecase "Se krediteringer" as (Se krediteringer)
+    usecase "Filtrere krediteringer" as (Filtrere krediteringer)
+    usecase "Godkende krediteringer" as (Godkende krediteringer)
+    usecase "Håndtér kreditering" as (Håndter kreditering)
+    usecase "Linke personer" as (Linke personer)
+
+    'Programmer
+    usecase "Opret program" as (Opret program)
+    usecase "Redigér program" as (Rediger program)
+    usecase "Slet program" as (Slet program)
+
+    usecase "Administrér brugere" as (Administrer brugere)
+
+    usecase "Håndtér producer" as (Håndter producer)
+
+    usecase "Håndter virksomhed" as (Håndter virksomhed)
+
+    usecase "Eksportere data" as (Eksportere data)
+
+    usecase "Nulstil adgangskode" as (Nulstil adgangskode)
+}
+
+(CS:Filtrere krediteringer) .> (CS:Se krediteringer) : <<extend>>
+(Håndter kreditering) .> (Se krediteringer) : <<include>>
+(Filtrere krediteringer) .> (Se krediteringer) : <<extend>>
+
+'Seer
+seer --> (CS:Se krediteringer)
+seer --> (CS:Filtrere krediteringer)
+
+'Producer
+producer --> (Se krediteringer)
+producer --> (Håndter kreditering)
+producer --> (Nulstil adgangskode)
+
+producer --> (Opret program)
+producer --> (Rediger program)
+producer --> (Linke personer)
+
+'Virksomhedsadministrator
+virksomhedsadministrator --> (Håndter producer)
+virksomhedsadministrator --> (Håndter virksomhed)
+virksomhedsadministrator --> (Slet program)
+
+'EPG
+(CS:Se krediteringer) <-- epg
+(Se krediteringer) <-- epg
+
+'CVR
+(Håndter virksomhed) -- cvr
+
+'Systemadministrator
+administrator --> (Eksportere data)
+administrator --> (Godkende krediteringer)
+administrator --> (Administrer brugere)
+
+'Generalisering
+virksomhedsadministrator -l-|> producer
+administrator -l-|> virksomhedsadministrator
+
+@enduml
