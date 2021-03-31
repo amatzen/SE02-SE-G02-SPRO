@@ -1,0 +1,17 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+box "Håndtér kreditering (UC03)"
+    participant "Producer" as producer
+    participant ":AuthController" as authController
+    participant ":DB" as db
+end box
+
+producer -> authController : signIn(username, password)
+authController -> db : 
+producer <-- authController : Authentication
+
+
+@enduml
