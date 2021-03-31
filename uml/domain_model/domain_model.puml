@@ -1,14 +1,12 @@
 @startuml
 'https://plantuml.com/class-diagram
 
-'Personer her
-rectangle Users {
+package "Domænemodel" {
+    'Personer her
     class Producer {
         - email : String
         - name : String
         - image : String
-        --
-        + Producer(id)
         --
         + getName() : String
         + getEmail() : String
@@ -23,77 +21,77 @@ rectangle Users {
     class SystemAdministrator {
 
     }
+
+    'Naeste
+    class Company {
+        - regNo : int
+        - name : String
+        - manager : String
+        --
+        + getRegNo() : int
+        + getName() : String
+        + getManager() : String
+    }
+
+    class Channel {
+        - name: String
+        - category: String
+        --
+        + getName() : String
+        + getCategory() : String
+    }
+
+    class Program {
+        - title: String
+        -startTime: long
+        -endTime: long
+        --
+        + getTitle() : String
+    }
+
+    class CreditRole {
+        - title : String
+    }
+
+
+    class Credit {
+        - name : String
+        - role : CreditRole
+        - date : OffsetDateTime
+        --
+        + getName() : String
+        + getRole() : CreditRole
+        + getDate() : OffsetDateTime
+    }
+
+    'Controller
+    class AuthController {
+        --
+        + resetPassword() : String
+        + validateLogin() : Producer
+    }
+
+    'Statics
+    class DB {
+    }
 }
 
-CompanyAdministrator -|> Producer
+SystemAdministrator "1" -- "1..*" Credit : "Approves >"
 SystemAdministrator -|> CompanyAdministrator
 
-'Naeste
-class Company {
-    - regNo : int
-    - name : String
-    - manager : String
-    --
-    + getRegNo() : int
-    + getName() : String
-    + getManager() : String
-}
+CompanyAdministrator -|> Producer
+CompanyAdministrator -- Company : "Administers >"
+CompanyAdministrator -- Channel : "Administers >"
 
-class Channel {
-    - name: String
-    - category: String
-    --
-    + getName() : String
-    + getCategory() : String
-}
+Producer "1" -- "1..*" Program : "Has >"
+Producer - AuthController : "Authenticates <"
+Producer -- Company : "Part of >"
+Producer "1..*" -- "1" DB : "Contains <"
 
-class Program {
-    - title: String
-    -startTime: long
-    -endTime: long
-    --
-    + getTitle() : String
-}
+Channel "1" -- "1..*" Program : "Has >"
 
-Channel "1" --> "1..*" Program :"Has >"
+Credit "1" - "1..*" CreditRole : "Has >"
 
-class CreditRole {
-    - title : String
-}
-
-Program "1" -> "1..*" CreditRole : "Has >"
-
-class Credit {
-    - name : String
-    - role : CreditRole
-    - date : OffsetDateTime
-    --
-    + getName() : String
-    + getRole() : CreditRole
-    + getDate() : OffsetDateTime
-}
-
-'Controller
-class AuthController {
-    --
-    + resetPassword() : String
-    + validateLogin() : Producer
-}
-
-Producer "1" -> "1..*" Program : "Has >"
-
-CompanyAdministrator --> Channel : "Administers >"
-
-'Statics
-class DB {
-}
-
-DB "1" --> "1..*" Producer : "Contains >"
-
-Producer --> AuthController : "Authenticates <"
-
-CompanyAdministrator --> Company : "Administers >"
-
-Credit "1" --> "1..*" CreditRole : "Has >"
+Program "1" -- "1..*" Credit : "Has >"
 
 @enduml
