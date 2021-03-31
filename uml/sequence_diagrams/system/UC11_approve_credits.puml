@@ -3,9 +3,18 @@
 
 autonumber
 
-Alice -> Bob: Authentication Request
-Bob --> Alice: Authentication Response
+box Godkend kreditering (UC11)
+    participant ":SystemAdministrator" as administrator
+    participant ":System" as system
+end box
 
-Alice -> Bob: Another authentication Request
-Alice <-- Bob: another authentication Response
+administrator -> system : signIn(username, password)
+administrator <-- system : Authentication response
+
+administrator -> system : getWaitingCredit()
+administrator <-- system : Credits waiting approval
+
+administrator -> system : approve(credit)
+administrator <-- system : Success
+
 @enduml

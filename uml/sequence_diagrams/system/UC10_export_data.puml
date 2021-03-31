@@ -3,9 +3,15 @@
 
 autonumber
 
-Alice -> Bob: Authentication Request
-Bob --> Alice: Authentication Response
+box Se kreditering (UC01)
+    participant ":Producer" as producer
+    participant ":System" as system
+end box
 
-Alice -> Bob: Another authentication Request
-Alice <-- Bob: another authentication Response
+producer -> system : signIn(username, password)
+producer <-- system : Authentication response
+
+producer -> system : exportData(companies, file)
+producer <-- system : Data report
+
 @enduml

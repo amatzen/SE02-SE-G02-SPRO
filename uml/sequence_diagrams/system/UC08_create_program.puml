@@ -3,9 +3,17 @@
 
 autonumber
 
-Alice -> Bob: Authentication Request
-Bob --> Alice: Authentication Response
+box "Opret program (UC04)"
+    participant ":CompanyAdministrator" as administrator
+    participant ":System" as system
+end box
 
-Alice -> Bob: Another authentication Request
-Alice <-- Bob: another authentication Response
+administrator -> system : signIn(username, password)
+administrator <-- system : Authentication response
+
+administrator -> system : createProgram(program)
+system -> system : checkPermission(program)
+system -> system : saveProgram(program)
+administrator <-- system : Program
+
 @enduml

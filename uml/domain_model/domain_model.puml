@@ -80,15 +80,15 @@ SystemAdministrator "1" -- "1..*" Credit : "Approves >"
 SystemAdministrator -|> CompanyAdministrator
 
 CompanyAdministrator -|> Producer
-CompanyAdministrator -- Company : "Administers >"
-CompanyAdministrator -- Channel : "Administers >"
+CompanyAdministrator -- Company : "Manages >"
+CompanyAdministrator -- Channel : "Manages >"
 
-Producer "1" -- "1..*" Program : "Has >"
+Producer "1" -- "1..*" Program : "Owns >"
 Producer - AuthController : "Authenticates <"
 Producer -- Company : "Part of >"
 Producer "1..*" -- "1" DB : "Contains <"
 
-Channel "1" -- "1..*" Program : "Has >"
+Channel "1" -- "1..*" Program : "Shows >"
 
 Credit "1" - "1..*" CreditRole : "Has >"
 

@@ -3,9 +3,17 @@
 
 autonumber
 
-Alice -> Bob: Authentication Request
-Bob --> Alice: Authentication Response
+box "Håndtér brugere (UC04)"
+    participant ":SystemAdministrator" as administrator
+    participant ":System" as system
+end box
 
-Alice -> Bob: Another authentication Request
-Alice <-- Bob: another authentication Response
+administrator -> system : signIn(username, password)
+administrator <-- system : Authentication response
+
+administrator -> system : updateProgram(program)
+system -> system : checkPermission(program)
+system -> system : updateProgram(program)
+administrator <-- system : Program
+
 @enduml
