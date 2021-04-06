@@ -40,7 +40,7 @@ public class Application extends javafx.application.Application {
     public void start(Stage stage) throws Exception {
         stage.setTitle("CrMS");
 
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("dk/sdu/swe/ui/auth/auth-login.fxml")));
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("dk/sdu/swe/ui/auth/app.fxml")));
         Scene scene = new Scene(root);
 
         //scene.getStylesheets().add(getClass().getResource("ui/assets/style.css").toString());

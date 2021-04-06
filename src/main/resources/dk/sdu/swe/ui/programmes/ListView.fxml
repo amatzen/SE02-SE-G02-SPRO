@@ -15,7 +15,7 @@
    <top>
       <VBox prefHeight="366.0" prefWidth="1440.0" BorderPane.alignment="CENTER">
          <children>
-            <fx:include source="../../../../../../../IdeaProjects/SE02-SE-G02-SPRO/src/main/resources/ui/Nav.fxml" />
+            <fx:include source="../Nav.fxml" />
             <HBox style="-fx-background-color: #263238;" />
             <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="178.0" prefWidth="1440.0" style="-fx-background-color: #E0E0E0;">
                <children>
