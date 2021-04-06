@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="270.0" prefWidth="453.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label text="Redigér">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" />
+            <VBox minWidth="150.0" spacing="5.0">
+               <children>
+                  <Label layoutX="10.0" layoutY="35.0" text="Navn" />
+                  <TextField prefHeight="25.0" prefWidth="150.0" />
+                  <Label text="Rolle" />
+                  <TextField layoutX="10.0" layoutY="10.0" prefHeight="25.0" prefWidth="150.0" />
+                  <Label layoutX="10.0" layoutY="63.0" text="Krediteringsgruppe" />
+                  <TextField layoutX="10.0" layoutY="85.0" prefHeight="25.0" prefWidth="150.0" />
+               </children></VBox>
+            <JFXButton prefHeight="25.0" prefWidth="70.0" style="-fx-background-color: FF9800;" text="GEM" textFill="WHITE" />
+         </children>
+      </HBox>
+   </children>
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
+   <padding>
+      <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+   </padding>
+</VBox>
