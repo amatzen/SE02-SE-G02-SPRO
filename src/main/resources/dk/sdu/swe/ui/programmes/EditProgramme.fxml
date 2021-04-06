@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="469.0" prefWidth="698.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dk.sdu.swe.ui.programmes.EditProgramme">
+   <center>
+      <HBox prefHeight="100.0" prefWidth="698.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox prefHeight="469.0" prefWidth="349.0">
+               <children>
+                  <JFXTextField prefHeight="35.0" prefWidth="319.0" style="-fx-border-color: #CCCCCC; -fx-border-radius: 5px; -fx-padding: 0.333333em 1em 0.333333em 1em; -fx-background-color: transparent; -jfx-focus-color: #fffff;" text="Titel">
+                     <VBox.margin>
+                        <Insets left="30.0" right="10.0" top="10.0" />
+                     </VBox.margin>
+                  </JFXTextField>
+                  <JFXTextField layoutX="10.0" layoutY="10.0" prefHeight="35.0" prefWidth="319.0" text="Produktionsår">
+                     <VBox.margin>
+                        <Insets left="30.0" right="10.0" top="10.0" />
+                     </VBox.margin>
+                  </JFXTextField>
+                  <JFXTextField layoutX="10.0" layoutY="35.0" prefHeight="35.0" prefWidth="319.0" text="Kategori">
+                     <VBox.margin>
+                        <Insets left="30.0" right="10.0" top="50.0" />
+                     </VBox.margin>
+                  </JFXTextField>
+                  <JFXTextField layoutX="10.0" layoutY="60.0" prefHeight="35.0" prefWidth="319.0" text="Produktionsselskab">
+                     <VBox.margin>
+                        <Insets left="30.0" right="10.0" top="10.0" />
+                     </VBox.margin>
+                  </JFXTextField>
+               </children>
+            </VBox>
+            <VBox prefHeight="469.0" prefWidth="349.0">
+               <children>
+                  <VBox prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+                     <children>
+                        <JFXRadioButton text="TV 2" />
+                        <JFXRadioButton layoutX="10.0" layoutY="10.0" text="TV 2 Charlie" />
+                        <JFXRadioButton layoutX="10.0" layoutY="199.0" text="TV 2 Fri" />
+                        <JFXRadioButton layoutX="10.0" layoutY="226.0" text="TV 2 News" />
+                        <JFXRadioButton layoutX="10.0" layoutY="199.0" text="TV 2 Zulu" />
+                        <JFXRadioButton layoutX="10.0" layoutY="199.0" text="TV 2 Sport" />
+                        <JFXRadioButton layoutX="10.0" layoutY="226.0" text="TV 2 Sport X" />
+                     </children>
+                     <VBox.margin>
+                        <Insets left="50.0" top="20.0" />
+                     </VBox.margin>
+                  </VBox>
+                  <HBox alignment="BOTTOM_RIGHT" layoutX="10.0" layoutY="250.0" prefHeight="169.0" prefWidth="349.0">
+                     <children>
+                        <JFXButton prefHeight="34.0" prefWidth="71.0" style="-fx-background-color: #FF9800;" text="Gem" textAlignment="RIGHT" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets bottom="30.0" right="30.0" />
+                           </HBox.margin>
+                        </JFXButton>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </center>
+   <top>
+      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Redigér program:">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="30.0" top="30.0" />
+               </HBox.margin>
+            </Label>
+            <Label layoutX="10.0" layoutY="10.0" text="programName">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="5.0" top="30.0" />
+               </HBox.margin>
+            </Label>
+         </children>
+      </HBox>
+   </top>
+</BorderPane>
