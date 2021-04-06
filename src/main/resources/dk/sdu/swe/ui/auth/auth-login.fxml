@@ -50,7 +50,7 @@
             </Text>
             <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="340.0" layoutY="262.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../materialbutton.png" />
+                  <Image url="@../images/materialbutton.png" />
                </image>
             </ImageView>
          </children>
