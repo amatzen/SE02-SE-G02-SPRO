@@ -9,7 +9,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="725.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
    <top>
       <VBox BorderPane.alignment="CENTER">
@@ -39,12 +38,12 @@
    <center>
       <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
-            <Label text="Skuespillere">
+            <Label text="Rolle">
                <VBox.margin>
                   <Insets left="50.0" top="50.0" />
                </VBox.margin>
                <font>
-                  <Font size="24.0" />
+                  <Font size="36.0" />
                </font>
             </Label>
             <HBox>
@@ -109,7 +108,7 @@
                         </VBox>
                      </children>
                      <HBox.margin>
-                        <Insets left="100.0" />
+                        <Insets left="125.0" />
                      </HBox.margin>
                      <effect>
                         <DropShadow offsetY="5.0" />
@@ -140,7 +139,7 @@
                         </VBox>
                      </children>
                      <HBox.margin>
-                        <Insets left="100.0" />
+                        <Insets left="125.0" />
                      </HBox.margin>
                      <effect>
                         <DropShadow offsetY="5.0" />
@@ -148,7 +147,7 @@
                   </HBox>
                </children>
                <padding>
-                  <Insets top="25.0" />
+                  <Insets top="50.0" />
                </padding>
             </HBox>
             <HBox>
@@ -213,7 +212,7 @@
                         </VBox>
                      </children>
                      <HBox.margin>
-                        <Insets left="100.0" />
+                        <Insets left="125.0" />
                      </HBox.margin>
                      <effect>
                         <DropShadow offsetY="5.0" />
@@ -244,7 +243,7 @@
                         </VBox>
                      </children>
                      <HBox.margin>
-                        <Insets left="100.0" />
+                        <Insets left="125.0" />
                      </HBox.margin>
                      <effect>
                         <DropShadow offsetY="5.0" />
@@ -320,7 +319,7 @@
                         </VBox>
                      </children>
                      <HBox.margin>
-                        <Insets left="100.0" />
+                        <Insets left="125.0" />
                      </HBox.margin>
                      <effect>
                         <DropShadow offsetY="5.0" />
@@ -351,7 +350,7 @@
                         </VBox>
                      </children>
                      <HBox.margin>
-                        <Insets left="100.0" />
+                        <Insets left="125.0" />
                      </HBox.margin>
                      <effect>
                         <DropShadow offsetY="5.0" />
