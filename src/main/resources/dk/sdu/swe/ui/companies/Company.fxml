@@ -51,7 +51,7 @@
    <top>
       <VBox prefHeight="243.0" prefWidth="1440.0" style="-fx-background-color: #E0E0E0;" BorderPane.alignment="CENTER">
          <children>
-            <fx:include source="/dk/sdu/swe/ui/Nav.fxml" />
+            <fx:include source="../Nav.fxml"/>
             <Label prefHeight="58.0" prefWidth="248.0" text="Virksomheder">
                <font>
                   <Font size="34.0" />
