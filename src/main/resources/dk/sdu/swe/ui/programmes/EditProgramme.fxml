@@ -19,7 +19,7 @@
             <VBox prefHeight="469.0" prefWidth="349.0">
                <children>
                   <JFXTextField prefHeight="50.0" prefWidth="309.0" promptText="Titel"
-                                style="-fx-border-color: #CCCCCC; -fx-border-radius: 5px;
+                                style="-fx-border-color: #cccccc; -fx-border-radius: 5px;
                                 -fx-padding: 0.333333em 1em 0.333333em 1em;
                                 -fx-background-color: transparent; -jfx-unfocus-color: transparent;
                                 -jfx-focus-color: transparent;">

@@ -9,7 +9,8 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox xmlns="http://javafx.com/javafx/15.0.1" fx:controller="dk.sdu.swe.controllers.CompanyController" xmlns:fx="http://javafx.com/fxml/1">
+<VBox xmlns="http://javafx.com/javafx/15.0.1" fx:controller="dk.sdu.swe.controllers.CompanyController"
+      xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <HBox>
          <children>
@@ -44,7 +45,8 @@
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </Label>
-                  <Label alignment="TOP_LEFT" layoutX="10.0" layoutY="55.0" prefHeight="49.0" prefWidth="132.0" text="NameDirektør">
+                  <Label alignment="TOP_LEFT" layoutX="10.0" layoutY="55.0" prefHeight="49.0"
+                         prefWidth="132.0" text="NameDirektør">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -73,7 +75,8 @@
             </VBox>
             <VBox alignment="CENTER">
                <children>
-                  <JFXButton alignment="CENTER" prefHeight="52.0" prefWidth="129.0" style="-fx-background-color: transparent;" text="Handlinger" textFill="#ff9800">
+                  <JFXButton alignment="CENTER" prefHeight="52.0" prefWidth="129.0"
+                             style="-fx-background-color: transparent;" text="Handlinger" textFill="#ff9800">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>

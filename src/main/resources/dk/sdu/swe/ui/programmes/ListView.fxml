@@ -11,13 +11,15 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1024.0" prefWidth="1440.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="1024.0" prefWidth="1440.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <top>
       <VBox prefHeight="366.0" prefWidth="1440.0" BorderPane.alignment="CENTER">
          <children>
             <fx:include source="../Nav.fxml" />
             <HBox style="-fx-background-color: #263238;" />
-            <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="178.0" prefWidth="1440.0" style="-fx-background-color: #E0E0E0;">
+            <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+                  prefHeight="178.0" prefWidth="1440.0" style="-fx-background-color: #E0E0E0;">
                <children>
                   <Label text="Programmer">
                      <font>
@@ -37,7 +39,8 @@
                   </Label>
                </children>
             </VBox>
-            <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="111.0" prefWidth="1440.0" style="-fx-background-color: #F5F5F5;">
+            <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="111.0" prefWidth="1440.0"
+                  style="-fx-background-color: #F5F5F5;">
                <children>
                   <VBox prefHeight="115.0" prefWidth="278.0">
                      <HBox.margin>
