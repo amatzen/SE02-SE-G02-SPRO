@@ -119,10 +119,11 @@
             <HBox prefHeight="66.0" prefWidth="1440.0" style="-fx-background-color: #CFD8DC;">
                <children>
                   <Label prefHeight="24.0" prefWidth="94.0" text="Programtitel" translateX="41.0" translateY="20.0" />
-                  <Label layoutX="10.0" layoutY="10.0" prefHeight="66.0" prefWidth="64.0" text="Kategori" translateX="672.0" />
-                  <Label layoutX="10.0" layoutY="10.0" prefHeight="66.0" prefWidth="92.0" text="Produktionsår" translateX="372.0" />
-                  <Label prefHeight="66.0" prefWidth="92.0" text="Kanal(er)" translateX="85.0" />
+                  <Label layoutX="10.0" layoutY="10.0" prefHeight="66.0" prefWidth="64.0" text="Kategori" translateX="726.0" />
+                  <Label layoutX="10.0" layoutY="10.0" prefHeight="66.0" prefWidth="92.0" text="Produktionsår" translateX="386.0" />
+                  <Label prefHeight="66.0" prefWidth="92.0" text="Kanal(er)" translateX="99.0" />
                </children></HBox>
+            <fx:include source="programViewBar.fxml" />
          </children>
       </VBox>
    </center>
