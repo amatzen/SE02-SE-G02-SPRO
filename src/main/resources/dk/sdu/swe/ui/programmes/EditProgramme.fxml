@@ -8,30 +8,49 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="469.0" prefWidth="698.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dk.sdu.swe.ui.programmes.EditProgramme">
+<BorderPane prefHeight="469.0" prefWidth="698.0" xmlns="http://javafx.com/javafx/15.0.1"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="dk.sdu.swe.ui.programmes.EditProgramme">
    <center>
       <HBox prefHeight="100.0" prefWidth="698.0" BorderPane.alignment="CENTER">
          <children>
             <VBox prefHeight="469.0" prefWidth="349.0">
                <children>
-                  <JFXTextField prefHeight="35.0" prefWidth="319.0" style="-fx-border-color: #CCCCCC; -fx-border-radius: 5px; -fx-padding: 0.333333em 1em 0.333333em 1em; -fx-background-color: transparent; -jfx-focus-color: #fffff;" text="Titel">
+                  <JFXTextField prefHeight="50.0" prefWidth="309.0" promptText="Titel"
+                                style="-fx-border-color: #CCCCCC; -fx-border-radius: 5px;
+                                -fx-padding: 0.333333em 1em 0.333333em 1em;
+                                -fx-background-color: transparent; -jfx-unfocus-color: transparent;
+                                -jfx-focus-color: transparent;">
+                     <VBox.margin>
+                        <Insets left="30.0" right="10.0" top="30.0" />
+                     </VBox.margin>
+                  </JFXTextField>
+                  <JFXTextField layoutX="10.0" layoutY="10.0" prefHeight="49.0" prefWidth="309.0"
+                                promptText="Produktionsår" style="-fx-background-color: transparent;
+                                -fx-border-color: #CCCCCC;
+                                -fx-padding: 0.333333em 1em 0.333333em 1em; -jfx-unfocus-color: transparent;
+                                -fx-border-radius: 5px; -jfx-focus-color: transparent;">
                      <VBox.margin>
                         <Insets left="30.0" right="10.0" top="10.0" />
                      </VBox.margin>
                   </JFXTextField>
-                  <JFXTextField layoutX="10.0" layoutY="10.0" prefHeight="35.0" prefWidth="319.0" text="Produktionsår">
-                     <VBox.margin>
-                        <Insets left="30.0" right="10.0" top="10.0" />
-                     </VBox.margin>
-                  </JFXTextField>
-                  <JFXTextField layoutX="10.0" layoutY="35.0" prefHeight="35.0" prefWidth="319.0" text="Kategori">
+                  <JFXTextField layoutX="40.0" layoutY="65.0" prefHeight="50.0" prefWidth="309.0"
+                                promptText="Kategori" style="-fx-background-color: transparent;
+                                -fx-border-color: #CCCCCC;
+                                -fx-padding: 0.333333em 1em 0.333333em 1em; -jfx-unfocus-color: transparent;
+                                -fx-border-radius: 5px; -jfx-focus-color: transparent;">
                      <VBox.margin>
                         <Insets left="30.0" right="10.0" top="50.0" />
                      </VBox.margin>
                   </JFXTextField>
-                  <JFXTextField layoutX="10.0" layoutY="60.0" prefHeight="35.0" prefWidth="319.0" text="Produktionsselskab">
+                  <JFXTextField layoutX="40.0" layoutY="150.0" prefHeight="50.0" prefWidth="309.0"
+                                promptText="Produktionsselskab" style="-fx-background-color: transparent;
+                                -fx-border-color: #CCCCCC;
+                                -fx-padding: 0.333333em 1em 0.333333em 1em;
+                                -jfx-unfocus-color: transparent;
+                                -fx-border-radius: 5px; -jfx-focus-color: transparent;">
                      <VBox.margin>
                         <Insets left="30.0" right="10.0" top="10.0" />
                      </VBox.margin>
@@ -42,13 +61,37 @@
                <children>
                   <VBox prefHeight="200.0" prefWidth="100.0" spacing="10.0">
                      <children>
-                        <JFXRadioButton text="TV 2" />
-                        <JFXRadioButton layoutX="10.0" layoutY="10.0" text="TV 2 Charlie" />
-                        <JFXRadioButton layoutX="10.0" layoutY="199.0" text="TV 2 Fri" />
-                        <JFXRadioButton layoutX="10.0" layoutY="226.0" text="TV 2 News" />
-                        <JFXRadioButton layoutX="10.0" layoutY="199.0" text="TV 2 Zulu" />
-                        <JFXRadioButton layoutX="10.0" layoutY="199.0" text="TV 2 Sport" />
-                        <JFXRadioButton layoutX="10.0" layoutY="226.0" text="TV 2 Sport X" />
+                        <JFXRadioButton text="TV 2">
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                           <selectedColor>
+                              <Color red="1.0" green="0.5960784554481506" />
+                           </selectedColor></JFXRadioButton>
+                        <JFXRadioButton layoutX="10.0" layoutY="10.0" text="TV 2 Charlie">
+                           <selectedColor>
+                              <Color red="1.0" green="0.5960784554481506" />
+                           </selectedColor></JFXRadioButton>
+                        <JFXRadioButton layoutX="10.0" layoutY="199.0" text="TV 2 Fri">
+                           <selectedColor>
+                              <Color red="1.0" green="0.5960784554481506" />
+                           </selectedColor></JFXRadioButton>
+                        <JFXRadioButton layoutX="10.0" layoutY="226.0" text="TV 2 News">
+                           <selectedColor>
+                              <Color red="1.0" green="0.5960784554481506" />
+                           </selectedColor></JFXRadioButton>
+                        <JFXRadioButton layoutX="10.0" layoutY="199.0" text="TV 2 Zulu">
+                           <selectedColor>
+                              <Color red="1.0" green="0.5960784554481506" />
+                           </selectedColor></JFXRadioButton>
+                        <JFXRadioButton layoutX="10.0" layoutY="199.0" text="TV 2 Sport">
+                           <selectedColor>
+                              <Color red="1.0" green="0.5960784554481506" />
+                           </selectedColor></JFXRadioButton>
+                        <JFXRadioButton layoutX="10.0" layoutY="226.0" text="TV 2 Sport X">
+                           <selectedColor>
+                              <Color red="1.0" green="0.5960784554481506" />
+                           </selectedColor></JFXRadioButton>
                      </children>
                      <VBox.margin>
                         <Insets left="50.0" top="20.0" />
@@ -56,7 +99,8 @@
                   </VBox>
                   <HBox alignment="BOTTOM_RIGHT" layoutX="10.0" layoutY="250.0" prefHeight="169.0" prefWidth="349.0">
                      <children>
-                        <JFXButton prefHeight="34.0" prefWidth="71.0" style="-fx-background-color: #FF9800;" text="Gem" textAlignment="RIGHT" textFill="WHITE">
+                        <JFXButton prefHeight="39.0" prefWidth="78.0" style="-fx-background-color: #FF9800;"
+                                   text="Gem" textAlignment="RIGHT" textFill="WHITE">
                            <HBox.margin>
                               <Insets bottom="30.0" right="30.0" />
                            </HBox.margin>
@@ -69,7 +113,7 @@
       </HBox>
    </center>
    <top>
-      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #FF9800;" BorderPane.alignment="CENTER">
          <children>
             <Label text="Redigér program:">
                <font>
