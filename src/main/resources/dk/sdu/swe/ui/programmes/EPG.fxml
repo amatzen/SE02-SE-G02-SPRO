@@ -125,7 +125,7 @@
    <center>
       <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
-            <HBox prefHeight="66.0" prefWidth="1192.0" style="-fx-background-color: #CFD8DC;" />
+            <fx:include source="EPG-bar.fxml" />
          </children>
       </VBox>
    </center>
