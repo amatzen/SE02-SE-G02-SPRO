@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="147.0" prefWidth="1193.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox prefHeight="25.0" prefWidth="1193.0">
+         <children>
+            <Separator prefHeight="0.0" prefWidth="1192.0">
+               <HBox.margin>
+                  <Insets left="45.0" right="45.0" top="15.0" />
+               </HBox.margin>
+            </Separator>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="119.0" prefWidth="1192.0" spacing="10.0">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="1037.0" style="-fx-background-color: #ededed;">
+               <children>
+                  <VBox prefHeight="119.0" prefWidth="337.0">
+                     <children>
+                        <HBox prefHeight="47.0" prefWidth="337.0">
+                           <children>
+                              <Label prefHeight="47.0" prefWidth="106.0" text="Ændring på:">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="15.0" top="5.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <Label prefHeight="47.0" prefWidth="234.0" text="Program_her">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets top="5.0" />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <VBox prefHeight="73.0" prefWidth="337.0">
+                           <VBox.margin>
+                              <Insets left="15.0" />
+                           </VBox.margin>
+                           <children>
+                              <JFXTextArea focusColor="#405aa800" prefHeight="69.0" prefWidth="322.0" text="Beskrivelse her&#10;">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </JFXTextArea>
+                           </children>
+                        </VBox>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="119.0" prefWidth="383.0">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <Label text="Foretaget af">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                                 <HBox.margin>
+                                    <Insets left="20.0" />
+                                 </HBox.margin>
+                              </ImageView>
+                              <VBox alignment="CENTER" prefHeight="100.0" prefWidth="197.0">
+                                 <HBox.margin>
+                                    <Insets left="20.0" />
+                                 </HBox.margin>
+                                 <children>
+                                    <Label prefHeight="30.0" prefWidth="199.0" text="Navn">
+                                       <font>
+                                          <Font name="System Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label prefHeight="21.0" prefWidth="199.0" text="Virksomhed">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="119.0" prefWidth="308.0">
+                     <children>
+                        <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <JFXButton prefHeight="46.0" prefWidth="113.0" ripplerFill="WHITE" style="-jfx-button-type: RAISED; -fx-background-color: #ffa500;" text="GODKEND" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXButton layoutX="10.0" layoutY="10.0" prefHeight="46.0" prefWidth="90.0" ripplerFill="#9a8c8c" text="AFVIS" textFill="#6b6b6b">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </JFXButton>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+               <effect>
+                  <DropShadow offsetY="5.0">
+                     <color>
+                        <Color opacity="0.643478274345398" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </HBox>
+         </children>
+      </HBox>
+   </children>
+</VBox>
