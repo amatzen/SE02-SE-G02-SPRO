@@ -5,7 +5,7 @@ autonumber
 
 box "Håndtér kreditering (UC03)"
     participant ":Producer" as producer
-    participant ":AuthController" as authController
+    participant ":AuthController" as authController <<Control>>
     participant ":DB" as db
 end box
 
