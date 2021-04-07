@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.effect.DropShadow?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.FlowPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="725.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="725.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <top>
       <VBox BorderPane.alignment="CENTER">
          <children>
@@ -39,7 +36,7 @@
    <center>
       <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
-            <Label text="Rolle">
+            <Label text="Bidragydere">
                <VBox.margin>
                   <Insets left="50.0" top="50.0" />
                </VBox.margin>
@@ -47,7 +44,7 @@
                   <Font size="36.0" />
                </font>
             </Label>
-            <FlowPane alignment="TOP_CENTER" hgap="30.0" prefHeight="200.0" prefWidth="200.0" vgap="30.0">
+            <FlowPane alignment="BOTTOM_LEFT" columnHalignment="CENTER" hgap="25.0" prefHeight="200.0" prefWidth="200.0" vgap="50.0">
                <children>
                   <HBox prefWidth="200.0" style="-fx-background-color: #ededed;">
                      <children>
@@ -66,7 +63,7 @@
                                     <Insets left="25.0" top="15.0" />
                                  </VBox.margin>
                               </Label>
-                              <Label text="&quot;Navn&quot;">
+                              <Label text="Rolle">
                                  <VBox.margin>
                                     <Insets left="25.0" top="20.0" />
                                  </VBox.margin>
@@ -98,7 +95,7 @@
                                     <Insets left="25.0" top="15.0" />
                                  </VBox.margin>
                               </Label>
-                              <Label text="&quot;Navn&quot;">
+                              <Label text="Rolle">
                                  <VBox.margin>
                                     <Insets left="25.0" top="20.0" />
                                  </VBox.margin>
@@ -130,7 +127,7 @@
                                     <Insets left="25.0" top="15.0" />
                                  </VBox.margin>
                               </Label>
-                              <Label text="&quot;Navn&quot;">
+                              <Label text="Rolle">
                                  <VBox.margin>
                                     <Insets left="25.0" top="20.0" />
                                  </VBox.margin>
@@ -162,7 +159,7 @@
                                     <Insets left="25.0" top="15.0" />
                                  </VBox.margin>
                               </Label>
-                              <Label text="&quot;Navn&quot;">
+                              <Label text="Rolle">
                                  <VBox.margin>
                                     <Insets left="25.0" top="20.0" />
                                  </VBox.margin>
@@ -194,7 +191,7 @@
                                     <Insets left="25.0" top="15.0" />
                                  </VBox.margin>
                               </Label>
-                              <Label text="&quot;Navn&quot;">
+                              <Label text="Rolle">
                                  <VBox.margin>
                                     <Insets left="25.0" top="20.0" />
                                  </VBox.margin>
@@ -226,7 +223,7 @@
                                     <Insets left="25.0" top="15.0" />
                                  </VBox.margin>
                               </Label>
-                              <Label text="&quot;Navn&quot;">
+                              <Label text="Rolle">
                                  <VBox.margin>
                                     <Insets left="25.0" top="20.0" />
                                  </VBox.margin>
@@ -258,7 +255,7 @@
                                     <Insets left="25.0" top="15.0" />
                                  </VBox.margin>
                               </Label>
-                              <Label text="&quot;Navn&quot;">
+                              <Label text="Rolle">
                                  <VBox.margin>
                                     <Insets left="25.0" top="20.0" />
                                  </VBox.margin>
@@ -290,7 +287,135 @@
                                     <Insets left="25.0" top="15.0" />
                                  </VBox.margin>
                               </Label>
-                              <Label text="&quot;Navn&quot;">
+                              <Label text="Rolle">
+                                 <VBox.margin>
+                                    <Insets left="25.0" top="20.0" />
+                                 </VBox.margin>
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </children>
+                     <effect>
+                        <DropShadow offsetY="5.0" />
+                     </effect>
+                  </HBox>
+                  <HBox prefWidth="200.0" style="-fx-background-color: #ededed;">
+                     <children>
+                        <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </ImageView>
+                        <VBox>
+                           <children>
+                              <Label text="Navn">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="25.0" top="15.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label text="Rolle">
+                                 <VBox.margin>
+                                    <Insets left="25.0" top="20.0" />
+                                 </VBox.margin>
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </children>
+                     <effect>
+                        <DropShadow offsetY="5.0" />
+                     </effect>
+                  </HBox>
+                  <HBox prefWidth="200.0" style="-fx-background-color: #ededed;">
+                     <children>
+                        <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </ImageView>
+                        <VBox>
+                           <children>
+                              <Label text="Navn">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="25.0" top="15.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label text="Rolle">
+                                 <VBox.margin>
+                                    <Insets left="25.0" top="20.0" />
+                                 </VBox.margin>
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </children>
+                     <effect>
+                        <DropShadow offsetY="5.0" />
+                     </effect>
+                  </HBox>
+                  <HBox prefWidth="200.0" style="-fx-background-color: #ededed;">
+                     <children>
+                        <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </ImageView>
+                        <VBox>
+                           <children>
+                              <Label text="Navn">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="25.0" top="15.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label text="Rolle">
+                                 <VBox.margin>
+                                    <Insets left="25.0" top="20.0" />
+                                 </VBox.margin>
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </children>
+                     <effect>
+                        <DropShadow offsetY="5.0" />
+                     </effect>
+                  </HBox>
+                  <HBox prefWidth="200.0" style="-fx-background-color: #ededed;">
+                     <children>
+                        <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </ImageView>
+                        <VBox>
+                           <children>
+                              <Label text="Navn">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="25.0" top="15.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label text="Rolle">
                                  <VBox.margin>
                                     <Insets left="25.0" top="20.0" />
                                  </VBox.margin>
@@ -307,7 +432,7 @@
                   </HBox>
                </children>
                <VBox.margin>
-                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                  <Insets left="50.0" top="25.0" />
                </VBox.margin>
             </FlowPane>
          </children>
