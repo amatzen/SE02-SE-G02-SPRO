@@ -1,28 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXRadioButton?>
-<?import com.jfoenix.controls.JFXTextField?>
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.paint.Color?>
-<?import javafx.scene.text.Font?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
 
-<BorderPane prefHeight="469.0" prefWidth="698.0" xmlns="http://javafx.com/javafx/15.0.1"
+<BorderPane prefHeight="469.0" prefWidth="698.0" xmlns="http://javafx.com/javafx/11.0.1"
             xmlns:fx="http://javafx.com/fxml/1" fx:controller="dk.sdu.swe.ui.programmes.EditProgramme">
    <center>
       <HBox prefHeight="100.0" prefWidth="698.0" BorderPane.alignment="CENTER">
          <children>
             <VBox prefHeight="469.0" prefWidth="349.0">
                <children>
-                  <JFXTextField prefHeight="50.0" prefWidth="309.0" promptText="Titel"
-                                style="-fx-border-color: #cccccc; -fx-border-radius: 5px;
-                                -fx-padding: 0.333333em 1em 0.333333em 1em;
-                                -fx-background-color: transparent; -jfx-unfocus-color: transparent;
-                                -jfx-focus-color: transparent;">
+                  <JFXTextField prefHeight="50.0" prefWidth="309.0" promptText="Titel" style="
+                  -fx-border-color: #cccccc; -fx-border-radius: 5px;
+                  -fx-padding: 0.333333em 1em 0.333333em 1em;
+                  -fx-background-color: transparent; -jfx-unfocus-color: transparent;
+                  -jfx-focus-color: transparent;">
                      <VBox.margin>
                         <Insets left="30.0" right="10.0" top="30.0" />
                      </VBox.margin>
@@ -50,7 +46,8 @@
                                 -fx-border-color: #CCCCCC;
                                 -fx-padding: 0.333333em 1em 0.333333em 1em;
                                 -jfx-unfocus-color: transparent;
-                                -fx-border-radius: 5px; -jfx-focus-color: transparent;">
+                                -fx-border-radius: 5px;
+                                -jfx-focus-color: transparent;">
                      <VBox.margin>
                         <Insets left="30.0" right="10.0" top="10.0" />
                      </VBox.margin>
@@ -99,7 +96,7 @@
                   </VBox>
                   <HBox alignment="BOTTOM_RIGHT" layoutX="10.0" layoutY="250.0" prefHeight="169.0" prefWidth="349.0">
                      <children>
-                        <JFXButton prefHeight="39.0" prefWidth="78.0" style="-fx-background-color: #FF9800;"
+                        <JFXButton prefHeight="35.0" prefWidth="78.0" style="-fx-background-color: #FF9800;"
                                    text="Gem" textAlignment="RIGHT" textFill="WHITE">
                            <HBox.margin>
                               <Insets bottom="30.0" right="30.0" />
