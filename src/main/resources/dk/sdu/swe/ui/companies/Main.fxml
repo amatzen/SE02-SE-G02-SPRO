@@ -8,7 +8,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1024.0" prefWidth="1440.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="1024.0" prefWidth="1440.0"
+            xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <left>
       <VBox prefHeight="1024.0" prefWidth="332.0" style="-fx-background-color: dbdbdb;" BorderPane.alignment="CENTER">
          <children>
@@ -26,7 +28,8 @@
                               <Insets right="50.0" />
                            </padding>
                         </JFXTextArea>
-                        <JFXButton prefHeight="32.0" prefWidth="63.0" style="-fx-background-color: orange;" text="Nulstil" textFill="WHITE">
+                        <JFXButton prefHeight="32.0" prefWidth="63.0"
+                                   style="-fx-background-color: orange;" text="Nulstil" textFill="WHITE">
                            <VBox.margin>
                               <Insets top="50.0" />
                            </VBox.margin>
@@ -74,7 +77,8 @@
    <bottom>
       <BorderPane prefHeight="61.0" prefWidth="1444.0" BorderPane.alignment="CENTER">
          <right>
-            <JFXButton buttonType="RAISED" prefHeight="37.0" prefWidth="47.0" style="-fx-background-color: orange;" text="+" textFill="WHITE" BorderPane.alignment="CENTER">
+            <JFXButton buttonType="RAISED" prefHeight="37.0" prefWidth="47.0"
+                       style="-fx-background-color: orange;" text="+" textFill="WHITE" BorderPane.alignment="CENTER">
                <BorderPane.margin>
                   <Insets bottom="50.0" right="50.0" />
                </BorderPane.margin>
@@ -84,7 +88,8 @@
             </JFXButton>
          </right>
          <left>
-            <VBox prefHeight="61.0" prefWidth="332.0" style="-fx-background-color: dbdbdb;" BorderPane.alignment="CENTER" />
+            <VBox prefHeight="61.0" prefWidth="332.0"
+                  style="-fx-background-color: dbdbdb;" BorderPane.alignment="CENTER" />
          </left>
       </BorderPane>
    </bottom>

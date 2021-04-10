@@ -13,7 +13,8 @@
 <?import javafx.scene.text.Font?>
 
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="147.0" prefWidth="1193.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="147.0"
+      prefWidth="1193.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <HBox prefHeight="25.0" prefWidth="1193.0">
          <children>
@@ -26,7 +27,8 @@
       </HBox>
       <HBox alignment="CENTER" prefHeight="119.0" prefWidth="1192.0" spacing="10.0">
          <children>
-            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="1037.0" style="-fx-background-color: #ededed;">
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="1037.0"
+                  style="-fx-background-color: #ededed;">
                <children>
                   <VBox prefHeight="119.0" prefWidth="337.0">
                      <children>
@@ -55,7 +57,8 @@
                               <Insets left="15.0" />
                            </VBox.margin>
                            <children>
-                              <JFXTextArea focusColor="#405aa800" prefHeight="69.0" prefWidth="322.0" text="Beskrivelse her&#10;">
+                              <JFXTextArea focusColor="#405aa800" prefHeight="69.0" prefWidth="322.0"
+                                           text="Beskrivelse her&#10;">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
@@ -103,12 +106,15 @@
                      <children>
                         <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
                            <children>
-                              <JFXButton prefHeight="46.0" prefWidth="113.0" ripplerFill="WHITE" style="-jfx-button-type: RAISED; -fx-background-color: #ffa500;" text="GODKEND" textFill="WHITE">
+                              <JFXButton prefHeight="46.0" prefWidth="113.0" ripplerFill="WHITE"
+                                         style="-jfx-button-type: RAISED; -fx-background-color: #ffa500;"
+                                         text="GODKEND" textFill="WHITE">
                                  <font>
                                     <Font name="System Bold" size="12.0" />
                                  </font>
                               </JFXButton>
-                              <JFXButton layoutX="10.0" layoutY="10.0" prefHeight="46.0" prefWidth="90.0" ripplerFill="#9a8c8c" text="AFVIS" textFill="#6b6b6b">
+                              <JFXButton layoutX="10.0" layoutY="10.0" prefHeight="46.0" prefWidth="90.0"
+                                         ripplerFill="#9a8c8c" text="AFVIS" textFill="#6b6b6b">
                                  <font>
                                     <Font name="System Bold" size="12.0" />
                                  </font>
