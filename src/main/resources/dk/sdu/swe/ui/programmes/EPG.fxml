@@ -125,6 +125,21 @@
       <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
             <fx:include source="EPG-bar.fxml" />
+            <HBox>
+               <children>
+                  <JFXButton style="-fx-background-color: #FF9800;" text="+" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="1125.0" />
+                     </HBox.margin>
+                  </JFXButton>
+               </children>
+               <VBox.margin>
+                  <Insets top="525.0" />
+               </VBox.margin>
+            </HBox>
          </children>
       </VBox>
    </center>
