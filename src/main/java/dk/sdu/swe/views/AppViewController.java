@@ -1,29 +1,25 @@
 package dk.sdu.swe.views;
 
-import dk.sdu.swe.views.partials.CompanyListItem;
-import dk.sdu.swe.views.partials.NavBar;
+import dk.sdu.swe.partials.Navbar;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.Pane;
 
-import java.net.URL;
 import java.util.ResourceBundle;
 
-public class AppViewController implements Initializable {
+public class AppViewController {
 
     @FXML
-    private VBox content;
+    private Pane navbarPane;
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
+    @FXML
+    private Pane contentPane;
 
+    @FXML
+    private ResourceBundle resources;
 
-        /*FXMLLoader loader = new FXMLLoader();
-        content.getChildren().add(loader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("dk/sdu/swe/ui/Nav.fxml"))));
-        loader = new FXMLLoader();
-        content.getChildren().add(loader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("dk/sdu/swe/ui/companies/Main.fxml"))));*/
-        content.getChildren().add(new NavBar());
-        content.getChildren().add(new CompanyListItem());
+    @FXML
+    public void initialize() {
+        navbarPane.getChildren().setAll(new Navbar(new Router(contentPane)));
     }
 
 }

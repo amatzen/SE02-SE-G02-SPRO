@@ -8,13 +8,10 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="1024.0" prefWidth="1440.0" xmlns="http://javafx.com/javafx/15.0.1"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="dk.sdu.swe.controllers.Admin">
-
+<fx:root type="BorderPane" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
     <top>
-        <VBox prefHeight="243.0" prefWidth="1440.0" style="-fx-background-color: #E0E0E0;" BorderPane.alignment="CENTER">
+        <VBox prefHeight="200.0" prefWidth="1440.0" style="-fx-background-color: #E0E0E0;" BorderPane.alignment="CENTER">
             <children>
-                <fx:include source="../Nav.fxml" />
                 <Label prefHeight="58.0" prefWidth="248.0" text="Admin">
                     <font>
                         <Font size="34.0" />
@@ -54,8 +51,7 @@
             </HBox>
             <HBox prefHeight="65.0" prefWidth="248.0">
                <children>
-                  <JFXButton alignment="BASELINE_LEFT" prefHeight="65.0" prefWidth="248.0"
-                             text="Brugerstyring" textFill="WHITE">
+                  <JFXButton alignment="BASELINE_LEFT" prefHeight="65.0" prefWidth="248.0" text="Brugerstyring" textFill="WHITE">
                      <font>
                         <Font size="16.0" />
                      </font>
@@ -67,9 +63,7 @@
             </HBox>
             <HBox prefHeight="65.0" prefWidth="248.0">
                <children>
-                  <JFXButton alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="65.0"
-
-                             prefWidth="248.0" text="Kreditteringsgrupper" textFill="WHITE">
+                  <JFXButton alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="248.0" text="Kreditteringsgrupper" textFill="WHITE">
                      <font>
                         <Font size="16.0" />
                      </font>
@@ -81,8 +75,7 @@
             </HBox>
             <HBox prefHeight="65.0" prefWidth="248.0">
                <children>
-                  <JFXButton alignment="BASELINE_LEFT" prefHeight="65.0" prefWidth="248.0" text="Dataeksport"
-                             textFill="WHITE">
+                  <JFXButton alignment="BASELINE_LEFT" prefHeight="65.0" prefWidth="248.0" text="Dataeksport" textFill="WHITE">
                      <font>
                         <Font size="16.0" />
                      </font>
@@ -112,4 +105,4 @@
             </HBox>
          </children></VBox>
    </center>
-</BorderPane>
+</fx:root>

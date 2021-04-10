@@ -1,4 +1,4 @@
-package dk.sdu.swe.views.partials;
+package dk.sdu.swe.partials;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXListView;
@@ -37,7 +37,6 @@ public class CompanyListItem extends VBox {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 
     @FXML

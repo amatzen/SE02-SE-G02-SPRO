@@ -1,16 +1,17 @@
-package dk.sdu.swe.views.partials;
+package dk.sdu.swe.views;
 
 import javafx.fxml.FXMLLoader;
+import javafx.scene.layout.BorderPane;
 
 import java.io.IOException;
 import java.util.Objects;
 
-public class ReviewItem {
+public class PersonsView extends BorderPane {
 
-    public ReviewItem() {
+    public PersonsView() {
         FXMLLoader fxmlLoader = new FXMLLoader(
                 Objects.requireNonNull(
-                        getClass().getClassLoader().getResource("dk/sdu/swe/ui/admin/components/review.fxml")));
+                        getClass().getClassLoader().getResource("dk/sdu/swe/ui/persons/persons.fxml")));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
 
