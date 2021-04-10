@@ -44,7 +44,7 @@ public class Navbar extends VBox {
 
     @FXML
     private void initialize() {
-        router.goTo(CompanyView.class);
+        router.goTo(ProgrammesView.class);
     }
 
     @FXML

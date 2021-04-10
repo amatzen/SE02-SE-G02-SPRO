@@ -38,7 +38,7 @@ public class Application extends javafx.application.Application {
     public void start(Stage stage) throws Exception {
         stage.setTitle("CrMS");
 
-        SceneNavigator.bind(this, stage, "CrMS", 720, 420);
+        SceneNavigator.bind(this, stage, "CrMS", 1200, 800);
         SceneNavigator.when("login", "dk/sdu/swe/ui/auth/auth-login.fxml");
         SceneNavigator.when("crms", "dk/sdu/swe/ui/App.fxml");
 
