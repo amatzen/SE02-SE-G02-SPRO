@@ -9,8 +9,8 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="dk.sdu.swe.views.ProgrammesViewController">
+<VBox xmlns="http://javafx.com/javafx/15.0.1" fx:controller="dk.sdu.swe.controllers.CompanyController"
+      xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <HBox>
          <children>

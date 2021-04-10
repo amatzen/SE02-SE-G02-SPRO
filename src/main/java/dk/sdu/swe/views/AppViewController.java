@@ -20,7 +20,7 @@ public class AppViewController implements Initializable {
         /*FXMLLoader loader = new FXMLLoader();
         content.getChildren().add(loader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("dk/sdu/swe/ui/Nav.fxml"))));
         loader = new FXMLLoader();
-        content.getChildren().add(loader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("dk/sdu/swe/ui/companies/Company.fxml"))));*/
+        content.getChildren().add(loader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("dk/sdu/swe/ui/companies/Main.fxml"))));*/
         content.getChildren().add(new CompanyItem());
     }
 
