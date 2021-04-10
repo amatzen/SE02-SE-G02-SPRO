@@ -2,7 +2,6 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXComboBox?>
-<?import com.jfoenix.controls.JFXDatePicker?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
@@ -11,15 +10,13 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-            prefHeight="1024.0" prefWidth="1440.0" xmlns="http://javafx.com/javafx/15.0.1"
-            xmlns:fx="http://javafx.com/fxml/1">
+<?import com.jfoenix.controls.JFXDatePicker?>
+<fx:root type="BorderPane" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <top>
       <VBox prefHeight="366.0" prefWidth="1440.0" BorderPane.alignment="CENTER">
          <children>
-            <fx:include source="../Nav.fxml" />
             <VBox />
-            <VBox prefHeight="178.0" prefWidth="1440.0" style="-fx-background-color: #E0E0E0;">
+            <VBox prefHeight="200.0" prefWidth="1440.0" style="-fx-background-color: #E0E0E0;">
                <children>
                   <Label text="Programmer">
                      <font>
@@ -115,11 +112,11 @@
          <children>
             <HBox prefHeight="66.0" prefWidth="200.0" style="-fx-background-color: #F5F5F5;">
                <children>
-                  <JFXDatePicker defaultColor="#ff9800" showWeekNumbers="true">
+                  <!--<JFXDatePicker defaultColor="#ff9800" showWeekNumbers="true">
                      <HBox.margin>
                         <Insets left="40.0" top="15.0" />
                      </HBox.margin>
-                  </JFXDatePicker>
+                  </JFXDatePicker>-->
                </children>
             </HBox>
          </children></VBox>
@@ -131,4 +128,4 @@
          </children>
       </VBox>
    </center>
-</BorderPane>
+</fx:root>
