@@ -1,6 +1,7 @@
 package dk.sdu.swe;
 
 import dk.sdu.swe.controllers.AuthController;
+import dk.sdu.swe.views.SceneNavigator;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -37,13 +38,19 @@ public class Application extends javafx.application.Application {
     public void start(Stage stage) throws Exception {
         stage.setTitle("CrMS");
 
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("dk/sdu/swe/ui/App.fxml")));
+        SceneNavigator.bind(this, stage, "CrMS", 720, 420);
+        SceneNavigator.when("login", "dk/sdu/swe/ui/auth/auth-login.fxml");
+        SceneNavigator.when("crms", "dk/sdu/swe/ui/App.fxml");
+
+        SceneNavigator.goTo("login");
+
+        /*Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("dk/sdu/swe/ui/App.fxml")));
         Scene scene = new Scene(root);
 
         //scene.getStylesheets().add(getClass().getResource("ui/assets/style.css").toString());
 
         stage.setScene(scene);
-        stage.show();
+        stage.show();*/
 
     }
 }
