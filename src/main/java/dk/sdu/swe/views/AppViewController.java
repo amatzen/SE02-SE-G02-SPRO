@@ -1,6 +1,7 @@
 package dk.sdu.swe.views;
 
-import dk.sdu.swe.views.partials.CompanyItem;
+import dk.sdu.swe.views.partials.CompanyListItem;
+import dk.sdu.swe.views.partials.NavBar;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.layout.VBox;
@@ -21,7 +22,8 @@ public class AppViewController implements Initializable {
         content.getChildren().add(loader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("dk/sdu/swe/ui/Nav.fxml"))));
         loader = new FXMLLoader();
         content.getChildren().add(loader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("dk/sdu/swe/ui/companies/Main.fxml"))));*/
-        content.getChildren().add(new CompanyItem());
+        content.getChildren().add(new NavBar());
+        content.getChildren().add(new CompanyListItem());
     }
 
 }
