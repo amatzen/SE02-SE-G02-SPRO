@@ -2,6 +2,7 @@ package dk.sdu.swe.views;
 
 import com.jfoenix.controls.JFXListView;
 import dk.sdu.swe.partials.CompanyListItem;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.BorderPane;
@@ -30,9 +31,11 @@ public class CompanyView extends BorderPane {
 
     @FXML
     private void initialize() {
-        for (int i = 0; i < 16; i++) {
-            companyListView.getItems().add(new CompanyListItem());
-        }
+        Platform.runLater(() -> {
+            for (int i = 0; i < 16; i++) {
+                companyListView.getItems().add(new CompanyListItem());
+            }
+        });
     }
 
 }
