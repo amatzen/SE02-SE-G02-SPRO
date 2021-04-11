@@ -42,7 +42,7 @@ public class Application extends javafx.application.Application {
         SceneNavigator.when("login", "dk/sdu/swe/ui/auth/auth-login.fxml");
         SceneNavigator.when("crms", "dk/sdu/swe/ui/App.fxml");
 
-        SceneNavigator.goTo("login");
+        SceneNavigator.goTo("login", true);
 
         /*Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("dk/sdu/swe/ui/App.fxml")));
         Scene scene = new Scene(root);
