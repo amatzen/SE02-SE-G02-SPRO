@@ -49,9 +49,10 @@ public class Navbar extends VBox {
     private void initialize() {
         router.goTo(ProgrammesViewController.class);
 
-        JFXButton[] btns = {progBtn,companyBtn,pplBtn,adminBtn,profileBtn};
+        JFXButton[] btns = {progBtn,companyBtn,pplBtn,adminBtn};
         for (JFXButton btn : btns) {
             btn.setVisible(false);
+            btn.setManaged(false);
         }
 
         (new HashMap<JFXButton, String>(Map.of(
@@ -62,13 +63,11 @@ public class Navbar extends VBox {
         ))).forEach((btn, perm) -> {
             if(AuthController.getInstance().getUser().hasPermission(perm)) {
                 btn.setVisible(true);
+                btn.setManaged(true);
             }
         });
 
-        profileBtn.setVisible(true);
-
         profileBtn.setText(AuthController.getInstance().getUser().getName().toString());
-
     }
 
     @FXML
