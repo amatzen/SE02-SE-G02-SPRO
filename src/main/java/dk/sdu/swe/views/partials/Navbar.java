@@ -24,8 +24,9 @@ public class Navbar extends VBox {
     private ImageView pfpImgView;
 
     private Map<String, Runnable> profileBtnOptions = Map.of(
-            "Log out", () -> {
+            "Log ud", () -> {
                 try {
+                    AuthController.getInstance().logout();  
                     SceneNavigator.goTo("login", true);
                 } catch (IOException ioException) {
                     ioException.printStackTrace();
