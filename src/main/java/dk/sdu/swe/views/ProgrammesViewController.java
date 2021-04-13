@@ -12,7 +12,7 @@ public class ProgrammesViewController extends BorderPane {
 
         FXMLLoader fxmlLoader = new FXMLLoader(
                 Objects.requireNonNull(
-                        getClass().getClassLoader().getResource("dk/sdu/swe/ui/programmes/EPG.fxml")));
+                        getClass().getClassLoader().getResource("dk/sdu/swe/ui/programmes/ListView.fxml")));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
 
