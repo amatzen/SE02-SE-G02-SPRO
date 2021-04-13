@@ -1,0 +1,48 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+autonumber
+
+box Se kreditering (UC01)
+    participant ":Producer" as producer
+    participant ":ProgramController" as programController <<Control>>
+    participant ":EPG-system" as epg <<Entity>>
+    participant ":DB" as db <<Entity>>
+    participant ":Program" as program <<Entity>>
+    participant ":Credit" as credit <<Entity>>
+    participant ":CreditModal" as creditModal <<Entity>>
+end box
+
+producer -> programController : showPrograms()
+programController -> epg : getPrograms()
+programController <-- epg : Programs
+producer <-- programController : Programs
+
+opt Filtrér krediteringer (UC02)
+    producer -> programController : search(query)
+    programController -> db : getProgramsWithCreditsLike(query)
+    loop for each query result
+        db -> program : <<create(query data)>>
+        db <-- program : Insert program in list
+    end
+    programController <-- db : Programs
+    producer <-- programController : Programs
+end
+
+producer -> programController : showCredits(program)
+programController -> db : getCredits(program)
+loop for each program credit
+db -> credit : <<create(credit data)>>
+db <-- credit : Insert credit in list
+end
+programController <-- db : Program getCredits
+producer <-- programController : Program creditss
+
+producer -> programController : showCredit(credit)
+programController -> creditModal : <<create(credit)>>
+programController <-- creditModal
+producer <-- programController : Credit information
+
+@enduml

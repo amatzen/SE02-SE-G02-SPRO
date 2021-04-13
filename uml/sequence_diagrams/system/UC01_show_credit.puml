@@ -1,0 +1,28 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+box Se kreditering (UC01)
+    participant ":Producer" as producer
+    participant ":System" as system
+    participant ":EPG-system" as epg
+end box
+
+producer -> system : showPrograms()
+system -> epg : getPrograms()
+system <-- epg : Programs
+producer <-- system : Programs
+
+opt Filtrér krediteringer (UC02)
+    producer -> system : search()
+    producer <-- system : Matching programs
+end
+
+producer -> system : showCredits(program)
+producer <-- system : Credits
+
+producer -> system : showCredit(credit)
+producer <-- system : Credit information
+
+@enduml
