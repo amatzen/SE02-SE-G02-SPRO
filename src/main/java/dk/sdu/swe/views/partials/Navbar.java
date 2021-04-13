@@ -14,6 +14,8 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 public class Navbar extends VBox {
@@ -46,6 +48,24 @@ public class Navbar extends VBox {
     @FXML
     private void initialize() {
         router.goTo(ProgrammesViewController.class);
+
+        JFXButton[] btns = {progBtn,companyBtn,pplBtn,adminBtn,profileBtn};
+        for (JFXButton btn : btns) {
+            btn.setVisible(false);
+        }
+
+        (new HashMap<JFXButton, String>(Map.of(
+            progBtn, "programmes",
+            companyBtn, "companies",
+            pplBtn, "people",
+            adminBtn, "admin"
+        ))).forEach((btn, perm) -> {
+            if(AuthController.getInstance().getUser().hasPermission(perm)) {
+                btn.setVisible(true);
+            }
+        });
+
+        profileBtn.setVisible(true);
 
         profileBtn.setText(AuthController.getInstance().getUser().getName().toString());
 
