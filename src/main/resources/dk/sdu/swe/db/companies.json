@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "name": "Nordisk Film",
+    "companyDetails": {
+      "country": "DK",
+      "lei": "529900PMO5IBS8IO2N04",
+      "nbr": "10413494"
+    },
+    "subsidiaryOf": 2,
+    "logo": "http://www.logo-designer.co/wp-content/uploads/2020/07/2020-banjay-new-logo-design-by-moving-brands-2.png"
+  },
+  {
+    "id": 2,
+    "name": "Banijay",
+    "companyDetails": {
+      "country": "FR",
+      "lei": "969500TVFVKI682L1144",
+      "nbr": "499797041"
+    },
+    "logo": "http://www.logo-designer.co/wp-content/uploads/2020/07/2020-banjay-new-logo-design-by-moving-brands-2.png"
+  }
+]
