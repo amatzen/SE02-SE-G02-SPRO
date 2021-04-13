@@ -1,0 +1,20 @@
+name: Validate JSON
+
+on:
+  pull_request:
+    branches:
+      - master
+  push:
+    branches:
+      - master
+
+jobs:
+  json:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Validate JSON
+        uses: OrRosenblatt/validate-json-action@0.1.0
+        env:
+          INPUT_SCHEMA: ./schema.default.json
+          INPUT_JSONS: ./src/main/resources/dk/sdu/swe/db/users.json,./src/main/resources/dk/sdu/swe/db/credits.json,./src/main/resources/dk/sdu/swe/db/programmes.json
