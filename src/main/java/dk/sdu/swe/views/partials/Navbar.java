@@ -1,6 +1,7 @@
 package dk.sdu.swe.views.partials;
 
 import com.jfoenix.controls.JFXButton;
+import dk.sdu.swe.controllers.AuthController;
 import dk.sdu.swe.views.Router;
 import dk.sdu.swe.views.AdminViewController;
 import dk.sdu.swe.views.CompanyViewController;
@@ -45,6 +46,9 @@ public class Navbar extends VBox {
     @FXML
     private void initialize() {
         router.goTo(ProgrammesViewController.class);
+
+        profileBtn.setText(AuthController.getInstance().getUser().getName().toString());
+
     }
 
     @FXML
