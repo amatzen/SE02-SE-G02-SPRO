@@ -6,12 +6,12 @@
 
 <HBox alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" prefHeight="66.0" prefWidth="1192.0" style="-fx-background-color: #CFD8DC;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <JFXButton prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: #424242;" text="EPG" textFill="WHITE">
+      <JFXButton prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: #ffffff;" text="Liste">
          <HBox.margin>
             <Insets />
          </HBox.margin>
       </JFXButton>
-      <JFXButton prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: #ffffff;" text="Liste">
+      <JFXButton prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: #424242;" text="EPG" textFill="WHITE">
          <HBox.margin>
             <Insets />
          </HBox.margin>
