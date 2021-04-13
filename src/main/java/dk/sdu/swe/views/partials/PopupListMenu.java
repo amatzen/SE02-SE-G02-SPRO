@@ -27,6 +27,7 @@ public class PopupListMenu extends JFXPopup {
         listView.setOnMouseClicked(e -> {
             Label label = listView.getSelectionModel().getSelectedItem();
             if (label != null) {
+                this.hide();
                 this.options.get(label).run();
             }
         });

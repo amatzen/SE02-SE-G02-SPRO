@@ -10,12 +10,12 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<fx:root type="BorderPane" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root prefHeight="1024.0" type="BorderPane" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
    <top>
       <VBox prefHeight="366.0" prefWidth="1440.0" BorderPane.alignment="CENTER">
          <children>
             <HBox style="-fx-background-color: #263238;" />
-            <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="1440.0" style="-fx-background-color: #E0E0E0;">
+            <VBox maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="1440.0" style="-fx-background-color: #E0E0E0;">
                <children>
                   <Label text="Programmer">
                      <font>
@@ -65,7 +65,7 @@
                         </Label>
                         <JFXComboBox>
                            <VBox.margin>
-                              <Insets top="10.0" />
+                              <Insets top="15.0" />
                            </VBox.margin>
                         </JFXComboBox>
                      </children>
@@ -85,7 +85,7 @@
                         </Label>
                         <JFXComboBox>
                            <VBox.margin>
-                              <Insets top="10.0" />
+                              <Insets top="15.0" />
                            </VBox.margin>
                         </JFXComboBox>
                      </children>
@@ -100,7 +100,7 @@
                   </JFXDatePicker>-->
                   <JFXButton style="-fx-background-color: #FF9800;" text="Nulstil" textFill="WHITE">
                      <HBox.margin>
-                        <Insets left="125.0" top="45.0" />
+                        <Insets left="75.0" top="45.0" />
                      </HBox.margin>
                      <font>
                         <Font size="18.0" />

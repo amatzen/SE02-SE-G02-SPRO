@@ -1,0 +1,18 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+box "Håndtér kreditering (UC03)"
+    participant ":Producer" as producer
+    participant ":System" as system
+end box
+
+producer -> system : signIn(username, password)
+producer <-- system : Authentication response
+
+producer -> system : deleteProgram(program)
+system -> system : deleteProgram(program)
+producer <-- system : Success
+
+@enduml
