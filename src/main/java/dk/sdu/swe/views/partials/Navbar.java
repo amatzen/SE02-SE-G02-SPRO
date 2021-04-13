@@ -1,12 +1,9 @@
 package dk.sdu.swe.views.partials;
 
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXPopup;
 import dk.sdu.swe.controllers.AuthController;
-import dk.sdu.swe.views.Router;
-import dk.sdu.swe.views.AdminViewController;
-import dk.sdu.swe.views.CompanyViewController;
-import dk.sdu.swe.views.PersonsViewController;
-import dk.sdu.swe.views.ProgrammesViewController;
+import dk.sdu.swe.views.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -25,6 +22,15 @@ public class Navbar extends VBox {
 
     @FXML
     private ImageView pfpImgView;
+
+    private Map<String, Runnable> profileBtnOptions = Map.of(
+            "Log out", () -> {
+                try {
+                    SceneNavigator.goTo("login", true);
+                } catch (IOException ioException) {
+                    ioException.printStackTrace();
+                }
+            });
 
     private Router router;
 
@@ -83,7 +89,8 @@ public class Navbar extends VBox {
         } else if (source == adminBtn) {
             router.goTo(AdminViewController.class);
         } else if (source == profileBtn) {
-
+            JFXPopup popupListMenu = new PopupListMenu(profileBtnOptions);
+            popupListMenu.show(profileBtn, JFXPopup.PopupVPosition.BOTTOM, JFXPopup.PopupHPosition.RIGHT);
         }
 
     }
