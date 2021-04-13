@@ -32,7 +32,7 @@
       "_combined": "Daniel Bahrami"
     },
     "email": "dabah20@student.sdu.dk",
-    "password": "$2y$12$/4BemQnIRCgC3wjTB9g9eum.EFKzspENG7Kmwj94oxBUBfz0T3876",
+    "password": "$2y$12$dbTsaYJwmlWvGEs2zEmU2uCssRYTeyRq2./scFUj7DkhK3Kf4HNKa",
     "permission": "CompanyAdministrator"
   },
   {
@@ -44,7 +44,7 @@
       "_combined": "Jasan Farah"
     },
     "email": "jasan@jasan.dk",
-    "password": "$2y$12$M8Z6.QtWqmkwmgoD0PM7S.xN7RsqkvJ3kG7piuu7j1ZMpVvFPiVLG",
+    "password": "$2y$12$LM6LIsQqqfyLalIGOag3ZOO27mSuXek6F6o/52TvVSJNcDYLVCzd6",
     "permission": "CompanyAdministrator"
   },
   {
@@ -57,7 +57,7 @@
     },
     "email": "bekut20@student.sdu.dk",
     "password": "$2y$12$Tzpx8HEesoxlG2lvi65jfOw.GDoYlPE8OvWqCSEOSGcmGGM9d3D9W",
-    "permission": "CompanyAdministrator"
+    "permission": "SystemAdministrator"
   },
   {
     "id": 7,
