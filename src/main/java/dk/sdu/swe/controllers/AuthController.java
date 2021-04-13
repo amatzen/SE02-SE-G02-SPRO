@@ -63,6 +63,10 @@ public class AuthController {
 
     }
 
+    public void logout() {
+        this.currentUser = null;
+    }
+
     public User getUser() {
         return this.currentUser;
     }
