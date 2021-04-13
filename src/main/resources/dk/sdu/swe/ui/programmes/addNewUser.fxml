@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 
 <BorderPane prefHeight="469.0" prefWidth="698.0" xmlns="http://javafx.com/javafx/15.0.1"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="dk.sdu.swe.ui.programmes.EditProgramme">
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="dk.sdu.swe.views.ProgrammesViewController">
    <center>
       <HBox prefHeight="100.0" prefWidth="698.0" BorderPane.alignment="CENTER">
          <children>

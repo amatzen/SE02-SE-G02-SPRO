@@ -42,8 +42,7 @@ public final class SceneNavigator {
 
     // FXRouter Singleton
     private static SceneNavigator router;
-    // FXRouter Main Class reference to get main package
-    private static Object mainRef;
+
     // FXRouter Application Stage reference to set scenes
     private static Stage window;
 
@@ -118,42 +117,38 @@ public final class SceneNavigator {
      */
     private SceneNavigator() {}
 
-    public static void bind(Object ref, Stage win) {
-        checkInstances(ref, win);
+    public static void bind(Stage win) {
+        checkInstances(win);
     }
 
-    public static void bind(Object ref, Stage win, String winTitle) {
-        checkInstances(ref, win);
+    public static void bind(Stage win, String winTitle) {
+        checkInstances(win);
         windowTitle = winTitle;
     }
 
-    public static void bind(Object ref, Stage win, double winWidth, double winHeight) {
-        checkInstances(ref, win);
+    public static void bind(Stage win, double winWidth, double winHeight) {
+        checkInstances(win);
         windowWidth = winWidth;
         windowHeight = winHeight;
     }
 
     /** FXRouter binder with Application Stage and main package
-     * @param ref: Main Class reference
      * @param win: Application Stage
      * @param winTitle: Application Stage title
      * @param winWidth: Application Stage width
      * @param winHeight: Application Stage height
      */
-    public static void bind(Object ref, Stage win, String winTitle, double winWidth, double winHeight) {
-        checkInstances(ref, win);
+    public static void bind(Stage win, String winTitle, double winWidth, double winHeight) {
+        checkInstances(win);
         windowTitle = winTitle;
         windowWidth = winWidth;
         windowHeight = winHeight;
     }
 
     /** set FXRouter references only if they are not set yet
-     * @param ref: Main Class reference
      * @param win: Application Stage
      */
-    private static void checkInstances(Object ref, Stage win) {
-        if(mainRef == null)
-            mainRef = ref;
+    private static void checkInstances(Stage win) {
         if(router == null)
             router = new SceneNavigator();
         if(window == null)
@@ -231,15 +226,6 @@ public final class SceneNavigator {
 
         // set scene animation
         routeAnimation(resource);
-    }
-
-    /* Syntactic sugar for goTo() method when FXRouter get set */
-    public static void startFrom(String routeLabel) throws Exception {
-        goTo(routeLabel, true);
-    }
-
-    public static void startFrom(String routeLabel, Object data) throws Exception {
-        goTo(routeLabel, data, true);
     }
 
     /** set FXRouter switching animation

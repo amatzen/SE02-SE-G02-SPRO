@@ -1,4 +1,4 @@
-package dk.sdu.swe.partials;
+package dk.sdu.swe.views.partials;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPopup;
@@ -21,6 +21,7 @@ public class CompanyListItem extends VBox {
         put("T2", CompanyListItem.this::testAction2);
     }};
 
+
     @FXML
     private JFXButton actionsBtn;
 
@@ -32,6 +33,9 @@ public class CompanyListItem extends VBox {
 
     @FXML
     private Label adminLabel;
+
+    @FXML
+    private Label companyNameLabel;
 
     public CompanyListItem() {
         FXMLLoader fxmlLoader = new FXMLLoader(

@@ -1,6 +1,6 @@
 package dk.sdu.swe.views;
 
-import dk.sdu.swe.partials.Navbar;
+import dk.sdu.swe.views.partials.Navbar;
 import javafx.fxml.FXML;
 import javafx.scene.layout.Pane;
 
@@ -15,11 +15,7 @@ public class AppViewController {
     private Pane contentPane;
 
     @FXML
-    private ResourceBundle resources;
-
-    @FXML
     public void initialize() {
         navbarPane.getChildren().setAll(new Navbar(new Router(contentPane)));
     }
-
 }

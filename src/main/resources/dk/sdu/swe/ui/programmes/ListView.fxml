@@ -35,7 +35,7 @@
                   </Label>
                </children>
             </VBox>
-            <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="111.0" prefWidth="1440.0" style="-fx-background-color: #F5F5F5;">
+            <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="111.0" prefWidth="1440.0" style="-fx-background-color: #F5F5F5;">
                <children>
                   <VBox prefHeight="115.0" prefWidth="278.0">
                      <HBox.margin>
@@ -112,7 +112,7 @@
       </VBox>
    </top>
    <center>
-      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+      <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
             <fx:include source="List-bar.fxml" />
          </children>

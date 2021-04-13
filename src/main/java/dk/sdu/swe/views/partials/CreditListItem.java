@@ -1,18 +1,17 @@
-package dk.sdu.swe.views;
+package dk.sdu.swe.views.partials;
 
 import javafx.fxml.FXMLLoader;
-import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
 
 import java.io.IOException;
 import java.util.Objects;
 
-public class ProgrammesView extends BorderPane {
+public class CreditListItem extends HBox {
 
-    public ProgrammesView() {
-
+    public CreditListItem() {
         FXMLLoader fxmlLoader = new FXMLLoader(
                 Objects.requireNonNull(
-                        getClass().getClassLoader().getResource("dk/sdu/swe/ui/programmes/ListView.fxml")));
+                        getClass().getClassLoader().getResource("dk/sdu/swe/ui/programmes/components/CreditListItem.fxml")));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
 
@@ -21,7 +20,6 @@ public class ProgrammesView extends BorderPane {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 
 }

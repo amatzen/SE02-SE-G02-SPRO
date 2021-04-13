@@ -5,10 +5,11 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<fx:root type="BorderPane" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="1500.0" type="BorderPane" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
     <top>
         <VBox prefHeight="200.0" prefWidth="1440.0" style="-fx-background-color: #E0E0E0;" BorderPane.alignment="CENTER">
             <children>
@@ -29,7 +30,7 @@
         </VBox>
     </top>
    <left>
-      <VBox prefHeight="658.0" prefWidth="248.0" style="-fx-background-color: #37474F;" BorderPane.alignment="CENTER">
+      <VBox maxHeight="1.7976931348623157E308" prefWidth="248.0" style="-fx-background-color: #37474F;" BorderPane.alignment="CENTER">
          <children>
             <HBox prefHeight="65.0" prefWidth="248.0">
                <children>
@@ -89,7 +90,7 @@
       </VBox>
    </left>
    <center>
-      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+      <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" BorderPane.alignment="CENTER">
          <children>
             <HBox prefHeight="81.0" prefWidth="1192.0">
                <children>
@@ -105,4 +106,7 @@
             </HBox>
          </children></VBox>
    </center>
+   <bottom>
+      <Pane BorderPane.alignment="CENTER" />
+   </bottom>
 </fx:root>
