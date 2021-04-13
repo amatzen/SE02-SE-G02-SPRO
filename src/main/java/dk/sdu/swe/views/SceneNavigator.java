@@ -187,10 +187,10 @@ public final class SceneNavigator {
         routes.put(routeLabel, routeScene);
     }
 
-    public static void goTo(String routeLabel) throws IOException {
+    public static void goTo(String routeLabel, boolean keepDimensions) throws IOException {
         // get corresponding route
         RouteScene route = routes.get(routeLabel);
-        loadNewRoute(route);
+        loadNewRoute(route, keepDimensions);
     }
 
     /** Switch between FXRouter route and show corresponding scenes
@@ -198,18 +198,18 @@ public final class SceneNavigator {
      * @param data: Data passed to route
      * @throws Exception: throw FXMLLoader exception if file is not loaded correctly
      */
-    public static void goTo(String routeLabel, Object data) throws IOException {
+    public static void goTo(String routeLabel, Object data, boolean keepDimensions) throws IOException {
         // get corresponding route
         RouteScene route = routes.get(routeLabel);
         // set route data
         route.data = data;
-        loadNewRoute(route);
+        loadNewRoute(route, keepDimensions);
     }
 
     /** Helper method of goTo() which load and show new scene
      * @throws Exception: throw FXMLLoader exception if file is not loaded correctly
      */
-    private static void loadNewRoute(RouteScene route) throws IOException {
+    private static void loadNewRoute(RouteScene route, boolean keepDimensions) throws IOException {
         // set FXRouter current route reference
         currentRoute = route;
 
@@ -218,8 +218,14 @@ public final class SceneNavigator {
 
         // set window title from route settings or default setting
         window.setTitle(route.windowTitle);
+
         // set new route scene
-        window.setScene(new Scene(resource, route.sceneWidth, route.sceneHeight));
+        if (keepDimensions && window.getScene() != null) {
+            window.setScene(new Scene(resource, window.getScene().getWidth(), window.getScene().getHeight()));
+        } else {
+            window.setScene(new Scene(resource, route.sceneWidth, route.sceneHeight));
+        }
+
         // show the window
         window.show();
 
@@ -229,11 +235,11 @@ public final class SceneNavigator {
 
     /* Syntactic sugar for goTo() method when FXRouter get set */
     public static void startFrom(String routeLabel) throws Exception {
-        goTo(routeLabel);
+        goTo(routeLabel, true);
     }
 
     public static void startFrom(String routeLabel, Object data) throws Exception {
-        goTo(routeLabel, data);
+        goTo(routeLabel, data, true);
     }
 
     /** set FXRouter switching animation
