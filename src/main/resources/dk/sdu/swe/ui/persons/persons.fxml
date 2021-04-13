@@ -1,55 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXListView?>
 <?import com.jfoenix.controls.JFXTextArea?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<fx:root type="BorderPane" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
-    <left>
-        <VBox prefHeight="1024.0" prefWidth="332.0" style="-fx-background-color: dbdbdb;" BorderPane.alignment="CENTER">
-            <children>
-                <VBox prefHeight="200.0" prefWidth="100.0">
-                    <children>
-                        <Label prefHeight="24.0" prefWidth="206.0" text="Søg efter Navn">
-                            <VBox.margin>
-                                <Insets bottom="10.0" left="50.0" top="15.0" />
-                            </VBox.margin>
-                        </Label>
-                        <VBox prefHeight="122.0" prefWidth="227.0">
-                            <children>
-                                <JFXTextArea prefHeight="34.0" prefWidth="282.0">
-                                    <padding>
-                                        <Insets right="50.0" />
-                                    </padding>
-                                </JFXTextArea>
-                                <JFXButton prefHeight="32.0" prefWidth="63.0" style="-fx-background-color: orange;" text="Nulstil" textFill="WHITE">
-                                    <VBox.margin>
-                                        <Insets top="50.0" />
-                                    </VBox.margin>
-                                    <font>
-                                        <Font name="System Bold" size="12.0" />
-                                    </font>
-                                </JFXButton>
-                            </children>
-                            <VBox.margin>
-                                <Insets left="50.0" />
-                            </VBox.margin>
-                        </VBox>
-                    </children>
-                    <VBox.margin>
-                        <Insets />
-                    </VBox.margin>
-                </VBox>
-                <VBox prefHeight="200.0" prefWidth="100.0" />
-            </children>
-        </VBox>
-    </left>
-    <top>
-        <VBox prefHeight="200.0" prefWidth="1440.0" style="-fx-background-color: #E0E0E0;" BorderPane.alignment="CENTER">
+
+<fx:root maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="1500.0" prefWidth="1448.0" type="VBox" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+        <VBox prefHeight="200.0" prefWidth="1440.0" style="-fx-background-color: #E0E0E0;">
             <children>
                 <Label prefHeight="58.0" prefWidth="248.0" text="Personer">
                     <font>
@@ -66,25 +30,44 @@
                 </Label>
             </children>
         </VBox>
-    </top>
-    <center>
-        <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER" />
-    </center>
-    <bottom>
-        <BorderPane prefHeight="61.0" prefWidth="1444.0" BorderPane.alignment="CENTER">
-            <right>
-                <JFXButton buttonType="RAISED" prefHeight="37.0" prefWidth="47.0" style="-fx-background-color: orange;" text="+" textFill="WHITE" BorderPane.alignment="CENTER">
-                    <BorderPane.margin>
-                        <Insets bottom="50.0" right="50.0" />
-                    </BorderPane.margin>
-                    <font>
-                        <Font size="18.0" />
-                    </font>
-                </JFXButton>
-            </right>
-            <left>
-                <VBox prefHeight="61.0" prefWidth="332.0" style="-fx-background-color: dbdbdb;" BorderPane.alignment="CENTER" />
-            </left>
-        </BorderPane>
-    </bottom>
+      <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+         <children>
+              <VBox maxHeight="1.7976931348623157E308" prefHeight="1000.0" prefWidth="332.0" style="-fx-background-color: dbdbdb;">
+                  <children>
+                        <Label prefHeight="24.0" prefWidth="206.0" text="Søg efter Navn">
+                            <VBox.margin>
+                                <Insets bottom="10.0" top="15.0" />
+                            </VBox.margin>
+                        </Label>
+                          <JFXTextArea prefHeight="34.0" prefWidth="282.0">
+                              <padding>
+                                  <Insets right="50.0" />
+                              </padding>
+                          </JFXTextArea>
+                          <JFXButton prefHeight="32.0" prefWidth="63.0" style="-fx-background-color: orange;" text="Nulstil" textFill="WHITE">
+                              <VBox.margin>
+                                  <Insets top="50.0" />
+                              </VBox.margin>
+                              <font>
+                                  <Font name="System Bold" size="12.0" />
+                              </font>
+                          </JFXButton>
+                  </children>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+              </VBox>
+            <AnchorPane HBox.hgrow="ALWAYS">
+               <children>
+                  <JFXListView layoutX="27.0" layoutY="-149.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                      <JFXButton buttonType="RAISED" layoutX="1046.0" layoutY="95.0" prefHeight="45.0" prefWidth="45.0" style="-fx-background-color: orange; -fx-background-radius: 30;" text="+" textFill="WHITE" AnchorPane.bottomAnchor="25.0" AnchorPane.rightAnchor="25.0">
+                          <font>
+                              <Font size="18.0" />
+                          </font>
+                      </JFXButton>
+               </children>
+            </AnchorPane>
+         </children>
+      </HBox>
+   </children>
 </fx:root>

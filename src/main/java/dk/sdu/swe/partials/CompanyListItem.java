@@ -21,6 +21,7 @@ public class CompanyListItem extends VBox {
         put("T2", CompanyListItem.this::testAction2);
     }};
 
+
     @FXML
     private JFXButton actionsBtn;
 

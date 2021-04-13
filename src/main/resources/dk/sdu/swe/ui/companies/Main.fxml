@@ -5,6 +5,7 @@
 <?import com.jfoenix.controls.JFXTextArea?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
@@ -45,7 +46,6 @@
                   <Insets />
                </VBox.margin>
             </VBox>
-            <VBox prefHeight="200.0" prefWidth="100.0" />
          </children>
       </VBox>
    </left>
@@ -68,24 +68,16 @@
          </children>
       </VBox>
    </top>
-   <bottom>
-      <BorderPane prefHeight="61.0" prefWidth="1444.0" BorderPane.alignment="CENTER">
-         <right>
-            <JFXButton buttonType="RAISED" prefHeight="37.0" prefWidth="47.0" style="-fx-background-color: orange;" text="+" textFill="WHITE" BorderPane.alignment="CENTER">
-               <BorderPane.margin>
-                  <Insets bottom="50.0" right="50.0" />
-               </BorderPane.margin>
+   <center>
+      <AnchorPane BorderPane.alignment="CENTER">
+         <children>
+            <JFXListView fx:id="companyListView" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <JFXButton buttonType="RAISED" layoutX="1013.0" layoutY="933.0" prefHeight="45.0" prefWidth="45.0" style="-fx-background-color: orange; -fx-background-radius: 30;" text="+" textFill="WHITE" AnchorPane.bottomAnchor="25.0" AnchorPane.rightAnchor="25.0">
                <font>
                   <Font size="18.0" />
                </font>
             </JFXButton>
-         </right>
-         <left>
-            <VBox prefHeight="61.0" prefWidth="332.0" style="-fx-background-color: dbdbdb;" BorderPane.alignment="CENTER" />
-         </left>
-      </BorderPane>
-   </bottom>
-   <center>
-      <JFXListView fx:id="companyListView" BorderPane.alignment="CENTER" />
+         </children>
+      </AnchorPane>
    </center>
 </fx:root>

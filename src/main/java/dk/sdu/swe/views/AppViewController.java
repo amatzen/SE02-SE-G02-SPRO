@@ -15,11 +15,7 @@ public class AppViewController {
     private Pane contentPane;
 
     @FXML
-    private ResourceBundle resources;
-
-    @FXML
     public void initialize() {
         navbarPane.getChildren().setAll(new Navbar(new Router(contentPane)));
     }
-
 }

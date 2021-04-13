@@ -2,11 +2,12 @@ package dk.sdu.swe.views;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.VBox;
 
 import java.io.IOException;
 import java.util.Objects;
 
-public class PersonsView extends BorderPane {
+public class PersonsView extends VBox {
 
     public PersonsView() {
         FXMLLoader fxmlLoader = new FXMLLoader(
