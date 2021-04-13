@@ -9,9 +9,12 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Window;
 
+import javax.swing.*;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -43,7 +46,7 @@ public class AuthViewController implements Initializable {
         button.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                if(textField.getText().isEmpty()) {
+                if (textField.getText().isEmpty()) {
                     showAlert(
                             Alert.AlertType.ERROR,
                             anchorPane.getScene().getWindow(),
@@ -53,7 +56,7 @@ public class AuthViewController implements Initializable {
                     return;
                 }
 
-                if(passwordField.getText().isEmpty()) {
+                if (passwordField.getText().isEmpty()) {
                     showAlert(
                             Alert.AlertType.ERROR,
                             anchorPane.getScene().getWindow(),
@@ -71,7 +74,7 @@ public class AuthViewController implements Initializable {
                     e.printStackTrace();
                 }
 
-                if(!signIn) {
+                if (!signIn) {
                     showAlert(
                             Alert.AlertType.ERROR,
                             anchorPane.getScene().getWindow(),
@@ -106,5 +109,56 @@ public class AuthViewController implements Initializable {
         alert.show();
     }
 
+    public void onEnter(ActionEvent ae) {
+        if (textField.getText().isEmpty()) {
+            showAlert(
+                    Alert.AlertType.ERROR,
+                    anchorPane.getScene().getWindow(),
+                    "Fejl!",
+                    "Brugernavnfeltet er tomt"
+            );
+            return;
+        }
 
+        if (passwordField.getText().isEmpty()) {
+            showAlert(
+                    Alert.AlertType.ERROR,
+                    anchorPane.getScene().getWindow(),
+                    "Fejl!",
+                    "Adgangskodefeltet er tomt"
+            );
+            return;
+        }
+
+        AuthController authController = AuthController.getInstance();
+        boolean signIn = false;
+        try {
+            signIn = authController.signIn(textField.getText(), passwordField.getText());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        if (!signIn) {
+            showAlert(
+                    Alert.AlertType.ERROR,
+                    anchorPane.getScene().getWindow(),
+                    "Fejl!",
+                    "Brugernavn eller adgangskode forkert."
+            );
+            return;
+        }
+
+        showAlert(
+                Alert.AlertType.CONFIRMATION,
+                anchorPane.getScene().getWindow(),
+                "Logget ind!",
+                "Velkommen " + authController.getUser().getName()
+        );
+
+        try {
+            SceneNavigator.goTo("crms", true);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

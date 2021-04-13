@@ -43,7 +43,7 @@
             <TextField layoutX="45.0" layoutY="181.0" prefHeight="40.0" prefWidth="325.0" promptText="Brugernavn"
                        fx:id="textField" />
             <PasswordField layoutX="44.0" layoutY="254.0" prefHeight="40.0" prefWidth="328.0" promptText="Adgangskode"
-                           fx:id="passwordField">
+                           fx:id="passwordField" onAction="#onEnter">
                <font>
                   <Font name="Gargi" size="13.0" />
                </font></PasswordField>
