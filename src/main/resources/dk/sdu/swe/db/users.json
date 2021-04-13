@@ -9,7 +9,7 @@
     },
     "email": "alexander@alexander.dk",
     "password": "$2y$12$U3Tm1ZgJTL3m8jc2Beu1LeE/zq1xEbsYnYlf6eWG0Bv2x3ZfmHFYu",
-    "permission": "User"
+    "permission": "SystemAdministrator"
   },
   {
     "id": 2,
