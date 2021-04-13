@@ -1,5 +1,6 @@
 package dk.sdu.swe.views;
 
+import com.jfoenix.controls.JFXAlert;
 import com.jfoenix.controls.JFXButton;
 import dk.sdu.swe.controllers.AuthController;
 import javafx.event.ActionEvent;
@@ -83,13 +84,6 @@ public class AuthViewController implements Initializable {
                     );
                     return;
                 }
-
-                showAlert(
-                        Alert.AlertType.CONFIRMATION,
-                        anchorPane.getScene().getWindow(),
-                        "Logget ind!",
-                        "Velkommen " + authController.getUser().getName()
-                );
 
                 try {
                     SceneNavigator.goTo("crms", true);

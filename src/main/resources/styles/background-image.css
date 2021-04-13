@@ -1,4 +1,4 @@
 .root {
     -fx-background-image: url("../dk/sdu/swe/ui/images/tv2Baggrund.png");
-    -fx-background-size: 1440 1024;
+    -fx-background-size: cover;
 }
