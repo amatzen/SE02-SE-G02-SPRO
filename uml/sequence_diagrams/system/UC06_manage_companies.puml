@@ -1,0 +1,31 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+box "Håndtér virksomheder (UC04)"
+    participant ":SystemAdministrator" as administrator
+    participant ":System" as system
+end box
+
+administrator -> system : signIn(username, password)
+administrator <-- system : Authentication response
+
+alt Create company
+    administrator -> system : createCompany(company)
+    system -> system : checkPermission(company)
+    system -> system : saveCompany(company)
+    administrator <-- system : Company
+else Edit company
+    administrator -> system : updateCompany(company)
+    system -> system : checkPermission(company)
+    system -> system : updateCompany(company)
+    administrator <-- system : Company
+else Delete company
+    administrator -> system : deleteCompany(company)
+    system -> system : checkPermission(company)
+    system -> system : deleteCompany(company)
+    administrator <-- system : Success
+end
+
+@enduml
