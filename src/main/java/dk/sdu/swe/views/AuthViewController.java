@@ -12,6 +12,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Window;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -86,6 +87,12 @@ public class AuthViewController implements Initializable {
                         "Logget ind!",
                         "Velkommen " + authController.getUser().getName()
                 );
+
+                try {
+                    SceneNavigator.goTo("crms", true);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         });
     }
