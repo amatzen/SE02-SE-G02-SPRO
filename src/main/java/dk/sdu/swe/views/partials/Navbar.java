@@ -26,7 +26,7 @@ public class Navbar extends VBox {
     private Map<String, Runnable> profileBtnOptions = Map.of(
             "Log ud", () -> {
                 try {
-                    AuthController.getInstance().logout();  
+                    AuthController.getInstance().logout();
                     SceneNavigator.goTo("login", true);
                 } catch (IOException ioException) {
                     ioException.printStackTrace();
