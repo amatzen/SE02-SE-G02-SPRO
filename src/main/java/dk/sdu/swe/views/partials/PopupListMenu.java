@@ -1,9 +1,8 @@
-package dk.sdu.swe.partials;
+package dk.sdu.swe.views.partials;
 
 import com.jfoenix.controls.JFXListView;
 import com.jfoenix.controls.JFXPopup;
 import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
 
 import java.util.HashMap;
 import java.util.Map;

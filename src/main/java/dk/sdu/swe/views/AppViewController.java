@@ -1,6 +1,6 @@
 package dk.sdu.swe.views;
 
-import dk.sdu.swe.partials.Navbar;
+import dk.sdu.swe.views.partials.Navbar;
 import javafx.fxml.FXML;
 import javafx.scene.layout.Pane;
 

@@ -2,17 +2,17 @@ package dk.sdu.swe.views;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.VBox;
 
 import java.io.IOException;
 import java.util.Objects;
 
-public class ProgrammesView extends BorderPane {
+public class PersonsViewController extends VBox {
 
-    public ProgrammesView() {
-
+    public PersonsViewController() {
         FXMLLoader fxmlLoader = new FXMLLoader(
                 Objects.requireNonNull(
-                        getClass().getClassLoader().getResource("dk/sdu/swe/ui/programmes/EPG.fxml")));
+                        getClass().getClassLoader().getResource("dk/sdu/swe/ui/persons/persons.fxml")));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
 
@@ -21,7 +21,6 @@ public class ProgrammesView extends BorderPane {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 
 }
