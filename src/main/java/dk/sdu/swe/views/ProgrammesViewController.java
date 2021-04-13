@@ -6,9 +6,9 @@ import javafx.scene.layout.BorderPane;
 import java.io.IOException;
 import java.util.Objects;
 
-public class ProgrammesView extends BorderPane {
+public class ProgrammesViewController extends BorderPane {
 
-    public ProgrammesView() {
+    public ProgrammesViewController() {
 
         FXMLLoader fxmlLoader = new FXMLLoader(
                 Objects.requireNonNull(

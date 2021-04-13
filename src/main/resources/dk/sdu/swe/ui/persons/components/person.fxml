@@ -8,7 +8,7 @@
 <?import javafx.scene.text.*?>
 
 <VBox xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="dk.sdu.swe.controllers.CompanyController">
+      fx:controller="dk.sdu.swe.views.CompanyViewController">
     <children>
         <HBox>
             <children>

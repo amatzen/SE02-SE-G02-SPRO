@@ -1,4 +1,4 @@
-package dk.sdu.swe.partials;
+package dk.sdu.swe.views.partials;
 
 import javafx.fxml.FXMLLoader;
 

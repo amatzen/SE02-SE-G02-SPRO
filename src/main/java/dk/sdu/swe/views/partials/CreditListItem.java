@@ -1,17 +1,17 @@
-package dk.sdu.swe.views;
+package dk.sdu.swe.views.partials;
 
 import javafx.fxml.FXMLLoader;
-import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
 
 import java.io.IOException;
 import java.util.Objects;
 
-public class AdminView extends BorderPane {
+public class CreditListItem extends HBox {
 
-    public AdminView() {
+    public CreditListItem() {
         FXMLLoader fxmlLoader = new FXMLLoader(
                 Objects.requireNonNull(
-                        getClass().getClassLoader().getResource("dk/sdu/swe/ui/admin/admin.fxml")));
+                        getClass().getClassLoader().getResource("dk/sdu/swe/ui/programmes/components/CreditListItem.fxml")));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
 

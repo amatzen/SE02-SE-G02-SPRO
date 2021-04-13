@@ -6,9 +6,9 @@ import javafx.scene.layout.BorderPane;
 import java.io.IOException;
 import java.util.Objects;
 
-public class PersonsView extends BorderPane {
+public class PersonsViewController extends BorderPane {
 
-    public PersonsView() {
+    public PersonsViewController() {
         FXMLLoader fxmlLoader = new FXMLLoader(
                 Objects.requireNonNull(
                         getClass().getClassLoader().getResource("dk/sdu/swe/ui/persons/persons.fxml")));
