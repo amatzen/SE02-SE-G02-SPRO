@@ -1,7 +1,7 @@
 package dk.sdu.swe.views;
 
 import com.jfoenix.controls.JFXListView;
-import dk.sdu.swe.partials.CompanyListItem;
+import dk.sdu.swe.views.partials.CompanyListItem;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
