@@ -24,6 +24,7 @@ public class Navbar extends VBox {
     private ImageView pfpImgView;
 
     private Map<String, Runnable> profileBtnOptions = Map.of(
+                AuthController.getInstance().getUser().getClass().getName().replaceFirst("dk.sdu.swe.models.", ""), () -> {},
             "Log ud", () -> {
                 try {
                     AuthController.getInstance().logout();
