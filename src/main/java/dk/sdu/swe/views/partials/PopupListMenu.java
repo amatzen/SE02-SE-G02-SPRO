@@ -10,15 +10,15 @@ import java.util.Map;
 public class PopupListMenu extends JFXPopup {
 
     private JFXListView<Label> listView;
-    private Map<Label, Runnable> options;
+    private Map<Label, Runnable> actions;
 
-    public PopupListMenu(Map<String, Runnable> options) {
+    public PopupListMenu(Map<String, Runnable> actions) {
         listView = new JFXListView<>();
-        this.options = new HashMap<>();
+        this.actions = new HashMap<>();
 
-        options.forEach((text, runnable) -> {
+        actions.forEach((text, runnable) -> {
             Label label = new Label(text);
-            this.options.put(label, runnable);
+            this.actions.put(label, runnable);
             listView.getItems().add(label);
         });
 
@@ -28,7 +28,7 @@ public class PopupListMenu extends JFXPopup {
             Label label = listView.getSelectionModel().getSelectedItem();
             if (label != null) {
                 this.hide();
-                this.options.get(label).run();
+                this.actions.get(label).run();
             }
         });
     }
