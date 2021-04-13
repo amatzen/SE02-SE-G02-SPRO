@@ -72,18 +72,11 @@ public class Navbar extends VBox {
 
     @FXML
     private void handle(ActionEvent e) {
-        Object source = e.getSource();
-
-        if (source == progBtn) {
-            router.goTo(ProgrammesViewController.class);
-        } else if (source == companyBtn) {
-            router.goTo(CompanyViewController.class);
-        } else if (source == pplBtn) {
-            router.goTo(PersonsViewController.class);
-        } else if (source == adminBtn) {
-            router.goTo(AdminViewController.class);
-        } else if (source == profileBtn) {
-
+        switch (((JFXButton)e.getSource()).getId()) {
+            case "progBtn" -> router.goTo(ProgrammesViewController.class);
+            case "companyBtn" -> router.goTo(CompanyViewController.class);
+            case "pplBtn" -> router.goTo(PersonsViewController.class);
+            case "adminBtn" -> router.goTo(AdminViewController.class);
         }
 
     }
