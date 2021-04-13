@@ -58,11 +58,7 @@ public class AuthController {
             return false;
         }
 
-        this.currentUser = switch (user.getString("permission")) {
-            case "SystemAdministrator"  -> new SystemAdministrator(user.getString("username"), user.getString("email"), user.getJSONObject("name").getString("_combined"));
-            case "CompanyAdministrator" -> new CompanyAdministrator(user.getString("username"), user.getString("email"), user.getJSONObject("name").getString("_combined"));
-            default                     -> new User(user.getString("username"), user.getString("email"), user.getJSONObject("name").getString("_combined"));
-        };
+        this.currentUser = User.jsonToUser(user);
         return true;
 
     }

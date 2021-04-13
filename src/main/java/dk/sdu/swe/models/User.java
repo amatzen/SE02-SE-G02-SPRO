@@ -1,6 +1,7 @@
 package dk.sdu.swe.models;
 
 import dk.sdu.swe.exceptions.UserCreationException;
+import org.json.JSONObject;
 
 import java.util.Arrays;
 import java.util.Objects;
@@ -9,6 +10,7 @@ import java.util.Objects;
  * The type User.
  */
 public class User implements IUser {
+    private int id;
     private String username;
     private String email;
     private Name name;
@@ -24,12 +26,13 @@ public class User implements IUser {
     /**
      * Instantiates a new User.
      *
+     * @param id       the user id
      * @param username the username
      * @param email    the email
      * @param name     the name
      * @throws Exception the exception
      */
-    public User(String username, String email, String name) throws Exception {
+    public User(int id, String username, String email, String name) throws Exception {
 
         // Validate username
         if (username.trim().length() < 3 || username.trim().length() > 24) {
@@ -45,6 +48,8 @@ public class User implements IUser {
         this.username = username.trim();
         this.email = email.trim();
         this.name = new Name(name);
+
+        this.id = id;
     }
 
     public String getUsername() {
@@ -59,9 +64,21 @@ public class User implements IUser {
         return name;
     }
 
+    public int getId() {
+        return id;
+    }
+
     @Override
     public boolean hasPermission(String permissionKey) {
         return Arrays.stream(this.permissions).anyMatch(s -> Objects.equals(s, permissionKey));
+    }
+
+    public static User jsonToUser(JSONObject o) throws Exception {
+        return switch (o.getString("permission")) {
+            case "SystemAdministrator"  ->  new SystemAdministrator(o.getInt("id"), o.getString("username"), o.getString("email"), o.getJSONObject("name").getString("_combined"));
+            case "CompanyAdministrator" -> new CompanyAdministrator(o.getInt("id"), o.getString("username"), o.getString("email"), o.getJSONObject("name").getString("_combined"));
+            default                     ->                 new User(o.getInt("id"), o.getString("username"), o.getString("email"), o.getJSONObject("name").getString("_combined"));
+        };
     }
 }
 
