@@ -6,9 +6,9 @@ import javafx.scene.layout.BorderPane;
 import java.io.IOException;
 import java.util.Objects;
 
-public class AdminView extends BorderPane {
+public class AdminViewController extends BorderPane {
 
-    public AdminView() {
+    public AdminViewController() {
         FXMLLoader fxmlLoader = new FXMLLoader(
                 Objects.requireNonNull(
                         getClass().getClassLoader().getResource("dk/sdu/swe/ui/admin/admin.fxml")));

@@ -2,10 +2,10 @@ package dk.sdu.swe.views.partials;
 
 import com.jfoenix.controls.JFXButton;
 import dk.sdu.swe.views.Router;
-import dk.sdu.swe.views.AdminView;
-import dk.sdu.swe.views.CompanyView;
-import dk.sdu.swe.views.PersonsView;
-import dk.sdu.swe.views.ProgrammesView;
+import dk.sdu.swe.views.AdminViewController;
+import dk.sdu.swe.views.CompanyViewController;
+import dk.sdu.swe.views.PersonsViewController;
+import dk.sdu.swe.views.ProgrammesViewController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -44,7 +44,7 @@ public class Navbar extends VBox {
 
     @FXML
     private void initialize() {
-        router.goTo(ProgrammesView.class);
+        router.goTo(ProgrammesViewController.class);
     }
 
     @FXML
@@ -52,13 +52,13 @@ public class Navbar extends VBox {
         Object source = e.getSource();
 
         if (source == progBtn) {
-            router.goTo(ProgrammesView.class);
+            router.goTo(ProgrammesViewController.class);
         } else if (source == companyBtn) {
-            router.goTo(CompanyView.class);
+            router.goTo(CompanyViewController.class);
         } else if (source == pplBtn) {
-            router.goTo(PersonsView.class);
+            router.goTo(PersonsViewController.class);
         } else if (source == adminBtn) {
-            router.goTo(AdminView.class);
+            router.goTo(AdminViewController.class);
         } else if (source == profileBtn) {
 
         }
