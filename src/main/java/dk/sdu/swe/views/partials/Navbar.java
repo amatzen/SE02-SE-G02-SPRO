@@ -83,10 +83,11 @@ public class Navbar extends VBox {
             case "companyBtn" -> router.goTo(CompanyViewController.class);
             case "pplBtn" -> router.goTo(PersonsViewController.class);
             case "adminBtn" -> router.goTo(AdminViewController.class);
-            case "profileBtn":
+            case "profileBtn" -> {
               JFXPopup popupListMenu = new PopupListMenu(profileBtnOptions);
               popupListMenu.show(profileBtn, JFXPopup.PopupVPosition.BOTTOM, JFXPopup.PopupHPosition.RIGHT);
-              break;
+            }
+            default -> throw new IllegalStateException("Unexpected value: " + ((JFXButton) e.getSource()).getId());
         }
 
     }
