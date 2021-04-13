@@ -1,7 +1,6 @@
 package dk.sdu.swe.partials;
 
 import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXListView;
 import com.jfoenix.controls.JFXPopup;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,9 +8,18 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 public class CompanyListItem extends VBox {
+
+    private Map<String, Runnable> options = new HashMap<>() {{
+        put("Rediger", CompanyListItem.this::testAction1);
+        put("Slet", CompanyListItem.this::testAction2);
+        put("T1", CompanyListItem.this::testAction1);
+        put("T2", CompanyListItem.this::testAction2);
+    }};
 
     @FXML
     private JFXButton actionsBtn;
@@ -41,17 +49,19 @@ public class CompanyListItem extends VBox {
 
     @FXML
     private void initialize() {
-        JFXListView<Label> list = new JFXListView<>();
-        for (int i = 1; i < 5; i++) {
-            list.getItems().add(new Label("Item" + i));
-        }
+        PopupListMenu popupList = new PopupListMenu(options);
 
-        JFXPopup popup = new JFXPopup(list);
+        actionsBtn.setOnMouseClicked(e -> {
+            popupList.show(actionsBtn, JFXPopup.PopupVPosition.TOP, JFXPopup.PopupHPosition.RIGHT);
+        });
+    }
 
-        actionsBtn.setOnMouseClicked(
-                e -> popup.show(actionsBtn, JFXPopup.PopupVPosition.TOP, JFXPopup.PopupHPosition.RIGHT)
-        );
+    private void testAction1() {
+        System.out.println("Test1");
+    }
 
+    private void testAction2() {
+        System.out.println("Test2");
     }
 
 }

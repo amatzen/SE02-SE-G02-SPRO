@@ -89,7 +89,7 @@ public class AuthViewController implements Initializable {
                 );
 
                 try {
-                    SceneNavigator.goTo("crms");
+                    SceneNavigator.goTo("crms", true);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
