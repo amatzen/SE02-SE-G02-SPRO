@@ -1,0 +1,19 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+box "Opret program (UC04)"
+    participant ":CompanyAdministrator" as administrator
+    participant ":System" as system
+end box
+
+administrator -> system : signIn(username, password)
+administrator <-- system : Authentication response
+
+administrator -> system : createProgram(program)
+system -> system : checkPermission(program)
+system -> system : saveProgram(program)
+administrator <-- system : Program
+
+@enduml
