@@ -34,6 +34,9 @@ public class CompanyListItem extends VBox {
     @FXML
     private Label adminLabel;
 
+    @FXML
+    private Label companyNameLabel;
+
     public CompanyListItem() {
         FXMLLoader fxmlLoader = new FXMLLoader(
                 Objects.requireNonNull(
