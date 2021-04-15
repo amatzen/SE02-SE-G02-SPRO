@@ -42,54 +42,13 @@ public class AuthViewController implements Initializable {
      *                  {@code null} if the location is not known.
      * @param resources The resources used to localize the root object, or {@code null} if
      */
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         button.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                if (textField.getText().isEmpty()) {
-                    showAlert(
-                            Alert.AlertType.ERROR,
-                            anchorPane.getScene().getWindow(),
-                            "Fejl!",
-                            "Brugernavnfeltet er tomt"
-                    );
-                    return;
-                }
-
-                if (passwordField.getText().isEmpty()) {
-                    showAlert(
-                            Alert.AlertType.ERROR,
-                            anchorPane.getScene().getWindow(),
-                            "Fejl!",
-                            "Adgangskodefeltet er tomt"
-                    );
-                    return;
-                }
-
-                AuthController authController = AuthController.getInstance();
-                boolean signIn = false;
-                try {
-                    signIn = authController.signIn(textField.getText(), passwordField.getText());
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-
-                if (!signIn) {
-                    showAlert(
-                            Alert.AlertType.ERROR,
-                            anchorPane.getScene().getWindow(),
-                            "Fejl!",
-                            "Brugernavn eller adgangskode forkert."
-                    );
-                    return;
-                }
-
-                try {
-                    SceneNavigator.goTo("crms", true);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+            login();
             }
         });
     }
@@ -104,6 +63,10 @@ public class AuthViewController implements Initializable {
     }
 
     public void onEnter(ActionEvent ae) {
+        login();
+    }
+
+    public void login() {
         if (textField.getText().isEmpty()) {
             showAlert(
                     Alert.AlertType.ERROR,
@@ -141,13 +104,6 @@ public class AuthViewController implements Initializable {
             );
             return;
         }
-
-        showAlert(
-                Alert.AlertType.CONFIRMATION,
-                anchorPane.getScene().getWindow(),
-                "Logget ind!",
-                "Velkommen " + authController.getUser().getName()
-        );
 
         try {
             SceneNavigator.goTo("crms", true);
