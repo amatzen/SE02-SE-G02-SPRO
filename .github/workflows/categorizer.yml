@@ -1,0 +1,12 @@
+name: Categorizer
+on:
+    - pull_request
+
+jobs:
+    categorize:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/labeler@v2
+              with:
+                  repo-token: "${{ secrets.GITHUB_TOKEN }}"
+                  congiruation-path: ".github/categories.yml"
