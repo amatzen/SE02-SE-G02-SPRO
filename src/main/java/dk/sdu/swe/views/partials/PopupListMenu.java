@@ -31,6 +31,7 @@ public class PopupListMenu extends JFXPopup {
                 this.actions.get(label).run();
             }
         });
+        listView.getStylesheets().add("styles/popup.css");
     }
 
 }

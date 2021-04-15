@@ -12,7 +12,7 @@
 
 <fx:root prefHeight="1024.0" prefWidth="1440.0" type="BorderPane" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
    <left>
-      <VBox prefHeight="1024.0" prefWidth="332.0" style="-fx-background-color: dbdbdb;" BorderPane.alignment="CENTER">
+      <VBox prefWidth="332.0" style="-fx-background-color: dbdbdb;" BorderPane.alignment="CENTER">
          <children>
             <VBox prefHeight="200.0" prefWidth="100.0">
                <children>
