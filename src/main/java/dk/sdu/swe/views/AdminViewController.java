@@ -23,6 +23,7 @@ public class AdminViewController extends BorderPane {
 
     @FXML
     private JFXButton dataExportBtn;
+
     @FXML
     private Pane contentPane;
 
@@ -45,7 +46,8 @@ public class AdminViewController extends BorderPane {
         }
     }
 
-    private void handleSelectedSection (ActionEvent e) {
+    @FXML
+    private void handleSelectedSection(ActionEvent e) {
 
         Object source = e.getSource();
 
