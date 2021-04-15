@@ -6,14 +6,14 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Window;
 
+import java.io.BufferedInputStream;
 import java.io.IOException;
 import java.net.URL;
+import java.util.Locale;
 import java.util.ResourceBundle;
 
 public class AuthViewController implements Initializable {
@@ -29,6 +29,12 @@ public class AuthViewController implements Initializable {
 
     @FXML
     PasswordField passwordField;
+
+    @FXML
+    Label showPswd;
+
+    @FXML
+    Button hs_button;
 
     /**
      * Called to initialize a controller after its root element has been
@@ -105,6 +111,21 @@ public class AuthViewController implements Initializable {
             SceneNavigator.goTo("crms", true);
         } catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+
+    public void hsButton(ActionEvent actionEvent) {
+        char[] temp;
+        temp = passwordField.getText().toCharArray();
+        int length = temp.length;
+
+        if (length < 1){
+            //Do nothing
+
+        } else {
+            String code = passwordField.getCharacters().toString();
+            passwordField.setText(code);
+            showPswd.setText("(" + code + ")");
         }
     }
 }
