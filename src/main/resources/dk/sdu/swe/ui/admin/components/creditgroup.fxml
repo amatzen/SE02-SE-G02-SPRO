@@ -3,7 +3,6 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXRadioButton?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.HBox?>
@@ -12,7 +11,7 @@
 
 <fx:root prefHeight="297.0" prefWidth="614.0" type="VBox" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label prefHeight="81.0" prefWidth="195.0" text="Dataeksport" translateX="43.0">
+      <Label prefHeight="62.0" prefWidth="375.0" text="Kreditteringsgrupper" translateX="43.0">
          <font>
             <Font name="System Bold" size="26.0" />
          </font>
@@ -21,23 +20,6 @@
          </VBox.margin>
       </Label>
       <HBox prefHeight="37.0" prefWidth="1192.0">
-         <children>
-            <CheckBox fx:id="actorData" mnemonicParsing="false" text="Skuespillerdata">
-               <HBox.margin>
-                  <Insets left="50.0" />
-               </HBox.margin>
-            </CheckBox>
-            <CheckBox fx:id="programData" mnemonicParsing="false" text="Programdata">
-               <HBox.margin>
-                  <Insets left="20.0" />
-               </HBox.margin>
-            </CheckBox>
-            <CheckBox fx:id="companyData" mnemonicParsing="false" text="Virskomhedsdata">
-               <HBox.margin>
-                  <Insets left="20.0" />
-               </HBox.margin>
-            </CheckBox>
-         </children>
          <VBox.margin>
             <Insets top="5.0" />
          </VBox.margin>
@@ -46,7 +28,7 @@
          <children>
             <VBox prefHeight="100.0" prefWidth="223.0">
                <children>
-                  <Label text="Vælg Filtype">
+                  <Label text="Fav tool">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
@@ -54,7 +36,7 @@
                         <Insets left="50.0" />
                      </VBox.margin>
                   </Label>
-                  <JFXRadioButton fx:id="csvToggle" text="CSV">
+                  <JFXRadioButton fx:id="csvToggle" text="Angular">
                      <VBox.margin>
                         <Insets left="50.0" top="10.0" />
                      </VBox.margin>
@@ -62,7 +44,7 @@
                         <ToggleGroup fx:id="fileTypeToggleGroup" />
                      </toggleGroup>
                   </JFXRadioButton>
-                  <JFXRadioButton fx:id="jsonToggle" layoutX="10.0" layoutY="27.0" text="JSON" toggleGroup="$fileTypeToggleGroup">
+                  <JFXRadioButton fx:id="jsonToggle" layoutX="10.0" layoutY="27.0" text="JavaFX" toggleGroup="$fileTypeToggleGroup">
                      <VBox.margin>
                         <Insets left="50.0" top="10.0" />
                      </VBox.margin>

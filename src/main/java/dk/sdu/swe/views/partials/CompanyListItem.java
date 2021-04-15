@@ -39,8 +39,8 @@ public class CompanyListItem extends VBox {
 
     public CompanyListItem() {
         FXMLLoader fxmlLoader = new FXMLLoader(
-                Objects.requireNonNull(
-                        getClass().getClassLoader().getResource("dk/sdu/swe/ui/companies/components/CompanyListItem.fxml")));
+            Objects.requireNonNull(
+                getClass().getClassLoader().getResource("dk/sdu/swe/ui/companies/components/CompanyListItem.fxml")));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
 

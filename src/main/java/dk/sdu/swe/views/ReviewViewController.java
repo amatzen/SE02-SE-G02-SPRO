@@ -1,17 +1,16 @@
-package dk.sdu.swe.views.partials;
+package dk.sdu.swe.views;
 
 import javafx.fxml.FXMLLoader;
-import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 
 import java.io.IOException;
 import java.util.Objects;
 
-public class CreditListItem extends HBox {
-
-    public CreditListItem() {
+public class ReviewViewController extends VBox {
+    public ReviewViewController() {
         FXMLLoader fxmlLoader = new FXMLLoader(
             Objects.requireNonNull(
-                getClass().getClassLoader().getResource("dk/sdu/swe/ui/programmes/components/CreditListItem.fxml")));
+                getClass().getClassLoader().getResource("dk/sdu/swe/ui/admin/components/review.fxml")));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
 
@@ -21,5 +20,4 @@ public class CreditListItem extends HBox {
             e.printStackTrace();
         }
     }
-
 }
