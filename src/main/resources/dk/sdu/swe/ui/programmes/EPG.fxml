@@ -6,12 +6,13 @@
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<fx:root maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" type="BorderPane" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" type="BorderPane" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
    <top>
       <VBox prefHeight="366.0" prefWidth="1440.0" BorderPane.alignment="CENTER">
          <children>
@@ -125,24 +126,15 @@
       <VBox BorderPane.alignment="CENTER">
          <children>
             <fx:include source="EPG-bar.fxml" />
-            <HBox alignment="CENTER_RIGHT">
+            <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" VBox.vgrow="ALWAYS">
                <children>
-                  <JFXButton style="-fx-background-color: #FF9800;" text="+" textFill="WHITE">
+                  <JFXButton buttonType="RAISED" prefHeight="45.0" prefWidth="45.0" style="-fx-background-color: orange; -fx-background-radius: 30;" text="+" textFill="WHITE" AnchorPane.bottomAnchor="25.0" AnchorPane.rightAnchor="25.0">
                      <font>
                         <Font size="18.0" />
                      </font>
-                     <HBox.margin>
-                        <Insets />
-                     </HBox.margin>
                   </JFXButton>
-               </children>
-               <VBox.margin>
-                  <Insets top="525.0" />
-               </VBox.margin>
-               <padding>
-                  <Insets right="25.0" />
-               </padding>
-            </HBox>
+               </children></AnchorPane>
+             
          </children>
       </VBox>
    </center>
