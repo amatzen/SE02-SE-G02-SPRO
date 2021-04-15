@@ -3,6 +3,7 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXPasswordField?>
 <?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -61,6 +62,11 @@
                       </ImageView>
                </graphic>
             </JFXButton>
+            <Label fx:id="showPswd" layoutX="43.0" layoutY="250.0" prefHeight="17.0" prefWidth="92.0" text=" " textFill="#616161f0">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Label>
             </children>
         </AnchorPane>
     </children>
