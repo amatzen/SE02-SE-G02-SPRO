@@ -5,7 +5,8 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
-<fx:root xmlns:fx="http://javafx.com/fxml/1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="1024.0"
+<fx:root xmlns:fx="http://javafx.com/fxml/1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+         prefHeight="1024.0"
          prefWidth="1440.0" type="BorderPane" xmlns="http://javafx.com/javafx/16">
     <top>
         <VBox prefHeight="200.0" prefWidth="1440.0" style="-fx-background-color: #E0E0E0;"
