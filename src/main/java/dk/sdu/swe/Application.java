@@ -1,21 +1,11 @@
 package dk.sdu.swe;
 
-import dk.sdu.swe.controllers.AuthController;
 import dk.sdu.swe.views.SceneNavigator;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
-
-import java.util.Objects;
 
 
 public class Application extends javafx.application.Application {
-    public static void main(String[] args) throws Exception {
-
-        AuthController authController = AuthController.getInstance();
-        boolean signedIn = authController.signIn("almat20", "alexander");
-
+    public static void main(String[] args) {
         launch();
     }
 
