@@ -2,6 +2,8 @@ package dk.sdu.swe.views;
 
 import com.jfoenix.controls.JFXButton;
 import dk.sdu.swe.controllers.AuthController;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -9,6 +11,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Window;
+import org.w3c.dom.Text;
 
 import java.io.BufferedInputStream;
 import java.io.IOException;
@@ -33,6 +36,9 @@ public class AuthViewController implements Initializable {
     PasswordField passwordField;
 
     @FXML
+    TextField passwordField1;
+
+    @FXML
     Label showPswd;
 
     @FXML
@@ -49,12 +55,39 @@ public class AuthViewController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        this.passwordField1.setVisible(false);
+
         button.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
                 login();
             }
         });
+
+        hs_button.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                togglePasswordVisibility();
+            }
+        });
+
+        this.passwordField.textProperty().addListener((observable, oldValue, newValue) -> {
+            this.passwordField1.setText(newValue);
+        });
+
+        this.passwordField1.textProperty().addListener(((observable, oldValue, newValue) -> {
+            this.passwordField.setText(newValue);
+        }));
+    }
+
+    private void togglePasswordVisibility() {
+        if(this.passwordField.isVisible()) {
+            this.passwordField.setVisible(false);
+            this.passwordField1.setVisible(true);
+        } else {
+            this.passwordField1.setVisible(false);
+            this.passwordField.setVisible(true);
+        }
     }
 
     private void showAlert(Alert.AlertType alertType, Window owner, String title, String message) {
