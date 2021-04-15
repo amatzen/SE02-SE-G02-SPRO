@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
 <fx:root xmlns:fx="http://javafx.com/fxml" type="HBox" prefWidth="200.0" style="-fx-background-color: #ededed;"
-         xmlns="http://javafx.com/javafx">
+         xmlns="http://javafx.com/javafx/">
     <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
         <HBox.margin>
             <Insets/>
