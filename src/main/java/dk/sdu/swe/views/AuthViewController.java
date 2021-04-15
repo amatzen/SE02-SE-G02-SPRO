@@ -148,19 +148,4 @@ public class AuthViewController implements Initializable {
             e.printStackTrace();
         }
     }
-
-    public void hsButton(ActionEvent actionEvent) {
-        char[] temp;
-        temp = passwordField.getText().toCharArray();
-        int length = temp.length;
-
-        if (length < 1){
-            //Do nothing
-
-        } else {
-            String code = passwordField.getCharacters().toString();
-            passwordField.setText(code);
-            showPswd.setText("(" + code + ")");
-        }
-    }
 }
