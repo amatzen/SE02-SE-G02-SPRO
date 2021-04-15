@@ -83,7 +83,7 @@ public class User implements IUser {
             "username", user.getUsername(),
             "name", name,
             "email", user.getEmail(),
-            "permission", user.getClass().getName().replace("dk.sdu.swe.", "")
+            "permission", user.getClass().getName().replace("dk.sdu.swe.models.", "")
         ))).forEach((k, v) -> {
             json.put(k, v);
         });
