@@ -19,7 +19,6 @@ package "Domænemodel" {
     }
 
     class SystemAdministrator {
-
     }
 
     'Naeste

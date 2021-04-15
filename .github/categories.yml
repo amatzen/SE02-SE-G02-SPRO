@@ -1,8 +1,8 @@
-domain:
+Domain:
     - all: ['**/*.java', 'src/main/java/dk/sdu/swe/**', '!src/main/java/dk/sdu/swe/views/**']
 
-presentation:
+Presentation:
     - any: ['**/*.fxml', 'src/main/*/dk/sdu/swe/views/**']
 
-data:
+Data:
     - any: ['**/*.json', '**/*.yaml', '**/*.yml', '**/*.csv', '**/*.xml']

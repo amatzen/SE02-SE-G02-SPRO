@@ -18,8 +18,8 @@ public class Name {
     /**
      * Instantiates a new Name.
      *
-     * @param firstName the first name
-     * @param lastName  the last name
+     * @param firstName user's first name
+     * @param lastName  user's last name
      */
     public Name(String firstName, String lastName) {
         this.firstName = firstName;

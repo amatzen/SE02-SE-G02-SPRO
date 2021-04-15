@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="241px" preserveAspectRatio="none" style="width:318px;height:241px;" version="1.1" viewBox="0 0 318 241" width="318px" zoomAndPan="magnify"><defs><filter height="300%" id="f17ktchzfbftit" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><rect fill="#DDDDDD" height="229.2578" style="stroke:#A80036;stroke-width:1.0;" width="311" x="1" y="6"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="202" x="55.5" y="18.0669">Håndtér kreditering (UC03)</text><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="48" x2="48" y1="60.4297" y2="196.9609"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="271" x2="271" y1="60.4297" y2="196.9609"/><rect fill="#FEFECE" filter="url(#f17ktchzfbftit)" height="30.2969" style="stroke:#A80036;stroke-width:1.5;" width="82" x="5" y="25.1328"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="68" x="12" y="45.1279">:Producer</text><rect fill="#FEFECE" filter="url(#f17ktchzfbftit)" height="30.2969" style="stroke:#A80036;stroke-width:1.5;" width="82" x="5" y="195.9609"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="68" x="12" y="215.9561">:Producer</text><rect fill="#FEFECE" filter="url(#f17ktchzfbftit)" height="30.2969" style="stroke:#A80036;stroke-width:1.5;" width="70" x="234" y="25.1328"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="56" x="241" y="45.1279">:System</text><rect fill="#FEFECE" filter="url(#f17ktchzfbftit)" height="30.2969" style="stroke:#A80036;stroke-width:1.5;" width="70" x="234" y="195.9609"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="56" x="241" y="215.9561">:System</text><polygon fill="#A80036" points="259,87.5625,269,91.5625,259,95.5625,263,91.5625" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="48" x2="265" y1="91.5625" y2="91.5625"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="9" x="55" y="86.4966">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="180" x="68" y="86.4966">signIn(username, password)</text><polygon fill="#A80036" points="59,116.6953,49,120.6953,59,124.6953,55,120.6953" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="53" x2="270" y1="120.6953" y2="120.6953"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="9" x="65" y="115.6294">2</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="156" x="78" y="115.6294">Authentication response</text><polygon fill="#A80036" points="259,145.8281,269,149.8281,259,153.8281,263,149.8281" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="48" x2="265" y1="149.8281" y2="149.8281"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="9" x="55" y="144.7622">3</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="186" x="68" y="144.7622">linkPeople(person1, person2)</text><polygon fill="#A80036" points="59,174.9609,49,178.9609,59,182.9609,55,178.9609" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="53" x2="270" y1="178.9609" y2="178.9609"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="9" x="65" y="173.895">4</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="107" x="78" y="173.895">Linking response</text><!--MD5=[3e8c26861cf2703e0356085a762414f1]
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+box "Håndtér kreditering (UC03)"
+    participant ":Producer" as producer
+    participant ":System" as system
+end box
+
+producer -> system : signIn(username, password)
+producer <- - system : Authentication response
+
+producer -> system : linkPeople(person1, person2)
+
+producer <- - system : Linking response
+
+@enduml
+
+@startuml
+
+autonumber
+
+box "Håndtér kreditering (UC03)"
+    participant ":Producer" as producer
+    participant ":System" as system
+end box
+
+producer -> system : signIn(username, password)
+producer <- - system : Authentication response
+
+producer -> system : linkPeople(person1, person2)
+
+producer <- - system : Linking response
+
+@enduml
+
+PlantUML version 1.2021.4(Sun Apr 04 08:49:39 UTC 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: null
+--></g></svg>
