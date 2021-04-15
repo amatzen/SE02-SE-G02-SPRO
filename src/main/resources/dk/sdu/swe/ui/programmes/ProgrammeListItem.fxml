@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.shape.Line?>
 <AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="89.0" prefWidth="1440.0"
-            style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/15.0.1">
+            style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/">
     <children>
         <Label layoutX="41.0" layoutY="35.0" text="Gutterne på kutterne"/>
         <ImageView fitHeight="48.0" fitWidth="48.0" layoutX="346.0" layoutY="21.0" pickOnBounds="true"
