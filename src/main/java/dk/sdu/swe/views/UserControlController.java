@@ -11,7 +11,7 @@ public class UserControlController extends VBox {
     public UserControlController() {
         FXMLLoader fxmlLoader = new FXMLLoader(
             Objects.requireNonNull(
-                getClass().getClassLoader().getResource("dk/sdu/swe/ui/admin/usercontrol.fxml")));
+                getClass().getClassLoader().getResource("dk/sdu/swe/ui/admin/components/usercontrol.fxml")));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
 

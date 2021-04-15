@@ -32,6 +32,7 @@ public class AdminViewController extends BorderPane {
         router = new Router(contentPane);
     }
 
+
     public AdminViewController() {
         FXMLLoader fxmlLoader = new FXMLLoader(
                 Objects.requireNonNull(
