@@ -1,3 +1,4 @@
+![Pipeline](https://gitlab.com/amatzen/SE02-SE-G02-SPRO/badges/master/pipeline.svg)
 # Semester Project - Second Semester
 
 Semester Project Group Members:
