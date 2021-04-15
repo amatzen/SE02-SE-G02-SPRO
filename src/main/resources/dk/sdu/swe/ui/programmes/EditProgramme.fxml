@@ -100,22 +100,38 @@
    <top>
       <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #FF9800;" BorderPane.alignment="CENTER">
          <children>
-            <Label text="Redigér program:">
-               <font>
-                  <Font size="24.0" />
-               </font>
-               <HBox.margin>
-                  <Insets left="30.0" top="30.0" />
-               </HBox.margin>
-            </Label>
-            <Label layoutX="10.0" layoutY="10.0" text="programName">
-               <font>
-                  <Font name="System Bold" size="24.0" />
-               </font>
-               <HBox.margin>
-                  <Insets left="5.0" top="30.0" />
-               </HBox.margin>
-            </Label>
+            <HBox prefHeight="100.0" prefWidth="722.0">
+               <children>
+                  <Label text="Redigér program:">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="30.0" top="30.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label text="programName">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="5.0" top="30.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <JFXButton prefHeight="28.0" prefWidth="60.0" style="-fx-background-color: #FF9800;" text="X" textAlignment="RIGHT">
+                     <HBox.margin>
+                        <Insets bottom="10.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Comic Sans MS" size="18.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </HBox>
          </children>
       </HBox>
    </top>
