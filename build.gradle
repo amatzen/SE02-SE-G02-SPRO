@@ -33,7 +33,17 @@ dependencies {
 }
 
 run {
-    getenv().each { name, value -> environment name, value }
+    file('.env').readLines().each() {
+        if (!it.isEmpty() && !it.startsWith("#")) {
+            def pos = it.indexOf("=")
+            def key = it.substring(0, pos)
+            def value = it.substring(pos + 1)
+
+            if (System.getenv(key) == null) {
+                environment key, value
+            }
+        }
+    }
 }
 
 javafx {
@@ -43,18 +53,4 @@ javafx {
 
 tasks.named('test') {
     useJUnitPlatform()
-}
-
-def static getenv(path = ".env") {
-    def env = [:]
-
-    def file = new File(path)
-    if (file.exists()) {
-        file.eachLine { line ->
-            def (name, value) = line.tokenize("=")
-            env[name.trim()] = value.trim()
-        }
-    }
-
-    return env
 }
