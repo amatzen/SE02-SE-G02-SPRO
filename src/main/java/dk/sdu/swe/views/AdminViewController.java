@@ -35,8 +35,8 @@ public class AdminViewController extends BorderPane {
 
     public AdminViewController() {
         FXMLLoader fxmlLoader = new FXMLLoader(
-                Objects.requireNonNull(
-                        getClass().getClassLoader().getResource("dk/sdu/swe/ui/admin/admin.fxml")));
+            Objects.requireNonNull(
+                getClass().getClassLoader().getResource("dk/sdu/swe/ui/admin/admin.fxml")));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
 

@@ -1,6 +1,5 @@
 package dk.sdu.swe.views;
 
-import com.jfoenix.controls.JFXAlert;
 import com.jfoenix.controls.JFXButton;
 import dk.sdu.swe.controllers.AuthController;
 import javafx.event.ActionEvent;
@@ -10,12 +9,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.input.KeyCode;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Window;
 
-import javax.swing.*;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -48,7 +44,7 @@ public class AuthViewController implements Initializable {
         button.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-            login();
+                login();
             }
         });
     }
@@ -69,20 +65,20 @@ public class AuthViewController implements Initializable {
     public void login() {
         if (textField.getText().isEmpty()) {
             showAlert(
-                    Alert.AlertType.ERROR,
-                    anchorPane.getScene().getWindow(),
-                    "Fejl!",
-                    "Brugernavnfeltet er tomt"
+                Alert.AlertType.ERROR,
+                anchorPane.getScene().getWindow(),
+                "Fejl!",
+                "Brugernavnfeltet er tomt"
             );
             return;
         }
 
         if (passwordField.getText().isEmpty()) {
             showAlert(
-                    Alert.AlertType.ERROR,
-                    anchorPane.getScene().getWindow(),
-                    "Fejl!",
-                    "Adgangskodefeltet er tomt"
+                Alert.AlertType.ERROR,
+                anchorPane.getScene().getWindow(),
+                "Fejl!",
+                "Adgangskodefeltet er tomt"
             );
             return;
         }
@@ -97,10 +93,10 @@ public class AuthViewController implements Initializable {
 
         if (!signIn) {
             showAlert(
-                    Alert.AlertType.ERROR,
-                    anchorPane.getScene().getWindow(),
-                    "Fejl!",
-                    "Brugernavn eller adgangskode forkert."
+                Alert.AlertType.ERROR,
+                anchorPane.getScene().getWindow(),
+                "Fejl!",
+                "Brugernavn eller adgangskode forkert."
             );
             return;
         }

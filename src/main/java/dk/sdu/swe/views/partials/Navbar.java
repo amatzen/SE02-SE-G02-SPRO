@@ -24,15 +24,16 @@ public class Navbar extends VBox {
     private ImageView pfpImgView;
 
     private Map<String, Runnable> profileBtnOptions = Map.of(
-                AuthController.getInstance().getUser().getClass().getName().replaceFirst("dk.sdu.swe.models.", ""), () -> {},
-            "Log ud", () -> {
-                try {
-                    AuthController.getInstance().logout();
-                    SceneNavigator.goTo("login", true);
-                } catch (IOException ioException) {
-                    ioException.printStackTrace();
-                }
-            });
+        AuthController.getInstance().getUser().getClass().getName().replaceFirst("dk.sdu.swe.models.", ""), () -> {
+        },
+        "Log ud", () -> {
+            try {
+                AuthController.getInstance().logout();
+                SceneNavigator.goTo("login", true);
+            } catch (IOException ioException) {
+                ioException.printStackTrace();
+            }
+        });
 
     private Router router;
 
@@ -40,8 +41,8 @@ public class Navbar extends VBox {
         this.router = router;
 
         FXMLLoader fxmlLoader = new FXMLLoader(
-                Objects.requireNonNull(
-                        getClass().getClassLoader().getResource("dk/sdu/swe/ui/Navbar.fxml")));
+            Objects.requireNonNull(
+                getClass().getClassLoader().getResource("dk/sdu/swe/ui/Navbar.fxml")));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
 
@@ -57,7 +58,7 @@ public class Navbar extends VBox {
     private void initialize() {
         router.goTo(ProgrammesViewController.class);
 
-        JFXButton[] btns = {progBtn,companyBtn,pplBtn,adminBtn};
+        JFXButton[] btns = {progBtn, companyBtn, pplBtn, adminBtn};
         for (JFXButton btn : btns) {
             btn.setVisible(false);
             btn.setManaged(false);
@@ -69,7 +70,7 @@ public class Navbar extends VBox {
             pplBtn, "people",
             adminBtn, "admin"
         ))).forEach((btn, perm) -> {
-            if(AuthController.getInstance().getUser().hasPermission(perm)) {
+            if (AuthController.getInstance().getUser().hasPermission(perm)) {
                 btn.setVisible(true);
                 btn.setManaged(true);
             }
@@ -80,14 +81,14 @@ public class Navbar extends VBox {
 
     @FXML
     private void handle(ActionEvent e) {
-        switch (((JFXButton)e.getSource()).getId()) {
+        switch (((JFXButton) e.getSource()).getId()) {
             case "progBtn" -> router.goTo(ProgrammesViewController.class);
             case "companyBtn" -> router.goTo(CompanyViewController.class);
             case "pplBtn" -> router.goTo(PersonsViewController.class);
             case "adminBtn" -> router.goTo(AdminViewController.class);
             case "profileBtn" -> {
-              JFXPopup popupListMenu = new PopupListMenu(profileBtnOptions);
-              popupListMenu.show(profileBtn, JFXPopup.PopupVPosition.BOTTOM, JFXPopup.PopupHPosition.RIGHT);
+                JFXPopup popupListMenu = new PopupListMenu(profileBtnOptions);
+                popupListMenu.show(profileBtn, JFXPopup.PopupVPosition.BOTTOM, JFXPopup.PopupHPosition.RIGHT);
             }
             default -> throw new IllegalStateException("Unexpected value: " + ((JFXButton) e.getSource()).getId());
         }
