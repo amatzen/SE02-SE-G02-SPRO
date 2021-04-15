@@ -2,21 +2,20 @@ package dk.sdu.swe.views;
 
 import com.jfoenix.controls.JFXButton;
 import dk.sdu.swe.controllers.AuthController;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
+import dk.sdu.swe.helpers.Environment;
+import dk.sdu.swe.helpers.EnvironmentSelector;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
-import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Window;
-import org.w3c.dom.Text;
 
-import java.io.BufferedInputStream;
 import java.io.IOException;
 import java.net.URL;
-import java.util.Locale;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class AuthViewController implements Initializable {
@@ -24,7 +23,7 @@ public class AuthViewController implements Initializable {
     private String modelPassword;
 
     @FXML
-    AnchorPane anchorPane;
+    VBox main;
 
     @FXML
     JFXButton button;
@@ -44,6 +43,9 @@ public class AuthViewController implements Initializable {
     @FXML
     Button hs_button;
 
+    @FXML
+    ChoiceBox environmentSelector;
+
     /**
      * Called to initialize a controller after its root element has been
      * completely processed.
@@ -55,17 +57,21 @@ public class AuthViewController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        // Database Type
+        List<String> environments = new ArrayList<>();
+        for (Environment value : Environment.values()) {
+            environments.add(value.getLabel());
+        }
+        environmentSelector.setItems(FXCollections.observableArrayList(environments));
+        environmentSelector.valueProperty().setValue(EnvironmentSelector.getInstance().getEnvironment().getLabel());
+
+
+        // Login button
+        button.setOnAction(event -> login());
+
+        // Password Masking Function
         this.passwordField1.setVisible(false);
-
-        button.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                login();
-            }
-        });
-
         hs_button.setOnAction(event -> togglePasswordVisibility());
-
         this.passwordField.textProperty().addListener((observable, oldValue, newValue) -> {
             this.passwordField1.setText(newValue);
         });
@@ -73,6 +79,7 @@ public class AuthViewController implements Initializable {
         this.passwordField1.textProperty().addListener(((observable, oldValue, newValue) -> {
             this.passwordField.setText(newValue);
         }));
+        // End Password Masking Function
     }
 
     private void togglePasswordVisibility() {
@@ -102,7 +109,7 @@ public class AuthViewController implements Initializable {
         if (textField.getText().isEmpty()) {
             showAlert(
                 Alert.AlertType.ERROR,
-                anchorPane.getScene().getWindow(),
+                main.getScene().getWindow(),
                 "Fejl!",
                 "Brugernavnfeltet er tomt"
             );
@@ -112,7 +119,7 @@ public class AuthViewController implements Initializable {
         if (passwordField.getText().isEmpty()) {
             showAlert(
                 Alert.AlertType.ERROR,
-                anchorPane.getScene().getWindow(),
+                main.getScene().getWindow(),
                 "Fejl!",
                 "Adgangskodefeltet er tomt"
             );
@@ -130,7 +137,7 @@ public class AuthViewController implements Initializable {
         if (!signIn) {
             showAlert(
                 Alert.AlertType.ERROR,
-                anchorPane.getScene().getWindow(),
+                main.getScene().getWindow(),
                 "Fejl!",
                 "Brugernavn eller adgangskode forkert."
             );
@@ -141,21 +148,6 @@ public class AuthViewController implements Initializable {
             SceneNavigator.goTo("crms", true);
         } catch (IOException e) {
             e.printStackTrace();
-        }
-    }
-
-    public void hsButton(ActionEvent actionEvent) {
-        char[] temp;
-        temp = passwordField.getText().toCharArray();
-        int length = temp.length;
-
-        if (length < 1){
-            //Do nothing
-
-        } else {
-            String code = passwordField.getCharacters().toString();
-            passwordField.setText(code);
-            showPswd.setText("(" + code + ")");
         }
     }
 }
