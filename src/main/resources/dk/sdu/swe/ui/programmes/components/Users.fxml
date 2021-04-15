@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
 <fx:root xmlns:fx="http://javafx.com/fxml/1" type="HBox" alignment="CENTER" prefHeight="26.0" prefWidth="698.0"
-         xmlns="http://javafx.com/javafx/15.0.1">
+         xmlns="http://javafx.com/javafx/">
     <children>
         <HBox prefHeight="47.0" prefWidth="258.0">
             <children>

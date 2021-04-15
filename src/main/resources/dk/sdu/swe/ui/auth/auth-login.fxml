@@ -10,7 +10,7 @@
 <GridPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
           minWidth="-Infinity" prefHeight="1024.0" prefWidth="1440.0"
           style="-fx-background-color: #455A64;" stylesheets="@../../../../../styles/background-image.css"
-          xmlns="http://javafx.com/javafx/11.0.1" fx:controller="dk.sdu.swe.views.AuthViewController">
+          xmlns="http://javafx.com/javafx/" fx:controller="dk.sdu.swe.views.AuthViewController">
     <columnConstraints>
         <ColumnConstraints hgrow="SOMETIMES" maxWidth="413.0" minWidth="149.0" prefWidth="153.0"/>
         <ColumnConstraints hgrow="SOMETIMES" maxWidth="1440.0" minWidth="10.0" prefWidth="417.0"/>
