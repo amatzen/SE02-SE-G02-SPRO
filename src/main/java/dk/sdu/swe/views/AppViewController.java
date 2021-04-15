@@ -4,8 +4,6 @@ import dk.sdu.swe.views.partials.Navbar;
 import javafx.fxml.FXML;
 import javafx.scene.layout.Pane;
 
-import java.util.ResourceBundle;
-
 public class AppViewController {
 
     @FXML

@@ -2,69 +2,68 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.shape.Line?>
-
-<AnchorPane prefHeight="89.0" prefWidth="1440.0" style="-fx-background-color: white;"
-            xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
-   <children>
-      <Label layoutX="41.0" layoutY="35.0" text="Gutterne på kutterne" />
-      <ImageView fitHeight="48.0" fitWidth="48.0" layoutX="346.0" layoutY="21.0" pickOnBounds="true"
-                 preserveRatio="true">
-         <image>
-            <Image url="@../images/channels/tv2.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="48.0" fitWidth="48.0" layoutX="395.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../images/channels/tv2fri.png" />
-         </image>
-      </ImageView>
-      <Label layoutX="571.0" layoutY="35.0" text="2018" />
-      <Label layoutX="824.0" layoutY="35.0" text="Outdoor" />
-      <JFXButton layoutX="1052.0" layoutY="26.0" prefHeight="36.0" prefWidth="182.0"
-                 style="-fx-background-color: #ffa500;"
-                 text="SE KREDITTERINGER" textFill="WHITE" />
-      <HBox layoutX="1267.0" layoutY="17.0" prefHeight="44.0" prefWidth="146.0">
-         <children>
-            <JFXButton ellipsisString="." maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
-                       minWidth="-Infinity" prefHeight="50.0" prefWidth="48.0" text="Button">
-               <graphic>
-                  <ImageView fitHeight="55.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true"
-                             translateX="-9.0" translateY="-1.0">
-                     <image>
-                        <Image url="@../images/ListViewBtn/editBtn.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </JFXButton>
-            <JFXButton ellipsisString="." maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
-                       minWidth="-Infinity" prefHeight="48.0" prefWidth="48.0" text="Button">
-               <graphic>
-                  <ImageView fitHeight="46.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true"
-                             translateX="-9.0">
-                     <image>
-                        <Image url="@../images/ListViewBtn/seeBtn.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </JFXButton>
-            <JFXButton ellipsisString="." maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
-                       minWidth="-Infinity" prefHeight="48.0" prefWidth="48.0" text="Button">
-               <graphic>
-                  <ImageView fitHeight="46.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true"
-                             translateX="-11.0">
-                     <image>
-                        <Image url="@../images/ListViewBtn/checkBtn.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </JFXButton>
-         </children>
-      </HBox>
-      <Line endX="1162.5" layoutX="245.0" layoutY="78.0" startX="-203.5" />
-   </children>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="89.0" prefWidth="1440.0"
+            style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/15.0.1">
+    <children>
+        <Label layoutX="41.0" layoutY="35.0" text="Gutterne på kutterne"/>
+        <ImageView fitHeight="48.0" fitWidth="48.0" layoutX="346.0" layoutY="21.0" pickOnBounds="true"
+                   preserveRatio="true">
+            <image>
+                <Image url="@../images/channels/tv2.png"/>
+            </image>
+        </ImageView>
+        <ImageView fitHeight="48.0" fitWidth="48.0" layoutX="395.0" layoutY="21.0" pickOnBounds="true"
+                   preserveRatio="true">
+            <image>
+                <Image url="@../images/channels/tv2fri.png"/>
+            </image>
+        </ImageView>
+        <Label layoutX="571.0" layoutY="35.0" text="2018"/>
+        <Label layoutX="824.0" layoutY="35.0" text="Outdoor"/>
+        <JFXButton layoutX="1052.0" layoutY="26.0" prefHeight="36.0" prefWidth="182.0"
+                   style="-fx-background-color: #ffa500;"
+                   text="SE KREDITTERINGER" textFill="WHITE"/>
+        <HBox layoutX="1267.0" layoutY="17.0" prefHeight="44.0" prefWidth="146.0">
+            <children>
+                <JFXButton ellipsisString="." maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+                           minWidth="-Infinity" prefHeight="50.0" prefWidth="48.0" text="Button">
+                    <graphic>
+                        <ImageView fitHeight="55.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true"
+                                   translateX="-9.0" translateY="-1.0">
+                            <image>
+                                <Image url="@../images/ListViewBtn/editBtn.png"/>
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </JFXButton>
+                <JFXButton ellipsisString="." maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+                           minWidth="-Infinity" prefHeight="48.0" prefWidth="48.0" text="Button">
+                    <graphic>
+                        <ImageView fitHeight="46.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true"
+                                   translateX="-9.0">
+                            <image>
+                                <Image url="@../images/ListViewBtn/seeBtn.png"/>
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </JFXButton>
+                <JFXButton ellipsisString="." maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+                           minWidth="-Infinity" prefHeight="48.0" prefWidth="48.0" text="Button">
+                    <graphic>
+                        <ImageView fitHeight="46.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true"
+                                   translateX="-11.0">
+                            <image>
+                                <Image url="@../images/ListViewBtn/checkBtn.png"/>
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </JFXButton>
+            </children>
+        </HBox>
+        <Line endX="1162.5" layoutX="245.0" layoutY="78.0" startX="-203.5"/>
+    </children>
 </AnchorPane>

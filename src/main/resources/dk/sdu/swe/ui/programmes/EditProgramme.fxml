@@ -5,7 +5,6 @@
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
@@ -18,7 +17,7 @@
          <children>
             <VBox prefHeight="469.0" prefWidth="349.0">
                <children>
-                  <JFXTextField prefHeight="50.0" prefWidth="309.0" promptText="Titel" style="                   -fx-border-color: #cccccc; -fx-border-radius: 5px;                   -fx-padding: 0.333333em 1em 0.333333em 1em;                   -fx-background-color: transparent; -jfx-unfocus-color: transparent;                   -jfx-focus-color: transparent;">
+                  <JFXTextField prefHeight="50.0" prefWidth="309.0" promptText="Titel" style=" -fx-border-color: #cccccc; -fx-border-radius: 5px;                   -fx-padding: 0.333333em 1em 0.333333em 1em;                   -fx-background-color: transparent; -jfx-unfocus-color: transparent;                   -jfx-focus-color: transparent;">
                      <VBox.margin>
                         <Insets left="30.0" right="10.0" top="30.0" />
                      </VBox.margin>
@@ -42,7 +41,7 @@
             </VBox>
             <VBox prefHeight="469.0" prefWidth="349.0">
                <children>
-                  <VBox prefHeight="283.0" prefWidth="299.0" spacing="10.0">
+                  <VBox prefHeight="200.0" prefWidth="100.0" spacing="10.0">
                      <children>
                         <JFXRadioButton text="TV 2">
                            <VBox.margin>
@@ -50,31 +49,28 @@
                            </VBox.margin>
                            <selectedColor>
                               <Color red="1.0" green="0.5960784554481506" />
-                           </selectedColor>
-                           <toggleGroup>
-                              <ToggleGroup fx:id="program" />
-                           </toggleGroup></JFXRadioButton>
-                        <JFXRadioButton layoutX="10.0" layoutY="10.0" text="TV 2 Charlie" toggleGroup="$program">
+                           </selectedColor></JFXRadioButton>
+                        <JFXRadioButton layoutX="10.0" layoutY="10.0" text="TV 2 Charlie">
                            <selectedColor>
                               <Color red="1.0" green="0.5960784554481506" />
                            </selectedColor></JFXRadioButton>
-                        <JFXRadioButton layoutX="10.0" layoutY="199.0" text="TV 2 Fri" toggleGroup="$program">
+                        <JFXRadioButton layoutX="10.0" layoutY="199.0" text="TV 2 Fri">
                            <selectedColor>
                               <Color red="1.0" green="0.5960784554481506" />
                            </selectedColor></JFXRadioButton>
-                        <JFXRadioButton layoutX="10.0" layoutY="226.0" text="TV 2 News" toggleGroup="$program">
+                        <JFXRadioButton layoutX="10.0" layoutY="226.0" text="TV 2 News">
                            <selectedColor>
                               <Color red="1.0" green="0.5960784554481506" />
                            </selectedColor></JFXRadioButton>
-                        <JFXRadioButton layoutX="10.0" layoutY="199.0" text="TV 2 Zulu" toggleGroup="$program">
+                        <JFXRadioButton layoutX="10.0" layoutY="199.0" text="TV 2 Zulu">
                            <selectedColor>
                               <Color red="1.0" green="0.5960784554481506" />
                            </selectedColor></JFXRadioButton>
-                        <JFXRadioButton layoutX="10.0" layoutY="199.0" text="TV 2 Sport" toggleGroup="$program">
+                        <JFXRadioButton layoutX="10.0" layoutY="199.0" text="TV 2 Sport">
                            <selectedColor>
                               <Color red="1.0" green="0.5960784554481506" />
                            </selectedColor></JFXRadioButton>
-                        <JFXRadioButton layoutX="10.0" layoutY="226.0" text="TV 2 Sport X" toggleGroup="$program">
+                        <JFXRadioButton layoutX="10.0" layoutY="226.0" text="TV 2 Sport X">
                            <selectedColor>
                               <Color red="1.0" green="0.5960784554481506" />
                            </selectedColor></JFXRadioButton>

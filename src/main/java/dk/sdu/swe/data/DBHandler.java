@@ -2,7 +2,6 @@ package dk.sdu.swe.data;
 
 import dk.sdu.swe.models.User;
 
-import java.io.IOException;
 import java.util.List;
 
 public class DBHandler implements PersistenceContract {

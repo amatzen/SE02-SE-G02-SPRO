@@ -15,11 +15,6 @@ public class Name {
      */
     protected String lastName;
 
-    @Override
-    public String toString() {
-        return String.format("%s %s", firstName, lastName);
-    }
-
     /**
      * Instantiates a new Name.
      *
@@ -44,5 +39,10 @@ public class Name {
 
         this.firstName = name.trim().split(" ")[0];
         this.lastName = name.trim().split(" ")[1];
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%s %s", firstName, lastName);
     }
 }
