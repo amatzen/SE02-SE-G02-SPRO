@@ -70,6 +70,7 @@ public class JSONHandler implements PersistenceContract {
         Content content = new Content("text/plain", "Velkommen til CrMS - et semesterprojekt!\n\nDu kan nu logge ind i CrMS med foelgende brugeroplysninger:\n\nBrugernavn: " + json.getString("username") + "\nAdgangskode: " + password);
         EmailProvider.sendEmail(new Email(json.getString("email")), "Velkommen til CrMS!", content);
 
-
+        IOHandler ioHandler = getUserIOLoader();
+        ioHandler.jsonAppendToArray(json);
     }
 }
