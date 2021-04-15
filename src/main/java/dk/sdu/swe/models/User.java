@@ -96,5 +96,16 @@ public class User implements IUser {
             default                     ->                 new User(o.getInt("id"), o.getString("username"), o.getString("email"), o.getJSONObject("name").getString("_combined"));
         };
     }
+    public static String createRandomPassword(int length) {
+        String allowedCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!#";
+        StringBuilder passwordBuilder = new StringBuilder();
+
+        Random randomizer = new Random();
+        while(passwordBuilder.length() < length) {
+            passwordBuilder.append(allowedCharacters.charAt((int) (randomizer.nextFloat() * allowedCharacters.length())));
+        }
+
+        return passwordBuilder.toString();
+    }
 }
 
