@@ -1,10 +1,12 @@
 package dk.sdu.swe.models;
 
+import at.favre.lib.crypto.bcrypt.BCrypt;
+import dk.sdu.swe.data.JSONHandler;
+import dk.sdu.swe.data.PersistenceContract;
 import dk.sdu.swe.exceptions.UserCreationException;
 import org.json.JSONObject;
 
-import java.util.Arrays;
-import java.util.Objects;
+import java.util.*;
 
 /**
  * The type User.
@@ -72,6 +74,20 @@ public class User implements IUser {
     public boolean hasPermission(String permissionKey) {
         return Arrays.stream(this.permissions).anyMatch(s -> Objects.equals(s, permissionKey));
     }
+
+
+    public static User get(int id) throws Exception {
+        return JSONHandler.getInstance().getUser(id);
+    }
+
+    public static List<User> getAll() throws Exception {
+        return JSONHandler.getInstance().getUsers();
+    }
+
+    public static void create(User user) throws Exception {
+        JSONHandler.getInstance().createUser(user);
+    }
+
 
     public static User jsonToUser(JSONObject o) throws Exception {
         return switch (o.getString("permission")) {
