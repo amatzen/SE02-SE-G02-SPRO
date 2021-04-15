@@ -14,23 +14,24 @@ package dk.sdu.swe.views;
  You should have received a copy of the GNU General Public License
  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+
+import javafx.animation.FadeTransition;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+import javafx.util.Duration;
+
 import java.io.IOException;
-import java.util.AbstractMap;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
-
-import javafx.fxml.FXMLLoader;
-import javafx.stage.Stage;
-import javafx.scene.Scene;
-import javafx.scene.Parent;
-import javafx.util.Duration;
-import javafx.animation.FadeTransition;
 
 
 /**
  * FXRouter allows to manage scenes switching on JavaFX Application with an easy API
  * Inspired by Angular JS $routeProvider
+ *
  * @author Marco Trombino
  * @version 1.0.0
  */
@@ -62,60 +63,10 @@ public final class SceneNavigator {
     private static RouteScene currentRoute;
 
     /**
-     * FXRouter Inner Class used into routes map
-     */
-    private static class RouteScene {
-        // route .fxml Scene path
-        private String scenePath;
-        // Scene (Stage) title
-        private String windowTitle;
-        private double sceneWidth;
-        private double sceneHeight;
-        // route data passed from goTo()
-        private Object data;
-
-        private RouteScene(String scenePath) {
-            this(scenePath, getWindowTitle(), getWindowWidth(), getWindowHeight());
-        }
-
-        private RouteScene(String scenePath, String windowTitle) {
-            this(scenePath, windowTitle, getWindowWidth(), getWindowHeight());
-        }
-
-        private RouteScene(String scenePath, double sceneWidth, double sceneHeight) {
-            this(scenePath, getWindowTitle(), sceneWidth, sceneHeight);
-        }
-
-        /** Route scene constructor
-         * @param scenePath: .FXML scene file
-         * @param windowTitle: Scene (Stage) title
-         * @param sceneWidth: Scene Width
-         * @param sceneHeight: Scene Height
-         */
-        private RouteScene(String scenePath, String windowTitle, double sceneWidth, double sceneHeight) {
-            this.scenePath = scenePath;
-            this.windowTitle = windowTitle;
-            this.sceneWidth = sceneWidth;
-            this.sceneHeight = sceneHeight;
-        }
-
-        private static String getWindowTitle() {
-            return SceneNavigator.windowTitle != null ? SceneNavigator.windowTitle : WINDOW_TITLE;
-        }
-
-        private static double getWindowWidth() {
-            return SceneNavigator.windowWidth != null ? SceneNavigator.windowWidth : WINDOW_WIDTH;
-        }
-
-        private static double getWindowHeight() {
-            return SceneNavigator.windowHeight != null ? SceneNavigator.windowHeight : WINDOW_HEIGHT;
-        }
-    }
-
-    /**
      * FXRouter constructor kept private to apply Singleton pattern
      */
-    private SceneNavigator() {}
+    private SceneNavigator() {
+    }
 
     public static void bind(Stage win) {
         checkInstances(win);
@@ -132,10 +83,12 @@ public final class SceneNavigator {
         windowHeight = winHeight;
     }
 
-    /** FXRouter binder with Application Stage and main package
-     * @param win: Application Stage
-     * @param winTitle: Application Stage title
-     * @param winWidth: Application Stage width
+    /**
+     * FXRouter binder with Application Stage and main package
+     *
+     * @param win:       Application Stage
+     * @param winTitle:  Application Stage title
+     * @param winWidth:  Application Stage width
      * @param winHeight: Application Stage height
      */
     public static void bind(Stage win, String winTitle, double winWidth, double winHeight) {
@@ -145,13 +98,15 @@ public final class SceneNavigator {
         windowHeight = winHeight;
     }
 
-    /** set FXRouter references only if they are not set yet
+    /**
+     * set FXRouter references only if they are not set yet
+     *
      * @param win: Application Stage
      */
     private static void checkInstances(Stage win) {
-        if(router == null)
+        if (router == null)
             router = new SceneNavigator();
-        if(window == null)
+        if (window == null)
             window = win;
     }
 
@@ -170,11 +125,13 @@ public final class SceneNavigator {
         routes.put(routeLabel, routeScene);
     }
 
-    /** Define a FXRouter route
-     * @param routeLabel: Route label identifier
-     * @param scenePath: .FXML scene file
-     * @param winTitle: Scene (Stage) title
-     * @param sceneWidth: Scene Width
+    /**
+     * Define a FXRouter route
+     *
+     * @param routeLabel:  Route label identifier
+     * @param scenePath:   .FXML scene file
+     * @param winTitle:    Scene (Stage) title
+     * @param sceneWidth:  Scene Width
      * @param sceneHeight: Scene Height
      */
     public static void when(String routeLabel, String scenePath, String winTitle, double sceneWidth, double sceneHeight) {
@@ -188,9 +145,11 @@ public final class SceneNavigator {
         loadNewRoute(route, keepDimensions);
     }
 
-    /** Switch between FXRouter route and show corresponding scenes
+    /**
+     * Switch between FXRouter route and show corresponding scenes
+     *
      * @param routeLabel: Route label identifier
-     * @param data: Data passed to route
+     * @param data:       Data passed to route
      * @throws Exception: throw FXMLLoader exception if file is not loaded correctly
      */
     public static void goTo(String routeLabel, Object data, boolean keepDimensions) throws IOException {
@@ -201,7 +160,9 @@ public final class SceneNavigator {
         loadNewRoute(route, keepDimensions);
     }
 
-    /** Helper method of goTo() which load and show new scene
+    /**
+     * Helper method of goTo() which load and show new scene
+     *
      * @throws Exception: throw FXMLLoader exception if file is not loaded correctly
      */
     private static void loadNewRoute(RouteScene route, boolean keepDimensions) throws IOException {
@@ -228,15 +189,19 @@ public final class SceneNavigator {
         routeAnimation(resource);
     }
 
-    /** set FXRouter switching animation
+    /**
+     * set FXRouter switching animation
+     *
      * @param anType: Animation type
      */
     public static void setAnimationType(String anType) {
         animationType = anType;
     }
 
-    /** set FXRouter switching animation
-     * @param anType: Animation type
+    /**
+     * set FXRouter switching animation
+     *
+     * @param anType:     Animation type
      * @param anDuration: Animation duration
      */
     public static void setAnimationType(String anType, double anDuration) {
@@ -244,12 +209,14 @@ public final class SceneNavigator {
         animationDuration = anDuration;
     }
 
-    /** Animate routes switching based on animation type
+    /**
+     * Animate routes switching based on animation type
+     *
      * @param node: Parent node to animate
      */
     private static void routeAnimation(Parent node) {
         String anType = animationType != null ? animationType.toLowerCase() : "";
-        switch(anType) {
+        switch (anType) {
             case "fade":
                 Double fd = animationDuration != null ? animationDuration : FADE_ANIMATION_DURATION;
                 FadeTransition ftCurrent = new FadeTransition(Duration.millis(fd), node);
@@ -262,10 +229,64 @@ public final class SceneNavigator {
         }
     }
 
-    /** Get current route data
+    /**
+     * Get current route data
      */
     public static Object getData() {
         return currentRoute.data;
+    }
+
+    /**
+     * FXRouter Inner Class used into routes map
+     */
+    private static class RouteScene {
+        // route .fxml Scene path
+        private String scenePath;
+        // Scene (Stage) title
+        private String windowTitle;
+        private double sceneWidth;
+        private double sceneHeight;
+        // route data passed from goTo()
+        private Object data;
+
+        private RouteScene(String scenePath) {
+            this(scenePath, getWindowTitle(), getWindowWidth(), getWindowHeight());
+        }
+
+        private RouteScene(String scenePath, String windowTitle) {
+            this(scenePath, windowTitle, getWindowWidth(), getWindowHeight());
+        }
+
+        private RouteScene(String scenePath, double sceneWidth, double sceneHeight) {
+            this(scenePath, getWindowTitle(), sceneWidth, sceneHeight);
+        }
+
+        /**
+         * Route scene constructor
+         *
+         * @param scenePath:   .FXML scene file
+         * @param windowTitle: Scene (Stage) title
+         * @param sceneWidth:  Scene Width
+         * @param sceneHeight: Scene Height
+         */
+        private RouteScene(String scenePath, String windowTitle, double sceneWidth, double sceneHeight) {
+            this.scenePath = scenePath;
+            this.windowTitle = windowTitle;
+            this.sceneWidth = sceneWidth;
+            this.sceneHeight = sceneHeight;
+        }
+
+        private static String getWindowTitle() {
+            return SceneNavigator.windowTitle != null ? SceneNavigator.windowTitle : WINDOW_TITLE;
+        }
+
+        private static double getWindowWidth() {
+            return SceneNavigator.windowWidth != null ? SceneNavigator.windowWidth : WINDOW_WIDTH;
+        }
+
+        private static double getWindowHeight() {
+            return SceneNavigator.windowHeight != null ? SceneNavigator.windowHeight : WINDOW_HEIGHT;
+        }
     }
 
 }
