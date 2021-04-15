@@ -1,7 +1,7 @@
 package dk.sdu.swe.models;
 
-
 public class Person {
+
     private int id;
     private String name;
     private String dateOfBirth;
@@ -30,6 +30,3 @@ public class Person {
     }
 
 }
-
-
-

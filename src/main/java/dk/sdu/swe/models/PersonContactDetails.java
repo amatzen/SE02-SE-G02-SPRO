@@ -1,6 +1,7 @@
 package dk.sdu.swe.models;
 
 public class PersonContactDetails {
+
     public String phone;
     public String email;
 
