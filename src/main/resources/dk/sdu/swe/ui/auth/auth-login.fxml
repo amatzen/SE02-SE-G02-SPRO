@@ -57,7 +57,7 @@
                         <Font name="Gargi" size="13.0" />
                     </font>
                 </Text>
-            <JFXButton fx:id="hs_button" alignment="CENTER" contentDisplay="CENTER" layoutX="332.0" layoutY="258.0" onAction="#hsButton" prefHeight="32.0" prefWidth="37.0" text=" ">
+            <JFXButton fx:id="hs_button" alignment="CENTER" contentDisplay="CENTER" layoutX="332.0" layoutY="258.0" prefHeight="32.0" prefWidth="37.0" text=" ">
                <graphic>
                       <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                           <image>
