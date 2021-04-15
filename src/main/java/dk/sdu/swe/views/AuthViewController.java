@@ -64,12 +64,7 @@ public class AuthViewController implements Initializable {
             }
         });
 
-        hs_button.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                togglePasswordVisibility();
-            }
-        });
+        hs_button.setOnAction(event -> togglePasswordVisibility());
 
         this.passwordField.textProperty().addListener((observable, oldValue, newValue) -> {
             this.passwordField1.setText(newValue);
