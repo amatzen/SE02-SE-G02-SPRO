@@ -4,14 +4,11 @@ import at.favre.lib.crypto.bcrypt.BCrypt;
 import com.sendgrid.Content;
 import com.sendgrid.Email;
 import dk.sdu.swe.exceptions.UserCreationException;
-import dk.sdu.swe.models.CompanyAdministrator;
-import dk.sdu.swe.models.SystemAdministrator;
 import dk.sdu.swe.models.User;
 import dk.sdu.swe.provider.EmailProvider;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -40,7 +37,7 @@ public class JSONHandler implements PersistenceContract {
         JSONArray jsonArray = new JSONArray(ioLoader.readFile());
 
         ArrayList<User> userList = new ArrayList<>();
-        
+
         for (int i = 0; i < jsonArray.length(); i++) {
             JSONObject o = jsonArray.getJSONObject(i);
             userList.add(User.jsonToUser(o));
@@ -60,7 +57,7 @@ public class JSONHandler implements PersistenceContract {
         List<User> users = getUsers();
 
         User match = users.stream().filter(x -> Objects.equals(x.getUsername(), user.getUsername())).findAny().orElse(null);
-        if(match != null) {
+        if (match != null) {
             throw new UserCreationException("Username taken.");
         }
 

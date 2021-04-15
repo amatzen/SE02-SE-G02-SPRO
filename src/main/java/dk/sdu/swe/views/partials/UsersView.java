@@ -18,9 +18,9 @@ public class UsersView extends HBox {
 
     public UsersView() {
         FXMLLoader fxmlLoader = new FXMLLoader(
-                Objects.requireNonNull(
-                        getClass().getClassLoader().getResource(
-                                "dk/sdu/swe/ui/admin/components/Users.fxml")));
+            Objects.requireNonNull(
+                getClass().getClassLoader().getResource(
+                    "dk/sdu/swe/ui/admin/components/Users.fxml")));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
 

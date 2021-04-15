@@ -1,122 +1,125 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Separator?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
-
-<BorderPane prefHeight="469.0" prefWidth="698.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dk.sdu.swe.views.ProgrammesViewController">
-   <top>
-      <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #FF9800;" BorderPane.alignment="CENTER">
-         <children>
-            <Label text="Brugeradministration:">
-               <font>
-                  <Font size="24.0" />
-               </font>
-               <HBox.margin>
-                  <Insets left="30.0" top="30.0" />
-               </HBox.margin>
-            </Label>
-            <Label fx:id="CompanyName" layoutX="10.0" layoutY="10.0" text="CompanyName">
-               <font>
-                  <Font name="System Bold" size="24.0" />
-               </font>
-               <HBox.margin>
-                  <Insets left="5.0" top="30.0" />
-               </HBox.margin>
-            </Label>
-         </children>
-      </HBox>
-   </top>
-   <bottom>
-      <HBox prefHeight="81.0" prefWidth="698.0" BorderPane.alignment="CENTER">
-         <children>
-            <HBox prefHeight="81.0" prefWidth="969.0" />
-            <HBox alignment="CENTER_RIGHT" prefHeight="83.0" prefWidth="699.0">
-               <children>
-                  <JFXButton fx:id="newUserButton" layoutX="601.0" layoutY="18.0" prefHeight="35.0" prefWidth="90.0" style="-fx-background-color: transparent;" text="+ Ny Bruger" textAlignment="RIGHT" textFill="#515050">
-                     <HBox.margin>
-                        <Insets bottom="30.0" right="10.0" />
-                     </HBox.margin>
-                     <font>
-                        <Font name="System Bold" size="12.0" />
-                     </font>
-                  </JFXButton>
-                  <JFXButton fx:id="saveButton" prefHeight="35.0" prefWidth="78.0" style="-fx-background-color: #FF9800;" text="Gem" textAlignment="RIGHT" textFill="WHITE">
-                     <HBox.margin>
-                        <Insets bottom="30.0" right="30.0" />
-                     </HBox.margin>
-                     <font>
-                        <Font name="System Bold" size="12.0" />
-                     </font>
-                  </JFXButton>
-               </children>
-            </HBox>
-         </children>
-      </HBox>
-   </bottom>
-   <center>
-      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
-         <children>
-            <HBox alignment="CENTER" prefHeight="47.0" prefWidth="698.0">
-               <children>
-                  <HBox alignment="CENTER_LEFT" prefHeight="47.0" prefWidth="258.0">
-                     <children>
-                        <Label contentDisplay="CENTER" text="Email">
-                           <HBox.margin>
-                              <Insets left="30.0" />
-                           </HBox.margin>
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </HBox>
-                  <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="47.0" prefWidth="222.0">
-                     <children>
-                        <Label prefHeight="25.0" prefWidth="127.0" text="Navn">
-                           <HBox.margin>
-                              <Insets />
-                           </HBox.margin>
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </HBox>
-                  <HBox alignment="CENTER_LEFT" layoutX="210.0" layoutY="10.0" prefHeight="47.0" prefWidth="137.0">
-                     <children>
-                        <Label text="Suspenderet">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </HBox>
-                  <HBox alignment="CENTER_LEFT" layoutX="410.0" layoutY="10.0" prefHeight="47.0" prefWidth="138.0">
-                     <children>
-                        <Label text="Virk. adm">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </HBox>
-               </children>
-            </HBox>
-            <Separator prefWidth="200.0">
-               <VBox.margin>
-                  <Insets left="30.0" right="30.0" />
-               </VBox.margin>
-               <padding>
-                  <Insets bottom="10.0" />
-               </padding>
-            </Separator>
-         </children>
-      </VBox>
-   </center>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="469.0" prefWidth="698.0"
+            xmlns="http://javafx.com/javafx/15.0.1" fx:controller="dk.sdu.swe.views.ProgrammesViewController">
+    <top>
+        <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #FF9800;" BorderPane.alignment="CENTER">
+            <children>
+                <Label text="Brugeradministration:">
+                    <font>
+                        <Font size="24.0"/>
+                    </font>
+                    <HBox.margin>
+                        <Insets left="30.0" top="30.0"/>
+                    </HBox.margin>
+                </Label>
+                <Label fx:id="CompanyName" layoutX="10.0" layoutY="10.0" text="CompanyName">
+                    <font>
+                        <Font name="System Bold" size="24.0"/>
+                    </font>
+                    <HBox.margin>
+                        <Insets left="5.0" top="30.0"/>
+                    </HBox.margin>
+                </Label>
+            </children>
+        </HBox>
+    </top>
+    <bottom>
+        <HBox prefHeight="81.0" prefWidth="698.0" BorderPane.alignment="CENTER">
+            <children>
+                <HBox prefHeight="81.0" prefWidth="969.0"/>
+                <HBox alignment="CENTER_RIGHT" prefHeight="83.0" prefWidth="699.0">
+                    <children>
+                        <JFXButton fx:id="newUserButton" layoutX="601.0" layoutY="18.0" prefHeight="35.0"
+                                   prefWidth="90.0" style="-fx-background-color: transparent;" text="+ Ny Bruger"
+                                   textAlignment="RIGHT" textFill="#515050">
+                            <HBox.margin>
+                                <Insets bottom="30.0" right="10.0"/>
+                            </HBox.margin>
+                            <font>
+                                <Font name="System Bold" size="12.0"/>
+                            </font>
+                        </JFXButton>
+                        <JFXButton fx:id="saveButton" prefHeight="35.0" prefWidth="78.0"
+                                   style="-fx-background-color: #FF9800;" text="Gem" textAlignment="RIGHT"
+                                   textFill="WHITE">
+                            <HBox.margin>
+                                <Insets bottom="30.0" right="30.0"/>
+                            </HBox.margin>
+                            <font>
+                                <Font name="System Bold" size="12.0"/>
+                            </font>
+                        </JFXButton>
+                    </children>
+                </HBox>
+            </children>
+        </HBox>
+    </bottom>
+    <center>
+        <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+            <children>
+                <HBox alignment="CENTER" prefHeight="47.0" prefWidth="698.0">
+                    <children>
+                        <HBox alignment="CENTER_LEFT" prefHeight="47.0" prefWidth="258.0">
+                            <children>
+                                <Label contentDisplay="CENTER" text="Email">
+                                    <HBox.margin>
+                                        <Insets left="30.0"/>
+                                    </HBox.margin>
+                                    <font>
+                                        <Font size="16.0"/>
+                                    </font>
+                                </Label>
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="47.0" prefWidth="222.0">
+                            <children>
+                                <Label prefHeight="25.0" prefWidth="127.0" text="Navn">
+                                    <HBox.margin>
+                                        <Insets/>
+                                    </HBox.margin>
+                                    <font>
+                                        <Font size="16.0"/>
+                                    </font>
+                                </Label>
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" layoutX="210.0" layoutY="10.0" prefHeight="47.0"
+                              prefWidth="137.0">
+                            <children>
+                                <Label text="Suspenderet">
+                                    <font>
+                                        <Font size="16.0"/>
+                                    </font>
+                                </Label>
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" layoutX="410.0" layoutY="10.0" prefHeight="47.0"
+                              prefWidth="138.0">
+                            <children>
+                                <Label text="Virk. adm">
+                                    <font>
+                                        <Font size="16.0"/>
+                                    </font>
+                                </Label>
+                            </children>
+                        </HBox>
+                    </children>
+                </HBox>
+                <Separator prefWidth="200.0">
+                    <VBox.margin>
+                        <Insets left="30.0" right="30.0"/>
+                    </VBox.margin>
+                    <padding>
+                        <Insets bottom="10.0"/>
+                    </padding>
+                </Separator>
+            </children>
+        </VBox>
+    </center>
 </BorderPane>
