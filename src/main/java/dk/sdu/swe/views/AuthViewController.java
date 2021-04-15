@@ -18,6 +18,8 @@ import java.util.ResourceBundle;
 
 public class AuthViewController implements Initializable {
 
+    private String modelPassword;
+
     @FXML
     AnchorPane anchorPane;
 
