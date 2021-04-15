@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<fx:root prefHeight="1024.0" type="BorderPane" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root prefHeight="1024.0" type="BorderPane" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
    <top>
       <VBox prefHeight="366.0" prefWidth="1440.0" BorderPane.alignment="CENTER">
          <children>
@@ -115,6 +115,21 @@
       <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
             <fx:include source="List-bar.fxml" />
+            <HBox alignment="CENTER_RIGHT">
+               <children>
+                  <JFXButton style="-fx-background-color: #FF9800;" text="+" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+               <VBox.margin>
+                  <Insets top="525.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets right="25.0" />
+               </padding>
+            </HBox>
          </children>
       </VBox>
    </center>
