@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 <fx:root xmlns:fx="http://javafx.com/fxml/1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
-         type="BorderPane" xmlns="http://javafx.com/javafx/16">
+         type="BorderPane" xmlns="http://javafx.com/javafx/">
     <top>
         <VBox prefHeight="366.0" prefWidth="1440.0" BorderPane.alignment="CENTER">
             <children>
