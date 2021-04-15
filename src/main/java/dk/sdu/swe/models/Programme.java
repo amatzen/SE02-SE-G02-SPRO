@@ -20,8 +20,9 @@ public class Programme {
         return (EPGProgramme) epgDates;
     }
 
+    // Alexander laver den her
     public Object getPeople() {
-      return "Fix";
+      return "";
     }
 
 }
