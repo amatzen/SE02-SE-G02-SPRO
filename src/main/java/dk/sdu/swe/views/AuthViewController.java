@@ -44,7 +44,7 @@ public class AuthViewController implements Initializable {
     Button hs_button;
 
     @FXML
-    ChoiceBox environmentSelector;
+    ChoiceBox<String> environmentSelector;
 
     /**
      * Called to initialize a controller after its root element has been
