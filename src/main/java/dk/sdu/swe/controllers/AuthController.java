@@ -22,10 +22,6 @@ public class AuthController {
     }
 
     public boolean signIn(String username, String password) throws Exception {
-
-        // SQL
-        // SELECT * FROM users WHERE username = ?;
-
         // Search JSON
         IOHandler ioHandler = new IOHandler("db/users.json");
         JSONArray jsonDB = new JSONArray(ioHandler.readFile());
