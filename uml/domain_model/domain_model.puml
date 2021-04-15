@@ -21,7 +21,7 @@ package "Domænemodel" {
     class SystemAdministrator {
     }
 
-    'Naeste
+    ' Naeste
     class Company {
         - regNo : int
         - name : String
