@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<fx:root type="BorderPane" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root prefHeight="1024.0" prefWidth="1440.0" type="BorderPane" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
    <left>
       <VBox prefWidth="332.0" style="-fx-background-color: dbdbdb;" BorderPane.alignment="CENTER">
          <children>
@@ -52,7 +52,7 @@
    <top>
       <VBox prefHeight="200.0" prefWidth="1440.0" style="-fx-background-color: #E0E0E0;" BorderPane.alignment="CENTER">
          <children>
-            <Label prefHeight="58.0" prefWidth="248.0" text="Virksomheder">
+            <Label text="Virksomheder">
                <font>
                   <Font name="System Bold" size="36.0" />
                </font>

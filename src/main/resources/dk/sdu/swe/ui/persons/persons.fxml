@@ -10,11 +10,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<fx:root maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="1500.0" prefWidth="1448.0" type="VBox" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="1024.0" prefWidth="1440.0" type="VBox" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
    <children>
         <VBox prefHeight="200.0" prefWidth="1440.0" style="-fx-background-color: #E0E0E0;">
             <children>
-                <Label prefHeight="58.0" prefWidth="248.0" text="Personer">
+                <Label text="Personer">
                     <font>
                         <Font name="System Bold" size="36.0" />
                     </font>
