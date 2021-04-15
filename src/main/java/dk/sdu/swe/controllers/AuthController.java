@@ -1,7 +1,7 @@
 package dk.sdu.swe.controllers;
 
 import at.favre.lib.crypto.bcrypt.BCrypt;
-import dk.sdu.swe.data.IOLoader;
+import dk.sdu.swe.data.IOHandler;
 import dk.sdu.swe.models.User;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -27,8 +27,8 @@ public class AuthController {
         // SELECT * FROM users WHERE username = ?;
 
         // Search JSON
-        IOLoader ioLoader = new IOLoader("db/users.json");
-        JSONArray jsonDB = new JSONArray(ioLoader.readFile());
+        IOHandler ioHandler = new IOHandler("db/users.json");
+        JSONArray jsonDB = new JSONArray(ioHandler.readFile());
 
         JSONObject user = null;
 
