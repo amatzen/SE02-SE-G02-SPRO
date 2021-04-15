@@ -28,7 +28,7 @@ jobs:
                     message: 'Generate SVG for PlantUML'
                     add: '*.svg'
                     push: false
-                    author_name: PlantUML
+                    author_name: UML Bot
                     author_email: uml@bot.ci.alexander.dk
             -   name: Push changes
                 uses: ad-m/github-push-action@master
