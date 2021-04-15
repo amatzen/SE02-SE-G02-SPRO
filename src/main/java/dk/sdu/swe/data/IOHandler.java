@@ -7,10 +7,10 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 
-public class IOLoader {
+public class IOHandler {
     private URL file;
 
-    public IOLoader(String fileName) {
+    public IOHandler(String fileName) {
         file = Application.class.getResource(fileName);
     }
 

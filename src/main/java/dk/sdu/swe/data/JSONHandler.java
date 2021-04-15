@@ -27,14 +27,14 @@ public class JSONHandler implements PersistenceContract {
         return JSONHandlerInstance;
     }
 
-    private IOLoader getUserIOLoader() {
-        return new IOLoader("db/users.json");
+    private IOHandler getUserIOLoader() {
+        return new IOHandler("db/users.json");
     }
 
     @Override
     public List<User> getUsers() throws Exception {
-        IOLoader ioLoader = getUserIOLoader();
-        JSONArray jsonArray = new JSONArray(ioLoader.readFile());
+        IOHandler ioHandler = getUserIOLoader();
+        JSONArray jsonArray = new JSONArray(ioHandler.readFile());
 
         ArrayList<User> userList = new ArrayList<>();
 
@@ -69,6 +69,7 @@ public class JSONHandler implements PersistenceContract {
         json.put("password", passwordHash);
         Content content = new Content("text/plain", "Velkommen til CrMS - et semesterprojekt!\n\nDu kan nu logge ind i CrMS med foelgende brugeroplysninger:\n\nBrugernavn: " + json.getString("username") + "\nAdgangskode: " + password);
         EmailProvider.sendEmail(new Email(json.getString("email")), "Velkommen til CrMS!", content);
+
 
     }
 }
