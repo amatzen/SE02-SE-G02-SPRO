@@ -3,6 +3,8 @@ package dk.sdu.swe.views.partials;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPopup;
 import dk.sdu.swe.controllers.AuthController;
+import dk.sdu.swe.helpers.Observer;
+import dk.sdu.swe.helpers.PubSub;
 import dk.sdu.swe.views.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -15,7 +17,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-public class Navbar extends VBox {
+public class Navbar extends VBox implements Observer {
 
     @FXML
     private JFXButton progBtn, companyBtn, pplBtn, adminBtn, profileBtn;
@@ -38,6 +40,8 @@ public class Navbar extends VBox {
     private Router router;
 
     public Navbar(Router router) {
+        PubSub.subscribe("routeChange", this);
+
         this.router = router;
 
         FXMLLoader fxmlLoader = new FXMLLoader(
@@ -95,4 +99,28 @@ public class Navbar extends VBox {
 
     }
 
+    private void handleRouteChange(String routeName) {
+        for (JFXButton jfxButton : (new JFXButton[]{
+            progBtn,
+            companyBtn,
+            pplBtn,
+            adminBtn
+        })) {
+            jfxButton.getStyleClass().remove("indicator");
+        }
+
+        switch (routeName) {
+            case "ProgrammesViewController" -> this.progBtn.getStyleClass().add("indicator");
+            case "CompanyViewController" -> this.companyBtn.getStyleClass().add("indicator");
+            case "PersonsViewController" -> this.pplBtn.getStyleClass().add("indicator");
+            case "AdminViewController" -> this.adminBtn.getStyleClass().add("indicator");
+        }
+    }
+
+    @Override
+    public void onNotify(String topic, Object payload) {
+        switch (topic) {
+            case "routeChange" -> handleRouteChange((String) payload);
+        }
+    }
 }
