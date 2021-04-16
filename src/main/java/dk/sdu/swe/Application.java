@@ -34,6 +34,8 @@ public class Application extends javafx.application.Application {
      */
     @Override
     public void start(Stage stage) throws Exception {
+        disableWarning();
+
         stage.setTitle("CrMS");
 
         SceneNavigator.bind(stage, "CrMS", 1500, 900);
@@ -50,5 +52,9 @@ public class Application extends javafx.application.Application {
         stage.setScene(scene);
         stage.show();*/
 
+    }
+    public static void disableWarning() {
+        System.err.close();
+        System.setErr(System.out);
     }
 }
