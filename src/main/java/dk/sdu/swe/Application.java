@@ -1,11 +1,19 @@
 package dk.sdu.swe;
 
+import dk.sdu.swe.helpers.EnvironmentSelector;
+import dk.sdu.swe.helpers.Environment;
 import dk.sdu.swe.views.SceneNavigator;
 import javafx.stage.Stage;
 
 
 public class Application extends javafx.application.Application {
     public static void main(String[] args) {
+        EnvironmentSelector.getInstance().setEnvironment(switch (System.getenv("DEFAULT_ENVIRONMENT")) {
+            case "local" -> Environment.LOCAL;
+            case "prod" -> Environment.PROD;
+            default -> Environment.FLATFILE;
+        });
+
         launch();
     }
 

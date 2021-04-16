@@ -1,68 +1,125 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXPasswordField?>
-<?import com.jfoenix.controls.JFXTextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 <GridPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
           minWidth="-Infinity" prefHeight="1024.0" prefWidth="1440.0"
           style="-fx-background-color: #455A64;" stylesheets="@../../../../../styles/background-image.css"
-          xmlns="http://javafx.com/javafx/11.0.1" fx:controller="dk.sdu.swe.views.AuthViewController">
+          xmlns="http://javafx.com/javafx/" fx:controller="dk.sdu.swe.views.AuthViewController">
     <columnConstraints>
-        <ColumnConstraints hgrow="SOMETIMES" maxWidth="413.0" minWidth="149.0" prefWidth="153.0"/>
-        <ColumnConstraints hgrow="SOMETIMES" maxWidth="1440.0" minWidth="10.0" prefWidth="417.0"/>
-        <ColumnConstraints hgrow="SOMETIMES" maxWidth="1012.0" minWidth="0.0" percentWidth="0.0" prefWidth="872.0"/>
-        <ColumnConstraints hgrow="SOMETIMES" maxWidth="1012.0" minWidth="0.0" prefWidth="0.0"/>
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="413.0" minWidth="149.0" prefWidth="153.0" />
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="1440.0" minWidth="10.0" prefWidth="310.33330281575513" />
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="1012.0" minWidth="0.0" percentWidth="0.0" prefWidth="977.000030517578" />
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="1012.0" minWidth="0.0" prefWidth="0.0" />
     </columnConstraints>
     <rowConstraints>
-        <RowConstraints maxHeight="291.0" minHeight="10.0" prefHeight="275.0" vgrow="SOMETIMES"/>
-        <RowConstraints maxHeight="627.0" minHeight="10.0" prefHeight="461.0" vgrow="SOMETIMES"/>
-        <RowConstraints maxHeight="757.0" minHeight="10.0" prefHeight="209.0" vgrow="SOMETIMES"/>
+        <RowConstraints maxHeight="291.0" minHeight="10.0" prefHeight="232.33334859212238" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="627.0" minHeight="10.0" prefHeight="492.33331807454425" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="757.0" minHeight="10.0" prefHeight="111.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="757.0" minHeight="10.0" prefHeight="187.9999999999999" vgrow="SOMETIMES" />
     </rowConstraints>
     <children>
-        <AnchorPane fx:id="anchorPane" layoutX="133.0" layoutY="269.0" maxHeight="-Infinity" maxWidth="-Infinity"
-                    minHeight="-Infinity" minWidth="-Infinity" prefHeight="484.0" prefWidth="413.0"
-                    style="-fx-background-color: white;" GridPane.columnIndex="1" GridPane.rowIndex="1">
-            <children>
-                <Text fill="#455a64" layoutX="41.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CrMS"
-                      wrappingWidth="106.7294921875">
-                    <font>
-                        <Font name="Gargi" size="39.0"/>
-                    </font>
-                </Text>
-                <Text fill="#666666" layoutX="45.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0"
-                      text="Log ind">
-                    <font>
-                        <Font name="Gargi" size="18.0"/>
-                    </font>
-                </Text>
-                <JFXTextField fx:id="textField" layoutX="45.0" layoutY="181.0" onAction="#onEnter" prefHeight="40.0"
-                              prefWidth="325.0" promptText="Brugernavn"/>
-                <JFXPasswordField fx:id="passwordField" layoutX="44.0" layoutY="254.0" onAction="#onEnter"
-                                  prefHeight="40.0"
-                                  prefWidth="328.0" promptText="Adgangskode">
-                    <font>
-                        <Font name="Gargi" size="13.0"/>
-                    </font>
-                </JFXPasswordField>
-                <JFXButton fx:id="button" layoutX="44.0" layoutY="373.0" prefHeight="49.0" prefWidth="328.0"
-                           style="-fx-background-color: #ffa500;" text="LOG IND"/>
-                <Text fill="#666666" layoutX="82.0" layoutY="320.0" strokeType="OUTSIDE" strokeWidth="0.0"
-                      text="Kontakt din administrator ved glemt kode">
-                    <font>
-                        <Font name="Gargi" size="13.0"/>
-                    </font>
-                </Text>
-                <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="340.0" layoutY="262.0" pickOnBounds="true"
-                           preserveRatio="true">
-                    <image>
-                        <Image url="@../images/materialbutton.png"/>
-                    </image>
-                </ImageView>
-            </children>
-        </AnchorPane>
+      <VBox fx:id="main" prefHeight="200.0" prefWidth="100.0" spacing="20.0" style="-fx-background-color: #fff;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <children>
+            <VBox spacing="10.0">
+               <children>
+                      <Text fill="#455a64" strokeType="OUTSIDE" strokeWidth="0.0" text="CrMS" wrappingWidth="106.7294921875">
+                          <font>
+                              <Font name="Roboto" size="39.0" />
+                          </font>
+                      </Text>
+                      <Text fill="#666666" strokeType="OUTSIDE" strokeWidth="0.0" text="Log ind">
+                          <font>
+                              <Font name="Roboto" size="18.0" />
+                          </font>
+                      </Text>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="30.0" />
+               </VBox.margin>
+            </VBox>
+            <VBox spacing="30.0">
+               <children>
+                      <JFXTextField fx:id="textField" labelFloat="true" onAction="#onEnter" prefHeight="40.0" prefWidth="325.0" promptText="Brugernavn">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </JFXTextField>
+                  <StackPane>
+                     <children>
+                        <StackPane>
+                           <children>
+                              <JFXPasswordField fx:id="passwordField" labelFloat="true" onAction="#onEnter" prefHeight="40.0" prefWidth="328.0" promptText="Adgangskode">
+                                  <font>
+                                      <Font name="Roboto" size="13.0" />
+                                  </font>
+                              </JFXPasswordField>
+                              <JFXTextField fx:id="passwordField1" labelFloat="true" layoutX="10.0" layoutY="10.0" onAction="#onEnter" prefHeight="40.0" prefWidth="328.0" promptText="Adgangskode">
+                                 <font>
+                                    <Font name="Roboto" size="13.0" />
+                                 </font>
+                              </JFXTextField>
+                           </children>
+                        </StackPane>
+                        <JFXButton fx:id="hs_button" alignment="CENTER" contentDisplay="CENTER" maxWidth="40.0" prefHeight="32.0" prefWidth="37.0" text=" " StackPane.alignment="CENTER_RIGHT" focusTraversable="false">
+                           <graphic>
+                                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                      <image>
+                                          <Image url="@../images/materialbutton.png" />
+                                      </image>
+                                  </ImageView>
+                           </graphic>
+                        </JFXButton>
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </StackPane>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </VBox>
+            <VBox alignment="CENTER">
+               <children>
+                      <JFXButton fx:id="button" maxWidth="1.7976931348623157E308" minHeight="49.0" prefHeight="49.0" prefWidth="328.0" style="-fx-background-color: #ffa500;" text="LOG IND" VBox.vgrow="ALWAYS" />
+                      <Text fill="#666666" strokeType="OUTSIDE" strokeWidth="0.0" text="Kontakt din administrator ved glemt kode" VBox.vgrow="ALWAYS">
+                          <font>
+                              <Font name="Roboto" size="13.0" />
+                          </font>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                      </Text>
+               </children>
+               <VBox.margin>
+                  <Insets top="15.0" />
+               </VBox.margin>
+            </VBox>
+            <Label fx:id="showPswd" prefHeight="17.0" prefWidth="92.0" text=" " textFill="#616161f0">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Label>
+         </children>
+         <padding>
+            <Insets bottom="20.0" left="30.0" right="30.0" top="40.0" />
+         </padding>
+      </VBox>
+      <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="100.0" prefWidth="484.0" style="-fx-background-color: #fff;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+         <children>
+            <ChoiceBox fx:id="environmentSelector" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="80.0" HBox.hgrow="ALWAYS" />
+         </children>
+         <GridPane.margin>
+            <Insets top="40.0" />
+         </GridPane.margin>
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
+      </HBox>
     </children>
 </GridPane>
