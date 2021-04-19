@@ -19,6 +19,8 @@ import javafx.animation.FadeTransition;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
@@ -175,9 +177,12 @@ public final class SceneNavigator {
         // set window title from route settings or default setting
         window.setTitle(route.windowTitle);
 
+        // set scene animation
+        routeAnimation(resource);
+
         // set new route scene
         if (keepDimensions && window.getScene() != null) {
-            window.setScene(new Scene(resource, window.getScene().getWidth(), window.getScene().getHeight()));
+            //window.setScene(new Scene(resource, window.getScene().getWidth(), window.getScene().getHeight()));
         } else {
             window.setScene(new Scene(resource, route.sceneWidth, route.sceneHeight));
         }
@@ -185,8 +190,6 @@ public final class SceneNavigator {
         // show the window
         window.show();
 
-        // set scene animation
-        routeAnimation(resource);
     }
 
     /**
@@ -216,10 +219,22 @@ public final class SceneNavigator {
      */
     private static void routeAnimation(Parent node) {
         String anType = animationType != null ? animationType.toLowerCase() : "";
+
+
         switch (anType) {
             case "fade":
+                if (window.getScene() == null) break;
+                Pane parent = (Pane) window.getScene().getRoot();
+                StackPane stackPane = new StackPane();
+                stackPane.getChildren().addAll(parent, node);
+                window.setScene(new Scene(stackPane, window.getScene().getWidth(), window.getScene().getHeight()));
+
                 Double fd = animationDuration != null ? animationDuration : FADE_ANIMATION_DURATION;
                 FadeTransition ftCurrent = new FadeTransition(Duration.millis(fd), node);
+                ftCurrent.setOnFinished((event) -> {
+                    parent.getChildren().remove(node);
+                    window.setScene(new Scene(node, window.getScene().getWidth(), window.getScene().getHeight()));
+                });
                 ftCurrent.setFromValue(0.0);
                 ftCurrent.setToValue(1.0);
                 ftCurrent.play();

@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
+import org.checkerframework.framework.qual.Unused;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -18,7 +19,7 @@ public class CompanyListItem extends VBox {
         put("Rediger", CompanyListItem.this::testAction1);
         put("Slet", CompanyListItem.this::testAction2);
         put("T1", CompanyListItem.this::testAction1);
-        put("T2", CompanyListItem.this::testAction2);
+        put("Håndtér producere", CompanyListItem.this::manageProducers);
     }};
 
 
@@ -66,6 +67,11 @@ public class CompanyListItem extends VBox {
 
     private void testAction2() {
         System.out.println("Test2");
+    }
+
+    private void manageProducers() {
+        EditProgrammeDialog editProgrammeDialog = new EditProgrammeDialog(getScene().getWindow());
+        editProgrammeDialog.show();
     }
 
 }

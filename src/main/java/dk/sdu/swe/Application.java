@@ -17,6 +17,9 @@ public class Application extends javafx.application.Application {
         launch();
     }
 
+    private int width = 1500;
+    private int height = 900;
+
     /**
      * The main entry point for all JavaFX applications.
      * The start method is called after the init method has returned,
@@ -39,6 +42,7 @@ public class Application extends javafx.application.Application {
         stage.setTitle("CrMS");
 
         SceneNavigator.bind(stage, "CrMS", 1500, 900);
+        SceneNavigator.setAnimationType("fade", 1000);
         SceneNavigator.when("login", "dk/sdu/swe/ui/auth/auth-login.fxml");
         SceneNavigator.when("crms", "dk/sdu/swe/ui/App.fxml");
 

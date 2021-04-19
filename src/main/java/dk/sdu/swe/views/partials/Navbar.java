@@ -55,7 +55,6 @@ public class Navbar extends VBox implements Observer {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 
     @FXML
