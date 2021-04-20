@@ -1,6 +1,7 @@
 package dk.sdu.swe.views;
 
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXComboBox;
 import dk.sdu.swe.controllers.AuthController;
 import dk.sdu.swe.helpers.Environment;
 import dk.sdu.swe.helpers.EnvironmentSelector;
@@ -44,7 +45,7 @@ public class AuthViewController implements Initializable {
     Button hs_button;
 
     @FXML
-    ChoiceBox<String> environmentSelector;
+    JFXComboBox<String> environmentSelector;
 
     /**
      * Called to initialize a controller after its root element has been

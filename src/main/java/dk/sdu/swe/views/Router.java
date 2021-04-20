@@ -1,5 +1,6 @@
 package dk.sdu.swe.views;
 
+import dk.sdu.swe.helpers.PubSub;
 import javafx.scene.Parent;
 import javafx.scene.layout.Pane;
 
@@ -10,7 +11,6 @@ import java.util.Map;
 public class Router {
 
     private Map<Class<? extends Parent>, Parent> components;
-
     private Pane container;
 
     public Router(Pane container) {
@@ -39,6 +39,7 @@ public class Router {
         }
 
         container.getChildren().setAll(component);
+        PubSub.publish("routeChange", componentClass.getSimpleName());
     }
 
 }
