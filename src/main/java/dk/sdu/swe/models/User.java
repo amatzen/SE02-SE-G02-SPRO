@@ -51,6 +51,10 @@ public class User implements IUser {
         this.id = id;
     }
 
+    public User(){
+
+    }
+
     public static User get(int id) throws Exception {
         return JSONHandler.getInstance().getUser(id);
     }

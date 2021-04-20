@@ -14,6 +14,8 @@ public class FacadeDB implements  PersistenceContract {
 
     private PersistenceContract activeHandler;
 
+    private User user = new User();
+
     public FacadeDB() {
         if (EnvironmentSelector.getInstance().getEnvironment() == Environment.FLATFILE) {
             this.activeHandler = jsonHandler;
@@ -34,7 +36,7 @@ public class FacadeDB implements  PersistenceContract {
           dbHandler.getUser(id);
       }
 
-        return id;
+        return null; //Skal ændres
     }
 
     @Override
