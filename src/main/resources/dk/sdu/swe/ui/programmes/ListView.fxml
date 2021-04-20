@@ -123,10 +123,6 @@
                                 <Font size="18.0" />
                             </font>
                         </JFXButton>
-                  <TextField fx:id="title" layoutX="33.0" layoutY="36.0" prefHeight="244.0" prefWidth="160.0" />
-                  <TextField fx:id="channel" layoutX="263.0" layoutY="36.0" prefHeight="244.0" prefWidth="160.0" />
-                  <TextField fx:id="prodYear" layoutX="495.0" layoutY="36.0" prefHeight="244.0" prefWidth="160.0" />
-                  <TextField fx:id="category" layoutX="737.0" layoutY="36.0" prefHeight="244.0" prefWidth="160.0" />
                     </children>
                 </AnchorPane>
             </children>
