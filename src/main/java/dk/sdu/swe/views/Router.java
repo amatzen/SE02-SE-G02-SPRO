@@ -14,7 +14,7 @@ public class Router {
 
     private static Map<Class<? extends Parent>, Parent> components = new HashMap<>();
 
-    private static Pane sceneRoute;
+    private static Pane sceneRoot;
 
     private Pane container;
 
