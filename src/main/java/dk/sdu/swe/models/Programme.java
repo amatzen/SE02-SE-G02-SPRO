@@ -7,8 +7,19 @@ public class Programme {
 
     private int id;
     private String title;
+    private String channel;
+    private int prodYear;
+    private String category;
     private List<EPGProgramme> epgDates;
     private Map<String, Person> people;
+
+    public Programme(int id, String title, String channel, int prodYear, String category) {
+        this.id = id;
+        this.title = title;
+        this.channel = channel;
+        this.prodYear = prodYear;
+        this.category = category;
+    }
 
     public int getId() {
         return id;
@@ -24,6 +35,30 @@ public class Programme {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public String getChannel() {
+        return channel;
+    }
+
+    public void setChannel(String channel) {
+        this.channel = channel;
+    }
+
+    public int getProdYear() {
+        return prodYear;
+    }
+
+    public void setProdYear(int prodYear) {
+        this.prodYear = prodYear;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     public List<EPGProgramme> getEpgDates() {
