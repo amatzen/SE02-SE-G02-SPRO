@@ -51,22 +51,6 @@ public class Application extends javafx.application.Application {
         Router.getSceneRouter().goTo(AuthViewController.class);
 
         stage.show();
-
-        /*SceneNavigator.bind(stage, "CrMS", 1500, 900);
-        SceneNavigator.setAnimationType("fade", 1000);
-        SceneNavigator.when("login", "dk/sdu/swe/ui/auth/auth-login.fxml");
-        SceneNavigator.when("crms", "dk/sdu/swe/ui/App.fxml");
-
-        SceneNavigator.goTo("login", true);*/
-
-        /*Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("dk/sdu/swe/ui/App.fxml")));
-        Scene scene = new Scene(root);
-
-        //scene.getStylesheets().add(getClass().getResource("ui/assets/style.css").toString());
-
-        stage.setScene(scene);
-        stage.show();*/
-
     }
     public static void disableWarning() {
         System.err.close();
