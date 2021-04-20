@@ -53,22 +53,7 @@ public class Router {
         components.put(component.getClass(), component);
 
         if (doFadeAnimation && container.getChildren().size() > 0 && !container.getChildren().contains(component)){
-            Pane paneToRemove = (Pane) container.getChildren().get(0);
-            if (!paneToRemove.equals(component)) {
-                container.getChildren().add(0, component);
-
-                FadeTransition fadeTransition = new FadeTransition(Duration.millis(300));
-                fadeTransition.setOnFinished(event -> {
-                    component.setOpacity(1.0d);
-                    paneToRemove.setOpacity(1.0d);
-                    container.getChildren().setAll(component);
-                });
-
-                fadeTransition.setNode(paneToRemove);
-                fadeTransition.setFromValue(1);
-                fadeTransition.setToValue(0);
-                fadeTransition.play();
-            }
+            fadeOut(component, container);
         } else {
             container.getChildren().setAll(component);
         }
@@ -77,7 +62,22 @@ public class Router {
     }
 
     private void fadeOut(Parent component, Pane container) {
+        Pane paneToRemove = (Pane) container.getChildren().get(0);
+        if (!paneToRemove.equals(component)) {
+            container.getChildren().add(0, component);
 
+            FadeTransition fadeTransition = new FadeTransition(Duration.millis(300));
+            fadeTransition.setOnFinished(event -> {
+                component.setOpacity(1.0d);
+                paneToRemove.setOpacity(1.0d);
+                container.getChildren().setAll(component);
+            });
+
+            fadeTransition.setNode(paneToRemove);
+            fadeTransition.setFromValue(1);
+            fadeTransition.setToValue(0);
+            fadeTransition.play();
+        }
     }
 
     public void goTo(Class<? extends Parent> componentClass) {
