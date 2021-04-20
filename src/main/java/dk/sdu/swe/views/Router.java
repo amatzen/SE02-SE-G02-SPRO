@@ -13,12 +13,9 @@ import java.util.Map;
 public class Router {
 
     private static Map<Class<? extends Parent>, Parent> components = new HashMap<>();
-
-    private static Pane sceneRoot;
+    private static Router sceneRouter;
 
     private Pane container;
-
-    private static Router sceneRouter;
 
     private boolean doFadeAnimation = false;
 
