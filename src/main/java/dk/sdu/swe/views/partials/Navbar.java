@@ -14,6 +14,7 @@ import javafx.scene.layout.VBox;
 
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Objects;
 
@@ -27,14 +28,14 @@ public class Navbar extends VBox implements Observer {
 
     private Router router;
 
-    private Map<String, Runnable> profileBtnOptions = Map.of(
-        AuthController.getInstance().getUser().getClass().getName().replaceFirst("dk.sdu.swe.models.", ""), () -> {
-        },
-        "Log ud", () -> {
-            //AuthController.getInstance().logout();
+    private Map<String, Runnable> profileBtnOptions = new LinkedHashMap<>(){{
+        put(AuthController.getInstance().getUser().getClass()
+            .getName().replaceFirst("dk.sdu.swe.models.", ""), () -> {});
+        put("Log ud", () -> {
+            AuthController.getInstance().logout();
             Router.getSceneRouter().goTo(AuthViewController.class);
-            //SceneNavigator.goTo("login", true);
         });
+    }};
 
     public Navbar(Router router) {
         PubSub.subscribe("routeChange", this);
