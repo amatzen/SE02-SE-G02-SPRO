@@ -13,7 +13,7 @@ import javafx.stage.Window;
 import java.io.IOException;
 import java.util.Objects;
 
-public class EditProgrammeDialog extends Dialog<String> {
+public class EditProgrammeDialog extends Dialog<boolean> {
 
     @FXML
     private JFXButton closeBtn;
@@ -52,7 +52,7 @@ public class EditProgrammeDialog extends Dialog<String> {
 
     @FXML
     private void handleClose(ActionEvent event) {
-        setResult("Whateva");
+        setResult(false);
         hide();
     }
 }
