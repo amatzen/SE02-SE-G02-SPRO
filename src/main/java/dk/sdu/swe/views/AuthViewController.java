@@ -8,18 +8,18 @@ import dk.sdu.swe.helpers.EnvironmentSelector;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.*;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Window;
 
 import java.io.IOException;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.ResourceBundle;
+import java.util.Objects;
 
-public class AuthViewController implements Initializable {
+public class AuthViewController extends HBox {
 
     private String modelPassword;
 
@@ -47,17 +47,26 @@ public class AuthViewController implements Initializable {
     @FXML
     JFXComboBox<String> environmentSelector;
 
+    public AuthViewController() {
+        FXMLLoader fxmlLoader = new FXMLLoader(
+            Objects.requireNonNull(
+                getClass().getClassLoader().getResource("dk/sdu/swe/ui/auth/auth-login.fxml")));
+        fxmlLoader.setRoot(this);
+        fxmlLoader.setController(this);
+
+        try {
+            fxmlLoader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     /**
      * Called to initialize a controller after its root element has been
      * completely processed.
-     *
-     * @param location  The location used to resolve relative paths for the root object, or
-     *                  {@code null} if the location is not known.
-     * @param resources The resources used to localize the root object, or {@code null} if
      */
-
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
+    @FXML
+    private void initialize() {
         // Database Type
         List<String> environments = new ArrayList<>();
         for (Environment value : Environment.values()) {
@@ -145,10 +154,7 @@ public class AuthViewController implements Initializable {
             return;
         }
 
-        try {
-            SceneNavigator.goTo("crms", true);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        Router.getSceneRouter().goTo(AppViewController.class);
+        //SceneNavigator.goTo("crms", true);
     }
 }

@@ -2,7 +2,10 @@ package dk.sdu.swe;
 
 import dk.sdu.swe.helpers.EnvironmentSelector;
 import dk.sdu.swe.helpers.Environment;
-import dk.sdu.swe.views.SceneNavigator;
+import dk.sdu.swe.views.AuthViewController;
+import dk.sdu.swe.views.Router;
+import javafx.scene.Scene;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 
@@ -16,9 +19,6 @@ public class Application extends javafx.application.Application {
 
         launch();
     }
-
-    private int width = 1500;
-    private int height = 900;
 
     /**
      * The main entry point for all JavaFX applications.
@@ -41,12 +41,23 @@ public class Application extends javafx.application.Application {
 
         stage.setTitle("CrMS");
 
-        SceneNavigator.bind(stage, "CrMS", 1500, 900);
+        StackPane rootNode = new StackPane();
+        Router sceneRouter = new Router(rootNode);
+        sceneRouter.setFadeAnimation(true);
+        Router.setSceneRouter(sceneRouter);
+
+        stage.setScene(new Scene(rootNode, 1500, 900));
+
+        Router.getSceneRouter().goTo(AuthViewController.class);
+
+        stage.show();
+
+        /*SceneNavigator.bind(stage, "CrMS", 1500, 900);
         SceneNavigator.setAnimationType("fade", 1000);
         SceneNavigator.when("login", "dk/sdu/swe/ui/auth/auth-login.fxml");
         SceneNavigator.when("crms", "dk/sdu/swe/ui/App.fxml");
 
-        SceneNavigator.goTo("login", true);
+        SceneNavigator.goTo("login", true);*/
 
         /*Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("dk/sdu/swe/ui/App.fxml")));
         Scene scene = new Scene(root);

@@ -25,19 +25,16 @@ public class Navbar extends VBox implements Observer {
     @FXML
     private ImageView pfpImgView;
 
+    private Router router;
+
     private Map<String, Runnable> profileBtnOptions = Map.of(
         AuthController.getInstance().getUser().getClass().getName().replaceFirst("dk.sdu.swe.models.", ""), () -> {
         },
         "Log ud", () -> {
-            try {
-                AuthController.getInstance().logout();
-                SceneNavigator.goTo("login", true);
-            } catch (IOException ioException) {
-                ioException.printStackTrace();
-            }
+            //AuthController.getInstance().logout();
+            Router.getSceneRouter().goTo(AuthViewController.class);
+            //SceneNavigator.goTo("login", true);
         });
-
-    private Router router;
 
     public Navbar(Router router) {
         PubSub.subscribe("routeChange", this);
