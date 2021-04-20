@@ -2,8 +2,6 @@ package dk.sdu.swe.views;
 
 
 import javafx.fxml.FXMLLoader;
-import javafx.scene.layout.Border;
-import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 
 import java.io.IOException;
