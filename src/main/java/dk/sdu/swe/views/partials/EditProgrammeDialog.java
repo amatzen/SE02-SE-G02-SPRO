@@ -13,7 +13,7 @@ import javafx.stage.Window;
 import java.io.IOException;
 import java.util.Objects;
 
-public class EditProgrammeDialog extends Dialog<boolean> {
+public class EditProgrammeDialog extends Dialog<Boolean> {
 
     @FXML
     private JFXButton closeBtn;
