@@ -32,8 +32,8 @@
       "_combined": "Daniel Bahrami"
     },
     "email": "dabah20@student.sdu.dk",
-    "password": "$2y$12$dbTsaYJwmlWvGEs2zEmU2uCssRYTeyRq2./scFUj7DkhK3Kf4HNKa",
-    "permission": "CompanyAdministrator"
+    "password": "$2y$12$u.7wLfrPlVRRb1KmFdCkvecq9nMGuwNiRso2VVRDlgnFFLthZC20u",
+    "permission": "SystemAdministrator"
   },
   {
     "id": 4,
