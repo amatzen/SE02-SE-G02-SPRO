@@ -1,7 +1,5 @@
 package dk.sdu.swe.models;
 
-import java.util.HashMap;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
@@ -10,19 +8,38 @@ public class Programme {
     private int id;
     private String title;
     private List<EPGProgramme> epgDates;
-    private Map<String, Person> map = new HashMap<String, Person>();
+    private Map<String, Person> people;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getTitle() {
         return title;
     }
 
-    public EPGProgramme getEPGDates() {
-        return (EPGProgramme) epgDates;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    // Alexander laver den her
-    public Object getPeople() {
-      return "";
+    public List<EPGProgramme> getEpgDates() {
+        return epgDates;
+    }
+
+    public void setEpgDates(List<EPGProgramme> epgDates) {
+        this.epgDates = epgDates;
+    }
+
+    public Map<String, Person> getPeople() {
+        return people;
+    }
+
+    public void setPeople(Map<String, Person> people) {
+        this.people = people;
     }
 
 }
