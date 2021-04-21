@@ -1,16 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Separator?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<?import com.jfoenix.controls.JFXButton?>
-<BorderPane prefHeight="469.0" prefWidth="698.0" xmlns="http://javafx.com/javafx/15.0.1"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="dk.sdu.swe.views.ProgrammesViewController">
+<BorderPane prefHeight="469.0" prefWidth="698.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
     <top>
         <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #FF9800;" BorderPane.alignment="CENTER">
             <children>
@@ -18,31 +14,30 @@
                     <children>
                         <Label text="Brugeradministration:">
                             <font>
-                                <Font size="24.0"/>
+                                <Font size="24.0" />
                             </font>
                             <HBox.margin>
-                                <Insets left="30.0" top="30.0"/>
+                                <Insets left="30.0" top="30.0" />
                             </HBox.margin>
                         </Label>
                         <Label fx:id="CompanyName" text="CompanyName">
                             <font>
-                                <Font name="System Bold" size="24.0"/>
+                                <Font name="System Bold" size="24.0" />
                             </font>
                             <HBox.margin>
-                                <Insets left="5.0" top="30.0"/>
+                                <Insets left="5.0" top="30.0" />
                             </HBox.margin>
                         </Label>
                     </children>
                 </HBox>
                 <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                     <children>
-                        <JFXButton prefHeight="28.0" prefWidth="60.0" style="-fx-background-color: #FF9800;" text="X"
-                                   textAlignment="RIGHT">
+                        <JFXButton fx:id="closeBtn" onAction="#handleClose" prefHeight="45.0" prefWidth="45.0" style="-fx-background-color: #FF9800;" text="X" textAlignment="RIGHT">
                             <font>
-                                <Font name="Comic Sans MS" size="18.0"/>
+                                <Font name="Comic Sans MS" size="18.0" />
                             </font>
                             <HBox.margin>
-                                <Insets bottom="10.0"/>
+                                <Insets bottom="10.0" />
                             </HBox.margin>
                         </JFXButton>
                     </children>
@@ -53,27 +48,23 @@
     <bottom>
         <HBox prefHeight="81.0" prefWidth="698.0" BorderPane.alignment="CENTER">
             <children>
-                <HBox prefHeight="81.0" prefWidth="969.0"/>
+                <HBox prefHeight="81.0" prefWidth="969.0" />
                 <HBox alignment="CENTER_RIGHT" prefHeight="83.0" prefWidth="699.0">
                     <children>
-                        <JFXButton fx:id="newUserButton" layoutX="601.0" layoutY="18.0" prefHeight="35.0"
-                                   prefWidth="90.0" style="-fx-background-color: transparent;" text="+ Ny Bruger"
-                                   textAlignment="RIGHT" textFill="#515050">
+                        <JFXButton fx:id="newUserButton" layoutX="601.0" layoutY="18.0" prefHeight="35.0" prefWidth="90.0" style="-fx-background-color: transparent;" text="+ Ny Bruger" textAlignment="RIGHT" textFill="#515050">
                             <HBox.margin>
-                                <Insets bottom="30.0" right="10.0"/>
+                                <Insets bottom="30.0" right="10.0" />
                             </HBox.margin>
                             <font>
-                                <Font name="System Bold" size="12.0"/>
+                                <Font name="System Bold" size="12.0" />
                             </font>
                         </JFXButton>
-                        <JFXButton fx:id="saveButton" prefHeight="35.0" prefWidth="78.0"
-                                   style="-fx-background-color: #FF9800;" text="Gem" textAlignment="RIGHT"
-                                   textFill="WHITE">
+                        <JFXButton fx:id="saveButton" prefHeight="35.0" prefWidth="78.0" style="-fx-background-color: #FF9800;" text="Gem" textAlignment="RIGHT" textFill="WHITE">
                             <HBox.margin>
-                                <Insets bottom="30.0" right="30.0"/>
+                                <Insets bottom="30.0" right="30.0" />
                             </HBox.margin>
                             <font>
-                                <Font name="System Bold" size="12.0"/>
+                                <Font name="System Bold" size="12.0" />
                             </font>
                         </JFXButton>
                     </children>
@@ -90,10 +81,10 @@
                             <children>
                                 <Label contentDisplay="CENTER" text="Email">
                                     <HBox.margin>
-                                        <Insets left="30.0"/>
+                                        <Insets left="30.0" />
                                     </HBox.margin>
                                     <font>
-                                        <Font size="16.0"/>
+                                        <Font size="16.0" />
                                     </font>
                                 </Label>
                             </children>
@@ -102,30 +93,28 @@
                             <children>
                                 <Label prefHeight="25.0" prefWidth="127.0" text="Navn">
                                     <HBox.margin>
-                                        <Insets/>
+                                        <Insets />
                                     </HBox.margin>
                                     <font>
-                                        <Font size="16.0"/>
+                                        <Font size="16.0" />
                                     </font>
                                 </Label>
                             </children>
                         </HBox>
-                        <HBox alignment="CENTER_LEFT" layoutX="210.0" layoutY="10.0" prefHeight="47.0"
-                              prefWidth="137.0">
+                        <HBox alignment="CENTER_LEFT" layoutX="210.0" layoutY="10.0" prefHeight="47.0" prefWidth="137.0">
                             <children>
                                 <Label text="Suspenderet">
                                     <font>
-                                        <Font size="16.0"/>
+                                        <Font size="16.0" />
                                     </font>
                                 </Label>
                             </children>
                         </HBox>
-                        <HBox alignment="CENTER_LEFT" layoutX="410.0" layoutY="10.0" prefHeight="47.0"
-                              prefWidth="138.0">
+                        <HBox alignment="CENTER_LEFT" layoutX="410.0" layoutY="10.0" prefHeight="47.0" prefWidth="138.0">
                             <children>
                                 <Label text="Virk. adm">
                                     <font>
-                                        <Font size="16.0"/>
+                                        <Font size="16.0" />
                                     </font>
                                 </Label>
                             </children>
@@ -134,10 +123,10 @@
                 </HBox>
                 <Separator prefWidth="200.0">
                     <VBox.margin>
-                        <Insets left="30.0" right="30.0"/>
+                        <Insets left="30.0" right="30.0" />
                     </VBox.margin>
                     <padding>
-                        <Insets bottom="10.0"/>
+                        <Insets bottom="10.0" />
                     </padding>
                 </Separator>
             </children>
