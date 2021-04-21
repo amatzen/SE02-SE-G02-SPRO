@@ -3,8 +3,6 @@
 
 autonumber
 
-autonumber
-
 box Se kreditering (UC01)
     participant ":Producer" as producer
     participant ":ProgramController" as programController <<Control>>

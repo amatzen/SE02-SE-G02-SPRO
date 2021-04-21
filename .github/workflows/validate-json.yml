@@ -4,9 +4,13 @@ on:
   pull_request:
     branches:
       - master
+    paths:
+        - '**.json'
   push:
     branches:
       - master
+    paths:
+        - '**.json'
 
 jobs:
   json:

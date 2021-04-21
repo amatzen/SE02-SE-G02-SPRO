@@ -18,7 +18,7 @@ public class CompanyListItem extends VBox {
         put("Rediger", CompanyListItem.this::testAction1);
         put("Slet", CompanyListItem.this::testAction2);
         put("T1", CompanyListItem.this::testAction1);
-        put("T2", CompanyListItem.this::testAction2);
+        put("Håndtér producere", CompanyListItem.this::manageProducers);
     }};
 
 
@@ -39,8 +39,8 @@ public class CompanyListItem extends VBox {
 
     public CompanyListItem() {
         FXMLLoader fxmlLoader = new FXMLLoader(
-                Objects.requireNonNull(
-                        getClass().getClassLoader().getResource("dk/sdu/swe/ui/companies/components/CompanyListItem.fxml")));
+            Objects.requireNonNull(
+                getClass().getClassLoader().getResource("dk/sdu/swe/ui/companies/components/CompanyListItem.fxml")));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
 
@@ -66,6 +66,11 @@ public class CompanyListItem extends VBox {
 
     private void testAction2() {
         System.out.println("Test2");
+    }
+
+    private void manageProducers() {
+        EditProgrammeDialog editProgrammeDialog = new EditProgrammeDialog(getScene().getWindow());
+        editProgrammeDialog.show();
     }
 
 }

@@ -1,18 +1,15 @@
 package dk.sdu.swe.controllers;
 
 import at.favre.lib.crypto.bcrypt.BCrypt;
-import dk.sdu.swe.data.IOLoader;
-import dk.sdu.swe.models.CompanyAdministrator;
-import dk.sdu.swe.models.SystemAdministrator;
+import dk.sdu.swe.data.IOHandler;
 import dk.sdu.swe.models.User;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
 public class AuthController {
 
-    private User currentUser;
-
     private static AuthController AuthControllerInstance;
+    private User currentUser;
 
     private AuthController() {
     }
@@ -25,46 +22,42 @@ public class AuthController {
     }
 
     public boolean signIn(String username, String password) throws Exception {
-
-        // SQL
-        // SELECT * FROM users WHERE username = ?;
-
         // Search JSON
-        IOLoader ioLoader = new IOLoader("db/users.json");
-        JSONArray jsonDB = new JSONArray(ioLoader.readFile());
+        IOHandler ioHandler = new IOHandler("db/users.json");
+        JSONArray jsonDB = new JSONArray(ioHandler.readFile());
 
         JSONObject user = null;
 
-        for (int i = 0; i < jsonDB.length(); i++ ) {
+        for (int i = 0; i < jsonDB.length(); i++) {
             JSONObject o = jsonDB.getJSONObject(i);
-            if(o.getString("username").equals(username)) {
+            if (o.getString("username").equals(username)) {
                 user = o;
                 break;
             }
         }
 
-        if(user == null) {
+        if (user == null) {
             return false;
         }
 
-        if(user.getString("password").isEmpty()) {
+        if (user.getString("password").isEmpty()) {
             return false;
         }
 
         // Bcrypt validation
         boolean pwOkay = BCrypt.verifyer().verify(password.toCharArray(), user.getString("password").toCharArray()).verified;
 
-        if(!pwOkay) {
+        if (!pwOkay) {
             return false;
         }
 
-        this.currentUser = switch (user.getString("permission")) {
-            case "SystemAdministrator"  -> new SystemAdministrator(user.getString("username"), user.getString("email"), user.getJSONObject("name").getString("_combined"));
-            case "CompanyAdministrator" -> new CompanyAdministrator(user.getString("username"), user.getString("email"), user.getJSONObject("name").getString("_combined"));
-            default                     -> new User(user.getString("username"), user.getString("email"), user.getJSONObject("name").getString("_combined"));
-        };
+        this.currentUser = User.jsonToUser(user);
         return true;
 
+    }
+
+    public void logout() {
+        this.currentUser = null;
     }
 
     public User getUser() {

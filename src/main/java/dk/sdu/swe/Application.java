@@ -1,20 +1,21 @@
 package dk.sdu.swe;
 
-import dk.sdu.swe.controllers.AuthController;
-import dk.sdu.swe.views.SceneNavigator;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
+import dk.sdu.swe.helpers.EnvironmentSelector;
+import dk.sdu.swe.helpers.Environment;
+import dk.sdu.swe.views.AuthViewController;
+import dk.sdu.swe.views.Router;
 import javafx.scene.Scene;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
-
-import java.util.Objects;
 
 
 public class Application extends javafx.application.Application {
-    public static void main(String[] args) throws Exception {
-
-        AuthController authController = AuthController.getInstance();
-        boolean signedIn = authController.signIn("almat20", "alexander");
+    public static void main(String[] args) {
+        EnvironmentSelector.getInstance().setEnvironment(switch (System.getenv("DEFAULT_ENVIRONMENT")) {
+            case "local" -> Environment.LOCAL;
+            case "prod" -> Environment.PROD;
+            default -> Environment.FLATFILE;
+        });
 
         launch();
     }
@@ -29,28 +30,30 @@ public class Application extends javafx.application.Application {
      * </p>
      *
      * @param stage the primary stage for this application, onto which
-     *                     the application scene can be set.
-     *                     Applications may create other stages, if needed, but they will not be
-     *                     primary stages.
+     *              the application scene can be set.
+     *              Applications may create other stages, if needed, but they will not be
+     *              primary stages.
      * @throws Exception if something goes wrong
      */
     @Override
     public void start(Stage stage) throws Exception {
+        disableWarning();
+
         stage.setTitle("CrMS");
 
-        SceneNavigator.bind(stage, "CrMS", 1200, 800);
-        SceneNavigator.when("login", "dk/sdu/swe/ui/auth/auth-login.fxml");
-        SceneNavigator.when("crms", "dk/sdu/swe/ui/App.fxml");
+        StackPane rootNode = new StackPane();
+        Router sceneRouter = new Router(rootNode);
+        sceneRouter.setFadeAnimation(true);
+        Router.setSceneRouter(sceneRouter);
 
-        SceneNavigator.goTo("login", true);
+        stage.setScene(new Scene(rootNode, 1500, 900));
 
-        /*Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("dk/sdu/swe/ui/App.fxml")));
-        Scene scene = new Scene(root);
+        Router.getSceneRouter().goTo(AuthViewController.class);
 
-        //scene.getStylesheets().add(getClass().getResource("ui/assets/style.css").toString());
-
-        stage.setScene(scene);
-        stage.show();*/
-
+        stage.show();
+    }
+    public static void disableWarning() {
+        System.err.close();
+        System.setErr(System.out);
     }
 }

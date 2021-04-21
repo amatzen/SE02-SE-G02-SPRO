@@ -1,12 +1,11 @@
 package dk.sdu.swe.views.partials;
 
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXPopup;
 import dk.sdu.swe.controllers.AuthController;
-import dk.sdu.swe.views.Router;
-import dk.sdu.swe.views.AdminViewController;
-import dk.sdu.swe.views.CompanyViewController;
-import dk.sdu.swe.views.PersonsViewController;
-import dk.sdu.swe.views.ProgrammesViewController;
+import dk.sdu.swe.helpers.Observer;
+import dk.sdu.swe.helpers.PubSub;
+import dk.sdu.swe.views.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -18,7 +17,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-public class Navbar extends VBox {
+public class Navbar extends VBox implements Observer {
 
     @FXML
     private JFXButton progBtn, companyBtn, pplBtn, adminBtn, profileBtn;
@@ -28,12 +27,23 @@ public class Navbar extends VBox {
 
     private Router router;
 
+    private Map<String, Runnable> profileBtnOptions = Map.of(
+        AuthController.getInstance().getUser().getClass().getName().replaceFirst("dk.sdu.swe.models.", ""), () -> {
+        },
+        "Log ud", () -> {
+            //AuthController.getInstance().logout();
+            Router.getSceneRouter().goTo(AuthViewController.class);
+            //SceneNavigator.goTo("login", true);
+        });
+
     public Navbar(Router router) {
+        PubSub.subscribe("routeChange", this);
+
         this.router = router;
 
         FXMLLoader fxmlLoader = new FXMLLoader(
-                Objects.requireNonNull(
-                        getClass().getClassLoader().getResource("dk/sdu/swe/ui/Navbar.fxml")));
+            Objects.requireNonNull(
+                getClass().getClassLoader().getResource("dk/sdu/swe/ui/Navbar.fxml")));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
 
@@ -42,14 +52,13 @@ public class Navbar extends VBox {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 
     @FXML
     private void initialize() {
         router.goTo(ProgrammesViewController.class);
 
-        JFXButton[] btns = {progBtn,companyBtn,pplBtn,adminBtn};
+        JFXButton[] btns = {progBtn, companyBtn, pplBtn, adminBtn};
         for (JFXButton btn : btns) {
             btn.setVisible(false);
             btn.setManaged(false);
@@ -61,7 +70,7 @@ public class Navbar extends VBox {
             pplBtn, "people",
             adminBtn, "admin"
         ))).forEach((btn, perm) -> {
-            if(AuthController.getInstance().getUser().hasPermission(perm)) {
+            if (AuthController.getInstance().getUser().hasPermission(perm)) {
                 btn.setVisible(true);
                 btn.setManaged(true);
             }
@@ -72,20 +81,42 @@ public class Navbar extends VBox {
 
     @FXML
     private void handle(ActionEvent e) {
-        Object source = e.getSource();
-
-        if (source == progBtn) {
-            router.goTo(ProgrammesViewController.class);
-        } else if (source == companyBtn) {
-            router.goTo(CompanyViewController.class);
-        } else if (source == pplBtn) {
-            router.goTo(PersonsViewController.class);
-        } else if (source == adminBtn) {
-            router.goTo(AdminViewController.class);
-        } else if (source == profileBtn) {
-
+        switch (((JFXButton) e.getSource()).getId()) {
+            case "progBtn" -> router.goTo(ProgrammesViewController.class);
+            case "companyBtn" -> router.goTo(CompanyViewController.class);
+            case "pplBtn" -> router.goTo(PersonsViewController.class);
+            case "adminBtn" -> router.goTo(AdminViewController.class);
+            case "profileBtn" -> {
+                JFXPopup popupListMenu = new PopupListMenu(profileBtnOptions);
+                popupListMenu.show(profileBtn, JFXPopup.PopupVPosition.BOTTOM, JFXPopup.PopupHPosition.RIGHT);
+            }
+            default -> throw new IllegalStateException("Unexpected value: " + ((JFXButton) e.getSource()).getId());
         }
 
     }
 
+    private void handleRouteChange(String routeName) {
+        for (JFXButton jfxButton : (new JFXButton[]{
+            progBtn,
+            companyBtn,
+            pplBtn,
+            adminBtn
+        })) {
+            jfxButton.getStyleClass().remove("indicator");
+        }
+
+        switch (routeName) {
+            case "ProgrammesViewController" -> this.progBtn.getStyleClass().add("indicator");
+            case "CompanyViewController" -> this.companyBtn.getStyleClass().add("indicator");
+            case "PersonsViewController" -> this.pplBtn.getStyleClass().add("indicator");
+            case "AdminViewController" -> this.adminBtn.getStyleClass().add("indicator");
+        }
+    }
+
+    @Override
+    public void onNotify(String topic, Object payload) {
+        switch (topic) {
+            case "routeChange" -> handleRouteChange((String) payload);
+        }
+    }
 }

@@ -28,7 +28,24 @@ dependencies {
     // https://mvnrepository.com/artifact/at.favre.lib/bcrypt
     implementation group: 'at.favre.lib', name: 'bcrypt', version: '0.9.0'
 
+    implementation 'com.sendgrid:sendgrid-java:4.0.1'
 
+}
+
+run {
+    if(file('.env').exists()) {
+        file('.env').readLines().each() {
+            if (!it.isEmpty() && !it.startsWith("#")) {
+                def pos = it.indexOf("=")
+                def key = it.substring(0, pos)
+                def value = it.substring(pos + 1)
+
+                if (System.getenv(key) == null) {
+                    environment key, value
+                }
+            }
+        }
+    }
 }
 
 javafx {
