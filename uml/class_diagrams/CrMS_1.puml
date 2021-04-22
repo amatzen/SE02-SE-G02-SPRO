@@ -1,0 +1,179 @@
+@startuml
+'https://plantuml.com/class-diagram
+left to right direction
+
+package "Presentation Layer" #DDD {
+    package "Views" #FFF {
+
+        package "Modals"{
+            class EditProgrammeDialog
+            class UserAdministrationDialog
+        }
+
+        package "Partials"{
+            class CompanyListItem
+            class CreditListItem
+            class Navbar
+            class PopupListMenu
+            class ProgrammeListItem
+            class ReviewItem
+            class UsersView
+
+        }
+
+        class AdminViewController
+        class AppViewController
+        class AuthViewController
+        class CompanyViewController
+        class CreditGroupController
+        class DataExportController
+        class PersonsViewController
+        class ProgrammesViewController
+        class ReviewViewController
+        class Router
+        class UserControlController
+
+        Router <--o Navbar
+        Router <--o AppViewController
+        Router <--o AdminViewController
+        Router <-- AuthViewController
+
+    }
+}
+'------------------------------------------------------------------------------------
+package "Domain Layer" #DDD {
+
+    package "Controllers" #FFF {
+        class AuthController {
+            - {static} AuthControllerInstance: AuthController
+            - currentUser: User
+
+            + AuthController()
+            + {static} getInstance(): AuthController
+            + signIn(username: String, password: String): boolean
+            + logout(): void
+            + getUser(): User
+        }
+    }
+
+    package "Helpers" #FFF {
+        class Environment{
+        - label: String
+
+        + Environment(label: String)
+        + getLabel(): String
+        }
+
+        class EnvironmentSelector{
+
+        }
+
+        interface Observer{
+            + onNotify(topic: String, payload: Object): void
+        }
+
+        class PubSub{
+
+        }
+
+        class FacadeDB{
+
+        }
+    }
+
+    package "Models" #FFF {
+        class CompanyAdministrator
+        class EPGProgramme {
+        - Start: String
+        - Stop: String
+        - Categories: List<String>
+        - epgIdentifier: String
+        - epgTitle: String
+        - Options: Map<String, Boolean>
+
+        + getStart(): Start
+        +
+
+
+        }
+        interface IUser
+
+        class Name {
+        # firstName: String
+        # lastName: String
+        }
+
+        class Person{
+
+        }
+
+        class PersonContactDetails
+        class Programme
+        class SystemAdministrator
+        class User
+    }
+
+    package "Providers" #FFF {
+        class EmailProvider
+    }
+
+    package "Exceptions" #FFF {
+        class InvalidNameException
+        class UserCreationException
+    }
+
+}
+'------------------------------------------------------------------------------------
+package "Persistence Layer" #DDD {
+    package "Data" #FFF {
+        interface PersistanceContract {
+
+            + getUsers(): List<User>
+            + getUser(int): User
+            + createUser(User): void
+            + updateUser(int, User): void
+            + deleteUser(int): void
+            + getPeople(): list<Person>
+            + getPerson(int): Person
+            + createPerson(Person): void
+            + updatePerson(id, Person): void
+            + deletePerson(int): void
+            + getProgrammes(): List<Programme>
+            + getProgramme(): Person
+            + createProgramme(Programme): void
+            + updateProgramme(int, Programme): void
+            + deleteProgramme(int): void
+        }
+
+        DBHandler .-|> PersistanceContract
+
+        class DBHandler {
+        }
+
+        class IOHandler {
+            - file: URL
+
+            + IOHandler(String)
+            + getFile(): File
+            + readFile(): String
+            + setFile(String): void
+            + jsonAppendToArray(JSONObject): void
+        }
+
+        JSONHandler .-|> PersistanceContract
+
+        class JSONHandler {
+
+        }
+
+        IOHandler <-* JSONHandler
+
+        PersistanceContract <-o DBFacade
+
+        class DBFacade {
+
+        }
+    }
+}
+'------------------------------------------------------------------------------------
+@enduml
