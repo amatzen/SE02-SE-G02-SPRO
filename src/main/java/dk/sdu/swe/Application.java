@@ -2,7 +2,10 @@ package dk.sdu.swe;
 
 import dk.sdu.swe.helpers.EnvironmentSelector;
 import dk.sdu.swe.helpers.Environment;
-import dk.sdu.swe.views.SceneNavigator;
+import dk.sdu.swe.views.AuthViewController;
+import dk.sdu.swe.views.Router;
+import javafx.scene.Scene;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 
@@ -38,20 +41,16 @@ public class Application extends javafx.application.Application {
 
         stage.setTitle("CrMS");
 
-        SceneNavigator.bind(stage, "CrMS", 1500, 900);
-        SceneNavigator.when("login", "dk/sdu/swe/ui/auth/auth-login.fxml");
-        SceneNavigator.when("crms", "dk/sdu/swe/ui/App.fxml");
+        StackPane rootNode = new StackPane();
+        Router sceneRouter = new Router(rootNode);
+        sceneRouter.setFadeAnimation(true);
+        Router.setSceneRouter(sceneRouter);
 
-        SceneNavigator.goTo("login", true);
+        stage.setScene(new Scene(rootNode, 1500, 900));
 
-        /*Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("dk/sdu/swe/ui/App.fxml")));
-        Scene scene = new Scene(root);
+        Router.getSceneRouter().goTo(AuthViewController.class);
 
-        //scene.getStylesheets().add(getClass().getResource("ui/assets/style.css").toString());
-
-        stage.setScene(scene);
-        stage.show();*/
-
+        stage.show();
     }
     public static void disableWarning() {
         System.err.close();

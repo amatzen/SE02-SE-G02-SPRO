@@ -14,6 +14,7 @@ import javafx.scene.layout.VBox;
 
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Objects;
 
@@ -25,19 +26,16 @@ public class Navbar extends VBox implements Observer {
     @FXML
     private ImageView pfpImgView;
 
-    private Map<String, Runnable> profileBtnOptions = Map.of(
-        AuthController.getInstance().getUser().getClass().getName().replaceFirst("dk.sdu.swe.models.", ""), () -> {
-        },
-        "Log ud", () -> {
-            try {
-                AuthController.getInstance().logout();
-                SceneNavigator.goTo("login", true);
-            } catch (IOException ioException) {
-                ioException.printStackTrace();
-            }
-        });
-
     private Router router;
+
+    private Map<String, Runnable> profileBtnOptions = new LinkedHashMap<>(){{
+        put(AuthController.getInstance().getUser().getClass()
+            .getName().replaceFirst("dk.sdu.swe.models.", ""), () -> {});
+        put("Log ud", () -> {
+            AuthController.getInstance().logout();
+            Router.getSceneRouter().goTo(AuthViewController.class);
+        });
+    }};
 
     public Navbar(Router router) {
         PubSub.subscribe("routeChange", this);
@@ -55,7 +53,6 @@ public class Navbar extends VBox implements Observer {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 
     @FXML
