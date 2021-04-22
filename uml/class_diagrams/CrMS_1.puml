@@ -20,7 +20,7 @@ package "Presentation Layer" #DDD {
                 - companyNameLabel: Label
 
                 + CompanyListItem()
-                + initialize(): void
+                - initialize(): void
                 + editCompany(): void
                 + deleteCompany(): void
                 + manageUsers(): void
@@ -31,21 +31,21 @@ package "Presentation Layer" #DDD {
             }
 
             class Navbar {
-            - progBtn: JFXButton
-            - companyBtn: JFXButton
-            - pplBtn: JFXButton
-            - adminBtn: JFXButton
-            - profileBtn: JFXButton
-            - pfpImgView: ImageView
-            - router:
+                - progBtn: JFXButton
+                - companyBtn: JFXButton
+                - pplBtn: JFXButton
+                - adminBtn: JFXButton
+                - profileBtn: JFXButton
+                - pfpImgView: ImageView
+                - router:
 
-            - profileBtnOptions: Map<String, Runnable>
+                - profileBtnOptions: Map<String, Runnable>
 
-            + Navbar(router: Router)
-            + initialize(): void
-            + handle(e: ActionEvent): void
-            + handleRouteChange(routename: String): void
-            + onNotify(topic: String, payload: Object): void
+                + Navbar(router: Router)
+                - initialize(): void
+                + handle(e: ActionEvent): void
+                + handleRouteChange(routename: String): void
+                + onNotify(topic: String, payload: Object): void
             }
 
             class PopupListMenu {
@@ -81,19 +81,23 @@ package "Presentation Layer" #DDD {
         }
 
         class AdminViewController {
-        - reviewsBtn: JFXButton
-        - userControlBtn: JFXButton
-        - router: Router
-        - creditGroupBtn: JFXButton
-        - dataExportBtn: JFXButton
-        - contentPane: Pane
-        - initialize(): void
+            - reviewsBtn: JFXButton
+            - userControlBtn: JFXButton
+            - router: Router
+            - creditGroupBtn: JFXButton
+            - dataExportBtn: JFXButton
+            - contentPane: Pane
+            - initialize(): void
 
-        + AdminViewController()
-
+            + AdminViewController()
+            - handleSelectedSection: ActionEvent): void
         }
 
         class AppViewController {
+        - navbarPane: Pane
+        - contentPane: Pane
+        + AppViewController()
+        + initialize(): void
 
         }
 
@@ -102,14 +106,14 @@ package "Presentation Layer" #DDD {
             - contentPane: Pane
 
             + AuthViewController()
-            + initialize(): void
+            - initialize(): void
         }
 
         class CompanyViewController {
             - companyListView: JFXListView<CompanyListItem>
 
             + CompanyViewController()
-            + initialize(): void
+            - initialize(): void
         }
 
         CompanyViewController --> EditProgrammeDialog
@@ -187,17 +191,15 @@ package "Domain Layer" #DDD {
         }
 
         class EnvironmentSelector{
-        + EnvironmentSelector
+            + EnvironmentSelector
 
-        - environment: Environment
-        - {static} environmentSelectorInstance: EnvironmentSelector
-        - EnvironmentSelector()
+            - environment: Environment
+            - {static} environmentSelectorInstance: EnvironmentSelector
+            - EnvironmentSelector()
 
-        + {static} getInstance(): EnviromentSelector
-        + setEnviroment()
-        + getEnviroment() : Enviroment
-
-
+            + {static} getInstance(): EnvironmentSelector
+            + setEnvironment()
+            + getEnvironment() : Environment
         }
 
         interface Observer{
@@ -215,27 +217,26 @@ package "Domain Layer" #DDD {
         class CompanyAdministrator {
             - permissions: String[]
 
-            + CompanyAdminsitrator(id: int, username: String, email: String, name: String)
+            + CompanyAdministrator(id: int, username: String, email: String, name: String)
             + hasPermissions(permissionKey: String): boolean
         }
 
         class EPGProgramme {
-        - start: String
-        - stop: String
-        - categories: List<String>
-        - epgIdentifier: String
-        - epgTitle: String
-        - options: Map<String, Boolean>
+            - start: String
+            - stop: String
+            - categories: List<String>
+            - epgIdentifier: String
+            - epgTitle: String
+            - options: Map<String, Boolean>
 
-        + EPGProgramme(start : String, stop : String, )
+            + EPGProgramme(start : String, stop : String, )
 
-        + getStart(): String
-        + getStop(): String
-        + getCategories(): List<String>
-        + getEpgIdentifier(): String
-        + getEpgTitle(): String
-        + getOptions(): Map<String, Boolean>
-
+            + getStart(): String
+            + getStop(): String
+            + getCategories(): List<String>
+            + getEpgIdentifier(): String
+            + getEpgTitle(): String
+            + getOptions(): Map<String, Boolean>
         }
 
         interface IUser {
@@ -336,10 +337,10 @@ package "Domain Layer" #DDD {
 
     package "Providers" #FFF {
         class EmailProvider{
-        - {static} SEND_FROM_ADDRESS: Email
-        - {static} SG: SendGrid
+            - {static} SEND_FROM_ADDRESS: Email
+            - {static} SG: SendGrid
 
-        + {static} SendEmail(to: Email, subject: String, content: Content): void
+            + {static} SendEmail(to: Email, subject: String, content: Content): void
         }
     }
 
@@ -356,7 +357,7 @@ package "Domain Layer" #DDD {
 '------------------------------------------------------------------------------------
 package "Persistence Layer" #DDD {
     package "Data" #FFF {
-        interface PersistanceContract {
+        interface PersistenceContract {
             + getUsers(): List<User>
             + getUser(id: int): User
             + createUser(user: User): void
@@ -374,7 +375,7 @@ package "Persistence Layer" #DDD {
             + deleteProgramme(id: int): void
         }
 
-        DBHandler .-|> PersistanceContract
+        DBHandler .-|> PersistenceContract
 
         class DBHandler {
             + getUsers(): List<User>
@@ -392,7 +393,7 @@ package "Persistence Layer" #DDD {
             + jsonAppendToArray(obj: JSONObject): void
         }
 
-        JSONHandler .-|> PersistanceContract
+        JSONHandler .-|> PersistenceContract
 
         class JSONHandler {
             - JSONHandler()
@@ -406,7 +407,7 @@ package "Persistence Layer" #DDD {
 
         IOHandler <-* JSONHandler
 
-        PersistanceContract <-o DBFacade
+        PersistenceContract <-o DBFacade
 
         class DBFacade {
 
