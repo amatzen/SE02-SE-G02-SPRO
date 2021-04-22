@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="2762px" preserveAspectRatio="none" style="width:1003px;height:2762px;" version="1.1" viewBox="0 0 1003 2762" width="1003px" zoomAndPan="magnify"><defs><filter height="300%" id="fydd7yyonk65b" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[0754fe69ac3af9334601915612cb61f4]
+cluster Presentation Layer--><polygon fill="#DDDDDD" filter="url(#fydd7yyonk65b)" points="60.5,1361,216.5,1361,223.5,1383.2969,986.5,1383.2969,986.5,2290,60.5,2290,60.5,1361" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="60.5" x2="223.5" y1="1383.2969" y2="1383.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="150" x="64.5" y="1375.9951">Presentation Layer</text><!--MD5=[999f80192410ad58725ac6d158b21eb2]
+cluster Views--><polygon fill="#FFFFFF" filter="url(#fydd7yyonk65b)" points="84.5,1404,138.5,1404,145.5,1426.2969,962.5,1426.2969,962.5,2266,84.5,2266,84.5,1404" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="84.5" x2="145.5" y1="1426.2969" y2="1426.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="48" x="88.5" y="1418.9951">Views</text><!--MD5=[b942dcaca0b0efa3aa454a47c9c8eafb]
+cluster Modals--><polygon fill="#FFFFFF" filter="url(#fydd7yyonk65b)" points="108.5,1447,169.5,1447,176.5,1469.2969,330.5,1469.2969,330.5,1629,108.5,1629,108.5,1447" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="108.5" x2="176.5" y1="1469.2969" y2="1469.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="55" x="112.5" y="1461.9951">Modals</text><!--MD5=[934f5eda8adaf177acbccde96cfb634d]
+cluster Partials--><polygon fill="#FFFFFF" filter="url(#fydd7yyonk65b)" points="488.5,1669,552.5,1669,559.5,1691.2969,938.5,1691.2969,938.5,2017,488.5,2017,488.5,1669" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="488.5" x2="559.5" y1="1691.2969" y2="1691.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="58" x="492.5" y="1683.9951">Partials</text><!--MD5=[cc167570a590d8dbd4742108b55f98b1]
+cluster Domain Layer--><polygon fill="#DDDDDD" filter="url(#fydd7yyonk65b)" points="16,6,129,6,136,28.2969,967,28.2969,967,1337,16,1337,16,6" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="16" x2="136" y1="28.2969" y2="28.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="107" x="20" y="20.9951">Domain Layer</text><!--MD5=[ed1d20ea533a2a0e7df5ba3c35e56ced]
+cluster Controllers--><polygon fill="#FFFFFF" filter="url(#fydd7yyonk65b)" points="40,49,134,49,141,71.2969,399,71.2969,399,238,40,238,40,49" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="40" x2="141" y1="71.2969" y2="71.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="88" x="44" y="63.9951">Controllers</text><!--MD5=[4a42b3c3ff93b6e51884188baf3e1c46]
+cluster Helpers--><polygon fill="#FFFFFF" filter="url(#fydd7yyonk65b)" points="65.5,262,132.5,262,139.5,284.2969,636.5,284.2969,636.5,579,65.5,579,65.5,262" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="65.5" x2="139.5" y1="284.2969" y2="284.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="61" x="69.5" y="276.9951">Helpers</text><!--MD5=[027ebfd53c01aea08f474edbf35d0797]
+cluster Models--><polygon fill="#FFFFFF" filter="url(#fydd7yyonk65b)" points="100,603,162,603,169,625.2969,943,625.2969,943,984,100,984,100,603" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="100" x2="169" y1="625.2969" y2="625.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="56" x="104" y="617.9951">Models</text><!--MD5=[46d1235180ad9d6d621a9bea424853f2]
+cluster Providers--><polygon fill="#FFFFFF" filter="url(#fydd7yyonk65b)" points="145.5,1008,227.5,1008,234.5,1030.2969,293.5,1030.2969,293.5,1107,145.5,1107,145.5,1008" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="145.5" x2="234.5" y1="1030.2969" y2="1030.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="76" x="149.5" y="1022.9951">Providers</text><!--MD5=[e5f667b5311306cc91fbdfbce3163ce7]
+cluster Exceptions--><polygon fill="#FFFFFF" filter="url(#fydd7yyonk65b)" points="116,1131,208,1131,215,1153.2969,323,1153.2969,323,1313,116,1313,116,1131" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="116" x2="215" y1="1153.2969" y2="1153.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="86" x="120" y="1145.9951">Exceptions</text><!--MD5=[10d0f23ee569ea40eeb72eb4536f1cc1]
+cluster Persistence Layer--><polygon fill="#DDDDDD" filter="url(#fydd7yyonk65b)" points="60,2314,209,2314,216,2336.2969,743,2336.2969,743,2755,60,2755,60,2314" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="60" x2="216" y1="2336.2969" y2="2336.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="143" x="64" y="2328.9951">Persistence Layer</text><!--MD5=[f21b1f164e99c6b37934f23ad048ad54]
+cluster Data--><polygon fill="#FFFFFF" filter="url(#fydd7yyonk65b)" points="84,2357,125,2357,132,2379.2969,719,2379.2969,719,2731,84,2731,84,2357" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="84" x2="132" y1="2379.2969" y2="2379.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="35" x="88" y="2371.9951">Data</text><!--MD5=[5860011beb5c4352074e0c772b718df6]
+class AdminViewController--><rect codeLine="23" fill="#FEFECE" filter="url(#fydd7yyonk65b)" height="48" id="AdminViewController" style="stroke:#A80036;stroke-width:1.5;" width="159" x="493.5" y="2202"/><ellipse cx="508.5" cy="2218" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M511.4688,2223.6406 Q510.8906,2223.9375 510.25,2224.0781 Q509.6094,2224.2344 508.9063,2224.2344 Q506.4063,2224.2344 505.0781,2222.5938 Q503.7656,2220.9375 503.7656,2217.8125 Q503.7656,2214.6875 505.0781,2213.0313 Q506.4063,2211.375 508.9063,2211.375 Q509.6094,2211.375 510.25,2211.5313 Q510.9063,2211.6875 511.4688,2211.9844 L511.4688,2214.7031 Q510.8438,2214.125 510.25,2213.8594 Q509.6563,2213.5781 509.0313,2213.5781 Q507.6875,2213.5781 507,2214.6563 Q506.3125,2215.7188 506.3125,2217.8125 Q506.3125,2219.9063 507,2220.9844 Q507.6875,2222.0469 509.0313,2222.0469 Q509.6563,2222.0469 510.25,2221.7813 Q510.8438,2221.5 511.4688,2220.9219 L511.4688,2223.6406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="127" x="522.5" y="2222.1543">AdminViewController</text><line style="stroke:#A80036;stroke-width:1.5;" x1="494.5" x2="651.5" y1="2234" y2="2234"/><line style="stroke:#A80036;stroke-width:1.5;" x1="494.5" x2="651.5" y1="2242" y2="2242"/><!--MD5=[e514ac18ad7b6e2642ec9ffe524aed07]
+class AppViewController--><rect codeLine="24" fill="#FEFECE" filter="url(#fydd7yyonk65b)" height="48" id="AppViewController" style="stroke:#A80036;stroke-width:1.5;" width="145" x="500.5" y="2119"/><ellipse cx="515.5" cy="2135" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M518.4688,2140.6406 Q517.8906,2140.9375 517.25,2141.0781 Q516.6094,2141.2344 515.9063,2141.2344 Q513.4063,2141.2344 512.0781,2139.5938 Q510.7656,2137.9375 510.7656,2134.8125 Q510.7656,2131.6875 512.0781,2130.0313 Q513.4063,2128.375 515.9063,2128.375 Q516.6094,2128.375 517.25,2128.5313 Q517.9063,2128.6875 518.4688,2128.9844 L518.4688,2131.7031 Q517.8438,2131.125 517.25,2130.8594 Q516.6563,2130.5781 516.0313,2130.5781 Q514.6875,2130.5781 514,2131.6563 Q513.3125,2132.7188 513.3125,2134.8125 Q513.3125,2136.9063 514,2137.9844 Q514.6875,2139.0469 516.0313,2139.0469 Q516.6563,2139.0469 517.25,2138.7813 Q517.8438,2138.5 518.4688,2137.9219 L518.4688,2140.6406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="113" x="529.5" y="2139.1543">AppViewController</text><line style="stroke:#A80036;stroke-width:1.5;" x1="501.5" x2="644.5" y1="2151" y2="2151"/><line style="stroke:#A80036;stroke-width:1.5;" x1="501.5" x2="644.5" y1="2159" y2="2159"/><!--MD5=[989d5055c8c38654465084e361d1258f]
+class AuthViewController--><rect codeLine="25" fill="#FEFECE" filter="url(#fydd7yyonk65b)" height="48" id="AuthViewController" style="stroke:#A80036;stroke-width:1.5;" width="150" x="498" y="2036"/><ellipse cx="513" cy="2052" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M515.9688,2057.6406 Q515.3906,2057.9375 514.75,2058.0781 Q514.1094,2058.2344 513.4063,2058.2344 Q510.9063,2058.2344 509.5781,2056.5938 Q508.2656,2054.9375 508.2656,2051.8125 Q508.2656,2048.6875 509.5781,2047.0313 Q510.9063,2045.375 513.4063,2045.375 Q514.1094,2045.375 514.75,2045.5313 Q515.4063,2045.6875 515.9688,2045.9844 L515.9688,2048.7031 Q515.3438,2048.125 514.75,2047.8594 Q514.1563,2047.5781 513.5313,2047.5781 Q512.1875,2047.5781 511.5,2048.6563 Q510.8125,2049.7188 510.8125,2051.8125 Q510.8125,2053.9063 511.5,2054.9844 Q512.1875,2056.0469 513.5313,2056.0469 Q514.1563,2056.0469 514.75,2055.7813 Q515.3438,2055.5 515.9688,2054.9219 L515.9688,2057.6406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="118" x="527" y="2056.1543">AuthViewController</text><line style="stroke:#A80036;stroke-width:1.5;" x1="499" x2="647" y1="2068" y2="2068"/><line style="stroke:#A80036;stroke-width:1.5;" x1="499" x2="647" y1="2076" y2="2076"/><!--MD5=[a6d7289776a81c0e830134f19e633259]
+class CompanyViewController--><rect codeLine="26" fill="#FEFECE" filter="url(#fydd7yyonk65b)" height="48" id="CompanyViewController" style="stroke:#A80036;stroke-width:1.5;" width="178" x="130.5" y="1814"/><ellipse cx="145.5" cy="1830" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M148.4688,1835.6406 Q147.8906,1835.9375 147.25,1836.0781 Q146.6094,1836.2344 145.9063,1836.2344 Q143.4063,1836.2344 142.0781,1834.5938 Q140.7656,1832.9375 140.7656,1829.8125 Q140.7656,1826.6875 142.0781,1825.0313 Q143.4063,1823.375 145.9063,1823.375 Q146.6094,1823.375 147.25,1823.5313 Q147.9063,1823.6875 148.4688,1823.9844 L148.4688,1826.7031 Q147.8438,1826.125 147.25,1825.8594 Q146.6563,1825.5781 146.0313,1825.5781 Q144.6875,1825.5781 144,1826.6563 Q143.3125,1827.7188 143.3125,1829.8125 Q143.3125,1831.9063 144,1832.9844 Q144.6875,1834.0469 146.0313,1834.0469 Q146.6563,1834.0469 147.25,1833.7813 Q147.8438,1833.5 148.4688,1832.9219 L148.4688,1835.6406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="146" x="159.5" y="1834.1543">CompanyViewController</text><line style="stroke:#A80036;stroke-width:1.5;" x1="131.5" x2="307.5" y1="1846" y2="1846"/><line style="stroke:#A80036;stroke-width:1.5;" x1="131.5" x2="307.5" y1="1854" y2="1854"/><!--MD5=[84772476679f76438bdcce7dfdd23d2b]
+class CreditGroupController--><rect codeLine="27" fill="#FEFECE" filter="url(#fydd7yyonk65b)" height="48" id="CreditGroupController" style="stroke:#A80036;stroke-width:1.5;" width="168" x="135.5" y="1731"/><ellipse cx="150.5" cy="1747" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M153.4688,1752.6406 Q152.8906,1752.9375 152.25,1753.0781 Q151.6094,1753.2344 150.9063,1753.2344 Q148.4063,1753.2344 147.0781,1751.5938 Q145.7656,1749.9375 145.7656,1746.8125 Q145.7656,1743.6875 147.0781,1742.0313 Q148.4063,1740.375 150.9063,1740.375 Q151.6094,1740.375 152.25,1740.5313 Q152.9063,1740.6875 153.4688,1740.9844 L153.4688,1743.7031 Q152.8438,1743.125 152.25,1742.8594 Q151.6563,1742.5781 151.0313,1742.5781 Q149.6875,1742.5781 149,1743.6563 Q148.3125,1744.7188 148.3125,1746.8125 Q148.3125,1748.9063 149,1749.9844 Q149.6875,1751.0469 151.0313,1751.0469 Q151.6563,1751.0469 152.25,1750.7813 Q152.8438,1750.5 153.4688,1749.9219 L153.4688,1752.6406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="136" x="164.5" y="1751.1543">CreditGroupController</text><line style="stroke:#A80036;stroke-width:1.5;" x1="136.5" x2="302.5" y1="1763" y2="1763"/><line style="stroke:#A80036;stroke-width:1.5;" x1="136.5" x2="302.5" y1="1771" y2="1771"/><!--MD5=[4efdd2f832fa0569420cd7f814875990]
+class DataExportController--><rect codeLine="28" fill="#FEFECE" filter="url(#fydd7yyonk65b)" height="48" id="DataExportController" style="stroke:#A80036;stroke-width:1.5;" width="163" x="138" y="1648"/><ellipse cx="153" cy="1664" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M155.9688,1669.6406 Q155.3906,1669.9375 154.75,1670.0781 Q154.1094,1670.2344 153.4063,1670.2344 Q150.9063,1670.2344 149.5781,1668.5938 Q148.2656,1666.9375 148.2656,1663.8125 Q148.2656,1660.6875 149.5781,1659.0313 Q150.9063,1657.375 153.4063,1657.375 Q154.1094,1657.375 154.75,1657.5313 Q155.4063,1657.6875 155.9688,1657.9844 L155.9688,1660.7031 Q155.3438,1660.125 154.75,1659.8594 Q154.1563,1659.5781 153.5313,1659.5781 Q152.1875,1659.5781 151.5,1660.6563 Q150.8125,1661.7188 150.8125,1663.8125 Q150.8125,1665.9063 151.5,1666.9844 Q152.1875,1668.0469 153.5313,1668.0469 Q154.1563,1668.0469 154.75,1667.7813 Q155.3438,1667.5 155.9688,1666.9219 L155.9688,1669.6406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="131" x="167" y="1668.1543">DataExportController</text><line style="stroke:#A80036;stroke-width:1.5;" x1="139" x2="300" y1="1680" y2="1680"/><line style="stroke:#A80036;stroke-width:1.5;" x1="139" x2="300" y1="1688" y2="1688"/><!--MD5=[c5c8e5af46a9ff89a968445a20db84ae]
+class PersonsViewController--><rect codeLine="29" fill="#FEFECE" filter="url(#fydd7yyonk65b)" height="48" id="PersonsViewController" style="stroke:#A80036;stroke-width:1.5;" width="172" x="487" y="1605"/><ellipse cx="502" cy="1621" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M504.9688,1626.6406 Q504.3906,1626.9375 503.75,1627.0781 Q503.1094,1627.2344 502.4063,1627.2344 Q499.9063,1627.2344 498.5781,1625.5938 Q497.2656,1623.9375 497.2656,1620.8125 Q497.2656,1617.6875 498.5781,1616.0313 Q499.9063,1614.375 502.4063,1614.375 Q503.1094,1614.375 503.75,1614.5313 Q504.4063,1614.6875 504.9688,1614.9844 L504.9688,1617.7031 Q504.3438,1617.125 503.75,1616.8594 Q503.1563,1616.5781 502.5313,1616.5781 Q501.1875,1616.5781 500.5,1617.6563 Q499.8125,1618.7188 499.8125,1620.8125 Q499.8125,1622.9063 500.5,1623.9844 Q501.1875,1625.0469 502.5313,1625.0469 Q503.1563,1625.0469 503.75,1624.7813 Q504.3438,1624.5 504.9688,1623.9219 L504.9688,1626.6406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="140" x="516" y="1625.1543">PersonsViewController</text><line style="stroke:#A80036;stroke-width:1.5;" x1="488" x2="658" y1="1637" y2="1637"/><line style="stroke:#A80036;stroke-width:1.5;" x1="488" x2="658" y1="1645" y2="1645"/><!--MD5=[cb1b947f08c3d9ceda84d71fe89585a9]
+class ProgrammesViewController--><rect codeLine="30" fill="#FEFECE" filter="url(#fydd7yyonk65b)" height="48" id="ProgrammesViewController" style="stroke:#A80036;stroke-width:1.5;" width="200" x="473" y="1522"/><ellipse cx="488" cy="1538" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M490.9688,1543.6406 Q490.3906,1543.9375 489.75,1544.0781 Q489.1094,1544.2344 488.4063,1544.2344 Q485.9063,1544.2344 484.5781,1542.5938 Q483.2656,1540.9375 483.2656,1537.8125 Q483.2656,1534.6875 484.5781,1533.0313 Q485.9063,1531.375 488.4063,1531.375 Q489.1094,1531.375 489.75,1531.5313 Q490.4063,1531.6875 490.9688,1531.9844 L490.9688,1534.7031 Q490.3438,1534.125 489.75,1533.8594 Q489.1563,1533.5781 488.5313,1533.5781 Q487.1875,1533.5781 486.5,1534.6563 Q485.8125,1535.7188 485.8125,1537.8125 Q485.8125,1539.9063 486.5,1540.9844 Q487.1875,1542.0469 488.5313,1542.0469 Q489.1563,1542.0469 489.75,1541.7813 Q490.3438,1541.5 490.9688,1540.9219 L490.9688,1543.6406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="168" x="502" y="1542.1543">ProgrammesViewController</text><line style="stroke:#A80036;stroke-width:1.5;" x1="474" x2="672" y1="1554" y2="1554"/><line style="stroke:#A80036;stroke-width:1.5;" x1="474" x2="672" y1="1562" y2="1562"/><!--MD5=[aabdc13a0aacbee7e97b53a0256975d8]
+class ReviewViewController--><rect codeLine="31" fill="#FEFECE" filter="url(#fydd7yyonk65b)" height="48" id="ReviewViewController" style="stroke:#A80036;stroke-width:1.5;" width="163" x="491.5" y="1439"/><ellipse cx="506.5" cy="1455" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M509.4688,1460.6406 Q508.8906,1460.9375 508.25,1461.0781 Q507.6094,1461.2344 506.9063,1461.2344 Q504.4063,1461.2344 503.0781,1459.5938 Q501.7656,1457.9375 501.7656,1454.8125 Q501.7656,1451.6875 503.0781,1450.0313 Q504.4063,1448.375 506.9063,1448.375 Q507.6094,1448.375 508.25,1448.5313 Q508.9063,1448.6875 509.4688,1448.9844 L509.4688,1451.7031 Q508.8438,1451.125 508.25,1450.8594 Q507.6563,1450.5781 507.0313,1450.5781 Q505.6875,1450.5781 505,1451.6563 Q504.3125,1452.7188 504.3125,1454.8125 Q504.3125,1456.9063 505,1457.9844 Q505.6875,1459.0469 507.0313,1459.0469 Q507.6563,1459.0469 508.25,1458.7813 Q508.8438,1458.5 509.4688,1457.9219 L509.4688,1460.6406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="131" x="520.5" y="1459.1543">ReviewViewController</text><line style="stroke:#A80036;stroke-width:1.5;" x1="492.5" x2="653.5" y1="1471" y2="1471"/><line style="stroke:#A80036;stroke-width:1.5;" x1="492.5" x2="653.5" y1="1479" y2="1479"/><!--MD5=[a3ca736ecbdf9770d2cfef15820cfe41]
+class Router--><rect codeLine="32" fill="#FEFECE" filter="url(#fydd7yyonk65b)" height="48" id="Router" style="stroke:#A80036;stroke-width:1.5;" width="74" x="182.5" y="2078"/><ellipse cx="197.5" cy="2094" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M200.4688,2099.6406 Q199.8906,2099.9375 199.25,2100.0781 Q198.6094,2100.2344 197.9063,2100.2344 Q195.4063,2100.2344 194.0781,2098.5938 Q192.7656,2096.9375 192.7656,2093.8125 Q192.7656,2090.6875 194.0781,2089.0313 Q195.4063,2087.375 197.9063,2087.375 Q198.6094,2087.375 199.25,2087.5313 Q199.9063,2087.6875 200.4688,2087.9844 L200.4688,2090.7031 Q199.8438,2090.125 199.25,2089.8594 Q198.6563,2089.5781 198.0313,2089.5781 Q196.6875,2089.5781 196,2090.6563 Q195.3125,2091.7188 195.3125,2093.8125 Q195.3125,2095.9063 196,2096.9844 Q196.6875,2098.0469 198.0313,2098.0469 Q198.6563,2098.0469 199.25,2097.7813 Q199.8438,2097.5 200.4688,2096.9219 L200.4688,2099.6406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="42" x="211.5" y="2098.1543">Router</text><line style="stroke:#A80036;stroke-width:1.5;" x1="183.5" x2="255.5" y1="2110" y2="2110"/><line style="stroke:#A80036;stroke-width:1.5;" x1="183.5" x2="255.5" y1="2118" y2="2118"/><!--MD5=[b46c94376a01c0d563bd6b29d27102b3]
+class UserControlController--><rect codeLine="33" fill="#FEFECE" filter="url(#fydd7yyonk65b)" height="48" id="UserControlController" style="stroke:#A80036;stroke-width:1.5;" width="167" x="763" y="1605"/><ellipse cx="778" cy="1621" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M780.9688,1626.6406 Q780.3906,1626.9375 779.75,1627.0781 Q779.1094,1627.2344 778.4063,1627.2344 Q775.9063,1627.2344 774.5781,1625.5938 Q773.2656,1623.9375 773.2656,1620.8125 Q773.2656,1617.6875 774.5781,1616.0313 Q775.9063,1614.375 778.4063,1614.375 Q779.1094,1614.375 779.75,1614.5313 Q780.4063,1614.6875 780.9688,1614.9844 L780.9688,1617.7031 Q780.3438,1617.125 779.75,1616.8594 Q779.1563,1616.5781 778.5313,1616.5781 Q777.1875,1616.5781 776.5,1617.6563 Q775.8125,1618.7188 775.8125,1620.8125 Q775.8125,1622.9063 776.5,1623.9844 Q777.1875,1625.0469 778.5313,1625.0469 Q779.1563,1625.0469 779.75,1624.7813 Q780.3438,1624.5 780.9688,1623.9219 L780.9688,1626.6406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="135" x="792" y="1625.1543">UserControlController</text><line style="stroke:#A80036;stroke-width:1.5;" x1="764" x2="929" y1="1637" y2="1637"/><line style="stroke:#A80036;stroke-width:1.5;" x1="764" x2="929" y1="1645" y2="1645"/><!--MD5=[99f0e2a5dd1f7fc6d6be0c58821fadbe]
+class EditProgrammeDialog--><rect codeLine="8" fill="#FEFECE" filter="url(#fydd7yyonk65b)" height="48" id="EditProgrammeDialog" style="stroke:#A80036;stroke-width:1.5;" width="167" x="136" y="1482"/><ellipse cx="151" cy="1498" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M153.9688,1503.6406 Q153.3906,1503.9375 152.75,1504.0781 Q152.1094,1504.2344 151.4063,1504.2344 Q148.9063,1504.2344 147.5781,1502.5938 Q146.2656,1500.9375 146.2656,1497.8125 Q146.2656,1494.6875 147.5781,1493.0313 Q148.9063,1491.375 151.4063,1491.375 Q152.1094,1491.375 152.75,1491.5313 Q153.4063,1491.6875 153.9688,1491.9844 L153.9688,1494.7031 Q153.3438,1494.125 152.75,1493.8594 Q152.1563,1493.5781 151.5313,1493.5781 Q150.1875,1493.5781 149.5,1494.6563 Q148.8125,1495.7188 148.8125,1497.8125 Q148.8125,1499.9063 149.5,1500.9844 Q150.1875,1502.0469 151.5313,1502.0469 Q152.1563,1502.0469 152.75,1501.7813 Q153.3438,1501.5 153.9688,1500.9219 L153.9688,1503.6406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="135" x="165" y="1502.1543">EditProgrammeDialog</text><line style="stroke:#A80036;stroke-width:1.5;" x1="137" x2="302" y1="1514" y2="1514"/><line style="stroke:#A80036;stroke-width:1.5;" x1="137" x2="302" y1="1522" y2="1522"/><!--MD5=[9d399bfd43b39d1f2727ee72be5cfc8d]
+class UserAdministrationDialog--><rect codeLine="9" fill="#FEFECE" filter="url(#fydd7yyonk65b)" height="48" id="UserAdministrationDialog" style="stroke:#A80036;stroke-width:1.5;" width="190" x="124.5" y="1565"/><ellipse cx="139.5" cy="1581" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M142.4688,1586.6406 Q141.8906,1586.9375 141.25,1587.0781 Q140.6094,1587.2344 139.9063,1587.2344 Q137.4063,1587.2344 136.0781,1585.5938 Q134.7656,1583.9375 134.7656,1580.8125 Q134.7656,1577.6875 136.0781,1576.0313 Q137.4063,1574.375 139.9063,1574.375 Q140.6094,1574.375 141.25,1574.5313 Q141.9063,1574.6875 142.4688,1574.9844 L142.4688,1577.7031 Q141.8438,1577.125 141.25,1576.8594 Q140.6563,1576.5781 140.0313,1576.5781 Q138.6875,1576.5781 138,1577.6563 Q137.3125,1578.7188 137.3125,1580.8125 Q137.3125,1582.9063 138,1583.9844 Q138.6875,1585.0469 140.0313,1585.0469 Q140.6563,1585.0469 141.25,1584.7813 Q141.8438,1584.5 142.4688,1583.9219 L142.4688,1586.6406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="158" x="153.5" y="1585.1543">UserAdministrationDialog</text><line style="stroke:#A80036;stroke-width:1.5;" x1="125.5" x2="313.5" y1="1597" y2="1597"/><line style="stroke:#A80036;stroke-width:1.5;" x1="125.5" x2="313.5" y1="1605" y2="1605"/><!--MD5=[1ddce5873c8ec8d7eb31d65a4a316723]
+class CompanyListItem--><rect codeLine="13" fill="#FEFECE" filter="url(#fydd7yyonk65b)" height="48" id="CompanyListItem" style="stroke:#A80036;stroke-width:1.5;" width="137" x="504.5" y="1870"/><ellipse cx="519.5" cy="1886" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M522.4688,1891.6406 Q521.8906,1891.9375 521.25,1892.0781 Q520.6094,1892.2344 519.9063,1892.2344 Q517.4063,1892.2344 516.0781,1890.5938 Q514.7656,1888.9375 514.7656,1885.8125 Q514.7656,1882.6875 516.0781,1881.0313 Q517.4063,1879.375 519.9063,1879.375 Q520.6094,1879.375 521.25,1879.5313 Q521.9063,1879.6875 522.4688,1879.9844 L522.4688,1882.7031 Q521.8438,1882.125 521.25,1881.8594 Q520.6563,1881.5781 520.0313,1881.5781 Q518.6875,1881.5781 518,1882.6563 Q517.3125,1883.7188 517.3125,1885.8125 Q517.3125,1887.9063 518,1888.9844 Q518.6875,1890.0469 520.0313,1890.0469 Q520.6563,1890.0469 521.25,1889.7813 Q521.8438,1889.5 522.4688,1888.9219 L522.4688,1891.6406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="105" x="533.5" y="1890.1543">CompanyListItem</text><line style="stroke:#A80036;stroke-width:1.5;" x1="505.5" x2="640.5" y1="1902" y2="1902"/><line style="stroke:#A80036;stroke-width:1.5;" x1="505.5" x2="640.5" y1="1910" y2="1910"/><!--MD5=[6f5fdfc70bb30e7b06e663360319269a]
+class CreditListItem--><rect codeLine="14" fill="#FEFECE" filter="url(#fydd7yyonk65b)" height="48" id="CreditListItem" style="stroke:#A80036;stroke-width:1.5;" width="117" x="514.5" y="1787"/><ellipse cx="529.5" cy="1803" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M532.4688,1808.6406 Q531.8906,1808.9375 531.25,1809.0781 Q530.6094,1809.2344 529.9063,1809.2344 Q527.4063,1809.2344 526.0781,1807.5938 Q524.7656,1805.9375 524.7656,1802.8125 Q524.7656,1799.6875 526.0781,1798.0313 Q527.4063,1796.375 529.9063,1796.375 Q530.6094,1796.375 531.25,1796.5313 Q531.9063,1796.6875 532.4688,1796.9844 L532.4688,1799.7031 Q531.8438,1799.125 531.25,1798.8594 Q530.6563,1798.5781 530.0313,1798.5781 Q528.6875,1798.5781 528,1799.6563 Q527.3125,1800.7188 527.3125,1802.8125 Q527.3125,1804.9063 528,1805.9844 Q528.6875,1807.0469 530.0313,1807.0469 Q530.6563,1807.0469 531.25,1806.7813 Q531.8438,1806.5 532.4688,1805.9219 L532.4688,1808.6406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="85" x="543.5" y="1807.1543">CreditListItem</text><line style="stroke:#A80036;stroke-width:1.5;" x1="515.5" x2="630.5" y1="1819" y2="1819"/><line style="stroke:#A80036;stroke-width:1.5;" x1="515.5" x2="630.5" y1="1827" y2="1827"/><!--MD5=[1e45380c90959740d49d8a512f801749]
+class Navbar--><rect codeLine="15" fill="#FEFECE" filter="url(#fydd7yyonk65b)" height="48" id="Navbar" style="stroke:#A80036;stroke-width:1.5;" width="76" x="535" y="1953"/><ellipse cx="550" cy="1969" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M552.9688,1974.6406 Q552.3906,1974.9375 551.75,1975.0781 Q551.1094,1975.2344 550.4063,1975.2344 Q547.9063,1975.2344 546.5781,1973.5938 Q545.2656,1971.9375 545.2656,1968.8125 Q545.2656,1965.6875 546.5781,1964.0313 Q547.9063,1962.375 550.4063,1962.375 Q551.1094,1962.375 551.75,1962.5313 Q552.4063,1962.6875 552.9688,1962.9844 L552.9688,1965.7031 Q552.3438,1965.125 551.75,1964.8594 Q551.1563,1964.5781 550.5313,1964.5781 Q549.1875,1964.5781 548.5,1965.6563 Q547.8125,1966.7188 547.8125,1968.8125 Q547.8125,1970.9063 548.5,1971.9844 Q549.1875,1973.0469 550.5313,1973.0469 Q551.1563,1973.0469 551.75,1972.7813 Q552.3438,1972.5 552.9688,1971.9219 L552.9688,1974.6406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="44" x="564" y="1973.1543">Navbar</text><line style="stroke:#A80036;stroke-width:1.5;" x1="536" x2="610" y1="1985" y2="1985"/><line style="stroke:#A80036;stroke-width:1.5;" x1="536" x2="610" y1="1993" y2="1993"/><!--MD5=[37583f4c1dcab78eea0e3784cc4b0ba8]
+class PopupListMenu--><rect codeLine="16" fill="#FEFECE" filter="url(#fydd7yyonk65b)" height="48" id="PopupListMenu" style="stroke:#A80036;stroke-width:1.5;" width="127" x="509.5" y="1704"/><ellipse cx="524.5" cy="1720" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M527.4688,1725.6406 Q526.8906,1725.9375 526.25,1726.0781 Q525.6094,1726.2344 524.9063,1726.2344 Q522.4063,1726.2344 521.0781,1724.5938 Q519.7656,1722.9375 519.7656,1719.8125 Q519.7656,1716.6875 521.0781,1715.0313 Q522.4063,1713.375 524.9063,1713.375 Q525.6094,1713.375 526.25,1713.5313 Q526.9063,1713.6875 527.4688,1713.9844 L527.4688,1716.7031 Q526.8438,1716.125 526.25,1715.8594 Q525.6563,1715.5781 525.0313,1715.5781 Q523.6875,1715.5781 523,1716.6563 Q522.3125,1717.7188 522.3125,1719.8125 Q522.3125,1721.9063 523,1722.9844 Q523.6875,1724.0469 525.0313,1724.0469 Q525.6563,1724.0469 526.25,1723.7813 Q526.8438,1723.5 527.4688,1722.9219 L527.4688,1725.6406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="95" x="538.5" y="1724.1543">PopupListMenu</text><line style="stroke:#A80036;stroke-width:1.5;" x1="510.5" x2="635.5" y1="1736" y2="1736"/><line style="stroke:#A80036;stroke-width:1.5;" x1="510.5" x2="635.5" y1="1744" y2="1744"/><!--MD5=[3f14b0d47994b2eb9dcff73177fa6a6a]
+class ProgrammeListItem--><rect codeLine="17" fill="#FEFECE" filter="url(#fydd7yyonk65b)" height="48" id="ProgrammeListItem" style="stroke:#A80036;stroke-width:1.5;" width="152" x="770.5" y="1870"/><ellipse cx="785.5" cy="1886" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M788.4688,1891.6406 Q787.8906,1891.9375 787.25,1892.0781 Q786.6094,1892.2344 785.9063,1892.2344 Q783.4063,1892.2344 782.0781,1890.5938 Q780.7656,1888.9375 780.7656,1885.8125 Q780.7656,1882.6875 782.0781,1881.0313 Q783.4063,1879.375 785.9063,1879.375 Q786.6094,1879.375 787.25,1879.5313 Q787.9063,1879.6875 788.4688,1879.9844 L788.4688,1882.7031 Q787.8438,1882.125 787.25,1881.8594 Q786.6563,1881.5781 786.0313,1881.5781 Q784.6875,1881.5781 784,1882.6563 Q783.3125,1883.7188 783.3125,1885.8125 Q783.3125,1887.9063 784,1888.9844 Q784.6875,1890.0469 786.0313,1890.0469 Q786.6563,1890.0469 787.25,1889.7813 Q787.8438,1889.5 788.4688,1888.9219 L788.4688,1891.6406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="120" x="799.5" y="1890.1543">ProgrammeListItem</text><line style="stroke:#A80036;stroke-width:1.5;" x1="771.5" x2="921.5" y1="1902" y2="1902"/><line style="stroke:#A80036;stroke-width:1.5;" x1="771.5" x2="921.5" y1="1910" y2="1910"/><!--MD5=[ea698cb33f578f0345fcc9eec8c6d1c8]
+class ReviewItem--><rect codeLine="18" fill="#FEFECE" filter="url(#fydd7yyonk65b)" height="48" id="ReviewItem" style="stroke:#A80036;stroke-width:1.5;" width="101" x="796" y="1787"/><ellipse cx="811" cy="1803" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M813.9688,1808.6406 Q813.3906,1808.9375 812.75,1809.0781 Q812.1094,1809.2344 811.4063,1809.2344 Q808.9063,1809.2344 807.5781,1807.5938 Q806.2656,1805.9375 806.2656,1802.8125 Q806.2656,1799.6875 807.5781,1798.0313 Q808.9063,1796.375 811.4063,1796.375 Q812.1094,1796.375 812.75,1796.5313 Q813.4063,1796.6875 813.9688,1796.9844 L813.9688,1799.7031 Q813.3438,1799.125 812.75,1798.8594 Q812.1563,1798.5781 811.5313,1798.5781 Q810.1875,1798.5781 809.5,1799.6563 Q808.8125,1800.7188 808.8125,1802.8125 Q808.8125,1804.9063 809.5,1805.9844 Q810.1875,1807.0469 811.5313,1807.0469 Q812.1563,1807.0469 812.75,1806.7813 Q813.3438,1806.5 813.9688,1805.9219 L813.9688,1808.6406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="69" x="825" y="1807.1543">ReviewItem</text><line style="stroke:#A80036;stroke-width:1.5;" x1="797" x2="896" y1="1819" y2="1819"/><line style="stroke:#A80036;stroke-width:1.5;" x1="797" x2="896" y1="1827" y2="1827"/><!--MD5=[a9cab4b6d61564cb026afbf4bf7f8274]
+class UsersView--><rect codeLine="19" fill="#FEFECE" filter="url(#fydd7yyonk65b)" height="48" id="UsersView" style="stroke:#A80036;stroke-width:1.5;" width="96" x="798.5" y="1704"/><ellipse cx="813.5" cy="1720" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M816.4688,1725.6406 Q815.8906,1725.9375 815.25,1726.0781 Q814.6094,1726.2344 813.9063,1726.2344 Q811.4063,1726.2344 810.0781,1724.5938 Q808.7656,1722.9375 808.7656,1719.8125 Q808.7656,1716.6875 810.0781,1715.0313 Q811.4063,1713.375 813.9063,1713.375 Q814.6094,1713.375 815.25,1713.5313 Q815.9063,1713.6875 816.4688,1713.9844 L816.4688,1716.7031 Q815.8438,1716.125 815.25,1715.8594 Q814.6563,1715.5781 814.0313,1715.5781 Q812.6875,1715.5781 812,1716.6563 Q811.3125,1717.7188 811.3125,1719.8125 Q811.3125,1721.9063 812,1722.9844 Q812.6875,1724.0469 814.0313,1724.0469 Q814.6563,1724.0469 815.25,1723.7813 Q815.8438,1723.5 816.4688,1722.9219 L816.4688,1725.6406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="64" x="827.5" y="1724.1543">UsersView</text><line style="stroke:#A80036;stroke-width:1.5;" x1="799.5" x2="893.5" y1="1736" y2="1736"/><line style="stroke:#A80036;stroke-width:1.5;" x1="799.5" x2="893.5" y1="1744" y2="1744"/><!--MD5=[9878be2e161685c2af42b541dee0842e]
+class AuthController--><rect codeLine="46" fill="#FEFECE" filter="url(#fydd7yyonk65b)" height="137.6328" id="AuthController" style="stroke:#A80036;stroke-width:1.5;" width="327" x="56" y="84"/><ellipse cx="170.25" cy="100" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M173.2188,105.6406 Q172.6406,105.9375 172,106.0781 Q171.3594,106.2344 170.6563,106.2344 Q168.1563,106.2344 166.8281,104.5938 Q165.5156,102.9375 165.5156,99.8125 Q165.5156,96.6875 166.8281,95.0313 Q168.1563,93.375 170.6563,93.375 Q171.3594,93.375 172,93.5313 Q172.6563,93.6875 173.2188,93.9844 L173.2188,96.7031 Q172.5938,96.125 172,95.8594 Q171.4063,95.5781 170.7813,95.5781 Q169.4375,95.5781 168.75,96.6563 Q168.0625,97.7188 168.0625,99.8125 Q168.0625,101.9063 168.75,102.9844 Q169.4375,104.0469 170.7813,104.0469 Q171.4063,104.0469 172,103.7813 Q172.5938,103.5 173.2188,102.9219 L173.2188,105.6406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="90" x="190.75" y="104.1543">AuthController</text><line style="stroke:#A80036;stroke-width:1.5;" x1="57" x2="382" y1="116" y2="116"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="64" y="124"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" text-decoration="underline" textLength="218" x="76" y="130.2104">AuthControllerInstance: AuthController</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="64" y="136.8047"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="103" x="76" y="143.0151">currentUser: User</text><line style="stroke:#A80036;stroke-width:1.5;" x1="57" x2="382" y1="149.6094" y2="149.6094"/><ellipse cx="67" cy="160.6094" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="89" x="76" y="163.8198">AuthController()</text><ellipse cx="67" cy="173.4141" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" text-decoration="underline" textLength="163" x="76" y="176.6245">getInstance(): AuthController</text><ellipse cx="67" cy="186.2188" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="301" x="76" y="189.4292">signIn(username: String, password: String): boolean</text><ellipse cx="67" cy="199.0234" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="74" x="76" y="202.2339">logout(): void</text><ellipse cx="67" cy="211.8281" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="88" x="76" y="215.0386">getUser(): User</text><!--MD5=[5d0a77e8f66918aa15fe0099dd6d4ba9]
+class Environment--><rect codeLine="59" fill="#FEFECE" filter="url(#fydd7yyonk65b)" height="86.4141" id="Environment" style="stroke:#A80036;stroke-width:1.5;" width="174" x="132.5" y="477"/><ellipse cx="176.3" cy="493" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M179.2688,498.6406 Q178.6906,498.9375 178.05,499.0781 Q177.4094,499.2344 176.7063,499.2344 Q174.2063,499.2344 172.8781,497.5938 Q171.5656,495.9375 171.5656,492.8125 Q171.5656,489.6875 172.8781,488.0313 Q174.2063,486.375 176.7063,486.375 Q177.4094,486.375 178.05,486.5313 Q178.7063,486.6875 179.2688,486.9844 L179.2688,489.7031 Q178.6438,489.125 178.05,488.8594 Q177.4563,488.5781 176.8313,488.5781 Q175.4875,488.5781 174.8,489.6563 Q174.1125,490.7188 174.1125,492.8125 Q174.1125,494.9063 174.8,495.9844 Q175.4875,497.0469 176.8313,497.0469 Q177.4563,497.0469 178.05,496.7813 Q178.6438,496.5 179.2688,495.9219 L179.2688,498.6406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="78" x="196.7" y="497.1543">Environment</text><line style="stroke:#A80036;stroke-width:1.5;" x1="133.5" x2="305.5" y1="509" y2="509"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="140.5" y="517"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="69" x="152.5" y="523.2104">label: String</text><line style="stroke:#A80036;stroke-width:1.5;" x1="133.5" x2="305.5" y1="529.8047" y2="529.8047"/><ellipse cx="143.5" cy="540.8047" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="148" x="152.5" y="544.0151">Environment(label: String)</text><ellipse cx="143.5" cy="553.6094" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="98" x="152.5" y="556.8198">getLabel(): String</text><!--MD5=[f4330f5f189f29868529588ad4a5c10c]
+class EnvironmentSelector--><rect codeLine="66" fill="#FEFECE" filter="url(#fydd7yyonk65b)" height="48" id="EnvironmentSelector" style="stroke:#A80036;stroke-width:1.5;" width="162" x="138.5" y="394"/><ellipse cx="153.5" cy="410" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M156.4688,415.6406 Q155.8906,415.9375 155.25,416.0781 Q154.6094,416.2344 153.9063,416.2344 Q151.4063,416.2344 150.0781,414.5938 Q148.7656,412.9375 148.7656,409.8125 Q148.7656,406.6875 150.0781,405.0313 Q151.4063,403.375 153.9063,403.375 Q154.6094,403.375 155.25,403.5313 Q155.9063,403.6875 156.4688,403.9844 L156.4688,406.7031 Q155.8438,406.125 155.25,405.8594 Q154.6563,405.5781 154.0313,405.5781 Q152.6875,405.5781 152,406.6563 Q151.3125,407.7188 151.3125,409.8125 Q151.3125,411.9063 152,412.9844 Q152.6875,414.0469 154.0313,414.0469 Q154.6563,414.0469 155.25,413.7813 Q155.8438,413.5 156.4688,412.9219 L156.4688,415.6406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="130" x="167.5" y="414.1543">EnvironmentSelector</text><line style="stroke:#A80036;stroke-width:1.5;" x1="139.5" x2="299.5" y1="426" y2="426"/><line style="stroke:#A80036;stroke-width:1.5;" x1="139.5" x2="299.5" y1="434" y2="434"/><!--MD5=[d40932010816485ec57b44b6eea2392a]
+class Observer--><rect codeLine="70" fill="#FEFECE" filter="url(#fydd7yyonk65b)" height="60.8047" id="Observer" style="stroke:#A80036;stroke-width:1.5;" width="276" x="81.5" y="297.5"/><ellipse cx="188.25" cy="313.5" fill="#B4A7E5" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M184.1719,309.2656 L184.1719,307.1094 L191.5625,307.1094 L191.5625,309.2656 L189.0938,309.2656 L189.0938,317.3438 L191.5625,317.3438 L191.5625,319.5 L184.1719,319.5 L184.1719,317.3438 L186.6406,317.3438 L186.6406,309.2656 L184.1719,309.2656 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="54" x="208.75" y="317.6543">Observer</text><line style="stroke:#A80036;stroke-width:1.5;" x1="82.5" x2="356.5" y1="329.5" y2="329.5"/><line style="stroke:#A80036;stroke-width:1.5;" x1="82.5" x2="356.5" y1="337.5" y2="337.5"/><ellipse cx="92.5" cy="348.5" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="250" x="101.5" y="351.7104">onNotify(topic: String, payload: Object): void</text><!--MD5=[f19851d987cd171c696492c8ebcbf35f]
+class PubSub--><rect codeLine="74" fill="#FEFECE" filter="url(#fydd7yyonk65b)" height="48" id="PubSub" style="stroke:#A80036;stroke-width:1.5;" width="80" x="533" y="496"/><ellipse cx="548" cy="512" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M550.9688,517.6406 Q550.3906,517.9375 549.75,518.0781 Q549.1094,518.2344 548.4063,518.2344 Q545.9063,518.2344 544.5781,516.5938 Q543.2656,514.9375 543.2656,511.8125 Q543.2656,508.6875 544.5781,507.0313 Q545.9063,505.375 548.4063,505.375 Q549.1094,505.375 549.75,505.5313 Q550.4063,505.6875 550.9688,505.9844 L550.9688,508.7031 Q550.3438,508.125 549.75,507.8594 Q549.1563,507.5781 548.5313,507.5781 Q547.1875,507.5781 546.5,508.6563 Q545.8125,509.7188 545.8125,511.8125 Q545.8125,513.9063 546.5,514.9844 Q547.1875,516.0469 548.5313,516.0469 Q549.1563,516.0469 549.75,515.7813 Q550.3438,515.5 550.9688,514.9219 L550.9688,517.6406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="48" x="562" y="516.1543">PubSub</text><line style="stroke:#A80036;stroke-width:1.5;" x1="534" x2="612" y1="528" y2="528"/><line style="stroke:#A80036;stroke-width:1.5;" x1="534" x2="612" y1="536" y2="536"/><!--MD5=[24444bba855da31e025fb455a22e827f]
+class FacadeDB--><rect codeLine="78" fill="#FEFECE" filter="url(#fydd7yyonk65b)" height="48" id="FacadeDB" style="stroke:#A80036;stroke-width:1.5;" width="95" x="525.5" y="413"/><ellipse cx="540.5" cy="429" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M543.4688,434.6406 Q542.8906,434.9375 542.25,435.0781 Q541.6094,435.2344 540.9063,435.2344 Q538.4063,435.2344 537.0781,433.5938 Q535.7656,431.9375 535.7656,428.8125 Q535.7656,425.6875 537.0781,424.0313 Q538.4063,422.375 540.9063,422.375 Q541.6094,422.375 542.25,422.5313 Q542.9063,422.6875 543.4688,422.9844 L543.4688,425.7031 Q542.8438,425.125 542.25,424.8594 Q541.6563,424.5781 541.0313,424.5781 Q539.6875,424.5781 539,425.6563 Q538.3125,426.7188 538.3125,428.8125 Q538.3125,430.9063 539,431.9844 Q539.6875,433.0469 541.0313,433.0469 Q541.6563,433.0469 542.25,432.7813 Q542.8438,432.5 543.4688,431.9219 L543.4688,434.6406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="63" x="554.5" y="433.1543">FacadeDB</text><line style="stroke:#A80036;stroke-width:1.5;" x1="526.5" x2="619.5" y1="445" y2="445"/><line style="stroke:#A80036;stroke-width:1.5;" x1="526.5" x2="619.5" y1="453" y2="453"/><!--MD5=[682cceb3213bcbb637d022cca5daab3c]
+class CompanyAdministrator--><rect codeLine="84" fill="#FEFECE" filter="url(#fydd7yyonk65b)" height="48" id="CompanyAdministrator" style="stroke:#A80036;stroke-width:1.5;" width="173" x="133" y="920"/><ellipse cx="148" cy="936" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M150.9688,941.6406 Q150.3906,941.9375 149.75,942.0781 Q149.1094,942.2344 148.4063,942.2344 Q145.9063,942.2344 144.5781,940.5938 Q143.2656,938.9375 143.2656,935.8125 Q143.2656,932.6875 144.5781,931.0313 Q145.9063,929.375 148.4063,929.375 Q149.1094,929.375 149.75,929.5313 Q150.4063,929.6875 150.9688,929.9844 L150.9688,932.7031 Q150.3438,932.125 149.75,931.8594 Q149.1563,931.5781 148.5313,931.5781 Q147.1875,931.5781 146.5,932.6563 Q145.8125,933.7188 145.8125,935.8125 Q145.8125,937.9063 146.5,938.9844 Q147.1875,940.0469 148.5313,940.0469 Q149.1563,940.0469 149.75,939.7813 Q150.3438,939.5 150.9688,938.9219 L150.9688,941.6406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="141" x="162" y="940.1543">CompanyAdministrator</text><line style="stroke:#A80036;stroke-width:1.5;" x1="134" x2="305" y1="952" y2="952"/><line style="stroke:#A80036;stroke-width:1.5;" x1="134" x2="305" y1="960" y2="960"/><!--MD5=[2ea0d36f3286072da48e8a03817b643b]
+class EPGProgramme--><rect codeLine="85" fill="#FEFECE" filter="url(#fydd7yyonk65b)" height="163.2422" id="EPGProgramme" style="stroke:#A80036;stroke-width:1.5;" width="207" x="116" y="721.5"/><ellipse cx="166.75" cy="737.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M169.7188,743.1406 Q169.1406,743.4375 168.5,743.5781 Q167.8594,743.7344 167.1563,743.7344 Q164.6563,743.7344 163.3281,742.0938 Q162.0156,740.4375 162.0156,737.3125 Q162.0156,734.1875 163.3281,732.5313 Q164.6563,730.875 167.1563,730.875 Q167.8594,730.875 168.5,731.0313 Q169.1563,731.1875 169.7188,731.4844 L169.7188,734.2031 Q169.0938,733.625 168.5,733.3594 Q167.9063,733.0781 167.2813,733.0781 Q165.9375,733.0781 165.25,734.1563 Q164.5625,735.2188 164.5625,737.3125 Q164.5625,739.4063 165.25,740.4844 Q165.9375,741.5469 167.2813,741.5469 Q167.9063,741.5469 168.5,741.2813 Q169.0938,741 169.7188,740.4219 L169.7188,743.1406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="97" x="187.25" y="741.6543">EPGProgramme</text><line style="stroke:#A80036;stroke-width:1.5;" x1="117" x2="322" y1="753.5" y2="753.5"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="124" y="761.5"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="70" x="136" y="767.7104">Start: String</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="124" y="774.3047"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="68" x="136" y="780.5151">Stop: String</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="124" y="787.1094"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="142" x="136" y="793.3198">Categories: List&lt;String&gt;</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="124" y="799.9141"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="113" x="136" y="806.1245">epgIdentifier: String</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="124" y="812.7188"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="87" x="136" y="818.9292">epgTitle: String</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="124" y="825.5234"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="181" x="136" y="831.7339">Options: Map&lt;String, Boolean&gt;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="0" x="140" y="844.5386"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="9" x="136" y="857.3433">+</text><line style="stroke:#A80036;stroke-width:1.5;" x1="117" x2="322" y1="863.9375" y2="863.9375"/><ellipse cx="127" cy="874.9375" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="90" x="136" y="878.1479">getStart(): Start</text><!--MD5=[4397ba3f25468a58f081bf0666d83f60]
+class IUser--><rect codeLine="98" fill="#FEFECE" filter="url(#fydd7yyonk65b)" height="48" id="IUser" style="stroke:#A80036;stroke-width:1.5;" width="64" x="187.5" y="638"/><ellipse cx="202.5" cy="654" fill="#B4A7E5" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M198.4219,649.7656 L198.4219,647.6094 L205.8125,647.6094 L205.8125,649.7656 L203.3438,649.7656 L203.3438,657.8438 L205.8125,657.8438 L205.8125,660 L198.4219,660 L198.4219,657.8438 L200.8906,657.8438 L200.8906,649.7656 L198.4219,649.7656 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="32" x="216.5" y="658.1543">IUser</text><line style="stroke:#A80036;stroke-width:1.5;" x1="188.5" x2="250.5" y1="670" y2="670"/><line style="stroke:#A80036;stroke-width:1.5;" x1="188.5" x2="250.5" y1="678" y2="678"/><!--MD5=[53f6a92bd21ca2f2960392a061f3a1c6]
+class Name--><rect codeLine="100" fill="#FEFECE" filter="url(#fydd7yyonk65b)" height="73.6094" id="Name" style="stroke:#A80036;stroke-width:1.5;" width="124" x="511" y="894"/><ellipse cx="551.2" cy="910" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M554.1688,915.6406 Q553.5906,915.9375 552.95,916.0781 Q552.3094,916.2344 551.6063,916.2344 Q549.1063,916.2344 547.7781,914.5938 Q546.4656,912.9375 546.4656,909.8125 Q546.4656,906.6875 547.7781,905.0313 Q549.1063,903.375 551.6063,903.375 Q552.3094,903.375 552.95,903.5313 Q553.6063,903.6875 554.1688,903.9844 L554.1688,906.7031 Q553.5438,906.125 552.95,905.8594 Q552.3563,905.5781 551.7313,905.5781 Q550.3875,905.5781 549.7,906.6563 Q549.0125,907.7188 549.0125,909.8125 Q549.0125,911.9063 549.7,912.9844 Q550.3875,914.0469 551.7313,914.0469 Q552.3563,914.0469 552.95,913.7813 Q553.5438,913.5 554.1688,912.9219 L554.1688,915.6406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="36" x="570.8" y="914.1543">Name</text><line style="stroke:#A80036;stroke-width:1.5;" x1="512" x2="634" y1="926" y2="926"/><polygon fill="none" points="522,932,526,936,522,940,518,936" style="stroke:#B38D22;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="98" x="531" y="940.2104">firstName: String</text><polygon fill="none" points="522,944.8047,526,948.8047,522,952.8047,518,948.8047" style="stroke:#B38D22;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="96" x="531" y="953.0151">lastName: String</text><line style="stroke:#A80036;stroke-width:1.5;" x1="512" x2="634" y1="959.6094" y2="959.6094"/><!--MD5=[09ce52be0ee7de43c61b6e2d59bf108b]
+class Person--><rect codeLine="105" fill="#FEFECE" filter="url(#fydd7yyonk65b)" height="48" id="Person" style="stroke:#A80036;stroke-width:1.5;" width="76" x="535" y="811"/><ellipse cx="550" cy="827" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M552.9688,832.6406 Q552.3906,832.9375 551.75,833.0781 Q551.1094,833.2344 550.4063,833.2344 Q547.9063,833.2344 546.5781,831.5938 Q545.2656,829.9375 545.2656,826.8125 Q545.2656,823.6875 546.5781,822.0313 Q547.9063,820.375 550.4063,820.375 Q551.1094,820.375 551.75,820.5313 Q552.4063,820.6875 552.9688,820.9844 L552.9688,823.7031 Q552.3438,823.125 551.75,822.8594 Q551.1563,822.5781 550.5313,822.5781 Q549.1875,822.5781 548.5,823.6563 Q547.8125,824.7188 547.8125,826.8125 Q547.8125,828.9063 548.5,829.9844 Q549.1875,831.0469 550.5313,831.0469 Q551.1563,831.0469 551.75,830.7813 Q552.3438,830.5 552.9688,829.9219 L552.9688,832.6406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="44" x="564" y="831.1543">Person</text><line style="stroke:#A80036;stroke-width:1.5;" x1="536" x2="610" y1="843" y2="843"/><line style="stroke:#A80036;stroke-width:1.5;" x1="536" x2="610" y1="851" y2="851"/><!--MD5=[b14daee3385fc8122a32a52a7accf591]
+class PersonContactDetails--><rect codeLine="109" fill="#FEFECE" filter="url(#fydd7yyonk65b)" height="48" id="PersonContactDetails" style="stroke:#A80036;stroke-width:1.5;" width="168" x="489" y="728"/><ellipse cx="504" cy="744" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M506.9688,749.6406 Q506.3906,749.9375 505.75,750.0781 Q505.1094,750.2344 504.4063,750.2344 Q501.9063,750.2344 500.5781,748.5938 Q499.2656,746.9375 499.2656,743.8125 Q499.2656,740.6875 500.5781,739.0313 Q501.9063,737.375 504.4063,737.375 Q505.1094,737.375 505.75,737.5313 Q506.4063,737.6875 506.9688,737.9844 L506.9688,740.7031 Q506.3438,740.125 505.75,739.8594 Q505.1563,739.5781 504.5313,739.5781 Q503.1875,739.5781 502.5,740.6563 Q501.8125,741.7188 501.8125,743.8125 Q501.8125,745.9063 502.5,746.9844 Q503.1875,748.0469 504.5313,748.0469 Q505.1563,748.0469 505.75,747.7813 Q506.3438,747.5 506.9688,746.9219 L506.9688,749.6406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="136" x="518" y="748.1543">PersonContactDetails</text><line style="stroke:#A80036;stroke-width:1.5;" x1="490" x2="656" y1="760" y2="760"/><line style="stroke:#A80036;stroke-width:1.5;" x1="490" x2="656" y1="768" y2="768"/><!--MD5=[e642581dbb0457e9f3e7f348fe9f95fa]
+class Programme--><rect codeLine="110" fill="#FEFECE" filter="url(#fydd7yyonk65b)" height="48" id="Programme" style="stroke:#A80036;stroke-width:1.5;" width="104" x="794.5" y="907"/><ellipse cx="809.5" cy="923" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M812.4688,928.6406 Q811.8906,928.9375 811.25,929.0781 Q810.6094,929.2344 809.9063,929.2344 Q807.4063,929.2344 806.0781,927.5938 Q804.7656,925.9375 804.7656,922.8125 Q804.7656,919.6875 806.0781,918.0313 Q807.4063,916.375 809.9063,916.375 Q810.6094,916.375 811.25,916.5313 Q811.9063,916.6875 812.4688,916.9844 L812.4688,919.7031 Q811.8438,919.125 811.25,918.8594 Q810.6563,918.5781 810.0313,918.5781 Q808.6875,918.5781 808,919.6563 Q807.3125,920.7188 807.3125,922.8125 Q807.3125,924.9063 808,925.9844 Q808.6875,927.0469 810.0313,927.0469 Q810.6563,927.0469 811.25,926.7813 Q811.8438,926.5 812.4688,925.9219 L812.4688,928.6406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="72" x="823.5" y="927.1543">Programme</text><line style="stroke:#A80036;stroke-width:1.5;" x1="795.5" x2="897.5" y1="939" y2="939"/><line style="stroke:#A80036;stroke-width:1.5;" x1="795.5" x2="897.5" y1="947" y2="947"/><!--MD5=[9e0344aee5137892075360975b58a39b]
+class SystemAdministrator--><rect codeLine="111" fill="#FEFECE" filter="url(#fydd7yyonk65b)" height="48" id="SystemAdministrator" style="stroke:#A80036;stroke-width:1.5;" width="161" x="766" y="824"/><ellipse cx="781" cy="840" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M783.9688,845.6406 Q783.3906,845.9375 782.75,846.0781 Q782.1094,846.2344 781.4063,846.2344 Q778.9063,846.2344 777.5781,844.5938 Q776.2656,842.9375 776.2656,839.8125 Q776.2656,836.6875 777.5781,835.0313 Q778.9063,833.375 781.4063,833.375 Q782.1094,833.375 782.75,833.5313 Q783.4063,833.6875 783.9688,833.9844 L783.9688,836.7031 Q783.3438,836.125 782.75,835.8594 Q782.1563,835.5781 781.5313,835.5781 Q780.1875,835.5781 779.5,836.6563 Q778.8125,837.7188 778.8125,839.8125 Q778.8125,841.9063 779.5,842.9844 Q780.1875,844.0469 781.5313,844.0469 Q782.1563,844.0469 782.75,843.7813 Q783.3438,843.5 783.9688,842.9219 L783.9688,845.6406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="129" x="795" y="844.1543">SystemAdministrator</text><line style="stroke:#A80036;stroke-width:1.5;" x1="767" x2="926" y1="856" y2="856"/><line style="stroke:#A80036;stroke-width:1.5;" x1="767" x2="926" y1="864" y2="864"/><!--MD5=[3fd616f346a44cd59a91eb10b19e157c]
+class User--><rect codeLine="112" fill="#FEFECE" filter="url(#fydd7yyonk65b)" height="48" id="User" style="stroke:#A80036;stroke-width:1.5;" width="61" x="816" y="741"/><ellipse cx="831" cy="757" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M833.9688,762.6406 Q833.3906,762.9375 832.75,763.0781 Q832.1094,763.2344 831.4063,763.2344 Q828.9063,763.2344 827.5781,761.5938 Q826.2656,759.9375 826.2656,756.8125 Q826.2656,753.6875 827.5781,752.0313 Q828.9063,750.375 831.4063,750.375 Q832.1094,750.375 832.75,750.5313 Q833.4063,750.6875 833.9688,750.9844 L833.9688,753.7031 Q833.3438,753.125 832.75,752.8594 Q832.1563,752.5781 831.5313,752.5781 Q830.1875,752.5781 829.5,753.6563 Q828.8125,754.7188 828.8125,756.8125 Q828.8125,758.9063 829.5,759.9844 Q830.1875,761.0469 831.5313,761.0469 Q832.1563,761.0469 832.75,760.7813 Q833.3438,760.5 833.9688,759.9219 L833.9688,762.6406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="29" x="845" y="761.1543">User</text><line style="stroke:#A80036;stroke-width:1.5;" x1="817" x2="876" y1="773" y2="773"/><line style="stroke:#A80036;stroke-width:1.5;" x1="817" x2="876" y1="781" y2="781"/><!--MD5=[4e0cecd25ed55dc5d107d83b9261773e]
+class EmailProvider--><rect codeLine="116" fill="#FEFECE" filter="url(#fydd7yyonk65b)" height="48" id="EmailProvider" style="stroke:#A80036;stroke-width:1.5;" width="116" x="161.5" y="1043"/><ellipse cx="176.5" cy="1059" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M179.4688,1064.6406 Q178.8906,1064.9375 178.25,1065.0781 Q177.6094,1065.2344 176.9063,1065.2344 Q174.4063,1065.2344 173.0781,1063.5938 Q171.7656,1061.9375 171.7656,1058.8125 Q171.7656,1055.6875 173.0781,1054.0313 Q174.4063,1052.375 176.9063,1052.375 Q177.6094,1052.375 178.25,1052.5313 Q178.9063,1052.6875 179.4688,1052.9844 L179.4688,1055.7031 Q178.8438,1055.125 178.25,1054.8594 Q177.6563,1054.5781 177.0313,1054.5781 Q175.6875,1054.5781 175,1055.6563 Q174.3125,1056.7188 174.3125,1058.8125 Q174.3125,1060.9063 175,1061.9844 Q175.6875,1063.0469 177.0313,1063.0469 Q177.6563,1063.0469 178.25,1062.7813 Q178.8438,1062.5 179.4688,1061.9219 L179.4688,1064.6406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="84" x="190.5" y="1063.1543">EmailProvider</text><line style="stroke:#A80036;stroke-width:1.5;" x1="162.5" x2="276.5" y1="1075" y2="1075"/><line style="stroke:#A80036;stroke-width:1.5;" x1="162.5" x2="276.5" y1="1083" y2="1083"/><!--MD5=[1694c08707bbac73e38fc10a90d6cb5e]
+class InvalidNameException--><rect codeLine="120" fill="#FEFECE" filter="url(#fydd7yyonk65b)" height="48" id="InvalidNameException" style="stroke:#A80036;stroke-width:1.5;" width="168" x="135.5" y="1166"/><ellipse cx="150.5" cy="1182" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M153.4688,1187.6406 Q152.8906,1187.9375 152.25,1188.0781 Q151.6094,1188.2344 150.9063,1188.2344 Q148.4063,1188.2344 147.0781,1186.5938 Q145.7656,1184.9375 145.7656,1181.8125 Q145.7656,1178.6875 147.0781,1177.0313 Q148.4063,1175.375 150.9063,1175.375 Q151.6094,1175.375 152.25,1175.5313 Q152.9063,1175.6875 153.4688,1175.9844 L153.4688,1178.7031 Q152.8438,1178.125 152.25,1177.8594 Q151.6563,1177.5781 151.0313,1177.5781 Q149.6875,1177.5781 149,1178.6563 Q148.3125,1179.7188 148.3125,1181.8125 Q148.3125,1183.9063 149,1184.9844 Q149.6875,1186.0469 151.0313,1186.0469 Q151.6563,1186.0469 152.25,1185.7813 Q152.8438,1185.5 153.4688,1184.9219 L153.4688,1187.6406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="136" x="164.5" y="1186.1543">InvalidNameException</text><line style="stroke:#A80036;stroke-width:1.5;" x1="136.5" x2="302.5" y1="1198" y2="1198"/><line style="stroke:#A80036;stroke-width:1.5;" x1="136.5" x2="302.5" y1="1206" y2="1206"/><!--MD5=[bf96b8fcc853367b73b832626fae8388]
+class UserCreationException--><rect codeLine="121" fill="#FEFECE" filter="url(#fydd7yyonk65b)" height="48" id="UserCreationException" style="stroke:#A80036;stroke-width:1.5;" width="175" x="132" y="1249"/><ellipse cx="147" cy="1265" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M149.9688,1270.6406 Q149.3906,1270.9375 148.75,1271.0781 Q148.1094,1271.2344 147.4063,1271.2344 Q144.9063,1271.2344 143.5781,1269.5938 Q142.2656,1267.9375 142.2656,1264.8125 Q142.2656,1261.6875 143.5781,1260.0313 Q144.9063,1258.375 147.4063,1258.375 Q148.1094,1258.375 148.75,1258.5313 Q149.4063,1258.6875 149.9688,1258.9844 L149.9688,1261.7031 Q149.3438,1261.125 148.75,1260.8594 Q148.1563,1260.5781 147.5313,1260.5781 Q146.1875,1260.5781 145.5,1261.6563 Q144.8125,1262.7188 144.8125,1264.8125 Q144.8125,1266.9063 145.5,1267.9844 Q146.1875,1269.0469 147.5313,1269.0469 Q148.1563,1269.0469 148.75,1268.7813 Q149.3438,1268.5 149.9688,1267.9219 L149.9688,1270.6406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="143" x="161" y="1269.1543">UserCreationException</text><line style="stroke:#A80036;stroke-width:1.5;" x1="133" x2="306" y1="1281" y2="1281"/><line style="stroke:#A80036;stroke-width:1.5;" x1="133" x2="306" y1="1289" y2="1289"/><!--MD5=[5680d4803ce0909ffec5a26c20027df4]
+class PersistanceContract--><rect codeLine="128" fill="#FEFECE" filter="url(#fydd7yyonk65b)" height="240.0703" id="PersistanceContract" style="stroke:#A80036;stroke-width:1.5;" width="260" x="443" y="2475"/><ellipse cx="506.25" cy="2491" fill="#B4A7E5" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M502.1719,2486.7656 L502.1719,2484.6094 L509.5625,2484.6094 L509.5625,2486.7656 L507.0938,2486.7656 L507.0938,2494.8438 L509.5625,2494.8438 L509.5625,2497 L502.1719,2497 L502.1719,2494.8438 L504.6406,2494.8438 L504.6406,2486.7656 L502.1719,2486.7656 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="125" x="526.75" y="2495.1543">PersistanceContract</text><line style="stroke:#A80036;stroke-width:1.5;" x1="444" x2="702" y1="2507" y2="2507"/><line style="stroke:#A80036;stroke-width:1.5;" x1="444" x2="702" y1="2515" y2="2515"/><ellipse cx="454" cy="2526" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="133" x="463" y="2529.2104">getUsers(): List&lt;User&gt;</text><ellipse cx="454" cy="2538.8047" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="102" x="463" y="2542.0151">getUser(int): User</text><ellipse cx="454" cy="2551.6094" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="129" x="463" y="2554.8198">createUser(User): void</text><ellipse cx="454" cy="2564.4141" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="154" x="463" y="2567.6245">updateUser(int, User): void</text><ellipse cx="454" cy="2577.2188" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="115" x="463" y="2580.4292">deleteUser(int): void</text><ellipse cx="454" cy="2590.0234" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="147" x="463" y="2593.2339">getPeople(): list&lt;Person&gt;</text><ellipse cx="454" cy="2602.8281" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="128" x="463" y="2606.0386">getPerson(int): Person</text><ellipse cx="454" cy="2615.6328" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="155" x="463" y="2618.8433">createPerson(Person): void</text><ellipse cx="454" cy="2628.4375" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="176" x="463" y="2631.6479">updatePerson(id, Person): void</text><ellipse cx="454" cy="2641.2422" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="128" x="463" y="2644.4526">deletePerson(int): void</text><ellipse cx="454" cy="2654.0469" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="213" x="463" y="2657.2573">getProgrammes(): List&lt;Programme&gt;</text><ellipse cx="454" cy="2666.8516" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="141" x="463" y="2670.062">getProgramme(): Person</text><ellipse cx="454" cy="2679.6563" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="209" x="463" y="2682.8667">createProgramme(Programme): void</text><ellipse cx="454" cy="2692.4609" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="234" x="463" y="2695.6714">updateProgramme(int, Programme): void</text><ellipse cx="454" cy="2705.2656" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="155" x="463" y="2708.4761">deleteProgramme(int): void</text><!--MD5=[bfb157864f69433bbbc064e04268a63d]
+class DBHandler--><rect codeLine="149" fill="#FEFECE" filter="url(#fydd7yyonk65b)" height="48" id="DBHandler" style="stroke:#A80036;stroke-width:1.5;" width="98" x="170.5" y="2652"/><ellipse cx="185.5" cy="2668" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M188.4688,2673.6406 Q187.8906,2673.9375 187.25,2674.0781 Q186.6094,2674.2344 185.9063,2674.2344 Q183.4063,2674.2344 182.0781,2672.5938 Q180.7656,2670.9375 180.7656,2667.8125 Q180.7656,2664.6875 182.0781,2663.0313 Q183.4063,2661.375 185.9063,2661.375 Q186.6094,2661.375 187.25,2661.5313 Q187.9063,2661.6875 188.4688,2661.9844 L188.4688,2664.7031 Q187.8438,2664.125 187.25,2663.8594 Q186.6563,2663.5781 186.0313,2663.5781 Q184.6875,2663.5781 184,2664.6563 Q183.3125,2665.7188 183.3125,2667.8125 Q183.3125,2669.9063 184,2670.9844 Q184.6875,2672.0469 186.0313,2672.0469 Q186.6563,2672.0469 187.25,2671.7813 Q187.8438,2671.5 188.4688,2670.9219 L188.4688,2673.6406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="66" x="199.5" y="2672.1543">DBHandler</text><line style="stroke:#A80036;stroke-width:1.5;" x1="171.5" x2="267.5" y1="2684" y2="2684"/><line style="stroke:#A80036;stroke-width:1.5;" x1="171.5" x2="267.5" y1="2692" y2="2692"/><!--MD5=[1c7cca001e7827302fda10673b62e39e]
+class IOHandler--><rect codeLine="152" fill="#FEFECE" filter="url(#fydd7yyonk65b)" height="124.8281" id="IOHandler" style="stroke:#A80036;stroke-width:1.5;" width="239" x="100" y="2491.5"/><ellipse cx="184.75" cy="2507.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M187.7188,2513.1406 Q187.1406,2513.4375 186.5,2513.5781 Q185.8594,2513.7344 185.1563,2513.7344 Q182.6563,2513.7344 181.3281,2512.0938 Q180.0156,2510.4375 180.0156,2507.3125 Q180.0156,2504.1875 181.3281,2502.5313 Q182.6563,2500.875 185.1563,2500.875 Q185.8594,2500.875 186.5,2501.0313 Q187.1563,2501.1875 187.7188,2501.4844 L187.7188,2504.2031 Q187.0938,2503.625 186.5,2503.3594 Q185.9063,2503.0781 185.2813,2503.0781 Q183.9375,2503.0781 183.25,2504.1563 Q182.5625,2505.2188 182.5625,2507.3125 Q182.5625,2509.4063 183.25,2510.4844 Q183.9375,2511.5469 185.2813,2511.5469 Q185.9063,2511.5469 186.5,2511.2813 Q187.0938,2511 187.7188,2510.4219 L187.7188,2513.1406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="61" x="205.25" y="2511.6543">IOHandler</text><line style="stroke:#A80036;stroke-width:1.5;" x1="101" x2="338" y1="2523.5" y2="2523.5"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="108" y="2531.5"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="46" x="120" y="2537.7104">file: URL</text><line style="stroke:#A80036;stroke-width:1.5;" x1="101" x2="338" y1="2544.3047" y2="2544.3047"/><ellipse cx="111" cy="2555.3047" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="98" x="120" y="2558.5151">IOHandler(String)</text><ellipse cx="111" cy="2568.1094" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="72" x="120" y="2571.3198">getFile(): File</text><ellipse cx="111" cy="2580.9141" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="95" x="120" y="2584.1245">readFile(): String</text><ellipse cx="111" cy="2593.7188" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="110" x="120" y="2596.9292">setFile(String): void</text><ellipse cx="111" cy="2606.5234" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="213" x="120" y="2609.7339">jsonAppendToArray(JSONObject): void</text><!--MD5=[e07b5d7e112e846c90c59551be4d6a89]
+class JSONHandler--><rect codeLine="164" fill="#FEFECE" filter="url(#fydd7yyonk65b)" height="48" id="JSONHandler" style="stroke:#A80036;stroke-width:1.5;" width="110" x="164.5" y="2408"/><ellipse cx="179.5" cy="2424" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M182.4688,2429.6406 Q181.8906,2429.9375 181.25,2430.0781 Q180.6094,2430.2344 179.9063,2430.2344 Q177.4063,2430.2344 176.0781,2428.5938 Q174.7656,2426.9375 174.7656,2423.8125 Q174.7656,2420.6875 176.0781,2419.0313 Q177.4063,2417.375 179.9063,2417.375 Q180.6094,2417.375 181.25,2417.5313 Q181.9063,2417.6875 182.4688,2417.9844 L182.4688,2420.7031 Q181.8438,2420.125 181.25,2419.8594 Q180.6563,2419.5781 180.0313,2419.5781 Q178.6875,2419.5781 178,2420.6563 Q177.3125,2421.7188 177.3125,2423.8125 Q177.3125,2425.9063 178,2426.9844 Q178.6875,2428.0469 180.0313,2428.0469 Q180.6563,2428.0469 181.25,2427.7813 Q181.8438,2427.5 182.4688,2426.9219 L182.4688,2429.6406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="78" x="193.5" y="2428.1543">JSONHandler</text><line style="stroke:#A80036;stroke-width:1.5;" x1="165.5" x2="273.5" y1="2440" y2="2440"/><line style="stroke:#A80036;stroke-width:1.5;" x1="165.5" x2="273.5" y1="2448" y2="2448"/><!--MD5=[45c535566d8c31a8f818b859f8574beb]
+class DBFacade--><rect codeLine="172" fill="#FEFECE" filter="url(#fydd7yyonk65b)" height="48" id="DBFacade" style="stroke:#A80036;stroke-width:1.5;" width="95" x="525.5" y="2392"/><ellipse cx="540.5" cy="2408" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M543.4688,2413.6406 Q542.8906,2413.9375 542.25,2414.0781 Q541.6094,2414.2344 540.9063,2414.2344 Q538.4063,2414.2344 537.0781,2412.5938 Q535.7656,2410.9375 535.7656,2407.8125 Q535.7656,2404.6875 537.0781,2403.0313 Q538.4063,2401.375 540.9063,2401.375 Q541.6094,2401.375 542.25,2401.5313 Q542.9063,2401.6875 543.4688,2401.9844 L543.4688,2404.7031 Q542.8438,2404.125 542.25,2403.8594 Q541.6563,2403.5781 541.0313,2403.5781 Q539.6875,2403.5781 539,2404.6563 Q538.3125,2405.7188 538.3125,2407.8125 Q538.3125,2409.9063 539,2410.9844 Q539.6875,2412.0469 541.0313,2412.0469 Q541.6563,2412.0469 542.25,2411.7813 Q542.8438,2411.5 543.4688,2410.9219 L543.4688,2413.6406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="63" x="554.5" y="2412.1543">DBFacade</text><line style="stroke:#A80036;stroke-width:1.5;" x1="526.5" x2="619.5" y1="2424" y2="2424"/><line style="stroke:#A80036;stroke-width:1.5;" x1="526.5" x2="619.5" y1="2432" y2="2432"/><!--MD5=[dfe52ced7fabbd3252d73af673e7ba31]
+link Router to Navbar--><path codeLine="35" d="M268.5,2077.77 C312.85,2056.19 381.06,2025.01 443,2005 C468.58,1996.74 522.996,1985.2738 522.996,1985.2738 " fill="none" id="Router-Navbar" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#FFFFFF" points="534.79,1983.06,528.155,1980.2356,522.996,1985.2738,529.6309,1988.0983,534.79,1983.06" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="256.65,2083.59,266.4917,2083.2153,261.1385,2081.387,262.9669,2076.0337,256.65,2083.59" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="261.1385" x2="268.315" y1="2081.387" y2="2077.865"/><!--MD5=[615972f3ec3966315d78d301b79227ff]
+link Router to AppViewController--><path codeLine="36" d="M270.04,2107.78 C326.35,2114.35 488.4901,2133.2655 488.4901,2133.2655 " fill="none" id="Router-AppViewController" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#FFFFFF" points="500.41,2134.65,494.9116,2129.9845,488.4901,2133.2655,493.9886,2137.931,500.41,2134.65" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="256.79,2106.23,265.2684,2111.2417,261.7566,2106.8069,266.1914,2103.2951,256.79,2106.23" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="261.7566" x2="269.705" y1="2106.8069" y2="2107.74"/><!--MD5=[53bf4ead9a1f886d377a670c7b8595da]
+link Router to AdminViewController--><path codeLine="37" d="M268.87,2120.43 C313.81,2137.42 382.69,2163.08 443,2184 C456.2,2188.58 485.0588,2198.1967 485.0588,2198.1967 " fill="none" id="Router-AdminViewController" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#FFFFFF" points="496.46,2201.94,492.0072,2196.2679,485.0588,2198.1967,489.5116,2203.8688,496.46,2201.94" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="256.57,2115.78,263.572,2122.7062,261.2464,2117.5495,266.4031,2115.2239,256.57,2115.78" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="261.2464" x2="268.73" y1="2117.5495" y2="2120.385"/><!--MD5=[966a2bac057d1bfddf2bef6a762ee846]
+reverse link Router to AuthViewController--><path codeLine="38" d="M261.9,2097.05 C319.8,2090.14 425.89,2077.46 497.67,2068.88 " fill="none" id="Router-backto-AuthViewController" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="256.79,2097.66,266.2044,2100.5528,261.754,2097.0609,265.2459,2092.6104,256.79,2097.66" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[9953282a102cc3b2b99b2ff26b27170c]
+link DBHandler to PersistanceContract--><path codeLine="147" d="M268.83,2665.26 C306.5,2656.86 360.11,2644.82 407,2634 C412.26,2632.79 417.62,2631.54 423.03,2630.29 " fill="none" id="DBHandler-to-PersistanceContract" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="none" points="421.71,2623.41,442.78,2625.68,424.89,2637.04,421.71,2623.41" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[f531bf0b9645f5744d81611048b48907]
+link JSONHandler to PersistanceContract--><path codeLine="162" d="M274.63,2438.2 C312.9,2443.99 364.71,2454.75 407,2474 C413.07,2476.76 419.15,2479.78 425.18,2482.98 " fill="none" id="JSONHandler-to-PersistanceContract" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="none" points="428.62,2476.89,442.61,2492.81,421.75,2489.08,428.62,2476.89" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[7495328b2c7ae24053752100b06506f9]
+link IOHandler to JSONHandler--><path codeLine="168" d="M219.5,2477.94 C219.5,2474.97 219.5,2468.01 219.5,2468.01 " fill="none" id="IOHandler-JSONHandler" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="219.5,2456.01,215.5,2462.01,219.5,2468.01,223.5,2462.01,219.5,2456.01" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="219.5,2491.09,223.5,2482.09,219.5,2486.09,215.5,2482.09,219.5,2491.09" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="219.5" x2="219.5" y1="2486.09" y2="2478.09"/><!--MD5=[a355e1a4e52ae2fc9a10b6fd0f7ec31d]
+link PersistanceContract to DBFacade--><path codeLine="170" d="M573,2461.56 C573,2458.9 573,2452.32 573,2452.32 " fill="none" id="PersistanceContract-DBFacade" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#FFFFFF" points="573,2440.32,569,2446.32,573,2452.32,577,2446.32,573,2440.32" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="573,2474.73,577,2465.73,573,2469.73,569,2465.73,573,2474.73" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="573" x2="573" y1="2469.73" y2="2461.73"/><!--MD5=[21e35abad2e17b2d49c18a646700612e]
+link CompanyViewController to CreditGroupController--><!--MD5=[d6c917c591a1153f2248e600acf7cca7]
+link CreditGroupController to DataExportController--><!--MD5=[ac16267cad3f2a7301bb998f5ba0043f]
+link CompanyViewController to PersonsViewController--><!--MD5=[6bdcc2b70a467c6d4f1f051a7d39780b]
+link PersonsViewController to ProgrammesViewController--><!--MD5=[c4110c2757bd3ed7747f037b51630939]
+link ProgrammesViewController to ReviewViewController--><!--MD5=[e756083f416432ba64da1ace40f27536]
+link PersonsViewController to UserControlController--><!--MD5=[4974a41e0edc5eff0b7e6efd3db06971]
+link CompanyListItem to CreditListItem--><!--MD5=[5d12afacbb5be32f6039281922303ff1]
+link CreditListItem to PopupListMenu--><!--MD5=[65f67a32ad7ca781807c5c759846e8df]
+link CompanyListItem to ProgrammeListItem--><!--MD5=[8118721cb4c7b0ec56bf169c24f81246]
+link ProgrammeListItem to ReviewItem--><!--MD5=[7078def38239b03ebcc2b50ef76dd82e]
+link ReviewItem to UsersView--><!--MD5=[e07096b7f57b6c98618556bfb6c02989]
+link Environment to EnvironmentSelector--><!--MD5=[d2fa3ea48cea544092fd9460cf7b05e5]
+link EnvironmentSelector to Observer--><!--MD5=[52b9e0a3e907804e720eaf93967054dd]
+link Environment to PubSub--><!--MD5=[ed59a4ca684d95f0596c7f4fd29e61d9]
+link PubSub to FacadeDB--><!--MD5=[342228e937709c803b6279ae14619576]
+link CompanyAdministrator to EPGProgramme--><!--MD5=[2a8bd9bc5b7ee330c62a62c525909f80]
+link EPGProgramme to IUser--><!--MD5=[eff62ce2d364907a0a3f000f23127815]
+link CompanyAdministrator to Name--><!--MD5=[1a6159a9aacfa9155f0bb629eecad579]
+link Name to Person--><!--MD5=[bfaa2673b64ef04edd506ef3628f07ca]
+link Person to PersonContactDetails--><!--MD5=[fbc46fb8704c4facef1fc438139884ba]
+link Name to Programme--><!--MD5=[5d24bcfd5910cbbd8efe147e1c8d2c93]
+link Programme to SystemAdministrator--><!--MD5=[e69537b867fe7e6db7befe02fe2dfdf9]
+link SystemAdministrator to User--><!--MD5=[8a75851dc038f6d20a1fc3db22b7ff3f]
+@startuml
+'https://plantuml.com/class-diagram
+left to right direction
+
+package "Presentation Layer" #DDD {
+    package "Views" #FFF {
+
+        package "Modals"{
+            class EditProgrammeDialog
+            class UserAdministrationDialog
+        }
+
+        package "Partials"{
+            class CompanyListItem
+            class CreditListItem
+            class Navbar
+            class PopupListMenu
+            class ProgrammeListItem
+            class ReviewItem
+            class UsersView
+
+        }
+
+        class AdminViewController
+        class AppViewController
+        class AuthViewController
+        class CompanyViewController
+        class CreditGroupController
+        class DataExportController
+        class PersonsViewController
+        class ProgrammesViewController
+        class ReviewViewController
+        class Router
+        class UserControlController
+
+        Router <- -o Navbar
+        Router <- -o AppViewController
+        Router <- -o AdminViewController
+        Router <- - AuthViewController
+
+    }
+}
+'- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+package "Domain Layer" #DDD {
+
+    package "Controllers" #FFF {
+        class AuthController {
+            - {static} AuthControllerInstance: AuthController
+            - currentUser: User
+
+            + AuthController()
+            + {static} getInstance(): AuthController
+            + signIn(username: String, password: String): boolean
+            + logout(): void
+            + getUser(): User
+        }
+    }
+
+    package "Helpers" #FFF {
+        class Environment{
+        - label: String
+
+        + Environment(label: String)
+        + getLabel(): String
+        }
+
+        class EnvironmentSelector{
+
+        }
+
+        interface Observer{
+            + onNotify(topic: String, payload: Object): void
+        }
+
+        class PubSub{
+
+        }
+
+        class FacadeDB{
+
+        }
+    }
+
+    package "Models" #FFF {
+        class CompanyAdministrator
+        class EPGProgramme {
+        - Start: String
+        - Stop: String
+        - Categories: List<String>
+        - epgIdentifier: String
+        - epgTitle: String
+        - Options: Map<String, Boolean>
+
+        + getStart(): Start
+        +
+
+
+        }
+        interface IUser
+
+        class Name {
+        # firstName: String
+        # lastName: String
+        }
+
+        class Person{
+
+        }
+
+        class PersonContactDetails
+        class Programme
+        class SystemAdministrator
+        class User
+    }
+
+    package "Providers" #FFF {
+        class EmailProvider
+    }
+
+    package "Exceptions" #FFF {
+        class InvalidNameException
+        class UserCreationException
+    }
+
+}
+'- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+package "Persistence Layer" #DDD {
+    package "Data" #FFF {
+        interface PersistanceContract {
+
+            + getUsers(): List<User>
+            + getUser(int): User
+            + createUser(User): void
+            + updateUser(int, User): void
+            + deleteUser(int): void
+            + getPeople(): list<Person>
+            + getPerson(int): Person
+            + createPerson(Person): void
+            + updatePerson(id, Person): void
+            + deletePerson(int): void
+            + getProgrammes(): List<Programme>
+            + getProgramme(): Person
+            + createProgramme(Programme): void
+            + updateProgramme(int, Programme): void
+            + deleteProgramme(int): void
+        }
+
+        DBHandler .-|> PersistanceContract
+
+        class DBHandler {
+        }
+
+        class IOHandler {
+            - file: URL
+
+            + IOHandler(String)
+            + getFile(): File
+            + readFile(): String
+            + setFile(String): void
+            + jsonAppendToArray(JSONObject): void
+        }
+
+        JSONHandler .-|> PersistanceContract
+
+        class JSONHandler {
+
+        }
+
+        IOHandler <-* JSONHandler
+
+        PersistanceContract <-o DBFacade
+
+        class DBFacade {
+
+        }
+    }
+}
+'- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+@enduml
+
+@startuml
+left to right direction
+
+package "Presentation Layer" #DDD {
+    package "Views" #FFF {
+
+        package "Modals"{
+            class EditProgrammeDialog
+            class UserAdministrationDialog
+        }
+
+        package "Partials"{
+            class CompanyListItem
+            class CreditListItem
+            class Navbar
+            class PopupListMenu
+            class ProgrammeListItem
+            class ReviewItem
+            class UsersView
+
+        }
+
+        class AdminViewController
+        class AppViewController
+        class AuthViewController
+        class CompanyViewController
+        class CreditGroupController
+        class DataExportController
+        class PersonsViewController
+        class ProgrammesViewController
+        class ReviewViewController
+        class Router
+        class UserControlController
+
+        Router <- -o Navbar
+        Router <- -o AppViewController
+        Router <- -o AdminViewController
+        Router <- - AuthViewController
+
+    }
+}
+package "Domain Layer" #DDD {
+
+    package "Controllers" #FFF {
+        class AuthController {
+            - {static} AuthControllerInstance: AuthController
+            - currentUser: User
+
+            + AuthController()
+            + {static} getInstance(): AuthController
+            + signIn(username: String, password: String): boolean
+            + logout(): void
+            + getUser(): User
+        }
+    }
+
+    package "Helpers" #FFF {
+        class Environment{
+        - label: String
+
+        + Environment(label: String)
+        + getLabel(): String
+        }
+
+        class EnvironmentSelector{
+
+        }
+
+        interface Observer{
+            + onNotify(topic: String, payload: Object): void
+        }
+
+        class PubSub{
+
+        }
+
+        class FacadeDB{
+
+        }
+    }
+
+    package "Models" #FFF {
+        class CompanyAdministrator
+        class EPGProgramme {
+        - Start: String
+        - Stop: String
+        - Categories: List<String>
+        - epgIdentifier: String
+        - epgTitle: String
+        - Options: Map<String, Boolean>
+
+        + getStart(): Start
+        +
+
+
+        }
+        interface IUser
+
+        class Name {
+        # firstName: String
+        # lastName: String
+        }
+
+        class Person{
+
+        }
+
+        class PersonContactDetails
+        class Programme
+        class SystemAdministrator
+        class User
+    }
+
+    package "Providers" #FFF {
+        class EmailProvider
+    }
+
+    package "Exceptions" #FFF {
+        class InvalidNameException
+        class UserCreationException
+    }
+
+}
+package "Persistence Layer" #DDD {
+    package "Data" #FFF {
+        interface PersistanceContract {
+
+            + getUsers(): List<User>
+            + getUser(int): User
+            + createUser(User): void
+            + updateUser(int, User): void
+            + deleteUser(int): void
+            + getPeople(): list<Person>
+            + getPerson(int): Person
+            + createPerson(Person): void
+            + updatePerson(id, Person): void
+            + deletePerson(int): void
+            + getProgrammes(): List<Programme>
+            + getProgramme(): Person
+            + createProgramme(Programme): void
+            + updateProgramme(int, Programme): void
+            + deleteProgramme(int): void
+        }
+
+        DBHandler .-|> PersistanceContract
+
+        class DBHandler {
+        }
+
+        class IOHandler {
+            - file: URL
+
+            + IOHandler(String)
+            + getFile(): File
+            + readFile(): String
+            + setFile(String): void
+            + jsonAppendToArray(JSONObject): void
+        }
+
+        JSONHandler .-|> PersistanceContract
+
+        class JSONHandler {
+
+        }
+
+        IOHandler <-* JSONHandler
+
+        PersistanceContract <-o DBFacade
+
+        class DBFacade {
+
+        }
+    }
+}
+@enduml
+
+PlantUML version 1.2021.4(Sun Apr 04 08:49:39 UTC 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: null
+--></g></svg>
