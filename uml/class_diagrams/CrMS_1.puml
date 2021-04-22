@@ -150,9 +150,9 @@ package "Presentation Layer" #DDD {
             + fadeOut(component: Parent, container: Pane): void
             + goTo(componentClass: <Parent>)
             + goTo(component: Parent)
+            + setFadeAnimation(doFadeAnmation: boolean): void
             + {static} getSceneRouter(): Router
             + {static} setSceneRouter(router: Router): void
-            + {static} setFadeAnimation(doFadeAnmation: boolean): void
         }
 
         class UserControlController {
@@ -167,6 +167,7 @@ package "Presentation Layer" #DDD {
     }
 }
 '------------------------------------------------------------------------------------
+
 package "Domain Layer" #DDD {
 
     package "Controllers" #FFF {
@@ -333,6 +334,7 @@ package "Domain Layer" #DDD {
         }
 
         User .-|> IUser
+        User <--o AuthController
     }
 
     package "Providers" #FFF {
@@ -414,5 +416,8 @@ package "Persistence Layer" #DDD {
         }
     }
 }
+
+Navbar --> AuthController
+AuthViewController --> AuthController
 '------------------------------------------------------------------------------------
 @enduml
