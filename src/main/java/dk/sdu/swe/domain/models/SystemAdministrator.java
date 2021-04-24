@@ -1,16 +1,21 @@
-package dk.sdu.swe.models;
+package dk.sdu.swe.domain.models;
 
 import java.util.Arrays;
 
-public class CompanyAdministrator extends User implements IUser {
+public class SystemAdministrator extends User {
     private final String[] permissions = {
         "programmes",
         "programmes.epg",
         "programmes.list",
         "programmes.filter",
         "companies",
-        "companies.own",
-        "people"
+        "companies.list",
+        "companies.add",
+        "people",
+        "admin",
+        "admin.reviews",
+        "admin.export",
+        "admin.credit_groups"
     };
 
     /**
@@ -22,7 +27,7 @@ public class CompanyAdministrator extends User implements IUser {
      * @param name     the name
      * @throws Exception the exception
      */
-    public CompanyAdministrator(int id, String username, String email, String name) throws Exception {
+    public SystemAdministrator(int id, String username, String email, String name) throws Exception {
         super(id, username, email, name);
     }
 
@@ -31,3 +36,4 @@ public class CompanyAdministrator extends User implements IUser {
         return Arrays.stream(this.permissions).anyMatch(s -> s.equals(permissionKey));
     }
 }
+

@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import dk.sdu.swe.exceptions.InvalidNameException;
 import dk.sdu.swe.exceptions.UserCreationException;
-import dk.sdu.swe.models.User;
+import dk.sdu.swe.domain.models.User;
 import org.junit.jupiter.api.Test;
 
 public class UserTest {
