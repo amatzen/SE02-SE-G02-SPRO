@@ -4,9 +4,9 @@ import at.favre.lib.crypto.bcrypt.BCrypt;
 import com.sendgrid.Content;
 import com.sendgrid.Email;
 import dk.sdu.swe.exceptions.UserCreationException;
-import dk.sdu.swe.models.Person;
-import dk.sdu.swe.models.Programme;
-import dk.sdu.swe.models.User;
+import dk.sdu.swe.domain.models.Person;
+import dk.sdu.swe.domain.models.Programme;
+import dk.sdu.swe.domain.models.User;
 import dk.sdu.swe.provider.EmailProvider;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -121,7 +121,7 @@ public class JSONHandler implements PersistenceContract {
     }
 
     @Override
-    public Person getProgramme() throws Exception {
+    public Person getProgramme(int id) throws Exception {
         throw new UnsupportedOperationException();
     }
 

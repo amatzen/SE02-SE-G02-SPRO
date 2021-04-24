@@ -1,8 +1,8 @@
 package dk.sdu.swe.data;
 
-import dk.sdu.swe.models.Person;
-import dk.sdu.swe.models.Programme;
-import dk.sdu.swe.models.User;
+import dk.sdu.swe.domain.models.Person;
+import dk.sdu.swe.domain.models.Programme;
+import dk.sdu.swe.domain.models.User;
 
 import java.util.List;
 
@@ -21,7 +21,7 @@ public interface PersistenceContract {
     public void deletePerson(int id) throws Exception;
 
     public List<Programme> getProgrammes() throws Exception;
-    public Person getProgramme() throws Exception;
+    public Person getProgramme(int id) throws Exception;
     public void createProgramme(Programme programme) throws Exception;
     public void updateProgramme(int id, Programme programme) throws Exception;
     public void deleteProgramme(int id) throws Exception;

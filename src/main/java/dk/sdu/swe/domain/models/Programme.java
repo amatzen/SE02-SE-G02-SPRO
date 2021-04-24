@@ -1,4 +1,4 @@
-package dk.sdu.swe.models;
+package dk.sdu.swe.domain.models;
 
 import java.util.List;
 import java.util.Map;

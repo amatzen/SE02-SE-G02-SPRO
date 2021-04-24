@@ -1,7 +1,7 @@
-package dk.sdu.swe.models;
+package dk.sdu.swe.domain.models;
 
-import dk.sdu.swe.data.JSONHandler;
 import dk.sdu.swe.exceptions.UserCreationException;
+import dk.sdu.swe.data.FacadeDB;
 import org.json.JSONObject;
 
 import java.util.*;
@@ -56,15 +56,15 @@ public class User implements IUser {
     }
 
     public static User get(int id) throws Exception {
-        return JSONHandler.getInstance().getUser(id);
+        return FacadeDB.getInstance().getUser(id);
     }
 
     public static List<User> getAll() throws Exception {
-        return JSONHandler.getInstance().getUsers();
+        return FacadeDB.getInstance().getUsers();
     }
 
     public static void create(User user) throws Exception {
-        JSONHandler.getInstance().createUser(user);
+        FacadeDB.getInstance().createUser(user);
     }
 
     public static User jsonToUser(JSONObject o) throws Exception {
@@ -87,7 +87,7 @@ public class User implements IUser {
             "username", user.getUsername(),
             "name", name,
             "email", user.getEmail(),
-            "permission", user.getClass().getName().replace("dk.sdu.swe.models.", "")
+            "permission", user.getClass().getName().replace("dk.sdu.swe.domain.models.", "")
         ))).forEach((k, v) -> {
             json.put(k, v);
         });

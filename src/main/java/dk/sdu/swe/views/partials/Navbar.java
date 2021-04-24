@@ -2,7 +2,7 @@ package dk.sdu.swe.views.partials;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPopup;
-import dk.sdu.swe.controllers.AuthController;
+import dk.sdu.swe.domain.controllers.AuthController;
 import dk.sdu.swe.helpers.Observer;
 import dk.sdu.swe.helpers.PubSub;
 import dk.sdu.swe.views.*;

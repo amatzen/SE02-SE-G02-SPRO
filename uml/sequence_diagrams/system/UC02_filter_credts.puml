@@ -1,0 +1,14 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+box Se kreditering (UC01)
+    participant ":Producer" as producer
+    participant ":System" as system
+end box
+
+producer -> system : search(term)
+producer <-- system : Programs
+
+@enduml
