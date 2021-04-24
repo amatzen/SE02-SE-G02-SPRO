@@ -21,7 +21,7 @@ public interface PersistenceContract {
     public void deletePerson(int id) throws Exception;
 
     public List<Programme> getProgrammes() throws Exception;
-    public Person getProgramme(int id) throws Exception;
+    public Programme getProgramme(int id) throws Exception;
     public void createProgramme(Programme programme) throws Exception;
     public void updateProgramme(int id, Programme programme) throws Exception;
     public void deleteProgramme(int id) throws Exception;
