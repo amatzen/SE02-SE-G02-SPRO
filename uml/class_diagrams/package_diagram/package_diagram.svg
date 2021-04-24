@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="348px" preserveAspectRatio="none" style="width:388px;height:348px;" version="1.1" viewBox="0 0 388 348" width="388px" zoomAndPan="magnify"><defs><filter height="300%" id="f1n5ofxpd4vwbk" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[b4fa10df80476353258f72a232547d63]
+class AbstractList--><rect codeLine="3" fill="#FEFECE" filter="url(#f1n5ofxpd4vwbk)" height="48" id="AbstractList" style="stroke:#A80036;stroke-width:1.5;" width="105" x="187" y="153"/><ellipse cx="202" cy="169" fill="#A9DCDF" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M202.1094,164.3438 L200.9531,169.4219 L203.2813,169.4219 L202.1094,164.3438 Z M200.625,162.1094 L203.6094,162.1094 L206.9688,174.5 L204.5156,174.5 L203.75,171.4375 L200.4688,171.4375 L199.7188,174.5 L197.2813,174.5 L200.625,162.1094 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="73" x="216" y="173.1543">AbstractList</text><line style="stroke:#A80036;stroke-width:1.5;" x1="188" x2="291" y1="185" y2="185"/><line style="stroke:#A80036;stroke-width:1.5;" x1="188" x2="291" y1="193" y2="193"/><!--MD5=[8e34b16d8d8f96f4a11290cd523ed859]
+class AbstractCollection--><rect codeLine="4" fill="#FEFECE" filter="url(#f1n5ofxpd4vwbk)" height="48" id="AbstractCollection" style="stroke:#A80036;stroke-width:1.5;" width="145" x="7" y="153"/><ellipse cx="22" cy="169" fill="#A9DCDF" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M22.1094,164.3438 L20.9531,169.4219 L23.2813,169.4219 L22.1094,164.3438 Z M20.625,162.1094 L23.6094,162.1094 L26.9688,174.5 L24.5156,174.5 L23.75,171.4375 L20.4688,171.4375 L19.7188,174.5 L17.2813,174.5 L20.625,162.1094 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="113" x="36" y="173.1543">AbstractCollection</text><line style="stroke:#A80036;stroke-width:1.5;" x1="8" x2="151" y1="185" y2="185"/><line style="stroke:#A80036;stroke-width:1.5;" x1="8" x2="151" y1="193" y2="193"/><!--MD5=[3d4177ac58b4411586d067f34e84928f]
+class List--><rect codeLine="5" fill="#FEFECE" filter="url(#f1n5ofxpd4vwbk)" height="48" id="List" style="stroke:#A80036;stroke-width:1.5;" width="53" x="200" y="26"/><ellipse cx="215" cy="42" fill="#B4A7E5" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M210.9219,37.7656 L210.9219,35.6094 L218.3125,35.6094 L218.3125,37.7656 L215.8438,37.7656 L215.8438,45.8438 L218.3125,45.8438 L218.3125,48 L210.9219,48 L210.9219,45.8438 L213.3906,45.8438 L213.3906,37.7656 L210.9219,37.7656 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="21" x="229" y="46.1543">List</text><line style="stroke:#A80036;stroke-width:1.5;" x1="201" x2="252" y1="58" y2="58"/><line style="stroke:#A80036;stroke-width:1.5;" x1="201" x2="252" y1="66" y2="66"/><!--MD5=[c160724f8e3bb89ca8141a12554ac2e3]
+class Collection--><rect codeLine="6" fill="#FEFECE" filter="url(#f1n5ofxpd4vwbk)" height="48" id="Collection" style="stroke:#A80036;stroke-width:1.5;" width="93" x="59" y="26"/><ellipse cx="74" cy="42" fill="#B4A7E5" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M69.9219,37.7656 L69.9219,35.6094 L77.3125,35.6094 L77.3125,37.7656 L74.8438,37.7656 L74.8438,45.8438 L77.3125,45.8438 L77.3125,48 L69.9219,48 L69.9219,45.8438 L72.3906,45.8438 L72.3906,37.7656 L69.9219,37.7656 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="61" x="88" y="46.1543">Collection</text><line style="stroke:#A80036;stroke-width:1.5;" x1="60" x2="151" y1="58" y2="58"/><line style="stroke:#A80036;stroke-width:1.5;" x1="60" x2="151" y1="66" y2="66"/><!--MD5=[ab8871ed637f40707b866ba6597734bc]
+class ArrayList--><rect codeLine="15" fill="#FEFECE" filter="url(#f1n5ofxpd4vwbk)" height="73.6094" id="ArrayList" style="stroke:#A80036;stroke-width:1.5;" width="132" x="173.5" y="261"/><ellipse cx="209.65" cy="277" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M212.6188,282.6406 Q212.0406,282.9375 211.4,283.0781 Q210.7594,283.2344 210.0563,283.2344 Q207.5563,283.2344 206.2281,281.5938 Q204.9156,279.9375 204.9156,276.8125 Q204.9156,273.6875 206.2281,272.0313 Q207.5563,270.375 210.0563,270.375 Q210.7594,270.375 211.4,270.5313 Q212.0563,270.6875 212.6188,270.9844 L212.6188,273.7031 Q211.9938,273.125 211.4,272.8594 Q210.8063,272.5781 210.1813,272.5781 Q208.8375,272.5781 208.15,273.6563 Q207.4625,274.7188 207.4625,276.8125 Q207.4625,278.9063 208.15,279.9844 Q208.8375,281.0469 210.1813,281.0469 Q210.8063,281.0469 211.4,280.7813 Q211.9938,280.5 212.6188,279.9219 L212.6188,282.6406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="53" x="228.35" y="281.1543">ArrayList</text><line style="stroke:#A80036;stroke-width:1.5;" x1="174.5" x2="304.5" y1="293" y2="293"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="120" x="179.5" y="307.2104">Object[] elementData</text><line style="stroke:#A80036;stroke-width:1.5;" x1="174.5" x2="304.5" y1="313.8047" y2="313.8047"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="30" x="179.5" y="328.0151">size()</text><!--MD5=[15b68e006199004da79ea2a4d117d8e9]
+class TimeUnit--><rect codeLine="20" fill="#FEFECE" filter="url(#f1n5ofxpd4vwbk)" height="86.4141" id="TimeUnit" style="stroke:#A80036;stroke-width:1.5;" width="86" x="288.5" y="7"/><ellipse cx="303.5" cy="23" fill="#EB937F" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M307.6094,29 L299.8906,29 L299.8906,16.6094 L307.6094,16.6094 L307.6094,18.7656 L302.3438,18.7656 L302.3438,21.4375 L307.1094,21.4375 L307.1094,23.5938 L302.3438,23.5938 L302.3438,26.8438 L307.6094,26.8438 L307.6094,29 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="54" x="317.5" y="27.1543">TimeUnit</text><line style="stroke:#A80036;stroke-width:1.5;" x1="289.5" x2="373.5" y1="39" y2="39"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="30" x="294.5" y="53.2104">DAYS</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="40" x="294.5" y="66.0151">HOURS</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="50" x="294.5" y="78.8198">MINUTES</text><line style="stroke:#A80036;stroke-width:1.5;" x1="289.5" x2="373.5" y1="85.4141" y2="85.4141"/><!--MD5=[00308d07b6a5721fb0cf5861877e6652]
+reverse link List to AbstractList--><path codeLine="8" d="M231.01,94.41 C233.06,114.08 235.4,136.54 237.1,152.91 " fill="none" id="List-backto-AbstractList" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="none" points="224.02,94.84,228.91,74.22,237.95,93.39,224.02,94.84" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[1822909749df1453bdd84de7a60a3406]
+reverse link Collection to AbstractCollection--><path codeLine="9" d="M96.54,94.09 C92.43,113.83 87.73,136.45 84.3,152.91 " fill="none" id="Collection-backto-AbstractCollection" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="none" points="89.74,92.37,100.67,74.22,103.45,95.23,89.74,92.37" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[0159284274f96a472eb2618ad803aaca]
+reverse link Collection to List--><path codeLine="11" d="M172.35,50 C181.51,50 190.67,50 199.83,50 " fill="none" id="Collection-backto-List" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="none" points="172.29,57,152.29,50,172.29,43,172.29,57" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[7a3a52e8f65ef1a8d8d29530ea5cd870]
+reverse link AbstractCollection to AbstractList--><path codeLine="12" d="M172.47,177 C177.22,177 181.96,177 186.71,177 " fill="none" id="AbstractCollection-backto-AbstractList" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="none" points="172.31,184,152.31,177,172.31,170,172.31,184" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[40e4bb1af59cca28d4643aaff05088cc]
+reverse link AbstractList to ArrayList--><path codeLine="13" d="M239.5,221.43 C239.5,234.33 239.5,248.32 239.5,260.71 " fill="none" id="AbstractList-backto-ArrayList" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="none" points="232.5,221.23,239.5,201.23,246.5,221.23,232.5,221.23" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[05c20a64743826480c06e89430e96bbc]
+@startuml
+'https://plantuml.com/class-diagram
+
+abstract class AbstractList
+abstract AbstractCollection
+interface List
+interface Collection
+
+List <|- - AbstractList
+Collection <|- - AbstractCollection
+
+Collection <|- List
+AbstractCollection <|- AbstractList
+AbstractList <|- - ArrayList
+
+class ArrayList {
+Object[] elementData
+size()
+}
+
+enum TimeUnit {
+DAYS
+HOURS
+MINUTES
+}
+
+@enduml
+
+@startuml
+
+abstract class AbstractList
+abstract AbstractCollection
+interface List
+interface Collection
+
+List <|- - AbstractList
+Collection <|- - AbstractCollection
+
+Collection <|- List
+AbstractCollection <|- AbstractList
+AbstractList <|- - ArrayList
+
+class ArrayList {
+Object[] elementData
+size()
+}
+
+enum TimeUnit {
+DAYS
+HOURS
+MINUTES
+}
+
+@enduml
+
+PlantUML version 1.2021.4(Sun Apr 04 08:49:39 UTC 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: null
+--></g></svg>
