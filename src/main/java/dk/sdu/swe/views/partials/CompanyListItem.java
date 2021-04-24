@@ -2,23 +2,25 @@ package dk.sdu.swe.views.partials;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPopup;
+import dk.sdu.swe.views.modals.EditProgrammeDialog;
+import dk.sdu.swe.views.modals.UserAdministrationDialog;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Dialog;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 
 import java.io.IOException;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Objects;
 
 public class CompanyListItem extends VBox {
 
-    private Map<String, Runnable> options = new HashMap<>() {{
-        put("Rediger", CompanyListItem.this::testAction1);
-        put("Slet", CompanyListItem.this::testAction2);
-        put("T1", CompanyListItem.this::testAction1);
-        put("T2", CompanyListItem.this::testAction2);
+    private Map<String, Runnable> options = new LinkedHashMap<>() {{
+        put("Håndtér brugere", CompanyListItem.this::manageUsers);
+        put("Rediger", CompanyListItem.this::editCompany);
+        put("Slet", CompanyListItem.this::deleteCompany);
     }};
 
 
@@ -60,12 +62,17 @@ public class CompanyListItem extends VBox {
         });
     }
 
-    private void testAction1() {
-        System.out.println("Test1");
+    private void editCompany() {
+
     }
 
-    private void testAction2() {
+    private void deleteCompany() {
         System.out.println("Test2");
+    }
+
+    private void manageUsers() {
+        Dialog<Boolean> userAdministrationDialog = new UserAdministrationDialog(getScene().getWindow());
+        userAdministrationDialog.show();
     }
 
 }

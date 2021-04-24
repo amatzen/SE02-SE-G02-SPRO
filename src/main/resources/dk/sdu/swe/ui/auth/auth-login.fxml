@@ -7,8 +7,8 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1024.0" prefWidth="1440.0" style="-fx-background-color: #455A64;" stylesheets="@../../../../../styles/background-image.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dk.sdu.swe.views.AuthViewController">
-
+<?import java.net.URL?>
+<fx:root id="loginRoot" type="HBox" style="-fx-background-color: #455A64;" stylesheets="@../../../../../styles/background-image.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
     <children>
         <HBox prefWidth="734.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
             <children>
@@ -128,4 +128,4 @@
          </HBox.margin>
         </HBox>
     </children>
-</HBox>
+</fx:root>

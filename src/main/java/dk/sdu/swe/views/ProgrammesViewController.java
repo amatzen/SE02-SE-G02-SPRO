@@ -2,7 +2,6 @@ package dk.sdu.swe.views;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.BorderPane;
-
 import java.io.IOException;
 import java.util.Objects;
 
