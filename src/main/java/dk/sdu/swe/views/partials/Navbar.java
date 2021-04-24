@@ -29,8 +29,7 @@ public class Navbar extends VBox implements Observer {
     private Router router;
 
     private Map<String, Runnable> profileBtnOptions = new LinkedHashMap<>(){{
-        put(AuthController.getInstance().getUser().getClass()
-            .getName().replaceFirst("dk.sdu.swe.models.", ""), () -> {});
+        put(AuthController.getInstance().getUser().getClass().getSimpleName(), () -> {});
         put("Log ud", () -> {
             AuthController.getInstance().logout();
             Router.getSceneRouter().goTo(AuthViewController.class);
