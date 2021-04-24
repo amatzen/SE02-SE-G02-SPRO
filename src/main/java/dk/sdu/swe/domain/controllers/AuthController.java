@@ -1,8 +1,8 @@
-package dk.sdu.swe.controllers;
+package dk.sdu.swe.domain.controllers;
 
 import at.favre.lib.crypto.bcrypt.BCrypt;
 import dk.sdu.swe.data.IOHandler;
-import dk.sdu.swe.models.User;
+import dk.sdu.swe.domain.models.User;
 import org.json.JSONArray;
 import org.json.JSONObject;
 

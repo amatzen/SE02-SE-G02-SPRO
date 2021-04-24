@@ -1,0 +1,101 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+package "domain" {
+    'Personer her
+    class Producer {
+        - email : String
+        - name : String
+        - image : String
+        --
+        + getName() : String
+        + getEmail() : String
+        + getImage(): String
+        + validatePassword(String) : boolean
+    }
+
+    class CompanyAdministrator {
+        - company: Company
+    }
+
+    class SystemAdministrator {
+    }
+
+    'Naeste
+    class Company {
+        - regNo : int
+        - name : String
+        - manager : String
+        --
+        + getRegNo() : int
+        + getName() : String
+        + getManager() : String
+    }
+
+    class Channel {
+        - name: String
+        - category: String
+        --
+        + getName() : String
+        + getCategory() : String
+    }
+
+    class Program {
+        - title: String
+        -startTime: long
+        -endTime: long
+        --
+        + getTitle() : String
+    }
+
+    class CreditRole {
+        - title : String
+    }
+
+
+    class Credit {
+        - name : String
+        - role : CreditRole
+        - date : OffsetDateTime
+        --
+        + getName() : String
+        + getRole() : CreditRole
+        + getDate() : OffsetDateTime
+    }
+
+    'Controller
+    class AuthController {
+        --
+        + resetPassword() : String
+        + validateLogin() : Producer
+    }
+
+    'Statics
+    class DB {
+    }
+
+    class Person {
+    }
+}
+
+SystemAdministrator "1" -- "1..*" Credit : "Approves >"
+SystemAdministrator -|> CompanyAdministrator
+
+CompanyAdministrator -|> Producer
+CompanyAdministrator -- Company : "Manages >"
+CompanyAdministrator -- Channel : "Manages >"
+
+Producer "1" -- "1..*" Program : "Owns >"
+Producer - AuthController : "Authenticates <"
+Producer -- Company : "Part of >"
+Producer "1..*" -- "1" DB : "Contains <"
+
+Channel "1" -- "1..*" Program : "Shows >"
+
+Credit "1" - "1..*" CreditRole : "Has >"
+
+Program "1" -- "1..*" Credit : "Has >"
+
+Person <-o Credit
+
+@enduml

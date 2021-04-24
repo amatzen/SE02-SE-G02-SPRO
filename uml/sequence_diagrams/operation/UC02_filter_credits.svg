@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="363px" preserveAspectRatio="none" style="width:660px;height:363px;" version="1.1" viewBox="0 0 660 363" width="660px" zoomAndPan="magnify"><defs><filter height="300%" id="fdd6icy4am26a" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><rect fill="#DDDDDD" height="351.25" style="stroke:#A80036;stroke-width:1.0;" width="639.5" x="1" y="6"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="201" x="220.25" y="18.0669">Filtrer krediteringer (UC02)</text><rect fill="#FFFFFF" filter="url(#fdd6icy4am26a)" height="206.9297" style="stroke:#A80036;stroke-width:1.0;" width="10" x="43" y="86.7266"/><rect fill="#FFFFFF" filter="url(#fdd6icy4am26a)" height="176.7969" style="stroke:#A80036;stroke-width:1.0;" width="10" x="197" y="107.8594"/><rect fill="#FFFFFF" filter="url(#fdd6icy4am26a)" height="118.5313" style="stroke:#A80036;stroke-width:1.0;" width="10" x="371" y="136.9922"/><rect fill="#FFFFFF" filter="url(#fdd6icy4am26a)" height="29.1328" style="stroke:#A80036;stroke-width:1.0;" width="10" x="591" y="190.2578"/><rect fill="#FFFFFF" filter="url(#fdd6icy4am26a)" height="75.3984" style="stroke:#000000;stroke-width:2.0;" width="318" x="328.5" y="151.9922"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="48" x2="48" y1="76.7266" y2="302.6563"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="202" x2="202" y1="76.7266" y2="302.6563"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="375.5" x2="375.5" y1="76.7266" y2="302.6563"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="595.5" x2="595.5" y1="76.7266" y2="302.6563"/><rect fill="#FEFECE" filter="url(#fdd6icy4am26a)" height="30.2969" style="stroke:#A80036;stroke-width:1.5;" width="82" x="5" y="41.4297"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="68" x="12" y="61.4248">:Producer</text><rect fill="#FEFECE" filter="url(#fdd6icy4am26a)" height="30.2969" style="stroke:#A80036;stroke-width:1.5;" width="82" x="5" y="301.6563"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="68" x="12" y="321.6514">:Producer</text><rect fill="#FEFECE" filter="url(#fdd6icy4am26a)" height="46.5938" style="stroke:#A80036;stroke-width:1.5;" width="198" x="101" y="25.1328"/><text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="68" x="166" y="45.1279">«Control»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="184" x="108" y="61.4248">:ProgrammeViewController</text><rect fill="#FEFECE" filter="url(#fdd6icy4am26a)" height="46.5938" style="stroke:#A80036;stroke-width:1.5;" width="198" x="101" y="301.6563"/><text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="68" x="166" y="321.6514">«Control»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="184" x="108" y="337.9482">:ProgrammeViewController</text><rect fill="#FEFECE" filter="url(#fdd6icy4am26a)" height="46.5938" style="stroke:#A80036;stroke-width:1.5;" width="71" x="338.5" y="25.1328"/><text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="57" x="345.5" y="45.1279">«Entity»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="26" x="361" y="61.4248">:DB</text><rect fill="#FEFECE" filter="url(#fdd6icy4am26a)" height="46.5938" style="stroke:#A80036;stroke-width:1.5;" width="71" x="338.5" y="301.6563"/><text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="57" x="345.5" y="321.6514">«Entity»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="26" x="361" y="337.9482">:DB</text><rect fill="#FEFECE" filter="url(#fdd6icy4am26a)" height="46.5938" style="stroke:#A80036;stroke-width:1.5;" width="77" x="555.5" y="25.1328"/><text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="57" x="565.5" y="45.1279">«Entity»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="63" x="562.5" y="61.4248">:Program</text><rect fill="#FEFECE" filter="url(#fdd6icy4am26a)" height="46.5938" style="stroke:#A80036;stroke-width:1.5;" width="77" x="555.5" y="301.6563"/><text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="57" x="565.5" y="321.6514">«Entity»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="63" x="562.5" y="337.9482">:Program</text><rect fill="#FFFFFF" filter="url(#fdd6icy4am26a)" height="206.9297" style="stroke:#A80036;stroke-width:1.0;" width="10" x="43" y="86.7266"/><rect fill="#FFFFFF" filter="url(#fdd6icy4am26a)" height="176.7969" style="stroke:#A80036;stroke-width:1.0;" width="10" x="197" y="107.8594"/><rect fill="#FFFFFF" filter="url(#fdd6icy4am26a)" height="118.5313" style="stroke:#A80036;stroke-width:1.0;" width="10" x="371" y="136.9922"/><rect fill="#FFFFFF" filter="url(#fdd6icy4am26a)" height="29.1328" style="stroke:#A80036;stroke-width:1.0;" width="10" x="591" y="190.2578"/><polygon fill="#A80036" points="185,103.8594,195,107.8594,185,111.8594,189,107.8594" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="53" x2="191" y1="107.8594" y2="107.8594"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="9" x="60" y="102.7935">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="84" x="73" y="102.7935">search(term)</text><polygon fill="#A80036" points="359,132.9922,369,136.9922,359,140.9922,363,136.9922" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="207" x2="365" y1="136.9922" y2="136.9922"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="9" x="214" y="131.9263">2</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="132" x="227" y="131.9263">getCreditsLike(term)</text><path d="M328.5,151.9922 L405.5,151.9922 L405.5,158.9922 L395.5,168.9922 L328.5,168.9922 L328.5,151.9922 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.0;"/><rect fill="none" height="75.3984" style="stroke:#000000;stroke-width:2.0;" width="318" x="328.5" y="151.9922"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="32" x="343.5" y="165.0591">loop</text><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="144" x="420.5" y="164.2026">[for each query result]</text><polygon fill="#A80036" points="579,186.2578,589,190.2578,579,194.2578,583,190.2578" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="381" x2="585" y1="190.2578" y2="190.2578"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="9" x="388" y="185.1919">3</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="178" x="401" y="185.1919">&lt;&lt;create(search result)&gt;&gt;</text><polygon fill="#A80036" points="392,215.3906,382,219.3906,392,223.3906,388,219.3906" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="386" x2="595" y1="219.3906" y2="219.3906"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="9" x="398" y="214.3247">4</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="132" x="411" y="214.3247">Insert program in list</text><polygon fill="#A80036" points="218,251.5234,208,255.5234,218,259.5234,214,255.5234" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="212" x2="375" y1="255.5234" y2="255.5234"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="9" x="224" y="250.4575">5</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="62" x="237" y="250.4575">Programs</text><polygon fill="#A80036" points="64,280.6563,54,284.6563,64,288.6563,60,284.6563" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="58" x2="201" y1="284.6563" y2="284.6563"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="9" x="70" y="279.5903">6</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="62" x="83" y="279.5903">Programs</text><!--MD5=[7e93905b0ece3be917283e2c14a1ee60]
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+box Filtrer krediteringer (UC02)
+    participant ":Producer" as producer
+    participant ":ProgrammeViewController" as programController <<Control>>
+    participant ":DB" as db <<Entity>>
+    participant ":Program" as program <<Entity>>
+end box
+
+activate producer
+producer -> programController : search(term)
+activate programController
+programController -> db : getCreditsLike(term)
+activate db
+loop for each query result
+    db -> program : <<create(search result)>>
+    activate program
+    db <- - program : Insert program in list
+    deactivate program
+end
+programController <- - db : Programs
+deactivate db
+producer <- - programController : Programs
+deactivate programController
+@enduml
+
+@startuml
+
+autonumber
+
+box Filtrer krediteringer (UC02)
+    participant ":Producer" as producer
+    participant ":ProgrammeViewController" as programController <<Control>>
+    participant ":DB" as db <<Entity>>
+    participant ":Program" as program <<Entity>>
+end box
+
+activate producer
+producer -> programController : search(term)
+activate programController
+programController -> db : getCreditsLike(term)
+activate db
+loop for each query result
+    db -> program : <<create(search result)>>
+    activate program
+    db <- - program : Insert program in list
+    deactivate program
+end
+programController <- - db : Programs
+deactivate db
+producer <- - programController : Programs
+deactivate programController
+@enduml
+
+PlantUML version 1.2021.4(Sun Apr 04 08:49:39 UTC 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: null
+--></g></svg>

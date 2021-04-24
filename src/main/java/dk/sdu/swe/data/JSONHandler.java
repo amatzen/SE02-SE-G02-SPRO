@@ -4,7 +4,9 @@ import at.favre.lib.crypto.bcrypt.BCrypt;
 import com.sendgrid.Content;
 import com.sendgrid.Email;
 import dk.sdu.swe.exceptions.UserCreationException;
-import dk.sdu.swe.models.User;
+import dk.sdu.swe.domain.models.Person;
+import dk.sdu.swe.domain.models.Programme;
+import dk.sdu.swe.domain.models.User;
 import dk.sdu.swe.provider.EmailProvider;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -67,10 +69,74 @@ public class JSONHandler implements PersistenceContract {
         String passwordHash = BCrypt.withDefaults().hashToString(12, password.toCharArray());
 
         json.put("password", passwordHash);
-        Content content = new Content("text/plain", "Velkommen til CrMS - et semesterprojekt!\n\nDu kan nu logge ind i CrMS med foelgende brugeroplysninger:\n\nBrugernavn: " + json.getString("username") + "\nAdgangskode: " + password);
+        Content content = new Content(
+            "text/plain",
+            "Velkommen til CrMS - et semesterprojekt!\n\n" +
+            "Du kan nu logge ind i CrMS med foelgende brugeroplysninger:\n\n" +
+            "Brugernavn: " + json.getString("username") + "\nAdgangskode: " + password);
         EmailProvider.sendEmail(new Email(json.getString("email")), "Velkommen til CrMS!", content);
 
         IOHandler ioHandler = getUserIOLoader();
         ioHandler.jsonAppendToArray(json);
+    }
+
+    @Override
+    public void updateUser(int id, User user) throws Exception {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public void deleteUser(int id) throws Exception {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public List<Person> getPeople() throws Exception {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public Person getPerson() throws Exception {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public void createPerson(Person person) throws Exception {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public void updatePerson(int id, Person person) throws Exception {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public void deletePerson(int id) throws Exception {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public List<Programme> getProgrammes() throws Exception {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public Person getProgramme(int id) throws Exception {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public void createProgramme(Programme programme) throws Exception {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public void updateProgramme(int id, Programme programme) throws Exception {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public void deleteProgramme(int id) throws Exception {
+        throw new UnsupportedOperationException();
     }
 }

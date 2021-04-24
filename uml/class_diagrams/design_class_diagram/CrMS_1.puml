@@ -1,0 +1,423 @@
+@startuml
+'https://plantuml.com/class-diagram
+left to right direction
+
+package "Presentation Layer" #DDD {
+    package "Views" #FFF {
+
+        package "Modals"{
+            class EditProgrammeDialog
+            class UserAdministrationDialog
+        }
+
+        package "Partials"{
+            class CompanyListItem {
+                - options: Map<String, Runnable>
+                - actionsbtn: JFXButton
+                - cvrLabel: Label
+                - ceoLabel: Label
+                - adminLabel: Label
+                - companyNameLabel: Label
+
+                + CompanyListItem()
+                - initialize(): void
+                + editCompany(): void
+                + deleteCompany(): void
+                + manageUsers(): void
+            }
+
+            class CreditListItem {
+                - creditListItem()
+            }
+
+            class Navbar {
+                - progBtn: JFXButton
+                - companyBtn: JFXButton
+                - pplBtn: JFXButton
+                - adminBtn: JFXButton
+                - profileBtn: JFXButton
+                - pfpImgView: ImageView
+                - router:
+
+                - profileBtnOptions: Map<String, Runnable>
+
+                + Navbar(router: Router)
+                - initialize(): void
+                + handle(e: ActionEvent): void
+                + handleRouteChange(routename: String): void
+                + onNotify(topic: String, payload: Object): void
+            }
+
+            class PopupListMenu {
+                - listView: JFXListView<Label>
+                - actions: Map<Label, Runnable>
+                + PopupListMenu(actions: Map<String, Runnable>)
+            }
+
+            class ProgrammeListItem {
+                - nameLbl: Label
+                - releaseYearLbl: Label
+                - categoryLbl: Label
+                - channelsPane: FlowPane
+
+                + ProgrammeListItem()
+            }
+
+            class ReviewItem {
+            + ReviewItem()
+
+            }
+
+            class UsersView{
+                - userEmail: Label
+                - userName: Label
+                - SuspendedCheckbox: CheckBox
+                - AdministratorCheckbox: CheckBox
+
+                + UsersView()
+            }
+
+            PopupListMenu <-- CompanyListItem
+        }
+
+        class AdminViewController {
+            - reviewsBtn: JFXButton
+            - userControlBtn: JFXButton
+            - router: Router
+            - creditGroupBtn: JFXButton
+            - dataExportBtn: JFXButton
+            - contentPane: Pane
+            - initialize(): void
+
+            + AdminViewController()
+            - handleSelectedSection: ActionEvent): void
+        }
+
+        class AppViewController {
+            - navbarPane: Pane
+            - contentPane: Pane
+            + AppViewController()
+            + initialize(): void
+
+        }
+
+        class AuthViewController{
+            - navbarPane: Pane
+            - contentPane: Pane
+
+            + AuthViewController()
+            - initialize(): void
+        }
+
+        class CompanyViewController {
+            - companyListView: JFXListView<CompanyListItem>
+
+            + CompanyViewController()
+            - initialize(): void
+        }
+
+        class CreditGroupController {
+            + CreditGroupController()
+        }
+
+        class DataExportController {
+            + DataExportController()
+        }
+
+        class PersonsViewController {
+         + PersonsViewController()
+        }
+
+        class ProgrammesViewController {
+            + ProgrammesViewController()
+        }
+
+        class ReviewViewController {
+            + ReviewViewController()
+        }
+
+        class Router {
+            - {static} components: Map<Parent>
+            - {static} sceneBuilder: Router
+            - container: Pane
+            - doFadeAnimation: boolean
+
+            + Router(container: Pane)
+            + goTo(container: Pane): void
+            + goTo(component: Parent, container: Pane): void
+            + fadeOut(component: Parent, container: Pane): void
+            + goTo(componentClass: <Parent>)
+            + goTo(component: Parent)
+            + setFadeAnimation(doFadeAnmation: boolean): void
+            + {static} getSceneRouter(): Router
+            + {static} setSceneRouter(router: Router): void
+        }
+
+        class UserControlController {
+            + UserControlController()
+        }
+
+        CompanyViewController --> EditProgrammeDialog
+
+        Router <--o Navbar
+        Router <--o AppViewController
+        Router <--o AdminViewController
+        Router <-- AuthViewController
+
+    }
+}
+'------------------------------------------------------------------------------------
+
+package "Domain Layer" #DDD {
+
+    package "Controllers" #FFF {
+        class AuthController {
+            - {static} AuthControllerInstance: AuthController
+            - currentUser: User
+
+            + AuthController()
+            + {static} getInstance(): AuthController
+            + signIn(username: String, password: String): boolean
+            + logout(): void
+            + getUser(): User
+        }
+    }
+
+    package "Helpers" #FFF {
+        class Environment{
+            - label: String
+
+            + Environment(label: String)
+            + getLabel(): String
+        }
+
+        class EnvironmentSelector{
+            + EnvironmentSelector
+
+            - environment: Environment
+            - {static} environmentSelectorInstance: EnvironmentSelector
+            - EnvironmentSelector()
+
+            + {static} getInstance(): EnvironmentSelector
+            + setEnvironment()
+            + getEnvironment() : Environment
+        }
+
+        interface Observer{
+            + onNotify(topic: String, payload: Object): void
+        }
+
+        class PubSub {
+            + {static} subscribe(topic: String, observer: Observer)
+            + {static} unsubscribe(topic: String, observer: Observer)
+            + {static} publish(topic: String): void
+        }
+    }
+
+    package "Models" #FFF {
+        class CompanyAdministrator {
+            - permissions: String[]
+
+            + CompanyAdministrator(id: int, username: String, email: String, name: String)
+            + hasPermissions(permissionKey: String): boolean
+        }
+
+        class EPGProgramme {
+            - start: String
+            - stop: String
+            - categories: List<String>
+            - epgIdentifier: String
+            - epgTitle: String
+            - options: Map<String, Boolean>
+
+            + EPGProgramme(start : String, stop : String, )
+
+            + getStart(): String
+            + getStop(): String
+            + getCategories(): List<String>
+            + getEpgIdentifier(): String
+            + getEpgTitle(): String
+            + getOptions(): Map<String, Boolean>
+        }
+
+        interface IUser {
+            + hasPermission(permissionKey: String): boolean
+        }
+
+        class Name {
+            # firstName: String
+            # lastName: String
+
+            + Name(firstName: String,lastName: String)
+            + (name: String) Name
+        }
+
+        class Person{
+            - id: int
+            - name: String
+            - dateOfBirth: String
+            - image: String
+            - contactDetails: PersonContactDetails
+
+            + getId(): int
+            + getName(): String
+            + getDateOfBirth(): String
+            + getImage(): String
+            + getContactDetails(): PersonContactDetails
+        }
+
+        class PersonContactDetails {
+            - phone: String
+            - email: String
+
+            + getPhone(): String
+            + getEmail(): String
+            + setPhone(phone: String): void
+            + setEmail(email: String): void
+        }
+
+        class Programme {
+            - id: int
+            - title: String
+            - channel: String
+            - prodYear: int
+            - category: String
+            - epgDates: List<EPGProgramme>
+            - people: Map<String, Person
+
+            + Programme(id: int, title: String, channel: String, prodYear: int, category: String)
+            + getId(): int
+            + getTitle(): String
+            + getChannel(): String
+            + getProdYear(): int
+            + setProdYear(prodYear: int): void
+            + getCategory(): String
+            + setCategory(category: String): void
+            + getEpgDates(): List<EPGProgramme>
+            + setEpgDates(epgDates: List<EPGProgramme>): void
+            + getPeople(): Map<String, Person>
+            + setPeople(people: Map<String, Person>): void
+        }
+
+        class SystemAdministrator {
+            - permissions: String[]
+
+            + SystemAdministrator(id: int, username: String, email: String, name: String)
+            + hasPermission(permissionKey: String): boolean
+        }
+
+        class User {
+            - permissions: String[]
+            - id: int
+            - username: String
+            - email: String
+            - name: Name
+
+            + User(id: int, username: String, email: String, name: String)
+            + {static} get(id: int): User
+            + {static} getAll(): List<User>
+            + {static} create(user: User): void
+            + {static} jsonToUser(o: JSONObject): User
+            + {static} userToJson(user: User): JSONObject
+            + {static} createRandomPassword(length: int): String
+            + getUsername(): String
+            + getEmail(): String
+            + getName(): String
+            + getId(): int
+            + hasPermission(permissionKey: String): boolean
+        }
+
+        Name <-* User
+        PersonContactDetails "1" <--* "1" Person
+        Person "1..*" <--o "1..*" Programme
+        User .-|> IUser
+        User <--o AuthController
+        CompanyAdministrator --|> User
+        SystemAdministrator --|> User
+    }
+
+    package "Providers" #FFF {
+        class EmailProvider{
+            - {static} SEND_FROM_ADDRESS: Email
+            - {static} SG: SendGrid
+
+            + {static} SendEmail(to: Email, subject: String, content: Content): void
+        }
+    }
+
+    package "Exceptions" #FFF {
+        class InvalidNameException {
+            InvalidNameException(message: String)
+      }
+
+        class UserCreationException {
+            UserCreationException(message: String)
+        }
+    }
+}
+'------------------------------------------------------------------------------------
+package "Persistence Layer" #DDD {
+    package "Data" #FFF {
+        interface PersistenceContract {
+            + getUsers(): List<User>
+            + getUser(id: int): User
+            + createUser(user: User): void
+            + updateUser(id: int, user: User): void
+            + deleteUser(id: int): void
+            + getPeople(): list<Person>
+            + getPerson(id: int): Person
+            + createPerson(person: Person): void
+            + updatePerson(id: int, person: Person): void
+            + deletePerson(id: int): void
+            + getProgrammes(): List<Programme>
+            + getProgramme(): Person
+            + createProgramme(programme: Programme): void
+            + updateProgramme(id: int, programme: Programme): void
+            + deleteProgramme(id: int): void
+        }
+
+        class DBHandler {
+            + getUsers(): List<User>
+            + getUser(id: int): User
+            + createUser(user: User): void
+        }
+
+        class IOHandler {
+            - file: URL
+
+            + IOHandler(fileName: String)
+            + getFile(): File
+            + readFile(): String
+            + setFile(data: String): void
+            + jsonAppendToArray(obj: JSONObject): void
+        }
+
+        class JSONHandler {
+            - JSONHandler()
+            + {static} getInstance(): JSONHandler
+            - getUserIOLoader(): IOHandler
+            + getUsers(): List<User>
+            + getUser(id: int): User
+            + createUser(user: User): void
+
+        }
+
+        class FacadeDB {
+        }
+
+        DBHandler .-|> PersistenceContract
+
+        JSONHandler .-|> PersistenceContract
+
+        IOHandler "1" <--* "1" JSONHandler
+
+        PersistenceContract "1" <-* "1" FacadeDB
+        FacadeDB -|> PersistenceContract
+
+    }
+}
+
+Navbar --> AuthController
+AuthViewController --> AuthController
+'------------------------------------------------------------------------------------
+@enduml

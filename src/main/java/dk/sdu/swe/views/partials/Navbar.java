@@ -2,7 +2,7 @@ package dk.sdu.swe.views.partials;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPopup;
-import dk.sdu.swe.controllers.AuthController;
+import dk.sdu.swe.domain.controllers.AuthController;
 import dk.sdu.swe.helpers.Observer;
 import dk.sdu.swe.helpers.PubSub;
 import dk.sdu.swe.views.*;
@@ -29,8 +29,7 @@ public class Navbar extends VBox implements Observer {
     private Router router;
 
     private Map<String, Runnable> profileBtnOptions = new LinkedHashMap<>(){{
-        put(AuthController.getInstance().getUser().getClass()
-            .getName().replaceFirst("dk.sdu.swe.models.", ""), () -> {});
+        put(AuthController.getInstance().getUser().getClass().getSimpleName(), () -> {});
         put("Log ud", () -> {
             AuthController.getInstance().logout();
             Router.getSceneRouter().goTo(AuthViewController.class);
