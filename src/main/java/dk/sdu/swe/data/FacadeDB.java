@@ -86,7 +86,7 @@ public class FacadeDB implements PersistenceContract {
     }
 
     @Override
-    public Person getProgramme(int id) throws Exception {
+    public Programme getProgramme(int id) throws Exception {
         return activeHandler.getProgramme(id);
     }
 

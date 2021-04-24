@@ -1,5 +1,6 @@
 package dk.sdu.swe.views.partials;
 
+import dk.sdu.swe.domain.models.Programme;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
@@ -14,10 +15,14 @@ public class ProgrammeListItem extends AnchorPane {
     @FXML
     private Label nameLbl, releaseYearLbl, categoryLbl;
 
+    private Programme programme;
+
     @FXML
     private FlowPane channelsPane;
 
-    public ProgrammeListItem() {
+    public ProgrammeListItem(Programme programme) {
+        this.programme = programme;
+
         FXMLLoader fxmlLoader = new FXMLLoader(
             Objects.requireNonNull(
                 getClass().getClassLoader().getResource("dk/sdu/swe/ui/programmes/ProgrammeListItem.fxml")));
@@ -29,6 +34,13 @@ public class ProgrammeListItem extends AnchorPane {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    @FXML
+    private void initialize() {
+        nameLbl.setText(programme.getTitle());
+        categoryLbl.setText(programme.getCategory());
+        releaseYearLbl.setText(String.valueOf(programme.getProdYear()));
     }
 
 }

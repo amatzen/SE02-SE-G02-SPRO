@@ -63,7 +63,7 @@ public class DBHandler implements PersistenceContract {
     }
 
     @Override
-    public Person getProgramme(int id) throws Exception {
+    public Programme getProgramme(int id) throws Exception {
         throw new UnsupportedOperationException();
     }
 

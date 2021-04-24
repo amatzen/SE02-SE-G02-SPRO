@@ -1,5 +1,8 @@
 package dk.sdu.swe.domain.models;
 
+import dk.sdu.swe.data.FacadeDB;
+import org.json.JSONObject;
+
 import java.util.List;
 import java.util.Map;
 
@@ -77,4 +80,15 @@ public class Programme {
         this.people = people;
     }
 
+    public static User jsonToUser(JSONObject o) throws Exception {
+        return switch (o.getString("permission")) {
+            case "SystemAdministrator" -> new SystemAdministrator(o.getInt("id"), o.getString("username"), o.getString("email"), o.getJSONObject("name").getString("_combined"));
+            case "CompanyAdministrator" -> new CompanyAdministrator(o.getInt("id"), o.getString("username"), o.getString("email"), o.getJSONObject("name").getString("_combined"));
+            default -> new User(o.getInt("id"), o.getString("username"), o.getString("email"), o.getJSONObject("name").getString("_combined"));
+        };
+    }
+
+    public static List<Programme> getAll() throws Exception {
+        return FacadeDB.getInstance().getProgrammes();
+    }
 }

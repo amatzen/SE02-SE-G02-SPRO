@@ -1,5 +1,6 @@
 package dk.sdu.swe.domain.models;
 
+import com.google.gson.Gson;
 import dk.sdu.swe.exceptions.UserCreationException;
 import dk.sdu.swe.data.FacadeDB;
 import org.json.JSONObject;

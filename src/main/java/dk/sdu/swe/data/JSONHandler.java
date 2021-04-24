@@ -1,8 +1,12 @@
 package dk.sdu.swe.data;
 
 import at.favre.lib.crypto.bcrypt.BCrypt;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
 import com.sendgrid.Content;
 import com.sendgrid.Email;
+import dk.sdu.swe.domain.models.EPGProgramme;
 import dk.sdu.swe.exceptions.UserCreationException;
 import dk.sdu.swe.domain.models.Person;
 import dk.sdu.swe.domain.models.Programme;
@@ -11,6 +15,7 @@ import dk.sdu.swe.provider.EmailProvider;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -31,6 +36,10 @@ public class JSONHandler implements PersistenceContract {
 
     private IOHandler getUserIOLoader() {
         return new IOHandler("db/users.json");
+    }
+
+    private IOHandler getProgrammeIOLoader() {
+        return new IOHandler("db/programmes.json");
     }
 
     @Override
@@ -117,12 +126,14 @@ public class JSONHandler implements PersistenceContract {
 
     @Override
     public List<Programme> getProgrammes() throws Exception {
-        throw new UnsupportedOperationException();
+        IOHandler ioHandler = getProgrammeIOLoader();
+        Type listType = new TypeToken<List<Programme>>(){}.getType();
+        return new Gson().fromJson(ioHandler.readFile(), listType);
     }
 
     @Override
-    public Person getProgramme(int id) throws Exception {
-        throw new UnsupportedOperationException();
+    public Programme getProgramme(int id) throws Exception {
+        return getProgrammes().stream().filter(programme -> programme.getId() == id).findAny().orElse(null);
     }
 
     @Override

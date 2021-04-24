@@ -2,7 +2,9 @@
   {
     "id": 1,
     "title": "Nyheder, sport, vejr",
-    "epg": [
+    "prodYear": 2021,
+    "category": "Nyheder",
+    "epgDates": [
       {
         "stop": 1617714000,
         "start": 1617706800,
@@ -10,9 +12,11 @@
         "id": "JPVSYcmAxvm0",
         "title": "Nyheder, sport, vejr",
         "availableAsVod": false,
-        "live": false,
-        "rerun": false,
-        "premiere": false
+        "options": {
+          "live": false,
+          "rerun": false,
+          "premiere": false
+        }
       },
       {
         "stop": 1617717600,
@@ -21,9 +25,11 @@
         "id": "JPVSYcmAxGfc",
         "title": "Nyheder, sport, vejr",
         "availableAsVod": false,
-        "live": false,
-        "rerun": false,
-        "premiere": false
+        "options": {
+          "live": false,
+          "rerun": false,
+          "premiere": false
+        }
       }
     ]
   }
