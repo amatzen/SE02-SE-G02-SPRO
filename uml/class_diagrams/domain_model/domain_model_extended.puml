@@ -76,6 +76,9 @@ package "domain" {
 
     class Person {
     }
+
+    class ContactDetails {
+    }
 }
 
 SystemAdministrator "1" -- "1..*" Credit : "Approves >"
@@ -86,16 +89,17 @@ CompanyAdministrator -- Company : "Manages >"
 CompanyAdministrator -- Channel : "Manages >"
 
 Producer "1" -- "1..*" Program : "Owns >"
-Producer - AuthController : "Authenticates <"
+Producer "1" <-o "1" AuthController : "Authenticates <"
 Producer -- Company : "Part of >"
 Producer "1..*" -- "1" DB : "Contains <"
 
 Channel "1" -- "1..*" Program : "Shows >"
 
-Credit "1" - "1..*" CreditRole : "Has >"
+Credit "1" o-> "1..*" CreditRole : "Has >"
 
 Program "1" -- "1..*" Credit : "Has >"
 
-Person <-o Credit
+Person "1" <-o "1" Credit
+ContactDetails "1" <-* "1" Person
 
 @enduml

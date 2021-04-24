@@ -11,7 +11,8 @@ component "data" as data {
 component "views" as views {
 }
 
-domain -(0- data : FacadeDB
+domain -(0- data
+views -(0- domain
 
 }
 
