@@ -34,7 +34,7 @@
       </Label>
       <FlowPane fx:id="creditsPane" columnHalignment="CENTER" hgap="25.0" vgap="50.0" VBox.vgrow="ALWAYS">
          <VBox.margin>
-            <Insets />
+            <Insets top="10.0" />
          </VBox.margin>
          <opaqueInsets>
             <Insets />

@@ -81,14 +81,14 @@ package "domain" {
     }
 }
 
-SystemAdministrator "1" -- "1..*" Credit : "Approves >"
+SystemAdministrator "1" --> "1..*" Credit : "Approves >"
 SystemAdministrator -|> CompanyAdministrator
 
 CompanyAdministrator -|> Producer
 CompanyAdministrator "*" o--> "1" Company : "Manages >"
 CompanyAdministrator "*" o--> "*" Channel : "Manages >"
 
-Producer "1" -- "1..*" Program : "Owns >"
+Producer "1" <--o "1..*" Program : "Owns >"
 Producer "1" <-o "1" AuthController : "Authenticates <"
 Producer o--> Company : "Part of >"
 Producer "1..*" -- "1" DB : "Contains <"
