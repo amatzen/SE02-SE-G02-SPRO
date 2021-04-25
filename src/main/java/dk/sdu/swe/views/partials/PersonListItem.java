@@ -1,12 +1,13 @@
 package dk.sdu.swe.views.partials;
 
 import dk.sdu.swe.domain.models.Person;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
-
-import java.awt.event.ActionEvent;
 import java.io.IOException;
 import java.util.Objects;
 
@@ -16,6 +17,9 @@ public class PersonListItem extends VBox {
 
     @FXML
     private Label nameLbl, companyLbl, addressLbl;
+
+    @FXML
+    private ImageView personImageView;
 
     public PersonListItem(Person person) {
         this.person = person;
@@ -36,6 +40,7 @@ public class PersonListItem extends VBox {
     @FXML
     private void initialize() {
         nameLbl.setText(person.getName());
+        personImageView.setImage(new Image(person.getImage(), true));
     }
 
 }

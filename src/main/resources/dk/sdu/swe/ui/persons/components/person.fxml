@@ -15,7 +15,7 @@
             <children>
                 <VBox alignment="CENTER">
                     <children>
-                        <ImageView fitHeight="74.0" fitWidth="89.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fx:id="personImageView" fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true" />
                     </children>
                     <HBox.margin>
                         <Insets left="20.0" />
