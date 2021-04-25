@@ -13,14 +13,14 @@ import javafx.stage.Window;
 import java.io.IOException;
 import java.util.Objects;
 
-public class EditProgrammeDialog extends Dialog<Boolean> {
+public class BulkEditModal extends Dialog<Boolean> {
 
     @FXML
     private JFXButton closeBtn;
 
     private GaussianBlur backgroundEffect;
 
-    public EditProgrammeDialog(Window window) {
+    public BulkEditModal(Window window) {
         this.initOwner(window);
         this.initModality(Modality.APPLICATION_MODAL);
         this.initStyle(StageStyle.UNDECORATED);
@@ -34,7 +34,7 @@ public class EditProgrammeDialog extends Dialog<Boolean> {
 
         FXMLLoader fxmlLoader = new FXMLLoader(
             Objects.requireNonNull(
-                getClass().getClassLoader().getResource("dk/sdu/swe/ui/programmes/EditProgramme.fxml")));
+                getClass().getClassLoader().getResource("dk/sdu/swe/ui/credits/bulk-edit-credit.fxml")));
         fxmlLoader.setController(this);
 
         try {

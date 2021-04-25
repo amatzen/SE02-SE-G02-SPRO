@@ -2,11 +2,10 @@ package dk.sdu.swe.data;
 
 import at.favre.lib.crypto.bcrypt.BCrypt;
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 import com.sendgrid.Content;
 import com.sendgrid.Email;
-import dk.sdu.swe.domain.models.EPGProgramme;
+import dk.sdu.swe.domain.models.Company;
 import dk.sdu.swe.exceptions.UserCreationException;
 import dk.sdu.swe.domain.models.Person;
 import dk.sdu.swe.domain.models.Programme;
@@ -41,6 +40,15 @@ public class JSONHandler implements PersistenceContract {
     private IOHandler getProgrammeIOLoader() {
         return new IOHandler("db/programmes.json");
     }
+
+    private IOHandler getPeopleIOLoader() {
+        return new IOHandler("db/people.json");
+    }
+
+    private IOHandler getCompaniesIOLoader() {
+        return new IOHandler("db/companies.json");
+    }
+
 
     @Override
     public List<User> getUsers() throws Exception {
@@ -101,12 +109,14 @@ public class JSONHandler implements PersistenceContract {
 
     @Override
     public List<Person> getPeople() throws Exception {
-        throw new UnsupportedOperationException();
+        IOHandler ioHandler = getPeopleIOLoader();
+        Type listType = new TypeToken<List<Person>>(){}.getType();
+        return new Gson().fromJson(ioHandler.readFile(), listType);
     }
 
     @Override
-    public Person getPerson() throws Exception {
-        throw new UnsupportedOperationException();
+    public Person getPerson(int id) throws Exception {
+        return getPeople().stream().filter(person -> person.getId() == id).findAny().orElse(null);
     }
 
     @Override
@@ -148,6 +158,33 @@ public class JSONHandler implements PersistenceContract {
 
     @Override
     public void deleteProgramme(int id) throws Exception {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public List<Company> getCompanies() throws Exception {
+        IOHandler ioHandler = getCompaniesIOLoader();
+        Type listType = new TypeToken<List<Company>>(){}.getType();
+        return new Gson().fromJson(ioHandler.readFile(), listType);
+    }
+
+    @Override
+    public Company getCompany(int id) throws Exception {
+        return getCompanies().stream().filter(company -> company.getId() == id).findAny().orElse(null);
+    }
+
+    @Override
+    public void createCompany(Company company) throws Exception {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public void updateCompany(int id, Company company) throws Exception {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public void deleteCompany(int id) throws Exception {
         throw new UnsupportedOperationException();
     }
 }

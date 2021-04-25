@@ -1,5 +1,6 @@
 package dk.sdu.swe.data;
 
+import dk.sdu.swe.domain.models.Company;
 import dk.sdu.swe.domain.models.Person;
 import dk.sdu.swe.domain.models.Programme;
 import dk.sdu.swe.domain.models.User;
@@ -38,7 +39,7 @@ public class DBHandler implements PersistenceContract {
     }
 
     @Override
-    public Person getPerson() throws Exception {
+    public Person getPerson(int id) throws Exception {
         throw new UnsupportedOperationException();
     }
 
@@ -80,5 +81,30 @@ public class DBHandler implements PersistenceContract {
     @Override
     public void deleteProgramme(int id) throws Exception {
         throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public List<Company> getCompanies() throws Exception {
+        return null;
+    }
+
+    @Override
+    public Company getCompany(int id) throws Exception {
+        return null;
+    }
+
+    @Override
+    public void createCompany(Company company) throws Exception {
+
+    }
+
+    @Override
+    public void updateCompany(int id, Company company) throws Exception {
+
+    }
+
+    @Override
+    public void deleteCompany(int id) throws Exception {
+
     }
 }

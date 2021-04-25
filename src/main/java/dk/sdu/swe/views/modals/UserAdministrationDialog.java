@@ -1,6 +1,10 @@
 package dk.sdu.swe.views.modals;
 
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXListView;
+import dk.sdu.swe.domain.models.Company;
+import dk.sdu.swe.domain.models.User;
+import dk.sdu.swe.views.partials.UserListItem;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -11,6 +15,7 @@ import javafx.stage.StageStyle;
 import javafx.stage.Window;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.Objects;
 
 public class UserAdministrationDialog extends Dialog<Boolean> {
@@ -20,7 +25,14 @@ public class UserAdministrationDialog extends Dialog<Boolean> {
 
     private GaussianBlur backgroundEffect;
 
-    public UserAdministrationDialog(Window window) {
+    private Company company;
+
+    @FXML
+    private JFXListView usersListView;
+
+    public UserAdministrationDialog(Window window, Company company) {
+        this.company = company;
+
         this.initOwner(window);
         this.initModality(Modality.APPLICATION_MODAL);
         this.initStyle(StageStyle.UNDECORATED);
@@ -46,7 +58,17 @@ public class UserAdministrationDialog extends Dialog<Boolean> {
 
     @FXML
     private void initialize() {
-
+        List<User> users = null;
+        try {
+            users = User.getAll();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        users.stream().filter(user -> user.getCompanyId() == company.getId()).forEach(
+            user -> {
+                usersListView.getItems().add(new UserListItem(user));
+            }
+        );
     }
 
     @FXML

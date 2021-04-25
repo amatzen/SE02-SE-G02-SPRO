@@ -2,6 +2,7 @@ package dk.sdu.swe.views.partials;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPopup;
+import dk.sdu.swe.domain.models.Company;
 import dk.sdu.swe.views.modals.EditProgrammeDialog;
 import dk.sdu.swe.views.modals.UserAdministrationDialog;
 import javafx.fxml.FXML;
@@ -24,6 +25,8 @@ public class CompanyListItem extends VBox {
     }};
 
 
+    private Company company;
+
     @FXML
     private JFXButton actionsBtn;
 
@@ -39,7 +42,9 @@ public class CompanyListItem extends VBox {
     @FXML
     private Label companyNameLabel;
 
-    public CompanyListItem() {
+    public CompanyListItem(Company company) {
+        this.company = company;
+
         FXMLLoader fxmlLoader = new FXMLLoader(
             Objects.requireNonNull(
                 getClass().getClassLoader().getResource("dk/sdu/swe/ui/companies/components/CompanyListItem.fxml")));
@@ -60,6 +65,8 @@ public class CompanyListItem extends VBox {
         actionsBtn.setOnMouseClicked(e -> {
             popupList.show(actionsBtn, JFXPopup.PopupVPosition.TOP, JFXPopup.PopupHPosition.RIGHT);
         });
+
+        companyNameLabel.setText(company.getName());
     }
 
     private void editCompany() {
@@ -71,7 +78,7 @@ public class CompanyListItem extends VBox {
     }
 
     private void manageUsers() {
-        Dialog<Boolean> userAdministrationDialog = new UserAdministrationDialog(getScene().getWindow());
+        Dialog<Boolean> userAdministrationDialog = new UserAdministrationDialog(getScene().getWindow(), company);
         userAdministrationDialog.show();
     }
 

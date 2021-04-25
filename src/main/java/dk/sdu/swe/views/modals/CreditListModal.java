@@ -5,7 +5,10 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Dialog;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.effect.GaussianBlur;
+import javafx.scene.layout.FlowPane;
 import javafx.stage.Modality;
 import javafx.stage.StageStyle;
 import javafx.stage.Window;
@@ -13,14 +16,20 @@ import javafx.stage.Window;
 import java.io.IOException;
 import java.util.Objects;
 
-public class EditProgrammeDialog extends Dialog<Boolean> {
+public class CreditListModal extends Dialog<Boolean> {
 
     @FXML
     private JFXButton closeBtn;
 
     private GaussianBlur backgroundEffect;
 
-    public EditProgrammeDialog(Window window) {
+    @FXML
+    private Label titleLbl, categoryLbl;
+
+    @FXML
+    private FlowPane creditsPane;
+
+    public CreditListModal(Window window) {
         this.initOwner(window);
         this.initModality(Modality.APPLICATION_MODAL);
         this.initStyle(StageStyle.UNDECORATED);
@@ -34,7 +43,7 @@ public class EditProgrammeDialog extends Dialog<Boolean> {
 
         FXMLLoader fxmlLoader = new FXMLLoader(
             Objects.requireNonNull(
-                getClass().getClassLoader().getResource("dk/sdu/swe/ui/programmes/EditProgramme.fxml")));
+                getClass().getClassLoader().getResource("dk/sdu/swe/ui/credits/CreditList.fxml")));
         fxmlLoader.setController(this);
 
         try {

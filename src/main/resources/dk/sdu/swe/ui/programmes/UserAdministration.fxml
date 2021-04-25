@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="469.0" prefWidth="698.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane prefHeight="469.0" prefWidth="698.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
     <top>
         <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #FF9800;" BorderPane.alignment="CENTER">
             <children>
@@ -48,12 +52,11 @@
     <bottom>
         <HBox prefHeight="81.0" prefWidth="698.0" BorderPane.alignment="CENTER">
             <children>
-                <HBox prefHeight="81.0" prefWidth="969.0" />
-                <HBox alignment="CENTER_RIGHT" prefHeight="83.0" prefWidth="699.0">
+                <HBox alignment="CENTER_RIGHT" prefWidth="699.0" spacing="10.0">
                     <children>
                         <JFXButton fx:id="newUserButton" layoutX="601.0" layoutY="18.0" prefHeight="35.0" prefWidth="90.0" style="-fx-background-color: transparent;" text="+ Ny Bruger" textAlignment="RIGHT" textFill="#515050">
                             <HBox.margin>
-                                <Insets bottom="30.0" right="10.0" />
+                                <Insets />
                             </HBox.margin>
                             <font>
                                 <Font name="System Bold" size="12.0" />
@@ -61,13 +64,19 @@
                         </JFXButton>
                         <JFXButton fx:id="saveButton" prefHeight="35.0" prefWidth="78.0" style="-fx-background-color: #FF9800;" text="Gem" textAlignment="RIGHT" textFill="WHITE">
                             <HBox.margin>
-                                <Insets bottom="30.0" right="30.0" />
+                                <Insets />
                             </HBox.margin>
                             <font>
                                 <Font name="System Bold" size="12.0" />
                             </font>
                         </JFXButton>
                     </children>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <padding>
+                  <Insets right="30.0" />
+               </padding>
                 </HBox>
             </children>
         </HBox>
@@ -129,6 +138,7 @@
                         <Insets bottom="10.0" />
                     </padding>
                 </Separator>
+            <JFXListView fx:id="usersListView" VBox.vgrow="ALWAYS" />
             </children>
         </VBox>
     </center>

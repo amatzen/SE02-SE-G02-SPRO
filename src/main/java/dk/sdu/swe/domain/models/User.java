@@ -1,6 +1,5 @@
 package dk.sdu.swe.domain.models;
 
-import com.google.gson.Gson;
 import dk.sdu.swe.exceptions.UserCreationException;
 import dk.sdu.swe.data.FacadeDB;
 import org.json.JSONObject;
@@ -22,6 +21,7 @@ public class User implements IUser {
     private String username;
     private String email;
     private Name name;
+    private int companyId;
 
     /**
      * Instantiates a new User.
@@ -30,9 +30,10 @@ public class User implements IUser {
      * @param username the username
      * @param email    the email
      * @param name     the name
+     * @param companyId
      * @throws Exception the exception
      */
-    public User(int id, String username, String email, String name) throws Exception {
+    public User(int id, String username, String email, String name, int companyId) throws Exception {
 
         // Validate username
         if (username.trim().length() < 3 || username.trim().length() > 24) {
@@ -50,6 +51,7 @@ public class User implements IUser {
         this.name = new Name(name);
 
         this.id = id;
+        this.companyId = companyId;
     }
 
     public User(){
@@ -70,9 +72,9 @@ public class User implements IUser {
 
     public static User jsonToUser(JSONObject o) throws Exception {
         return switch (o.getString("permission")) {
-            case "SystemAdministrator" -> new SystemAdministrator(o.getInt("id"), o.getString("username"), o.getString("email"), o.getJSONObject("name").getString("_combined"));
-            case "CompanyAdministrator" -> new CompanyAdministrator(o.getInt("id"), o.getString("username"), o.getString("email"), o.getJSONObject("name").getString("_combined"));
-            default -> new User(o.getInt("id"), o.getString("username"), o.getString("email"), o.getJSONObject("name").getString("_combined"));
+            case "SystemAdministrator" -> new SystemAdministrator(o.getInt("id"), o.getString("username"), o.getString("email"), o.getJSONObject("name").getString("_combined"), o.getInt("companyId"));
+            case "CompanyAdministrator" -> new CompanyAdministrator(o.getInt("id"), o.getString("username"), o.getString("email"), o.getJSONObject("name").getString("_combined"), o.getInt("companyId"));
+            default -> new User(o.getInt("id"), o.getString("username"), o.getString("email"), o.getJSONObject("name").getString("_combined"), o.getInt("companyId"));
         };
     }
 
@@ -122,6 +124,14 @@ public class User implements IUser {
 
     public int getId() {
         return id;
+    }
+
+    public int getCompanyId() {
+        return companyId;
+    }
+
+    public void setCompanyId(int companyId) {
+        this.companyId = companyId;
     }
 
     @Override

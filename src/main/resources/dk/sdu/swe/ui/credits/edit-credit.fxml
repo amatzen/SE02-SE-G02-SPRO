@@ -22,13 +22,13 @@
             <VBox minWidth="150.0" spacing="5.0">
                <children>
                   <Label layoutX="10.0" layoutY="35.0" text="Navn" />
-                  <TextField prefHeight="25.0" prefWidth="150.0" />
+                  <TextField fx:id="nameField" prefHeight="25.0" prefWidth="150.0" />
                   <Label text="Rolle" />
-                  <TextField layoutX="10.0" layoutY="10.0" prefHeight="25.0" prefWidth="150.0" />
+                  <TextField fx:id="roleField" layoutX="10.0" layoutY="10.0" prefHeight="25.0" prefWidth="150.0" />
                   <Label layoutX="10.0" layoutY="63.0" text="Krediteringsgruppe" />
-                  <TextField layoutX="10.0" layoutY="85.0" prefHeight="25.0" prefWidth="150.0" />
+                  <TextField fx:id="groupField" layoutX="10.0" layoutY="85.0" prefHeight="25.0" prefWidth="150.0" />
                </children></VBox>
-            <JFXButton prefHeight="25.0" prefWidth="70.0" style="-fx-background-color: FF9800;" text="GEM" textFill="WHITE" />
+            <JFXButton fx:id="saveBtn" prefHeight="25.0" prefWidth="70.0" style="-fx-background-color: FF9800;" text="GEM" textFill="WHITE" />
          </children>
       </HBox>
    </children>
