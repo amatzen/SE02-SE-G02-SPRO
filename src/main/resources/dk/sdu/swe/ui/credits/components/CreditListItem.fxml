@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<fx:root prefWidth="200.0" style="-fx-background-color: #ededed;" type="HBox" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+    <ImageView fx:id="creditImageView" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+        <HBox.margin>
+            <Insets />
+        </HBox.margin>
+    </ImageView>
+    <VBox>
+        <children>
+            <Label fx:id="nameLbl" text="Navn">
+                <font>
+                    <Font size="18.0" />
+                </font>
+                <VBox.margin>
+                    <Insets left="25.0" top="15.0" />
+                </VBox.margin>
+            </Label>
+            <Label fx:id="roleLbl" text="Rolle">
+                <VBox.margin>
+                    <Insets left="25.0" top="20.0" />
+                </VBox.margin>
+                <font>
+                    <Font size="18.0" />
+                </font>
+            </Label>
+        </children>
+    </VBox>
+    <effect>
+        <DropShadow offsetX="5.0" offsetY="5.0" />
+    </effect>
+</fx:root>

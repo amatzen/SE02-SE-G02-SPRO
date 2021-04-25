@@ -38,4 +38,8 @@ public class Person {
         return FacadeDB.getInstance().getPeople();
     }
 
+    public static Person get(int id) throws Exception {
+        return FacadeDB.getInstance().getPerson(id);
+    }
+
 }

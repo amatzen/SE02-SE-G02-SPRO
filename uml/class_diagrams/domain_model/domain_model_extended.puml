@@ -85,19 +85,19 @@ SystemAdministrator "1" -- "1..*" Credit : "Approves >"
 SystemAdministrator -|> CompanyAdministrator
 
 CompanyAdministrator -|> Producer
-CompanyAdministrator -- Company : "Manages >"
-CompanyAdministrator -- Channel : "Manages >"
+CompanyAdministrator "*" o--> "1" Company : "Manages >"
+CompanyAdministrator "*" o--> "*" Channel : "Manages >"
 
 Producer "1" -- "1..*" Program : "Owns >"
 Producer "1" <-o "1" AuthController : "Authenticates <"
-Producer -- Company : "Part of >"
+Producer o--> Company : "Part of >"
 Producer "1..*" -- "1" DB : "Contains <"
 
-Channel "1" -- "1..*" Program : "Shows >"
+Channel "1" <--o "1..*" Program : "Shows >"
 
 Credit "1" o-> "1..*" CreditRole : "Has >"
 
-Program "1" -- "1..*" Credit : "Has >"
+Program "1" <--o "1..*" Credit : "Has >"
 
 Person "1" <-o "1" Credit
 ContactDetails "1" <-* "1" Person

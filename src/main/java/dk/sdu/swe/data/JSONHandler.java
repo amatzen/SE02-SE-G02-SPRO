@@ -5,11 +5,8 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.sendgrid.Content;
 import com.sendgrid.Email;
-import dk.sdu.swe.domain.models.Company;
+import dk.sdu.swe.domain.models.*;
 import dk.sdu.swe.exceptions.UserCreationException;
-import dk.sdu.swe.domain.models.Person;
-import dk.sdu.swe.domain.models.Programme;
-import dk.sdu.swe.domain.models.User;
 import dk.sdu.swe.provider.EmailProvider;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -47,6 +44,10 @@ public class JSONHandler implements PersistenceContract {
 
     private IOHandler getCompaniesIOLoader() {
         return new IOHandler("db/companies.json");
+    }
+
+    private IOHandler getCreditsIOLoader() {
+        return new IOHandler("db/credits.json");
     }
 
 
@@ -185,6 +186,33 @@ public class JSONHandler implements PersistenceContract {
 
     @Override
     public void deleteCompany(int id) throws Exception {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public List<Credit> getCredits() throws Exception {
+        IOHandler ioHandler = getCreditsIOLoader();
+        Type listType = new TypeToken<List<Credit>>(){}.getType();
+        return new Gson().fromJson(ioHandler.readFile(), listType);
+    }
+
+    @Override
+    public Credit getCredit(int id) throws Exception {
+        return getCredits().stream().filter(credit -> credit.getId() == id).findAny().orElse(null);
+    }
+
+    @Override
+    public void createCredit(Credit credit) throws Exception {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public void updateCredit(int id, Credit credit) throws Exception {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public void deleteCredit(int id) throws Exception {
         throw new UnsupportedOperationException();
     }
 }

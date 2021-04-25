@@ -1,9 +1,6 @@
 package dk.sdu.swe.data;
 
-import dk.sdu.swe.domain.models.Company;
-import dk.sdu.swe.domain.models.Person;
-import dk.sdu.swe.domain.models.Programme;
-import dk.sdu.swe.domain.models.User;
+import dk.sdu.swe.domain.models.*;
 
 import java.util.List;
 
@@ -105,6 +102,31 @@ public class DBHandler implements PersistenceContract {
 
     @Override
     public void deleteCompany(int id) throws Exception {
+
+    }
+
+    @Override
+    public List<Credit> getCredits() throws Exception {
+        return null;
+    }
+
+    @Override
+    public Credit getCredit(int id) throws Exception {
+        return null;
+    }
+
+    @Override
+    public void createCredit(Credit credit) throws Exception {
+
+    }
+
+    @Override
+    public void updateCredit(int id, Credit credit) throws Exception {
+
+    }
+
+    @Override
+    public void deleteCredit(int id) throws Exception {
 
     }
 }
