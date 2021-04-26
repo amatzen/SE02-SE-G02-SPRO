@@ -64,6 +64,9 @@ public class CreditListModal extends Dialog<Boolean> {
     @FXML
     private void initialize() {
 
+        titleLbl.setText(programme.getTitle());
+        categoryLbl.setText(programme.getCategory());
+
         List<Credit> credits = null;
 
         try {

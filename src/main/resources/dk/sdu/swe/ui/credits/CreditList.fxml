@@ -1,47 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="725.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+
+<AnchorPane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label fx:id="titleLbl" text="Program">
+      <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="725.0" prefWidth="950.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label fx:id="titleLbl" text="Program">
+               <font>
+                  <Font size="48.0" />
+               </font>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Label>
+            <Label fx:id="categoryLbl" text="Kategori">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Label>
+            <Label text="Bidragydere">
+               <VBox.margin>
+                  <Insets top="50.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+            <FlowPane fx:id="creditsPane" columnHalignment="CENTER" hgap="25.0" vgap="50.0" VBox.vgrow="ALWAYS">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </FlowPane>
+         </children>
+         <padding>
+            <Insets left="50.0" right="50.0" top="25.0" />
+         </padding>
+      </VBox>
+      <JFXButton fx:id="closeBtn" onAction="#handleClose" prefHeight="45.0" prefWidth="45.0" text="X" textAlignment="RIGHT" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="30.0">
          <font>
-            <Font size="48.0" />
+            <Font name="Comic Sans MS" size="18.0" />
          </font>
-         <VBox.margin>
-            <Insets />
-         </VBox.margin>
-      </Label>
-      <Label fx:id="categoryLbl" text="Kategori">
-         <font>
-            <Font size="18.0" />
-         </font>
-         <VBox.margin>
-            <Insets />
-         </VBox.margin>
-      </Label>
-      <Label text="Bidragydere">
-         <VBox.margin>
-            <Insets top="50.0" />
-         </VBox.margin>
-         <font>
-            <Font size="36.0" />
-         </font>
-      </Label>
-      <FlowPane fx:id="creditsPane" columnHalignment="CENTER" hgap="25.0" vgap="50.0" VBox.vgrow="ALWAYS">
-         <VBox.margin>
-            <Insets top="10.0" />
-         </VBox.margin>
-         <opaqueInsets>
-            <Insets />
-         </opaqueInsets>
-      </FlowPane>
+      </JFXButton>
    </children>
-   <padding>
-      <Insets left="50.0" right="50.0" top="25.0" />
-   </padding>
-</VBox>
+</AnchorPane>
