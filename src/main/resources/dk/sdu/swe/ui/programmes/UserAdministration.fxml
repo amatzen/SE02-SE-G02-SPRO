@@ -24,7 +24,7 @@
                                 <Insets left="30.0" top="30.0" />
                             </HBox.margin>
                         </Label>
-                        <Label fx:id="CompanyName" text="CompanyName">
+                        <Label fx:id="companyName" text="CompanyName">
                             <font>
                                 <Font name="System Bold" size="24.0" />
                             </font>

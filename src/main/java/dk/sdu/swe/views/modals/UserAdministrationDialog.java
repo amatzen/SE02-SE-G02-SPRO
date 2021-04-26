@@ -9,6 +9,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Dialog;
+import javafx.scene.control.Label;
 import javafx.scene.effect.GaussianBlur;
 import javafx.stage.Modality;
 import javafx.stage.StageStyle;
@@ -26,6 +27,9 @@ public class UserAdministrationDialog extends Dialog<Boolean> {
     private GaussianBlur backgroundEffect;
 
     private Company company;
+
+    @FXML
+    private Label companyName;
 
     @FXML
     private JFXListView usersListView;
@@ -58,6 +62,8 @@ public class UserAdministrationDialog extends Dialog<Boolean> {
 
     @FXML
     private void initialize() {
+        companyName.setText(company.getName());
+
         List<User> users = null;
         try {
             users = User.getAll();
