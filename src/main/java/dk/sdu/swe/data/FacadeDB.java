@@ -1,10 +1,8 @@
 package dk.sdu.swe.data;
 
+import dk.sdu.swe.domain.models.*;
 import dk.sdu.swe.helpers.Environment;
 import dk.sdu.swe.helpers.EnvironmentSelector;
-import dk.sdu.swe.domain.models.Person;
-import dk.sdu.swe.domain.models.Programme;
-import dk.sdu.swe.domain.models.User;
 
 import java.util.List;
 
@@ -61,8 +59,8 @@ public class FacadeDB implements PersistenceContract {
     }
 
     @Override
-    public Person getPerson() throws Exception {
-        return activeHandler.getPerson();
+    public Person getPerson(int id) throws Exception {
+        return activeHandler.getPerson(id);
     }
 
     @Override
@@ -103,6 +101,56 @@ public class FacadeDB implements PersistenceContract {
     @Override
     public void deleteProgramme(int id) throws Exception {
         activeHandler.deleteProgramme(id);
+    }
+
+    @Override
+    public List<Company> getCompanies() throws Exception {
+        return activeHandler.getCompanies();
+    }
+
+    @Override
+    public Company getCompany(int id) throws Exception {
+        return activeHandler.getCompany(id);
+    }
+
+    @Override
+    public void createCompany(Company company) throws Exception {
+        activeHandler.createCompany(company);
+    }
+
+    @Override
+    public void updateCompany(int id, Company company) throws Exception {
+        activeHandler.updateCompany(id, company);
+    }
+
+    @Override
+    public void deleteCompany(int id) throws Exception {
+        activeHandler.deleteCompany(id);
+    }
+
+    @Override
+    public List<Credit> getCredits() throws Exception {
+        return activeHandler.getCredits();
+    }
+
+    @Override
+    public Credit getCredit(int id) throws Exception {
+        return activeHandler.getCredit(id);
+    }
+
+    @Override
+    public void createCredit(Credit credit) throws Exception {
+        activeHandler.createCredit(credit);
+    }
+
+    @Override
+    public void updateCredit(int id, Credit credit) throws Exception {
+        activeHandler.updateCredit(id, credit);
+    }
+
+    @Override
+    public void deleteCredit(int id) throws Exception {
+        activeHandler.deleteCredit(id);
     }
 
 }

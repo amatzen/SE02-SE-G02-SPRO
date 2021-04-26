@@ -34,7 +34,7 @@ public class EditProgrammeDialog extends Dialog<Boolean> {
 
         FXMLLoader fxmlLoader = new FXMLLoader(
             Objects.requireNonNull(
-                getClass().getClassLoader().getResource("dk/sdu/swe/ui/modals/BaseModal.fxml")));
+                getClass().getClassLoader().getResource("dk/sdu/swe/ui/programmes/EditProgramme.fxml")));
         fxmlLoader.setController(this);
 
         try {

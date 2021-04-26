@@ -1,5 +1,7 @@
 package dk.sdu.swe.domain.models;
 
+import com.google.gson.annotations.Expose;
+
 import java.util.Arrays;
 
 public class SystemAdministrator extends User {
@@ -27,8 +29,8 @@ public class SystemAdministrator extends User {
      * @param name     the name
      * @throws Exception the exception
      */
-    public SystemAdministrator(int id, String username, String email, String name) throws Exception {
-        super(id, username, email, name);
+    public SystemAdministrator(int id, String username, String email, String name, int companyId) throws Exception {
+        super(id, username, email, name, companyId);
     }
 
     @Override

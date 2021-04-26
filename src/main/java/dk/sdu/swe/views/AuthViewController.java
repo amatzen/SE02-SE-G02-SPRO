@@ -155,6 +155,5 @@ public class AuthViewController extends HBox {
         }
 
         Router.getSceneRouter().goTo(AppViewController.class);
-        //SceneNavigator.goTo("crms", true);
     }
 }

@@ -1,0 +1,43 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+left to right direction 
+package presentation {
+
+    package views {
+        package modals {
+        }
+    }
+
+    package controllers {
+    }
+
+    package viewmodels as viewModels {}
+
+    controllers <.-> views
+    controllers .-> viewModels
+    views .-> viewModels
+}
+
+package domain {
+    package models {
+    }
+    package controllers as domainControllers {
+    }
+    package helpers {
+    }
+
+    package provider {
+    }
+
+    domainControllers .-> provider
+    domainControllers .-> models
+}
+
+package data {
+}
+
+presentation .-> domain
+domain .-> data
+
+@enduml

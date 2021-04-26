@@ -1,24 +1,27 @@
 package dk.sdu.swe.views;
 
 import com.jfoenix.controls.JFXListView;
+import dk.sdu.swe.data.FacadeDB;
+import dk.sdu.swe.domain.models.Company;
 import dk.sdu.swe.views.partials.CompanyListItem;
-import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.BorderPane;
 
+import java.awt.event.ActionEvent;
 import java.io.IOException;
+import java.util.List;
 import java.util.Objects;
 
 public class CompanyViewController extends BorderPane {
 
     @FXML
-    private JFXListView<CompanyListItem> companyListView;
+    private JFXListView companyListView;
 
     public CompanyViewController() {
         FXMLLoader fxmlLoader = new FXMLLoader(
             Objects.requireNonNull(
-                getClass().getClassLoader().getResource("dk/sdu/swe/ui/companies/Main.fxml")));
+                getClass().getClassLoader().getResource("dk/sdu/swe/ui/companies/CompanyView.fxml")));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
 
@@ -31,11 +34,20 @@ public class CompanyViewController extends BorderPane {
 
     @FXML
     private void initialize() {
-        Platform.runLater(() -> {
-            for (int i = 0; i < 16; i++) {
-                companyListView.getItems().add(new CompanyListItem());
-            }
-        });
+        List<Company> companies = null;
+        try {
+            companies = FacadeDB.getInstance().getCompanies();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        for (Company company : companies) {
+            companyListView.getItems().add(new CompanyListItem(company));
+        }
     }
 
+    @FXML
+    private void addCompanyBtn(ActionEvent event) {
+
+    }
 }
