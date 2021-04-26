@@ -22,7 +22,6 @@ public class EditCreditModal extends Dialog<Boolean> {
     @FXML
     private TextField nameField, roleField, groupField;
 
-    
 
     private GaussianBlur backgroundEffect;
 

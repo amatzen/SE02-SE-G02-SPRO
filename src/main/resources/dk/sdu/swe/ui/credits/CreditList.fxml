@@ -8,7 +8,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="725.0" prefWidth="950.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -53,6 +52,11 @@
       <JFXButton fx:id="closeBtn" onAction="#handleClose" prefHeight="45.0" prefWidth="45.0" text="X" textAlignment="RIGHT" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="30.0">
          <font>
             <Font name="Comic Sans MS" size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="10.0" layoutY="10.0" onAction="#addCreditBtn" prefHeight="45.0" prefWidth="45.0" style="-fx-background-color: orange; -fx-background-radius: 30;" text="+" textFill="WHITE" AnchorPane.bottomAnchor="25.0" AnchorPane.rightAnchor="25.0">
+         <font>
+            <Font size="18.0" />
          </font>
       </JFXButton>
    </children>
