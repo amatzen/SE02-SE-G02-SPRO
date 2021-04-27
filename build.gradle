@@ -19,9 +19,8 @@ dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.2'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
 
-    // https://mvnrepository.com/artifact/org.postgresql/postgresql
-    implementation group: 'org.postgresql', name: 'postgresql', version: '42.2.20'
-
+    implementation 'org.postgresql:postgresql:42.2.20'
+    implementation 'org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.2.Final'
     implementation 'org.hibernate:hibernate-gradle-plugin:5.3.2.Final'
     implementation 'com.google.guava:guava:29.0-jre'
     implementation 'org.json:json:20201115'
