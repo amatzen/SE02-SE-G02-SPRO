@@ -22,7 +22,7 @@ dependencies {
     runtimeOnly 'org.postgresql:postgresql'
     testRuntimeOnly 'org.postgresql:postgresql'
 
-    implementation 'org.hibernate:hibernate-gradle-plugin'
+    implementation 'org.hibernate:hibernate-gradle-plugin:5.3.2.Final'
     implementation 'com.google.guava:guava:29.0-jre'
     implementation 'org.json:json:20201115'
     implementation 'org.openjfx:javafx-fxml:15'
