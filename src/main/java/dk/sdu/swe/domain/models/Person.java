@@ -34,12 +34,6 @@ public class Person {
         return contactDetails;
     }
 
-    public static List<Person> getAll() throws Exception {
-        return FacadeDB.getInstance().getPeople();
-    }
 
-    public static Person get(int id) throws Exception {
-        return FacadeDB.getInstance().getPerson(id);
-    }
 
 }

@@ -1,5 +1,7 @@
 package dk.sdu.swe.views.partials;
 
+import dk.sdu.swe.data.FacadeDB;
+import dk.sdu.swe.domain.controllers.PeopleController;
 import dk.sdu.swe.domain.models.Credit;
 import dk.sdu.swe.domain.models.Person;
 import javafx.fxml.FXML;
@@ -10,6 +12,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.Objects;
 
 public class CreditListItem extends HBox {
@@ -43,14 +46,13 @@ public class CreditListItem extends HBox {
 
         Person p = null;
         try {
-            p = Person.get(credit.getPerson());
+            p = PeopleController.getInstance().get(credit.getPerson());
         } catch (Exception e) {
             e.printStackTrace();
         }
         creditImageView.setImage(new Image(p.getImage(), true));
 
         nameLbl.setText(p.getName());
-
     }
 
 }

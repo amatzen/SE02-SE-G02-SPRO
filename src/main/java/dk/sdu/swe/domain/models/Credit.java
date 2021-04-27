@@ -50,7 +50,5 @@ public class Credit {
         this.person = person;
     }
 
-    public static List<Credit> getAll() throws Exception {
-        return FacadeDB.getInstance().getCredits();
-    }
+
 }
