@@ -7,7 +7,8 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<fx:root id="loginRoot" style="-fx-background-color: #455A64;" stylesheets="@../../../../../styles/background-image.css" type="HBox" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root id="loginRoot" style="-fx-background-color: #455A64;" stylesheets="@../../../../../styles/background-image.css" type="HBox"
+         xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
     <children>
         <HBox prefWidth="734.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
             <children>
