@@ -52,7 +52,10 @@
                                         <Insets top="20.0" />
                                     </VBox.margin>
                                 </Label>
-                                <TextField prefHeight="53.0" prefWidth="278.0" />
+                                <TextField prefHeight="53.0" prefWidth="278.0">
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin></TextField>
                             </children>
                         </VBox>
                         <VBox prefHeight="200.0" prefWidth="100.0">
@@ -65,7 +68,7 @@
                                         <Font size="14.0" />
                                     </font>
                                 </Label>
-                                <JFXComboBox>
+                                <JFXComboBox prefHeight="25.0" prefWidth="90.0">
                                     <VBox.margin>
                                         <Insets top="15.0" />
                                     </VBox.margin>
@@ -85,7 +88,7 @@
                                         <Font size="14.0" />
                                     </font>
                                 </Label>
-                                <JFXComboBox>
+                                <JFXComboBox prefHeight="25.0" prefWidth="90.0">
                                     <VBox.margin>
                                         <Insets top="15.0" />
                                     </VBox.margin>
@@ -113,7 +116,7 @@
             <children>
                 <HBox prefHeight="66.0" prefWidth="200.0" style="-fx-background-color: #F5F5F5;">
                     <children>
-                        <DatePicker>
+                        <DatePicker promptText="Vælg Dato" showWeekNumbers="true">
                             <HBox.margin>
                                 <Insets left="30.0" top="20.0" />
                             </HBox.margin>
