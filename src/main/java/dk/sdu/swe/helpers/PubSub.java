@@ -11,8 +11,8 @@ public class PubSub {
         observerList.put(topic, observer);
     }
 
-    public static synchronized void desubscribe(String topic, Observer observer) {
-        observerList.put(topic, observer);
+    public static synchronized void unsubscribe(String topic, Observer observer) {
+        observerList.remove(topic, observer);
     }
 
     public static void publish(String topic, Object payload) {
