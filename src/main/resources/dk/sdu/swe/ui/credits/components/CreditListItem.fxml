@@ -9,7 +9,7 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<fx:root style="-fx-background-color: #ededed;" type="HBox" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root style="-fx-background-color: #ededed;" type="HBox" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
     <ImageView fx:id="creditImageView" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
         <HBox.margin>
             <Insets />

@@ -24,6 +24,7 @@ public class CreditListModal extends Dialog<Boolean> {
     @FXML
     private JFXButton closeBtn;
 
+    @FXML
     private GaussianBlur backgroundEffect;
 
     @FXML

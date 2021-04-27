@@ -7,8 +7,8 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<?import java.net.URL?>
-<fx:root id="loginRoot" type="HBox" style="-fx-background-color: #455A64;" stylesheets="@../../../../../styles/background-image.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root id="loginRoot" style="-fx-background-color: #455A64;" stylesheets="@../../../../../styles/background-image.css" type="HBox"
+         xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
     <children>
         <HBox prefWidth="734.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
             <children>
@@ -77,7 +77,7 @@
                                 </VBox>
                                 <VBox alignment="CENTER">
                                     <children>
-                                        <JFXButton fx:id="button" maxWidth="1.7976931348623157E308" minHeight="49.0" prefHeight="49.0" prefWidth="328.0" style="-fx-background-color: #ffa500;" text="LOG IND" VBox.vgrow="ALWAYS" />
+                                        <JFXButton fx:id="button" maxWidth="1.7976931348623157E308" minHeight="49.0" prefHeight="49.0" prefWidth="328.0" style="-fx-background-color: #FF9800;" text="LOG IND" VBox.vgrow="ALWAYS" />
                                         <Text fill="#666666" strokeType="OUTSIDE" strokeWidth="0.0" text="Kontakt din administrator ved glemt kode" VBox.vgrow="ALWAYS">
                                             <font>
                                                 <Font name="Roboto" size="13.0" />

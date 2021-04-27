@@ -12,10 +12,7 @@ import java.util.Objects;
 public class AppViewController extends VBox {
 
     @FXML
-    private Pane navbarPane;
-
-    @FXML
-    private Pane contentPane;
+    private Pane navbarPane, contentPane;
 
     public AppViewController() {
         FXMLLoader fxmlLoader = new FXMLLoader(

@@ -18,6 +18,7 @@ public class BulkEditModal extends Dialog<Boolean> {
     @FXML
     private JFXButton closeBtn;
 
+    @FXML
     private GaussianBlur backgroundEffect;
 
     public BulkEditModal(Window window) {
