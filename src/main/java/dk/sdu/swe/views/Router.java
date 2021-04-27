@@ -2,6 +2,7 @@ package dk.sdu.swe.views;
 
 import dk.sdu.swe.helpers.PubSub;
 import javafx.animation.FadeTransition;
+import javafx.fxml.FXML;
 import javafx.scene.Parent;
 import javafx.scene.layout.Pane;
 import javafx.util.Duration;
@@ -15,6 +16,7 @@ public class Router {
     private static Map<Class<? extends Parent>, Parent> components = new HashMap<>();
     private static Router sceneRouter;
 
+    @FXML
     private Pane container;
 
     private boolean doFadeAnimation = false;

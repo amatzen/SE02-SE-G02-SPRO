@@ -18,6 +18,7 @@ public class EditProgrammeDialog extends Dialog<Boolean> {
     @FXML
     private JFXButton closeBtn;
 
+    @FXML
     private GaussianBlur backgroundEffect;
 
     public EditProgrammeDialog(Window window) {

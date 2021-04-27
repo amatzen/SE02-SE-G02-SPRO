@@ -24,8 +24,10 @@ public class UserAdministrationDialog extends Dialog<Boolean> {
     @FXML
     private JFXButton closeBtn;
 
+    @FXML
     private GaussianBlur backgroundEffect;
 
+    @FXML
     private Company company;
 
     @FXML

@@ -11,18 +11,12 @@ import java.io.IOException;
 import java.util.Objects;
 
 public class AdminViewController extends BorderPane {
-    @FXML
-    private JFXButton reviewsBtn;
 
     @FXML
-    private JFXButton userControlBtn;
+    private JFXButton userControlBtn, creditGroupBtn, dataExportBtn, reviewsBtn;
+
+    @FXML
     private Router router;
-
-    @FXML
-    private JFXButton creditGroupBtn;
-
-    @FXML
-    private JFXButton dataExportBtn;
 
     @FXML
     private Pane contentPane;
@@ -31,7 +25,6 @@ public class AdminViewController extends BorderPane {
     private void initialize() {
         router = new Router(contentPane);
     }
-
 
     public AdminViewController() {
         FXMLLoader fxmlLoader = new FXMLLoader(
