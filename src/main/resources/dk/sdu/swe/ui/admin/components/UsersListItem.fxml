@@ -6,14 +6,13 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<fx:root alignment="CENTER" prefHeight="26.0" prefWidth="698.0" type="HBox" xmlns="http://javafx.com/javafx/15.0.1"
-         xmlns:fx="http://javafx.com/fxml/1">
+<fx:root alignment="CENTER" prefHeight="26.0" prefWidth="698.0" type="HBox" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
     <children>
         <HBox prefHeight="47.0" prefWidth="258.0">
             <children>
-                <Label fx:id="emailLbl" contentDisplay="CENTER" text="Email">
+                <Label fx:id="emailLbl" text="Email">
                     <HBox.margin>
-                        <Insets left="30.0" />
+                        <Insets />
                     </HBox.margin>
                     <font>
                         <Font size="16.0" />
@@ -21,9 +20,9 @@
                 </Label>
             </children>
         </HBox>
-        <HBox layoutX="10.0" layoutY="10.0" prefHeight="47.0" prefWidth="222.0">
+        <HBox layoutX="10.0" layoutY="10.0" prefHeight="26.0" prefWidth="192.0">
             <children>
-                <Label fx:id="usernameLbl" prefHeight="25.0" prefWidth="195.0" text="Navn">
+                <Label fx:id="usernameLbl" prefHeight="25.0" prefWidth="208.0" text="Navn">
                     <HBox.margin>
                         <Insets />
                     </HBox.margin>

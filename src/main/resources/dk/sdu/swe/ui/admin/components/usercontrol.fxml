@@ -55,7 +55,7 @@
       </HBox>
       <HBox prefHeight="100.0" prefWidth="200.0">
          <children>
-            <JFXButton fx:id="exportBtn" prefHeight="35.0" prefWidth="70.0" style="-jfx-button-type: RAISED; -fx-background-color: #FF9800;" text="Eksport" textFill="WHITE">
+            <JFXButton fx:id="exportBtn" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="70.0" style="-jfx-button-type: RAISED; -fx-background-color: #FF9800;" text="Eksport" textFill="WHITE">
                <HBox.margin>
                   <Insets left="50.0" top="20.0" />
                </HBox.margin>
