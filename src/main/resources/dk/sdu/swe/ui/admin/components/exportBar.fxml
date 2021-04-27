@@ -47,7 +47,7 @@
                         <Font name="System Bold" size="12.0" />
                      </font>
                      <VBox.margin>
-                        <Insets left="50.0" />
+                        <Insets left="50.0" top="5.0" />
                      </VBox.margin>
                   </Label>
                   <JFXRadioButton fx:id="csvToggle" text="CSV">
