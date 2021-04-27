@@ -49,12 +49,10 @@ package "Presentation Layer" #DDD {
             }
 
             class PopupListMenu {
-            - listView: JFXListView<Label>
-            - actions: Map<Label, Runnable>
-            + PopupListMenu(actions: Map<String, Runnable>)
+                - listView: JFXListView<Label>
+                - actions: Map<Label, Runnable>
+                + PopupListMenu(actions: Map<String, Runnable>)
             }
-
-            PopupListMenu <-- CompanyListItem
 
             class ProgrammeListItem {
                 - nameLbl: Label
@@ -78,6 +76,8 @@ package "Presentation Layer" #DDD {
 
                 + UsersView()
             }
+
+            PopupListMenu <-- CompanyListItem
         }
 
         class AdminViewController {
@@ -115,8 +115,6 @@ package "Presentation Layer" #DDD {
             + CompanyViewController()
             - initialize(): void
         }
-
-        CompanyViewController --> EditProgrammeDialog
 
         class CreditGroupController {
             + CreditGroupController()
@@ -159,6 +157,8 @@ package "Presentation Layer" #DDD {
             + UserControlController()
         }
 
+        CompanyViewController --> EditProgrammeDialog
+
         Router <--o Navbar
         Router <--o AppViewController
         Router <--o AdminViewController
@@ -185,10 +185,10 @@ package "Domain Layer" #DDD {
 
     package "Helpers" #FFF {
         class Environment{
-        - label: String
+            - label: String
 
-        + Environment(label: String)
-        + getLabel(): String
+            + Environment(label: String)
+            + getLabel(): String
         }
 
         class EnvironmentSelector{
@@ -252,8 +252,6 @@ package "Domain Layer" #DDD {
             + (name: String) Name
         }
 
-        Name <-* User
-
         class Person{
             - id: int
             - name: String
@@ -278,8 +276,6 @@ package "Domain Layer" #DDD {
             + setEmail(email: String): void
         }
 
-        PersonContactDetails <-* Person
-
         class Programme {
             - id: int
             - title: String
@@ -302,8 +298,6 @@ package "Domain Layer" #DDD {
             + getPeople(): Map<String, Person>
             + setPeople(people: Map<String, Person>): void
         }
-
-        Person "1..*" <--o "1..*" Programme
 
         class SystemAdministrator {
             - permissions: String[]
@@ -333,8 +327,13 @@ package "Domain Layer" #DDD {
             + hasPermission(permissionKey: String): boolean
         }
 
+        Name <-* User
+        PersonContactDetails "1" <--* "1" Person
+        Person "1..*" <--o "1..*" Programme
         User .-|> IUser
         User <--o AuthController
+        CompanyAdministrator --|> User
+        SystemAdministrator --|> User
     }
 
     package "Providers" #FFF {
@@ -377,8 +376,6 @@ package "Persistence Layer" #DDD {
             + deleteProgramme(id: int): void
         }
 
-        DBHandler .-|> PersistenceContract
-
         class DBHandler {
             + getUsers(): List<User>
             + getUser(id: int): User
@@ -395,8 +392,6 @@ package "Persistence Layer" #DDD {
             + jsonAppendToArray(obj: JSONObject): void
         }
 
-        JSONHandler .-|> PersistenceContract
-
         class JSONHandler {
             - JSONHandler()
             + {static} getInstance(): JSONHandler
@@ -407,13 +402,18 @@ package "Persistence Layer" #DDD {
 
         }
 
-        IOHandler <-* JSONHandler
-
-        PersistenceContract <-o DBFacade
-
-        class DBFacade {
-
+        class FacadeDB {
         }
+
+        DBHandler .-|> PersistenceContract
+
+        JSONHandler .-|> PersistenceContract
+
+        IOHandler "1" <--* "1" JSONHandler
+
+        PersistenceContract "1" <-* "1" FacadeDB
+        FacadeDB -|> PersistenceContract
+
     }
 }
 

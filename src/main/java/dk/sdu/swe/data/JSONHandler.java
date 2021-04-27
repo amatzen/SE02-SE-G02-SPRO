@@ -1,16 +1,17 @@
 package dk.sdu.swe.data;
 
 import at.favre.lib.crypto.bcrypt.BCrypt;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.sendgrid.Content;
 import com.sendgrid.Email;
+import dk.sdu.swe.domain.models.*;
 import dk.sdu.swe.exceptions.UserCreationException;
-import dk.sdu.swe.models.Person;
-import dk.sdu.swe.models.Programme;
-import dk.sdu.swe.models.User;
 import dk.sdu.swe.provider.EmailProvider;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -32,6 +33,23 @@ public class JSONHandler implements PersistenceContract {
     private IOHandler getUserIOLoader() {
         return new IOHandler("db/users.json");
     }
+
+    private IOHandler getProgrammeIOLoader() {
+        return new IOHandler("db/programmes.json");
+    }
+
+    private IOHandler getPeopleIOLoader() {
+        return new IOHandler("db/people.json");
+    }
+
+    private IOHandler getCompaniesIOLoader() {
+        return new IOHandler("db/companies.json");
+    }
+
+    private IOHandler getCreditsIOLoader() {
+        return new IOHandler("db/credits.json");
+    }
+
 
     @Override
     public List<User> getUsers() throws Exception {
@@ -92,12 +110,14 @@ public class JSONHandler implements PersistenceContract {
 
     @Override
     public List<Person> getPeople() throws Exception {
-        throw new UnsupportedOperationException();
+        IOHandler ioHandler = getPeopleIOLoader();
+        Type listType = new TypeToken<List<Person>>(){}.getType();
+        return new Gson().fromJson(ioHandler.readFile(), listType);
     }
 
     @Override
-    public Person getPerson() throws Exception {
-        throw new UnsupportedOperationException();
+    public Person getPerson(int id) throws Exception {
+        return getPeople().stream().filter(person -> person.getId() == id).findAny().orElse(null);
     }
 
     @Override
@@ -117,12 +137,14 @@ public class JSONHandler implements PersistenceContract {
 
     @Override
     public List<Programme> getProgrammes() throws Exception {
-        throw new UnsupportedOperationException();
+        IOHandler ioHandler = getProgrammeIOLoader();
+        Type listType = new TypeToken<List<Programme>>(){}.getType();
+        return new Gson().fromJson(ioHandler.readFile(), listType);
     }
 
     @Override
-    public Person getProgramme() throws Exception {
-        throw new UnsupportedOperationException();
+    public Programme getProgramme(int id) throws Exception {
+        return getProgrammes().stream().filter(programme -> programme.getId() == id).findAny().orElse(null);
     }
 
     @Override
@@ -137,6 +159,60 @@ public class JSONHandler implements PersistenceContract {
 
     @Override
     public void deleteProgramme(int id) throws Exception {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public List<Company> getCompanies() throws Exception {
+        IOHandler ioHandler = getCompaniesIOLoader();
+        Type listType = new TypeToken<List<Company>>(){}.getType();
+        return new Gson().fromJson(ioHandler.readFile(), listType);
+    }
+
+    @Override
+    public Company getCompany(int id) throws Exception {
+        return getCompanies().stream().filter(company -> company.getId() == id).findAny().orElse(null);
+    }
+
+    @Override
+    public void createCompany(Company company) throws Exception {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public void updateCompany(int id, Company company) throws Exception {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public void deleteCompany(int id) throws Exception {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public List<Credit> getCredits() throws Exception {
+        IOHandler ioHandler = getCreditsIOLoader();
+        Type listType = new TypeToken<List<Credit>>(){}.getType();
+        return new Gson().fromJson(ioHandler.readFile(), listType);
+    }
+
+    @Override
+    public Credit getCredit(int id) throws Exception {
+        return getCredits().stream().filter(credit -> credit.getId() == id).findAny().orElse(null);
+    }
+
+    @Override
+    public void createCredit(Credit credit) throws Exception {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public void updateCredit(int id, Credit credit) throws Exception {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public void deleteCredit(int id) throws Exception {
         throw new UnsupportedOperationException();
     }
 }

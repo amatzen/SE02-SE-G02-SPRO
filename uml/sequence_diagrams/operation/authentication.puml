@@ -3,16 +3,33 @@
 
 autonumber
 
-box "Håndtér kreditering (UC03)"
+box "Authentication"
     participant ":Producer" as producer
     participant ":AuthController" as authController <<Control>>
+    participant ":User" as user
     participant ":DB" as db
 end box
 
+activate producer
 producer -> authController : signIn(username, password)
+activate authController
 authController -> db : Retrieve user hash
+activate db
 authController <-- db
+deactivate db
+
 authController -> authController : Compare password\n against hash
+activate authController
+authController <-- authController : Comparison result
+deactivate authController
+
+opt if equal
+authController -> user : <<create>>
+activate user
+authController <-- user : loggedin
+deactivate user
+end
 producer <-- authController : Authentication
+deactivate authController
 
 @enduml

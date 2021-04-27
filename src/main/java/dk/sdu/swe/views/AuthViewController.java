@@ -2,7 +2,7 @@ package dk.sdu.swe.views;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
-import dk.sdu.swe.controllers.AuthController;
+import dk.sdu.swe.domain.controllers.AuthController;
 import dk.sdu.swe.helpers.Environment;
 import dk.sdu.swe.helpers.EnvironmentSelector;
 import javafx.collections.FXCollections;
@@ -155,6 +155,5 @@ public class AuthViewController extends HBox {
         }
 
         Router.getSceneRouter().goTo(AppViewController.class);
-        //SceneNavigator.goTo("crms", true);
     }
 }

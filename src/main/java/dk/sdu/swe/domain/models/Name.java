@@ -1,4 +1,4 @@
-package dk.sdu.swe.models;
+package dk.sdu.swe.domain.models;
 
 import dk.sdu.swe.exceptions.InvalidNameException;
 

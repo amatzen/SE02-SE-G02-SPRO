@@ -9,7 +9,8 @@
     },
     "email": "alexander@alexander.dk",
     "password": "$2y$12$U3Tm1ZgJTL3m8jc2Beu1LeE/zq1xEbsYnYlf6eWG0Bv2x3ZfmHFYu",
-    "permission": "SystemAdministrator"
+    "permission": "SystemAdministrator",
+    "companyId": 1
   },
   {
     "id": 2,
@@ -21,7 +22,8 @@
     },
     "email": "test@sdu.dk",
     "password": "",
-    "permission": "User"
+    "permission": "User",
+    "companyId": 1
   },
   {
     "id": 3,
@@ -33,7 +35,8 @@
     },
     "email": "dabah20@student.sdu.dk",
     "password": "$2y$12$u.7wLfrPlVRRb1KmFdCkvecq9nMGuwNiRso2VVRDlgnFFLthZC20u",
-    "permission": "SystemAdministrator"
+    "permission": "SystemAdministrator",
+    "companyId": 1
   },
   {
     "id": 4,
@@ -45,7 +48,8 @@
     },
     "email": "jasan@jasan.dk",
     "password": "$2y$12$LM6LIsQqqfyLalIGOag3ZOO27mSuXek6F6o/52TvVSJNcDYLVCzd6",
-    "permission": "CompanyAdministrator"
+    "permission": "CompanyAdministrator",
+    "companyId": 1
   },
   {
     "id": 5,
@@ -57,7 +61,8 @@
     },
     "email": "bekut20@student.sdu.dk",
     "password": "$2y$12$Tzpx8HEesoxlG2lvi65jfOw.GDoYlPE8OvWqCSEOSGcmGGM9d3D9W",
-    "permission": "SystemAdministrator"
+    "permission": "SystemAdministrator",
+    "companyId": 1
   },
   {
     "id": 7,
@@ -67,9 +72,10 @@
       "lastName": "Sørensen",
       "_combined": "Esben Sørensen"
     },
-    "email": "esben@damkjaergaard.com",
+    "email": "essoe20@student.sdu.dk",
     "password": "$2y$12$pe338UeP5CqzgkMMsAcnUOAanyZcykDkc78FRB0X5tg3nidsWonua",
-    "permission": "SystemAdministrator"
+    "permission": "SystemAdministrator",
+    "companyId": 1
   },
   {
     "id": 6,
@@ -81,6 +87,7 @@
     },
     "email": "assiv20@student.sdu.dk",
     "password": "$2y$12$4V8P.ixxz9yVEWYuT/UDou0SI90bilJFma7L2BW7vjTKcz3OnxgPu",
-    "permission": "CompanyAdministrator"
+    "permission": "CompanyAdministrator",
+    "companyId": 1
   }
 ]
