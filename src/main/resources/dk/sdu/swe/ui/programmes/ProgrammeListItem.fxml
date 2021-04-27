@@ -10,7 +10,7 @@
 <fx:root prefHeight="89.0" prefWidth="1440.0" style="-fx-background-color: white;" type="AnchorPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
     <children>
         <Label fx:id="nameLbl" layoutX="41.0" layoutY="35.0" text="Gutterne på kutterne" />
-      <FlowPane fx:id="channelsPane" layoutX="242.0" layoutY="21.0" prefHeight="46.0" prefWidth="291.0">
+      <FlowPane fx:id="channelsPane" layoutX="272.0" layoutY="21.0" prefHeight="46.0" prefWidth="246.0">
          <children>
               <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
                   <image>
@@ -24,8 +24,8 @@
               </ImageView>
          </children>
       </FlowPane>
-        <Label fx:id="releaseYearLbl" layoutX="571.0" layoutY="35.0" text="2018" />
-        <Label fx:id="categoryLbl" layoutX="824.0" layoutY="35.0" text="Outdoor" />
+        <Label fx:id="releaseYearLbl" layoutX="559.0" layoutY="34.0" text="2018" />
+        <Label fx:id="categoryLbl" layoutX="779.0" layoutY="34.0" text="Outdoor" />
         <JFXButton buttonType="RAISED" layoutX="1052.0" layoutY="26.0" onAction="#showCredits" prefHeight="36.0" prefWidth="182.0" style="-fx-background-color: #FF9800;" text="SE KREDITTERINGER" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
