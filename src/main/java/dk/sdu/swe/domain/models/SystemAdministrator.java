@@ -2,9 +2,13 @@ package dk.sdu.swe.domain.models;
 
 import com.google.gson.annotations.Expose;
 
+import javax.persistence.*;
 import java.util.Arrays;
 
+@Entity(name = "users")
+@DiscriminatorValue("SystemAdministrator")
 public class SystemAdministrator extends User {
+    @Transient
     private final String[] permissions = {
         "programmes",
         "programmes.epg",
@@ -31,6 +35,10 @@ public class SystemAdministrator extends User {
      */
     public SystemAdministrator(int id, String username, String email, String name, int companyId) throws Exception {
         super(id, username, email, name, companyId);
+    }
+
+    public SystemAdministrator() {
+
     }
 
     @Override
