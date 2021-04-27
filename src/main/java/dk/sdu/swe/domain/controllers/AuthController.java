@@ -51,7 +51,7 @@ public class AuthController {
             return false;
         }
 
-        this.currentUser = User.jsonToUser(user);
+        this.currentUser = UserController.jsonToUser(user);
         return true;
 
     }

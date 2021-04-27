@@ -32,5 +32,73 @@
         }
       }
     ]
+  },
+  {
+    "id": 2,
+    "title": "Gutterne på kutterne",
+    "prodYear": 2015,
+    "category": "Reality",
+    "epgDates": [
+      {
+        "stop": 1617714000,
+        "start": 1617706800,
+        "categories": [],
+        "id": "JPVSYcmAxvm0",
+        "title": "Gutterne på kutterne",
+        "availableAsVod": false,
+        "options": {
+          "live": false,
+          "rerun": false,
+          "premiere": false
+        }
+      },
+      {
+        "stop": 1617717600,
+        "start": 1617714000,
+        "categories": [],
+        "id": "JPVSYcmAxGfc",
+        "title": "Gutterne på kutterne",
+        "availableAsVod": false,
+        "options": {
+          "live": false,
+          "rerun": false,
+          "premiere": false
+        }
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Lykkehjulet",
+    "prodYear": 2021,
+    "category": "Gameshow",
+    "epgDates": [
+      {
+        "stop": 1617714000,
+        "start": 1617706800,
+        "categories": [],
+        "id": "JPVSYcmAxvm0",
+        "title": "Lykkehjulet",
+        "availableAsVod": false,
+        "options": {
+          "live": false,
+          "rerun": false,
+          "premiere": false
+        }
+      },
+      {
+        "stop": 1617717600,
+        "start": 1617714000,
+        "categories": [],
+        "id": "JPVSYcmAxGfc",
+        "title": "Lykkehjulet",
+        "availableAsVod": false,
+        "options": {
+          "live": false,
+          "rerun": false,
+          "premiere": false
+        }
+      }
+    ]
   }
 ]

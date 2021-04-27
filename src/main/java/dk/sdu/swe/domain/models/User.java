@@ -2,14 +2,36 @@ package dk.sdu.swe.domain.models;
 
 import dk.sdu.swe.exceptions.UserCreationException;
 import dk.sdu.swe.data.FacadeDB;
+import org.hibernate.annotations.Type;
 import org.json.JSONObject;
 
+import javax.persistence.*;
 import java.util.*;
 
 /**
  * The type User.
  */
+@MappedSuperclass
+@Entity(name = "users")
+@Inheritance(strategy= InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(
+    name = "UserType",
+    discriminatorType = DiscriminatorType.STRING
+)
 public class User implements IUser {
+    @Id
+    @GeneratedValue
+    private int id;
+
+    private String username;
+    private String email;
+    private int companyId;
+
+    @Column()
+    @Type(type = "string")
+    private Name name;
+
+    @Transient
     private final String[] permissions = {
         "programmes",
         "programmes.epg",
@@ -17,11 +39,6 @@ public class User implements IUser {
         "programmes.filter",
         "people"
     };
-    private int id;
-    private String username;
-    private String email;
-    private Name name;
-    private int companyId;
 
     /**
      * Instantiates a new User.
@@ -54,9 +71,7 @@ public class User implements IUser {
         this.companyId = companyId;
     }
 
-    public User(){
-
-    }
+    public User() {}
 
     public static User get(int id) throws Exception {
         return FacadeDB.getInstance().getUser(id);
@@ -68,46 +83,6 @@ public class User implements IUser {
 
     public static void create(User user) throws Exception {
         FacadeDB.getInstance().createUser(user);
-    }
-
-    public static User jsonToUser(JSONObject o) throws Exception {
-        return switch (o.getString("permission")) {
-            case "SystemAdministrator" -> new SystemAdministrator(o.getInt("id"), o.getString("username"), o.getString("email"), o.getJSONObject("name").getString("_combined"), o.getInt("companyId"));
-            case "CompanyAdministrator" -> new CompanyAdministrator(o.getInt("id"), o.getString("username"), o.getString("email"), o.getJSONObject("name").getString("_combined"), o.getInt("companyId"));
-            default -> new User(o.getInt("id"), o.getString("username"), o.getString("email"), o.getJSONObject("name").getString("_combined"), o.getInt("companyId"));
-        };
-    }
-
-    public static JSONObject userToJson(User user) {
-        JSONObject json = new JSONObject();
-
-        JSONObject name = new JSONObject();
-        name.put("firstName", user.getName().firstName);
-        name.put("lastName", user.getName().lastName);
-        name.put("_combined", user.getName().toString());
-
-        (new HashMap<String, Object>(Map.of(
-            "username", user.getUsername(),
-            "name", name,
-            "email", user.getEmail(),
-            "permission", user.getClass().getName().replace("dk.sdu.swe.domain.models.", "")
-        ))).forEach((k, v) -> {
-            json.put(k, v);
-        });
-
-        return json;
-    }
-
-    public static String createRandomPassword(int length) {
-        String allowedCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!#";
-        StringBuilder passwordBuilder = new StringBuilder();
-
-        Random randomizer = new Random();
-        while (passwordBuilder.length() < length) {
-            passwordBuilder.append(allowedCharacters.charAt((int) (randomizer.nextFloat() * allowedCharacters.length())));
-        }
-
-        return passwordBuilder.toString();
     }
 
     public String getUsername() {
@@ -139,4 +114,3 @@ public class User implements IUser {
         return Arrays.stream(this.permissions).anyMatch(s -> Objects.equals(s, permissionKey));
     }
 }
-
