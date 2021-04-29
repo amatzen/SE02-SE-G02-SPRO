@@ -24,7 +24,7 @@ public class CompanyListItem extends VBox {
         put("Slet", CompanyListItem.this::deleteCompany);
     }};
 
-
+    @FXML
     private Company company;
 
     @FXML
