@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 
 <fx:root maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="1024.0" type="BorderPane"
-         xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+         xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" stylesheets="@../Navbar.css">
     <top>
         <VBox prefHeight="200.0" prefWidth="1440.0" style="-fx-background-color: #E0E0E0;" BorderPane.alignment="CENTER">
             <children>

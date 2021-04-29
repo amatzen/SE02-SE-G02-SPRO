@@ -1,6 +1,8 @@
 package dk.sdu.swe.views;
 
 import com.jfoenix.controls.JFXButton;
+import dk.sdu.swe.helpers.Observer;
+import dk.sdu.swe.helpers.PubSub;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -10,7 +12,7 @@ import javafx.scene.layout.Pane;
 import java.io.IOException;
 import java.util.Objects;
 
-public class AdminViewController extends BorderPane {
+public class AdminViewController extends BorderPane implements Observer {
 
     @FXML
     private JFXButton userControlBtn, creditGroupBtn, dataExportBtn, reviewsBtn;
@@ -27,6 +29,7 @@ public class AdminViewController extends BorderPane {
     }
 
     public AdminViewController() {
+        PubSub.subscribe("routeChange", this);
         FXMLLoader fxmlLoader = new FXMLLoader(
             Objects.requireNonNull(
                 getClass().getClassLoader().getResource("dk/sdu/swe/ui/admin/admin.fxml")));
@@ -62,4 +65,28 @@ public class AdminViewController extends BorderPane {
 
     }
 
+    private void handleRouteChange(String routeName) {
+        for (JFXButton jfxButton : (new JFXButton[]{
+            userControlBtn,
+            creditGroupBtn,
+            dataExportBtn,
+            reviewsBtn
+        })) {
+            jfxButton.getStyleClass().remove("indicator");
+        }
+        switch (routeName) {
+            case "ReviewViewController" -> this.reviewsBtn.getStyleClass().add("indicator");
+            case "UserControlController" -> this.userControlBtn.getStyleClass().add("indicator");
+            case "CreditGroupController" -> this.creditGroupBtn.getStyleClass().add("indicator");
+            case "DataExportController" -> this.dataExportBtn.getStyleClass().add("indicator");
+
+        }
+    }
+
+    @Override
+    public void onNotify(String topic, Object payload) {
+        switch (topic) {
+            case "routeChange" -> handleRouteChange((String) payload);
+        }
+    }
 }
