@@ -3,6 +3,7 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
@@ -10,27 +11,27 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="469.0" prefWidth="698.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dk.sdu.swe.views.ProgrammesViewController">
+<BorderPane prefHeight="469.0" prefWidth="698.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
     <center>
         <HBox prefHeight="100.0" prefWidth="698.0" BorderPane.alignment="CENTER">
             <children>
                 <VBox prefHeight="469.0" prefWidth="349.0">
                     <children>
-                        <JFXTextField fx:id="rolleTextfield" prefHeight="50.0" prefWidth="309.0" promptText="Titel" style="-fx-border-color: #cccccc; -fx-border-radius: 5px;                                 -fx-padding: 0.333333em 1em 0.333333em 1em;                                 -fx-background-color: transparent; -jfx-unfocus-color: transparent;                                 -jfx-focus-color: transparent;" text="Rolle">
+                        <JFXTextField fx:id="rolleTextfield" prefHeight="50.0" prefWidth="309.0" promptText="Rolle" style="-fx-border-color: #cccccc; -fx-border-radius: 5px;                                 -fx-padding: 0.333333em 1em 0.333333em 1em;                                 -fx-background-color: transparent; -jfx-unfocus-color: transparent;                                 -jfx-focus-color: transparent;">
                             <VBox.margin>
                                 <Insets left="30.0" right="10.0" top="30.0" />
                             </VBox.margin>
                         </JFXTextField>
-                        <JFXTextField fx:id="nameTextfield" layoutX="10.0" layoutY="10.0" prefHeight="49.0" prefWidth="309.0" promptText="Produktionsår" style="-fx-background-color: transparent;                                 -fx-border-color: #CCCCCC;                                 -fx-padding: 0.333333em 1em 0.333333em 1em;                                 -jfx-unfocus-color: transparent;                                 -fx-border-radius: 5px; -jfx-focus-color: transparent;" text="Navn">
+                        <JFXTextField fx:id="nameTextfield" layoutX="10.0" layoutY="10.0" prefHeight="49.0" prefWidth="309.0" promptText="Navn" style="-fx-background-color: transparent;                                 -fx-border-color: #CCCCCC;                                 -fx-padding: 0.333333em 1em 0.333333em 1em;                                 -jfx-unfocus-color: transparent;                                 -fx-border-radius: 5px; -jfx-focus-color: transparent;">
                             <VBox.margin>
                                 <Insets left="30.0" right="10.0" top="20.0" />
                             </VBox.margin>
                         </JFXTextField>
-                  <JFXTextField fx:id="seriesTextfield" prefHeight="50.0" prefWidth="309.0" promptText="Titel" style="-fx-border-color: #cccccc; -fx-border-radius: 5px;                                 -fx-padding: 0.333333em 1em 0.333333em 1em;                                 -fx-background-color: transparent; -jfx-unfocus-color: transparent;                                 -jfx-focus-color: transparent;" text="Serie">
+                  <DatePicker promptText="Vælg Fødselsdagsdato" showWeekNumbers="true">
                      <VBox.margin>
                         <Insets left="30.0" right="10.0" top="20.0" />
                      </VBox.margin>
-                  </JFXTextField>
+                  </DatePicker>
                     </children>
                 </VBox>
                 <VBox prefHeight="469.0" prefWidth="349.0">
@@ -74,7 +75,7 @@
                 </HBox>
                 <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                     <children>
-                        <JFXButton fx:id="closeBtn" prefHeight="28.0" prefWidth="60.0" style="-fx-background-color: #FF9800;" text="X" textAlignment="RIGHT">
+                        <JFXButton fx:id="closeBtn" onAction="#handleClose" prefHeight="28.0" prefWidth="60.0" style="-fx-background-color: #FF9800;" text="X" textAlignment="RIGHT">
                             <font>
                                 <Font name="Comic Sans MS" size="18.0" />
                             </font>

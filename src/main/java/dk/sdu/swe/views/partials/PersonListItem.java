@@ -3,9 +3,10 @@ package dk.sdu.swe.views.partials;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPopup;
 import dk.sdu.swe.domain.models.Person;
-import javafx.application.Platform;
+import dk.sdu.swe.views.modals.EditPersonModal;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Dialog;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -63,7 +64,8 @@ public class PersonListItem extends VBox {
     }
 
     public void editPerson(){
-
+        Dialog<Boolean> personEditDialog = new EditPersonModal(getScene().getWindow());
+        personEditDialog.show();
     }
 
     public void deletePerson(){
