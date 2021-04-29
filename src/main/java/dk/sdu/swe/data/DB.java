@@ -21,12 +21,14 @@ public class DB {
             String DB_NAME = System.getenv("DATABASE_LOCAL_DB");
             String DB_USER = System.getenv("DATABASE_LOCAL_USER");
             String DB_PASS = System.getenv("DATABASE_LOCAL_PASS");
+            String HIBERNATE_DDL = "create-drop";
 
             if(env == dk.sdu.swe.helpers.Environment.PROD) {
                 DB_HOST = System.getenv("DATABASE_PROD_HOST");
                 DB_NAME = System.getenv("DATABASE_PROD_DB");
                 DB_USER = System.getenv("DATABASE_PROD_USER");
                 DB_PASS = System.getenv("DATABASE_PROD_HOST");
+                HIBERNATE_DDL = "update";
             }
 
             addAnnotatedClasses();
@@ -45,7 +47,9 @@ public class DB {
             settings.put(Environment.DIALECT, "org.hibernate.dialect.PostgreSQLDialect");
             settings.put(Environment.CURRENT_SESSION_CONTEXT_CLASS, "thread");
             settings.put(Environment.SHOW_SQL, true);
-            settings.put(Environment.HBM2DDL_AUTO, "update");
+            settings.put(Environment.HBM2DDL_AUTO, HIBERNATE_DDL);
+
+            System.out.println(settings.toString());
 
 
             cfg.setProperties(settings);
