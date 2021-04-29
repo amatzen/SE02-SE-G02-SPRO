@@ -3,6 +3,7 @@ package dk.sdu.swe.views.partials;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPopup;
 import dk.sdu.swe.domain.models.Company;
+import dk.sdu.swe.views.modals.AddCompanyModal;
 import dk.sdu.swe.views.modals.EditProgrammeDialog;
 import dk.sdu.swe.views.modals.UserAdministrationDialog;
 import javafx.fxml.FXML;
@@ -23,7 +24,6 @@ public class CompanyListItem extends VBox {
         put("Rediger", CompanyListItem.this::editCompany);
         put("Slet", CompanyListItem.this::deleteCompany);
     }};
-
 
     private Company company;
 
@@ -70,7 +70,8 @@ public class CompanyListItem extends VBox {
     }
 
     private void editCompany() {
-
+        Dialog editCompanyDialog = new AddCompanyModal();
+        editCompanyDialog.show();
     }
 
     private void deleteCompany() {

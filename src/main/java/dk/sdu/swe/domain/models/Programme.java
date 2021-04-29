@@ -1,8 +1,5 @@
 package dk.sdu.swe.domain.models;
 
-import dk.sdu.swe.data.FacadeDB;
-import org.json.JSONObject;
-
 import java.util.List;
 import java.util.Map;
 
@@ -78,9 +75,5 @@ public class Programme {
 
     public void setPeople(Map<String, Person> people) {
         this.people = people;
-    }
-
-    public static List<Programme> getAll() throws Exception {
-        return FacadeDB.getInstance().getProgrammes();
     }
 }

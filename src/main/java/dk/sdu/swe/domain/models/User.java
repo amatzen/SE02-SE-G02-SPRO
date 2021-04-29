@@ -1,12 +1,13 @@
 package dk.sdu.swe.domain.models;
 
-import dk.sdu.swe.exceptions.UserCreationException;
 import dk.sdu.swe.data.FacadeDB;
+import dk.sdu.swe.exceptions.UserCreationException;
 import org.hibernate.annotations.Type;
-import org.json.JSONObject;
 
 import javax.persistence.*;
-import java.util.*;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Objects;
 
 /**
  * The type User.

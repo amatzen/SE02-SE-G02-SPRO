@@ -1,7 +1,7 @@
 package dk.sdu.swe.views.modals;
 
 import com.jfoenix.controls.JFXButton;
-import dk.sdu.swe.domain.controllers.CreditsController;
+import dk.sdu.swe.domain.controllers.CreditController;
 import dk.sdu.swe.domain.models.Credit;
 import dk.sdu.swe.domain.models.Programme;
 import dk.sdu.swe.views.partials.CreditListItem;
@@ -72,7 +72,7 @@ public class CreditListModal extends Dialog<Boolean> {
         List<Credit> credits = null;
 
         try {
-            credits = CreditsController.getInstance().getAll()
+            credits = CreditController.getInstance().getAll()
                 .stream().filter(credit -> credit.getProgramme() == programme.getId()).collect(Collectors.toList());
         } catch (Exception e) {
             e.printStackTrace();

@@ -5,15 +5,15 @@ import dk.sdu.swe.domain.models.Person;
 
 import java.util.List;
 
-public class PeopleController {
+public class PersonController {
 
-    private static PeopleController instance;
+    private static PersonController instance;
 
-    private PeopleController() {}
+    private PersonController() {}
 
-    public static PeopleController getInstance() {
+    public static PersonController getInstance() {
         if (instance == null) {
-            instance = new PeopleController();
+            instance = new PersonController();
         }
         return instance;
     }

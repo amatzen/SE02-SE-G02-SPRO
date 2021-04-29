@@ -5,15 +5,15 @@ import dk.sdu.swe.domain.models.Credit;
 
 import java.util.List;
 
-public class CreditsController {
+public class CreditController {
 
-    private static CreditsController instance;
+    private static CreditController instance;
 
-    private CreditsController() {}
+    private CreditController() {}
 
-    public static CreditsController getInstance() {
+    public static CreditController getInstance() {
         if (instance == null) {
-            instance = new CreditsController();
+            instance = new CreditController();
         }
         return instance;
     }

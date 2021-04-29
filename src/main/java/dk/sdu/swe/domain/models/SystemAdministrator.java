@@ -1,7 +1,5 @@
 package dk.sdu.swe.domain.models;
 
-import com.google.gson.annotations.Expose;
-
 import java.util.Arrays;
 
 public class SystemAdministrator extends User {

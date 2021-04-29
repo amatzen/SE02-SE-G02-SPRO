@@ -2,6 +2,7 @@ package dk.sdu.swe.domain.controllers;
 
 import dk.sdu.swe.data.FacadeDB;
 import dk.sdu.swe.domain.models.Person;
+import dk.sdu.swe.domain.models.Programme;
 
 import java.util.List;
 
@@ -16,6 +17,10 @@ public class ProgrammeController {
             instance = new ProgrammeController();
         }
         return instance;
+    }
+
+    public static List<Programme> getAll() throws Exception {
+        return FacadeDB.getInstance().getProgrammes();
     }
 
 }
