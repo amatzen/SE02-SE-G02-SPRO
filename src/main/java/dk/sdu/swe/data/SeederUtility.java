@@ -1,13 +1,13 @@
 package dk.sdu.swe.data;
 
-import dk.sdu.swe.data.seeders.CreateChannels;
-import dk.sdu.swe.data.seeders.CreateUsers;
+import dk.sdu.swe.data.seeders.v2_CreateChannels;
+import dk.sdu.swe.data.seeders.v1_CreateUsers;
 
 public class SeederUtility {
     public static void run() {
         try {
-            CreateUsers.run();
-            CreateChannels.run();
+            v1_CreateUsers.run();
+            v2_CreateChannels.run();
 
         }
         catch (Exception e) {
