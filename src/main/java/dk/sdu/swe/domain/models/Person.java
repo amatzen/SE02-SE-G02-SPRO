@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.Map;
 
 @Entity
+@Table(name = "people")
 public class Person {
 
     @Id
@@ -26,8 +27,8 @@ public class Person {
 
     @ElementCollection
     @CollectionTable(
-        name = "person_contact_details",
-        joinColumns = {@JoinColumn(name = "user_id", referencedColumnName = "id")}
+        name = "people_contact_details",
+        joinColumns = {@JoinColumn(name = "person_id", referencedColumnName = "id")}
     )
     @MapKeyColumn(name = "key")
     @Column(name = "value")
