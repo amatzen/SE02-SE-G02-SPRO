@@ -13,7 +13,7 @@ import java.util.Map;
 
 public class Router {
 
-    private static Map<Class<? extends Parent>, Parent> components = new HashMap<>();
+    //private static Map<Class<? extends Parent>, Parent> components = new HashMap<>();
     private static Router sceneRouter;
 
     @FXML
@@ -29,9 +29,9 @@ public class Router {
     private void goTo(Class<? extends Parent> componentClass, Pane container) {
         Parent component = null;
 
-        if (components.containsKey(componentClass)) {
+        /*if (components.containsKey(componentClass)) {
             component = components.get(componentClass);
-        } else {
+        } else {*/
             try {
                 component = componentClass.getDeclaredConstructor().newInstance();
             } catch (InstantiationException e) {
@@ -43,13 +43,13 @@ public class Router {
             } catch (NoSuchMethodException e) {
                 e.printStackTrace();
             }
-        }
+        //}
 
         goTo(component, container);
     }
 
     private void goTo(Parent component, Pane container) {
-        components.put(component.getClass(), component);
+        //components.put(component.getClass(), component);
 
         if (doFadeAnimation && container.getChildren().size() > 0 && !container.getChildren().contains(component)){
             fadeOut(component, container);
