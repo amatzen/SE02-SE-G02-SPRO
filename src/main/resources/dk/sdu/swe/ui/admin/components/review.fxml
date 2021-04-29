@@ -69,7 +69,7 @@
                                                 <Font size="16.0" />
                                             </font>
                                         </Label>
-                                        <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                                        <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true">
                                             <HBox.margin>
                                                 <Insets left="20.0" />
                                             </HBox.margin>

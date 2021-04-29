@@ -5,8 +5,10 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.sendgrid.Content;
 import com.sendgrid.Email;
+import dk.sdu.swe.domain.controllers.UserController;
 import dk.sdu.swe.domain.models.*;
 import dk.sdu.swe.exceptions.UserCreationException;
+import dk.sdu.swe.helpers.Utilities;
 import dk.sdu.swe.provider.EmailProvider;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -60,7 +62,7 @@ public class JSONHandler implements PersistenceContract {
 
         for (int i = 0; i < jsonArray.length(); i++) {
             JSONObject o = jsonArray.getJSONObject(i);
-            userList.add(User.jsonToUser(o));
+            userList.add(UserController.jsonToUser(o));
         }
 
         return userList;
@@ -81,9 +83,9 @@ public class JSONHandler implements PersistenceContract {
             throw new UserCreationException("Username taken.");
         }
 
-        JSONObject json = User.userToJson(user);
+        JSONObject json = UserController.userToJson(user);
 
-        String password = User.createRandomPassword(12);
+        String password = Utilities.createRandomPassword(12);
         String passwordHash = BCrypt.withDefaults().hashToString(12, password.toCharArray());
 
         json.put("password", passwordHash);

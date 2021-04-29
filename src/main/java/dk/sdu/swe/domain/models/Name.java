@@ -41,6 +41,14 @@ public class Name {
         this.lastName = name.trim().split(" ")[1];
     }
 
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
     @Override
     public String toString() {
         return String.format("%s %s", firstName, lastName);
