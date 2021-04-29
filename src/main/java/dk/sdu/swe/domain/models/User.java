@@ -10,7 +10,7 @@ import java.util.*;
 
 /**
  * The type User.
- */
+ */ 
 @MappedSuperclass
 @Entity(name = "users")
 @Inheritance(strategy= InheritanceType.SINGLE_TABLE)
@@ -18,6 +18,7 @@ import java.util.*;
     name = "UserType",
     discriminatorType = DiscriminatorType.STRING
 )
+@DiscriminatorValue("User")
 public class User implements IUser {
     @Id
     @GeneratedValue
