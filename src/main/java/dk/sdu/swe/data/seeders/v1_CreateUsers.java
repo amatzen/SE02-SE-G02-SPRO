@@ -6,7 +6,7 @@ import dk.sdu.swe.domain.models.SystemAdministrator;
 import dk.sdu.swe.domain.models.User;
 import org.hibernate.Session;
 
-public class CreateUsers {
+public class v1_CreateUsers {
     public static void run() throws Exception {
         Session session = DB.openSession();
 

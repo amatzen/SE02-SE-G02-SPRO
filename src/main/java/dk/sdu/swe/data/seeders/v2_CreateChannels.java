@@ -4,7 +4,7 @@ import dk.sdu.swe.data.DB;
 import dk.sdu.swe.domain.models.Channel;
 import org.hibernate.Session;
 
-public class CreateChannels {
+public class v2_CreateChannels {
     public static void run() throws Exception {
         Session session = DB.openSession();
 
