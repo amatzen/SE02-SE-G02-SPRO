@@ -2,7 +2,6 @@ package models;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import dk.sdu.swe.data.JSONHandler;
 import dk.sdu.swe.domain.models.User;
 import org.junit.jupiter.api.Test;
 

@@ -1,7 +1,6 @@
 package dk.sdu.swe.views;
 
 import com.jfoenix.controls.JFXListView;
-import dk.sdu.swe.data.FacadeDB;
 import dk.sdu.swe.domain.models.Company;
 import dk.sdu.swe.views.partials.CompanyListItem;
 import javafx.fxml.FXML;
@@ -33,7 +32,7 @@ public class CompanyViewController extends BorderPane {
     }
 
     @FXML
-    private void initialize() {
+    private void initialize() {/*
         List<Company> companies = null;
         try {
             companies = FacadeDB.getInstance().getCompanies();
@@ -44,6 +43,7 @@ public class CompanyViewController extends BorderPane {
         for (Company company : companies) {
             companyListView.getItems().add(new CompanyListItem(company));
         }
+        */
     }
 
     @FXML

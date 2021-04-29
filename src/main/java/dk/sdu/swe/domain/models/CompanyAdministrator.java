@@ -24,14 +24,13 @@ public class CompanyAdministrator extends User {
     /**
      * Instantiates a new User.
      *
-     * @param id       the user id
      * @param username the username
      * @param email    the email
      * @param name     the name
      * @throws Exception the exception
      */
-    public CompanyAdministrator(int id, String username, String email, String name, int companyId) throws Exception {
-        super(id, username, email, name, companyId);
+    public CompanyAdministrator(String username, String email, String name, String password) throws Exception {
+        super(username, email, name, password);
     }
 
     public CompanyAdministrator() { }

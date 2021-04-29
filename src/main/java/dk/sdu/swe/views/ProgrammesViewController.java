@@ -33,7 +33,7 @@ public class ProgrammesViewController extends BorderPane {
 
     @FXML
     private void initialize() {
-
+        /*
         List<Programme> programmeList = null;
         try {
             programmeList = Programme.getAll();
@@ -44,6 +44,8 @@ public class ProgrammesViewController extends BorderPane {
         for (Programme programme : programmeList) {
             programmesListView.getItems().add(new ProgrammeListItem(programme));
         }
+
+         */
 
     }
 

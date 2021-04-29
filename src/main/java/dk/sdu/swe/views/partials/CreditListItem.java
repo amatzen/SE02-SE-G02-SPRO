@@ -40,16 +40,18 @@ public class CreditListItem extends HBox {
 
     @FXML
     private void initialize() {
-
+        /*
         Person p = null;
         try {
             p = Person.get(credit.getPerson());
         } catch (Exception e) {
             e.printStackTrace();
         }
+
         creditImageView.setImage(new Image(p.getImage(), true));
 
         nameLbl.setText(p.getName());
+         */
 
     }
 

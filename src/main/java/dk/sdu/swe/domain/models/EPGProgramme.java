@@ -12,52 +12,37 @@ public class EPGProgramme {
     private String title;
     private Map<String, Boolean> options;
 
-    public int getStart() {
-        return start;
+    public EPGProgramme(int start, int stop, List<String> categories, String epgIdentifier, String title, Map<String, Boolean> options) {
+        this.start = start;
+        this.stop = stop;
+        this.categories = categories;
+        this.epgIdentifier = epgIdentifier;
+        this.title = title;
+        this.options = options;
     }
 
-    public void setStart(int start) {
-        this.start = start;
+    public int getStart() {
+        return start;
     }
 
     public int getStop() {
         return stop;
     }
 
-    public void setStop(int stop) {
-        this.stop = stop;
-    }
-
     public List<String> getCategories() {
         return categories;
-    }
-
-    public void setCategories(List<String> categories) {
-        this.categories = categories;
     }
 
     public String getEpgIdentifier() {
         return epgIdentifier;
     }
 
-    public void setEpgIdentifier(String epgIdentifier) {
-        this.epgIdentifier = epgIdentifier;
-    }
-
     public String getTitle() {
         return title;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
     public Map<String, Boolean> getOptions() {
         return options;
-    }
-
-    public void setOptions(Map<String, Boolean> options) {
-        this.options = options;
     }
 
 }
