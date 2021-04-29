@@ -47,11 +47,13 @@ public class DB {
             settings.put(Environment.DIALECT, "org.hibernate.dialect.PostgreSQLDialect");
             settings.put(Environment.CURRENT_SESSION_CONTEXT_CLASS, "thread");
             settings.put(Environment.SHOW_SQL, true);
-            settings.put(Environment.HBM2DDL_AUTO, HIBERNATE_DDL);
             settings.put(Environment.PHYSICAL_NAMING_STRATEGY, "dk.sdu.swe.data.strategies.NameStrategy");
 
-            System.out.println(settings.toString());
+            settings.put("hibernate.connection.CharSet", "utf8");
+            settings.put("hibernate.connection.characterEncoding", "utf8");
+            settings.put("hibernate.connection.useUnicode", true);
 
+            settings.put(Environment.HBM2DDL_AUTO, HIBERNATE_DDL);
 
             cfg.setProperties(settings);
 
@@ -71,6 +73,7 @@ public class DB {
         annotatedClasses.add(Credit.class);
         annotatedClasses.add(Person.class);
         annotatedClasses.add(Channel.class);
+        annotatedClasses.add(EPGProgramme.class);
     }
 
     public synchronized static Session openSession() {
