@@ -1,54 +1,44 @@
 package dk.sdu.swe.domain.models;
 
-import dk.sdu.swe.data.FacadeDB;
+import javax.persistence.*;
 
-import java.util.List;
-
+@Entity
+@Table(name = "credits")
 public class Credit {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private int programme;
-    private String[] epg;
-    private int person;
 
-    public Credit(int id, int programme, String[] epg, int person) {
-        this.id = id;
+    @OneToOne
+    @JoinColumn(name = "programme_id", referencedColumnName = "id")
+    private Programme programme;
+
+    @OneToOne
+    @JoinColumn(name = "person_id", referencedColumnName = "id")
+    private Person person;
+
+    public Credit(Programme programme, Person person) {
         this.programme = programme;
-        this.epg = epg;
         this.person = person;
     }
 
-    public int getId() {
-        return id;
-    }
+    public Credit() {}
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public int getProgramme() {
+    public Programme getProgramme() {
         return programme;
     }
 
-    public void setProgramme(int programme) {
+    public void setProgramme(Programme programme) {
         this.programme = programme;
     }
 
-    public String[] getEpg() {
-        return epg;
-    }
-
-    public void setEpg(String[] epg) {
-        this.epg = epg;
-    }
-
-    public int getPerson() {
+    public Person getPerson() {
         return person;
     }
 
-    public void setPerson(int person) {
+    public void setPerson(Person person) {
         this.person = person;
     }
-
 
 }

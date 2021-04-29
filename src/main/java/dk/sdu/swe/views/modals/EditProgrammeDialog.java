@@ -1,6 +1,8 @@
 package dk.sdu.swe.views.modals;
 
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXPopup;
+import dk.sdu.swe.views.partials.PopupListMenu;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -20,6 +22,7 @@ public class EditProgrammeDialog extends Dialog<Boolean> {
 
     @FXML
     private GaussianBlur backgroundEffect;
+
 
     public EditProgrammeDialog(Window window) {
         this.initOwner(window);
@@ -45,10 +48,6 @@ public class EditProgrammeDialog extends Dialog<Boolean> {
         }
     }
 
-    @FXML
-    private void initialize() {
-
-    }
 
     @FXML
     private void handleClose(ActionEvent event) {

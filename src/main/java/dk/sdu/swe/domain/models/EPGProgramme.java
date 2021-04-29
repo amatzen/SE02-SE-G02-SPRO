@@ -1,63 +1,66 @@
 package dk.sdu.swe.domain.models;
 
+import org.joda.time.DateTime;
+import org.joda.time.Instant;
+
+import javax.persistence.*;
 import java.util.List;
 import java.util.Map;
 
+@Entity
+@Table(name = "programme_egp_entries")
 public class EPGProgramme {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
 
-    private int start;
-    private int stop;
-    private List<String> categories;
+    private String start;
+    private String stop;
     private String epgIdentifier;
+
+    private int epgChannelId;
+
+    @Column
     private String title;
+
+    @Transient
+    private List<String> categories;
+
+    @Transient
     private Map<String, Boolean> options;
 
-    public int getStart() {
+    public EPGProgramme(int epgChannelId, Instant start, Instant stop, List<String> categories, String epgIdentifier, String title, Map<String, Boolean> options) {
+        this.epgChannelId = epgChannelId;
+        this.start = start.toString();
+        this.stop = stop.toString();
+        this.categories = categories;
+        this.epgIdentifier = epgIdentifier;
+        this.title = title;
+        this.options = options;
+    }
+
+    public String getStart() {
         return start;
     }
 
-    public void setStart(int start) {
-        this.start = start;
-    }
-
-    public int getStop() {
+    public String getStop() {
         return stop;
-    }
-
-    public void setStop(int stop) {
-        this.stop = stop;
     }
 
     public List<String> getCategories() {
         return categories;
     }
 
-    public void setCategories(List<String> categories) {
-        this.categories = categories;
-    }
-
     public String getEpgIdentifier() {
         return epgIdentifier;
-    }
-
-    public void setEpgIdentifier(String epgIdentifier) {
-        this.epgIdentifier = epgIdentifier;
     }
 
     public String getTitle() {
         return title;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
     public Map<String, Boolean> getOptions() {
         return options;
-    }
-
-    public void setOptions(Map<String, Boolean> options) {
-        this.options = options;
     }
 
 }

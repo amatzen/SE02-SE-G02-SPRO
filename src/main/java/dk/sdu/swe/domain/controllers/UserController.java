@@ -21,7 +21,7 @@ public class UserController {
         }
         return UserControllerInstance;
     }
-
+/*
     public static JSONObject userToJson(User user) {
         JSONObject json = new JSONObject();
 
@@ -44,10 +44,12 @@ public class UserController {
 
     public static User jsonToUser(JSONObject o) throws Exception {
         return switch (o.getString("permission")) {
-            case "SystemAdministrator" -> new SystemAdministrator(o.getInt("id"), o.getString("username"), o.getString("email"), o.getJSONObject("name").getString("_combined"), o.getInt("companyId"));
-            case "CompanyAdministrator" -> new CompanyAdministrator(o.getInt("id"), o.getString("username"), o.getString("email"), o.getJSONObject("name").getString("_combined"), o.getInt("companyId"));
-            default -> new User(o.getInt("id"), o.getString("username"), o.getString("email"), o.getJSONObject("name").getString("_combined"), o.getInt("companyId"));
+            case "SystemAdministrator" -> new SystemAdministrator(o.getString("username"), o.getString("email"), o.getJSONObject("name").getString("_combined"), o.getInt("companyId"));
+            case "CompanyAdministrator" -> new CompanyAdministrator(o.getString("username"), o.getString("email"), o.getJSONObject("name").getString("_combined"), o.getInt("companyId"));
+            default -> new User(o.getString("username"), o.getString("email"), o.getJSONObject("name").getString("_combined"), o.getInt("companyId"));
         };
     }
+
+ */
 
 }

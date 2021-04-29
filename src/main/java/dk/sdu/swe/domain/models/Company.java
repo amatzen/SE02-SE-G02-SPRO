@@ -1,16 +1,32 @@
 package dk.sdu.swe.domain.models;
 
+import dk.sdu.swe.data.converters.CompanyDetailsConverter;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name = "companies")
 public class Company {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
     private String name;
-    private int subsidiaryOf;
+
+    @ManyToOne
+    @JoinColumn(nullable = true, name = "parent_company_id", referencedColumnName = "id")
+    private Company parentCompany;
+
+    @Convert(converter = CompanyDetailsConverter.class)
     private CompanyDetails companyDetails;
+
     private String logo;
 
-    public Company(int id, String name, int subsidiaryOf, CompanyDetails companyDetails, String logo) {
+    public Company(int id, String name, Company parentCompany, CompanyDetails companyDetails, String logo) {
         this.id = id;
         this.name = name;
-        this.subsidiaryOf = subsidiaryOf;
+        this.parentCompany = parentCompany;
         this.companyDetails = companyDetails;
         this.logo = logo;
     }
@@ -31,12 +47,12 @@ public class Company {
         this.name = name;
     }
 
-    public int getSubsidiaryOf() {
-        return subsidiaryOf;
+    public Company getParentCompany() {
+        return parentCompany;
     }
 
-    public void setSubsidiaryOf(int subsidiaryOf) {
-        this.subsidiaryOf = subsidiaryOf;
+    public void setParentCompany(Company company) {
+        this.parentCompany = company;
     }
 
     public CompanyDetails getCompanyDetails() {

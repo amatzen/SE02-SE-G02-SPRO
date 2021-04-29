@@ -1,40 +1,53 @@
 package dk.sdu.swe.views.modals;
 
+
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXListView;
+import dk.sdu.swe.domain.models.Company;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Dialog;
 import javafx.scene.control.TextField;
 import javafx.scene.effect.GaussianBlur;
-import javafx.scene.image.ImageView;
 import javafx.stage.Modality;
 import javafx.stage.StageStyle;
 import javafx.stage.Window;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.Objects;
 
-public class EditPersonModal extends Dialog<Boolean> {
+public class EditCompanyDialog extends Dialog<Boolean> {
 
     @FXML
-    private TextField rolesTextfield;
+    private TextField companyName;
 
     @FXML
-    private TextField nameTextField;
+    private TextField cvrNumber;
 
     @FXML
-    private TextField seriesTextField;
+    private TextField adresseField;
 
     @FXML
-    private ImageView imageview;
+    private JFXButton saveBtn;
 
     @FXML
-    private JFXButton saveBtn, closeBtn;
+    private JFXButton closeBtn;
 
+    @FXML
+    private Company company;
+
+    @FXML
     private GaussianBlur backgroundEffect;
+    @FXML
+    private JFXListView usersListView;
 
-    public EditPersonModal(Window window) {
+
+    public EditCompanyDialog(Window window, Company company) {
+        this.company = company;
+
         this.initOwner(window);
         this.initModality(Modality.APPLICATION_MODAL);
         this.initStyle(StageStyle.UNDECORATED);
@@ -48,7 +61,7 @@ public class EditPersonModal extends Dialog<Boolean> {
 
         FXMLLoader fxmlLoader = new FXMLLoader(
             Objects.requireNonNull(
-                getClass().getClassLoader().getResource("dk/sdu/swe/ui/persons/components/EditPerson.fxml")));
+                getClass().getClassLoader().getResource("dk/sdu/swe/ui/companies/components/editCompanyModal.fxml")));
         fxmlLoader.setController(this);
 
         try {
@@ -58,14 +71,18 @@ public class EditPersonModal extends Dialog<Boolean> {
         }
     }
 
-    @FXML
     private void initialize() {
+        companyName.setText(company.getName());
+
 
     }
 
     @FXML
-    private void handleClose(ActionEvent event) {
+    void handleClose(ActionEvent event) {
         setResult(false);
         hide();
     }
+
+
+
 }

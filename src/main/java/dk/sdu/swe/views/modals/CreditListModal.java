@@ -69,7 +69,7 @@ public class CreditListModal extends Dialog<Boolean> {
         titleLbl.setText(programme.getTitle());
         categoryLbl.setText(programme.getCategory());
 
-        List<Credit> credits = null;
+        /*List<Credit> credits = null;
 
         try {
             credits = CreditController.getInstance().getAll()
@@ -80,7 +80,7 @@ public class CreditListModal extends Dialog<Boolean> {
 
         for (Credit credit : credits) {
             creditsPane.getChildren().add(new CreditListItem(credit));
-        }
+        }*/
     }
 
     @FXML

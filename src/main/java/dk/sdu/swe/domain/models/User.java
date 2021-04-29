@@ -1,8 +1,9 @@
 package dk.sdu.swe.domain.models;
 
-import dk.sdu.swe.data.FacadeDB;
+import at.favre.lib.crypto.bcrypt.BCrypt;
+import dk.sdu.swe.data.converters.NameConverter;
 import dk.sdu.swe.exceptions.UserCreationException;
-import org.hibernate.annotations.Type;
+import org.hibernate.annotations.NaturalId;
 
 import javax.persistence.*;
 import java.util.Arrays;
@@ -12,25 +13,31 @@ import java.util.Objects;
 /**
  * The type User.
  */
-@MappedSuperclass
-@Entity(name = "users")
+@Entity
+@Table(name = "users")
 @Inheritance(strategy= InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(
     name = "UserType",
     discriminatorType = DiscriminatorType.STRING
 )
+@DiscriminatorValue("User")
 public class User implements IUser {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
+    @NaturalId
+    @Column(unique = true)
     private String username;
-    private String email;
-    private int companyId;
 
-    @Column()
-    @Type(type = "string")
+    @Column
+    private String email;
+
+    @Convert(converter = NameConverter.class)
     private Name name;
+
+    @Column
+    private String passwordHash;
 
     @Transient
     private final String[] permissions = {
@@ -44,14 +51,13 @@ public class User implements IUser {
     /**
      * Instantiates a new User.
      *
-     * @param id       the user id
      * @param username the username
      * @param email    the email
      * @param name     the name
-     * @param companyId
+     * @param password the password
      * @throws Exception the exception
      */
-    public User(int id, String username, String email, String name, int companyId) throws Exception {
+    public User(String username, String email, String name, String password) throws Exception {
 
         // Validate username
         if (username.trim().length() < 3 || username.trim().length() > 24) {
@@ -68,23 +74,10 @@ public class User implements IUser {
         this.email = email.trim();
         this.name = new Name(name);
 
-        this.id = id;
-        this.companyId = companyId;
+        this.passwordHash = BCrypt.withDefaults().hashToString(12, password.toCharArray());
     }
 
     public User() {}
-
-    public static User get(int id) throws Exception {
-        return FacadeDB.getInstance().getUser(id);
-    }
-
-    public static List<User> getAll() throws Exception {
-        return FacadeDB.getInstance().getUsers();
-    }
-
-    public static void create(User user) throws Exception {
-        FacadeDB.getInstance().createUser(user);
-    }
 
     public String getUsername() {
         return username;
@@ -102,16 +95,24 @@ public class User implements IUser {
         return id;
     }
 
-    public int getCompanyId() {
-        return companyId;
-    }
-
-    public void setCompanyId(int companyId) {
-        this.companyId = companyId;
+    public boolean matchPassword(String password) {
+        return BCrypt.verifyer().verify(password.toCharArray(), this.passwordHash.toCharArray()).verified;
     }
 
     @Override
     public boolean hasPermission(String permissionKey) {
         return Arrays.stream(this.permissions).anyMatch(s -> Objects.equals(s, permissionKey));
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+            "id=" + id +
+            ", username='" + username + '\'' +
+            ", email='" + email + '\'' +
+            ", name=" + name +
+            ", passwordHash='" + passwordHash + '\'' +
+            ", permissions=" + Arrays.toString(permissions) +
+            '}';
     }
 }

@@ -64,6 +64,7 @@ public class UserAdministrationDialog extends Dialog<Boolean> {
 
     @FXML
     private void initialize() {
+        /*
         companyName.setText(company.getName());
 
         List<User> users = null;
@@ -76,7 +77,7 @@ public class UserAdministrationDialog extends Dialog<Boolean> {
             user -> {
                 usersListView.getItems().add(new UserListItem(user));
             }
-        );
+        );*/
     }
 
     @FXML
