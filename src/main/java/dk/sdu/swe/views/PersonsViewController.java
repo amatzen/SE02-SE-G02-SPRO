@@ -1,7 +1,6 @@
 package dk.sdu.swe.views;
 
 import com.jfoenix.controls.JFXListView;
-import dk.sdu.swe.data.FacadeDB;
 import dk.sdu.swe.domain.models.Person;
 import dk.sdu.swe.views.partials.PersonListItem;
 import javafx.fxml.FXML;
@@ -33,7 +32,7 @@ public class PersonsViewController extends VBox {
     }
 
     @FXML
-    private void initialize() {
+    private void initialize() {/*
         List<Person> people = null;
         try {
             people = FacadeDB.getInstance().getPeople();
@@ -42,7 +41,7 @@ public class PersonsViewController extends VBox {
         }
         for (Person person : people) {
             peopleListView.getItems().add(new PersonListItem(person));
-        }
+        }*/
     }
 
     @FXML
