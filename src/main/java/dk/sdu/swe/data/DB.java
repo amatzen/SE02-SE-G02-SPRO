@@ -48,6 +48,7 @@ public class DB {
             settings.put(Environment.CURRENT_SESSION_CONTEXT_CLASS, "thread");
             settings.put(Environment.SHOW_SQL, true);
             settings.put(Environment.HBM2DDL_AUTO, HIBERNATE_DDL);
+            settings.put(Environment.PHYSICAL_NAMING_STRATEGY, "dk.sdu.swe.data.strategies.NameStrategy");
 
             System.out.println(settings.toString());
 
