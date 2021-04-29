@@ -1,5 +1,7 @@
 package dk.sdu.swe.domain.models;
 
+import org.json.JSONObject;
+
 public class CompanyDetails {
 
     private String country;
@@ -34,5 +36,13 @@ public class CompanyDetails {
 
     public void setNbr(String nbr) {
         this.nbr = nbr;
+    }
+
+    public JSONObject toJson() {
+        JSONObject json = new JSONObject();
+        json.put("lei", getLei());
+        json.put("nbr", getNbr());
+        json.put("country", getCountry());
+        return json;
     }
 }
