@@ -1,36 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXTextField?>
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<BorderPane prefHeight="469.0" prefWidth="698.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dk.sdu.swe.views.ProgrammesViewController">
+<BorderPane prefHeight="469.0" prefWidth="698.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
     <center>
         <HBox prefHeight="100.0" prefWidth="698.0" BorderPane.alignment="CENTER">
             <children>
                 <VBox prefHeight="469.0" prefWidth="349.0">
                     <children>
-                        <JFXTextField fx:id="rolleTextfield" prefHeight="50.0" prefWidth="309.0" promptText="Titel" style="-fx-border-color: #cccccc; -fx-border-radius: 5px;                                 -fx-padding: 0.333333em 1em 0.333333em 1em;                                 -fx-background-color: transparent; -jfx-unfocus-color: transparent;                                 -jfx-focus-color: transparent;" text="Rolle">
+                        <JFXTextField fx:id="rolleTextfield" prefHeight="50.0" prefWidth="309.0" promptText="Rolle" style="-fx-border-color: #cccccc; -fx-border-radius: 5px;                                 -fx-padding: 0.333333em 1em 0.333333em 1em;                                 -fx-background-color: transparent; -jfx-unfocus-color: transparent;                                 -jfx-focus-color: transparent;">
                             <VBox.margin>
                                 <Insets left="30.0" right="10.0" top="30.0" />
                             </VBox.margin>
                         </JFXTextField>
-                        <JFXTextField fx:id="nameTextfield" layoutX="10.0" layoutY="10.0" prefHeight="49.0" prefWidth="309.0" promptText="Produktionsår" style="-fx-background-color: transparent;                                 -fx-border-color: #CCCCCC;                                 -fx-padding: 0.333333em 1em 0.333333em 1em;                                 -jfx-unfocus-color: transparent;                                 -fx-border-radius: 5px; -jfx-focus-color: transparent;" text="Navn">
+                        <JFXTextField fx:id="nameTextfield" layoutX="10.0" layoutY="10.0" prefHeight="49.0" prefWidth="309.0" promptText="Navn" style="-fx-background-color: transparent;                                 -fx-border-color: #CCCCCC;                                 -fx-padding: 0.333333em 1em 0.333333em 1em;                                 -jfx-unfocus-color: transparent;                                 -fx-border-radius: 5px; -jfx-focus-color: transparent;">
                             <VBox.margin>
                                 <Insets left="30.0" right="10.0" top="20.0" />
                             </VBox.margin>
                         </JFXTextField>
-                  <JFXTextField fx:id="seriesTextfield" prefHeight="50.0" prefWidth="309.0" promptText="Titel" style="-fx-border-color: #cccccc; -fx-border-radius: 5px;                                 -fx-padding: 0.333333em 1em 0.333333em 1em;                                 -fx-background-color: transparent; -jfx-unfocus-color: transparent;                                 -jfx-focus-color: transparent;" text="Serie">
+                  <DatePicker promptText="Vælg Fødselsdagsdato" showWeekNumbers="true">
                      <VBox.margin>
                         <Insets left="30.0" right="10.0" top="20.0" />
                      </VBox.margin>
-                  </JFXTextField>
+                  </DatePicker>
                     </children>
                 </VBox>
                 <VBox prefHeight="469.0" prefWidth="349.0">
@@ -45,14 +42,7 @@
                         </VBox>
                         <HBox alignment="BOTTOM_RIGHT" layoutX="10.0" layoutY="250.0" prefHeight="169.0" prefWidth="349.0">
                             <children>
-                        <JFXButton fx:id="editBtn" layoutX="251.0" layoutY="81.0" prefHeight="35.0" prefWidth="108.0" style="-fx-background-color: #757575; -fx-background-color: ;" text="Rediger" textAlignment="RIGHT" textFill="WHITE">
-                           <HBox.margin>
-                              <Insets bottom="30.0" right="30.0" />
-                           </HBox.margin>
-                           <opaqueInsets>
-                              <Insets />
-                           </opaqueInsets></JFXButton>
-                                <JFXButton fx:id="saveBtn" prefHeight="35.0" prefWidth="78.0" style="-fx-background-color: #FF9800;" text="Gem" textAlignment="RIGHT" textFill="WHITE">
+                                <JFXButton fx:id="saveBtn" buttonType="RAISED" prefHeight="35.0" prefWidth="78.0" style="-fx-background-color: #FF9800;" text="Gem" textAlignment="RIGHT" textFill="WHITE">
                                     <HBox.margin>
                                         <Insets bottom="30.0" right="50.0" />
                                     </HBox.margin>
