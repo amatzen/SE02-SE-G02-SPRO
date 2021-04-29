@@ -1,14 +1,19 @@
 package dk.sdu.swe.helpers;
 
 import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
 
 public class PubSub {
 
-    private static volatile Map<String, Observer> observerList = new HashMap<>();
+    private static volatile Map<String, List<Observer>> observerList = new HashMap<>();
 
     public static synchronized void subscribe(String topic, Observer observer) {
-        observerList.put(topic, observer);
+        if (!observerList.containsKey(topic)) {
+            observerList.put(topic, new LinkedList<>());
+        }
+        observerList.get(topic).add(observer);
     }
 
     public static synchronized void unsubscribe(String topic, Observer observer) {
@@ -19,8 +24,8 @@ public class PubSub {
         observerList
             .entrySet()
             .stream()
-            .filter(x -> x.getKey() == topic)
+            .filter(x -> x.getKey().equals(topic)).findAny()
             .map(Map.Entry::getValue)
-            .forEach(x -> x.onNotify(topic, payload));
+            .ifPresent(l -> l.forEach(x -> x.onNotify(topic, payload)));
     }
 }
