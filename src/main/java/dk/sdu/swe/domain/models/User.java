@@ -31,9 +31,6 @@ public class User implements IUser {
     @Column
     private String email;
 
-    @Column
-    private int companyId;
-
     @Convert(converter = NameConverter.class)
     private Name name;
 
@@ -111,7 +108,6 @@ public class User implements IUser {
             "id=" + id +
             ", username='" + username + '\'' +
             ", email='" + email + '\'' +
-            ", companyId=" + companyId +
             ", name=" + name +
             ", passwordHash='" + passwordHash + '\'' +
             ", permissions=" + Arrays.toString(permissions) +
