@@ -24,7 +24,7 @@
                 </VBox>
                 <VBox alignment="CENTER">
                     <children>
-                        <Label alignment="BOTTOM_LEFT" prefHeight="45.0" prefWidth="143.0" text="Name">
+                        <Label alignment="BOTTOM_LEFT" prefHeight="45.0" prefWidth="143.0" text="Navn">
                             <font>
                                 <Font name="System Bold" size="14.0" />
                             </font>
