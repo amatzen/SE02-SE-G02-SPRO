@@ -9,6 +9,9 @@ public class Channel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
+    @Column(name = "epg_id")
+    private int epgIdentifier;
+
     @Column(unique = true, nullable = false)
     private String name;
 
@@ -18,6 +21,18 @@ public class Channel {
     public Channel(String name, String logo) {
         this.name = name;
         this.logo = logo;
+    }
+
+    public Channel() {
+
+    }
+
+    public int getEpgId() {
+        return epgIdentifier;
+    }
+
+    public void setEpgId(int epgIdentifier) {
+        this.epgIdentifier = epgIdentifier;
     }
 
     public String getName() {

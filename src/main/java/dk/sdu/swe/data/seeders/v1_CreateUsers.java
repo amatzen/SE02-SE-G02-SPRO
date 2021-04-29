@@ -20,7 +20,7 @@ public class v1_CreateUsers {
         session.saveOrUpdate(new User("user", "crms+user@mgx.dk", "Normal Bruger", "kode"));
         session.saveOrUpdate(new CompanyAdministrator("company", "crms+companyadmin@mgx.dk", "Biz Admin", "kode"));
 
-        session.saveOrUpdate(new SystemAdministrator("almat20", "alexander@alexander.dk", "Alexander Matzen", "alexander"));
+        session.saveOrUpdate(new SystemAdministrator("almat20", "alexander@alexander.dk", "Alæxander Matzen", "alexander"));
 
         session.close();
     }

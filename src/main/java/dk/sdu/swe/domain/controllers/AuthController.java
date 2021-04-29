@@ -24,8 +24,6 @@ public class AuthController {
     }
 
     public boolean signIn(String username, String password) throws Exception {
-        System.out.println(this.currentUser);
-        System.out.println(username + ":" + password);
         User user = null;
 
         Session session = DB.openSession();
@@ -38,14 +36,11 @@ public class AuthController {
             return false;
         }
 
-        System.out.println(user.toString());
-
         if(!user.matchPassword(password)) {
             return false;
         }
 
         this.currentUser = user;
-        System.out.println(this.currentUser);
         return true;
     }
 
