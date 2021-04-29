@@ -11,28 +11,28 @@ public class UserTest {
     @Test
     void testUserCreation() {
         assertDoesNotThrow(() -> {
-            new User(1, "almat20", "alexander@alexander.dk", "Alexander Matzen", 1);
+            new User( "almat20", "alexander@alexander.dk", "Alexander Matzen", "alexander");
         });
     }
 
     @Test
     void testUserCreationWithIncorrectName() {
         assertThrows(InvalidNameException.class, () -> {
-            new User(2, "almat20", "alexander@alexander.dk", "Alexander", 1);
+            new User("almat20", "alexander@alexander.dk", "Alexander", "alexander");
         });
     }
 
     @Test
     void testUserCreationWithIncorrectEmail() {
         assertThrows(UserCreationException.class, () -> {
-            new User(3, "almat20", "alexanderalexander.dk", "Alexander Matzen", 1);
+            new User("almat20", "alexanderalexander.dk", "Alexander Matzen", "alexander");
         });
     }
 
     @Test
     void testUserCreationWithTooShortUsername() {
         assertThrows(UserCreationException.class, () -> {
-           new User(4, "am", "alexander@alexander.dk", "Alexander Matzen", 1);
+           new User("am", "alexander@alexander.dk", "Alexander Matzen", "alexander");
         });
     }
 }
