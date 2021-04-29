@@ -5,32 +5,60 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="469.0" prefWidth="698.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dk.sdu.swe.ui.companies.components.AddProgramModal">
+<BorderPane prefHeight="469.0" prefWidth="698.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <HBox prefHeight="93.0" prefWidth="698.0" style="-fx-background-color: #ff9800;">
-         <children>
-            <Label prefHeight="93.0" prefWidth="280.0" text="Tilføj virksomheder" translateX="33.0">
-               <font>
-                  <Font size="22.0" />
-               </font>
-            </Label>
-         </children>
-      </HBox>
-      <TextField layoutX="21.0" layoutY="137.0" prefHeight="56.0" prefWidth="328.0" promptText=" Firma" />
-      <TextField layoutX="21.0" layoutY="207.0" prefHeight="56.0" prefWidth="328.0" promptText=" CVR" />
-      <TextField layoutX="21.0" layoutY="277.0" prefHeight="56.0" prefWidth="328.0" promptText=" Adresse" />
-      <JFXButton layoutX="414.0" layoutY="379.0" prefHeight="36.0" prefWidth="135.0" style="-fx-background-color: #ffa500;" text="REDIGER" textFill="WHITE" />
+      <HBox prefHeight="93.0" prefWidth="698.0" style="-fx-background-color: #ff9800;" />
+      <TextField fx:id="companyName" layoutX="21.0" layoutY="137.0" prefHeight="56.0" prefWidth="328.0" promptText=" Firma" />
+      <TextField fx:id="cvrNumber" layoutX="21.0" layoutY="207.0" prefHeight="56.0" prefWidth="328.0" promptText=" CVR" />
+      <TextField fx:id="adresseField" layoutX="21.0" layoutY="277.0" prefHeight="56.0" prefWidth="328.0" promptText=" Adresse" />
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="441.0" layoutY="153.0" pickOnBounds="true" preserveRatio="true" />
-      <JFXButton layoutX="572.0" layoutY="379.0" prefHeight="36.0" prefWidth="77.0" style="-fx-background-color: #ffa500;" text="GEM" textFill="WHITE" />
+      <JFXButton fx:id="saveBtn" layoutX="460.0" layoutY="390.0" prefHeight="36.0" prefWidth="117.0" style="-fx-background-color: #ffa500;" text="GEM" textFill="WHITE" />
       <ImageView fitHeight="212.0" fitWidth="209.0" layoutX="414.0" layoutY="114.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../images/company.png" />
          </image>
       </ImageView>
+      <JFXButton fx:id="closeBtn" layoutX="10.0" layoutY="10.0" onAction="#handleClose" prefHeight="45.0" prefWidth="45.0" style="-fx-background-color: #FF9800;" text="X" textAlignment="RIGHT" translateX="633.0" translateY="5.0">
+         <font>
+            <Font name="Comic Sans MS" size="18.0" />
+         </font>
+      </JFXButton>
    </children>
-</AnchorPane>
+   <top>
+      <HBox prefHeight="93.0" prefWidth="698.0" style="-fx-background-color: #ff9800;" BorderPane.alignment="CENTER">
+         <children>
+            <Label prefHeight="93.0" prefWidth="280.0" text="Tilføj virksomhed" translateX="33.0">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="closeBtn1" onAction="#handleClose" prefHeight="45.0" prefWidth="45.0" style="-fx-background-color: #FF9800;" text="X" textAlignment="RIGHT" translateX="372.0" translateY="9.0">
+               <font>
+                  <Font name="Comic Sans MS" size="18.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </HBox>
+   </top>
+   <center>
+      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextField fx:id="companyTextfield" prefHeight="56.0" prefWidth="328.0" promptText=" Firma" translateX="21.0" translateY="32.0" />
+            <TextField fx:id="adresseTextField" prefHeight="56.0" prefWidth="328.0" promptText=" Adresse" translateX="-214.0" translateY="172.0" />
+            <TextField fx:id="cvrTextField" prefHeight="56.0" prefWidth="328.0" promptText=" CVR" translateX="-446.0" translateY="100.0" />
+         </children>
+      </HBox>
+   </center>
+   <bottom>
+      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <JFXButton prefHeight="36.0" prefWidth="117.0" style="-fx-background-color: #ffa500;" text="REDIGER" translateX="414.0" />
+            <JFXButton prefHeight="36.0" prefWidth="86.0" style="-fx-background-color: #ffa500;" text="GEM" translateX="438.0" />
+         </children>
+      </HBox>
+   </bottom>
+</BorderPane>

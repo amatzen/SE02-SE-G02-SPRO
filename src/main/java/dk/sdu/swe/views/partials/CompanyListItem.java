@@ -3,6 +3,7 @@ package dk.sdu.swe.views.partials;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPopup;
 import dk.sdu.swe.domain.models.Company;
+import dk.sdu.swe.views.modals.EditCompanyDialog;
 import dk.sdu.swe.views.modals.EditProgrammeDialog;
 import dk.sdu.swe.views.modals.UserAdministrationDialog;
 import javafx.fxml.FXML;
@@ -70,6 +71,9 @@ public class CompanyListItem extends VBox {
     }
 
     private void editCompany() {
+
+        Dialog<Boolean> editCompanyDialog = new EditCompanyDialog(getScene().getWindow(), company);
+        editCompanyDialog.show();
 
     }
 

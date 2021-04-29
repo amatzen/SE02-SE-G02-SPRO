@@ -1,12 +1,11 @@
 package dk.sdu.swe.views.modals;
 
 import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXPopup;
-import dk.sdu.swe.views.partials.PopupListMenu;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Dialog;
+import javafx.scene.control.TextField;
 import javafx.scene.effect.GaussianBlur;
 import javafx.stage.Modality;
 import javafx.stage.StageStyle;
@@ -15,16 +14,32 @@ import javafx.stage.Window;
 import java.io.IOException;
 import java.util.Objects;
 
-public class EditProgrammeDialog extends Dialog<Boolean> {
+public class AddCompanyModal extends Dialog<Boolean> {
+
+   /*
+
+   IKKE DONE YET
+   
+
+
+   @FXML
+    private TextField companyTextfield;
 
     @FXML
-    private JFXButton closeBtn;
+    private TextField cvrTextField;
 
     @FXML
+    private TextField adresseTextField;
+
+    @FXML
+    private JFXButton editBtn;
+
+    @FXML
+    private JFXButton saveBtn;
     private GaussianBlur backgroundEffect;
 
 
-    public EditProgrammeDialog(Window window) {
+    public AddCompanyModal(Window window) {
         this.initOwner(window);
         this.initModality(Modality.APPLICATION_MODAL);
         this.initStyle(StageStyle.UNDECORATED);
@@ -38,7 +53,7 @@ public class EditProgrammeDialog extends Dialog<Boolean> {
 
         FXMLLoader fxmlLoader = new FXMLLoader(
             Objects.requireNonNull(
-                getClass().getClassLoader().getResource("dk/sdu/swe/ui/programmes/EditProgramme.fxml")));
+                getClass().getClassLoader().getResource("dk/sdu/swe/ui/companies/components/addCompanyModal.fxml")));
         fxmlLoader.setController(this);
 
         try {
@@ -48,10 +63,19 @@ public class EditProgrammeDialog extends Dialog<Boolean> {
         }
     }
 
+    @FXML
+    private void initialize() {
+
+    }
 
     @FXML
     private void handleClose(ActionEvent event) {
         setResult(false);
         hide();
     }
+    *
+
+
+
+    */
 }
