@@ -2,7 +2,6 @@ package dk.sdu.swe.domain.models;
 
 import javax.persistence.*;
 import java.util.List;
-import java.util.Map;
 
 @Entity
 @Table(name = "programme")
@@ -26,6 +25,9 @@ public class Programme {
         this.channel = channel;
         this.prodYear = prodYear;
         this.category = category;
+    }
+
+    public Programme() {
     }
 
     public String getTitle() {

@@ -18,13 +18,14 @@ import org.hibernate.Transaction;
 public class Application extends javafx.application.Application {
     public static void main(String[] args) throws Exception {
         EnvironmentSelector.getInstance().setEnvironment(switch (System.getenv("DEFAULT_ENVIRONMENT")) {
-            case "local" -> Environment.LOCAL;
             case "prod" -> Environment.PROD;
-            default -> Environment.FLATFILE;
+            default -> Environment.LOCAL;
         });
 
         if(EnvironmentSelector.getInstance().getEnvironment() == Environment.LOCAL) {
-            SeederUtility.run();
+            (new Thread(() -> {
+                SeederUtility.run();
+            })).start();
         }
 
         launch();

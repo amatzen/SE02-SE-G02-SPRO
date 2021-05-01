@@ -38,7 +38,7 @@ public class ProgrammesViewController extends BorderPane {
     }
 
     public List<Programme> getAllProgrammes() {
-        return null;
+        return DB.loadAllData(Programme.class, DB.openSession());
     }
 
     @FXML
