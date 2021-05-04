@@ -1,4 +1,4 @@
-package dk.sdu.swe.views.modals;
+package dk.sdu.swe.views.modals.companies;
 
 import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
@@ -11,30 +11,33 @@ import javafx.stage.Modality;
 import javafx.stage.StageStyle;
 import javafx.stage.Window;
 
-import javax.swing.text.html.ImageView;
 import java.io.IOException;
 import java.util.Objects;
 
-public class AddPersonModal extends Dialog<Boolean> {
+public class AddCompanyModal extends Dialog<Boolean> {
+
+
+   
+
+
+   @FXML
+    private TextField companyTextfield;
 
     @FXML
-    private TextField rolesTextfield;
+    private TextField cvrTextField;
 
     @FXML
-    private TextField nameTextField;
+    private TextField adresseTextField;
 
     @FXML
-    private TextField seriesTextField;
+    private JFXButton editBtn;
 
     @FXML
-    private ImageView imageview;
-
-    @FXML
-    private JFXButton editBtn, saveBtn, closeBtn;
-
+    private JFXButton saveBtn;
     private GaussianBlur backgroundEffect;
 
-    public AddPersonModal(Window window) {
+
+    public AddCompanyModal(Window window) {
         this.initOwner(window);
         this.initModality(Modality.APPLICATION_MODAL);
         this.initStyle(StageStyle.UNDECORATED);
@@ -48,7 +51,7 @@ public class AddPersonModal extends Dialog<Boolean> {
 
         FXMLLoader fxmlLoader = new FXMLLoader(
             Objects.requireNonNull(
-                getClass().getClassLoader().getResource("dk/sdu/swe/ui/person/AddPerson.fxml")));
+                getClass().getClassLoader().getResource("dk/sdu/swe/ui/companies/components/addCompanyModal.fxml")));
         fxmlLoader.setController(this);
 
         try {
@@ -68,4 +71,5 @@ public class AddPersonModal extends Dialog<Boolean> {
         setResult(false);
         hide();
     }
+
 }

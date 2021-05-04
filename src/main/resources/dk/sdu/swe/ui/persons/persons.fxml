@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<fx:root maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="1024.0" prefWidth="1440.0"
-         type="VBox" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="1024.0" prefWidth="1440.0" type="VBox" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
     <children>
         <VBox prefHeight="200.0" prefWidth="1440.0" style="-fx-background-color: #E0E0E0;">
             <children>
@@ -59,7 +62,7 @@
                 <AnchorPane HBox.hgrow="ALWAYS">
                     <children>
                         <JFXListView fx:id="peopleListView" layoutX="27.0" layoutY="-149.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                        <JFXButton buttonType="RAISED" layoutX="1046.0" layoutY="95.0" prefHeight="45.0" prefWidth="45.0" style="-fx-background-color: #FF9800; -fx-background-radius: 30;" text="+" textFill="WHITE" AnchorPane.bottomAnchor="25.0" AnchorPane.rightAnchor="25.0">
+                        <JFXButton fx:id="fabBtn" buttonType="RAISED" layoutX="1046.0" layoutY="95.0" onAction="#addPersonModal" prefHeight="45.0" prefWidth="45.0" style="-fx-background-color: #FF9800; -fx-background-radius: 30;" text="+" textFill="WHITE" AnchorPane.bottomAnchor="25.0" AnchorPane.rightAnchor="25.0">
                             <font>
                                 <Font size="18.0" />
                             </font>

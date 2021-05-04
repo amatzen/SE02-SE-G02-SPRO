@@ -88,7 +88,7 @@ public class v3_CreateProgrammesForThisWeek {
                 if(!addedProgrammesTitle.contains(epgObj.getString("title"))) {
                     addedProgrammes.add(new Programme(
                         epgObj.getString("title"),
-                        channelObj.getString("id"),
+                        channelObj.getInt("id"),
                         0,
                         ""
                     ));

@@ -8,8 +8,8 @@ public class v2_CreateChannels {
     public static void run() throws Exception {
         Session session = DB.openSession();
 
-        int users = ((Number) session.createSQLQuery("SELECT COUNT(*) FROM channels").getSingleResult()).intValue();
-        if(users != 0) {
+        int channels = ((Number) session.createSQLQuery("SELECT COUNT(*) FROM channels").getSingleResult()).intValue();
+        if(channels != 0) {
             return;
         }
 
