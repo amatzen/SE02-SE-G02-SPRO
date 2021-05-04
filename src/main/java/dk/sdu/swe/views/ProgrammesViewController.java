@@ -1,6 +1,7 @@
 package dk.sdu.swe.views;
 
 import com.jfoenix.controls.JFXListView;
+import dk.sdu.swe.data.DB;
 import dk.sdu.swe.domain.controllers.ProgrammeController;
 import dk.sdu.swe.domain.models.Programme;
 import dk.sdu.swe.views.partials.ProgrammeListItem;
