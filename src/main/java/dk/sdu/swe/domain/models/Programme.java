@@ -20,14 +20,14 @@ public class Programme {
     @Transient
     private List<EPGProgramme> epgDates;
 
-    public Programme() {
-    }
-
     public Programme(String title, int channel, int prodYear, String category) {
         this.title = title;
         this.channel = channel;
         this.prodYear = prodYear;
         this.category = category;
+    }
+
+    public Programme() {
     }
 
     public String getTitle() {

@@ -3,7 +3,7 @@ package dk.sdu.swe.views.partials;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPopup;
 import dk.sdu.swe.domain.models.Person;
-import dk.sdu.swe.views.modals.EditPersonModal;
+import dk.sdu.swe.views.modals.persons.EditPersonModal;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Dialog;

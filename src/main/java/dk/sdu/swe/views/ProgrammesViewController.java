@@ -1,17 +1,23 @@
 package dk.sdu.swe.views;
 
 import com.jfoenix.controls.JFXComboBox;
+import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXListView;
 import dk.sdu.swe.domain.controllers.ChannelController;
+import dk.sdu.swe.data.DB;
 import dk.sdu.swe.domain.controllers.ProgrammeController;
 import dk.sdu.swe.domain.models.Channel;
 import dk.sdu.swe.domain.models.Programme;
+import dk.sdu.swe.views.modals.companies.AddCompanyModal;
+import dk.sdu.swe.views.modals.persons.AddPersonModal;
+import dk.sdu.swe.views.modals.programmes.AddProgrammesModal;
 import dk.sdu.swe.views.partials.ProgrammeListItem;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Dialog;
 import javafx.scene.layout.BorderPane;
 
 import java.io.IOException;
@@ -23,6 +29,8 @@ public class ProgrammesViewController extends BorderPane {
 
     @FXML
     private JFXListView<ProgrammeListItem> programmesListView;
+    @FXML
+    private JFXButton fabBtn;
 
     @FXML
     private JFXComboBox<Label> channels;
@@ -49,7 +57,7 @@ public class ProgrammesViewController extends BorderPane {
     }
 
     public List<Programme> getAllProgrammes() {
-        return null;
+        return DB.loadAllData(Programme.class, DB.openSession());
     }
 
     @FXML
@@ -104,4 +112,11 @@ public class ProgrammesViewController extends BorderPane {
 
         updateProgrammes(searchResult);
     }
+    @FXML
+    void addProgramme(ActionEvent event) {
+        Dialog<Boolean> addProgrammesModal = new AddProgrammesModal(getScene().getWindow());
+        addProgrammesModal.show();
+    }
+
+
 }
