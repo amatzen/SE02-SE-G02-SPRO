@@ -2,7 +2,6 @@ package dk.sdu.swe.domain.models;
 
 import javax.persistence.*;
 import java.util.List;
-import java.util.Map;
 
 @Entity
 @Table(name = "programme")
@@ -20,6 +19,9 @@ public class Programme {
 
     @Transient
     private List<EPGProgramme> epgDates;
+
+    public Programme() {
+    }
 
     public Programme(String title, String channel, int prodYear, String category) {
         this.title = title;
