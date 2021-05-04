@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="469.0" prefWidth="698.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane prefHeight="469.0" prefWidth="698.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
     <center>
         <HBox prefHeight="100.0" prefWidth="698.0" BorderPane.alignment="CENTER">
             <children>
@@ -71,7 +75,7 @@
                 </HBox>
                 <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                     <children>
-                        <JFXButton fx:id="closeBtn" prefHeight="28.0" prefWidth="60.0" style="-fx-background-color: #FF9800;" text="X" textAlignment="RIGHT">
+                        <JFXButton fx:id="closeBtn" onAction="#handleClose" prefHeight="28.0" prefWidth="60.0" style="-fx-background-color: #FF9800;" text="X" textAlignment="RIGHT">
                             <font>
                                 <Font name="Comic Sans MS" size="18.0" />
                             </font>
