@@ -40,4 +40,5 @@ public class Credit {
     public void setPerson(Person person) {
         this.person = person;
     }
+
 }
