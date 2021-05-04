@@ -2,6 +2,7 @@ package dk.sdu.swe.views;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXListView;
+import dk.sdu.swe.data.DB;
 import dk.sdu.swe.domain.controllers.ProgrammeController;
 import dk.sdu.swe.domain.models.Programme;
 import dk.sdu.swe.views.modals.companies.AddCompanyModal;
@@ -41,7 +42,7 @@ public class ProgrammesViewController extends BorderPane {
     }
 
     public List<Programme> getAllProgrammes() {
-        return null;
+        return DB.loadAllData(Programme.class, DB.openSession());
     }
 
     @FXML

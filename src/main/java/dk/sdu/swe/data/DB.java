@@ -7,9 +7,12 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.cfg.Environment;
 
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
+import java.util.Scanner;
 
 public class DB {
     private volatile static SessionFactory sessionFactory;
@@ -27,9 +30,11 @@ public class DB {
                 DB_HOST = System.getenv("DATABASE_PROD_HOST");
                 DB_NAME = System.getenv("DATABASE_PROD_DB");
                 DB_USER = System.getenv("DATABASE_PROD_USER");
-                DB_PASS = System.getenv("DATABASE_PROD_HOST");
+                DB_PASS = System.getenv("DATABASE_PROD_PASS");
                 HIBERNATE_DDL = "update";
             }
+
+            System.out.println("[DB] Selected Environment: " + env.getLabel());
 
             addAnnotatedClasses();
 
@@ -64,6 +69,11 @@ public class DB {
         return sessionFactory;
     }
 
+    public synchronized static void resetSessionFactory() {
+        sessionFactory = null;
+        getSessionFactory();
+    }
+
     public synchronized static void addAnnotatedClasses() {
         annotatedClasses.add(User.class);
         annotatedClasses.add(SystemAdministrator.class);
@@ -78,5 +88,13 @@ public class DB {
 
     public synchronized static Session openSession() {
         return getSessionFactory().openSession();
+    }
+
+    public static <T> List<T> loadAllData(Class<T> type, Session session) {
+        CriteriaBuilder builder = session.getCriteriaBuilder();
+        CriteriaQuery<T> criteria = builder.createQuery(type);
+        criteria.from(type);
+        List<T> data = session.createQuery(criteria).getResultList();
+        return data;
     }
 }
