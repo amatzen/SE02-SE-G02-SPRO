@@ -1,24 +1,24 @@
 package dk.sdu.swe.views;
 
+import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXListView;
-import dk.sdu.swe.domain.models.Person;
-import dk.sdu.swe.views.modals.companies.AddCompanyModal;
 import dk.sdu.swe.views.modals.persons.AddPersonModal;
-import dk.sdu.swe.views.partials.PersonListItem;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Dialog;
 import javafx.scene.layout.VBox;
 
-import java.awt.event.ActionEvent;
+
 import java.io.IOException;
-import java.util.List;
 import java.util.Objects;
 
 public class PersonsViewController extends VBox {
 
     @FXML
     private JFXListView peopleListView;
+    @FXML
+    private JFXButton fabBtn;
 
     public PersonsViewController() {
         FXMLLoader fxmlLoader = new FXMLLoader(
@@ -46,11 +46,12 @@ public class PersonsViewController extends VBox {
             peopleListView.getItems().add(new PersonListItem(person));
         }*/
     }
-
-    @FXML
-    private void addPersonBtn(ActionEvent event) {
-        Dialog<Boolean> addPersonModal = new AddPersonModal(getScene().getWindow());
-        addPersonModal.show();
-
+   @FXML
+    void addPersonModal(ActionEvent event) {
+    Dialog<Boolean> addPerson = new AddPersonModal(getScene().getWindow());
+    addPerson.show();
     }
+
+
+
 }

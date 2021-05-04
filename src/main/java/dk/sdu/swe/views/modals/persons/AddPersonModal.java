@@ -48,7 +48,7 @@ public class AddPersonModal extends Dialog<Boolean> {
 
         FXMLLoader fxmlLoader = new FXMLLoader(
             Objects.requireNonNull(
-                getClass().getClassLoader().getResource("dk/sdu/swe/ui/person/AddPerson.fxml")));
+                getClass().getClassLoader().getResource("dk/sdu/swe/ui/persons/components/AddPerson.fxml")));
         fxmlLoader.setController(this);
 
         try {
