@@ -12,7 +12,7 @@ public class Programme {
     private int id;
 
     private String title;
-    private String channel;
+    private int channel;
 
     private int prodYear;
     private String category;
@@ -23,7 +23,7 @@ public class Programme {
     public Programme() {
     }
 
-    public Programme(String title, String channel, int prodYear, String category) {
+    public Programme(String title, int channel, int prodYear, String category) {
         this.title = title;
         this.channel = channel;
         this.prodYear = prodYear;
@@ -34,7 +34,7 @@ public class Programme {
         return title;
     }
 
-    public String getChannel() {
+    public int getChannel() {
         return channel;
     }
 
