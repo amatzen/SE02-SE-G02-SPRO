@@ -16,9 +16,7 @@ import java.util.Objects;
 
 public class AddCompanyModal extends Dialog<Boolean> {
 
-   /*
 
-   IKKE DONE YET
    
 
 
@@ -73,9 +71,5 @@ public class AddCompanyModal extends Dialog<Boolean> {
         setResult(false);
         hide();
     }
-    *
 
-
-
-    */
 }
