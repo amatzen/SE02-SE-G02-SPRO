@@ -7,6 +7,8 @@ import dk.sdu.swe.helpers.Environment;
 import dk.sdu.swe.helpers.EnvironmentSelector;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.*;
@@ -14,6 +16,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Window;
 
+import java.awt.event.TextEvent;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -74,7 +77,9 @@ public class AuthViewController extends HBox {
         }
         environmentSelector.setItems(FXCollections.observableArrayList(environments));
         environmentSelector.valueProperty().setValue(EnvironmentSelector.getInstance().getEnvironment().getLabel());
-
+        environmentSelector.setOnAction((event) -> {
+                EnvironmentSelector.getInstance().setEnvironment(Environment.getEnvFromString(environmentSelector.valueProperty().getValue()));
+        });
 
         // Login button
         button.setOnAction(event -> login());
