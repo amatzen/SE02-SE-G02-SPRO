@@ -2,9 +2,12 @@ package dk.sdu.swe.views;
 
 import com.jfoenix.controls.JFXListView;
 import dk.sdu.swe.domain.models.Person;
+import dk.sdu.swe.views.modals.companies.AddCompanyModal;
+import dk.sdu.swe.views.modals.persons.AddPersonModal;
 import dk.sdu.swe.views.partials.PersonListItem;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Dialog;
 import javafx.scene.layout.VBox;
 
 import java.awt.event.ActionEvent;
@@ -46,6 +49,8 @@ public class PersonsViewController extends VBox {
 
     @FXML
     private void addPersonBtn(ActionEvent event) {
+        Dialog<Boolean> addPersonModal = new AddPersonModal(getScene().getWindow());
+        addPersonModal.show();
 
     }
 }
