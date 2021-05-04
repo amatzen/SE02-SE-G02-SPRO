@@ -50,4 +50,8 @@ public class Channel {
     public void setLogo(String logo) {
         this.logo = logo;
     }
+
+    public int getId() {
+        return this.id;
+    }
 }
