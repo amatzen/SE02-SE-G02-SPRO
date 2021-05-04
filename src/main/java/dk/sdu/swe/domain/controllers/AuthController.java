@@ -1,12 +1,8 @@
 package dk.sdu.swe.domain.controllers;
 
-import at.favre.lib.crypto.bcrypt.BCrypt;
 import dk.sdu.swe.data.DB;
 import dk.sdu.swe.domain.models.User;
 import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.json.JSONArray;
-import org.json.JSONObject;
 
 public class AuthController {
 

@@ -6,7 +6,8 @@ import dk.sdu.swe.exceptions.UserCreationException;
 import org.hibernate.annotations.NaturalId;
 
 import javax.persistence.*;
-import java.util.*;
+import java.util.Arrays;
+import java.util.Objects;
 
 /**
  * The type User.

@@ -1,5 +1,6 @@
 package dk.sdu.swe.views.partials;
 
+import dk.sdu.swe.domain.controllers.PersonController;
 import dk.sdu.swe.domain.models.Credit;
 import dk.sdu.swe.domain.models.Person;
 import javafx.fxml.FXML;
@@ -43,7 +44,7 @@ public class CreditListItem extends HBox {
         /*
         Person p = null;
         try {
-            p = Person.get(credit.getPerson());
+            p = PersonController.getInstance().get(credit.getPerson());
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -2,12 +2,14 @@ package dk.sdu.swe.views;
 
 import com.jfoenix.controls.JFXListView;
 import dk.sdu.swe.domain.models.Company;
+import dk.sdu.swe.views.modals.AddCompanyModal;
 import dk.sdu.swe.views.partials.CompanyListItem;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Dialog;
 import javafx.scene.layout.BorderPane;
 
-import java.awt.event.ActionEvent;
 import java.io.IOException;
 import java.util.List;
 import java.util.Objects;
@@ -48,6 +50,7 @@ public class CompanyViewController extends BorderPane {
 
     @FXML
     private void addCompanyBtn(ActionEvent event) {
-
+        Dialog addCompanyModal = new AddCompanyModal();
+        addCompanyModal.show();
     }
 }
