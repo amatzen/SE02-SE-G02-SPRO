@@ -1,12 +1,18 @@
 package dk.sdu.swe.views;
 
+import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXListView;
 import dk.sdu.swe.data.DB;
 import dk.sdu.swe.domain.controllers.ProgrammeController;
 import dk.sdu.swe.domain.models.Programme;
+import dk.sdu.swe.views.modals.companies.AddCompanyModal;
+import dk.sdu.swe.views.modals.persons.AddPersonModal;
+import dk.sdu.swe.views.modals.programmes.AddProgrammesModal;
 import dk.sdu.swe.views.partials.ProgrammeListItem;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Dialog;
 import javafx.scene.layout.BorderPane;
 
 import java.io.IOException;
@@ -17,6 +23,8 @@ public class ProgrammesViewController extends BorderPane {
 
     @FXML
     private JFXListView<ProgrammeListItem> programmesListView;
+    @FXML
+    private JFXButton fabBtn;
 
     public ProgrammesViewController() {
 
@@ -45,5 +53,12 @@ public class ProgrammesViewController extends BorderPane {
             programmesListView.getItems().add(new ProgrammeListItem(programme));
         }
     }
+
+    @FXML
+    void addProgramme(ActionEvent event) {
+        Dialog<Boolean> addProgrammesModal = new AddProgrammesModal(getScene().getWindow());
+        addProgrammesModal.show();
+    }
+
 
 }
