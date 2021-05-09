@@ -13,7 +13,7 @@
          <children>
             <VBox prefHeight="469.0" prefWidth="349.0">
                <children>
-                  <JFXTextField fx:id="companyTextfield" prefHeight="50.0" prefWidth="309.0" promptText="Firma" style="-fx-border-color: #cccccc; -fx-border-radius: 5px;                                 -fx-padding: 0.333333em 1em 0.333333em 1em;                                 -fx-background-color: transparent; -jfx-unfocus-color: transparent;                                 -jfx-focus-color: transparent;">
+                  <JFXTextField fx:id="companyTextfield" prefHeight="49.0" prefWidth="309.0" promptText="Firma" style="-fx-border-color: #cccccc; -fx-border-radius: 5px;                                 -fx-padding: 0.333333em 1em 0.333333em 1em;                                 -fx-background-color: transparent; -jfx-unfocus-color: transparent;                                 -jfx-focus-color: transparent;">
                      <VBox.margin>
                         <Insets left="30.0" right="10.0" top="30.0" />
                      </VBox.margin>
@@ -46,6 +46,9 @@
                            <HBox.margin>
                               <Insets bottom="30.0" right="50.0" />
                            </HBox.margin>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
                         </JFXButton>
                      </children>
                   </HBox>
