@@ -1,7 +1,9 @@
 package dk.sdu.swe.domain.models;
 
 import javax.persistence.*;
+import java.util.Collection;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "programme")
@@ -15,16 +17,15 @@ public class Programme {
     private int channel;
 
     private int prodYear;
-    private String category;
 
     @Transient
     private List<EPGProgramme> epgDates;
 
-    public Programme(String title, int channel, int prodYear, String category) {
+    public Programme(String title, int channel, int prodYear, List<Category> categories) {
         this.title = title;
         this.channel = channel;
         this.prodYear = prodYear;
-        this.category = category;
+        this.categories = categories;
     }
 
     public Programme() {
@@ -42,12 +43,20 @@ public class Programme {
         return prodYear;
     }
 
-    public String getCategory() {
-        return category;
-    }
 
     public List<EPGProgramme> getEpgDates() {
         return epgDates;
     }
 
+
+    @OneToMany
+    private Collection<Category> categories;
+
+    public Collection<Category> getCategories() {
+        return categories;
+    }
+
+    public void setCategories(Collection<Category> categories) {
+        this.categories = categories;
+    }
 }

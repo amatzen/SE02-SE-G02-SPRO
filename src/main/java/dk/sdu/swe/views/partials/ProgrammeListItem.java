@@ -41,7 +41,7 @@ public class ProgrammeListItem extends AnchorPane {
     @FXML
     private void initialize() {
         nameLbl.setText(programme.getTitle());
-        categoryLbl.setText(programme.getCategory());
+        categoryLbl.setText(programme.getCategories().toString());
         releaseYearLbl.setText(String.valueOf(programme.getProdYear()));
     }
 

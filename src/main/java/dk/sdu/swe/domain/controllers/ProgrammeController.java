@@ -1,6 +1,7 @@
 package dk.sdu.swe.domain.controllers;
 
 import dk.sdu.swe.data.DB;
+import dk.sdu.swe.domain.models.Category;
 import dk.sdu.swe.domain.models.Channel;
 import dk.sdu.swe.domain.models.Programme;
 import org.hibernate.Session;
@@ -73,13 +74,13 @@ public class ProgrammeController {
         return res;
     }
 
-    public List<String> getCategories() {
+    public List<Category> getCategories() {
         String hql = "SELECT distinct category FROM Programme";
 
         Session session = DB.openSession();
 
         Query query = session.createQuery(hql);
-        List<String> res = query.list();
+        List<Category> res = query.list();
 
         session.close();
 

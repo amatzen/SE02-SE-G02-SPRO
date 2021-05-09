@@ -67,7 +67,7 @@ public class CreditListModal extends Dialog<Boolean> {
     private void initialize() {
 
         titleLbl.setText(programme.getTitle());
-        categoryLbl.setText(programme.getCategory());
+        categoryLbl.setText(programme.getCategories().toString());
 
         /*List<Credit> credits = null;
 

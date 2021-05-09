@@ -2,6 +2,7 @@ package dk.sdu.swe.data.seeders;
 
 import com.google.gson.Gson;
 import dk.sdu.swe.data.DB;
+import dk.sdu.swe.domain.models.Category;
 import dk.sdu.swe.domain.models.EPGProgramme;
 import dk.sdu.swe.domain.models.Programme;
 import org.hibernate.Session;
@@ -28,7 +29,7 @@ public class v3_CreateProgrammesForThisWeek {
 
         // Step 2: Generate the API URL
         StringBuilder epgUrl = new StringBuilder();
-        epgUrl.append("https://tvtid-api.api.tv2.dk/api/tvtid/v1/epg/dayviews/2021-05-05");
+        epgUrl.append("https://tvtid-api.api.tv2.dk/api/tvtid/v1/epg/dayviews/2021-05-09");
         AtomicInteger i = new AtomicInteger();
 
         channelEpgIds.forEach(epgId -> {
@@ -86,18 +87,24 @@ public class v3_CreateProgrammesForThisWeek {
                 ));
 
                 if(!addedProgrammesTitle.contains(epgObj.getString("title"))) {
+                    List<Category> categories = new LinkedList<>();
+                    JSONArray jsonCategories = epgObj.getJSONArray("categories");
+                    for (int j = 0; j < jsonCategories.length(); j++) {
+                        categories.add(new Category(jsonCategories.getString(j)));
+                    }
+
                     addedProgrammes.add(new Programme(
                         epgObj.getString("title"),
                         channelObj.getInt("id"),
                         0,
-                        ""
+                        categories
                     ));
                     addedProgrammesTitle.add(epgObj.getString("title"));
                 }
             }
         }
 
-        addedProgrammes.forEach(session1::save);
+        addedProgrammes.forEach(session1::saveOrUpdate);
         session1.close();
 
     }

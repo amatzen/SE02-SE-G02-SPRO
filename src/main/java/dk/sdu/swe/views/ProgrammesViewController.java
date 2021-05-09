@@ -6,6 +6,7 @@ import com.jfoenix.controls.JFXListView;
 import dk.sdu.swe.domain.controllers.ChannelController;
 import dk.sdu.swe.data.DB;
 import dk.sdu.swe.domain.controllers.ProgrammeController;
+import dk.sdu.swe.domain.models.Category;
 import dk.sdu.swe.domain.models.Channel;
 import dk.sdu.swe.domain.models.Programme;
 import dk.sdu.swe.views.modals.companies.AddCompanyModal;
@@ -64,18 +65,22 @@ public class ProgrammesViewController extends BorderPane {
     private void initialize() {
         updateProgrammes(ProgrammeController.getInstance().getAll());
 
-        List<Channel> channels = ChannelController.getInstance().getAll();
+        updateChannels(ChannelController.getInstance().getAll());
 
+        updateCategories(ProgrammeController.getInstance().getCategories());
+    }
+
+    private void updateChannels(List<Channel> channels) {
         for (Channel channel : channels) {
             Label label = new Label(channel.getName());
             label.setUserData(channel);
             this.channels.getItems().add(label);
         }
+    }
 
-        List<String> categories = ProgrammeController.getInstance().getCategories();
-
-        for (String category : categories) {
-            this.categories.getItems().add(new Label(category));
+    private void updateCategories(List<Category> categories) {
+        for (Category category : categories) {
+            this.categories.getItems().add(new Label(category.getCategoryTitle()));
         }
     }
 
