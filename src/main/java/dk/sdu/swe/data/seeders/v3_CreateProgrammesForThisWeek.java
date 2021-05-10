@@ -2,6 +2,7 @@ package dk.sdu.swe.data.seeders;
 
 import com.google.gson.Gson;
 import dk.sdu.swe.data.DB;
+import dk.sdu.swe.data.dao.ChannelDAOImpl;
 import dk.sdu.swe.domain.models.Category;
 import dk.sdu.swe.domain.models.EPGProgramme;
 import dk.sdu.swe.domain.models.Programme;
@@ -95,7 +96,7 @@ public class v3_CreateProgrammesForThisWeek {
 
                     addedProgrammes.add(new Programme(
                         epgObj.getString("title"),
-                        channelObj.getInt("id"),
+                        ChannelDAOImpl.getInstance().getById(channelObj.getInt("id")).orElse(null),
                         0,
                         categories
                     ));

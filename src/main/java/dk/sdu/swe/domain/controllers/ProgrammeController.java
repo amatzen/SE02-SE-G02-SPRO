@@ -47,11 +47,11 @@ public class ProgrammeController {
         String hql = "FROM Programme WHERE title LIKE :search_term";
 
         if (channelId != null) {
-            hql += " AND channel = :channel_id";
+            hql += " AND channel_id = :channel_id";
         }
 
         if (category != null) {
-            hql += " AND category = :category_title";
+            hql += " AND Category.title = :category_title";
         }
 
         Session session = DB.openSession();
@@ -75,7 +75,7 @@ public class ProgrammeController {
     }
 
     public List<Category> getCategories() {
-        String hql = "SELECT distinct category FROM Programme";
+        String hql = "SELECT distinct Category FROM Programme";
 
         Session session = DB.openSession();
 

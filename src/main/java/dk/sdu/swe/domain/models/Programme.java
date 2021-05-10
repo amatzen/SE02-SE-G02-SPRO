@@ -14,14 +14,13 @@ public class Programme {
     private int id;
 
     private String title;
-    private int channel;
 
     private int prodYear;
 
     @Transient
     private List<EPGProgramme> epgDates;
 
-    public Programme(String title, int channel, int prodYear, List<Category> categories) {
+    public Programme(String title, Channel channel, int prodYear, List<Category> categories) {
         this.title = title;
         this.channel = channel;
         this.prodYear = prodYear;
@@ -33,10 +32,6 @@ public class Programme {
 
     public String getTitle() {
         return title;
-    }
-
-    public int getChannel() {
-        return channel;
     }
 
     public int getProdYear() {
@@ -58,5 +53,16 @@ public class Programme {
 
     public void setCategories(Collection<Category> categories) {
         this.categories = categories;
+    }
+
+    @ManyToOne(optional = true)
+    private Channel channel;
+
+    public Channel getChannel() {
+        return channel;
+    }
+
+    public void setChannel(Channel channel) {
+        this.channel = channel;
     }
 }
