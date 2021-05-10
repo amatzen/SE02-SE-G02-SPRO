@@ -18,17 +18,20 @@ public class Company {
     @JoinColumn(nullable = true, name = "parent_company_id", referencedColumnName = "id")
     private Company parentCompany;
 
-    @Convert(converter = CompanyDetailsConverter.class)
+    @Embedded
     private CompanyDetails companyDetails;
 
     private String logo;
 
-    public Company(int id, String name, Company parentCompany, CompanyDetails companyDetails, String logo) {
-        this.id = id;
+    public Company(String name, Company parentCompany, CompanyDetails companyDetails, String logo) {
         this.name = name;
         this.parentCompany = parentCompany;
         this.companyDetails = companyDetails;
         this.logo = logo;
+    }
+
+    public Company() {
+
     }
 
     public int getId() {
