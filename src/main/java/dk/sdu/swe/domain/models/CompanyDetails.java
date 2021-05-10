@@ -2,6 +2,11 @@ package dk.sdu.swe.domain.models;
 
 import org.json.JSONObject;
 
+import javax.persistence.Convert;
+import javax.persistence.Embeddable;
+
+//@Convert(converter = CompanyDetails.class)
+@Embeddable
 public class CompanyDetails {
 
     private String country;
@@ -12,6 +17,10 @@ public class CompanyDetails {
         this.country = country;
         this.lei = lei;
         this.nbr = nbr;
+    }
+
+    public CompanyDetails() {
+
     }
 
     public String getCountry() {

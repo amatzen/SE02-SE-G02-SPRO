@@ -7,6 +7,7 @@ import org.hibernate.annotations.NaturalId;
 
 import javax.persistence.*;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.Objects;
 
 /**
@@ -42,6 +43,8 @@ public class User implements IUser {
         "people"
     };
 
+
+
     /**
      * Instantiates a new User.
      *
@@ -51,7 +54,8 @@ public class User implements IUser {
      * @param password the password
      * @throws Exception the exception
      */
-    public User(String username, String email, String name, String password) throws Exception {
+    public User(String username, String email, String name, String password, Company company) throws Exception {
+        this.company = company;
 
         // Validate username
         if (username.trim().length() < 3 || username.trim().length() > 24) {
@@ -108,5 +112,16 @@ public class User implements IUser {
             ", passwordHash='" + passwordHash + '\'' +
             ", permissions=" + Arrays.toString(permissions) +
             '}';
+    }
+
+    @ManyToOne(optional = true)
+    private Company company;
+
+    public Company getCompany() {
+        return company;
+    }
+
+    public void setCompany(Company company) {
+        this.company = company;
     }
 }

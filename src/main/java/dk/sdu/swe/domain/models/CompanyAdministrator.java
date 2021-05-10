@@ -26,8 +26,8 @@ public class CompanyAdministrator extends User {
      * @param name     the name
      * @throws Exception the exception
      */
-    public CompanyAdministrator(String username, String email, String name, String password) throws Exception {
-        super(username, email, name, password);
+    public CompanyAdministrator(String username, String email, String name, String password, Company company) throws Exception {
+        super(username, email, name, password, company);
     }
 
     public CompanyAdministrator() { }

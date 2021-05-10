@@ -85,6 +85,8 @@ public class DB {
         annotatedClasses.add(Channel.class);
         annotatedClasses.add(EPGProgramme.class);
         annotatedClasses.add(Category.class);
+
+        annotatedClasses.add(Company.class);
     }
 
     public synchronized static Session openSession() {
