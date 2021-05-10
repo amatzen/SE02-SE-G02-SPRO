@@ -1,8 +1,7 @@
 package dk.sdu.swe.domain.models;
 
-import com.google.gson.annotations.Expose;
-
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Transient;
 import java.util.Arrays;
 
 @Entity

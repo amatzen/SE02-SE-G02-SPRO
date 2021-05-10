@@ -3,6 +3,7 @@ package dk.sdu.swe.data.dao;
 import dk.sdu.swe.data.DB;
 import dk.sdu.swe.domain.models.User;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 
 import java.util.Optional;
 
@@ -23,8 +24,10 @@ public class UserDAOImpl extends AbstractDAO<User> implements IUserDAO {
     @Override
     public Optional<User> getByUsername(String username) {
         Session session = DB.openSession();
+        Transaction trans = session.beginTransaction();
         User user = session.byNaturalId(User.class)
             .using("username", username).load();
+        trans.commit();
         session.close();
         return Optional.ofNullable(user);
     }

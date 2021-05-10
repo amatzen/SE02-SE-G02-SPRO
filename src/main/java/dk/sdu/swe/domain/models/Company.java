@@ -3,6 +3,7 @@ package dk.sdu.swe.domain.models;
 import dk.sdu.swe.data.converters.CompanyDetailsConverter;
 
 import javax.persistence.*;
+import java.util.Collection;
 
 @Entity
 @Table(name = "companies")
@@ -31,7 +32,6 @@ public class Company {
     }
 
     public Company() {
-
     }
 
     public int getId() {

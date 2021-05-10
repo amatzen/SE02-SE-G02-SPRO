@@ -1,10 +1,13 @@
 package dk.sdu.swe.domain.controllers;
 
 import dk.sdu.swe.data.DB;
+import dk.sdu.swe.data.dao.CategoryDAOImpl;
+import dk.sdu.swe.data.dao.ProgrammeDAO;
 import dk.sdu.swe.domain.models.Category;
 import dk.sdu.swe.domain.models.Channel;
 import dk.sdu.swe.domain.models.Programme;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
 import javax.persistence.criteria.CriteriaBuilder;
@@ -26,32 +29,21 @@ public class ProgrammeController {
     }
 
     public List<Programme> getAll() {
-
-        Session session = DB.openSession();
-        CriteriaBuilder criteriaBuilder = session.getCriteriaBuilder();
-        CriteriaQuery<Programme> criteriaQuery = criteriaBuilder.createQuery(Programme.class);
-        Root<Programme> programmeRoot = criteriaQuery.from(Programme.class);
-        criteriaQuery.select(programmeRoot);
-
-        List<Programme> res = session.createQuery(criteriaQuery).getResultList();
-
-        session.close();
-
-        return res;
+        return ProgrammeDAO.getInstance().getAll();
     }
 
     public List<Programme> search(String searchTerm, Integer channelId, String category) {
 
         searchTerm = '%' + searchTerm + '%';
 
-        String hql = "FROM Programme WHERE title LIKE :search_term";
+        String hql = "FROM Programme p WHERE p.title LIKE :search_term";
 
         if (channelId != null) {
-            hql += " AND channel_id = :channel_id";
+            hql += " AND p.channel_id = :channel_id";
         }
 
         if (category != null) {
-            hql += " AND Category.title = :category_title";
+            hql += " AND :category_title IN (SELECT c.categoryTitle FROM Category c JOIN p.categories)";
         }
 
         Session session = DB.openSession();
@@ -75,16 +67,21 @@ public class ProgrammeController {
     }
 
     public List<Category> getCategories() {
-        String hql = "SELECT distinct Category FROM Programme";
+        return CategoryDAOImpl.getInstance().getAll();
+        /*
+        String hql = "SELECT distinct categories FROM Programme";
 
         Session session = DB.openSession();
 
+        Transaction trans = session.beginTransaction();
         Query query = session.createQuery(hql);
         List<Category> res = query.list();
+        trans.commit();
 
         session.close();
 
         return res;
+        */
     }
 
 }

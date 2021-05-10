@@ -4,6 +4,7 @@ import dk.sdu.swe.data.DB;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import javax.persistence.PersistenceException;
 import java.util.List;
 import java.util.Optional;
 
@@ -14,12 +15,10 @@ public interface IDAO<T> {
         Transaction trans = session.beginTransaction();
         try {
             session.save(obj);
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
             trans.commit();
+        } finally {
+            session.close();
         }
-        session.close();
     }
 
     public default void update(T obj) {
@@ -27,12 +26,10 @@ public interface IDAO<T> {
         Transaction trans = session.beginTransaction();
         try {
             session.update(obj);
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
             trans.commit();
+        } finally {
+            session.close();
         }
-        session.close();
     }
 
     public Optional<T> getById(int id);

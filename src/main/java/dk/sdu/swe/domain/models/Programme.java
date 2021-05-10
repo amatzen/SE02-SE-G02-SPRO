@@ -3,7 +3,6 @@ package dk.sdu.swe.domain.models;
 import javax.persistence.*;
 import java.util.Collection;
 import java.util.List;
-import java.util.Set;
 
 @Entity
 @Table(name = "programme")
@@ -44,14 +43,14 @@ public class Programme {
     }
 
 
-    @OneToMany
-    private Collection<Category> categories;
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private List<Category> categories;
 
-    public Collection<Category> getCategories() {
+    public List<Category> getCategories() {
         return categories;
     }
 
-    public void setCategories(Collection<Category> categories) {
+    public void setCategories(List<Category> categories) {
         this.categories = categories;
     }
 
@@ -64,5 +63,16 @@ public class Programme {
 
     public void setChannel(Channel channel) {
         this.channel = channel;
+    }
+
+    @OneToMany
+    private Collection<Credit> credits;
+
+    public Collection<Credit> getCredits() {
+        return credits;
+    }
+
+    public void setCredits(Collection<Credit> credits) {
+        this.credits = credits;
     }
 }

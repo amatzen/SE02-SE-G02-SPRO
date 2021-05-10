@@ -2,16 +2,19 @@ package dk.sdu.swe.data.seeders;
 
 import com.google.gson.Gson;
 import dk.sdu.swe.data.DB;
-import dk.sdu.swe.data.dao.ChannelDAOImpl;
+import dk.sdu.swe.data.dao.*;
 import dk.sdu.swe.domain.models.Category;
 import dk.sdu.swe.domain.models.EPGProgramme;
 import dk.sdu.swe.domain.models.Programme;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
+import org.hibernate.exception.ConstraintViolationException;
 import org.joda.time.DateTime;
 import org.joda.time.Instant;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import javax.persistence.PersistenceException;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
@@ -30,7 +33,7 @@ public class v3_CreateProgrammesForThisWeek {
 
         // Step 2: Generate the API URL
         StringBuilder epgUrl = new StringBuilder();
-        epgUrl.append("https://tvtid-api.api.tv2.dk/api/tvtid/v1/epg/dayviews/2021-05-09");
+        epgUrl.append("https://tvtid-api.api.tv2.dk/api/tvtid/v1/epg/dayviews/2021-05-11");
         AtomicInteger i = new AtomicInteger();
 
         channelEpgIds.forEach(epgId -> {
@@ -72,6 +75,7 @@ public class v3_CreateProgrammesForThisWeek {
             JSONArray epgProgrammes = channelObj.getJSONArray("programs");
             for (int i2 = 0; i2 < epgProgrammes.length(); i2++) {
                 JSONObject epgObj = epgProgrammes.getJSONObject(i2);
+                Transaction trans = session1.beginTransaction();
                 session1.save(new EPGProgramme(
                     channelObj.getInt("id"),
                     Instant.ofEpochSecond(epgObj.getLong("start")),
@@ -86,12 +90,24 @@ public class v3_CreateProgrammesForThisWeek {
                         "live", epgObj.getBoolean("live")
                     )
                 ));
+                trans.commit();
 
                 if(!addedProgrammesTitle.contains(epgObj.getString("title"))) {
                     List<Category> categories = new LinkedList<>();
                     JSONArray jsonCategories = epgObj.getJSONArray("categories");
+
+                    ICategoryDAO categoryDAO = CategoryDAOImpl.getInstance();
                     for (int j = 0; j < jsonCategories.length(); j++) {
-                        categories.add(new Category(jsonCategories.getString(j)));
+                        String categoryTitle = jsonCategories.getString(j);
+                        Category category = categoryDAO
+                            .getCategoryByName(categoryTitle)
+                            .orElseGet(() -> {
+                                Category c = new Category(categoryTitle);
+                                categoryDAO.save(c);
+                                return c;
+                            });
+                        System.out.println("IOWJDJAIODOIJWAJIODWAJIOAIOJWDJIOAWJIO " + category.getId());
+                        categories.add(category);
                     }
 
                     addedProgrammes.add(new Programme(
@@ -104,9 +120,9 @@ public class v3_CreateProgrammesForThisWeek {
                 }
             }
         }
-
-        addedProgrammes.forEach(session1::saveOrUpdate);
         session1.close();
 
+        IDAO<Programme> programmeDAO = ProgrammeDAO.getInstance();
+        addedProgrammes.forEach(programmeDAO::save);
     }
 }

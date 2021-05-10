@@ -1,8 +1,9 @@
 package dk.sdu.swe.domain.models;
 
 
+import org.hibernate.annotations.NaturalId;
+
 import javax.persistence.*;
-import java.util.Collection;
 
 @Entity
 @Table(name = "categories")
@@ -12,6 +13,8 @@ public class Category {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
+    @NaturalId
+    @Column(unique = true)
     private String categoryTitle;
 
     public Category() {}
@@ -22,5 +25,13 @@ public class Category {
 
     public String getCategoryTitle() {
         return categoryTitle;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

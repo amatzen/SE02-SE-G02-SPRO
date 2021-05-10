@@ -60,6 +60,8 @@ public class DB {
 
             settings.put(Environment.HBM2DDL_AUTO, HIBERNATE_DDL);
 
+            //settings.put("hibernate.enable_lazy_load_no_trans", true);
+
             cfg.setProperties(settings);
 
             annotatedClasses.forEach(cfg::addAnnotatedClass);
