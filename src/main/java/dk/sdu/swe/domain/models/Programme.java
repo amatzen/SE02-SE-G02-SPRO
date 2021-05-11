@@ -43,7 +43,7 @@ public class Programme {
     }
 
 
-    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToMany(fetch = FetchType.EAGER)
     private List<Category> categories;
 
     public List<Category> getCategories() {
