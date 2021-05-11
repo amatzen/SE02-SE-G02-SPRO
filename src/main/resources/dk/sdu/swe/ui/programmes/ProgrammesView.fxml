@@ -122,7 +122,7 @@
                 <fx:include source="List-bar.fxml" />
                 <AnchorPane prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
                     <children>
-                  <JFXListView fx:id="programmesListView" layoutX="542.0" layoutY="25.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <JFXListView fx:id="programmesListView" layoutX="542.0" layoutY="25.0" style="-fx-selection-bar: #ebebeb;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                         <JFXButton fx:id="fabBtn" buttonType="RAISED" onAction="#addProgramme" prefHeight="45.0" prefWidth="45.0" style="-fx-background-color: #FF9800; -fx-background-radius: 30;" text="+" textFill="WHITE" AnchorPane.bottomAnchor="25.0" AnchorPane.rightAnchor="25.0">
                             <font>
                                 <Font size="18.0" />

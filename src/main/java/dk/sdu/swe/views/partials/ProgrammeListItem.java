@@ -2,12 +2,15 @@ package dk.sdu.swe.views.partials;
 
 import dk.sdu.swe.data.DB;
 import dk.sdu.swe.domain.models.Category;
+import dk.sdu.swe.domain.models.Channel;
 import dk.sdu.swe.domain.models.Programme;
 import dk.sdu.swe.views.modals.CreditListModal;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Dialog;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import org.hibernate.Session;
@@ -49,6 +52,13 @@ public class ProgrammeListItem extends AnchorPane {
             .map(Category::getCategoryTitle)
             .collect(Collectors.joining(", ")));
         releaseYearLbl.setText(String.valueOf(programme.getProdYear()));
+
+        Channel channel = programme.getChannel();
+
+        if (channel != null) {
+            Image logo = new Image(channel.getLogo(), 48, 48, true, false, true);
+            channelsPane.getChildren().add(new ImageView(logo));
+        }
     }
 
     @FXML
