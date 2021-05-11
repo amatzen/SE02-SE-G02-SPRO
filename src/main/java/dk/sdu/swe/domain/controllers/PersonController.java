@@ -22,4 +22,7 @@ public class PersonController {
         return PersonDAOImpl.getInstance().getAll();
     }
 
+    public List<Person> search(String searchTerm) {
+        return PersonDAOImpl.getInstance().searchByName(searchTerm);
+    }
 }
