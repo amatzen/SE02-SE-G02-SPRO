@@ -7,14 +7,14 @@ import java.util.List;
 
 public class CsvExport {
 
-    // Test
-    List<List<String>> List = Arrays.asList(
+    // Test data
+    private static List<List<String>> List = Arrays.asList(
         Arrays.asList("Skuespiller 1", "Program 1", "Virksomhed 1"),
         Arrays.asList("Skuespiller 2", "Program 2", "Virksomhed 2"),
         Arrays.asList("Skuespiller 3", "Program 3", "Virksomhed 3")
     );
 
-    public void CsvExport() {
+    public static void CsvExport() {
         try {
             FileWriter csvWriter = new FileWriter("Eksport.csv");
             csvWriter.append("Skuespillerdata");
