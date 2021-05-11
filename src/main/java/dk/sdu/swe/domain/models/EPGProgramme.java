@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Map;
 
 @Entity
-@Table(name = "programme_egp_entries")
+@Table(name = "programme_epg_entries")
 public class EPGProgramme {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
