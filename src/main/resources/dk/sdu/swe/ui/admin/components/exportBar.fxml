@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
 <?import com.jfoenix.controls.JFXRadioButton?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
 <fx:root prefHeight="297.0" prefWidth="614.0" type="VBox" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
@@ -22,21 +23,21 @@
       </Label>
       <HBox prefHeight="37.0" prefWidth="1192.0">
          <children>
-            <CheckBox fx:id="actorData" mnemonicParsing="false" text="Skuespillerdata">
+            <JFXCheckBox fx:id="actorData" checkedColor="#ff9800" text="Skuespillerdata">
                <HBox.margin>
                   <Insets left="50.0" />
                </HBox.margin>
-            </CheckBox>
-            <CheckBox fx:id="programData" mnemonicParsing="false" text="Programdata">
+            </JFXCheckBox>
+            <JFXCheckBox fx:id="programData" checkedColor="#ff9800" layoutX="60.0" layoutY="10.0" text="Programdata">
                <HBox.margin>
                   <Insets left="20.0" />
                </HBox.margin>
-            </CheckBox>
-            <CheckBox fx:id="companyData" mnemonicParsing="false" text="Virskomhedsdata">
+            </JFXCheckBox>
+            <JFXCheckBox fx:id="companyData" checkedColor="#ff9800" layoutX="409.0" layoutY="10.0" text="Virskomhedsdata">
                <HBox.margin>
                   <Insets left="20.0" />
                </HBox.margin>
-            </CheckBox>
+            </JFXCheckBox>
          </children>
          <VBox.margin>
             <Insets top="5.0" />
@@ -61,11 +62,17 @@
                      <toggleGroup>
                         <ToggleGroup fx:id="fileTypeToggleGroup" />
                      </toggleGroup>
+                     <selectedColor>
+                        <Color red="1.0" green="0.5960784554481506" />
+                     </selectedColor>
                   </JFXRadioButton>
                   <JFXRadioButton fx:id="jsonToggle" layoutX="10.0" layoutY="27.0" text="JSON" toggleGroup="$fileTypeToggleGroup">
                      <VBox.margin>
                         <Insets left="50.0" top="10.0" />
                      </VBox.margin>
+                     <selectedColor>
+                        <Color red="1.0" green="0.5960784554481506" />
+                     </selectedColor>
                   </JFXRadioButton>
                </children>
             </VBox>
