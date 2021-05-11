@@ -22,6 +22,7 @@ public class PersonsViewController extends VBox {
 
     @FXML
     private JFXListView peopleListView;
+
     @FXML
     private JFXButton fabBtn;
 
@@ -47,12 +48,11 @@ public class PersonsViewController extends VBox {
             peopleListView.getItems().add(new PersonListItem(person));
         }
     }
-   @FXML
-    void addPersonModal(ActionEvent event) {
-    Dialog<Boolean> addPerson = new AddPersonModal(getScene().getWindow());
-    addPerson.show();
+
+    @FXML
+    private void addPersonModal(ActionEvent event) {
+        Dialog<Boolean> addPerson = new AddPersonModal(getScene().getWindow());
+        addPerson.show();
     }
-
-
 
 }

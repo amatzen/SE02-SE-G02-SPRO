@@ -33,7 +33,7 @@ public class ProgrammeDAOImpl extends AbstractDAO<Programme> {
         }
 
         if (category != null) {
-            hql += " AND :category_title IN (SELECT c.categoryTitle FROM Category c JOIN categories WHERE channel_id = :channel_id)";
+            hql += " AND :category_title IN (SELECT c.categoryTitle FROM Category c JOIN p.categories WHERE channel_id = :channel_id)";
         }
 
         Session session = DB.openSession();

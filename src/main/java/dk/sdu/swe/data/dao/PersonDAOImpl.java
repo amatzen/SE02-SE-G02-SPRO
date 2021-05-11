@@ -2,12 +2,12 @@ package dk.sdu.swe.data.dao;
 
 import dk.sdu.swe.data.DB;
 import dk.sdu.swe.domain.models.Person;
+import dk.sdu.swe.domain.persistence.IPersonDAO;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
 import java.util.List;
-import java.util.Optional;
 
 public class PersonDAOImpl extends AbstractDAO<Person> implements IPersonDAO {
 

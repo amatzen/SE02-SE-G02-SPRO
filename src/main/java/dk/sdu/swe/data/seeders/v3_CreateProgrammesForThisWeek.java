@@ -3,6 +3,8 @@ package dk.sdu.swe.data.seeders;
 import dk.sdu.swe.data.DB;
 import dk.sdu.swe.data.dao.*;
 import dk.sdu.swe.domain.models.*;
+import dk.sdu.swe.domain.persistence.ICategoryDAO;
+import dk.sdu.swe.domain.persistence.IDAO;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.joda.time.Instant;

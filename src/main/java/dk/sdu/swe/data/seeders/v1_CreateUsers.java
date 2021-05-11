@@ -2,7 +2,7 @@ package dk.sdu.swe.data.seeders;
 
 import dk.sdu.swe.data.DB;
 import dk.sdu.swe.data.dao.CompanyDAOImpl;
-import dk.sdu.swe.data.dao.IDAO;
+import dk.sdu.swe.domain.persistence.IDAO;
 import dk.sdu.swe.domain.models.*;
 import org.hibernate.Session;
 

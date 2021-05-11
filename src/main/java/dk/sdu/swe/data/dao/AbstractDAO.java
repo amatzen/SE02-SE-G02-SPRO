@@ -1,6 +1,7 @@
 package dk.sdu.swe.data.dao;
 
 import dk.sdu.swe.data.DB;
+import dk.sdu.swe.domain.persistence.IDAO;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -45,5 +46,29 @@ public abstract class AbstractDAO<T> implements IDAO<T> {
 
         trans.commit();
         return Optional.ofNullable(res);
+    }
+
+    @Override
+    public void save(T obj) {
+        Session session = DB.openSession();
+        Transaction trans = session.beginTransaction();
+        try {
+            session.save(obj);
+            trans.commit();
+        } finally {
+            session.close();
+        }
+    }
+
+    @Override
+    public void update(T obj) {
+        Session session = DB.openSession();
+        Transaction trans = session.beginTransaction();
+        try {
+            session.update(obj);
+            trans.commit();
+        } finally {
+            session.close();
+        }
     }
 }

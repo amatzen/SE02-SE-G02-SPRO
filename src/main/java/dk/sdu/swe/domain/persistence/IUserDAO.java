@@ -1,4 +1,4 @@
-package dk.sdu.swe.data.dao;
+package dk.sdu.swe.domain.persistence;
 
 import dk.sdu.swe.domain.models.User;
 

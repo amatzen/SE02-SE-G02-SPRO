@@ -2,7 +2,7 @@ package dk.sdu.swe.data.dao;
 
 import dk.sdu.swe.data.DB;
 import dk.sdu.swe.domain.models.Category;
-import dk.sdu.swe.domain.models.User;
+import dk.sdu.swe.domain.persistence.ICategoryDAO;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
