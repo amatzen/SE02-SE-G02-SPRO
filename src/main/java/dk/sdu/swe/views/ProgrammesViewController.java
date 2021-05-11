@@ -126,5 +126,12 @@ public class ProgrammesViewController extends BorderPane {
         addProgrammesModal.show();
     }
 
+    @FXML
+    private void resetSearch(ActionEvent event) {
+        searchField.clear();
+        channels.getSelectionModel().clearSelection();
+        categories.getSelectionModel().clearSelection();
+        updateProgrammes(ProgrammeController.getInstance().getAll());
+    }
 
 }
