@@ -4,15 +4,16 @@ import dk.sdu.swe.data.DB;
 import dk.sdu.swe.domain.models.Category;
 import dk.sdu.swe.domain.models.Channel;
 import dk.sdu.swe.domain.models.Programme;
+import dk.sdu.swe.domain.persistence.IProgrammeDAO;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
 
 import java.util.List;
 
-public class ProgrammeDAOImpl extends AbstractDAO<Programme> {
+public class ProgrammeDAOImpl extends AbstractDAO<Programme> implements IProgrammeDAO {
     private static ProgrammeDAOImpl instance;
 
-    public static ProgrammeDAOImpl getInstance() {
+    public static IProgrammeDAO getInstance() {
         if (instance == null) {
             instance = new ProgrammeDAOImpl();
         }
