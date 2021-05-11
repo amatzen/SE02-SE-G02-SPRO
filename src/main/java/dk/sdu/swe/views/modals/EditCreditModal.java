@@ -1,5 +1,6 @@
 package dk.sdu.swe.views.modals;
 
+import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -13,6 +14,7 @@ import java.io.IOException;
 import java.util.Objects;
 
 public class EditCreditModal extends Dialog<Boolean> {
+
     private GaussianBlur backgroundEffect;
 
     public EditCreditModal(Window window) {
