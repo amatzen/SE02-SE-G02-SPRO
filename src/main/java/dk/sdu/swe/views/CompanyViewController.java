@@ -1,7 +1,9 @@
 package dk.sdu.swe.views;
 
 import com.jfoenix.controls.JFXListView;
+import com.jfoenix.controls.JFXTextField;
 import dk.sdu.swe.data.dao.CompanyDAOImpl;
+import dk.sdu.swe.domain.controllers.CompanyController;
 import dk.sdu.swe.domain.controllers.PersonController;
 import dk.sdu.swe.domain.models.Company;
 import dk.sdu.swe.domain.models.Person;
@@ -23,6 +25,9 @@ public class CompanyViewController extends BorderPane {
     @FXML
     private JFXListView companyListView;
 
+    @FXML
+    private JFXTextField searchField;
+
     public CompanyViewController() {
         FXMLLoader fxmlLoader = new FXMLLoader(
             Objects.requireNonNull(
@@ -39,8 +44,11 @@ public class CompanyViewController extends BorderPane {
 
     @FXML
     private void initialize() {
-        List<Company> companies = CompanyDAOImpl.getInstance().getAll();
+        updateCompanies(CompanyController.getInstance().getAll());
+    }
 
+    private void updateCompanies(List<Company> companies) {
+        companyListView.getItems().clear();
         for (Company company : companies) {
             companyListView.getItems().add(new CompanyListItem(company));
         }
@@ -50,5 +58,17 @@ public class CompanyViewController extends BorderPane {
     private void addCompanyBtn(ActionEvent event) {
         Dialog<Boolean> addCompanyModal = new AddCompanyModal(getScene().getWindow());
         addCompanyModal.show();
+    }
+
+    @FXML
+    private void search(ActionEvent event) {
+        String searchTerm = searchField.getText();
+        updateCompanies(CompanyController.getInstance().search(searchTerm));
+    }
+
+    @FXML
+    private void resetSearch(ActionEvent event) {
+        searchField.clear();
+        updateCompanies(CompanyController.getInstance().getAll());
     }
 }

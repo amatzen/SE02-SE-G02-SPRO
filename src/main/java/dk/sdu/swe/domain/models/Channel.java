@@ -24,7 +24,6 @@ public class Channel {
     }
 
     public Channel() {
-
     }
 
     public int getEpgId() {
