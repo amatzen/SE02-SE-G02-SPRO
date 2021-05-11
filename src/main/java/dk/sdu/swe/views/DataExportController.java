@@ -1,6 +1,10 @@
 package dk.sdu.swe.views;
 
-
+import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXCheckBox;
+import com.jfoenix.controls.JFXRadioButton;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.VBox;
 
@@ -8,6 +12,16 @@ import java.io.IOException;
 import java.util.Objects;
 
 public class DataExportController extends VBox {
+
+    @FXML
+    private JFXCheckBox actorData, programData, companyData;
+
+    @FXML
+    private JFXRadioButton csvBtn, jsonBtn;
+
+    @FXML
+    private JFXButton exportBtn;
+
 
     public DataExportController() {
         FXMLLoader fxmlLoader = new FXMLLoader(
@@ -21,6 +35,10 @@ public class DataExportController extends VBox {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    private void exportCsv (ActionEvent event) {
+        System.out.println("Test");
     }
 
 }
