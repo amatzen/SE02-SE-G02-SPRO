@@ -5,7 +5,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Dialog;
-import javafx.scene.control.TextField;
 import javafx.scene.effect.GaussianBlur;
 import javafx.stage.Modality;
 import javafx.stage.StageStyle;
@@ -14,18 +13,11 @@ import javafx.stage.Window;
 import java.io.IOException;
 import java.util.Objects;
 
-public class EditCreditModal extends Dialog<Boolean> {
+public class AddCreditModal extends Dialog<Boolean> {
 
-    @FXML
-    private JFXButton closeBtn;
-
-    @FXML
-    private TextField nameField, roleField, groupField;
-
-    @FXML
     private GaussianBlur backgroundEffect;
 
-    public EditCreditModal(Window window) {
+    public AddCreditModal(Window window) {
         this.initOwner(window);
         this.initModality(Modality.APPLICATION_MODAL);
         this.initStyle(StageStyle.UNDECORATED);
@@ -36,10 +28,9 @@ public class EditCreditModal extends Dialog<Boolean> {
         setOnCloseRequest((event) -> {
             getOwner().getScene().getRoot().setEffect(null);
         });
-
         FXMLLoader fxmlLoader = new FXMLLoader(
             Objects.requireNonNull(
-                getClass().getClassLoader().getResource("dk/sdu/swe/ui/credits/edit-credit.fxml")));
+                getClass().getClassLoader().getResource("dk/sdu/swe/ui/credits/add-credit.fxml")));
         fxmlLoader.setController(this);
 
         try {

@@ -1,7 +1,6 @@
 package dk.sdu.swe.views.modals;
 
 import com.jfoenix.controls.JFXButton;
-import dk.sdu.swe.domain.controllers.CreditController;
 import dk.sdu.swe.domain.models.Category;
 import dk.sdu.swe.domain.models.Credit;
 import dk.sdu.swe.domain.models.Programme;
@@ -89,7 +88,7 @@ public class CreditListModal extends Dialog<Boolean> {
 
     @FXML
     private void addCreditBtn(ActionEvent event) {
-        Dialog editDialog = new EditCreditModal(getDialogPane().getScene().getWindow());
+        Dialog editDialog = new AddCreditModal(getDialogPane().getScene().getWindow());
         editDialog.show();
     }
 }
