@@ -81,7 +81,9 @@ public class ProgrammesViewController extends BorderPane {
 
     private void updateCategories(List<Category> categories) {
         for (Category category : categories) {
-            this.categories.getItems().add(new Label(category.getCategoryTitle()));
+            Label label = new Label(category.getCategoryTitle());
+            label.setUserData(category);
+            this.categories.getItems().add(label);
         }
     }
 
@@ -113,8 +115,8 @@ public class ProgrammesViewController extends BorderPane {
 
         List<Programme> searchResult = ProgrammeController.getInstance().search(
             searchField.getText(),
-            channel != null ? ((Channel) channel.getUserData()).getId() : null,
-            category != null ? category.getText() : null);
+            channel != null ? (Channel) channel.getUserData() : null,
+            category != null ? (Category) category.getUserData() : null);
 
         updateProgrammes(searchResult);
     }

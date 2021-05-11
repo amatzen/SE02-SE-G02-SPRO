@@ -32,18 +32,18 @@ public class ProgrammeController {
         return ProgrammeDAO.getInstance().getAll();
     }
 
-    public List<Programme> search(String searchTerm, Integer channelId, String category) {
+    public List<Programme> search(String searchTerm, Channel channel, Category category) {
 
         searchTerm = '%' + searchTerm + '%';
 
         String hql = "FROM Programme p WHERE p.title LIKE :search_term";
 
-        if (channelId != null) {
-            hql += " AND p.channel_id = :channel_id";
+        if (channel != null) {
+            hql += " AND channel_id = :channel_id";
         }
 
         if (category != null) {
-            hql += " AND :category_title IN (SELECT c.categoryTitle FROM Category c JOIN p.categories)";
+            hql += " AND :category_title IN (SELECT c.categoryTitle FROM Category c JOIN categories WHERE channel_id = :channel_id)";
         }
 
         Session session = DB.openSession();
@@ -51,12 +51,12 @@ public class ProgrammeController {
         Query query = session.createQuery(hql);
         query.setParameter("search_term", searchTerm);
 
-        if (channelId != null) {
-            query.setParameter("channel_id", channelId);
+        if (channel != null) {
+            query.setParameter("channel_id", channel.getId());
         }
 
         if (category != null) {
-            query.setParameter("category_title", category);
+            query.setParameter("category_title", category.getCategoryTitle());
         }
 
         List<Programme> res = query.list();

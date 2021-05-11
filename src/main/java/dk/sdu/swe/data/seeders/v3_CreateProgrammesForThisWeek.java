@@ -3,9 +3,7 @@ package dk.sdu.swe.data.seeders;
 import com.google.gson.Gson;
 import dk.sdu.swe.data.DB;
 import dk.sdu.swe.data.dao.*;
-import dk.sdu.swe.domain.models.Category;
-import dk.sdu.swe.domain.models.EPGProgramme;
-import dk.sdu.swe.domain.models.Programme;
+import dk.sdu.swe.domain.models.*;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.exception.ConstraintViolationException;
@@ -106,16 +104,28 @@ public class v3_CreateProgrammesForThisWeek {
                                 categoryDAO.save(c);
                                 return c;
                             });
-                        System.out.println("IOWJDJAIODOIJWAJIODWAJIOAIOJWDJIOAWJIO " + category.getId());
                         categories.add(category);
                     }
 
-                    addedProgrammes.add(new Programme(
+                    Programme programme = new Programme(
                         epgObj.getString("title"),
                         ChannelDAOImpl.getInstance().getById(channelObj.getInt("id")).orElse(null),
                         0,
                         categories
-                    ));
+                    );
+
+                    Person person = new Person("SomeNavn", "Image", "2021-05-12");
+                    PersonDAOImpl.getInstance().save(person);
+
+                    Credit credit = new Credit(person);
+                    CreditDAOImpl.getInstance().save(credit);
+
+                    List<Credit> credits = new LinkedList<>();
+                    credits.add(credit);
+
+                    programme.setCredits(credits);
+
+                    addedProgrammes.add(programme);
                     addedProgrammesTitle.add(epgObj.getString("title"));
                 }
             }

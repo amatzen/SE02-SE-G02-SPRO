@@ -19,6 +19,15 @@ public class Programme {
     @Transient
     private List<EPGProgramme> epgDates;
 
+    @ManyToMany
+    private List<Category> categories;
+
+    @ManyToOne(optional = true)
+    private Channel channel;
+
+    @OneToMany
+    private List<Credit> credits;
+
     public Programme(String title, Channel channel, int prodYear, List<Category> categories) {
         this.title = title;
         this.channel = channel;
@@ -29,6 +38,10 @@ public class Programme {
     public Programme() {
     }
 
+    public List<Credit> getCredits() {
+        return credits;
+    }
+
     public String getTitle() {
         return title;
     }
@@ -37,14 +50,13 @@ public class Programme {
         return prodYear;
     }
 
-
     public List<EPGProgramme> getEpgDates() {
         return epgDates;
     }
 
-
-    @ManyToMany(fetch = FetchType.EAGER)
-    private List<Category> categories;
+    public Channel getChannel() {
+        return channel;
+    }
 
     public List<Category> getCategories() {
         return categories;
@@ -54,25 +66,11 @@ public class Programme {
         this.categories = categories;
     }
 
-    @ManyToOne(optional = true)
-    private Channel channel;
-
-    public Channel getChannel() {
-        return channel;
-    }
-
     public void setChannel(Channel channel) {
         this.channel = channel;
     }
 
-    @OneToMany
-    private Collection<Credit> credits;
-
-    public Collection<Credit> getCredits() {
-        return credits;
-    }
-
-    public void setCredits(Collection<Credit> credits) {
+    public void setCredits(List<Credit> credits) {
         this.credits = credits;
     }
 }

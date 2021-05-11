@@ -72,18 +72,13 @@ public class CreditListModal extends Dialog<Boolean> {
             .map(Category::getCategoryTitle)
             .collect(Collectors.joining(", ")));
 
-        /*List<Credit> credits = null;
+        List<Credit> credits = null;
 
-        try {
-            credits = CreditController.getInstance().getAll()
-                .stream().filter(credit -> credit.getProgramme() == programme.getId()).collect(Collectors.toList());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        credits = programme.getCredits();
 
         for (Credit credit : credits) {
             creditsPane.getChildren().add(new CreditListItem(credit));
-        }*/
+        }
     }
 
     @FXML

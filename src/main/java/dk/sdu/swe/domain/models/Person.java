@@ -34,6 +34,15 @@ public class Person {
     @Column(name = "value")
     private Map<String, String> contactDetails = new HashMap<>();
 
+    public Person() {
+    }
+
+    public Person(String name, String image, String dateOfBirth) {
+        this.name = name;
+        this.image = image;
+        this.dateOfBirth = dateOfBirth;
+    }
+
     public int getId() {
         return id;
     }
