@@ -43,7 +43,7 @@ public class CreditListItem extends HBox {
     private void initialize() {
         Person p = credit.getPerson();
 
-        //creditImageView.setImage(new Image(p.getImage(), true));
+        creditImageView.setImage(new Image(p.getImage(), true));
 
         nameLbl.setText(p.getName());
     }

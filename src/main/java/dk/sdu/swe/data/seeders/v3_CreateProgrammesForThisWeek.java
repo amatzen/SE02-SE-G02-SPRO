@@ -1,18 +1,14 @@
 package dk.sdu.swe.data.seeders;
 
-import com.google.gson.Gson;
 import dk.sdu.swe.data.DB;
 import dk.sdu.swe.data.dao.*;
 import dk.sdu.swe.domain.models.*;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import org.hibernate.exception.ConstraintViolationException;
-import org.joda.time.DateTime;
 import org.joda.time.Instant;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import javax.persistence.PersistenceException;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
@@ -114,7 +110,7 @@ public class v3_CreateProgrammesForThisWeek {
                         categories
                     );
 
-                    Person person = new Person("SomeNavn", "Image", "2021-05-12");
+                    Person person = new Person("SomeNavn", "https://i.stack.imgur.com/bHXDR.jpg", "2021-05-12");
                     PersonDAOImpl.getInstance().save(person);
 
                     Credit credit = new Credit(person);
@@ -132,7 +128,7 @@ public class v3_CreateProgrammesForThisWeek {
         }
         session1.close();
 
-        IDAO<Programme> programmeDAO = ProgrammeDAO.getInstance();
+        IDAO<Programme> programmeDAO = ProgrammeDAOImpl.getInstance();
         addedProgrammes.forEach(programmeDAO::save);
     }
 }
