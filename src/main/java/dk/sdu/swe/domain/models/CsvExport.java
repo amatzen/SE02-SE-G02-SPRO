@@ -14,7 +14,7 @@ public class CsvExport {
         Arrays.asList("Skuespiller 3", "Program 3", "Virksomhed 3")
     );
 
-    public static void CsvExport() {
+    public static void csvExport() {
         try {
             FileWriter csvWriter = new FileWriter("Eksport.csv");
             csvWriter.append("Skuespillerdata");

@@ -3,6 +3,7 @@ package dk.sdu.swe.views;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXCheckBox;
 import com.jfoenix.controls.JFXRadioButton;
+import dk.sdu.swe.domain.models.CsvExport;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -37,8 +38,9 @@ public class DataExportController extends VBox {
         }
     }
 
+    @FXML
     private void exportCsv (ActionEvent event) {
-        System.out.println("Test");
+        CsvExport.csvExport();
     }
 
 }
