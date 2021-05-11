@@ -32,8 +32,6 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.8.6'
     implementation 'javax.xml.bind:jaxb-api:2.3.1'
     implementation 'joda-time:joda-time:2.10.10'
-
-
 }
 
 run {

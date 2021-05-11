@@ -6,6 +6,7 @@ import com.jfoenix.controls.JFXListView;
 import dk.sdu.swe.domain.controllers.ChannelController;
 import dk.sdu.swe.data.DB;
 import dk.sdu.swe.domain.controllers.ProgrammeController;
+import dk.sdu.swe.domain.models.Category;
 import dk.sdu.swe.domain.models.Channel;
 import dk.sdu.swe.domain.models.Programme;
 import dk.sdu.swe.views.modals.companies.AddCompanyModal;
@@ -24,6 +25,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Objects;
 import java.util.TreeSet;
+import java.util.stream.Collectors;
 
 public class ProgrammesViewController extends BorderPane {
 
@@ -64,18 +66,24 @@ public class ProgrammesViewController extends BorderPane {
     private void initialize() {
         updateProgrammes(ProgrammeController.getInstance().getAll());
 
-        List<Channel> channels = ChannelController.getInstance().getAll();
+        updateChannels(ChannelController.getInstance().getAll());
 
+        updateCategories(ProgrammeController.getInstance().getCategories());
+    }
+
+    private void updateChannels(List<Channel> channels) {
         for (Channel channel : channels) {
             Label label = new Label(channel.getName());
             label.setUserData(channel);
             this.channels.getItems().add(label);
         }
+    }
 
-        List<String> categories = ProgrammeController.getInstance().getCategories();
-
-        for (String category : categories) {
-            this.categories.getItems().add(new Label(category));
+    private void updateCategories(List<Category> categories) {
+        for (Category category : categories) {
+            Label label = new Label(category.getCategoryTitle());
+            label.setUserData(category);
+            this.categories.getItems().add(label);
         }
     }
 
@@ -107,8 +115,8 @@ public class ProgrammesViewController extends BorderPane {
 
         List<Programme> searchResult = ProgrammeController.getInstance().search(
             searchField.getText(),
-            channel != null ? ((Channel) channel.getUserData()).getId() : null,
-            category != null ? category.getText() : null);
+            channel != null ? (Channel) channel.getUserData() : null,
+            category != null ? (Category) category.getUserData() : null);
 
         updateProgrammes(searchResult);
     }

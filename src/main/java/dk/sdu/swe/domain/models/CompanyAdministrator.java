@@ -1,14 +1,10 @@
 package dk.sdu.swe.domain.models;
 
-import com.google.gson.annotations.Expose;
-
-import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.Transient;
 import java.util.Arrays;
 
-@Entity(name = "users")
-@DiscriminatorValue("CompanyAdministrator")
+@Entity
 public class CompanyAdministrator extends User {
     @Transient
     private final String[] permissions = {
@@ -29,8 +25,8 @@ public class CompanyAdministrator extends User {
      * @param name     the name
      * @throws Exception the exception
      */
-    public CompanyAdministrator(String username, String email, String name, String password) throws Exception {
-        super(username, email, name, password);
+    public CompanyAdministrator(String username, String email, String name, String password, Company company) throws Exception {
+        super(username, email, name, password, company);
     }
 
     public CompanyAdministrator() { }

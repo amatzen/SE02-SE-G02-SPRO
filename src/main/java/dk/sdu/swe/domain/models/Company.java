@@ -3,6 +3,8 @@ package dk.sdu.swe.domain.models;
 import dk.sdu.swe.data.converters.CompanyDetailsConverter;
 
 import javax.persistence.*;
+import java.util.Collection;
+import java.util.List;
 
 @Entity
 @Table(name = "companies")
@@ -18,17 +20,22 @@ public class Company {
     @JoinColumn(nullable = true, name = "parent_company_id", referencedColumnName = "id")
     private Company parentCompany;
 
-    @Convert(converter = CompanyDetailsConverter.class)
+    @Embedded
     private CompanyDetails companyDetails;
 
     private String logo;
 
-    public Company(int id, String name, Company parentCompany, CompanyDetails companyDetails, String logo) {
-        this.id = id;
+    @OneToMany(mappedBy = "company")
+    private List<User> users;
+
+    public Company(String name, Company parentCompany, CompanyDetails companyDetails, String logo) {
         this.name = name;
         this.parentCompany = parentCompany;
         this.companyDetails = companyDetails;
         this.logo = logo;
+    }
+
+    public Company() {
     }
 
     public int getId() {
@@ -69,5 +76,13 @@ public class Company {
 
     public void setLogo(String logo) {
         this.logo = logo;
+    }
+
+    public List<User> getUsers() {
+        return users;
+    }
+
+    public void setUsers(List<User> users) {
+        this.users = users;
     }
 }

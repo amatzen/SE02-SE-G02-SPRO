@@ -1,5 +1,10 @@
 package dk.sdu.swe.domain.controllers;
 
+import dk.sdu.swe.data.dao.PersonDAOImpl;
+import dk.sdu.swe.domain.models.Person;
+
+import java.util.List;
+
 public class PersonController {
 
     private static PersonController instance;
@@ -11,6 +16,10 @@ public class PersonController {
             instance = new PersonController();
         }
         return instance;
+    }
+
+    public List<Person> getAll() {
+        return PersonDAOImpl.getInstance().getAll();
     }
 
 }

@@ -64,20 +64,10 @@ public class UserAdministrationDialog extends Dialog<Boolean> {
 
     @FXML
     private void initialize() {
-        /*
         companyName.setText(company.getName());
-
-        List<User> users = null;
-        try {
-            users = User.getAll();
-        } catch (Exception e) {
-            e.printStackTrace();
+        for (User user : company.getUsers()) {
+            usersListView.getItems().add(new UserListItem(user));
         }
-        users.stream().filter(user -> user.getCompanyId() == company.getId()).forEach(
-            user -> {
-                usersListView.getItems().add(new UserListItem(user));
-            }
-        );*/
     }
 
     @FXML

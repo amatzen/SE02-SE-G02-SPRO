@@ -16,10 +16,6 @@ import java.util.Objects;
 
 public class AddCompanyModal extends Dialog<Boolean> {
 
-
-   
-
-
    @FXML
     private TextField companyTextfield;
 

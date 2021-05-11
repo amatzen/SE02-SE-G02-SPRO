@@ -1,7 +1,13 @@
 package dk.sdu.swe.views;
 
 import com.jfoenix.controls.JFXListView;
+import dk.sdu.swe.data.dao.CompanyDAOImpl;
+import dk.sdu.swe.domain.controllers.PersonController;
+import dk.sdu.swe.domain.models.Company;
+import dk.sdu.swe.domain.models.Person;
 import dk.sdu.swe.views.modals.companies.AddCompanyModal;
+import dk.sdu.swe.views.partials.CompanyListItem;
+import dk.sdu.swe.views.partials.PersonListItem;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,6 +15,7 @@ import javafx.scene.control.Dialog;
 import javafx.scene.layout.BorderPane;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.Objects;
 
 public class CompanyViewController extends BorderPane {
@@ -32,6 +39,11 @@ public class CompanyViewController extends BorderPane {
 
     @FXML
     private void initialize() {
+        List<Company> companies = CompanyDAOImpl.getInstance().getAll();
+
+        for (Company company : companies) {
+            companyListView.getItems().add(new CompanyListItem(company));
+        }
     }
 
     @FXML

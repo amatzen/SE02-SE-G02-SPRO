@@ -1,0 +1,21 @@
+package dk.sdu.swe.domain.persistence;
+
+import dk.sdu.swe.data.DB;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
+import javax.persistence.PersistenceException;
+import java.util.List;
+import java.util.Optional;
+
+public interface IDAO<T> {
+
+    public void save(T obj);
+
+    public void update(T obj);
+
+    public Optional<T> getById(int id);
+
+    public List<T> getAll();
+
+}

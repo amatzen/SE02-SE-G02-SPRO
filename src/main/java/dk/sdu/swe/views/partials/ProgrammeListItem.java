@@ -1,5 +1,7 @@
 package dk.sdu.swe.views.partials;
 
+import dk.sdu.swe.data.DB;
+import dk.sdu.swe.domain.models.Category;
 import dk.sdu.swe.domain.models.Programme;
 import dk.sdu.swe.views.modals.CreditListModal;
 import javafx.fxml.FXML;
@@ -8,9 +10,11 @@ import javafx.scene.control.Dialog;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
+import org.hibernate.Session;
 
 import java.io.IOException;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 public class ProgrammeListItem extends AnchorPane {
 
@@ -41,7 +45,9 @@ public class ProgrammeListItem extends AnchorPane {
     @FXML
     private void initialize() {
         nameLbl.setText(programme.getTitle());
-        categoryLbl.setText(programme.getCategory());
+        categoryLbl.setText(programme.getCategories().stream()
+            .map(Category::getCategoryTitle)
+            .collect(Collectors.joining(", ")));
         releaseYearLbl.setText(String.valueOf(programme.getProdYear()));
     }
 

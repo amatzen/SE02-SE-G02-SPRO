@@ -5,6 +5,8 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXListView;
 import dk.sdu.swe.domain.models.Company;
 
+import dk.sdu.swe.domain.models.User;
+import dk.sdu.swe.views.partials.UserListItem;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -41,9 +43,6 @@ public class EditCompanyDialog extends Dialog<Boolean> {
 
     @FXML
     private GaussianBlur backgroundEffect;
-    @FXML
-    private JFXListView usersListView;
-
 
     public EditCompanyDialog(Window window, Company company) {
         this.company = company;
@@ -73,8 +72,6 @@ public class EditCompanyDialog extends Dialog<Boolean> {
 
     private void initialize() {
         companyName.setText(company.getName());
-
-
     }
 
     @FXML

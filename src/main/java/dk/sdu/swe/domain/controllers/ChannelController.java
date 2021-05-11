@@ -1,6 +1,7 @@
 package dk.sdu.swe.domain.controllers;
 
 import dk.sdu.swe.data.DB;
+import dk.sdu.swe.data.dao.ChannelDAOImpl;
 import dk.sdu.swe.domain.models.Channel;
 import dk.sdu.swe.domain.models.Programme;
 import org.hibernate.Session;
@@ -26,17 +27,7 @@ public class ChannelController {
     }
 
     public List<Channel> getAll() {
-        Session session = DB.openSession();
-        CriteriaBuilder criteriaBuilder = session.getCriteriaBuilder();
-        CriteriaQuery<Channel> criteriaQuery = criteriaBuilder.createQuery(Channel.class);
-        Root<Channel> channelRoot = criteriaQuery.from(Channel.class);
-        criteriaQuery.select(channelRoot);
-
-        List<Channel> res = session.createQuery(criteriaQuery).getResultList();
-
-        session.close();
-
-        return res;
+        return ChannelDAOImpl.getInstance().getAll();
     }
 
 }

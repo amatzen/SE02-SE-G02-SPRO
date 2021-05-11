@@ -11,27 +11,14 @@ public class Credit {
     private int id;
 
     @OneToOne
-    @JoinColumn(name = "programme_id", referencedColumnName = "id")
-    private Programme programme;
-
-    @OneToOne
     @JoinColumn(name = "person_id", referencedColumnName = "id")
     private Person person;
 
-    public Credit(Programme programme, Person person) {
-        this.programme = programme;
+    public Credit(Person person) {
         this.person = person;
     }
 
     public Credit() {}
-
-    public Programme getProgramme() {
-        return programme;
-    }
-
-    public void setProgramme(Programme programme) {
-        this.programme = programme;
-    }
 
     public Person getPerson() {
         return person;
@@ -40,5 +27,4 @@ public class Credit {
     public void setPerson(Person person) {
         this.person = person;
     }
-
 }
