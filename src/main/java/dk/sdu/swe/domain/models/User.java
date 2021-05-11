@@ -43,7 +43,8 @@ public class User implements IUser {
         "people"
     };
 
-
+    @ManyToOne(optional = true)
+    private Company company;
 
     /**
      * Instantiates a new User.
@@ -113,9 +114,6 @@ public class User implements IUser {
             ", permissions=" + Arrays.toString(permissions) +
             '}';
     }
-
-    @ManyToOne(optional = true)
-    private Company company;
 
     public Company getCompany() {
         return company;

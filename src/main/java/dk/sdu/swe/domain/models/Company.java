@@ -4,6 +4,7 @@ import dk.sdu.swe.data.converters.CompanyDetailsConverter;
 
 import javax.persistence.*;
 import java.util.Collection;
+import java.util.List;
 
 @Entity
 @Table(name = "companies")
@@ -23,6 +24,9 @@ public class Company {
     private CompanyDetails companyDetails;
 
     private String logo;
+
+    @OneToMany(mappedBy = "company")
+    private List<User> users;
 
     public Company(String name, Company parentCompany, CompanyDetails companyDetails, String logo) {
         this.name = name;
@@ -72,5 +76,13 @@ public class Company {
 
     public void setLogo(String logo) {
         this.logo = logo;
+    }
+
+    public List<User> getUsers() {
+        return users;
+    }
+
+    public void setUsers(List<User> users) {
+        this.users = users;
     }
 }
