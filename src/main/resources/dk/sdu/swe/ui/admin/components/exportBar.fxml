@@ -11,7 +11,7 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<fx:root prefHeight="297.0" prefWidth="614.0" type="VBox" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root prefHeight="297.0" prefWidth="614.0" type="VBox" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Label prefHeight="81.0" prefWidth="195.0" text="Dataeksport" translateX="43.0">
          <font>
@@ -55,7 +55,7 @@
                         <Insets left="50.0" top="5.0" />
                      </VBox.margin>
                   </Label>
-                  <JFXRadioButton fx:id="csvToggle" text="CSV">
+                  <JFXRadioButton fx:id="csvBtn" text="CSV">
                      <VBox.margin>
                         <Insets left="50.0" top="10.0" />
                      </VBox.margin>
@@ -66,7 +66,7 @@
                         <Color red="1.0" green="0.5960784554481506" />
                      </selectedColor>
                   </JFXRadioButton>
-                  <JFXRadioButton fx:id="jsonToggle" layoutX="10.0" layoutY="27.0" text="JSON" toggleGroup="$fileTypeToggleGroup">
+                  <JFXRadioButton fx:id="jsonBtn" layoutX="10.0" layoutY="27.0" text="JSON" toggleGroup="$fileTypeToggleGroup">
                      <VBox.margin>
                         <Insets left="50.0" top="10.0" />
                      </VBox.margin>
