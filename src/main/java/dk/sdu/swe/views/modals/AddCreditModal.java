@@ -13,11 +13,11 @@ import javafx.stage.Window;
 import java.io.IOException;
 import java.util.Objects;
 
-public class EditCreditModal extends Dialog<Boolean> {
+public class AddCreditModal extends Dialog<Boolean> {
 
     private GaussianBlur backgroundEffect;
 
-    public EditCreditModal(Window window) {
+    public AddCreditModal(Window window) {
         this.initOwner(window);
         this.initModality(Modality.APPLICATION_MODAL);
         this.initStyle(StageStyle.UNDECORATED);
@@ -30,7 +30,7 @@ public class EditCreditModal extends Dialog<Boolean> {
         });
         FXMLLoader fxmlLoader = new FXMLLoader(
             Objects.requireNonNull(
-                getClass().getClassLoader().getResource("dk/sdu/swe/ui/credits/edit-credit.fxml")));
+                getClass().getClassLoader().getResource("dk/sdu/swe/ui/credits/add-credit.fxml")));
         fxmlLoader.setController(this);
 
         try {
