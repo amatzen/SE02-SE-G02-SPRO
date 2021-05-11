@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.effect.DropShadow?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.paint.Color?>
-<?import javafx.scene.text.Font?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
 
-<fx:root alignment="CENTER" style="-fx-background-color: #ededed;" type="HBox" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root alignment="CENTER" style="-fx-background-color: #ededed;" type="HBox" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <ImageView fx:id="creditImageView" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
          <HBox.margin>
@@ -43,7 +42,7 @@
             <Insets />
          </HBox.margin>
       </VBox>
-      <JFXButton buttonType="RAISED" prefHeight="33.0" prefWidth="60.0" ripplerFill="#e88b0a" style="-fx-background-color: #FF9800;" text="Redigér" textFill="WHITE">
+      <JFXButton fx:id="editButton" buttonType="RAISED" onAction="#editBtn" prefHeight="33.0" prefWidth="60.0" ripplerFill="#e88b0a" style="-fx-background-color: #FF9800;" text="Redigér" textFill="WHITE">
          <HBox.margin>
             <Insets right="10.0" />
          </HBox.margin>
