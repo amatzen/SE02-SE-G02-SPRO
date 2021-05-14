@@ -76,7 +76,7 @@ public class v3_CreateProgrammesForThisWeek {
                 JSONObject epgObj = epgProgrammes.getJSONObject(i2);
                 Transaction trans = session1.beginTransaction();
                 session1.save(new EPGProgramme(
-                    channelObj.getInt("id"),
+                    channelObj.getLong("id"),
                     Instant.ofEpochSecond(epgObj.getLong("start")),
                     Instant.ofEpochSecond(epgObj.getLong("stop")),
                     epgObj.getJSONArray("categories").toList().stream().map(object -> Objects.toString(object, null)).collect(Collectors.toList()),
@@ -111,7 +111,7 @@ public class v3_CreateProgrammesForThisWeek {
                     IChannelDAO channelDAO = ChannelDAOImpl.getInstance();
                     Programme programme = new Programme(
                         epgObj.getString("title"),
-                        channelDAO.getByEpgId(channelObj.getInt("id")).orElse(null),
+                        channelDAO.getByEpgId(channelObj.getLong("id")).orElse(null),
                         0,
                         categories
                     );

@@ -1,11 +1,9 @@
 package dk.sdu.swe.domain.models;
 
-import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 import org.json.JSONObject;
 
 import javax.persistence.*;
-import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -16,7 +14,7 @@ public class Person {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
     private String name;
 
@@ -48,7 +46,7 @@ public class Person {
         this.dateOfBirth = dateOfBirth;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 

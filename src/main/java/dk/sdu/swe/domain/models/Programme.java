@@ -1,7 +1,6 @@
 package dk.sdu.swe.domain.models;
 
 import javax.persistence.*;
-import java.util.Collection;
 import java.util.List;
 
 @Entity
@@ -10,7 +9,7 @@ public class Programme {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
     private String title;
 

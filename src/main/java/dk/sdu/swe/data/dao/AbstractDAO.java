@@ -45,7 +45,7 @@ public abstract class AbstractDAO<T> implements IDAO<T> {
     }
 
     @Override
-    public Optional<T> getById(int obj) {
+    public Optional<T> getById(Long obj) {
         Session session = DB.openSession();
 
         T res = null;

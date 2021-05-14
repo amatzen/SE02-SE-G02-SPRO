@@ -7,7 +7,6 @@ import org.hibernate.annotations.NaturalId;
 
 import javax.persistence.*;
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.Objects;
 
 /**
@@ -19,7 +18,7 @@ import java.util.Objects;
 public class User implements IUser {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
     @NaturalId
     @Column(unique = true)
@@ -90,7 +89,7 @@ public class User implements IUser {
         return name;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 

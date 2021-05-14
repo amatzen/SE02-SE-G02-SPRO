@@ -9,11 +9,11 @@ import javax.persistence.*;
 public class Channel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
     @NaturalId
     @Column(name = "epg_id")
-    private int epgIdentifier;
+    private Long epgIdentifier;
 
     @Column(unique = true, nullable = false)
     private String name;
@@ -29,11 +29,11 @@ public class Channel {
     public Channel() {
     }
 
-    public int getEpgId() {
+    public Long getEpgId() {
         return epgIdentifier;
     }
 
-    public void setEpgId(int epgIdentifier) {
+    public void setEpgId(Long epgIdentifier) {
         this.epgIdentifier = epgIdentifier;
     }
 
@@ -53,7 +53,7 @@ public class Channel {
         this.logo = logo;
     }
 
-    public int getId() {
+    public Long getId() {
         return this.id;
     }
 }

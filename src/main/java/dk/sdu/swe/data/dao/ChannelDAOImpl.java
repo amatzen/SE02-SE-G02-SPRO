@@ -25,7 +25,7 @@ public class ChannelDAOImpl extends AbstractDAO<Channel> implements IChannelDAO 
     }
 
     @Override
-    public Optional<Channel> getByEpgId(int epgId) {
+    public Optional<Channel> getByEpgId(Long epgId) {
         Session session = DB.openSession();
         Channel channel = null;
         try {

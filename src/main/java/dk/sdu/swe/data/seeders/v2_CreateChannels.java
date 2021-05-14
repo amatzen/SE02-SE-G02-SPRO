@@ -20,10 +20,10 @@ public class v2_CreateChannels {
 
         // Values fetched from
         // https://tvtid-api.api.tv2.dk/api/tvtid/v1/schedules/channels
-        a.setEpgId(3);
-        b.setEpgId(12566);
-        c.setEpgId(31);
-        d.setEpgId(4);
+        a.setEpgId(3l);
+        b.setEpgId(12566l);
+        c.setEpgId(31l);
+        d.setEpgId(4l);
 
         session.saveOrUpdate(a);
         session.saveOrUpdate(b);

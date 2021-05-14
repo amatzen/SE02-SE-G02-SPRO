@@ -6,6 +6,6 @@ import java.util.Optional;
 
 public interface IChannelDAO extends IDAO<Channel> {
 
-    public Optional<Channel> getByEpgId(int epgId);
+    public Optional<Channel> getByEpgId(Long epgId);
 
 }
