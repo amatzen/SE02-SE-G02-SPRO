@@ -1,9 +1,11 @@
 package dk.sdu.swe.data.seeders;
 
+import com.google.common.base.Charsets;
 import dk.sdu.swe.data.DB;
 import dk.sdu.swe.data.dao.*;
 import dk.sdu.swe.domain.models.*;
 import dk.sdu.swe.domain.persistence.ICategoryDAO;
+import dk.sdu.swe.domain.persistence.IChannelDAO;
 import dk.sdu.swe.domain.persistence.IDAO;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -29,7 +31,7 @@ public class v3_CreateProgrammesForThisWeek {
 
         // Step 2: Generate the API URL
         StringBuilder epgUrl = new StringBuilder();
-        epgUrl.append("https://tvtid-api.api.tv2.dk/api/tvtid/v1/epg/dayviews/2021-05-11");
+        epgUrl.append("https://tvtid-api.api.tv2.dk/api/tvtid/v1/epg/dayviews/2021-05-15");
         AtomicInteger i = new AtomicInteger();
 
         channelEpgIds.forEach(epgId -> {
@@ -46,11 +48,12 @@ public class v3_CreateProgrammesForThisWeek {
         HttpURLConnection conn = (HttpURLConnection) url.openConnection();
         conn.setRequestMethod("GET");
         conn.setRequestProperty("Accept", "application/json");
+        conn.setRequestProperty("Accept-Charset", "utf-8");
 
         conn.connect();
 
         // Step 4: Read the HTTP Response
-        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(conn.getInputStream(), Charsets.UTF_8));
         String input;
         StringBuffer content = new StringBuffer();
         while((input = bufferedReader.readLine()) != null) {
@@ -105,9 +108,10 @@ public class v3_CreateProgrammesForThisWeek {
                         categories.add(category);
                     }
 
+                    IChannelDAO channelDAO = ChannelDAOImpl.getInstance();
                     Programme programme = new Programme(
                         epgObj.getString("title"),
-                        ChannelDAOImpl.getInstance().getById(channelObj.getInt("id")).orElse(null),
+                        channelDAO.getByEpgId(channelObj.getInt("id")).orElse(null),
                         0,
                         categories
                     );
