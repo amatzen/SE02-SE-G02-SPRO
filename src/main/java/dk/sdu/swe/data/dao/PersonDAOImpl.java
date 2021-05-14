@@ -1,6 +1,7 @@
 package dk.sdu.swe.data.dao;
 
 import dk.sdu.swe.data.DB;
+import dk.sdu.swe.domain.models.Channel;
 import dk.sdu.swe.domain.models.Person;
 import dk.sdu.swe.domain.persistence.IPersonDAO;
 import org.hibernate.Session;
@@ -42,5 +43,20 @@ public class PersonDAOImpl extends AbstractDAO<Person> implements IPersonDAO {
         }
 
         return personList;
+    }
+
+    @Override
+    public void delete(Person obj) {
+        Session session = DB.openSession();
+        try {
+            session.getTransaction().begin();
+            Query query = session.createQuery("DELETE Credit WHERE person_id = :person_id");
+            query.setParameter("person_id", obj.getId());
+            query.executeUpdate();
+            session.delete(obj);
+            session.getTransaction().commit();
+        } finally {
+            session.close();
+        }
     }
 }

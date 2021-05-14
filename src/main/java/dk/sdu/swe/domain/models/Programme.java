@@ -25,7 +25,7 @@ public class Programme {
     @ManyToOne(optional = true)
     private Channel channel;
 
-    @OneToMany
+    @OneToMany(mappedBy = "programme")
     private List<Credit> credits;
 
     public Programme(String title, Channel channel, int prodYear, List<Category> categories) {

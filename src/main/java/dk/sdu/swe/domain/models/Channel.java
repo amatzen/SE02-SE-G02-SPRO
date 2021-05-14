@@ -1,5 +1,7 @@
 package dk.sdu.swe.domain.models;
 
+import org.hibernate.annotations.NaturalId;
+
 import javax.persistence.*;
 
 @Entity
@@ -9,6 +11,7 @@ public class Channel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
+    @NaturalId
     @Column(name = "epg_id")
     private int epgIdentifier;
 

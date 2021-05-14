@@ -2,6 +2,7 @@ package dk.sdu.swe.data.dao;
 
 import dk.sdu.swe.data.DB;
 import dk.sdu.swe.domain.persistence.IDAO;
+import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -22,17 +23,23 @@ public abstract class AbstractDAO<T> implements IDAO<T> {
     @Override
     public List getAll() {
         Session session = DB.openSession();
-        Transaction trans = session.beginTransaction();
 
-        CriteriaBuilder criteriaBuilder = session.getCriteriaBuilder();
-        CriteriaQuery<T> criteriaQuery = criteriaBuilder.createQuery(type);
-        Root<T> programmeRoot = criteriaQuery.from(type);
-        criteriaQuery.select(programmeRoot);
+        List<T> res = null;
 
-        List<T> res = session.createQuery(criteriaQuery).getResultList();
+        try {
+            Transaction trans = session.beginTransaction();
 
-        trans.commit();
-        session.close();
+            CriteriaBuilder criteriaBuilder = session.getCriteriaBuilder();
+            CriteriaQuery<T> criteriaQuery = criteriaBuilder.createQuery(type);
+            Root<T> programmeRoot = criteriaQuery.from(type);
+            criteriaQuery.select(programmeRoot);
+
+            res = session.createQuery(criteriaQuery).getResultList();
+
+            trans.commit();
+        } finally {
+            session.close();
+        }
 
         return res;
     }
@@ -40,19 +47,27 @@ public abstract class AbstractDAO<T> implements IDAO<T> {
     @Override
     public Optional<T> getById(int obj) {
         Session session = DB.openSession();
-        Transaction trans = session.beginTransaction();
 
-        T res = session.get(type, obj);
+        T res = null;
 
-        trans.commit();
+        try {
+            Transaction trans = session.beginTransaction();
+
+            res = session.get(type, obj);
+
+            trans.commit();
+        } finally {
+            session.close();
+        }
+
         return Optional.ofNullable(res);
     }
 
     @Override
     public void save(T obj) {
         Session session = DB.openSession();
-        Transaction trans = session.beginTransaction();
         try {
+            Transaction trans = session.beginTransaction();
             session.save(obj);
             trans.commit();
         } finally {
@@ -63,10 +78,22 @@ public abstract class AbstractDAO<T> implements IDAO<T> {
     @Override
     public void update(T obj) {
         Session session = DB.openSession();
-        Transaction trans = session.beginTransaction();
         try {
+            Transaction trans = session.beginTransaction();
             session.update(obj);
             trans.commit();
+        } finally {
+            session.close();
+        }
+    }
+
+    @Override
+    public void delete(T obj) {
+        Session session = DB.openSession();
+        try {
+            session.getTransaction().begin();
+            session.delete(obj);
+            session.getTransaction().commit();
         } finally {
             session.close();
         }

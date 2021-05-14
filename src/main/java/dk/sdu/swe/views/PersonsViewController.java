@@ -50,7 +50,7 @@ public class PersonsViewController extends VBox {
 
     private void updatePeople(List<Person> people) {
         for (Person person : people) {
-            peopleListView.getItems().add(new PersonListItem(person));
+            peopleListView.getItems().add(new PersonListItem(person, peopleListView));
         }
     }
 

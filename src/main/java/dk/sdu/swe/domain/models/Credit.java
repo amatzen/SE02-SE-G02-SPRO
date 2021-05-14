@@ -10,9 +10,12 @@ public class Credit {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "person_id", referencedColumnName = "id")
     private Person person;
+
+    @ManyToOne
+    private Programme programme;
 
     public Credit(Person person) {
         this.person = person;
@@ -26,5 +29,13 @@ public class Credit {
 
     public void setPerson(Person person) {
         this.person = person;
+    }
+
+    public Programme getProgramme() {
+        return programme;
+    }
+
+    public void setProgramme(Programme programme) {
+        this.programme = programme;
     }
 }

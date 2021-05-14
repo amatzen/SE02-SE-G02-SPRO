@@ -16,6 +16,8 @@ public interface IDAO<T> {
 
     public Optional<T> getById(int id);
 
+    public void delete(T obj);
+
     public List<T> getAll();
 
 }
