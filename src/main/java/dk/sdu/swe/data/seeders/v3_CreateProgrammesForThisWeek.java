@@ -116,17 +116,6 @@ public class v3_CreateProgrammesForThisWeek {
                         categories
                     );
 
-                    Person person = new Person("SomeNavn", "https://i.stack.imgur.com/bHXDR.jpg", "2021-05-12");
-                    PersonDAOImpl.getInstance().save(person);
-
-                    Credit credit = new Credit(person);
-                    CreditDAOImpl.getInstance().save(credit);
-
-                    List<Credit> credits = new LinkedList<>();
-                    credits.add(credit);
-
-                    programme.setCredits(credits);
-
                     addedProgrammes.add(programme);
                     addedProgrammesTitle.add(epgObj.getString("title"));
                 }
@@ -134,7 +123,20 @@ public class v3_CreateProgrammesForThisWeek {
         }
         session1.close();
 
-        IDAO<Programme> programmeDAO = ProgrammeDAOImpl.getInstance();
-        addedProgrammes.forEach(programmeDAO::save);
+        addedProgrammes.forEach(programme -> {
+            Person person = new Person("SomeNavn", "https://i.stack.imgur.com/bHXDR.jpg", "2021-05-12");
+            PersonDAOImpl.getInstance().save(person);
+
+            Credit credit = new Credit(person);
+            credit.setProgramme(programme);
+
+            List<Credit> credits = new LinkedList<>();
+            credits.add(credit);
+
+            programme.setCredits(credits);
+
+            ProgrammeDAOImpl.getInstance().save(programme);
+            CreditDAOImpl.getInstance().save(credit);
+        });
     }
 }
