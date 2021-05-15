@@ -1,5 +1,7 @@
 package dk.sdu.swe.domain.models;
 
+import org.json.JSONObject;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -74,5 +76,24 @@ public class Programme {
 
     public void setCredits(List<Credit> credits) {
         this.credits = credits;
+    }
+
+    public JSONObject toJson() {
+        JSONObject json = new JSONObject();
+        json.put("title", this.title);
+        json.put("prodYear", this.prodYear);
+        json.put("epgDates", this.epgDates.toArray());
+        json.put("categories", this.categories.stream().map(Category::getId).toArray());
+        json.put("channel", this.channel.getId());
+        json.put("credits", this.credits.toArray());
+        return json;
+    }
+
+    public Programme clone() {
+        try {
+            return (Programme) super.clone();
+        } catch (CloneNotSupportedException e) {
+            return new Programme(this.title, this.channel, this.prodYear, new ArrayList<>(this.categories));
+        }
     }
 }
