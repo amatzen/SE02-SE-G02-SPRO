@@ -18,7 +18,10 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.function.Function;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public class v3_CreateProgrammesForThisWeek {
@@ -92,7 +95,7 @@ public class v3_CreateProgrammesForThisWeek {
                 trans.commit();
 
                 if(!addedProgrammesTitle.contains(epgObj.getString("title"))) {
-                    List<Category> categories = new LinkedList<>();
+                    Set<Category> categories = new HashSet<>();
                     JSONArray jsonCategories = epgObj.getJSONArray("categories");
 
                     ICategoryDAO categoryDAO = CategoryDAOImpl.getInstance();
@@ -113,7 +116,7 @@ public class v3_CreateProgrammesForThisWeek {
                         epgObj.getString("title"),
                         channelDAO.getByEpgId(channelObj.getLong("id")).orElse(null),
                         0,
-                        categories
+                        categories.stream().filter(distinctByKey(c -> c.getCategoryTitle())).collect(Collectors.toList())
                     );
 
                     addedProgrammes.add(programme);
@@ -138,5 +141,12 @@ public class v3_CreateProgrammesForThisWeek {
             ProgrammeDAOImpl.getInstance().save(programme);
             CreditDAOImpl.getInstance().save(credit);
         });
+    }
+
+    // https://howtodoinjava.com/java8/java-stream-distinct-examples/
+    public static <T> Predicate<T> distinctByKey(Function<? super T, Object> keyExtractor)
+    {
+        Map<Object, Boolean> map = new ConcurrentHashMap<>();
+        return t -> map.putIfAbsent(keyExtractor.apply(t), Boolean.TRUE) == null;
     }
 }

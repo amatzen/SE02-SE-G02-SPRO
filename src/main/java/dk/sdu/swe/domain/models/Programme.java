@@ -1,7 +1,12 @@
 package dk.sdu.swe.domain.models;
 
+import org.json.JSONObject;
+
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "programme")
@@ -19,7 +24,7 @@ public class Programme {
     private List<EPGProgramme> epgDates;
 
     @ManyToMany
-    private List<Category> categories;
+    private Set<Category> categories;
 
     @ManyToOne(optional = true)
     private Channel channel;
@@ -31,7 +36,7 @@ public class Programme {
         this.title = title;
         this.channel = channel;
         this.prodYear = prodYear;
-        this.categories = categories;
+        this.categories = new HashSet<>(categories);
     }
 
     public Programme() {
@@ -58,11 +63,11 @@ public class Programme {
     }
 
     public List<Category> getCategories() {
-        return categories;
+        return new ArrayList<>(categories);
     }
 
     public void setCategories(List<Category> categories) {
-        this.categories = categories;
+        this.categories = new HashSet<>(categories);
     }
 
     public void setChannel(Channel channel) {
@@ -71,5 +76,24 @@ public class Programme {
 
     public void setCredits(List<Credit> credits) {
         this.credits = credits;
+    }
+
+    public JSONObject toJson() {
+        JSONObject json = new JSONObject();
+        json.put("title", this.title);
+        json.put("prodYear", this.prodYear);
+        json.put("epgDates", this.epgDates.toArray());
+        json.put("categories", this.categories.stream().map(Category::getId).toArray());
+        json.put("channel", this.channel.getId());
+        json.put("credits", this.credits.toArray());
+        return json;
+    }
+
+    public Programme clone() {
+        try {
+            return (Programme) super.clone();
+        } catch (CloneNotSupportedException e) {
+            return new Programme(this.title, this.channel, this.prodYear, new ArrayList<>(this.categories));
+        }
     }
 }

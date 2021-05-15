@@ -60,11 +60,11 @@ public class ProgrammesViewController extends BorderPane {
 
     @FXML
     private void initialize() {
-        updateProgrammes(ProgrammeController.getInstance().getAll());
-
-        updateChannels(ChannelController.getInstance().getAll());
-
-        updateCategories(ProgrammeController.getInstance().getCategories());
+        new Thread(() -> {
+            updateChannels(ChannelController.getInstance().getAll());
+            updateCategories(ProgrammeController.getInstance().getCategories());
+            updateProgrammes(ProgrammeController.getInstance().getAll());
+        }).start();
     }
 
     private void updateChannels(List<Channel> channels) {

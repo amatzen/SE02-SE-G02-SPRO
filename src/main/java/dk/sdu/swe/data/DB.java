@@ -60,6 +60,9 @@ public class DB {
 
             settings.put(Environment.HBM2DDL_AUTO, HIBERNATE_DDL);
 
+            settings.put(Environment.USE_QUERY_CACHE, true);
+            settings.put(Environment.USE_SECOND_LEVEL_CACHE, true);
+            settings.put(Environment.CACHE_REGION_FACTORY, "org.hibernate.cache.ehcache.EhCacheRegionFactory");
             settings.put("hibernate.enable_lazy_load_no_trans", true);
 
             cfg.setProperties(settings);
@@ -83,6 +86,7 @@ public class DB {
 
         annotatedClasses.add(Programme.class);
         annotatedClasses.add(Credit.class);
+        annotatedClasses.add(CreditRole.class);
         annotatedClasses.add(Person.class);
         annotatedClasses.add(Channel.class);
         annotatedClasses.add(EPGProgramme.class);
