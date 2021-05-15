@@ -2,14 +2,19 @@ package dk.sdu.swe.views.partials;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPopup;
+import dk.sdu.swe.domain.controllers.PersonController;
 import dk.sdu.swe.domain.models.Person;
 import dk.sdu.swe.views.modals.persons.EditPersonModal;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Group;
 import javafx.scene.control.Dialog;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import java.io.IOException;
 import java.util.LinkedHashMap;
@@ -35,8 +40,11 @@ public class PersonListItem extends VBox {
     @FXML
     private JFXButton actionBtn;
 
-    public PersonListItem(Person person) {
+    private ListView<PersonListItem> container;
+
+    public PersonListItem(Person person, ListView<PersonListItem> container) {
         this.person = person;
+        this.container = container;
 
         FXMLLoader fxmlLoader = new FXMLLoader(
             Objects.requireNonNull(
@@ -63,13 +71,14 @@ public class PersonListItem extends VBox {
         personImageView.setImage(new Image(person.getImage(), true));
     }
 
-    public void editPerson(){
+    private void editPerson(){
         Dialog<Boolean> personEditDialog = new EditPersonModal(getScene().getWindow());
         personEditDialog.show();
     }
 
-    public void deletePerson(){
-
+    private void deletePerson(){
+        container.getItems().remove(this);
+        PersonController.getInstance().delete(person);
     }
 
 }

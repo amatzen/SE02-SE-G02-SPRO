@@ -25,4 +25,8 @@ public class PersonController {
     public List<Person> search(String searchTerm) {
         return PersonDAOImpl.getInstance().searchByName(searchTerm);
     }
+
+    public void delete(Person person) {
+        PersonDAOImpl.getInstance().delete(person);
+    }
 }
