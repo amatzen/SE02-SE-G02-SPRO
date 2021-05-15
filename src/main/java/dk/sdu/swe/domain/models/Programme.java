@@ -1,7 +1,10 @@
 package dk.sdu.swe.domain.models;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "programme")
@@ -19,7 +22,7 @@ public class Programme {
     private List<EPGProgramme> epgDates;
 
     @ManyToMany
-    private List<Category> categories;
+    private Set<Category> categories;
 
     @ManyToOne(optional = true)
     private Channel channel;
@@ -31,7 +34,7 @@ public class Programme {
         this.title = title;
         this.channel = channel;
         this.prodYear = prodYear;
-        this.categories = categories;
+        this.categories = new HashSet<>(categories);
     }
 
     public Programme() {
@@ -58,11 +61,11 @@ public class Programme {
     }
 
     public List<Category> getCategories() {
-        return categories;
+        return new ArrayList<>(categories);
     }
 
     public void setCategories(List<Category> categories) {
-        this.categories = categories;
+        this.categories = new HashSet<>(categories);
     }
 
     public void setChannel(Channel channel) {

@@ -14,7 +14,12 @@ import java.util.Objects;
  */
 @Entity
 @Table(name = "users")
-@Inheritance(strategy = InheritanceType.JOINED)
+@Inheritance(strategy= InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(
+    name = "UserType",
+    discriminatorType = DiscriminatorType.STRING
+)
+@DiscriminatorValue("User")
 public class User implements IUser {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
