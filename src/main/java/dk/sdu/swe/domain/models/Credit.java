@@ -10,6 +10,15 @@ public class Credit {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "is_custom_role", nullable = false)
+    private boolean customRole;
+
+    @Column(name = "custom_role_text", nullable = true)
+    private String customRoleText;
+
+    @ManyToOne(optional = true)
+    private CreditRole role;
+
     @ManyToOne
     @JoinColumn(name = "person_id", referencedColumnName = "id")
     private Person person;

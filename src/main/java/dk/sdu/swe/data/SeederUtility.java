@@ -1,9 +1,6 @@
 package dk.sdu.swe.data;
 
-import dk.sdu.swe.data.seeders.v0_CreateCompanies;
-import dk.sdu.swe.data.seeders.v2_CreateChannels;
-import dk.sdu.swe.data.seeders.v1_CreateUsers;
-import dk.sdu.swe.data.seeders.v3_CreateProgrammesForThisWeek;
+import dk.sdu.swe.data.seeders.*;
 
 public class SeederUtility {
     public static void run() {
@@ -12,6 +9,7 @@ public class SeederUtility {
             v1_CreateUsers.run();
             v2_CreateChannels.run();
             v3_CreateProgrammesForThisWeek.run();
+            v4_CreateCreditRoles.run();
         }
         catch (Exception e) {
             e.printStackTrace();

@@ -86,6 +86,7 @@ public class DB {
 
         annotatedClasses.add(Programme.class);
         annotatedClasses.add(Credit.class);
+        annotatedClasses.add(CreditRole.class);
         annotatedClasses.add(Person.class);
         annotatedClasses.add(Channel.class);
         annotatedClasses.add(EPGProgramme.class);
