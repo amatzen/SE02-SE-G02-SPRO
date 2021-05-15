@@ -1,6 +1,8 @@
 package dk.sdu.swe.domain.models;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 @Entity
@@ -26,6 +28,7 @@ public class Company {
     private List<User> users;
 
     public Company(String name, Company parentCompany, CompanyDetails companyDetails, String logo) {
+        users = new LinkedList<>();
         this.name = name;
         this.parentCompany = parentCompany;
         this.companyDetails = companyDetails;

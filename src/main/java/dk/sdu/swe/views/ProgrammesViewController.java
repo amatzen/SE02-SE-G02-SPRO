@@ -116,6 +116,7 @@ public class ProgrammesViewController extends BorderPane {
 
         updateProgrammes(searchResult);
     }
+
     @FXML
     void addProgramme(ActionEvent event) {
         Dialog<Boolean> addProgrammesModal = new AddProgrammesModal(getScene().getWindow());
