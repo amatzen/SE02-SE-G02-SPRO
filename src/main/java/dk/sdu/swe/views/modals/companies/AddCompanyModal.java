@@ -20,13 +20,13 @@ import java.util.Objects;
 public class AddCompanyModal extends Dialog<Company> {
 
    @FXML
-    private TextField companyTextfield;
+    private TextField companyName;
 
     @FXML
-    private TextField cvrTextField;
+    private TextField cvrNumber;
 
     @FXML
-    private TextField adresseTextField;
+    private TextField address;
 
     @FXML
     private JFXButton editBtn;
@@ -73,9 +73,9 @@ public class AddCompanyModal extends Dialog<Company> {
 
     @FXML
     private void save(ActionEvent event) {
-        String company = companyTextfield.getText();
-        String cvr = cvrTextField.getText();
-        String address = adresseTextField.getText();
+        String company = this.companyName.getText();
+        String cvr = this.cvrNumber.getText();
+        String address = this.address.getText();
         Company companyObj = CompanyController.getInstance().createCompany(company, cvr, address);
         setResult(companyObj);
         hide();

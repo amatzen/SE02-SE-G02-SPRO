@@ -32,7 +32,7 @@ public class CompanyController {
     }
 
     public Company createCompany(String company, String cvr, String address) {
-        CompanyDetails companyDetails = new CompanyDetails(null, null, cvr);
+        CompanyDetails companyDetails = new CompanyDetails(address, null, cvr);
         Company companyObj = new Company(company, null, companyDetails, null);
         companyDAO.save(companyObj);
         return companyObj;
