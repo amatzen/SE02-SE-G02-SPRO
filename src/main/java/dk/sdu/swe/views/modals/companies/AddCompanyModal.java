@@ -1,4 +1,4 @@
-package dk.sdu.swe.views.modals;
+package dk.sdu.swe.views.modals.companies;
 
 import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
@@ -15,10 +15,6 @@ import java.io.IOException;
 import java.util.Objects;
 
 public class AddCompanyModal extends Dialog<Boolean> {
-
-
-   
-
 
    @FXML
     private TextField companyTextfield;

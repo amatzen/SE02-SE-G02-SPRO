@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="438.0" prefWidth="698.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #FF9800;">
+         <children>
+            <HBox prefHeight="100.0" prefWidth="722.0">
+               <children>
+                  <Label text="Tilføj program">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="30.0" top="30.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label>
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="5.0" top="30.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <JFXButton fx:id="closeBtn" onAction="#handleClose" prefHeight="45.0" prefWidth="45.0" style="-fx-background-color: #FF9800;" text="X" textAlignment="RIGHT">
+                     <HBox.margin>
+                        <Insets bottom="10.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Comic Sans MS" size="18.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </HBox>
+         </children>
+      </HBox>
+      <HBox prefHeight="275.0" prefWidth="698.0" spacing="25.0">
+         <children>
+            <VBox prefHeight="258.0" prefWidth="331.0" spacing="10.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <JFXTextField prefHeight="50.0" prefWidth="309.0" promptText="Titel" style=" -fx-border-color: #cccccc; -fx-border-radius: 5px;                   -fx-padding: 0.333333em 1em 0.333333em 1em;                   -fx-background-color: transparent; -jfx-unfocus-color: transparent;                   -jfx-focus-color: transparent;">
+                     <VBox.margin>
+                        <Insets right="10.0" />
+                     </VBox.margin>
+                  </JFXTextField>
+                  <JFXTextField layoutX="10.0" layoutY="10.0" prefHeight="49.0" prefWidth="309.0" promptText="Produktionsår" style="-fx-background-color: transparent;                                 -fx-border-color: #CCCCCC;                                 -fx-padding: 0.333333em 1em 0.333333em 1em; -jfx-unfocus-color: transparent;                                 -fx-border-radius: 5px; -jfx-focus-color: transparent;">
+                     <VBox.margin>
+                        <Insets right="10.0" />
+                     </VBox.margin>
+                  </JFXTextField>
+                  <JFXTextField layoutX="40.0" layoutY="65.0" prefHeight="50.0" prefWidth="309.0" promptText="Kategori" style="-fx-background-color: transparent;                                 -fx-border-color: #CCCCCC;                                 -fx-padding: 0.333333em 1em 0.333333em 1em; -jfx-unfocus-color: transparent;                                 -fx-border-radius: 5px; -jfx-focus-color: transparent;">
+                     <VBox.margin>
+                        <Insets right="10.0" />
+                     </VBox.margin>
+                  </JFXTextField>
+                  <JFXTextField layoutX="40.0" layoutY="150.0" prefHeight="50.0" prefWidth="309.0" promptText="Produktionsselskab" style="-fx-background-color: transparent;                                 -fx-border-color: #CCCCCC;                                 -fx-padding: 0.333333em 1em 0.333333em 1em;                                 -jfx-unfocus-color: transparent;                                 -fx-border-radius: 5px;                                 -jfx-focus-color: transparent;">
+                     <VBox.margin>
+                        <Insets right="10.0" />
+                     </VBox.margin>
+                  </JFXTextField>
+               </children>
+            </VBox>
+            <VBox prefHeight="200.0" prefWidth="100.0" spacing="10.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <JFXRadioButton text="TV 2">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <selectedColor>
+                        <Color red="1.0" green="0.5960784554481506" />
+                     </selectedColor>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="channel" />
+                     </toggleGroup>
+                  </JFXRadioButton>
+                  <JFXRadioButton layoutX="10.0" layoutY="10.0" text="TV 2 Charlie" toggleGroup="$channel">
+                     <selectedColor>
+                        <Color red="1.0" green="0.5960784554481506" />
+                     </selectedColor>
+                  </JFXRadioButton>
+                  <JFXRadioButton layoutX="10.0" layoutY="199.0" text="TV 2 Fri" toggleGroup="$channel">
+                     <selectedColor>
+                        <Color red="1.0" green="0.5960784554481506" />
+                     </selectedColor>
+                  </JFXRadioButton>
+                  <JFXRadioButton layoutX="10.0" layoutY="226.0" text="TV 2 News" toggleGroup="$channel">
+                     <selectedColor>
+                        <Color red="1.0" green="0.5960784554481506" />
+                     </selectedColor>
+                  </JFXRadioButton>
+                  <JFXRadioButton layoutX="10.0" layoutY="199.0" text="TV 2 Zulu" toggleGroup="$channel">
+                     <selectedColor>
+                        <Color red="1.0" green="0.5960784554481506" />
+                     </selectedColor>
+                  </JFXRadioButton>
+                  <JFXRadioButton layoutX="10.0" layoutY="199.0" text="TV 2 Sport" toggleGroup="$channel">
+                     <selectedColor>
+                        <Color red="1.0" green="0.5960784554481506" />
+                     </selectedColor>
+                  </JFXRadioButton>
+                  <JFXRadioButton layoutX="10.0" layoutY="226.0" text="TV 2 Sport X" toggleGroup="$channel">
+                     <selectedColor>
+                        <Color red="1.0" green="0.5960784554481506" />
+                     </selectedColor>
+                  </JFXRadioButton>
+                  <HBox alignment="BOTTOM_RIGHT" prefHeight="169.0" prefWidth="349.0" />
+               </children>
+            </VBox>
+         </children>
+         <padding>
+            <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+         </padding>
+      </HBox>
+      <HBox alignment="TOP_RIGHT" prefHeight="66.0" prefWidth="698.0">
+         <children>
+            <JFXButton fx:id="saveBtn" buttonType="RAISED" prefHeight="35.0" prefWidth="78.0" style="-fx-background-color: #FF9800;" text="Gem" textAlignment="RIGHT" textFill="WHITE">
+               <HBox.margin>
+                  <Insets right="30.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </HBox>
+   </children>
+</VBox>

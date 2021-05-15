@@ -1,11 +1,14 @@
 package dk.sdu.swe.data.seeders;
 
-import com.google.gson.Gson;
+import com.google.common.base.Charsets;
 import dk.sdu.swe.data.DB;
-import dk.sdu.swe.domain.models.EPGProgramme;
-import dk.sdu.swe.domain.models.Programme;
+import dk.sdu.swe.data.dao.*;
+import dk.sdu.swe.domain.models.*;
+import dk.sdu.swe.domain.persistence.ICategoryDAO;
+import dk.sdu.swe.domain.persistence.IChannelDAO;
+import dk.sdu.swe.domain.persistence.IDAO;
 import org.hibernate.Session;
-import org.joda.time.DateTime;
+import org.hibernate.Transaction;
 import org.joda.time.Instant;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -28,7 +31,7 @@ public class v3_CreateProgrammesForThisWeek {
 
         // Step 2: Generate the API URL
         StringBuilder epgUrl = new StringBuilder();
-        epgUrl.append("https://tvtid-api.api.tv2.dk/api/tvtid/v1/epg/dayviews/2021-05-05");
+        epgUrl.append("https://tvtid-api.api.tv2.dk/api/tvtid/v1/epg/dayviews/2021-05-15");
         AtomicInteger i = new AtomicInteger();
 
         channelEpgIds.forEach(epgId -> {
@@ -45,11 +48,12 @@ public class v3_CreateProgrammesForThisWeek {
         HttpURLConnection conn = (HttpURLConnection) url.openConnection();
         conn.setRequestMethod("GET");
         conn.setRequestProperty("Accept", "application/json");
+        conn.setRequestProperty("Accept-Charset", "utf-8");
 
         conn.connect();
 
         // Step 4: Read the HTTP Response
-        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(conn.getInputStream(), Charsets.UTF_8));
         String input;
         StringBuffer content = new StringBuffer();
         while((input = bufferedReader.readLine()) != null) {
@@ -70,8 +74,9 @@ public class v3_CreateProgrammesForThisWeek {
             JSONArray epgProgrammes = channelObj.getJSONArray("programs");
             for (int i2 = 0; i2 < epgProgrammes.length(); i2++) {
                 JSONObject epgObj = epgProgrammes.getJSONObject(i2);
+                Transaction trans = session1.beginTransaction();
                 session1.save(new EPGProgramme(
-                    channelObj.getInt("id"),
+                    channelObj.getLong("id"),
                     Instant.ofEpochSecond(epgObj.getLong("start")),
                     Instant.ofEpochSecond(epgObj.getLong("stop")),
                     epgObj.getJSONArray("categories").toList().stream().map(object -> Objects.toString(object, null)).collect(Collectors.toList()),
@@ -84,21 +89,54 @@ public class v3_CreateProgrammesForThisWeek {
                         "live", epgObj.getBoolean("live")
                     )
                 ));
+                trans.commit();
 
                 if(!addedProgrammesTitle.contains(epgObj.getString("title"))) {
-                    addedProgrammes.add(new Programme(
+                    List<Category> categories = new LinkedList<>();
+                    JSONArray jsonCategories = epgObj.getJSONArray("categories");
+
+                    ICategoryDAO categoryDAO = CategoryDAOImpl.getInstance();
+                    for (int j = 0; j < jsonCategories.length(); j++) {
+                        String categoryTitle = jsonCategories.getString(j);
+                        Category category = categoryDAO
+                            .getCategoryByName(categoryTitle)
+                            .orElseGet(() -> {
+                                Category c = new Category(categoryTitle);
+                                categoryDAO.save(c);
+                                return c;
+                            });
+                        categories.add(category);
+                    }
+
+                    IChannelDAO channelDAO = ChannelDAOImpl.getInstance();
+                    Programme programme = new Programme(
                         epgObj.getString("title"),
-                        channelObj.getString("id"),
+                        channelDAO.getByEpgId(channelObj.getLong("id")).orElse(null),
                         0,
-                        ""
-                    ));
+                        categories
+                    );
+
+                    addedProgrammes.add(programme);
                     addedProgrammesTitle.add(epgObj.getString("title"));
                 }
             }
         }
-
-        addedProgrammes.forEach(session1::save);
         session1.close();
 
+        addedProgrammes.forEach(programme -> {
+            Person person = new Person("SomeNavn", "https://i.stack.imgur.com/bHXDR.jpg", "2021-05-12");
+            PersonDAOImpl.getInstance().save(person);
+
+            Credit credit = new Credit(person);
+            credit.setProgramme(programme);
+
+            List<Credit> credits = new LinkedList<>();
+            credits.add(credit);
+
+            programme.setCredits(credits);
+
+            ProgrammeDAOImpl.getInstance().save(programme);
+            CreditDAOImpl.getInstance().save(credit);
+        });
     }
 }

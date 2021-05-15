@@ -1,4 +1,4 @@
-package dk.sdu.swe.views.modals;
+package dk.sdu.swe.views.modals.persons;
 
 import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;

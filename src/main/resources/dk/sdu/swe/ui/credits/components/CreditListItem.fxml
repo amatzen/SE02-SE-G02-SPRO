@@ -1,59 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXRippler?>
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.effect.DropShadow?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.paint.Color?>
-<?import javafx.scene.text.Font?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
 
-
-<JFXRippler maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root alignment="CENTER" style="-fx-background-color: #ededed;" type="HBox" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <HBox style="-fx-background-color: #ededed;">
-         <effect>
-            <DropShadow offsetX="5.0" offsetY="5.0">
-               <color>
-                  <Color opacity="0.20049507915973663" />
-               </color>
-            </DropShadow>
-         </effect>
+      <ImageView fx:id="creditImageView" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+         <HBox.margin>
+            <Insets />
+         </HBox.margin>
+      </ImageView>
+      <VBox alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
          <children>
-            <ImageView fx:id="creditImageView" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
-               <HBox.margin>
+            <Label fx:id="nameLbl" text="Navn">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <VBox.margin>
                   <Insets />
-               </HBox.margin>
-            </ImageView>
-            <VBox alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
-               <children>
-                  <Label fx:id="nameLbl" text="Navn">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                     <VBox.margin>
-                        <Insets />
-                     </VBox.margin>
-                  </Label>
-                  <Label fx:id="roleLbl" text="Rolle">
-                     <VBox.margin>
-                        <Insets />
-                     </VBox.margin>
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Label>
-               </children>
-               <padding>
-                  <Insets left="15.0" right="15.0" />
-               </padding>
-               <HBox.margin>
+               </VBox.margin>
+            </Label>
+            <Label fx:id="roleLbl" text="Rolle">
+               <VBox.margin>
                   <Insets />
-               </HBox.margin>
-            </VBox>
+               </VBox.margin>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
          </children>
-      </HBox>
+         <padding>
+            <Insets left="15.0" right="15.0" />
+         </padding>
+         <HBox.margin>
+            <Insets />
+         </HBox.margin>
+      </VBox>
+      <JFXButton fx:id="editButton" buttonType="RAISED" onAction="#editBtn" prefHeight="33.0" prefWidth="60.0" ripplerFill="#e88b0a" style="-fx-background-color: #FF9800;" text="Redigér" textFill="WHITE">
+         <HBox.margin>
+            <Insets right="10.0" />
+         </HBox.margin>
+      </JFXButton>
    </children>
-</JFXRippler>
+   <effect>
+      <DropShadow offsetX="5.0" offsetY="5.0">
+         <color>
+            <Color opacity="0.20049507915973663" />
+         </color>
+      </DropShadow>
+   </effect>
+</fx:root>

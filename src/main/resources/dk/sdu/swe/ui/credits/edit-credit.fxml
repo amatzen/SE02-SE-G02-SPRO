@@ -1,63 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
-   <children>
-      <HBox prefHeight="79.0" prefWidth="508.0" style="-fx-background-color: #ffa500;" />
-      <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="308.0" prefWidth="508.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <children>
-            <Label text="Redigér">
-               <font>
-                  <Font name="System Bold" size="20.0" />
-               </font>
-            </Label>
-            <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0">
-               <children>
-                  <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" />
-                  <VBox minWidth="150.0" spacing="5.0">
-                     <children>
-                        <Label layoutX="10.0" layoutY="35.0" text="Navn" />
-                        <TextField fx:id="nameField" prefHeight="25.0" prefWidth="150.0" />
-                        <Label text="Rolle" />
-                        <TextField fx:id="roleField" layoutX="10.0" layoutY="10.0" prefHeight="25.0" prefWidth="150.0" />
-                        <Label layoutX="10.0" layoutY="63.0" text="Krediteringsgruppe" />
-                        <TextField fx:id="groupField" layoutX="10.0" layoutY="85.0" prefHeight="25.0" prefWidth="150.0" />
-                     </children>
-                  </VBox>
-               </children>
-               <VBox.margin>
-                  <Insets top="30.0" />
-               </VBox.margin>
-            </HBox>
-            <HBox alignment="BOTTOM_RIGHT" prefHeight="100.0" prefWidth="200.0">
-               <children>
-                  <JFXButton fx:id="saveBtn" buttonType="RAISED" prefHeight="32.0" prefWidth="70.0" style="-fx-background-color: FF9800;" text="GEM" textFill="WHITE">
-                     <font>
+
+<BorderPane prefHeight="366.0" prefWidth="542.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <center>
+        <VBox prefHeight="220.0" prefWidth="531.0">
+            <children>
+                <HBox alignment="CENTER" prefHeight="220.0" prefWidth="531.0" spacing="5.0">
+                    <children>
+                        <ImageView fitHeight="150.0" fitWidth="146.0" pickOnBounds="true" preserveRatio="true" />
+                        <VBox alignment="CENTER" minWidth="150.0" prefWidth="334.0" spacing="15.0">
+                            <children>
+                                <JFXTextField fx:id="nameField" prefHeight="49.0" prefWidth="309.0" promptText="Navn" style="-fx-border-color: #cccccc; -fx-border-radius: 5px;                                 -fx-padding: 0.333333em 1em 0.333333em 1em;                                 -fx-background-color: transparent; -jfx-unfocus-color: transparent;                                 -jfx-focus-color: transparent;" />
+                                <JFXTextField fx:id="roleField" layoutX="10.0" layoutY="10.0" prefHeight="49.0" prefWidth="309.0" promptText="Rolle" style="-fx-border-color: #cccccc; -fx-border-radius: 5px;                                 -fx-padding: 0.333333em 1em 0.333333em 1em;                                 -fx-background-color: transparent; -jfx-unfocus-color: transparent;                                 -jfx-focus-color: transparent;" />
+                                <JFXTextField fx:id="groupField" layoutX="10.0" layoutY="146.0" prefHeight="49.0" prefWidth="309.0" promptText="Krediteringsgruppe" style="-fx-border-color: #cccccc; -fx-border-radius: 5px;                                 -fx-padding: 0.333333em 1em 0.333333em 1em;                                 -fx-background-color: transparent; -jfx-unfocus-color: transparent;                                 -jfx-focus-color: transparent;" />
+                            </children>
+                        </VBox>
+                    </children>
+                    <VBox.margin>
+                        <Insets />
+                    </VBox.margin>
+                </HBox>
+            </children>
+        </VBox>
+    </center>
+    <top>
+        <HBox alignment="CENTER" prefHeight="79.0" prefWidth="508.0" style="-fx-background-color: #ffa500;" BorderPane.alignment="CENTER">
+            <children>
+                <Label prefHeight="30.0" prefWidth="419.0" text="Redigér">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                    <HBox.margin>
+                        <Insets />
+                    </HBox.margin>
+                </Label>
+                <JFXButton fx:id="closeBtn" onAction="#handleClose" prefHeight="45.0" prefWidth="63.0" text="X" textAlignment="RIGHT">
+                    <font>
+                        <Font name="Comic Sans MS" size="18.0" />
+                    </font>
+                </JFXButton>
+            </children>
+        </HBox>
+    </top>
+    <bottom>
+        <HBox alignment="TOP_RIGHT" prefHeight="61.0" prefWidth="542.0" BorderPane.alignment="TOP_CENTER">
+            <children>
+                <JFXButton fx:id="saveBtn" buttonType="RAISED" prefHeight="35.0" prefWidth="78.0" style="-fx-background-color: FF9800;" text="GEM" textFill="WHITE">
+                    <font>
                         <Font name="System Bold" size="12.0" />
-                     </font></JFXButton>
-               </children>
-            </HBox>
-         </children>
-         <opaqueInsets>
-            <Insets />
-         </opaqueInsets>
-         <padding>
-            <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
-         </padding>
-      </VBox>
-      <JFXButton fx:id="closeBtn" layoutX="10.0" layoutY="10.0" onAction="#handleClose" prefHeight="45.0" prefWidth="45.0" text="X" textAlignment="RIGHT" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
-         <font>
-            <Font name="Comic Sans MS" size="18.0" />
-         </font>
-      </JFXButton>
-   </children>
-</AnchorPane>
+                    </font>
+                    <HBox.margin>
+                        <Insets right="50.0" />
+                    </HBox.margin>
+                </JFXButton>
+            </children>
+        </HBox>
+    </bottom>
+</BorderPane>

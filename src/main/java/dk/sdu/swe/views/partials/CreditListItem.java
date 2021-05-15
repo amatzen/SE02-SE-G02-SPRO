@@ -1,10 +1,12 @@
 package dk.sdu.swe.views.partials;
 
-import dk.sdu.swe.domain.controllers.PersonController;
 import dk.sdu.swe.domain.models.Credit;
 import dk.sdu.swe.domain.models.Person;
+import dk.sdu.swe.views.modals.EditCreditModal;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Dialog;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -41,19 +43,16 @@ public class CreditListItem extends HBox {
 
     @FXML
     private void initialize() {
-        /*
-        Person p = null;
-        try {
-            p = PersonController.getInstance().get(credit.getPerson());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        Person p = credit.getPerson();
 
         creditImageView.setImage(new Image(p.getImage(), true));
 
         nameLbl.setText(p.getName());
-         */
-
     }
 
+    @FXML
+    private void editBtn(ActionEvent event) {
+        Dialog editDialog = new EditCreditModal(getScene().getWindow());
+        editDialog.show();
+    }
 }

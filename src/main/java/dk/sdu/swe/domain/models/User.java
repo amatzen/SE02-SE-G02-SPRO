@@ -14,16 +14,11 @@ import java.util.Objects;
  */
 @Entity
 @Table(name = "users")
-@Inheritance(strategy= InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(
-    name = "UserType",
-    discriminatorType = DiscriminatorType.STRING
-)
-@DiscriminatorValue("User")
+@Inheritance(strategy = InheritanceType.JOINED)
 public class User implements IUser {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
     @NaturalId
     @Column(unique = true)
@@ -47,6 +42,9 @@ public class User implements IUser {
         "people"
     };
 
+    @ManyToOne(optional = true)
+    private Company company;
+
     /**
      * Instantiates a new User.
      *
@@ -56,7 +54,8 @@ public class User implements IUser {
      * @param password the password
      * @throws Exception the exception
      */
-    public User(String username, String email, String name, String password) throws Exception {
+    public User(String username, String email, String name, String password, Company company) throws Exception {
+        this.company = company;
 
         // Validate username
         if (username.trim().length() < 3 || username.trim().length() > 24) {
@@ -90,7 +89,7 @@ public class User implements IUser {
         return name;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
@@ -113,5 +112,13 @@ public class User implements IUser {
             ", passwordHash='" + passwordHash + '\'' +
             ", permissions=" + Arrays.toString(permissions) +
             '}';
+    }
+
+    public Company getCompany() {
+        return company;
+    }
+
+    public void setCompany(Company company) {
+        this.company = company;
     }
 }

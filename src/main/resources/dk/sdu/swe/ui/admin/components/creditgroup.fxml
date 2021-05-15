@@ -7,6 +7,7 @@
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
 <fx:root prefHeight="297.0" prefWidth="614.0" type="VBox" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
@@ -43,11 +44,17 @@
                      <toggleGroup>
                         <ToggleGroup fx:id="fileTypeToggleGroup" />
                      </toggleGroup>
+                     <selectedColor>
+                        <Color red="1.0" green="0.5960784554481506" />
+                     </selectedColor>
                   </JFXRadioButton>
                   <JFXRadioButton fx:id="jsonToggle" layoutX="10.0" layoutY="27.0" text="JavaFX" toggleGroup="$fileTypeToggleGroup">
                      <VBox.margin>
                         <Insets left="50.0" top="10.0" />
                      </VBox.margin>
+                     <selectedColor>
+                        <Color red="1.0" green="0.5960784554481506" />
+                     </selectedColor>
                   </JFXRadioButton>
                </children>
             </VBox>

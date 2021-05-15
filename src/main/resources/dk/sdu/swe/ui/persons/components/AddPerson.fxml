@@ -46,6 +46,9 @@
                                     <HBox.margin>
                                         <Insets bottom="30.0" right="50.0" />
                                     </HBox.margin>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
                                 </JFXButton>
                             </children>
                         </HBox>
@@ -71,7 +74,7 @@
                 </HBox>
                 <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                     <children>
-                        <JFXButton fx:id="closeBtn" prefHeight="28.0" prefWidth="60.0" style="-fx-background-color: #FF9800;" text="X" textAlignment="RIGHT">
+                        <JFXButton fx:id="closeBtn" onAction="#handleClose" prefHeight="28.0" prefWidth="60.0" style="-fx-background-color: #FF9800;" text="X" textAlignment="RIGHT">
                             <font>
                                 <Font name="Comic Sans MS" size="18.0" />
                             </font>

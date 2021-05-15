@@ -1,6 +1,5 @@
 package dk.sdu.swe.domain.models;
 
-import org.joda.time.DateTime;
 import org.joda.time.Instant;
 
 import javax.persistence.*;
@@ -8,17 +7,17 @@ import java.util.List;
 import java.util.Map;
 
 @Entity
-@Table(name = "programme_egp_entries")
+@Table(name = "programme_epg_entries")
 public class EPGProgramme {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
     private String start;
     private String stop;
     private String epgIdentifier;
 
-    private int epgChannelId;
+    private Long epgChannelId;
 
     @Column
     private String title;
@@ -29,7 +28,7 @@ public class EPGProgramme {
     @Transient
     private Map<String, Boolean> options;
 
-    public EPGProgramme(int epgChannelId, Instant start, Instant stop, List<String> categories, String epgIdentifier, String title, Map<String, Boolean> options) {
+    public EPGProgramme(Long epgChannelId, Instant start, Instant stop, List<String> categories, String epgIdentifier, String title, Map<String, Boolean> options) {
         this.epgChannelId = epgChannelId;
         this.start = start.toString();
         this.stop = stop.toString();

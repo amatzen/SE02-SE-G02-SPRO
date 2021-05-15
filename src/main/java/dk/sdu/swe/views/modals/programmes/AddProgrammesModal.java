@@ -1,53 +1,35 @@
-package dk.sdu.swe.views.modals;
-
+package dk.sdu.swe.views.modals.programmes;
 
 import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXListView;
-import dk.sdu.swe.domain.models.Company;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Dialog;
-import javafx.scene.control.TextField;
+import javafx.scene.control.ToggleGroup;
 import javafx.scene.effect.GaussianBlur;
 import javafx.stage.Modality;
 import javafx.stage.StageStyle;
 import javafx.stage.Window;
 
 import java.io.IOException;
-import java.util.List;
 import java.util.Objects;
 
-public class EditCompanyDialog extends Dialog<Boolean> {
 
-    @FXML
-    private TextField companyName;
-
-    @FXML
-    private TextField cvrNumber;
-
-    @FXML
-    private TextField adresseField;
-
-    @FXML
-    private JFXButton saveBtn;
+public class AddProgrammesModal extends Dialog <Boolean> {
 
     @FXML
     private JFXButton closeBtn;
 
     @FXML
-    private Company company;
+    private ToggleGroup channel;
+
+    @FXML
+    private JFXButton saveBtn;
 
     @FXML
     private GaussianBlur backgroundEffect;
-    @FXML
-    private JFXListView usersListView;
 
-
-    public EditCompanyDialog(Window window, Company company) {
-        this.company = company;
-
+    public AddProgrammesModal(Window window) {
         this.initOwner(window);
         this.initModality(Modality.APPLICATION_MODAL);
         this.initStyle(StageStyle.UNDECORATED);
@@ -61,7 +43,7 @@ public class EditCompanyDialog extends Dialog<Boolean> {
 
         FXMLLoader fxmlLoader = new FXMLLoader(
             Objects.requireNonNull(
-                getClass().getClassLoader().getResource("dk/sdu/swe/ui/companies/components/editCompanyModal.fxml")));
+                getClass().getClassLoader().getResource("dk/sdu/swe/ui/programmes/addProgramme.fxml")));
         fxmlLoader.setController(this);
 
         try {
@@ -71,11 +53,6 @@ public class EditCompanyDialog extends Dialog<Boolean> {
         }
     }
 
-    private void initialize() {
-        companyName.setText(company.getName());
-
-
-    }
 
     @FXML
     void handleClose(ActionEvent event) {
@@ -83,6 +60,5 @@ public class EditCompanyDialog extends Dialog<Boolean> {
         hide();
     }
 
-
-
 }
+
