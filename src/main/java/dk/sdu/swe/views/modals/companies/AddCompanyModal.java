@@ -1,9 +1,12 @@
 package dk.sdu.swe.views.modals.companies;
 
 import com.jfoenix.controls.JFXButton;
+import dk.sdu.swe.domain.controllers.CompanyController;
+import dk.sdu.swe.domain.models.Company;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Dialog;
 import javafx.scene.control.TextField;
 import javafx.scene.effect.GaussianBlur;
@@ -14,7 +17,7 @@ import javafx.stage.Window;
 import java.io.IOException;
 import java.util.Objects;
 
-public class AddCompanyModal extends Dialog<Boolean> {
+public class AddCompanyModal extends Dialog<Company> {
 
    @FXML
     private TextField companyTextfield;
@@ -64,7 +67,17 @@ public class AddCompanyModal extends Dialog<Boolean> {
 
     @FXML
     private void handleClose(ActionEvent event) {
-        setResult(false);
+        getDialogPane().getButtonTypes().add(ButtonType.CANCEL);
+        hide();
+    }
+
+    @FXML
+    private void save(ActionEvent event) {
+        String company = companyTextfield.getText();
+        String cvr = cvrTextField.getText();
+        String address = adresseTextField.getText();
+        Company companyObj = CompanyController.getInstance().createCompany(company, cvr, address);
+        setResult(companyObj);
         hide();
     }
 
