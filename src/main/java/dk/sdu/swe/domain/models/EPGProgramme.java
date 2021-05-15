@@ -38,6 +38,10 @@ public class EPGProgramme {
         this.options = options;
     }
 
+    public EPGProgramme() {
+
+    }
+
     public String getStart() {
         return start;
     }
