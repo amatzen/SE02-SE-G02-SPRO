@@ -2,11 +2,8 @@ package dk.sdu.swe.views.modals.companies;
 
 
 import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXListView;
 import dk.sdu.swe.domain.models.Company;
 
-import dk.sdu.swe.domain.models.User;
-import dk.sdu.swe.views.partials.UserListItem;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -18,7 +15,6 @@ import javafx.stage.StageStyle;
 import javafx.stage.Window;
 
 import java.io.IOException;
-import java.util.List;
 import java.util.Objects;
 
 public class EditCompanyDialog extends Dialog<Boolean> {
@@ -30,7 +26,7 @@ public class EditCompanyDialog extends Dialog<Boolean> {
     private TextField cvrNumber;
 
     @FXML
-    private TextField adresseField;
+    private TextField address;
 
     @FXML
     private JFXButton saveBtn;
@@ -70,8 +66,11 @@ public class EditCompanyDialog extends Dialog<Boolean> {
         }
     }
 
+    @FXML
     private void initialize() {
         companyName.setText(company.getName());
+        cvrNumber.setText(company.getCompanyDetails().getNbr());
+        address.setText(company.getCompanyDetails().getAddress());
     }
 
     @FXML
