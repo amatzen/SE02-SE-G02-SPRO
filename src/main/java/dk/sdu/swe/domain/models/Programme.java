@@ -10,7 +10,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "programme")
-public class Programme implements Cloneable {
+public class Programme {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -89,8 +89,7 @@ public class Programme implements Cloneable {
         return json;
     }
 
-    @Override
-    public Object clone() {
+    public Programme clone() {
         try {
             return (Programme) super.clone();
         } catch (CloneNotSupportedException e) {
