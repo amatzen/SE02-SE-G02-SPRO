@@ -31,8 +31,8 @@ public class CategoryDAOImpl extends AbstractDAO<Category> implements ICategoryD
         try {
             category = session.byNaturalId(Category.class)
                 .using("categoryTitle", categoryName).load();
-            transaction.commit();
         } finally {
+            transaction.commit();
             session.close();
         }
         return Optional.ofNullable(category);

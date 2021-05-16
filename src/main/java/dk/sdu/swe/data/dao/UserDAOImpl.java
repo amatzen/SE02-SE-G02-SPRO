@@ -26,12 +26,12 @@ public class UserDAOImpl extends AbstractDAO<User> implements IUserDAO {
     public Optional<User> getByUsername(String username) {
         Session session = DB.openSession();
         User user = null;
+        Transaction trans = session.beginTransaction();
         try {
-            Transaction trans = session.beginTransaction();
             user = session.byNaturalId(User.class)
                 .using("username", username).load();
-            trans.commit();
         } finally {
+            trans.commit();
             session.close();
         }
         return Optional.ofNullable(user);

@@ -6,6 +6,7 @@ import dk.sdu.swe.domain.models.Channel;
 import dk.sdu.swe.domain.models.Programme;
 import dk.sdu.swe.domain.persistence.IProgrammeDAO;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
 import java.util.List;
@@ -27,7 +28,7 @@ public class ProgrammeDAOImpl extends AbstractDAO<Programme> implements IProgram
     public List<Programme> search(String searchTerm, Channel channel, Category category) {
         searchTerm = '%' + searchTerm + '%';
 
-        String hql = "FROM Programme p WHERE p.title LIKE :search_term";
+        String hql = "FROM Programme p JOIN FETCH p.categories WHERE p.title LIKE :search_term";
 
         if (channel != null) {
             hql += " AND channel_id = :channel_id";
@@ -55,5 +56,23 @@ public class ProgrammeDAOImpl extends AbstractDAO<Programme> implements IProgram
         session.close();
 
         return res;
+    }
+
+    @Override
+    public List<Programme> getAll() {
+        Session session = DB.openSession();
+        Transaction transaction = session.beginTransaction();
+
+        List<Programme> result;
+        try {
+            result = session.createQuery(
+                "FROM Programme as p " +
+                "JOIN FETCH p.categories " +
+                "JOIN FETCH p.channel").list();
+        } finally {
+            transaction.commit();
+            session.close();
+        }
+        return result;
     }
 }
