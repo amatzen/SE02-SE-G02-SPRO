@@ -1,18 +1,19 @@
 package dk.sdu.swe.domain.controllers;
 
-import dk.sdu.swe.domain.models.CompanyAdministrator;
-import dk.sdu.swe.domain.models.SystemAdministrator;
+import dk.sdu.swe.data.dao.UserDAOImpl;
+import dk.sdu.swe.domain.models.Company;
 import dk.sdu.swe.domain.models.User;
-import org.json.JSONObject;
-
-import java.util.HashMap;
-import java.util.Map;
+import dk.sdu.swe.domain.persistence.IUserDAO;
+import dk.sdu.swe.exceptions.UserCreationException;
 
 public class UserController {
+
+    private IUserDAO userDAO;
 
     private static UserController UserControllerInstance;
 
     private UserController() {
+        userDAO = UserDAOImpl.getInstance();
     }
 
     public static synchronized UserController getInstance() {
@@ -21,6 +22,18 @@ public class UserController {
         }
         return UserControllerInstance;
     }
+
+    public User createUser(String username, String email, String name, Company company) throws UserCreationException {
+        User user = new User(username, email, name, "", company);
+        try {
+            userDAO.save(user);
+            company.getUsers().add(user);
+            return user;
+        } catch (Exception e) {
+            throw new UserCreationException("Could not create user.", e);
+        }
+    }
+
 /*
     public static JSONObject userToJson(User user) {
         JSONObject json = new JSONObject();

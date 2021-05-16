@@ -110,13 +110,15 @@ public class v3_CreateProgrammesForThisWeek {
                             });
                         categories.add(category);
                     }
+                    System.out.println(categories);
 
                     IChannelDAO channelDAO = ChannelDAOImpl.getInstance();
                     Programme programme = new Programme(
                         epgObj.getString("title"),
                         channelDAO.getByEpgId(channelObj.getLong("id")).orElse(null),
                         0,
-                        categories.stream().filter(distinctByKey(c -> c.getCategoryTitle())).collect(Collectors.toList())
+                        categories.stream().filter(distinctByKey(c -> c.getCategoryTitle())).collect(Collectors.toSet()),
+                        null
                     );
 
                     addedProgrammes.add(programme);

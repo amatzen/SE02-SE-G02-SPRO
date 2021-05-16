@@ -57,7 +57,7 @@
                 </VBox>
                 <AnchorPane HBox.hgrow="ALWAYS">
                     <children>
-                        <JFXListView fx:id="peopleListView" layoutX="27.0" layoutY="-149.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                        <JFXListView fx:id="peopleListView" layoutX="27.0" layoutY="-149.0" style="-fx-selection-bar: #ebebeb;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                         <JFXButton fx:id="fabBtn" buttonType="RAISED" layoutX="1046.0" layoutY="95.0" onAction="#addPersonModal" prefHeight="45.0" prefWidth="45.0" style="-fx-background-color: #FF9800; -fx-background-radius: 30;" text="+" textFill="WHITE" AnchorPane.bottomAnchor="25.0" AnchorPane.rightAnchor="25.0">
                             <font>
                                 <Font size="18.0" />
