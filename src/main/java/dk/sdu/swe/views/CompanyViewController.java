@@ -45,7 +45,9 @@ public class CompanyViewController extends BorderPane {
 
     @FXML
     private void initialize() {
-        updateCompanies(CompanyController.getInstance().getAll());
+        new Thread(() -> {
+            updateCompanies(CompanyController.getInstance().getAll());
+        }).start();
     }
 
     private void updateCompanies(List<Company> companies) {
