@@ -98,7 +98,7 @@ public class PersonModal extends Dialog<Person> {
         String name = this.name.getText();
         String email = this.email.getText();
         ZonedDateTime bday = getDate(this.bday).orElse(null);
-        String image = this.image.getImage().getUrl();
+        String image = this.image.getImage() == null ? null : this.image.getImage().getUrl();
 
         Person person = null;
         if (this.person == null) {
