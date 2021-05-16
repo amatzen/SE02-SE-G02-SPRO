@@ -18,6 +18,7 @@ public class AddCreditModal extends Dialog<Boolean> {
     private GaussianBlur backgroundEffect;
 
     public AddCreditModal(Window window) {
+        this.setResultConverter(param -> null);
         this.initOwner(window);
         this.initModality(Modality.APPLICATION_MODAL);
         this.initStyle(StageStyle.UNDECORATED);

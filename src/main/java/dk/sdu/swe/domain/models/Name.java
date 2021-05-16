@@ -1,6 +1,7 @@
 package dk.sdu.swe.domain.models;
 
 import dk.sdu.swe.exceptions.InvalidNameException;
+import dk.sdu.swe.exceptions.UserCreationException;
 
 /**
  * Name
@@ -32,7 +33,7 @@ public class Name {
      * @param name the name
      * @throws Exception the exception
      */
-    public Name(String name) throws Exception {
+    public Name(String name) throws InvalidNameException {
         if (name.trim().split(" ").length != 2) {
             throw new InvalidNameException("Name must contain both first and last name. No middle names allowed!");
         }

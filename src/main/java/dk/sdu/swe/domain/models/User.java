@@ -59,7 +59,7 @@ public class User implements IUser {
      * @param password the password
      * @throws Exception the exception
      */
-    public User(String username, String email, String name, String password, Company company) throws Exception {
+    public User(String username, String email, String name, String password, Company company) throws UserCreationException {
         this.company = company;
 
         // Validate username
