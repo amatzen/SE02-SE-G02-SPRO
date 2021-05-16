@@ -9,7 +9,7 @@ import dk.sdu.swe.domain.controllers.ProgrammeController;
 import dk.sdu.swe.domain.models.Category;
 import dk.sdu.swe.domain.models.Channel;
 import dk.sdu.swe.domain.models.Programme;
-import dk.sdu.swe.views.modals.programmes.AddProgrammesModal;
+import dk.sdu.swe.views.modals.programmes.ProgrammeModal;
 import dk.sdu.swe.views.partials.ProgrammeListItem;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -120,7 +120,7 @@ public class ProgrammesViewController extends BorderPane {
 
     @FXML
     void addProgramme(ActionEvent event) {
-        Dialog<Programme> addProgrammesModal = new AddProgrammesModal(getScene().getWindow());
+        Dialog<Programme> addProgrammesModal = new ProgrammeModal(getScene().getWindow());
         Optional<Programme> programme = addProgrammesModal.showAndWait();
         programme.ifPresent(programmeObj -> {
             programmesListView.getItems().add(new ProgrammeListItem(programmeObj));
