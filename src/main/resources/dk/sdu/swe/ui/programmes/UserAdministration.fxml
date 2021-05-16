@@ -50,7 +50,7 @@
             <children>
                 <HBox alignment="CENTER_RIGHT" prefWidth="699.0" spacing="10.0">
                     <children>
-                        <JFXButton fx:id="newUserButton" layoutX="601.0" layoutY="18.0" prefHeight="35.0" prefWidth="90.0" style="-fx-background-color: transparent;" text="+ Ny Bruger" textAlignment="RIGHT" textFill="#515050">
+                        <JFXButton fx:id="newUserButton" layoutX="601.0" layoutY="18.0" onAction="#addUser" prefHeight="35.0" prefWidth="90.0" style="-fx-background-color: transparent;" text="+ Ny Bruger" textAlignment="RIGHT" textFill="#515050">
                             <HBox.margin>
                                 <Insets />
                             </HBox.margin>

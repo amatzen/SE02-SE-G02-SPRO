@@ -22,6 +22,7 @@ import javafx.scene.layout.BorderPane;
 import java.io.IOException;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 
 public class ProgrammesViewController extends BorderPane {
 
@@ -119,8 +120,11 @@ public class ProgrammesViewController extends BorderPane {
 
     @FXML
     void addProgramme(ActionEvent event) {
-        Dialog<Boolean> addProgrammesModal = new AddProgrammesModal(getScene().getWindow());
-        addProgrammesModal.show();
+        Dialog<Programme> addProgrammesModal = new AddProgrammesModal(getScene().getWindow());
+        Optional<Programme> programme = addProgrammesModal.showAndWait();
+        programme.ifPresent(programmeObj -> {
+            programmesListView.getItems().add(new ProgrammeListItem(programmeObj));
+        });
     }
 
     @FXML

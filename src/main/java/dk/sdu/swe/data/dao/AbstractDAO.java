@@ -31,8 +31,8 @@ public abstract class AbstractDAO<T> implements IDAO<T> {
 
             CriteriaBuilder criteriaBuilder = session.getCriteriaBuilder();
             CriteriaQuery<T> criteriaQuery = criteriaBuilder.createQuery(type);
-            Root<T> programmeRoot = criteriaQuery.from(type);
-            criteriaQuery.select(programmeRoot);
+            Root<T> root = criteriaQuery.from(type);
+            criteriaQuery.select(root);
 
             res = session.createQuery(criteriaQuery).getResultList();
 

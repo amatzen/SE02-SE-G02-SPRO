@@ -40,6 +40,7 @@ public class CreditListModal extends Dialog<Boolean> {
     public CreditListModal(Window window, Programme programme) {
         this.programme = programme;
 
+        this.setResultConverter(param -> null);
         this.initOwner(window);
         this.initModality(Modality.APPLICATION_MODAL);
         this.initStyle(StageStyle.UNDECORATED);

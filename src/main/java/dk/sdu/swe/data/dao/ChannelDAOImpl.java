@@ -38,4 +38,5 @@ public class ChannelDAOImpl extends AbstractDAO<Channel> implements IChannelDAO 
         }
         return Optional.ofNullable(channel);
     }
+
 }

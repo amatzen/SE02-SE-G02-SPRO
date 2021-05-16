@@ -37,6 +37,7 @@ public class AddCompanyModal extends Dialog<Company> {
 
 
     public AddCompanyModal(Window window) {
+        this.setResultConverter(param -> null);
         this.initOwner(window);
         this.initModality(Modality.APPLICATION_MODAL);
         this.initStyle(StageStyle.UNDECORATED);
@@ -50,7 +51,7 @@ public class AddCompanyModal extends Dialog<Company> {
 
         FXMLLoader fxmlLoader = new FXMLLoader(
             Objects.requireNonNull(
-                getClass().getClassLoader().getResource("dk/sdu/swe/ui/companies/components/addCompanyModal.fxml")));
+                getClass().getClassLoader().getResource("dk/sdu/swe/ui/companies/components/AddCompanyModal.fxml")));
         fxmlLoader.setController(this);
 
         try {
@@ -68,6 +69,7 @@ public class AddCompanyModal extends Dialog<Company> {
     @FXML
     private void handleClose(ActionEvent event) {
         getDialogPane().getButtonTypes().add(ButtonType.CANCEL);
+        setResult(null);
         hide();
     }
 

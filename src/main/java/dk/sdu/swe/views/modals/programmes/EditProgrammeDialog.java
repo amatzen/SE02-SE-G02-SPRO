@@ -25,6 +25,7 @@ public class EditProgrammeDialog extends Dialog<Boolean> {
 
 
     public EditProgrammeDialog(Window window) {
+        this.setResultConverter(param -> null);
         this.initOwner(window);
         this.initModality(Modality.APPLICATION_MODAL);
         this.initStyle(StageStyle.UNDECORATED);
