@@ -9,6 +9,7 @@ import dk.sdu.swe.domain.persistence.IChannelDAO;
 import dk.sdu.swe.domain.persistence.IDAO;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.joda.time.DateTime;
 import org.joda.time.Instant;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -26,7 +27,9 @@ import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public class v3_CreateProgrammesForThisWeek {
-    public static void run() throws Exception {
+    public static void run(String date) throws Exception {
+
+
 
         // Step 1: Get channels firstly
         Session session = DB.openSession();
@@ -35,7 +38,8 @@ public class v3_CreateProgrammesForThisWeek {
 
         // Step 2: Generate the API URL
         StringBuilder epgUrl = new StringBuilder();
-        epgUrl.append("https://tvtid-api.api.tv2.dk/api/tvtid/v1/epg/dayviews/2021-05-15");
+        epgUrl.append("https://tvtid-api.api.tv2.dk/api/tvtid/v1/epg/dayviews/");
+        epgUrl.append(date);
         AtomicInteger i = new AtomicInteger();
 
         channelEpgIds.forEach(epgId -> {

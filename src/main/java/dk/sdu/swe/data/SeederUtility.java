@@ -1,6 +1,7 @@
 package dk.sdu.swe.data;
 
 import dk.sdu.swe.data.seeders.*;
+import org.joda.time.DateTime;
 
 public class SeederUtility {
     public static void run() {
@@ -8,7 +9,10 @@ public class SeederUtility {
             v0_CreateCompanies.run();
             v1_CreateUsers.run();
             v2_CreateChannels.run();
-            v3_CreateProgrammesForThisWeek.run();
+            v3_CreateProgrammesForThisWeek.run(DateTime.now().toString("yyyy-MM-dd"));
+            for (int i = 1; i < 8; i++) {
+                v3_CreateProgrammesForThisWeek.run(DateTime.now().plusDays(i).toString("yyyy-MM-dd"));
+            }
             v4_CreateCreditRoles.run();
         }
         catch (Exception e) {
