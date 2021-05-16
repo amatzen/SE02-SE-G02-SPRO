@@ -48,4 +48,7 @@ public class ProgrammeController {
     }
 
 
+    public void updateProgramme(Programme programmeObj) {
+        programmeDAO.update(programmeObj);
+    }
 }

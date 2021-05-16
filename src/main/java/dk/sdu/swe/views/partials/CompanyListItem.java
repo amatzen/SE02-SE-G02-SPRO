@@ -68,6 +68,7 @@ public class CompanyListItem extends VBox {
         });
 
         companyNameLabel.setText(company.getName());
+        cvrLabel.setText("CVR: " + company.getCompanyDetails().getNbr());
     }
 
     private void editCompany() {
