@@ -7,6 +7,7 @@ import dk.sdu.swe.domain.controllers.PersonController;
 import dk.sdu.swe.domain.models.Person;
 import dk.sdu.swe.views.modals.persons.PersonModal;
 import dk.sdu.swe.views.partials.PersonListItem;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -45,9 +46,11 @@ public class PersonsViewController extends VBox {
 
     @FXML
     private void initialize() {
-        new Thread(() -> {
-            updatePeople(PersonController.getInstance().getAll());
-        }).start();
+        Platform.runLater(() -> {
+            new Thread(() -> {
+                updatePeople(PersonController.getInstance().getAll());
+            }).start();
+        });
     }
 
     private void updatePeople(List<Person> people) {

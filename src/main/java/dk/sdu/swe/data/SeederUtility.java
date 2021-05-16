@@ -17,6 +17,7 @@ public class SeederUtility {
                         v3_CreateProgrammesForThisWeek.run(DateTime.now().plusDays(i).toString("yyyy-MM-dd"));
                     }
                 } catch (Exception e) {
+                    e.printStackTrace();
                 }
             }).start();
 

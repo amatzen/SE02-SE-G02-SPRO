@@ -10,7 +10,10 @@ import dk.sdu.swe.domain.persistence.IDAO;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.joda.time.DateTime;
+import org.joda.time.DateTimeZone;
 import org.joda.time.Instant;
+import org.joda.time.format.DateTimeFormatter;
+import org.joda.time.format.ISODateTimeFormat;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -28,8 +31,8 @@ import java.util.stream.Collectors;
 
 public class v3_CreateProgrammesForThisWeek {
     public static void run(String date) throws Exception {
-
-
+        int creditRolesCount = CreditRoleDAOImpl.getInstance().getAll().size();
+        List<CreditRole> creditRoles = CreditRoleDAOImpl.getInstance().getAll();
 
         // Step 1: Get channels firstly
         Session session = DB.openSession();
@@ -133,12 +136,41 @@ public class v3_CreateProgrammesForThisWeek {
         }
         session1.close();
 
+        CreditRole defaultCreditRole = new CreditRole("Alt muligt mand");
+        CreditRoleDAOImpl.getInstance().save(defaultCreditRole);
+
+        HttpURLConnection conn1 = (HttpURLConnection) new URL("https://randomuser.me/api/?results=200").openConnection();
+        conn1.setRequestMethod("GET");
+        conn1.setRequestProperty("Accept", "application/json");
+        conn1.setRequestProperty("Accept-Charset", "utf-8");
+
+        conn1.connect();
+        BufferedReader bufferedReader1 = new BufferedReader(new InputStreamReader(conn1.getInputStream(), Charsets.UTF_8));
+        String input1;
+        StringBuffer content1 = new StringBuffer();
+        while((input1 = bufferedReader1.readLine()) != null) {
+            content1.append(input1);
+        }
+        bufferedReader1.close();
+        conn1.disconnect();
+
+        JSONObject randomPersons = new JSONObject(content1.toString());
+        JSONArray randomPersonsResults = randomPersons.getJSONArray("results");
+
         addedProgrammes.forEach(programme -> {
-            Person person = new Person("SomeNavn", "https://i.stack.imgur.com/bHXDR.jpg", "k@k.k", ZonedDateTime.now());
+            int rnd = new Random().nextInt((randomPersonsResults.length() -1) + 1);
+            JSONObject randomPerson = randomPersonsResults.getJSONObject(rnd);
+            String name = randomPerson.getJSONObject("name").getString("first") + " " + randomPerson.getJSONObject("name").getString("last");
+            String img = randomPerson.getJSONObject("picture").getString("medium");
+
+            Person person = new Person(name, img, randomPerson.getString("email"), DateTime.now(DateTimeZone.UTC));
             PersonDAOImpl.getInstance().save(person);
 
             Credit credit = new Credit(person);
             credit.setProgramme(programme);
+            int rnd1 = new Random().nextInt(creditRolesCount);
+            CreditRole cr = creditRoles.get(rnd1);
+            credit.setRole(cr);
 
             List<Credit> credits = new LinkedList<>();
             credits.add(credit);
