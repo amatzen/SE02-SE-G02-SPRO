@@ -19,6 +19,7 @@ import javafx.scene.layout.BorderPane;
 import java.io.IOException;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 
 public class CompanyViewController extends BorderPane {
 
@@ -56,8 +57,11 @@ public class CompanyViewController extends BorderPane {
 
     @FXML
     private void addCompanyBtn(ActionEvent event) {
-        Dialog<Boolean> addCompanyModal = new AddCompanyModal(getScene().getWindow());
-        addCompanyModal.show();
+        Dialog<Company> addCompanyModal = new AddCompanyModal(getScene().getWindow());
+        Optional<Company> company = addCompanyModal.showAndWait();
+        company.ifPresent(company1 -> {
+            companyListView.getItems().add(new CompanyListItem(company1));
+        });
     }
 
     @FXML

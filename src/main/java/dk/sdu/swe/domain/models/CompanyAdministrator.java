@@ -1,10 +1,12 @@
 package dk.sdu.swe.domain.models;
 
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.Transient;
 import java.util.Arrays;
 
 @Entity
+@DiscriminatorValue("CompanyAdministrator")
 public class CompanyAdministrator extends User {
     @Transient
     private final String[] permissions = {

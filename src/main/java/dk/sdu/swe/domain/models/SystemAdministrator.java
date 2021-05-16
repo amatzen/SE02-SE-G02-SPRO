@@ -6,6 +6,7 @@ import javax.persistence.*;
 import java.util.Arrays;
 
 @Entity
+@DiscriminatorValue("SystemAdministrator")
 public class SystemAdministrator extends User {
     @Transient
     private final String[] permissions = {

@@ -1,6 +1,5 @@
 package dk.sdu.swe.domain.models;
 
-import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 import org.json.JSONObject;
 
@@ -15,7 +14,7 @@ public class Person {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
     private String name;
 
@@ -30,9 +29,13 @@ public class Person {
         name = "people_contact_details",
         joinColumns = {@JoinColumn(name = "person_id", referencedColumnName = "id")}
     )
+
     @MapKeyColumn(name = "key")
     @Column(name = "value")
     private Map<String, String> contactDetails = new HashMap<>();
+
+    @OneToMany(mappedBy = "person")
+    private List<Credit> credits;
 
     public Person() {
     }
@@ -43,7 +46,7 @@ public class Person {
         this.dateOfBirth = dateOfBirth;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
@@ -71,4 +74,11 @@ public class Person {
         return contactDetails.get(key);
     }
 
+    public List<Credit> getCredits() {
+        return credits;
+    }
+
+    public void setCredits(List<Credit> credits) {
+        this.credits = credits;
+    }
 }
