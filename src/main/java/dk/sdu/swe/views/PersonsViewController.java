@@ -18,6 +18,7 @@ import javafx.scene.layout.VBox;
 import java.io.IOException;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 
 public class PersonsViewController extends VBox {
 
@@ -62,7 +63,10 @@ public class PersonsViewController extends VBox {
     @FXML
     private void addPersonModal(ActionEvent event) {
         Dialog<Person> addPerson = new PersonModal(getScene().getWindow());
-        addPerson.show();
+        Optional<Person> person = addPerson.showAndWait();
+        person.ifPresent(personObj -> {
+            peopleListView.getItems().add(new PersonListItem(personObj, peopleListView));
+        });
     }
 
     @FXML

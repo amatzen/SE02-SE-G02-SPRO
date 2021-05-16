@@ -54,8 +54,8 @@ public class PersonDAOImpl extends AbstractDAO<Person> implements IPersonDAO {
             query.setParameter("person_id", obj.getId());
             query.executeUpdate();
             session.delete(obj);
-            session.getTransaction().commit();
         } finally {
+            session.getTransaction().commit();
             session.close();
         }
     }
