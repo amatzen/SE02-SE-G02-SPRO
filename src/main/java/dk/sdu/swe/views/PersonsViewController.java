@@ -45,7 +45,9 @@ public class PersonsViewController extends VBox {
 
     @FXML
     private void initialize() {
-        updatePeople(PersonController.getInstance().getAll());
+        new Thread(() -> {
+            updatePeople(PersonController.getInstance().getAll());
+        }).start();
     }
 
     private void updatePeople(List<Person> people) {
