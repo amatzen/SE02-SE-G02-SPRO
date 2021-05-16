@@ -14,6 +14,7 @@ import javafx.scene.image.ImageView;
 import javafx.stage.Modality;
 import javafx.stage.StageStyle;
 import javafx.stage.Window;
+import org.joda.time.DateTime;
 
 import java.io.IOException;
 import java.time.ZoneId;
@@ -97,7 +98,7 @@ public class PersonModal extends Dialog<Person> {
 
         String name = this.name.getText();
         String email = this.email.getText();
-        ZonedDateTime bday = getDate(this.bday).orElse(null);
+        DateTime bday = getDate(this.bday).orElse(null);
         String image = this.image.getImage() == null ? null : this.image.getImage().getUrl();
 
         Person person = null;
@@ -114,9 +115,10 @@ public class PersonModal extends Dialog<Person> {
         hide();
     }
 
-    private Optional<ZonedDateTime> getDate(DatePicker datePicker) {
+    private Optional<DateTime> getDate(DatePicker datePicker) {
         return datePicker.getValue() != null
-            ? Optional.of(ZonedDateTime.of(datePicker.getValue().atTime(0, 0), ZoneId.of("UTC")))
+            ? Optional.of(DateTime.parse(datePicker.getValue().toString()))
             : Optional.empty();
+
     }
 }
