@@ -35,7 +35,7 @@ public class v3_CreateProgrammesForThisWeek {
 
         // Step 2: Generate the API URL
         StringBuilder epgUrl = new StringBuilder();
-        epgUrl.append("https://tvtid-api.api.tv2.dk/api/tvtid/v1/epg/dayviews/2021-05-15");
+        epgUrl.append("https://tvtid-api.api.tv2.dk/api/tvtid/v1/epg/dayviews/2021-05-17");
         AtomicInteger i = new AtomicInteger();
 
         channelEpgIds.forEach(epgId -> {

@@ -6,6 +6,7 @@ import dk.sdu.swe.domain.models.Channel;
 import dk.sdu.swe.domain.models.Programme;
 import dk.sdu.swe.domain.persistence.IProgrammeDAO;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
 import java.util.List;
@@ -55,5 +56,20 @@ public class ProgrammeDAOImpl extends AbstractDAO<Programme> implements IProgram
         session.close();
 
         return res;
+    }
+
+    @Override
+    public List<Programme> getAll() {
+        Session session = DB.openSession();
+        Transaction transaction = session.beginTransaction();
+
+        List<Programme> result;
+        try {
+            result = session.createQuery("FROM Programme as programme JOIN FETCH programme.categories").list();
+        } finally {
+            transaction.commit();
+            session.close();
+        }
+        return result;
     }
 }

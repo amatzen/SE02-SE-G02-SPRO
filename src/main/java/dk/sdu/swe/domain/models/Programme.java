@@ -21,7 +21,7 @@ public class Programme {
     @Transient
     private List<EPGProgramme> epgDates;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     private Set<Category> categories;
 
     @ManyToOne
