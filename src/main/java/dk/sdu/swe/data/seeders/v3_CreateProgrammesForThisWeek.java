@@ -118,7 +118,7 @@ public class v3_CreateProgrammesForThisWeek {
                         epgObj.getString("title"),
                         channelDAO.getByEpgId(channelObj.getLong("id")).orElse(null),
                         0,
-                        categories.stream().filter(distinctByKey(c -> c.getCategoryTitle())).collect(Collectors.toSet()),
+                        new HashSet(categories.stream().filter(distinctByKey(Category::getCategoryTitle)).collect(Collectors.toList())),
                         null
                     );
 
