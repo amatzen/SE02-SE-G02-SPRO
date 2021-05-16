@@ -10,6 +10,7 @@ import dk.sdu.swe.domain.models.Person;
 import dk.sdu.swe.views.modals.companies.AddCompanyModal;
 import dk.sdu.swe.views.partials.CompanyListItem;
 import dk.sdu.swe.views.partials.PersonListItem;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -45,7 +46,11 @@ public class CompanyViewController extends BorderPane {
 
     @FXML
     private void initialize() {
-        updateCompanies(CompanyController.getInstance().getAll());
+        Platform.runLater(() -> {
+            new Thread(() -> {
+                updateCompanies(CompanyController.getInstance().getAll());
+            }).start();
+        });
     }
 
     private void updateCompanies(List<Company> companies) {

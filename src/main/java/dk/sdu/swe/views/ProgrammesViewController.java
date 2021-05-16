@@ -11,6 +11,7 @@ import dk.sdu.swe.domain.models.Channel;
 import dk.sdu.swe.domain.models.Programme;
 import dk.sdu.swe.views.modals.programmes.ProgrammeModal;
 import dk.sdu.swe.views.partials.ProgrammeListItem;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -61,11 +62,13 @@ public class ProgrammesViewController extends BorderPane {
 
     @FXML
     private void initialize() {
-        new Thread(() -> {
-            updateChannels(ChannelController.getInstance().getAll());
-            updateCategories(ProgrammeController.getInstance().getCategories());
-            updateProgrammes(ProgrammeController.getInstance().getAll());
-        }).start();
+        Platform.runLater(() -> {
+            new Thread(() -> {
+                updateChannels(ChannelController.getInstance().getAll());
+                updateCategories(ProgrammeController.getInstance().getCategories());
+                updateProgrammes(ProgrammeController.getInstance().getAll());
+            }).start();
+        });
     }
 
     private void updateChannels(List<Channel> channels) {
