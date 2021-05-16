@@ -1,6 +1,5 @@
 package dk.sdu.swe.views.modals;
 
-import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -31,7 +30,7 @@ public class EditCreditModal extends Dialog<Boolean> {
         });
         FXMLLoader fxmlLoader = new FXMLLoader(
             Objects.requireNonNull(
-                getClass().getClassLoader().getResource("dk/sdu/swe/ui/credits/edit-credit.fxml")));
+                getClass().getClassLoader().getResource("dk/sdu/swe/ui/credits/EditCreditModal.fxml")));
         fxmlLoader.setController(this);
 
         try {

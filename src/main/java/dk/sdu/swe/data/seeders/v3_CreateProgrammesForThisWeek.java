@@ -17,6 +17,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.time.ZonedDateTime;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -117,7 +118,7 @@ public class v3_CreateProgrammesForThisWeek {
                         epgObj.getString("title"),
                         channelDAO.getByEpgId(channelObj.getLong("id")).orElse(null),
                         0,
-                        categories.stream().filter(distinctByKey(c -> c.getCategoryTitle())).collect(Collectors.toSet()),
+                        new HashSet(categories.stream().filter(distinctByKey(Category::getCategoryTitle)).collect(Collectors.toList())),
                         null
                     );
 
@@ -129,7 +130,7 @@ public class v3_CreateProgrammesForThisWeek {
         session1.close();
 
         addedProgrammes.forEach(programme -> {
-            Person person = new Person("SomeNavn", "https://i.stack.imgur.com/bHXDR.jpg", "2021-05-12");
+            Person person = new Person("SomeNavn", "https://i.stack.imgur.com/bHXDR.jpg", "k@k.k", ZonedDateTime.now());
             PersonDAOImpl.getInstance().save(person);
 
             Credit credit = new Credit(person);

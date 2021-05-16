@@ -52,6 +52,14 @@ public class Programme {
         return title;
     }
 
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setProdYear(int prodYear) {
+        this.prodYear = prodYear;
+    }
+
     public int getProdYear() {
         return prodYear;
     }
