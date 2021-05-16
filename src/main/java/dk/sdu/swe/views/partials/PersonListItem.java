@@ -4,22 +4,21 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPopup;
 import dk.sdu.swe.domain.controllers.PersonController;
 import dk.sdu.swe.domain.models.Person;
-import dk.sdu.swe.views.modals.persons.EditPersonModal;
-import javafx.collections.ObservableList;
+import dk.sdu.swe.views.modals.persons.PersonModal;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Group;
 import javafx.scene.control.Dialog;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+
 import java.io.IOException;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
 
 public class PersonListItem extends VBox {
 
@@ -48,7 +47,7 @@ public class PersonListItem extends VBox {
 
         FXMLLoader fxmlLoader = new FXMLLoader(
             Objects.requireNonNull(
-                getClass().getClassLoader().getResource("dk/sdu/swe/ui/persons/components/person.fxml")));
+                getClass().getClassLoader().getResource("dk/sdu/swe/ui/persons/components/PersonListItem")));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
 
@@ -72,8 +71,11 @@ public class PersonListItem extends VBox {
     }
 
     private void editPerson(){
-        Dialog<Boolean> personEditDialog = new EditPersonModal(getScene().getWindow());
-        personEditDialog.show();
+        Dialog<Person> personEditDialog = new PersonModal(getScene().getWindow(), person);
+        Optional<Person> person = personEditDialog.showAndWait();
+        person.ifPresent(personObj -> {
+            PersonController.getInstance().update(personObj);
+        });
     }
 
     private void deletePerson(){

@@ -39,6 +39,7 @@ public class AddUserModal extends Dialog<User> {
         this.company = company;
         this.container = container;
 
+        this.setResultConverter(param -> null);
         this.initOwner(window);
         this.initModality(Modality.APPLICATION_MODAL);
         this.initStyle(StageStyle.UNDECORATED);
@@ -69,8 +70,8 @@ public class AddUserModal extends Dialog<User> {
 
     @FXML
     private void handleClose(ActionEvent event) {
-        setResult(null);
         getDialogPane().getButtonTypes().add(ButtonType.CANCEL);
+        setResult(null);
         hide();
     }
 
