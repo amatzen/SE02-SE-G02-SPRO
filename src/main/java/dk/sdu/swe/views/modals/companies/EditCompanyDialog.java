@@ -2,11 +2,13 @@ package dk.sdu.swe.views.modals.companies;
 
 
 import com.jfoenix.controls.JFXButton;
+import dk.sdu.swe.domain.controllers.CompanyController;
 import dk.sdu.swe.domain.models.Company;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Dialog;
 import javafx.scene.control.TextField;
 import javafx.scene.effect.GaussianBlur;
@@ -17,7 +19,7 @@ import javafx.stage.Window;
 import java.io.IOException;
 import java.util.Objects;
 
-public class EditCompanyDialog extends Dialog<Boolean> {
+public class EditCompanyDialog extends Dialog<Company> {
 
     @FXML
     private TextField companyName;
@@ -43,6 +45,7 @@ public class EditCompanyDialog extends Dialog<Boolean> {
     public EditCompanyDialog(Window window, Company company) {
         this.company = company;
 
+        this.setResultConverter(param -> null);
         this.initOwner(window);
         this.initModality(Modality.APPLICATION_MODAL);
         this.initStyle(StageStyle.UNDECORATED);
@@ -56,7 +59,7 @@ public class EditCompanyDialog extends Dialog<Boolean> {
 
         FXMLLoader fxmlLoader = new FXMLLoader(
             Objects.requireNonNull(
-                getClass().getClassLoader().getResource("dk/sdu/swe/ui/companies/components/editCompanyModal.fxml")));
+                getClass().getClassLoader().getResource("dk/sdu/swe/ui/companies/components/EditCompanyModal.fxml")));
         fxmlLoader.setController(this);
 
         try {
@@ -74,11 +77,23 @@ public class EditCompanyDialog extends Dialog<Boolean> {
     }
 
     @FXML
-    void handleClose(ActionEvent event) {
-        setResult(false);
+    private void handleClose(ActionEvent event) {
+        getDialogPane().getButtonTypes().add(ButtonType.CANCEL);
+        setResult(null);
         hide();
     }
 
+    @FXML
+    private void save(ActionEvent event) {
+        String company = this.companyName.getText();
+        String cvr = this.cvrNumber.getText();
+        String address = this.address.getText();
+        this.company.setName(company);
+        this.company.getCompanyDetails().setNbr(cvr);
+        this.company.getCompanyDetails().setAddress(address);
+        setResult(this.company);
+        hide();
+    }
 
 
 }

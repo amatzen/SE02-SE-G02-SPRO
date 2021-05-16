@@ -8,7 +8,9 @@ import org.json.JSONObject;
 
 import javax.persistence.AttributeConverter;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class ProgrammeJSONConverter implements AttributeConverter<Programme, String> {
 
@@ -38,7 +40,7 @@ public class ProgrammeJSONConverter implements AttributeConverter<Programme, Str
     @Override
     public Programme convertToEntityAttribute(String dbData) {
         JSONObject json = new JSONObject(dbData);
-        List<Category> categories = new ArrayList<>();
+        Set<Category> categories = new HashSet<>();
         json.getJSONArray("categories").forEach(x -> {
             try {
                 categories.add(CategoryDAOImpl.getInstance().getById(Long.parseLong(String.valueOf(x))).orElseThrow(Exception::new));
@@ -52,7 +54,8 @@ public class ProgrammeJSONConverter implements AttributeConverter<Programme, Str
             json.getString("title"),
             ChannelDAOImpl.getInstance().getByEpgId(json.getLong("channel")).orElse(null),
             json.getInt("prodYear"),
-            categories
+            categories,
+            null
         );
     }
 }

@@ -3,8 +3,6 @@ package dk.sdu.swe.domain.models;
 import org.json.JSONObject;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -26,17 +24,21 @@ public class Programme {
     @ManyToMany
     private Set<Category> categories;
 
-    @ManyToOne(optional = true)
+    @ManyToOne
     private Channel channel;
+
+    @ManyToOne
+    private Company company;
 
     @OneToMany(mappedBy = "programme")
     private List<Credit> credits;
 
-    public Programme(String title, Channel channel, int prodYear, List<Category> categories) {
+    public Programme(String title, Channel channel, int prodYear, Set<Category> categories, Company company) {
         this.title = title;
         this.channel = channel;
         this.prodYear = prodYear;
-        this.categories = new HashSet<>(categories);
+        this.categories = categories;
+        this.company = company;
     }
 
     public Programme() {
@@ -62,12 +64,12 @@ public class Programme {
         return channel;
     }
 
-    public List<Category> getCategories() {
-        return new ArrayList<>(categories);
+    public Set<Category> getCategories() {
+        return categories;
     }
 
-    public void setCategories(List<Category> categories) {
-        this.categories = new HashSet<>(categories);
+    public void setCategories(Set<Category> categories) {
+        this.categories = categories;
     }
 
     public void setChannel(Channel channel) {
@@ -93,7 +95,15 @@ public class Programme {
         try {
             return (Programme) super.clone();
         } catch (CloneNotSupportedException e) {
-            return new Programme(this.title, this.channel, this.prodYear, new ArrayList<>(this.categories));
+            return new Programme(this.title, this.channel, this.prodYear, this.categories, this.company);
         }
+    }
+
+    public Company getCompany() {
+        return company;
+    }
+
+    public void setCompany(Company company) {
+        this.company = company;
     }
 }

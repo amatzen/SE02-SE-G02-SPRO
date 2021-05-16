@@ -1,18 +1,18 @@
-package dk.sdu.swe.views.modals.programmes;
+package dk.sdu.swe.views.modals.users;
 
-import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXListView;
 import dk.sdu.swe.data.dao.CompanyDAOImpl;
+import dk.sdu.swe.data.dao.UserDAOImpl;
 import dk.sdu.swe.domain.controllers.UserController;
 import dk.sdu.swe.domain.models.Company;
 import dk.sdu.swe.domain.models.User;
-import dk.sdu.swe.views.modals.users.AddUserModal;
+import dk.sdu.swe.domain.persistence.IUserDAO;
+import dk.sdu.swe.exceptions.UserCreationException;
+import dk.sdu.swe.views.AlertHelper;
 import dk.sdu.swe.views.partials.UserListItem;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.control.Dialog;
-import javafx.scene.control.Label;
+import javafx.scene.control.*;
 import javafx.scene.effect.GaussianBlur;
 import javafx.stage.Modality;
 import javafx.stage.StageStyle;
@@ -20,29 +20,25 @@ import javafx.stage.Window;
 
 import java.io.IOException;
 import java.util.Objects;
-import java.util.Optional;
 
-public class UserAdministrationDialog extends Dialog<Boolean> {
+public class AddUserModal extends Dialog<User> {
 
-    @FXML
-    private JFXButton closeBtn;
+    private IUserDAO userDAO;
 
-    @FXML
-    private GaussianBlur backgroundEffect;
-
-    @FXML
     private Company company;
 
     @FXML
-    private Label companyName;
+    private TextField name, email, username;
 
-    @FXML
-    private JFXListView usersListView;
+    private GaussianBlur backgroundEffect;
 
-    public UserAdministrationDialog(Window window, Company company) {
+    private ListView<UserListItem> container;
+
+    public AddUserModal(Window window, Company company) {
+        userDAO = UserDAOImpl.getInstance();
         this.company = company;
+        this.container = container;
 
-        this.setResultConverter(param -> null);
         this.initOwner(window);
         this.initModality(Modality.APPLICATION_MODAL);
         this.initStyle(StageStyle.UNDECORATED);
@@ -56,7 +52,7 @@ public class UserAdministrationDialog extends Dialog<Boolean> {
 
         FXMLLoader fxmlLoader = new FXMLLoader(
             Objects.requireNonNull(
-                getClass().getClassLoader().getResource("dk/sdu/swe/ui/programmes/UserAdministration.fxml")));
+                getClass().getClassLoader().getResource("dk/sdu/swe/ui/programmes/addNewUser.fxml")));
         fxmlLoader.setController(this);
 
         try {
@@ -68,24 +64,28 @@ public class UserAdministrationDialog extends Dialog<Boolean> {
 
     @FXML
     private void initialize() {
-        companyName.setText(company.getName());
-        for (User user : company.getUsers()) {
-            usersListView.getItems().add(new UserListItem(user));
-        }
+
     }
 
     @FXML
     private void handleClose(ActionEvent event) {
-        setResult(false);
+        setResult(null);
+        getDialogPane().getButtonTypes().add(ButtonType.CANCEL);
         hide();
     }
 
     @FXML
-    private void addUser(ActionEvent event) {
-        Dialog<User> userModal = new AddUserModal(this.getDialogPane().getScene().getWindow(), this.company);
-        Optional<User> user = userModal.showAndWait();
-        user.ifPresent(user1 -> {
-            usersListView.getItems().add(new UserListItem(user1));
-        });
+    private void save(ActionEvent event) {
+        String username = this.username.getText();
+        String email = this.email.getText();
+        String name = this.name.getText();
+        try {
+            User user = UserController.getInstance().createUser(username, email, name, company);
+            setResult(user);
+            hide();
+        } catch (UserCreationException e) {
+            AlertHelper.show(Alert.AlertType.ERROR, getOwner(), "Alert", e.getMessage());
+        }
     }
+
 }

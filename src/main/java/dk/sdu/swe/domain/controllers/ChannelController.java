@@ -1,22 +1,19 @@
 package dk.sdu.swe.domain.controllers;
 
-import dk.sdu.swe.data.DB;
 import dk.sdu.swe.data.dao.ChannelDAOImpl;
 import dk.sdu.swe.domain.models.Channel;
-import dk.sdu.swe.domain.models.Programme;
-import org.hibernate.Session;
+import dk.sdu.swe.domain.persistence.IChannelDAO;
 
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Root;
 import java.util.List;
 
 public class ChannelController {
 
+    private IChannelDAO channelDAO;
+
     private static ChannelController instance;
 
     private ChannelController() {
-
+        channelDAO = ChannelDAOImpl.getInstance();
     }
 
     public static ChannelController getInstance() {
@@ -27,7 +24,7 @@ public class ChannelController {
     }
 
     public List<Channel> getAll() {
-        return ChannelDAOImpl.getInstance().getAll();
+        return channelDAO.getAll();
     }
 
 }

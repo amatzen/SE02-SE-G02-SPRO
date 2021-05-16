@@ -7,8 +7,6 @@ import dk.sdu.swe.helpers.Environment;
 import dk.sdu.swe.helpers.EnvironmentSelector;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
-import javafx.event.Event;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.*;
@@ -16,7 +14,6 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Window;
 
-import java.awt.event.TextEvent;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -107,22 +104,13 @@ public class AuthViewController extends HBox {
         }
     }
 
-    private void showAlert(Alert.AlertType alertType, Window owner, String title, String message) {
-        Alert alert = new Alert(alertType);
-        alert.setTitle(title);
-        alert.setHeaderText(null);
-        alert.setContentText(message);
-        alert.initOwner(owner);
-        alert.show();
-    }
-
     public void onEnter(ActionEvent ae) {
         login();
     }
 
     public void login() {
         if (textField.getText().isEmpty()) {
-            showAlert(
+            AlertHelper.show(
                 Alert.AlertType.ERROR,
                 main.getScene().getWindow(),
                 "Fejl!",
@@ -132,7 +120,7 @@ public class AuthViewController extends HBox {
         }
 
         if (passwordField.getText().isEmpty()) {
-            showAlert(
+            AlertHelper.show(
                 Alert.AlertType.ERROR,
                 main.getScene().getWindow(),
                 "Fejl!",
@@ -150,7 +138,7 @@ public class AuthViewController extends HBox {
         }
 
         if (!signIn) {
-            showAlert(
+            AlertHelper.show(
                 Alert.AlertType.ERROR,
                 main.getScene().getWindow(),
                 "Fejl!",
