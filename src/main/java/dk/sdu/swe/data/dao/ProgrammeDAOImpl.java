@@ -28,7 +28,7 @@ public class ProgrammeDAOImpl extends AbstractDAO<Programme> implements IProgram
     public List<Programme> search(String searchTerm, Channel channel, Category category) {
         searchTerm = '%' + searchTerm + '%';
 
-        String hql = "FROM Programme p WHERE p.title LIKE :search_term";
+        String hql = "FROM Programme p JOIN FETCH p.categories WHERE p.title LIKE :search_term";
 
         if (channel != null) {
             hql += " AND channel_id = :channel_id";
@@ -66,9 +66,9 @@ public class ProgrammeDAOImpl extends AbstractDAO<Programme> implements IProgram
         List<Programme> result;
         try {
             result = session.createQuery(
-                "FROM Programme as programme " +
-                "JOIN FETCH programme.categories " +
-                "JOIN FETCH programme.channel").list();
+                "FROM Programme as p " +
+                "JOIN FETCH p.categories " +
+                "JOIN FETCH p.channel").list();
         } finally {
             transaction.commit();
             session.close();
