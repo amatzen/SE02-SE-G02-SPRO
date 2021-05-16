@@ -5,7 +5,7 @@ import com.jfoenix.controls.JFXListView;
 import com.jfoenix.controls.JFXTextField;
 import dk.sdu.swe.domain.controllers.PersonController;
 import dk.sdu.swe.domain.models.Person;
-import dk.sdu.swe.views.modals.persons.AddPersonModal;
+import dk.sdu.swe.views.modals.persons.PersonModal;
 import dk.sdu.swe.views.partials.PersonListItem;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -56,7 +56,7 @@ public class PersonsViewController extends VBox {
 
     @FXML
     private void addPersonModal(ActionEvent event) {
-        Dialog<Boolean> addPerson = new AddPersonModal(getScene().getWindow());
+        Dialog<Person> addPerson = new PersonModal(getScene().getWindow());
         addPerson.show();
     }
 

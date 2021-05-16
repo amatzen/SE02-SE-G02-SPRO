@@ -48,4 +48,12 @@ public class Credit {
     public void setProgramme(Programme programme) {
         this.programme = programme;
     }
+
+    public CreditRole getRole() {
+        return role;
+    }
+
+    public void setRole(CreditRole role) {
+        this.role = role;
+    }
 }

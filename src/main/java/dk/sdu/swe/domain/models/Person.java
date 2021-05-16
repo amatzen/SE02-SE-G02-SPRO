@@ -4,6 +4,8 @@ import com.google.gson.annotations.SerializedName;
 import org.json.JSONObject;
 
 import javax.persistence.*;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -22,7 +24,13 @@ public class Person {
     @Column(name = "dob")
     private String dateOfBirth;
 
+    private String email;
+
     private String image;
+
+    @Transient
+    private DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("MM/dd/yyyy - HH:mm:ss z");
+
 
     @ElementCollection
     @CollectionTable(
@@ -40,10 +48,11 @@ public class Person {
     public Person() {
     }
 
-    public Person(String name, String image, String dateOfBirth) {
+    public Person(String name, String image, String email, ZonedDateTime dateOfBirth) {
         this.name = name;
+        this.email = email;
         this.image = image;
-        this.dateOfBirth = dateOfBirth;
+        setDateOfBirth(dateOfBirth);
     }
 
     public Long getId() {
@@ -80,5 +89,33 @@ public class Person {
 
     public void setCredits(List<Credit> credits) {
         this.credits = credits;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setDateOfBirth(String dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
+
+    public void setDateOfBirth(ZonedDateTime dateOfBirth) {
+        setDateOfBirth(dateOfBirth.format(dateTimeFormatter));
+    }
+
+    public ZonedDateTime getZonedDate() {
+        return ZonedDateTime.parse(dateOfBirth, dateTimeFormatter);
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 }
