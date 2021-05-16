@@ -5,7 +5,7 @@ import dk.sdu.swe.domain.models.CreditRole;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-public class v4_CreateCreditRoles {
+public class v2_1_CreateCreditRoles {
     public static void run() {
         Session session = DB.openSession();
 

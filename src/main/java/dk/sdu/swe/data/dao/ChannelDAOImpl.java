@@ -28,12 +28,12 @@ public class ChannelDAOImpl extends AbstractDAO<Channel> implements IChannelDAO 
     public Optional<Channel> getByEpgId(Long epgId) {
         Session session = DB.openSession();
         Channel channel = null;
+        Transaction trans = session.beginTransaction();
         try {
-            Transaction trans = session.beginTransaction();
             channel = session.byNaturalId(Channel.class)
                 .using("epgIdentifier", epgId).load();
-            trans.commit();
         } finally {
+            trans.commit();
             session.close();
         }
         return Optional.ofNullable(channel);

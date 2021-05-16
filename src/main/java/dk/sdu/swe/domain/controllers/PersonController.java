@@ -3,6 +3,7 @@ package dk.sdu.swe.domain.controllers;
 import dk.sdu.swe.data.dao.PersonDAOImpl;
 import dk.sdu.swe.domain.models.Person;
 import dk.sdu.swe.domain.persistence.IPersonDAO;
+import org.joda.time.DateTime;
 
 import java.time.ZonedDateTime;
 import java.util.List;
@@ -35,7 +36,7 @@ public class PersonController {
         PersonDAOImpl.getInstance().delete(person);
     }
 
-    public Person createPerson(String name, String image, String email, ZonedDateTime bday) {
+    public Person createPerson(String name, String image, String email, DateTime bday) {
         Person person = new Person(name, image, email, bday);
         personDAO.save(person);
         return person;
