@@ -116,7 +116,7 @@ public class v3_CreateProgrammesForThisWeek {
                         epgObj.getString("title"),
                         channelDAO.getByEpgId(channelObj.getLong("id")).orElse(null),
                         0,
-                        categories.stream().filter(distinctByKey(c -> c.getCategoryTitle())).collect(Collectors.toList())
+                        categories.stream().filter(distinctByKey(Category::getCategoryTitle)).collect(Collectors.toList())
                     );
 
                     addedProgrammes.add(programme);
