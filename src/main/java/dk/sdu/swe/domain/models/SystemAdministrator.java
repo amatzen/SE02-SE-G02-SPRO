@@ -16,6 +16,7 @@ public class SystemAdministrator extends User {
         "programmes.filter",
         "companies",
         "companies.list",
+        "companies.list.all",
         "companies.add",
         "people",
         "admin",
