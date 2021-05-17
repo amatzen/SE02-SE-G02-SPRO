@@ -4,8 +4,8 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPopup;
 import dk.sdu.swe.data.dao.CompanyDAOImpl;
 import dk.sdu.swe.domain.models.Company;
-import dk.sdu.swe.views.modals.companies.EditCompanyDialog;
-import dk.sdu.swe.views.modals.programmes.UserAdministrationDialog;
+import dk.sdu.swe.views.modals.companies.CompanyModal;
+import dk.sdu.swe.views.modals.companies.UserAdministrationDialog;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Dialog;
@@ -73,7 +73,7 @@ public class CompanyListItem extends VBox {
 
     private void editCompany() {
 
-        Dialog<Company> editCompanyDialog = new EditCompanyDialog(getScene().getWindow(), company);
+        Dialog<Company> editCompanyDialog = new CompanyModal(getScene().getWindow(), company);
         Optional<Company> company = editCompanyDialog.showAndWait();
 
         company.ifPresent(company1 -> {

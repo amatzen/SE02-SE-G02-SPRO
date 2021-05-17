@@ -2,17 +2,11 @@ package dk.sdu.swe.views;
 
 import com.jfoenix.controls.JFXListView;
 import com.jfoenix.controls.JFXTextField;
-import dk.sdu.swe.data.dao.CompanyDAOImpl;
 import dk.sdu.swe.domain.controllers.CompanyController;
-import dk.sdu.swe.domain.controllers.PersonController;
 import dk.sdu.swe.domain.models.Company;
-import dk.sdu.swe.domain.models.Person;
-import dk.sdu.swe.views.modals.companies.AddCompanyModal;
+import dk.sdu.swe.views.modals.companies.CompanyModal;
 import dk.sdu.swe.views.partials.CompanyListItem;
-import dk.sdu.swe.views.partials.PersonListItem;
 import javafx.application.Platform;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -67,7 +61,7 @@ public class CompanyViewController extends BorderPane {
 
     @FXML
     private void addCompanyBtn(ActionEvent event) {
-        Dialog<Company> addCompanyModal = new AddCompanyModal(getScene().getWindow());
+        Dialog<Company> addCompanyModal = new CompanyModal(getScene().getWindow());
         Optional<Company> company = addCompanyModal.showAndWait();
         company.ifPresent(company1 -> {
             companyListView.getItems().add(new CompanyListItem(company1));

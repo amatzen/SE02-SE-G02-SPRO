@@ -1,10 +1,16 @@
-package dk.sdu.swe.views.modals;
+package dk.sdu.swe.views.modals.companies;
 
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXListView;
+import dk.sdu.swe.domain.models.Company;
+import dk.sdu.swe.domain.models.User;
+import dk.sdu.swe.views.modals.users.UserModal;
+import dk.sdu.swe.views.partials.UserListItem;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Dialog;
+import javafx.scene.control.Label;
 import javafx.scene.effect.GaussianBlur;
 import javafx.stage.Modality;
 import javafx.stage.StageStyle;
@@ -12,8 +18,9 @@ import javafx.stage.Window;
 
 import java.io.IOException;
 import java.util.Objects;
+import java.util.Optional;
 
-public class BulkEditModal extends Dialog<Boolean> {
+public class UserAdministrationDialog extends Dialog<Boolean> {
 
     @FXML
     private JFXButton closeBtn;
@@ -21,7 +28,18 @@ public class BulkEditModal extends Dialog<Boolean> {
     @FXML
     private GaussianBlur backgroundEffect;
 
-    public BulkEditModal(Window window) {
+    @FXML
+    private Company company;
+
+    @FXML
+    private Label companyName;
+
+    @FXML
+    private JFXListView usersListView;
+
+    public UserAdministrationDialog(Window window, Company company) {
+        this.company = company;
+
         this.setResultConverter(param -> null);
         this.initOwner(window);
         this.initModality(Modality.APPLICATION_MODAL);
@@ -36,7 +54,7 @@ public class BulkEditModal extends Dialog<Boolean> {
 
         FXMLLoader fxmlLoader = new FXMLLoader(
             Objects.requireNonNull(
-                getClass().getClassLoader().getResource("dk/sdu/swe/ui/credits/bulk-edit-credit.fxml")));
+                getClass().getClassLoader().getResource("dk/sdu/swe/ui/programmes/UserAdministration.fxml")));
         fxmlLoader.setController(this);
 
         try {
@@ -48,12 +66,24 @@ public class BulkEditModal extends Dialog<Boolean> {
 
     @FXML
     private void initialize() {
-
+        companyName.setText(company.getName());
+        for (User user : company.getUsers()) {
+            usersListView.getItems().add(new UserListItem(user));
+        }
     }
 
     @FXML
     private void handleClose(ActionEvent event) {
         setResult(false);
         hide();
+    }
+
+    @FXML
+    private void addUser(ActionEvent event) {
+        Dialog<User> userModal = new UserModal(this.getDialogPane().getScene().getWindow(), this.company);
+        Optional<User> user = userModal.showAndWait();
+        user.ifPresent(user1 -> {
+            usersListView.getItems().add(new UserListItem(user1));
+        });
     }
 }
