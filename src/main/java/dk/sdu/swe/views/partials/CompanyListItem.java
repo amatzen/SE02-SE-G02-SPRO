@@ -5,7 +5,7 @@ import com.jfoenix.controls.JFXPopup;
 import dk.sdu.swe.data.dao.CompanyDAOImpl;
 import dk.sdu.swe.domain.models.Company;
 import dk.sdu.swe.views.modals.companies.CompanyModal;
-import dk.sdu.swe.views.modals.companies.UserAdministrationDialog;
+import dk.sdu.swe.views.modals.companies.UserAdministrationModal;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Dialog;
@@ -87,7 +87,7 @@ public class CompanyListItem extends VBox {
     }
 
     private void manageUsers() {
-        Dialog<Boolean> userAdministrationDialog = new UserAdministrationDialog(getScene().getWindow(), company);
+        Dialog<Boolean> userAdministrationDialog = new UserAdministrationModal(getScene().getWindow(), company);
         userAdministrationDialog.show();
     }
 

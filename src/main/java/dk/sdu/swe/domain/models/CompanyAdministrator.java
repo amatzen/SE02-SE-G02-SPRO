@@ -16,7 +16,9 @@ public class CompanyAdministrator extends User {
         "programmes.filter",
         "companies",
         "companies.own",
-        "people"
+        "companies.user.promote",
+        "people",
+        "user.promote"
     };
 
     /**

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<fx:root alignment="CENTER_LEFT" prefHeight="26.0" prefWidth="698.0" spacing="10.0" type="HBox" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <JFXButton buttonType="RAISED" onAction="#delete" style="-fx-background-color: red;" text="Slet" textFill="WHITE">
+        </JFXButton>
+        <HBox prefHeight="26.0" prefWidth="262.0">
+            <children>
+                <Label fx:id="emailLbl" prefWidth="59.0" text="Email">
+                    <HBox.margin>
+                        <Insets />
+                    </HBox.margin>
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </Label>
+            </children>
+        </HBox>
+        <HBox layoutX="10.0" layoutY="10.0" prefHeight="26.0" prefWidth="255.0">
+            <children>
+                <Label fx:id="usernameLbl" prefHeight="25.0" prefWidth="218.0" text="Navn">
+                    <HBox.margin>
+                        <Insets />
+                    </HBox.margin>
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </Label>
+            </children>
+        </HBox>
+        <HBox alignment="CENTER_LEFT" layoutX="410.0" layoutY="10.0" prefHeight="47.0">
+            <children>
+                <JFXCheckBox fx:id="administratorCheckbox" onAction="#onAdministratorChange" text=" " />
+            </children>
+        </HBox>
+    </children>
+</fx:root>

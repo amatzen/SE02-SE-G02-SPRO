@@ -20,7 +20,7 @@ import java.io.IOException;
 import java.util.Objects;
 import java.util.Optional;
 
-public class UserAdministrationDialog extends Dialog<Boolean> {
+public class UserAdministrationModal extends Dialog<Boolean> {
 
     @FXML
     private JFXButton closeBtn;
@@ -37,7 +37,7 @@ public class UserAdministrationDialog extends Dialog<Boolean> {
     @FXML
     private JFXListView usersListView;
 
-    public UserAdministrationDialog(Window window, Company company) {
+    public UserAdministrationModal(Window window, Company company) {
         this.company = company;
 
         this.setResultConverter(param -> null);
@@ -68,7 +68,7 @@ public class UserAdministrationDialog extends Dialog<Boolean> {
     private void initialize() {
         companyName.setText(company.getName());
         for (User user : company.getUsers()) {
-            usersListView.getItems().add(new UserListItem(user));
+            usersListView.getItems().add(new UserListItem(user, usersListView));
         }
     }
 
@@ -82,8 +82,8 @@ public class UserAdministrationDialog extends Dialog<Boolean> {
     private void addUser(ActionEvent event) {
         Dialog<User> userModal = new UserModal(this.getDialogPane().getScene().getWindow(), this.company);
         Optional<User> user = userModal.showAndWait();
-        user.ifPresent(user1 -> {
-            usersListView.getItems().add(new UserListItem(user1));
+        user.ifPresent(userObj -> {
+            usersListView.getItems().add(new UserListItem(userObj, usersListView));
         });
     }
 }
