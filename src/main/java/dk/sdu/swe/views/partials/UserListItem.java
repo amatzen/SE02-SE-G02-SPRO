@@ -4,6 +4,7 @@ import dk.sdu.swe.data.dao.UserDAOImpl;
 import dk.sdu.swe.domain.controllers.AuthController;
 import dk.sdu.swe.domain.controllers.UserController;
 import dk.sdu.swe.domain.models.CompanyAdministrator;
+import dk.sdu.swe.domain.models.SystemAdministrator;
 import dk.sdu.swe.domain.models.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -50,6 +51,10 @@ public class UserListItem extends HBox {
     private void initialize() {
         usernameLbl.setText(user.getUsername());
         emailLbl.setText(user.getEmail());
+
+        if (user instanceof SystemAdministrator) {
+            administratorCheckbox.setDisable(true);
+        }
 
         if (user instanceof CompanyAdministrator) {
             administratorCheckbox.setSelected(true);
