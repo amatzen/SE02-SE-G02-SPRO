@@ -41,20 +41,28 @@ public class DataExportController extends VBox {
 
     @FXML
     private void exportCsv(ActionEvent event) {
-        if (csvBtn.isSelected()) {
-            CsvExport.csvExport();
-        }
-        if (jsonBtn.isSelected()) {
-            JsonExport.JsonExport();
-        }
-        else if (csvBtn.isSelected() == false && jsonBtn.isSelected() == false) {
+
+        if (csvBtn.isSelected() == false && jsonBtn.isSelected() == false) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Fejl!");
             alert.setHeaderText(null);
             alert.setContentText("Vælg venligst en filtype");
             alert.showAndWait();
         }
-
+        if (actorData.isSelected() == false && programData.isSelected() == false &&
+            companyData.isSelected() == false) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Fejl!");
+            alert.setHeaderText(null);
+            alert.setContentText("Vælg venligst eksport data");
+            alert.showAndWait();
+        }
+        else if (csvBtn.isSelected()) {
+            CsvExport.csvExport();
+        }
+        else if (jsonBtn.isSelected()) {
+            JsonExport.JsonExport();
+        }
     }
 
 }
