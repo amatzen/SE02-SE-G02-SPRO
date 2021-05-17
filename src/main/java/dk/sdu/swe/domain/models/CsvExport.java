@@ -1,5 +1,7 @@
 package dk.sdu.swe.domain.models;
 
+import dk.sdu.swe.domain.controllers.CreditController;
+
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -24,6 +26,8 @@ public class CsvExport {
     );
 
     public static void csvExportActors(File file) {
+        List<Credit> credits = CreditController.getInstance().getAll();
+
         try {
             FileWriter csvWriter = new FileWriter(file);
             csvWriter.append("Skuespillerdata");
