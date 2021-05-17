@@ -114,6 +114,7 @@ public class ProgrammeModal extends Dialog<Programme> {
         Label label = new Label(company.getName());
         label.setUserData(company);
         prodCompany.getItems().add(label);
+        prodCompany.getSelectionModel().select(label);
     }
 
     @FXML
