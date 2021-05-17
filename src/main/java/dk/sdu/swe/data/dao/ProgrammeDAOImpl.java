@@ -71,7 +71,7 @@ public class ProgrammeDAOImpl extends AbstractDAO<Programme> implements IProgram
             result = new HashSet<>(session.createQuery(
                 "FROM Programme as p " +
                 "INNER JOIN FETCH p.categories " +
-                "INNER JOIN FETCH p.channel").list();
+                "INNER JOIN FETCH p.channel").list());
         } finally {
             transaction.commit();
             session.close();
