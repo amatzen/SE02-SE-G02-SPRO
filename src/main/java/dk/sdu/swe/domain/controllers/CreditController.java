@@ -37,4 +37,11 @@ public class CreditController {
     public void update(Credit creditObj) {
         creditDAO.update(creditObj);
     }
+
+    public void delete(Credit credit) {
+        Programme programme = credit.getProgramme();
+        programme.getCredits().remove(credit);
+        creditDAO.delete(credit);
+        ProgrammeController.getInstance().updateProgramme(programme);
+    }
 }

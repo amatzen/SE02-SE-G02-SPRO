@@ -1,6 +1,7 @@
 package dk.sdu.swe.views.modals;
 
 import com.jfoenix.controls.JFXButton;
+import dk.sdu.swe.domain.controllers.CreditController;
 import dk.sdu.swe.domain.models.Category;
 import dk.sdu.swe.domain.models.Credit;
 import dk.sdu.swe.domain.models.Programme;
@@ -78,7 +79,7 @@ public class CreditListModal extends Dialog<Boolean> {
         credits = programme.getCredits();
 
         for (Credit credit : credits) {
-            creditsPane.getChildren().add(new CreditListItem(credit));
+            creditsPane.getChildren().add(new CreditListItem(credit, creditsPane));
         }
     }
 
@@ -93,7 +94,7 @@ public class CreditListModal extends Dialog<Boolean> {
         Dialog<Credit> editDialog = new CreditModal(getDialogPane().getScene().getWindow(), programme);
         Optional<Credit> credit = editDialog.showAndWait();
         credit.ifPresent(creditObj -> {
-            creditsPane.getChildren().add(new CreditListItem(creditObj));
+            creditsPane.getChildren().add(new CreditListItem(creditObj, creditsPane));
         });
     }
 }
