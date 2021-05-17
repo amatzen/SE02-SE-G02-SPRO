@@ -58,7 +58,7 @@ public class CompanyModal extends Dialog<Company> {
 
         FXMLLoader fxmlLoader = new FXMLLoader(
             Objects.requireNonNull(
-                getClass().getClassLoader().getResource("dk/sdu/swe/ui/companies/components/CompanyModal.fxml")));
+                getClass().getClassLoader().getResource("dk/sdu/swe/views/companies/components/CompanyModal.fxml")));
         fxmlLoader.setController(this);
 
         try {

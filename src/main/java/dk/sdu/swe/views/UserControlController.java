@@ -1,7 +1,5 @@
 package dk.sdu.swe.views;
 
-import dk.sdu.swe.domain.models.Company;
-import dk.sdu.swe.domain.models.User;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.VBox;
 
@@ -13,7 +11,7 @@ public class UserControlController extends VBox {
     public UserControlController() {
         FXMLLoader fxmlLoader = new FXMLLoader(
             Objects.requireNonNull(
-                getClass().getClassLoader().getResource("dk/sdu/swe/ui/admin/components/usercontrol.fxml")));
+                getClass().getClassLoader().getResource("dk/sdu/swe/views/admin/components/usercontrol.fxml")));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
 

@@ -12,7 +12,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.stage.Window;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -50,7 +49,7 @@ public class AuthViewController extends HBox {
     public AuthViewController() {
         FXMLLoader fxmlLoader = new FXMLLoader(
             Objects.requireNonNull(
-                getClass().getClassLoader().getResource("dk/sdu/swe/ui/auth/auth-login.fxml")));
+                getClass().getClassLoader().getResource("dk/sdu/swe/views/auth/AuthView.fxml")));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
 
