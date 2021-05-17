@@ -1,7 +1,6 @@
-package dk.sdu.swe.views.modals;
+package dk.sdu.swe.views.modals.credits;
 
 import com.jfoenix.controls.JFXButton;
-import dk.sdu.swe.domain.controllers.CreditController;
 import dk.sdu.swe.domain.models.Category;
 import dk.sdu.swe.domain.models.Credit;
 import dk.sdu.swe.domain.models.Programme;
