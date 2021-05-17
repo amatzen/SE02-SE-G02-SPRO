@@ -17,7 +17,7 @@ public class AppViewController extends VBox {
     public AppViewController() {
         FXMLLoader fxmlLoader = new FXMLLoader(
             Objects.requireNonNull(
-                getClass().getClassLoader().getResource("dk/sdu/swe/ui/App.fxml")));
+                getClass().getClassLoader().getResource("dk/sdu/swe/views/App.fxml")));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
 

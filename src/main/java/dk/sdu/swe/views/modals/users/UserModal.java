@@ -48,7 +48,7 @@ public class UserModal extends Dialog<User> {
 
         FXMLLoader fxmlLoader = new FXMLLoader(
             Objects.requireNonNull(
-                getClass().getClassLoader().getResource("dk/sdu/swe/ui/programmes/UserModal.fxml")));
+                getClass().getClassLoader().getResource("dk/sdu/swe/views/programmes/UserModal.fxml")));
         fxmlLoader.setController(this);
 
         try {

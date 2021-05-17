@@ -15,7 +15,6 @@ import javafx.stage.Modality;
 import javafx.stage.StageStyle;
 import javafx.stage.Window;
 
-import javax.swing.*;
 import java.io.IOException;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
@@ -64,7 +63,7 @@ public class PersonModal extends Dialog<Person> {
 
         FXMLLoader fxmlLoader = new FXMLLoader(
             Objects.requireNonNull(
-                getClass().getClassLoader().getResource("dk/sdu/swe/ui/persons/components/PersonModal.fxml")));
+                getClass().getClassLoader().getResource("dk/sdu/swe/views/persons/components/PersonModal.fxml")));
         fxmlLoader.setController(this);
 
         try {

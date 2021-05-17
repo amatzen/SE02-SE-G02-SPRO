@@ -2,7 +2,6 @@ package dk.sdu.swe.views.partials;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPopup;
-import dk.sdu.swe.data.dao.CreditDAOImpl;
 import dk.sdu.swe.domain.controllers.PersonController;
 import dk.sdu.swe.domain.models.Person;
 import dk.sdu.swe.views.modals.persons.PersonModal;
@@ -48,7 +47,7 @@ public class PersonListItem extends VBox {
 
         FXMLLoader fxmlLoader = new FXMLLoader(
             Objects.requireNonNull(
-                getClass().getClassLoader().getResource("dk/sdu/swe/ui/persons/components/PersonListItem.fxml")));
+                getClass().getClassLoader().getResource("dk/sdu/swe/views/persons/components/PersonListItem.fxml")));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
 

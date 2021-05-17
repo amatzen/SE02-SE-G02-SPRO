@@ -5,6 +5,7 @@ import dk.sdu.swe.domain.models.Person;
 import dk.sdu.swe.domain.persistence.IPersonDAO;
 
 import java.time.ZonedDateTime;
+import java.util.Comparator;
 import java.util.List;
 
 public class PersonController {
@@ -24,11 +25,15 @@ public class PersonController {
     }
 
     public List<Person> getAll() {
-        return PersonDAOImpl.getInstance().getAll();
+        List<Person> people = PersonDAOImpl.getInstance().getAll();
+        people.sort(Comparator.comparing(Person::getName));
+        return people;
     }
 
     public List<Person> search(String searchTerm) {
-        return PersonDAOImpl.getInstance().searchByName(searchTerm);
+        List<Person> people = PersonDAOImpl.getInstance().searchByName(searchTerm);
+        people.sort(Comparator.comparing(Person::getName));
+        return people;
     }
 
     public void delete(Person person) {

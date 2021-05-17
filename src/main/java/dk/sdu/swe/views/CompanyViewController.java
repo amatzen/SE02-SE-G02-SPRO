@@ -29,7 +29,7 @@ public class CompanyViewController extends BorderPane {
     public CompanyViewController() {
         FXMLLoader fxmlLoader = new FXMLLoader(
             Objects.requireNonNull(
-                getClass().getClassLoader().getResource("dk/sdu/swe/ui/companies/CompanyView.fxml")));
+                getClass().getClassLoader().getResource("dk/sdu/swe/views/companies/CompanyView.fxml")));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
 
