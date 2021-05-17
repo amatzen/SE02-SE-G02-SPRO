@@ -8,23 +8,28 @@ import java.util.List;
 public class CsvExport {
 
     // Test data
-    private static List<List<String>> List = Arrays.asList(
-        Arrays.asList("Skuespiller 1", "Program 1", "Virksomhed 1"),
-        Arrays.asList("Skuespiller 2", "Program 2", "Virksomhed 2"),
-        Arrays.asList("Skuespiller 3", "Program 3", "Virksomhed 3")
+    private static List<List<String>> Actors = Arrays.asList(
+        Arrays.asList("Skuespiller 1", "Skuespiller 2", "Skuespiller 3")
     );
 
-    public static void csvExport() {
+    // Test data
+    private static List<List<String>> Programs = Arrays.asList(
+        Arrays.asList("Program 1", "Program 2", "Program 3")
+    );
+
+    // Test data
+    private static List<List<String>> Companies = Arrays.asList(
+        Arrays.asList("Virksomhed 1", "Virksomhed 2", "Virksomhed 3")
+    );
+
+    public static void csvExportActors() {
         try {
-            FileWriter csvWriter = new FileWriter("Eksport.csv");
+            FileWriter csvWriter = new FileWriter("Skuespillere.csv");
             csvWriter.append("Skuespillerdata");
             csvWriter.append(",");
-            csvWriter.append("Programdata");
-            csvWriter.append(",");
-            csvWriter.append("Virksomhedsdata");
             csvWriter.append("\n");
 
-            for (List<String> data : List) {
+            for (List<String> data : Actors) {
                 csvWriter.append(String.join(",", data));
                 csvWriter.append("\n");
             }
@@ -36,6 +41,40 @@ public class CsvExport {
             e.printStackTrace();
         }
 
+    }
+
+    public static void csvExportPrograms() {
+        try {
+            FileWriter cswWriter = new FileWriter("Programmer.csv");
+            cswWriter.append("Programdata");
+            cswWriter.append(",");
+            cswWriter.append("\n");
+
+            for (List<String> data : Programs) {
+                cswWriter.append(String.join(",", data));
+                cswWriter.append("\n");
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void csvExportCompanies() {
+        try {
+            FileWriter cswWriter = new FileWriter("Virksomheder.csv");
+            cswWriter.append("Virksomhedsdata");
+            cswWriter.append(",");
+            cswWriter.append("\n");
+
+            for (List<String> data : Companies) {
+                cswWriter.append(String.join(",", data));
+                cswWriter.append("\n");
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 }
