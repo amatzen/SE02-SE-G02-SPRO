@@ -58,14 +58,6 @@
                                 <Font name="System Bold" size="12.0" />
                             </font>
                         </JFXButton>
-                        <JFXButton fx:id="saveButton" buttonType="RAISED" prefHeight="35.0" prefWidth="78.0" style="-fx-background-color: #FF9800;" text="Gem" textAlignment="RIGHT" textFill="WHITE">
-                            <HBox.margin>
-                                <Insets />
-                            </HBox.margin>
-                            <font>
-                                <Font name="System Bold" size="12.0" />
-                            </font>
-                        </JFXButton>
                     </children>
                <HBox.margin>
                   <Insets />
