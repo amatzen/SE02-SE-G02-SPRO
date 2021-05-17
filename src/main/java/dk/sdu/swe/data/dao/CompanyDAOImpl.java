@@ -14,7 +14,7 @@ public class CompanyDAOImpl extends AbstractDAO<Company> implements ICompanyDAO 
 
     private static CompanyDAOImpl instance;
 
-    public static ICompanyDAO getInstance() {
+    public synchronized static ICompanyDAO getInstance() {
         if (instance == null) {
             instance = new CompanyDAOImpl();
         }

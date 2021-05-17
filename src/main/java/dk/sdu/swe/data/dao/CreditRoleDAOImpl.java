@@ -6,7 +6,7 @@ import dk.sdu.swe.domain.persistence.ICreditRoleDAO;
 public class CreditRoleDAOImpl extends AbstractDAO<CreditRole> implements ICreditRoleDAO {
     private static CreditRoleDAOImpl instance;
 
-    public static ICreditRoleDAO getInstance() {
+    public synchronized static ICreditRoleDAO getInstance() {
         if (instance == null) {
             instance = new CreditRoleDAOImpl();
         }
