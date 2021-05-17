@@ -13,7 +13,7 @@ public class PersonDAOImpl extends AbstractDAO<Person> implements IPersonDAO {
 
     private static PersonDAOImpl instance;
 
-    public static PersonDAOImpl getInstance() {
+    public synchronized static PersonDAOImpl getInstance() {
         if (instance == null) {
             instance = new PersonDAOImpl();
         }

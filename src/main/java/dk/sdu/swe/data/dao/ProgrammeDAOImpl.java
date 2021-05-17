@@ -17,7 +17,7 @@ import java.util.Set;
 public class ProgrammeDAOImpl extends AbstractDAO<Programme> implements IProgrammeDAO {
     private static ProgrammeDAOImpl instance;
 
-    public static IProgrammeDAO getInstance() {
+    public synchronized static IProgrammeDAO getInstance() {
         if (instance == null) {
             instance = new ProgrammeDAOImpl();
         }

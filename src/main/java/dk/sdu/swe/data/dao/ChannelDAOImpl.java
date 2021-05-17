@@ -13,7 +13,7 @@ import java.util.Optional;
 public class ChannelDAOImpl extends AbstractDAO<Channel> implements IChannelDAO {
     private static ChannelDAOImpl instance;
 
-    public static IChannelDAO getInstance() {
+    public synchronized static IChannelDAO getInstance() {
         if (instance == null) {
             instance = new ChannelDAOImpl();
         }

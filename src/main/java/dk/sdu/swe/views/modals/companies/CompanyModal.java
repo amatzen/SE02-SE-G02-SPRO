@@ -17,7 +17,7 @@ import javafx.stage.Window;
 import java.io.IOException;
 import java.util.Objects;
 
-public class AddCompanyModal extends Dialog<Company> {
+public class CompanyModal extends Dialog<Company> {
 
    @FXML
     private TextField companyName;
@@ -35,8 +35,15 @@ public class AddCompanyModal extends Dialog<Company> {
     private JFXButton saveBtn;
     private GaussianBlur backgroundEffect;
 
+    private Company company;
 
-    public AddCompanyModal(Window window) {
+    public CompanyModal(Window window) {
+        this(window, null);
+    }
+
+    public CompanyModal(Window window, Company company) {
+        this.company = company;
+
         this.setResultConverter(param -> null);
         this.initOwner(window);
         this.initModality(Modality.APPLICATION_MODAL);
@@ -51,7 +58,7 @@ public class AddCompanyModal extends Dialog<Company> {
 
         FXMLLoader fxmlLoader = new FXMLLoader(
             Objects.requireNonNull(
-                getClass().getClassLoader().getResource("dk/sdu/swe/ui/companies/components/AddCompanyModal.fxml")));
+                getClass().getClassLoader().getResource("dk/sdu/swe/ui/companies/components/CompanyModal.fxml")));
         fxmlLoader.setController(this);
 
         try {
@@ -63,7 +70,11 @@ public class AddCompanyModal extends Dialog<Company> {
 
     @FXML
     private void initialize() {
-
+        if (this.company != null) {
+            companyName.setText(company.getName());
+            cvrNumber.setText(company.getCompanyDetails().getNbr());
+            address.setText(company.getCompanyDetails().getAddress());
+        }
     }
 
     @FXML
@@ -78,7 +89,15 @@ public class AddCompanyModal extends Dialog<Company> {
         String company = this.companyName.getText();
         String cvr = this.cvrNumber.getText();
         String address = this.address.getText();
-        Company companyObj = CompanyController.getInstance().createCompany(company, cvr, address);
+        Company companyObj;
+        if (this.company == null) {
+            companyObj = CompanyController.getInstance().createCompany(company, cvr, address);
+        } else {
+            this.company.setName(company);
+            this.company.getCompanyDetails().setNbr(cvr);
+            this.company.getCompanyDetails().setAddress(address);
+            companyObj = this.company;
+        }
         setResult(companyObj);
         hide();
     }
