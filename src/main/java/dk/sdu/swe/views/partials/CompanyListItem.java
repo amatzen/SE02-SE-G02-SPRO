@@ -61,6 +61,7 @@ public class CompanyListItem extends VBox {
 
     @FXML
     private void initialize() {
+        if(company.getUsers().size() > 0) options.remove("Slet");
         PopupListMenu popupList = new PopupListMenu(options);
 
         actionsBtn.setOnMouseClicked(e -> {
@@ -68,7 +69,12 @@ public class CompanyListItem extends VBox {
         });
 
         companyNameLabel.setText(company.getName());
-        cvrLabel.setText("CVR: " + company.getCompanyDetails().getNbr());
+        if(company.getCompanyDetails().getNbr().isEmpty()) {
+            cvrLabel.setText("");
+        } else {
+            cvrLabel.setText("CVR: " + company.getCompanyDetails().getNbr());
+
+        }
     }
 
     private void editCompany() {
