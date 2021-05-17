@@ -1,4 +1,4 @@
-package dk.sdu.swe.views.modals;
+package dk.sdu.swe.views.modals.credits;
 
 import com.jfoenix.controls.JFXComboBox;
 import dk.sdu.swe.domain.controllers.CreditController;
@@ -59,7 +59,7 @@ public class CreditModal extends Dialog<Credit> {
         });
         FXMLLoader fxmlLoader = new FXMLLoader(
             Objects.requireNonNull(
-                getClass().getClassLoader().getResource("dk/sdu/swe/ui/credits/AddCreditModal.fxml")));
+                getClass().getClassLoader().getResource("dk/sdu/swe/ui/credits/CreditModal.fxml")));
         fxmlLoader.setController(this);
 
         try {

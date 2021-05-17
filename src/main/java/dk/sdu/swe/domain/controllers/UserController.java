@@ -54,6 +54,11 @@ public class UserController {
         }
     }
 
+    public void delete(User user) {
+        user.getCompany().getUsers().remove(user);
+        userDAO.delete(user);
+    }
+
 /*
     public static JSONObject userToJson(User user) {
         JSONObject json = new JSONObject();

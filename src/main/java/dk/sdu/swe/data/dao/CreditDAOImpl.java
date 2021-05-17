@@ -7,7 +7,7 @@ public class CreditDAOImpl extends AbstractDAO<Credit> implements ICreditDAO {
 
     private static CreditDAOImpl instance;
 
-    public static ICreditDAO getInstance() {
+    public synchronized static ICreditDAO getInstance() {
         if (instance == null) {
             instance = new CreditDAOImpl();
         }

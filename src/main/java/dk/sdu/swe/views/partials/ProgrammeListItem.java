@@ -4,7 +4,7 @@ import dk.sdu.swe.domain.controllers.ProgrammeController;
 import dk.sdu.swe.domain.models.Category;
 import dk.sdu.swe.domain.models.Channel;
 import dk.sdu.swe.domain.models.Programme;
-import dk.sdu.swe.views.modals.CreditListModal;
+import dk.sdu.swe.views.modals.credits.CreditListModal;
 import dk.sdu.swe.views.modals.programmes.ProgrammeModal;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
