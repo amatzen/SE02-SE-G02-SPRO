@@ -1,9 +1,12 @@
-package dk.sdu.swe.views.modals;
+package dk.sdu.swe.views.modals.companies;
 
 import com.jfoenix.controls.JFXButton;
+import dk.sdu.swe.domain.controllers.CompanyController;
+import dk.sdu.swe.domain.models.Company;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Dialog;
 import javafx.scene.control.TextField;
 import javafx.scene.effect.GaussianBlur;
@@ -14,22 +17,16 @@ import javafx.stage.Window;
 import java.io.IOException;
 import java.util.Objects;
 
-public class AddCompanyModal extends Dialog<Boolean> {
-
-   /*
-
-   IKKE DONE YET
-   
-
+public class AddCompanyModal extends Dialog<Company> {
 
    @FXML
-    private TextField companyTextfield;
+    private TextField companyName;
 
     @FXML
-    private TextField cvrTextField;
+    private TextField cvrNumber;
 
     @FXML
-    private TextField adresseTextField;
+    private TextField address;
 
     @FXML
     private JFXButton editBtn;
@@ -40,6 +37,7 @@ public class AddCompanyModal extends Dialog<Boolean> {
 
 
     public AddCompanyModal(Window window) {
+        this.setResultConverter(param -> null);
         this.initOwner(window);
         this.initModality(Modality.APPLICATION_MODAL);
         this.initStyle(StageStyle.UNDECORATED);
@@ -53,7 +51,7 @@ public class AddCompanyModal extends Dialog<Boolean> {
 
         FXMLLoader fxmlLoader = new FXMLLoader(
             Objects.requireNonNull(
-                getClass().getClassLoader().getResource("dk/sdu/swe/ui/companies/components/addCompanyModal.fxml")));
+                getClass().getClassLoader().getResource("dk/sdu/swe/ui/companies/components/AddCompanyModal.fxml")));
         fxmlLoader.setController(this);
 
         try {
@@ -70,12 +68,19 @@ public class AddCompanyModal extends Dialog<Boolean> {
 
     @FXML
     private void handleClose(ActionEvent event) {
-        setResult(false);
+        getDialogPane().getButtonTypes().add(ButtonType.CANCEL);
+        setResult(null);
         hide();
     }
-    *
 
+    @FXML
+    private void save(ActionEvent event) {
+        String company = this.companyName.getText();
+        String cvr = this.cvrNumber.getText();
+        String address = this.address.getText();
+        Company companyObj = CompanyController.getInstance().createCompany(company, cvr, address);
+        setResult(companyObj);
+        hide();
+    }
 
-
-    */
 }

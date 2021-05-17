@@ -19,12 +19,12 @@
                         </Label>
                         <VBox prefHeight="122.0" prefWidth="227.0">
                             <children>
-                                <JFXTextArea prefHeight="34.0" prefWidth="282.0">
+                                <JFXTextField fx:id="searchField" onAction="#search" prefHeight="34.0" prefWidth="282.0">
                                     <padding>
                                         <Insets right="50.0" />
                                     </padding>
-                                </JFXTextArea>
-                                <JFXButton buttonType="RAISED" prefHeight="32.0" prefWidth="63.0" style="-fx-background-color: #FF9800;" text="Nulstil" textFill="WHITE">
+                                </JFXTextField>
+                                <JFXButton buttonType="RAISED" onAction="#resetSearch" prefHeight="32.0" prefWidth="63.0" style="-fx-background-color: #FF9800;" text="Nulstil" textFill="WHITE">
                                     <VBox.margin>
                                         <Insets top="50.0" />
                                     </VBox.margin>
@@ -70,8 +70,8 @@
     <center>
         <AnchorPane BorderPane.alignment="CENTER">
             <children>
-                <JFXListView fx:id="companyListView" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                <JFXButton buttonType="RAISED" layoutX="1013.0" layoutY="933.0" prefHeight="45.0" prefWidth="45.0" style="-fx-background-color: #FF9800; -fx-background-radius: 30;" text="+" textFill="WHITE" AnchorPane.bottomAnchor="25.0" AnchorPane.rightAnchor="25.0">
+                <JFXListView fx:id="companyListView" style="-fx-selection-bar: #ebebeb;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                <JFXButton buttonType="RAISED" layoutX="1013.0" layoutY="933.0" onAction="#addCompanyBtn" prefHeight="45.0" prefWidth="45.0" style="-fx-background-color: #FF9800; -fx-background-radius: 30;" text="+" textFill="WHITE" AnchorPane.bottomAnchor="25.0" AnchorPane.rightAnchor="25.0">
                     <font>
                         <Font size="18.0" />
                     </font>

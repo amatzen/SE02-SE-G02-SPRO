@@ -8,8 +8,8 @@ public class v2_CreateChannels {
     public static void run() throws Exception {
         Session session = DB.openSession();
 
-        int users = ((Number) session.createSQLQuery("SELECT COUNT(*) FROM channels").getSingleResult()).intValue();
-        if(users != 0) {
+        int channels = ((Number) session.createSQLQuery("SELECT COUNT(*) FROM channels").getSingleResult()).intValue();
+        if(channels != 0) {
             return;
         }
 
@@ -20,10 +20,10 @@ public class v2_CreateChannels {
 
         // Values fetched from
         // https://tvtid-api.api.tv2.dk/api/tvtid/v1/schedules/channels
-        a.setEpgId(3);
-        b.setEpgId(12566);
-        c.setEpgId(31);
-        d.setEpgId(4);
+        a.setEpgId(3L);
+        b.setEpgId(12566L);
+        c.setEpgId(31L);
+        d.setEpgId(4L);
 
         session.saveOrUpdate(a);
         session.saveOrUpdate(b);

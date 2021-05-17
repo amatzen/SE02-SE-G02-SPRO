@@ -1,4 +1,4 @@
-package dk.sdu.swe.views.modals;
+package dk.sdu.swe.views.modals.persons;
 
 import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
@@ -35,6 +35,7 @@ public class EditPersonModal extends Dialog<Boolean> {
     private GaussianBlur backgroundEffect;
 
     public EditPersonModal(Window window) {
+        this.setResultConverter(param -> null);
         this.initOwner(window);
         this.initModality(Modality.APPLICATION_MODAL);
         this.initStyle(StageStyle.UNDECORATED);

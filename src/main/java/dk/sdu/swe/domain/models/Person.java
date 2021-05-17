@@ -1,10 +1,14 @@
 package dk.sdu.swe.domain.models;
 
-import com.google.gson.Gson;
+import com.fasterxml.jackson.databind.util.ISO8601DateFormat;
 import com.google.gson.annotations.SerializedName;
+import org.joda.time.DateTime;
+import org.joda.time.format.ISODateTimeFormat;
 import org.json.JSONObject;
 
 import javax.persistence.*;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -15,7 +19,7 @@ public class Person {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
     private String name;
 
@@ -23,18 +27,38 @@ public class Person {
     @Column(name = "dob")
     private String dateOfBirth;
 
+    private String email;
+
     private String image;
+
+    @Transient
+    private DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ISO_DATE_TIME;
+
 
     @ElementCollection
     @CollectionTable(
         name = "people_contact_details",
         joinColumns = {@JoinColumn(name = "person_id", referencedColumnName = "id")}
     )
+
     @MapKeyColumn(name = "key")
     @Column(name = "value")
     private Map<String, String> contactDetails = new HashMap<>();
 
-    public int getId() {
+    @OneToMany(mappedBy = "person")
+    private List<Credit> credits;
+
+    public Person() {
+    }
+
+    public Person(String name, String image, String email, DateTime dateOfBirth) {
+        this.name = name;
+        this.email = email;
+        this.image = image;
+        setDateOfBirth(dateOfBirth.toString(ISODateTimeFormat.basicDateTimeNoMillis()));
+    }
+
+    public Long getId() {
         return id;
     }
 
@@ -62,4 +86,39 @@ public class Person {
         return contactDetails.get(key);
     }
 
+    public List<Credit> getCredits() {
+        return credits;
+    }
+
+    public void setCredits(List<Credit> credits) {
+        this.credits = credits;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setDateOfBirth(String dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
+
+    public void setDateOfBirth(DateTime dateOfBirth) {
+        setDateOfBirth(dateOfBirth.toString(String.valueOf(dateTimeFormatter)));
+    }
+
+    public ZonedDateTime getZonedDate() {
+        return ZonedDateTime.parse(dateOfBirth, dateTimeFormatter);
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
 }

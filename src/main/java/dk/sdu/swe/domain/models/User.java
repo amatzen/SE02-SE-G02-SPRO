@@ -6,7 +6,8 @@ import dk.sdu.swe.exceptions.UserCreationException;
 import org.hibernate.annotations.NaturalId;
 
 import javax.persistence.*;
-import java.util.*;
+import java.util.Arrays;
+import java.util.Objects;
 
 /**
  * The type User.
@@ -22,7 +23,7 @@ import java.util.*;
 public class User implements IUser {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
     @NaturalId
     @Column(unique = true)
@@ -46,6 +47,9 @@ public class User implements IUser {
         "people"
     };
 
+    @ManyToOne(optional = true)
+    private Company company;
+
     /**
      * Instantiates a new User.
      *
@@ -55,7 +59,8 @@ public class User implements IUser {
      * @param password the password
      * @throws Exception the exception
      */
-    public User(String username, String email, String name, String password) throws Exception {
+    public User(String username, String email, String name, String password, Company company) throws UserCreationException {
+        this.company = company;
 
         // Validate username
         if (username.trim().length() < 3 || username.trim().length() > 24) {
@@ -89,7 +94,7 @@ public class User implements IUser {
         return name;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
@@ -112,5 +117,13 @@ public class User implements IUser {
             ", passwordHash='" + passwordHash + '\'' +
             ", permissions=" + Arrays.toString(permissions) +
             '}';
+    }
+
+    public Company getCompany() {
+        return company;
+    }
+
+    public void setCompany(Company company) {
+        this.company = company;
     }
 }

@@ -1,6 +1,7 @@
 package dk.sdu.swe.views.modals;
 
 import com.jfoenix.controls.JFXButton;
+import dk.sdu.swe.domain.models.Category;
 import dk.sdu.swe.domain.models.Credit;
 import dk.sdu.swe.domain.models.Programme;
 import dk.sdu.swe.views.partials.CreditListItem;
@@ -18,6 +19,7 @@ import javafx.stage.Window;
 import java.io.IOException;
 import java.util.List;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 public class CreditListModal extends Dialog<Boolean> {
 
@@ -38,6 +40,7 @@ public class CreditListModal extends Dialog<Boolean> {
     public CreditListModal(Window window, Programme programme) {
         this.programme = programme;
 
+        this.setResultConverter(param -> null);
         this.initOwner(window);
         this.initModality(Modality.APPLICATION_MODAL);
         this.initStyle(StageStyle.UNDECORATED);
@@ -65,19 +68,17 @@ public class CreditListModal extends Dialog<Boolean> {
     private void initialize() {
 
         titleLbl.setText(programme.getTitle());
-        categoryLbl.setText(programme.getCategory());
+        categoryLbl.setText(programme.getCategories().stream()
+            .map(Category::getCategoryTitle)
+            .collect(Collectors.joining(", ")));
 
-        /*List<Credit> credits = null;
+        List<Credit> credits = null;
 
-        try {
-            credits = Credit.getAll();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        credits = programme.getCredits();
 
         for (Credit credit : credits) {
             creditsPane.getChildren().add(new CreditListItem(credit));
-        }*/
+        }
     }
 
     @FXML
@@ -88,7 +89,7 @@ public class CreditListModal extends Dialog<Boolean> {
 
     @FXML
     private void addCreditBtn(ActionEvent event) {
-        Dialog editDialog = new EditCreditModal(getDialogPane().getScene().getWindow());
+        Dialog editDialog = new AddCreditModal(getDialogPane().getScene().getWindow());
         editDialog.show();
     }
 }

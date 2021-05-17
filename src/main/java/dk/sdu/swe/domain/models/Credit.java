@@ -8,22 +8,38 @@ public class Credit {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
-    @OneToOne
-    @JoinColumn(name = "programme_id", referencedColumnName = "id")
-    private Programme programme;
+    @Column(name = "is_custom_role", nullable = false)
+    private boolean customRole;
 
-    @OneToOne
+    @Column(name = "custom_role_text", nullable = true)
+    private String customRoleText;
+
+    @ManyToOne(optional = true)
+    private CreditRole role;
+
+    @ManyToOne
     @JoinColumn(name = "person_id", referencedColumnName = "id")
     private Person person;
 
-    public Credit(Programme programme, Person person) {
-        this.programme = programme;
+    @ManyToOne
+    @JoinColumn(name = "programme_id", referencedColumnName = "id")
+    private Programme programme;
+
+    public Credit(Person person) {
         this.person = person;
     }
 
     public Credit() {}
+
+    public Person getPerson() {
+        return person;
+    }
+
+    public void setPerson(Person person) {
+        this.person = person;
+    }
 
     public Programme getProgramme() {
         return programme;
@@ -33,11 +49,11 @@ public class Credit {
         this.programme = programme;
     }
 
-    public Person getPerson() {
-        return person;
+    public CreditRole getRole() {
+        return role;
     }
 
-    public void setPerson(Person person) {
-        this.person = person;
+    public void setRole(CreditRole role) {
+        this.role = role;
     }
 }

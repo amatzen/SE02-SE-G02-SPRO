@@ -2,24 +2,32 @@ package dk.sdu.swe.domain.models;
 
 import org.json.JSONObject;
 
+import javax.persistence.Embeddable;
+
+//@Convert(converter = CompanyDetails.class)
+@Embeddable
 public class CompanyDetails {
 
-    private String country;
+    private String address;
     private String lei;
     private String nbr;
 
-    public CompanyDetails(String country, String lei, String nbr) {
-        this.country = country;
+    public CompanyDetails(String address, String lei, String nbr) {
+        this.address = address;
         this.lei = lei;
         this.nbr = nbr;
     }
 
-    public String getCountry() {
-        return country;
+    public CompanyDetails() {
+
     }
 
-    public void setCountry(String country) {
-        this.country = country;
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String country) {
+        this.address = country;
     }
 
     public String getLei() {
@@ -42,7 +50,7 @@ public class CompanyDetails {
         JSONObject json = new JSONObject();
         json.put("lei", getLei());
         json.put("nbr", getNbr());
-        json.put("country", getCountry());
+        json.put("country", getAddress());
         return json;
     }
 }

@@ -7,9 +7,12 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.cfg.Environment;
 
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
+import java.util.Scanner;
 
 public class DB {
     private volatile static SessionFactory sessionFactory;
@@ -27,9 +30,11 @@ public class DB {
                 DB_HOST = System.getenv("DATABASE_PROD_HOST");
                 DB_NAME = System.getenv("DATABASE_PROD_DB");
                 DB_USER = System.getenv("DATABASE_PROD_USER");
-                DB_PASS = System.getenv("DATABASE_PROD_HOST");
+                DB_PASS = System.getenv("DATABASE_PROD_PASS");
                 HIBERNATE_DDL = "update";
             }
+
+            System.out.println("[DB] Selected Environment: " + env.getLabel());
 
             addAnnotatedClasses();
 
@@ -55,6 +60,11 @@ public class DB {
 
             settings.put(Environment.HBM2DDL_AUTO, HIBERNATE_DDL);
 
+            settings.put(Environment.USE_QUERY_CACHE, true);
+            settings.put(Environment.USE_SECOND_LEVEL_CACHE, true);
+            settings.put(Environment.CACHE_REGION_FACTORY, "org.hibernate.cache.ehcache.EhCacheRegionFactory");
+            settings.put("hibernate.enable_lazy_load_no_trans", true);
+
             cfg.setProperties(settings);
 
             annotatedClasses.forEach(cfg::addAnnotatedClass);
@@ -64,6 +74,11 @@ public class DB {
         return sessionFactory;
     }
 
+    public synchronized static void resetSessionFactory() {
+        sessionFactory = null;
+        getSessionFactory();
+    }
+
     public synchronized static void addAnnotatedClasses() {
         annotatedClasses.add(User.class);
         annotatedClasses.add(SystemAdministrator.class);
@@ -71,12 +86,24 @@ public class DB {
 
         annotatedClasses.add(Programme.class);
         annotatedClasses.add(Credit.class);
+        annotatedClasses.add(CreditRole.class);
         annotatedClasses.add(Person.class);
         annotatedClasses.add(Channel.class);
         annotatedClasses.add(EPGProgramme.class);
+        annotatedClasses.add(Category.class);
+
+        annotatedClasses.add(Company.class);
     }
 
     public synchronized static Session openSession() {
         return getSessionFactory().openSession();
+    }
+
+    public static <T> List<T> loadAllData(Class<T> type, Session session) {
+        CriteriaBuilder builder = session.getCriteriaBuilder();
+        CriteriaQuery<T> criteria = builder.createQuery(type);
+        criteria.from(type);
+        List<T> data = session.createQuery(criteria).getResultList();
+        return data;
     }
 }

@@ -2,10 +2,10 @@ package dk.sdu.swe.views.partials;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPopup;
+import dk.sdu.swe.data.dao.CompanyDAOImpl;
 import dk.sdu.swe.domain.models.Company;
-import dk.sdu.swe.views.modals.EditCompanyDialog;
-import dk.sdu.swe.views.modals.EditProgrammeDialog;
-import dk.sdu.swe.views.modals.UserAdministrationDialog;
+import dk.sdu.swe.views.modals.companies.EditCompanyDialog;
+import dk.sdu.swe.views.modals.programmes.UserAdministrationDialog;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Dialog;
@@ -16,6 +16,7 @@ import java.io.IOException;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
 
 public class CompanyListItem extends VBox {
 
@@ -25,7 +26,6 @@ public class CompanyListItem extends VBox {
         put("Slet", CompanyListItem.this::deleteCompany);
     }};
 
-    @FXML
     private Company company;
 
     @FXML
@@ -68,12 +68,17 @@ public class CompanyListItem extends VBox {
         });
 
         companyNameLabel.setText(company.getName());
+        cvrLabel.setText("CVR: " + company.getCompanyDetails().getNbr());
     }
 
     private void editCompany() {
 
-        Dialog<Boolean> editCompanyDialog = new EditCompanyDialog(getScene().getWindow(), company);
-        editCompanyDialog.show();
+        Dialog<Company> editCompanyDialog = new EditCompanyDialog(getScene().getWindow(), company);
+        Optional<Company> company = editCompanyDialog.showAndWait();
+
+        company.ifPresent(company1 -> {
+            CompanyDAOImpl.getInstance().update(company1);
+        });
 
     }
 

@@ -74,7 +74,9 @@ public class AuthViewController extends HBox {
         }
         environmentSelector.setItems(FXCollections.observableArrayList(environments));
         environmentSelector.valueProperty().setValue(EnvironmentSelector.getInstance().getEnvironment().getLabel());
-
+        environmentSelector.setOnAction((event) -> {
+                EnvironmentSelector.getInstance().setEnvironment(Environment.getEnvFromString(environmentSelector.valueProperty().getValue()));
+        });
 
         // Login button
         button.setOnAction(event -> login());
@@ -102,22 +104,13 @@ public class AuthViewController extends HBox {
         }
     }
 
-    private void showAlert(Alert.AlertType alertType, Window owner, String title, String message) {
-        Alert alert = new Alert(alertType);
-        alert.setTitle(title);
-        alert.setHeaderText(null);
-        alert.setContentText(message);
-        alert.initOwner(owner);
-        alert.show();
-    }
-
     public void onEnter(ActionEvent ae) {
         login();
     }
 
     public void login() {
         if (textField.getText().isEmpty()) {
-            showAlert(
+            AlertHelper.show(
                 Alert.AlertType.ERROR,
                 main.getScene().getWindow(),
                 "Fejl!",
@@ -127,7 +120,7 @@ public class AuthViewController extends HBox {
         }
 
         if (passwordField.getText().isEmpty()) {
-            showAlert(
+            AlertHelper.show(
                 Alert.AlertType.ERROR,
                 main.getScene().getWindow(),
                 "Fejl!",
@@ -145,7 +138,7 @@ public class AuthViewController extends HBox {
         }
 
         if (!signIn) {
-            showAlert(
+            AlertHelper.show(
                 Alert.AlertType.ERROR,
                 main.getScene().getWindow(),
                 "Fejl!",

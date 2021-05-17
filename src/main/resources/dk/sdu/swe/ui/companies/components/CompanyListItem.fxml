@@ -7,8 +7,8 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<fx:root type="VBox" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
-    <HBox>
+<fx:root maxWidth="1.7976931348623157E308" type="VBox" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <HBox maxWidth="1.7976931348623157E308">
         <children>
             <VBox alignment="CENTER">
                 <children>
@@ -18,7 +18,7 @@
                     <Insets left="20.0" />
                 </HBox.margin>
             </VBox>
-            <VBox alignment="CENTER">
+            <VBox alignment="CENTER" HBox.hgrow="ALWAYS">
                 <children>
                     <Label fx:id="companyNameLabel" alignment="BOTTOM_LEFT" prefHeight="45.0" prefWidth="143.0" text="Nordisk Film TV A/S">
                         <font>
@@ -34,41 +34,7 @@
                     <Insets left="20.0" />
                 </HBox.margin>
             </VBox>
-            <VBox alignment="CENTER">
-                <children>
-                    <Label alignment="BOTTOM_LEFT" prefHeight="45.0" prefWidth="132.0" text="Direktør">
-                        <font>
-                            <Font name="System Bold" size="14.0" />
-                        </font>
-                    </Label>
-                    <Label fx:id="ceoLabel" alignment="TOP_LEFT" layoutX="10.0" layoutY="55.0" prefHeight="49.0" prefWidth="132.0" text="NameDirektør">
-                        <font>
-                            <Font size="14.0" />
-                        </font>
-                    </Label>
-                </children>
-                <HBox.margin>
-                    <Insets left="100.0" />
-                </HBox.margin>
-            </VBox>
-            <VBox alignment="CENTER">
-                <children>
-                    <Label alignment="BOTTOM_LEFT" prefHeight="45.0" prefWidth="201.0" text="Virksomhedsadministrator">
-                        <font>
-                            <Font name="System Bold" size="14.0" />
-                        </font>
-                    </Label>
-                    <Label fx:id="adminLabel" alignment="TOP_LEFT" prefHeight="49.0" prefWidth="202.0" text="NameAdmin">
-                        <font>
-                            <Font size="14.0" />
-                        </font>
-                    </Label>
-                </children>
-                <HBox.margin>
-                    <Insets left="30.0" />
-                </HBox.margin>
-            </VBox>
-            <VBox alignment="CENTER">
+            <VBox alignment="CENTER" HBox.hgrow="ALWAYS">
                 <children>
                     <JFXButton fx:id="actionsBtn" alignment="CENTER" prefHeight="52.0" prefWidth="129.0" style="-fx-background-color: transparent;" text="Handlinger" textFill="#ff9800">
                         <font>

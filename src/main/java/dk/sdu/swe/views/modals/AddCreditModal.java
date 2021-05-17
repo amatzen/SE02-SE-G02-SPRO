@@ -1,10 +1,9 @@
 package dk.sdu.swe.views.modals;
 
-import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXListView;
-import dk.sdu.swe.domain.models.Company;
-import dk.sdu.swe.domain.models.User;
-import dk.sdu.swe.views.partials.UserListItem;
+import com.jfoenix.controls.JFXComboBox;
+import dk.sdu.swe.domain.controllers.CreditRoleController;
+import dk.sdu.swe.domain.models.Credit;
+import dk.sdu.swe.domain.models.CreditRole;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -19,26 +18,23 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Objects;
 
-public class UserAdministrationDialog extends Dialog<Boolean> {
+public class AddCreditModal extends Dialog<Boolean> {
 
     @FXML
-    private JFXButton closeBtn;
+    private JFXComboBox<Label> creditRole;
 
-    @FXML
     private GaussianBlur backgroundEffect;
 
-    @FXML
-    private Company company;
+    private Credit credit;
 
-    @FXML
-    private Label companyName;
+    public AddCreditModal(Window window) {
+        this(window, null);
+    }
 
-    @FXML
-    private JFXListView usersListView;
+    public AddCreditModal(Window window, Credit credit) {
+        this.credit = credit;
 
-    public UserAdministrationDialog(Window window, Company company) {
-        this.company = company;
-
+        this.setResultConverter(param -> null);
         this.initOwner(window);
         this.initModality(Modality.APPLICATION_MODAL);
         this.initStyle(StageStyle.UNDECORATED);
@@ -49,10 +45,9 @@ public class UserAdministrationDialog extends Dialog<Boolean> {
         setOnCloseRequest((event) -> {
             getOwner().getScene().getRoot().setEffect(null);
         });
-
         FXMLLoader fxmlLoader = new FXMLLoader(
             Objects.requireNonNull(
-                getClass().getClassLoader().getResource("dk/sdu/swe/ui/programmes/UserAdministration.fxml")));
+                getClass().getClassLoader().getResource("dk/sdu/swe/ui/credits/AddCreditModal.fxml")));
         fxmlLoader.setController(this);
 
         try {
@@ -64,20 +59,19 @@ public class UserAdministrationDialog extends Dialog<Boolean> {
 
     @FXML
     private void initialize() {
-        /*
-        companyName.setText(company.getName());
 
-        List<User> users = null;
-        try {
-            users = User.getAll();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        users.stream().filter(user -> user.getCompanyId() == company.getId()).forEach(
-            user -> {
-                usersListView.getItems().add(new UserListItem(user));
+        List<CreditRole> creditRoleList = CreditRoleController.getInstance().getAll();
+        creditRoleList.forEach(creditRoleObj -> {
+            Label label = new Label(creditRoleObj.getTitle());
+            label.setUserData(creditRoleObj);
+            creditRole.getItems().add(label);
+            if (credit != null) {
+                if (credit.getRole().getTitle().equals(creditRoleObj.getTitle())) {
+                    creditRole.getSelectionModel().select(label);
+                }
             }
-        );*/
+        });
+
     }
 
     @FXML

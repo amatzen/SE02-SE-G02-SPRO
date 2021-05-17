@@ -1,6 +1,6 @@
 package dk.sdu.swe.exceptions;
 
-public class InvalidNameException extends Exception {
+public class InvalidNameException extends UserCreationException {
     /**
      * Constructs a new exception with the specified detail message.  The
      * cause is not initialized, and may subsequently be initialized by
