@@ -23,17 +23,17 @@
       </Label>
       <HBox prefHeight="37.0" prefWidth="1192.0">
          <children>
-            <JFXCheckBox fx:id="actorData" checkedColor="#ff9800" text="Skuespillerdata">
+            <JFXCheckBox fx:id="creditData" checkedColor="#ff9800" text="Krediteringer">
                <HBox.margin>
                   <Insets left="50.0" />
                </HBox.margin>
             </JFXCheckBox>
-            <JFXCheckBox fx:id="programData" checkedColor="#ff9800" layoutX="60.0" layoutY="10.0" text="Programdata">
+            <JFXCheckBox fx:id="programData" checkedColor="#ff9800" layoutX="60.0" layoutY="10.0" text="Programmer">
                <HBox.margin>
                   <Insets left="20.0" />
                </HBox.margin>
             </JFXCheckBox>
-            <JFXCheckBox fx:id="companyData" checkedColor="#ff9800" layoutX="409.0" layoutY="10.0" text="Virskomhedsdata">
+            <JFXCheckBox fx:id="companyData" checkedColor="#ff9800" layoutX="409.0" layoutY="10.0" text="Virksomheder">
                <HBox.margin>
                   <Insets left="20.0" />
                </HBox.margin>

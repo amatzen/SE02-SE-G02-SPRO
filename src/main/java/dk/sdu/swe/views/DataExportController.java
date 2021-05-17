@@ -18,7 +18,7 @@ import java.util.Objects;
 public class DataExportController extends VBox {
 
     @FXML
-    private JFXCheckBox actorData, programData, companyData;
+    private JFXCheckBox creditData, programData, companyData;
 
     @FXML
     private JFXRadioButton csvBtn, jsonBtn;
@@ -50,7 +50,7 @@ public class DataExportController extends VBox {
             alert.setContentText("Vælg venligst en filtype");
             alert.showAndWait();
         }
-        if (actorData.isSelected() == false && programData.isSelected() == false &&
+        if (creditData.isSelected() == false && programData.isSelected() == false &&
             companyData.isSelected() == false) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Fejl!");
@@ -58,7 +58,7 @@ public class DataExportController extends VBox {
             alert.setContentText("Vælg venligst eksport data");
             alert.showAndWait();
         }
-        if (csvBtn.isSelected() && actorData.isSelected()) {
+        if (csvBtn.isSelected() && creditData.isSelected()) {
             CsvExport.csvExportActors(new FileChooser().showSaveDialog(getScene().getWindow()));
         }
         if (csvBtn.isSelected() && programData.isSelected()) {
@@ -67,7 +67,7 @@ public class DataExportController extends VBox {
         if (csvBtn.isSelected() && companyData.isSelected()) {
             CsvExport.csvExportCompanies();
         }
-        if (jsonBtn.isSelected() && actorData.isSelected()) {
+        if (jsonBtn.isSelected() && creditData.isSelected()) {
             JsonExport.JsonExportActors();
         }
         if (jsonBtn.isSelected() && programData.isSelected()) {
