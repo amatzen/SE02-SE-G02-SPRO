@@ -15,6 +15,7 @@ import javafx.stage.Modality;
 import javafx.stage.StageStyle;
 import javafx.stage.Window;
 
+import javax.swing.*;
 import java.io.IOException;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
@@ -33,7 +34,7 @@ public class PersonModal extends Dialog<Person> {
     private DatePicker bday;
 
     @FXML
-    private TextField name, email;
+    private TextField name, email, imageUrl;
 
     @FXML
     private JFXComboBox<Label> creditRole;
@@ -63,7 +64,7 @@ public class PersonModal extends Dialog<Person> {
 
         FXMLLoader fxmlLoader = new FXMLLoader(
             Objects.requireNonNull(
-                getClass().getClassLoader().getResource("dk/sdu/swe/ui/persons/components/AddPerson.fxml")));
+                getClass().getClassLoader().getResource("dk/sdu/swe/ui/persons/components/PersonModal.fxml")));
         fxmlLoader.setController(this);
 
         try {
@@ -80,6 +81,7 @@ public class PersonModal extends Dialog<Person> {
             email.setText(person.getEmail());
             name.setText(person.getName());
             bday.setValue(person.getZonedDate().toLocalDate());
+            imageUrl.setText(person.getImage());
             image.setImage(new Image(person.getImage(), true));
         }
 
@@ -98,13 +100,14 @@ public class PersonModal extends Dialog<Person> {
         String name = this.name.getText();
         String email = this.email.getText();
         ZonedDateTime bday = getDate(this.bday).orElse(null);
-        String image = this.image.getImage() == null ? null : this.image.getImage().getUrl();
+        String image = imageUrl.getText().isBlank() ? null : imageUrl.getText();
 
         Person person = null;
         if (this.person == null) {
             person = PersonController.getInstance().createPerson(name, image, email, bday);
         } else {
             this.person.setName(name);
+            this.person.setImage(image);
             this.person.setDateOfBirth(bday);
             this.person.setEmail(email);
             this.person.setImage(image);
@@ -118,6 +121,10 @@ public class PersonModal extends Dialog<Person> {
         return datePicker.getValue() != null
             ? Optional.of(ZonedDateTime.of(datePicker.getValue().atTime(0, 0), ZoneId.of("UTC")))
             : Optional.empty();
+    }
 
+    @FXML
+    private void loadImage(ActionEvent event) {
+        image.setImage(new Image(imageUrl.getText(), true));
     }
 }
