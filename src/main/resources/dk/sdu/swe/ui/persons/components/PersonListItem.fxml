@@ -24,15 +24,14 @@
                 </VBox>
                 <VBox alignment="CENTER">
                     <children>
-                        <Label alignment="BOTTOM_LEFT" prefHeight="45.0" prefWidth="143.0" text="Navn">
+                        <Label fx:id="nameLbl" alignment="BOTTOM_LEFT" prefWidth="143.0" text="Navn">
                             <font>
-                                <Font name="System Bold" size="14.0" />
+                                <Font name="System Bold" size="16.0" />
                             </font>
                             <VBox.margin>
                                 <Insets />
                             </VBox.margin>
                         </Label>
-                        <Label fx:id="nameLbl" alignment="TOP_LEFT" prefHeight="46.0" prefWidth="143.0" text="Serie: " />
                     </children>
                     <HBox.margin>
                         <Insets left="20.0" />
@@ -40,12 +39,12 @@
                 </VBox>
                 <VBox alignment="CENTER">
                     <children>
-                        <Label alignment="BOTTOM_LEFT" prefHeight="45.0" prefWidth="132.0" text="Firma">
+                        <Label alignment="BOTTOM_LEFT" prefHeight="45.0" prefWidth="132.0" text="Fødselsdato">
                             <font>
                                 <Font name="System Bold" size="14.0" />
                             </font>
                         </Label>
-                        <Label fx:id="companyLbl" alignment="TOP_LEFT" layoutX="10.0" layoutY="55.0" prefHeight="49.0" prefWidth="132.0" text="FirmaName">
+                        <Label fx:id="dobLbl" alignment="TOP_LEFT" layoutX="10.0" layoutY="55.0" prefHeight="49.0" prefWidth="132.0" text="01/01/2000">
                             <font>
                                 <Font size="14.0" />
                             </font>
@@ -57,12 +56,12 @@
                 </VBox>
                 <VBox alignment="CENTER">
                     <children>
-                        <Label alignment="BOTTOM_LEFT" prefHeight="45.0" prefWidth="201.0" text="Adresse">
+                        <Label alignment="BOTTOM_LEFT" prefHeight="45.0" prefWidth="201.0" text="Email">
                             <font>
                                 <Font name="System Bold" size="14.0" />
                             </font>
                         </Label>
-                        <Label fx:id="addressLbl" alignment="TOP_LEFT" prefHeight="49.0" prefWidth="202.0" text="FirmaAdresse">
+                        <Label fx:id="emailLbl" alignment="TOP_LEFT" prefHeight="49.0" prefWidth="202.0" text="0">
                             <font>
                                 <Font size="14.0" />
                             </font>

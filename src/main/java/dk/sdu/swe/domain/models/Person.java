@@ -24,8 +24,6 @@ public class Person {
     @Column(name = "dob")
     private String dateOfBirth;
 
-    private String email;
-
     private String image;
 
     @Transient
@@ -48,11 +46,17 @@ public class Person {
     public Person() {
     }
 
-    public Person(String name, String image, String email, ZonedDateTime dateOfBirth) {
+    public Person(String name, String image, ZonedDateTime dateOfBirth) {
         this.name = name;
-        this.email = email;
         this.image = image;
         setDateOfBirth(dateOfBirth);
+    }
+
+    public Person(String name, String image, String email, ZonedDateTime dateOfBirth) {
+        this.name = name;
+        this.image = image;
+        setDateOfBirth(dateOfBirth);
+        putContactDetail("email", email);
     }
 
     public Long getId() {
@@ -83,20 +87,16 @@ public class Person {
         return contactDetails.get(key);
     }
 
+    public String getEmail() {
+        return getContactDetail("email");
+    }
+
     public List<Credit> getCredits() {
         return credits;
     }
 
     public void setCredits(List<Credit> credits) {
         this.credits = credits;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
     }
 
     public void setName(String name) {
