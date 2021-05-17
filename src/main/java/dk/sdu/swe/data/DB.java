@@ -51,7 +51,7 @@ public class DB {
             settings.put(Environment.PASS, DB_PASS);
             settings.put(Environment.DIALECT, "org.hibernate.dialect.PostgreSQLDialect");
             settings.put(Environment.CURRENT_SESSION_CONTEXT_CLASS, "thread");
-            settings.put(Environment.SHOW_SQL, true);
+            settings.put(Environment.SHOW_SQL, false);
             settings.put(Environment.PHYSICAL_NAMING_STRATEGY, "dk.sdu.swe.data.strategies.NameStrategy");
 
             settings.put("hibernate.connection.CharSet", "utf8");

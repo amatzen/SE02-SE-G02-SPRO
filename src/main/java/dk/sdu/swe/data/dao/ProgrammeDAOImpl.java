@@ -9,7 +9,10 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class ProgrammeDAOImpl extends AbstractDAO<Programme> implements IProgrammeDAO {
     private static ProgrammeDAOImpl instance;
@@ -35,7 +38,7 @@ public class ProgrammeDAOImpl extends AbstractDAO<Programme> implements IProgram
         }
 
         if (category != null) {
-            hql += " AND :category_title IN (SELECT c.categoryTitle FROM Category c JOIN p.categories WHERE channel_id = :channel_id)";
+            hql += " AND :category_title IN (SELECT categoryTitle FROM p.categories)";
         }
 
         Session session = DB.openSession();
@@ -63,16 +66,16 @@ public class ProgrammeDAOImpl extends AbstractDAO<Programme> implements IProgram
         Session session = DB.openSession();
         Transaction transaction = session.beginTransaction();
 
-        List<Programme> result;
+        Set<Programme> result;
         try {
-            result = session.createQuery(
+            result = new HashSet<>(session.createQuery(
                 "FROM Programme as p " +
-                "JOIN FETCH p.categories " +
-                "JOIN FETCH p.channel").list();
+                "INNER JOIN FETCH p.categories " +
+                "INNER JOIN FETCH p.channel").list());
         } finally {
             transaction.commit();
             session.close();
         }
-        return result;
+        return new ArrayList<>(result);
     }
 }

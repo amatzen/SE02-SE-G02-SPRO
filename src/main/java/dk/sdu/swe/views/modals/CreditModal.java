@@ -1,14 +1,20 @@
 package dk.sdu.swe.views.modals;
 
 import com.jfoenix.controls.JFXComboBox;
+import dk.sdu.swe.domain.controllers.CreditController;
 import dk.sdu.swe.domain.controllers.CreditRoleController;
+import dk.sdu.swe.domain.controllers.PersonController;
 import dk.sdu.swe.domain.models.Credit;
 import dk.sdu.swe.domain.models.CreditRole;
+import dk.sdu.swe.domain.models.Person;
+import dk.sdu.swe.domain.models.Programme;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Dialog;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.effect.GaussianBlur;
 import javafx.stage.Modality;
 import javafx.stage.StageStyle;
@@ -18,21 +24,27 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Objects;
 
-public class AddCreditModal extends Dialog<Boolean> {
+public class CreditModal extends Dialog<Credit> {
 
     @FXML
-    private JFXComboBox<Label> creditRole;
+    private JFXComboBox<Label> creditRole, person;
 
     private GaussianBlur backgroundEffect;
 
     private Credit credit;
 
-    public AddCreditModal(Window window) {
-        this(window, null);
+    @FXML
+    private TextField name;
+
+    private Programme programme;
+
+    public CreditModal(Window window, Programme programme) {
+        this(window, null, programme);
     }
 
-    public AddCreditModal(Window window, Credit credit) {
+    public CreditModal(Window window, Credit credit, Programme programme) {
         this.credit = credit;
+        this.programme = programme;
 
         this.setResultConverter(param -> null);
         this.initOwner(window);
@@ -66,8 +78,20 @@ public class AddCreditModal extends Dialog<Boolean> {
             label.setUserData(creditRoleObj);
             creditRole.getItems().add(label);
             if (credit != null) {
-                if (credit.getRole().getTitle().equals(creditRoleObj.getTitle())) {
+                if (credit.getRole().getId().equals(creditRoleObj.getId())) {
                     creditRole.getSelectionModel().select(label);
+                }
+            }
+        });
+
+        List<Person> personList = PersonController.getInstance().getAll();
+        personList.forEach(personObj -> {
+            Label label = new Label(personObj.getName());
+            label.setUserData(personObj);
+            person.getItems().add(label);
+            if (credit != null) {
+                if (credit.getPerson().getId().equals(personObj.getId())) {
+                    person.getSelectionModel().select(label);
                 }
             }
         });
@@ -76,7 +100,27 @@ public class AddCreditModal extends Dialog<Boolean> {
 
     @FXML
     private void handleClose(ActionEvent event) {
-        setResult(false);
+        getDialogPane().getButtonTypes().add(ButtonType.CANCEL);
+        setResult(null);
+        hide();
+    }
+
+    @FXML
+    private void save(ActionEvent event) {
+        String name = this.name.getText();
+        Person person = (Person) this.person.getSelectionModel().getSelectedItem().getUserData();
+        CreditRole creditRole = (CreditRole) this.creditRole.getSelectionModel().getSelectedItem().getUserData();
+
+        Credit credit;
+        if (this.credit == null) {
+            credit = CreditController.getInstance().createCredit(name, person, creditRole, programme);
+        } else {
+            this.credit.setPerson(person);
+            this.credit.setRole(creditRole);
+            credit = this.credit;
+        }
+
+        setResult(credit);
         hide();
     }
 }

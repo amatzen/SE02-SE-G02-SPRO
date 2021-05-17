@@ -25,4 +25,12 @@ public class CreditRole {
     public void setTitle(String title) {
         this.title = title;
     }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 }
