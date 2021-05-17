@@ -3,6 +3,7 @@ package dk.sdu.swe.domain.models;
 import org.json.JSONObject;
 
 import javax.persistence.*;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
@@ -34,6 +35,7 @@ public class Programme {
     private List<Credit> credits;
 
     public Programme(String title, Channel channel, int prodYear, Set<Category> categories, Company company) {
+        this.credits = new LinkedList<>();
         this.title = title;
         this.channel = channel;
         this.prodYear = prodYear;

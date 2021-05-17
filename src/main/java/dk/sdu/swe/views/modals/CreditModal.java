@@ -123,4 +123,5 @@ public class CreditModal extends Dialog<Credit> {
         setResult(credit);
         hide();
     }
+
 }

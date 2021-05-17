@@ -7,6 +7,7 @@ import org.hibernate.annotations.NaturalId;
 
 import javax.persistence.*;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -125,5 +126,10 @@ public class User implements IUser {
 
     public void setCompany(Company company) {
         this.company = company;
+    }
+
+    public List<Programme> getProgrammes() {
+
+        return null;
     }
 }
