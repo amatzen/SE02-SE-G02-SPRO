@@ -155,7 +155,7 @@ public class v3_CreateProgrammesForThisWeek {
             int rnd = new Random().nextInt((randomPersonsResults.length() -1) + 1);
             JSONObject randomPerson = randomPersonsResults.getJSONObject(rnd);
             String name = randomPerson.getJSONObject("name").getString("first") + " " + randomPerson.getJSONObject("name").getString("last");
-            String img = randomPerson.getJSONObject("picture").getString("medium");
+            String img = randomPerson.getJSONObject("picture").getString("large");
 
             Person person = new Person(name, img, randomPerson.getString("email"), ZonedDateTime.now(ZoneId.of("UTC")));
             PersonDAOImpl.getInstance().save(person);
