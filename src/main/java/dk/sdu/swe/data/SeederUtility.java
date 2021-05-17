@@ -12,9 +12,9 @@ public class SeederUtility {
 
             new Thread(() -> {
                 try {
-                    v3_CreateProgrammesForThisWeek.run(DateTime.now().toString("yyyy-MM-dd"));
+                    v3_CreateProgrammesForThisWeek.run(DateTime.now().toString("yyyy-MM-dd"), true);
                     for (int i = 1; i < 8; i++) {
-                        v3_CreateProgrammesForThisWeek.run(DateTime.now().plusDays(i).toString("yyyy-MM-dd"));
+                        v3_CreateProgrammesForThisWeek.run(DateTime.now().plusDays(i).toString("yyyy-MM-dd"), false);
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
