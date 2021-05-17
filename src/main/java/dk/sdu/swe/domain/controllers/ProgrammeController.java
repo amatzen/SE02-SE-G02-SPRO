@@ -8,6 +8,7 @@ import dk.sdu.swe.domain.models.Company;
 import dk.sdu.swe.domain.models.Programme;
 import dk.sdu.swe.domain.persistence.IProgrammeDAO;
 
+import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -30,15 +31,21 @@ public class ProgrammeController {
     }
 
     public List<Programme> getAll() {
-        return ProgrammeDAOImpl.getInstance().getAll();
+        List<Programme> programmes = ProgrammeDAOImpl.getInstance().getAll();
+        programmes.sort(Comparator.comparing(Programme::getTitle));
+        return programmes;
     }
 
     public List<Programme> search(String searchTerm, Channel channel, Category category) {
-        return ProgrammeDAOImpl.getInstance().search(searchTerm, channel, category);
+        List<Programme> programmes = ProgrammeDAOImpl.getInstance().search(searchTerm, channel, category);
+        programmes.sort(Comparator.comparing(Programme::getTitle));
+        return programmes;
     }
 
     public List<Category> getCategories() {
-        return CategoryDAOImpl.getInstance().getAll();
+        List<Category> categories = CategoryDAOImpl.getInstance().getAll();
+        categories.sort(Comparator.comparing(Category::getCategoryTitle));
+        return categories;
     }
 
     public Programme createProgramme(String title, int prodYear, Channel channel, Set<Category> categories, Company company) {
