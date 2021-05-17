@@ -49,7 +49,8 @@ public class PersonsViewController extends VBox {
     private void initialize() {
         Platform.runLater(() -> {
             new Thread(() -> {
-                updatePeople(PersonController.getInstance().getAll());
+                List<Person> people = PersonController.getInstance().getAll();
+                updatePeople(people);
             }).start();
         });
     }

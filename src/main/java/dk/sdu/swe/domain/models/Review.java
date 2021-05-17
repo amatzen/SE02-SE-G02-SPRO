@@ -1,12 +1,12 @@
 package dk.sdu.swe.domain.models;
 
 import dk.sdu.swe.data.converters.JSONConverter;
-import dk.sdu.swe.data.converters.ProgrammeJSONConverter;
 import dk.sdu.swe.domain.controllers.AuthController;
-import org.joda.time.DateTime;
 import org.json.JSONObject;
 
 import javax.persistence.*;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 
 @Entity
 public class Review {
@@ -20,7 +20,7 @@ public class Review {
     @ManyToOne
     private User user;
 
-    private DateTime submission_time;
+    private ZonedDateTime submission_time;
 
     @Convert(converter = JSONConverter.class)
     private JSONObject newProgramme;
@@ -33,7 +33,7 @@ public class Review {
     public Review(Programme programme, JSONObject newProgramme) {
         this.programme = programme;
         this.user = AuthController.getInstance().getUser();
-        this.submission_time = DateTime.now();
+        this.submission_time = ZonedDateTime.now(ZoneId.of("UTC"));
         this.newProgramme = newProgramme;
 
         this.state = ReviewState.AWAITING;
@@ -51,7 +51,7 @@ public class Review {
         return programme;
     }
 
-    public DateTime getSubmission_time() {
+    public ZonedDateTime getSubmission_time() {
         return submission_time;
     }
 

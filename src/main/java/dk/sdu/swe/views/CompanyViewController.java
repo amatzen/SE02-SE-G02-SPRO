@@ -11,6 +11,8 @@ import dk.sdu.swe.views.modals.companies.AddCompanyModal;
 import dk.sdu.swe.views.partials.CompanyListItem;
 import dk.sdu.swe.views.partials.PersonListItem;
 import javafx.application.Platform;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -48,7 +50,8 @@ public class CompanyViewController extends BorderPane {
     private void initialize() {
         Platform.runLater(() -> {
             new Thread(() -> {
-                updateCompanies(CompanyController.getInstance().getAll());
+                List<Company> companies = CompanyController.getInstance().getAll();
+                updateCompanies(companies);
             }).start();
         });
     }
@@ -56,7 +59,9 @@ public class CompanyViewController extends BorderPane {
     private void updateCompanies(List<Company> companies) {
         companyListView.getItems().clear();
         for (Company company : companies) {
-            companyListView.getItems().add(new CompanyListItem(company));
+            Platform.runLater(() -> {
+                companyListView.getItems().add(new CompanyListItem(company));
+            });
         }
     }
 
