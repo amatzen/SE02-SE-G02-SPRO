@@ -36,9 +36,9 @@ public class PersonController {
     }
 
     public Person createPerson(String name, String image, String email, ZonedDateTime bday) {
-        }
-            image = "https://via.placeholder.com/150";
         if (image == null) {
+            image = "https://via.placeholder.com/150";
+        }
         Person person = new Person(name, image, bday);
         person.putContactDetail("email", email);
         personDAO.save(person);
