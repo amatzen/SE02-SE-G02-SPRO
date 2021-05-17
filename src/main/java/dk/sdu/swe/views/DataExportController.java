@@ -4,11 +4,12 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXCheckBox;
 import com.jfoenix.controls.JFXRadioButton;
 import dk.sdu.swe.domain.models.CsvExport;
+import dk.sdu.swe.domain.models.JsonExport;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Alert;
 import javafx.scene.layout.VBox;
-
 import java.io.IOException;
 import java.util.Objects;
 
@@ -39,8 +40,21 @@ public class DataExportController extends VBox {
     }
 
     @FXML
-    private void exportCsv (ActionEvent event) {
-        CsvExport.csvExport();
+    private void exportCsv(ActionEvent event) {
+        if (csvBtn.isSelected()) {
+            CsvExport.csvExport();
+        }
+        if (jsonBtn.isSelected()) {
+            JsonExport.JsonExport();
+        }
+        else if (csvBtn.isSelected() == false && jsonBtn.isSelected() == false) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Fejl!");
+            alert.setHeaderText(null);
+            alert.setContentText("Vælg venligst en filtype");
+            alert.showAndWait();
+        }
+
     }
 
 }
