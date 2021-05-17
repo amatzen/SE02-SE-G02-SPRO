@@ -37,4 +37,8 @@ public class CreditController {
     public void update(Credit creditObj) {
         creditDAO.update(creditObj);
     }
+
+    public void delete(Credit credit) {
+        creditDAO.delete(credit);
+    }
 }

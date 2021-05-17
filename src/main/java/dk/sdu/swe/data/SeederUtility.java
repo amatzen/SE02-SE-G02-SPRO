@@ -16,7 +16,7 @@ public class SeederUtility {
             new Thread(() -> {
                 try {
                     v3_CreateProgrammesForThisWeek.run(ZonedDateTime.now().format(dft));
-                    for (int i = 1; i < 8; i++) {
+                    for (int i = 1; i < 2; i++) {
                         v3_CreateProgrammesForThisWeek.run(ZonedDateTime.now().plusDays(i).format(dft));
                     }
                 } catch (Exception e) {
