@@ -6,14 +6,8 @@ import dk.sdu.swe.data.dao.*;
 import dk.sdu.swe.domain.models.*;
 import dk.sdu.swe.domain.persistence.ICategoryDAO;
 import dk.sdu.swe.domain.persistence.IChannelDAO;
-import dk.sdu.swe.domain.persistence.IDAO;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import org.joda.time.DateTime;
-import org.joda.time.DateTimeZone;
-import org.joda.time.Instant;
-import org.joda.time.format.DateTimeFormatter;
-import org.joda.time.format.ISODateTimeFormat;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -21,6 +15,9 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.time.Instant;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
@@ -135,9 +132,6 @@ public class v3_CreateProgrammesForThisWeek {
         }
         session1.close();
 
-        CreditRole defaultCreditRole = new CreditRole("Alt muligt mand");
-        CreditRoleDAOImpl.getInstance().save(defaultCreditRole);
-
         HttpURLConnection conn1 = (HttpURLConnection) new URL("https://randomuser.me/api/?results=200").openConnection();
         conn1.setRequestMethod("GET");
         conn1.setRequestProperty("Accept", "application/json");
@@ -162,14 +156,13 @@ public class v3_CreateProgrammesForThisWeek {
             String name = randomPerson.getJSONObject("name").getString("first") + " " + randomPerson.getJSONObject("name").getString("last");
             String img = randomPerson.getJSONObject("picture").getString("medium");
 
-            Person person = new Person(name, img, randomPerson.getString("email"), DateTime.now(DateTimeZone.UTC));
+            Person person = new Person(name, img, randomPerson.getString("email"), ZonedDateTime.now(ZoneId.of("UTC")));
             PersonDAOImpl.getInstance().save(person);
 
-            Credit credit = new Credit(person);
-            credit.setProgramme(programme);
             int rnd1 = new Random().nextInt(creditRolesCount);
             CreditRole cr = creditRoles.get(rnd1);
-            credit.setRole(cr);
+            Credit credit = new Credit(person, cr);
+            credit.setProgramme(programme);
 
             List<Credit> credits = new LinkedList<>();
             credits.add(credit);

@@ -1,7 +1,9 @@
 package dk.sdu.swe.data;
 
 import dk.sdu.swe.data.seeders.*;
-import org.joda.time.DateTime;
+
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class SeederUtility {
     public static void run() {
@@ -10,11 +12,12 @@ public class SeederUtility {
             v1_CreateUsers.run();
             v2_CreateChannels.run();
 
+            DateTimeFormatter dft = DateTimeFormatter.ofPattern("yyyy-MM-dd");
             new Thread(() -> {
                 try {
-                    v3_CreateProgrammesForThisWeek.run(DateTime.now().toString("yyyy-MM-dd"), true);
+                    v3_CreateProgrammesForThisWeek.run(ZonedDateTime.now().format(dft), true);
                     for (int i = 1; i < 8; i++) {
-                        v3_CreateProgrammesForThisWeek.run(DateTime.now().plusDays(i).toString("yyyy-MM-dd"), false);
+                        v3_CreateProgrammesForThisWeek.run(ZonedDateTime.now().plusDays(i).format(dft), false);
                     }
                 } catch (Exception e) {
                     e.printStackTrace();

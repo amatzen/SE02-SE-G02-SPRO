@@ -1,8 +1,7 @@
 package dk.sdu.swe.domain.models;
 
-import org.joda.time.Instant;
-
 import javax.persistence.*;
+import java.time.Instant;
 import java.util.List;
 import java.util.Map;
 
