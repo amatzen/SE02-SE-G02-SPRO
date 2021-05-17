@@ -4,6 +4,7 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import dk.sdu.swe.domain.controllers.AuthController;
 import dk.sdu.swe.domain.controllers.ChannelController;
+import dk.sdu.swe.domain.controllers.CompanyController;
 import dk.sdu.swe.domain.controllers.ProgrammeController;
 import dk.sdu.swe.domain.models.Category;
 import dk.sdu.swe.domain.models.Channel;
@@ -110,10 +111,12 @@ public class ProgrammeModal extends Dialog<Programme> {
             }
         );
 
-        Company company = AuthController.getInstance().getUser().getCompany();
-        Label label = new Label(company.getName());
-        label.setUserData(company);
-        prodCompany.getItems().add(label);
+        CompanyController.getInstance().getAll().forEach(x -> {
+            Label l = new Label(x.getName());
+            l.setUserData(x);
+            prodCompany.getItems().add(l);
+        });
+        prodCompany.getSelectionModel().selectFirst();
     }
 
     @FXML

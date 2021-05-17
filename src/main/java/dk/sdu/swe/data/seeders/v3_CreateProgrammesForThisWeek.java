@@ -3,6 +3,7 @@ package dk.sdu.swe.data.seeders;
 import com.google.common.base.Charsets;
 import dk.sdu.swe.data.DB;
 import dk.sdu.swe.data.dao.*;
+import dk.sdu.swe.domain.controllers.PersonController;
 import dk.sdu.swe.domain.models.*;
 import dk.sdu.swe.domain.persistence.ICategoryDAO;
 import dk.sdu.swe.domain.persistence.IChannelDAO;

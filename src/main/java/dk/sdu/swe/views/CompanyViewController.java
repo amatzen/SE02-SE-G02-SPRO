@@ -3,6 +3,7 @@ package dk.sdu.swe.views;
 import com.jfoenix.controls.JFXListView;
 import com.jfoenix.controls.JFXTextField;
 import dk.sdu.swe.data.dao.CompanyDAOImpl;
+import dk.sdu.swe.domain.controllers.AuthController;
 import dk.sdu.swe.domain.controllers.CompanyController;
 import dk.sdu.swe.domain.controllers.PersonController;
 import dk.sdu.swe.domain.models.Company;
