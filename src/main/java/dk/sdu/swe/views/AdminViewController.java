@@ -32,7 +32,7 @@ public class AdminViewController extends BorderPane implements Observer {
         PubSub.subscribe("routeChange", this);
         FXMLLoader fxmlLoader = new FXMLLoader(
             Objects.requireNonNull(
-                getClass().getClassLoader().getResource("dk/sdu/swe/views/admin/admin.fxml")));
+                getClass().getClassLoader().getResource("dk/sdu/swe/views/admin/AdminView.fxml")));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
 

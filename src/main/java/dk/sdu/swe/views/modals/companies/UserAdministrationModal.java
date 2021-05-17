@@ -55,7 +55,7 @@ public class UserAdministrationModal extends Dialog<Boolean> {
 
         FXMLLoader fxmlLoader = new FXMLLoader(
             Objects.requireNonNull(
-                getClass().getClassLoader().getResource("dk/sdu/swe/views/programmes/UserAdministration.fxml")));
+                getClass().getClassLoader().getResource("dk/sdu/swe/views/programmes/UserAdministrationModal.fxml")));
         fxmlLoader.setController(this);
 
         try {
