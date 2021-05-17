@@ -1,5 +1,6 @@
 package dk.sdu.swe.domain.models;
 
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Arrays;
@@ -22,9 +23,9 @@ public class CsvExport {
         Arrays.asList("Virksomhed 1", "Virksomhed 2", "Virksomhed 3")
     );
 
-    public static void csvExportActors() {
+    public static void csvExportActors(File file) {
         try {
-            FileWriter csvWriter = new FileWriter("Skuespillere.csv");
+            FileWriter csvWriter = new FileWriter(file);
             csvWriter.append("Skuespillerdata");
             csvWriter.append(",");
             csvWriter.append("\n");

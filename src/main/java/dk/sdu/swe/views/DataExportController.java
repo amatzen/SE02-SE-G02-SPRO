@@ -10,6 +10,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Alert;
 import javafx.scene.layout.VBox;
+import javafx.stage.FileChooser;
+
 import java.io.IOException;
 import java.util.Objects;
 
@@ -41,7 +43,6 @@ public class DataExportController extends VBox {
 
     @FXML
     private void exportCsv(ActionEvent event) {
-
         if (csvBtn.isSelected() == false && jsonBtn.isSelected() == false) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Fejl!");
@@ -58,7 +59,7 @@ public class DataExportController extends VBox {
             alert.showAndWait();
         }
         if (csvBtn.isSelected() && actorData.isSelected()) {
-            CsvExport.csvExportActors();
+            CsvExport.csvExportActors(new FileChooser().showSaveDialog(getScene().getWindow()));
         }
         if (csvBtn.isSelected() && programData.isSelected()) {
             CsvExport.csvExportPrograms();
