@@ -59,16 +59,16 @@ public class DataExportController extends VBox {
             alert.showAndWait();
         }
         if (csvBtn.isSelected() && creditData.isSelected()) {
-            CsvExport.csvExportActors(new FileChooser().showSaveDialog(getScene().getWindow()));
+            CsvExport.csvExportCredits(new FileChooser().showSaveDialog(getScene().getWindow()));
         }
         if (csvBtn.isSelected() && programData.isSelected()) {
-            CsvExport.csvExportPrograms();
+            CsvExport.csvExportPrograms(new FileChooser().showSaveDialog(getScene().getWindow()));
         }
         if (csvBtn.isSelected() && companyData.isSelected()) {
-            CsvExport.csvExportCompanies();
+            CsvExport.csvExportCompanies(new FileChooser().showSaveDialog(getScene().getWindow()));
         }
         if (jsonBtn.isSelected() && creditData.isSelected()) {
-            JsonExport.JsonExportActors();
+            JsonExport.JsonExportCredits();
         }
         if (jsonBtn.isSelected() && programData.isSelected()) {
             JsonExport.JsonExportPrograms();
