@@ -1,79 +1,189 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXRadioButton?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<fx:root prefHeight="297.0" prefWidth="614.0" type="VBox" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox prefHeight="544.0" prefWidth="1122.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label prefHeight="62.0" prefWidth="375.0" text="Kreditteringsgrupper" translateX="43.0">
-         <font>
-            <Font name="System Bold" size="26.0" />
-         </font>
-         <VBox.margin>
-            <Insets bottom="20.0" top="20.0" />
-         </VBox.margin>
-      </Label>
-      <HBox prefHeight="37.0" prefWidth="1192.0">
-         <VBox.margin>
-            <Insets top="5.0" />
-         </VBox.margin>
-      </HBox>
-      <HBox prefHeight="100.0" prefWidth="200.0">
+      <VBox prefHeight="76.0" prefWidth="1282.0">
          <children>
-            <VBox prefHeight="100.0" prefWidth="223.0">
-               <children>
-                  <Label text="Fav tool">
-                     <font>
-                        <Font name="System Bold" size="12.0" />
-                     </font>
-                     <VBox.margin>
-                        <Insets left="50.0" />
-                     </VBox.margin>
-                  </Label>
-                  <JFXRadioButton fx:id="csvToggle" text="Angular">
-                     <VBox.margin>
-                        <Insets left="50.0" top="10.0" />
-                     </VBox.margin>
-                     <toggleGroup>
-                        <ToggleGroup fx:id="fileTypeToggleGroup" />
-                     </toggleGroup>
-                     <selectedColor>
-                        <Color red="1.0" green="0.5960784554481506" />
-                     </selectedColor>
-                  </JFXRadioButton>
-                  <JFXRadioButton fx:id="jsonToggle" layoutX="10.0" layoutY="27.0" text="JavaFX" toggleGroup="$fileTypeToggleGroup">
-                     <VBox.margin>
-                        <Insets left="50.0" top="10.0" />
-                     </VBox.margin>
-                     <selectedColor>
-                        <Color red="1.0" green="0.5960784554481506" />
-                     </selectedColor>
-                  </JFXRadioButton>
-               </children>
-            </VBox>
-         </children>
-         <VBox.margin>
-            <Insets top="10.0" />
-         </VBox.margin>
-      </HBox>
-      <HBox prefHeight="100.0" prefWidth="200.0">
-         <children>
-            <JFXButton fx:id="exportBtn" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="70.0" style="-jfx-button-type: RAISED; -fx-background-color: #FF9800;" text="Eksport" textFill="WHITE">
-               <HBox.margin>
-                  <Insets left="50.0" top="20.0" />
-               </HBox.margin>
+            <Label prefHeight="76.0" prefWidth="380.0" text="Kreditteringsgrupper">
                <font>
-                  <Font name="System Bold" size="12.0" />
+                  <Font name="System Bold" size="20.0" />
                </font>
-            </JFXButton>
+               <graphic>
+                  <HBox prefHeight="100.0" prefWidth="45.0" />
+               </graphic>
+            </Label>
+         </children>
+      </VBox>
+      <HBox prefHeight="25.0" prefWidth="1193.0">
+         <children>
+            <Separator prefHeight="0.0" prefWidth="1192.0">
+               <HBox.margin>
+                  <Insets left="45.0" right="45.0" top="15.0" />
+               </HBox.margin>
+            </Separator>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="98.0" prefWidth="1122.0" spacing="10.0">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="1037.0" style="-fx-background-color: #ededed;">
+               <children>
+                  <VBox prefHeight="119.0" prefWidth="337.0">
+                     <children>
+                        <HBox prefHeight="47.0" prefWidth="337.0" />
+                        <VBox prefHeight="73.0" prefWidth="337.0">
+                           <VBox.margin>
+                              <Insets left="15.0" />
+                           </VBox.margin>
+                           <children>
+                              <Label prefHeight="30.0" prefWidth="199.0" text="Fotograf">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="37.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true" />
+                                 </graphic>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="87.0" prefWidth="383.0" />
+                  <VBox alignment="CENTER" prefHeight="119.0" prefWidth="308.0">
+                     <children>
+                        <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <JFXButton fx:id="actionBtn" alignment="CENTER" prefHeight="52.0" prefWidth="129.0" style="-fx-background-color: transparent;" text="Handlinger" textFill="#ff9800">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </JFXButton>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+               <effect>
+                  <DropShadow offsetY="5.0">
+                     <color>
+                        <Color opacity="0.643478274345398" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </HBox>
+         </children>
+      </HBox>
+      <Separator prefHeight="0.0" prefWidth="1192.0">
+         <VBox.margin>
+            <Insets bottom="20.0" left="45.0" right="45.0" top="20.0" />
+         </VBox.margin>
+      </Separator>
+      <HBox alignment="CENTER" prefHeight="119.0" prefWidth="1233.0" spacing="10.0">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="1037.0" style="-fx-background-color: #ededed;">
+               <children>
+                  <VBox prefHeight="119.0" prefWidth="337.0">
+                     <children>
+                        <HBox prefHeight="47.0" prefWidth="337.0" />
+                        <VBox prefHeight="73.0" prefWidth="337.0">
+                           <VBox.margin>
+                              <Insets left="15.0" />
+                           </VBox.margin>
+                           <children>
+                              <Label prefHeight="30.0" prefWidth="199.0" text="Hovedrolle ">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="119.0" prefWidth="383.0" />
+                  <VBox alignment="CENTER" prefHeight="119.0" prefWidth="308.0">
+                     <children>
+                        <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <JFXButton fx:id="actionBtn2" alignment="CENTER" prefHeight="52.0" prefWidth="129.0" style="-fx-background-color: transparent;" text="Handlinger" textFill="#ff9800">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </JFXButton>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+               <effect>
+                  <DropShadow offsetY="5.0">
+                     <color>
+                        <Color opacity="0.643478274345398" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </HBox>
+         </children>
+      </HBox>
+      <Separator prefHeight="0.0" prefWidth="1192.0">
+         <VBox.margin>
+            <Insets bottom="20.0" left="45.0" right="45.0" top="20.0" />
+         </VBox.margin>
+      </Separator>
+      <HBox alignment="CENTER" prefHeight="119.0" prefWidth="1233.0" spacing="10.0">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="1037.0" style="-fx-background-color: #ededed;">
+               <children>
+                  <VBox prefHeight="119.0" prefWidth="337.0">
+                     <children>
+                        <HBox prefHeight="47.0" prefWidth="337.0" />
+                        <VBox prefHeight="73.0" prefWidth="337.0">
+                           <VBox.margin>
+                              <Insets left="15.0" />
+                           </VBox.margin>
+                           <children>
+                              <Label prefHeight="30.0" prefWidth="199.0" text="Statist">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="119.0" prefWidth="383.0" />
+                  <VBox alignment="CENTER" prefHeight="119.0" prefWidth="308.0">
+                     <children>
+                        <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <JFXButton fx:id="actionBtn21" alignment="CENTER" prefHeight="52.0" prefWidth="129.0" style="-fx-background-color: transparent;" text="Handlinger" textFill="#ff9800">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </JFXButton>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+               <effect>
+                  <DropShadow offsetY="5.0">
+                     <color>
+                        <Color opacity="0.643478274345398" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </HBox>
          </children>
       </HBox>
    </children>
-</fx:root>
+</VBox>
