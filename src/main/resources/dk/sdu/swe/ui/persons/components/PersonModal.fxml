@@ -19,6 +19,7 @@
                             </VBox.margin>
                         </JFXTextField>
                   <JFXTextField fx:id="email" layoutX="40.0" layoutY="40.0" maxWidth="1.7976931348623157E308" prefHeight="50.0" prefWidth="309.0" promptText="Email" style="-fx-background-color: transparent;                                 -fx-border-color: #CCCCCC;                                 -fx-padding: 0.333333em 1em 0.333333em 1em;                                 -jfx-unfocus-color: transparent;                                 -fx-border-radius: 5px; -jfx-focus-color: transparent;" />
+                  <JFXTextField fx:id="imageUrl" layoutX="40.0" layoutY="100.0" maxWidth="1.7976931348623157E308" onAction="#loadImage" prefHeight="50.0" prefWidth="309.0" promptText="Image URL" style="-fx-background-color: transparent;                                 -fx-border-color: #CCCCCC;                                 -fx-padding: 0.333333em 1em 0.333333em 1em;                                 -jfx-unfocus-color: transparent;                                 -fx-border-radius: 5px; -jfx-focus-color: transparent;" />
                   <DatePicker fx:id="bday" maxWidth="1.7976931348623157E308" prefHeight="50.0" promptText="Vælg Fødselsdagsdato" showWeekNumbers="true">
                      <VBox.margin>
                         <Insets />

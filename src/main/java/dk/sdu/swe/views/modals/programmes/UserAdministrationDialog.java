@@ -2,11 +2,9 @@ package dk.sdu.swe.views.modals.programmes;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXListView;
-import dk.sdu.swe.data.dao.CompanyDAOImpl;
-import dk.sdu.swe.domain.controllers.UserController;
 import dk.sdu.swe.domain.models.Company;
 import dk.sdu.swe.domain.models.User;
-import dk.sdu.swe.views.modals.users.AddUserModal;
+import dk.sdu.swe.views.modals.users.UserModal;
 import dk.sdu.swe.views.partials.UserListItem;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -82,7 +80,7 @@ public class UserAdministrationDialog extends Dialog<Boolean> {
 
     @FXML
     private void addUser(ActionEvent event) {
-        Dialog<User> userModal = new AddUserModal(this.getDialogPane().getScene().getWindow(), this.company);
+        Dialog<User> userModal = new UserModal(this.getDialogPane().getScene().getWindow(), this.company);
         Optional<User> user = userModal.showAndWait();
         user.ifPresent(user1 -> {
             usersListView.getItems().add(new UserListItem(user1));

@@ -1,6 +1,5 @@
 package dk.sdu.swe.views.modals.users;
 
-import dk.sdu.swe.data.dao.CompanyDAOImpl;
 import dk.sdu.swe.data.dao.UserDAOImpl;
 import dk.sdu.swe.domain.controllers.UserController;
 import dk.sdu.swe.domain.models.Company;
@@ -8,7 +7,6 @@ import dk.sdu.swe.domain.models.User;
 import dk.sdu.swe.domain.persistence.IUserDAO;
 import dk.sdu.swe.exceptions.UserCreationException;
 import dk.sdu.swe.views.AlertHelper;
-import dk.sdu.swe.views.partials.UserListItem;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -21,7 +19,7 @@ import javafx.stage.Window;
 import java.io.IOException;
 import java.util.Objects;
 
-public class AddUserModal extends Dialog<User> {
+public class UserModal extends Dialog<User> {
 
     private IUserDAO userDAO;
 
@@ -32,7 +30,7 @@ public class AddUserModal extends Dialog<User> {
 
     private GaussianBlur backgroundEffect;
 
-    public AddUserModal(Window window, Company company) {
+    public UserModal(Window window, Company company) {
         userDAO = UserDAOImpl.getInstance();
         this.company = company;
 
@@ -50,7 +48,7 @@ public class AddUserModal extends Dialog<User> {
 
         FXMLLoader fxmlLoader = new FXMLLoader(
             Objects.requireNonNull(
-                getClass().getClassLoader().getResource("dk/sdu/swe/ui/programmes/addNewUser.fxml")));
+                getClass().getClassLoader().getResource("dk/sdu/swe/ui/programmes/UserModal.fxml")));
         fxmlLoader.setController(this);
 
         try {

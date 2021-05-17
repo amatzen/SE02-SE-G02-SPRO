@@ -42,11 +42,15 @@
             <Insets />
          </HBox.margin>
       </VBox>
-      <JFXButton fx:id="editButton" buttonType="RAISED" onAction="#editBtn" prefHeight="33.0" prefWidth="60.0" ripplerFill="#e88b0a" style="-fx-background-color: #FF9800;" text="Redigér" textFill="WHITE">
+      <VBox alignment="CENTER" spacing="10.0">
          <HBox.margin>
             <Insets right="10.0" />
          </HBox.margin>
-      </JFXButton>
+         <children>
+            <JFXButton fx:id="editButton" buttonType="RAISED" onAction="#editBtn" prefHeight="33.0" prefWidth="60.0" ripplerFill="#e88b0a" style="-fx-background-color: #FF9800;" text="Redigér" textFill="WHITE" />
+            <JFXButton buttonType="RAISED" onAction="#delete" prefHeight="33.0" prefWidth="60.0" ripplerFill="RED" style="-fx-background-color: #FF0000;" text="Slet" textFill="WHITE" />
+         </children>
+      </VBox>
    </children>
    <effect>
       <DropShadow offsetX="5.0" offsetY="5.0">

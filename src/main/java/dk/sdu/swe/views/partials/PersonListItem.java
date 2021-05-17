@@ -47,7 +47,7 @@ public class PersonListItem extends VBox {
 
         FXMLLoader fxmlLoader = new FXMLLoader(
             Objects.requireNonNull(
-                getClass().getClassLoader().getResource("dk/sdu/swe/ui/persons/components/PersonListItem")));
+                getClass().getClassLoader().getResource("dk/sdu/swe/ui/persons/components/PersonListItem.fxml")));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
 

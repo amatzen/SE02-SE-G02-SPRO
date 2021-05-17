@@ -9,8 +9,10 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Dialog;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
 
 import java.io.IOException;
@@ -27,8 +29,11 @@ public class CreditListItem extends HBox {
     @FXML
     private ImageView creditImageView;
 
-    public CreditListItem(Credit credit) {
+    private FlowPane container;
+
+    public CreditListItem(Credit credit, FlowPane container) {
         this.credit = credit;
+        this.container = container;
 
         FXMLLoader fxmlLoader = new FXMLLoader(
             Objects.requireNonNull(
@@ -60,5 +65,11 @@ public class CreditListItem extends HBox {
         credit.ifPresent(creditObj -> {
             CreditController.getInstance().update(creditObj);
         });
+    }
+
+    @FXML
+    private void delete(ActionEvent event) {
+        CreditController.getInstance().delete(credit);
+        container.getChildren().remove(this);
     }
 }

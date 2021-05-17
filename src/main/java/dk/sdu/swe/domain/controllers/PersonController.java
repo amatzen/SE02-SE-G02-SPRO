@@ -36,6 +36,9 @@ public class PersonController {
     }
 
     public Person createPerson(String name, String image, String email, ZonedDateTime bday) {
+        if (image == null) {
+            image = "https://via.placeholder.com/150";
+        }
         Person person = new Person(name, image, email, bday);
         personDAO.save(person);
         return person;
