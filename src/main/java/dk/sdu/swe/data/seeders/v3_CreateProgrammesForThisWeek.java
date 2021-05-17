@@ -118,7 +118,6 @@ public class v3_CreateProgrammesForThisWeek {
                             });
                         categories.add(category);
                     }
-                    System.out.println(categories);
 
                     IChannelDAO channelDAO = ChannelDAOImpl.getInstance();
                     Programme programme = new Programme(
