@@ -15,9 +15,9 @@ public class SeederUtility {
             DateTimeFormatter dft = DateTimeFormatter.ofPattern("yyyy-MM-dd");
             new Thread(() -> {
                 try {
-                    v3_CreateProgrammesForThisWeek.run(ZonedDateTime.now().format(dft));
+                    v3_CreateProgrammesForThisWeek.run(ZonedDateTime.now().format(dft), true);
                     for (int i = 1; i < 8; i++) {
-                        v3_CreateProgrammesForThisWeek.run(ZonedDateTime.now().plusDays(i).format(dft));
+                        v3_CreateProgrammesForThisWeek.run(ZonedDateTime.now().plusDays(i).format(dft), false);
                     }
                 } catch (Exception e) {
                     e.printStackTrace();

@@ -27,7 +27,7 @@ import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public class v3_CreateProgrammesForThisWeek {
-    public static void run(String date) throws Exception {
+    public static void run(String date, boolean first) throws Exception {
         int creditRolesCount = CreditRoleDAOImpl.getInstance().getAll().size();
         List<CreditRole> creditRoles = CreditRoleDAOImpl.getInstance().getAll();
 
@@ -99,7 +99,7 @@ public class v3_CreateProgrammesForThisWeek {
                 ));
                 trans.commit();
 
-                if(!addedProgrammesTitle.contains(epgObj.getString("title"))) {
+                if(!addedProgrammesTitle.contains(epgObj.getString("title")) && first) {
                     Set<Category> categories = new HashSet<>();
                     JSONArray jsonCategories = epgObj.getJSONArray("categories");
 
