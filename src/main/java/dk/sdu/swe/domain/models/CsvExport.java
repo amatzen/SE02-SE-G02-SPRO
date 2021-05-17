@@ -1,7 +1,6 @@
 package dk.sdu.swe.domain.models;
 
 import dk.sdu.swe.domain.controllers.CreditController;
-
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -11,8 +10,8 @@ import java.util.List;
 public class CsvExport {
 
     // Test data
-    private static List<List<String>> Actors = Arrays.asList(
-        Arrays.asList("Skuespiller 1", "Skuespiller 2", "Skuespiller 3")
+    private static List<List<String>> Credits = Arrays.asList(
+        Arrays.asList("Biddragyder 1", "Biddragyder 2", "Biddragyder 3")
     );
 
     // Test data
@@ -25,16 +24,17 @@ public class CsvExport {
         Arrays.asList("Virksomhed 1", "Virksomhed 2", "Virksomhed 3")
     );
 
-    public static void csvExportActors(File file) {
+    public static void csvExportCredits(File file) {
+
         List<Credit> credits = CreditController.getInstance().getAll();
 
         try {
             FileWriter csvWriter = new FileWriter(file);
-            csvWriter.append("Skuespillerdata");
+            csvWriter.append("Biddragydere");
             csvWriter.append(",");
             csvWriter.append("\n");
 
-            for (List<String> data : Actors) {
+            for (List<String> data : Credits) {
                 csvWriter.append(String.join(",", data));
                 csvWriter.append("\n");
             }
@@ -48,10 +48,11 @@ public class CsvExport {
 
     }
 
-    public static void csvExportPrograms() {
+    public static void csvExportPrograms(File file) {
+
         try {
-            FileWriter cswWriter = new FileWriter("Programmer.csv");
-            cswWriter.append("Programdata");
+            FileWriter cswWriter = new FileWriter(file);
+            cswWriter.append("Programmer");
             cswWriter.append(",");
             cswWriter.append("\n");
 
@@ -65,10 +66,10 @@ public class CsvExport {
         }
     }
 
-    public static void csvExportCompanies() {
+    public static void csvExportCompanies(File file) {
         try {
-            FileWriter cswWriter = new FileWriter("Virksomheder.csv");
-            cswWriter.append("Virksomhedsdata");
+            FileWriter cswWriter = new FileWriter(file);
+            cswWriter.append("Virksomheder");
             cswWriter.append(",");
             cswWriter.append("\n");
 
