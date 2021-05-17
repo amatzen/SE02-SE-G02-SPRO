@@ -2,10 +2,10 @@ package dk.sdu.swe.domain.models;
 
 public class JsonExport {
 
-    public static void JsonExportActors() {
+    public static void JsonExportCredits() {
 
         try {
-            System.out.println("Json eksporter skuespillere kode her");
+            System.out.println("Kode her");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -14,7 +14,7 @@ public class JsonExport {
     public static void JsonExportPrograms() {
 
         try {
-            System.out.println("Json eksporter programmer kode her");
+            System.out.println("Kode her");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -23,7 +23,7 @@ public class JsonExport {
     public static void JsonExportCompanies() {
 
         try {
-            System.out.println("Json eksporter virksomheder kode her");
+            System.out.println("Kode her");
         } catch (Exception e) {
             e.printStackTrace();
         }
