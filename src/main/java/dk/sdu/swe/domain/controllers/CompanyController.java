@@ -6,6 +6,8 @@ import dk.sdu.swe.domain.models.CompanyDetails;
 import dk.sdu.swe.domain.persistence.ICompanyDAO;
 
 import java.util.List;
+import java.util.Objects;
+import java.util.stream.Collectors;
 
 public class CompanyController {
 
@@ -24,7 +26,27 @@ public class CompanyController {
     }
 
     public List<Company> getAll() {
-        return CompanyDAOImpl.getInstance().getAll();
+        if(AuthController.getInstance().getUser().hasPermission("companies.list.all")) {
+            return CompanyDAOImpl.getInstance().getAll();
+        }
+
+        return CompanyDAOImpl.getInstance().getAll()
+            .stream()
+            .filter(x -> {
+                boolean userCompany = Objects.equals(x.getId(), AuthController.getInstance().getUser().getCompany().getId());
+                boolean subCompany = false;
+
+                Company currentCompany = x.getParentCompany();
+                while(Objects.nonNull(currentCompany)) {
+                    subCompany = Objects.equals(currentCompany.getId(), AuthController.getInstance().getUser().getCompany().getId());
+                    currentCompany = currentCompany.getParentCompany();
+                }
+
+
+                return userCompany || subCompany;
+            })
+            .collect(Collectors.toList());
+
     }
 
     public List<Company> search(String searchTerm) {
