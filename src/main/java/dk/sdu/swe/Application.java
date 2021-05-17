@@ -28,7 +28,11 @@ public class Application extends javafx.application.Application {
             })).start();
         }
 
-        launch();
+        try {
+            launch();
+        } catch (IllegalStateException e) {
+            // Ignore JavaFX async whine
+        }
     }
 
     /**
