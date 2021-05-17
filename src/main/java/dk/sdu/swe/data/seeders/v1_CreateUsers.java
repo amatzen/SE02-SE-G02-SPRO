@@ -20,7 +20,7 @@ public class v1_CreateUsers {
 
         session.saveOrUpdate(new SystemAdministrator("admin", "crms+sysadmin@mgx.dk", "Sys Admin", "kode", companyIDAO.getById(1l).get()));
         session.saveOrUpdate(new User("user", "crms+user@mgx.dk", "Normal Bruger", "kode", companyIDAO.getById(1l).get()));
-        session.saveOrUpdate(new CompanyAdministrator("company", "crms+companyadmin@mgx.dk", "Biz Admin", "kode", new Company("DAWO", null, new CompanyDetails("oawd", "wjioad", "owa"), "kwoad")));
+        session.saveOrUpdate(new CompanyAdministrator("company", "crms+companyadmin@mgx.dk", "Biz Admin", "kode", companyIDAO.getById(2L).get()));
 
         session.saveOrUpdate(new SystemAdministrator("almat20", "alexander@alexander.dk", "Alexander Matzen", "alexander", companyIDAO.getById(1l).get()));
 
