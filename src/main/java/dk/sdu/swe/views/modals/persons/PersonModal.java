@@ -106,7 +106,7 @@ public class PersonModal extends Dialog<Person> {
         } else {
             this.person.setName(name);
             this.person.setDateOfBirth(bday);
-            this.person.setEmail(email);
+            this.person.putContactDetail("email", email);
             this.person.setImage(image);
             person = this.person;
         }

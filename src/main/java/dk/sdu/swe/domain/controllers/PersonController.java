@@ -36,7 +36,14 @@ public class PersonController {
     }
 
     public Person createPerson(String name, String image, String email, ZonedDateTime bday) {
-        Person person = new Person(name, image, email, bday);
+        Person person = new Person(name, image, bday);
+        person.putContactDetail("email", email);
+        personDAO.save(person);
+        return person;
+    }
+
+    public Person createPerson(String name, String image, ZonedDateTime bday) {
+        Person person = new Person(name, image, bday);
         personDAO.save(person);
         return person;
     }
