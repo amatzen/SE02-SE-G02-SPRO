@@ -2,7 +2,6 @@ package dk.sdu.swe.views.modals.programmes;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
-import dk.sdu.swe.domain.controllers.AuthController;
 import dk.sdu.swe.domain.controllers.ChannelController;
 import dk.sdu.swe.domain.controllers.CompanyController;
 import dk.sdu.swe.domain.controllers.ProgrammeController;
@@ -65,7 +64,7 @@ public class ProgrammeModal extends Dialog<Programme> {
 
         FXMLLoader fxmlLoader = new FXMLLoader(
             Objects.requireNonNull(
-                getClass().getClassLoader().getResource("dk/sdu/swe/ui/programmes/addProgramme.fxml")));
+                getClass().getClassLoader().getResource("dk/sdu/swe/views/programmes/addProgramme.fxml")));
         fxmlLoader.setController(this);
 
         try {

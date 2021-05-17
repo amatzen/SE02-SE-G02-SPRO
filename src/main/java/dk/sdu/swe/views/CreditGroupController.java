@@ -10,7 +10,7 @@ public class CreditGroupController extends VBox {
     public CreditGroupController() {
         FXMLLoader fxmlLoader = new FXMLLoader(
             Objects.requireNonNull(
-                getClass().getClassLoader().getResource("dk/sdu/swe/ui/admin/components/creditgroup.fxml")));
+                getClass().getClassLoader().getResource("dk/sdu/swe/views/admin/components/creditgroup.fxml")));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
 

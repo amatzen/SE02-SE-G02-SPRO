@@ -23,8 +23,6 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
-import java.util.stream.Collector;
-import java.util.stream.Collectors;
 
 public class ProgrammesViewController extends BorderPane {
 
@@ -46,7 +44,7 @@ public class ProgrammesViewController extends BorderPane {
 
         FXMLLoader fxmlLoader = new FXMLLoader(
             Objects.requireNonNull(
-                getClass().getClassLoader().getResource("dk/sdu/swe/ui/programmes/ProgrammesView.fxml")));
+                getClass().getClassLoader().getResource("dk/sdu/swe/views/programmes/ProgrammesView.fxml")));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
 

@@ -59,7 +59,7 @@ public class CreditModal extends Dialog<Credit> {
         });
         FXMLLoader fxmlLoader = new FXMLLoader(
             Objects.requireNonNull(
-                getClass().getClassLoader().getResource("dk/sdu/swe/ui/credits/CreditModal.fxml")));
+                getClass().getClassLoader().getResource("dk/sdu/swe/views/credits/CreditModal.fxml")));
         fxmlLoader.setController(this);
 
         try {
