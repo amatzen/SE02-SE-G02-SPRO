@@ -1,6 +1,7 @@
 package dk.sdu.swe.data.seeders;
 
 import dk.sdu.swe.data.DB;
+import dk.sdu.swe.data.dao.CreditRoleDAOImpl;
 import dk.sdu.swe.domain.models.CreditRole;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -18,6 +19,7 @@ public class v2_1_CreateCreditRoles {
         session.save(new CreditRole("Stylist"));
         session.save(new CreditRole("Casting"));
         session.save(new CreditRole("Makeup-artist"));
+        session.save(new CreditRole("Alt muligt mand"));
 
         transaction.commit();
         session.close();

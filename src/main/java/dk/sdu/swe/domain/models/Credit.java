@@ -27,8 +27,9 @@ public class Credit {
     @JoinColumn(name = "programme_id", referencedColumnName = "id")
     private Programme programme;
 
-    public Credit(Person person) {
+    public Credit(Person person, CreditRole creditRole) {
         this.person = person;
+        this.role = creditRole;
     }
 
     public Credit() {}
