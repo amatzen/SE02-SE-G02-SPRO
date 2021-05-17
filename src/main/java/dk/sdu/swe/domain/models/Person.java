@@ -1,9 +1,6 @@
 package dk.sdu.swe.domain.models;
 
-import com.fasterxml.jackson.databind.util.ISO8601DateFormat;
 import com.google.gson.annotations.SerializedName;
-import org.joda.time.DateTime;
-import org.joda.time.format.ISODateTimeFormat;
 import org.json.JSONObject;
 
 import javax.persistence.*;
@@ -51,11 +48,11 @@ public class Person {
     public Person() {
     }
 
-    public Person(String name, String image, String email, DateTime dateOfBirth) {
+    public Person(String name, String image, String email, ZonedDateTime dateOfBirth) {
         this.name = name;
         this.email = email;
         this.image = image;
-        setDateOfBirth(dateOfBirth.toString(ISODateTimeFormat.basicDateTimeNoMillis()));
+        setDateOfBirth(dateOfBirth);
     }
 
     public Long getId() {
@@ -110,8 +107,8 @@ public class Person {
         this.dateOfBirth = dateOfBirth;
     }
 
-    public void setDateOfBirth(DateTime dateOfBirth) {
-        setDateOfBirth(dateOfBirth.toString(String.valueOf(dateTimeFormatter)));
+    public void setDateOfBirth(ZonedDateTime dateOfBirth) {
+        setDateOfBirth(dateOfBirth.format(dateTimeFormatter));
     }
 
     public ZonedDateTime getZonedDate() {

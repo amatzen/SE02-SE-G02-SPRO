@@ -32,12 +32,9 @@ public class AddUserModal extends Dialog<User> {
 
     private GaussianBlur backgroundEffect;
 
-    private ListView<UserListItem> container;
-
     public AddUserModal(Window window, Company company) {
         userDAO = UserDAOImpl.getInstance();
         this.company = company;
-        this.container = container;
 
         this.setResultConverter(param -> null);
         this.initOwner(window);
