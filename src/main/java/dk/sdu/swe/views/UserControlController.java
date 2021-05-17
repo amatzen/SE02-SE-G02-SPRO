@@ -1,5 +1,7 @@
 package dk.sdu.swe.views;
 
+import dk.sdu.swe.domain.models.Company;
+import dk.sdu.swe.domain.models.User;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.VBox;
 
@@ -21,4 +23,5 @@ public class UserControlController extends VBox {
             e.printStackTrace();
         }
     }
+
 }

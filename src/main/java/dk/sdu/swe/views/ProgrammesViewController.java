@@ -1,30 +1,29 @@
 package dk.sdu.swe.views;
 
-import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXListView;
-import dk.sdu.swe.domain.controllers.ChannelController;
 import dk.sdu.swe.data.DB;
+import dk.sdu.swe.domain.controllers.ChannelController;
 import dk.sdu.swe.domain.controllers.ProgrammeController;
 import dk.sdu.swe.domain.models.Category;
 import dk.sdu.swe.domain.models.Channel;
 import dk.sdu.swe.domain.models.Programme;
-import dk.sdu.swe.views.modals.companies.AddCompanyModal;
-import dk.sdu.swe.views.modals.persons.AddPersonModal;
-import dk.sdu.swe.views.modals.programmes.AddProgrammesModal;
+import dk.sdu.swe.views.modals.programmes.ProgrammeModal;
 import dk.sdu.swe.views.partials.ProgrammeListItem;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Dialog;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.control.Dialog;
 import javafx.scene.layout.BorderPane;
 
 import java.io.IOException;
 import java.util.List;
 import java.util.Objects;
-import java.util.TreeSet;
+import java.util.Optional;
+import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 public class ProgrammesViewController extends BorderPane {
@@ -64,14 +63,15 @@ public class ProgrammesViewController extends BorderPane {
 
     @FXML
     private void initialize() {
-        updateProgrammes(ProgrammeController.getInstance().getAll());
-
-        updateChannels(ChannelController.getInstance().getAll());
-
-        updateCategories(ProgrammeController.getInstance().getCategories());
+        new Thread(() -> {
+            updateChannels(ChannelController.getInstance().getAll());
+            updateCategories(ProgrammeController.getInstance().getCategories());
+            updateProgrammes(ProgrammeController.getInstance().getAll());
+        }).start();
     }
 
     private void updateChannels(List<Channel> channels) {
+        this.channels.getItems().clear();
         for (Channel channel : channels) {
             Label label = new Label(channel.getName());
             label.setUserData(channel);
@@ -80,6 +80,7 @@ public class ProgrammesViewController extends BorderPane {
     }
 
     private void updateCategories(List<Category> categories) {
+        this.categories.getItems().clear();
         for (Category category : categories) {
             Label label = new Label(category.getCategoryTitle());
             label.setUserData(category);
@@ -120,11 +121,22 @@ public class ProgrammesViewController extends BorderPane {
 
         updateProgrammes(searchResult);
     }
+
     @FXML
     void addProgramme(ActionEvent event) {
-        Dialog<Boolean> addProgrammesModal = new AddProgrammesModal(getScene().getWindow());
-        addProgrammesModal.show();
+        Dialog<Programme> addProgrammesModal = new ProgrammeModal(getScene().getWindow());
+        Optional<Programme> programme = addProgrammesModal.showAndWait();
+        programme.ifPresent(programmeObj -> {
+            programmesListView.getItems().add(new ProgrammeListItem(programmeObj));
+        });
     }
 
+    @FXML
+    private void resetSearch(ActionEvent event) {
+        searchField.clear();
+        channels.getSelectionModel().clearSelection();
+        categories.getSelectionModel().clearSelection();
+        updateProgrammes(ProgrammeController.getInstance().getAll());
+    }
 
 }

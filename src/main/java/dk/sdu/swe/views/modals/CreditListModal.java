@@ -20,6 +20,7 @@ import javafx.stage.Window;
 import java.io.IOException;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class CreditListModal extends Dialog<Boolean> {
@@ -41,6 +42,7 @@ public class CreditListModal extends Dialog<Boolean> {
     public CreditListModal(Window window, Programme programme) {
         this.programme = programme;
 
+        this.setResultConverter(param -> null);
         this.initOwner(window);
         this.initModality(Modality.APPLICATION_MODAL);
         this.initStyle(StageStyle.UNDECORATED);
@@ -77,7 +79,7 @@ public class CreditListModal extends Dialog<Boolean> {
         credits = programme.getCredits();
 
         for (Credit credit : credits) {
-            creditsPane.getChildren().add(new CreditListItem(credit));
+            creditsPane.getChildren().add(new CreditListItem(credit, creditsPane));
         }
     }
 
@@ -89,7 +91,10 @@ public class CreditListModal extends Dialog<Boolean> {
 
     @FXML
     private void addCreditBtn(ActionEvent event) {
-        Dialog editDialog = new EditCreditModal(getDialogPane().getScene().getWindow());
-        editDialog.show();
+        Dialog<Credit> editDialog = new CreditModal(getDialogPane().getScene().getWindow(), programme);
+        Optional<Credit> credit = editDialog.showAndWait();
+        credit.ifPresent(creditObj -> {
+            creditsPane.getChildren().add(new CreditListItem(creditObj, creditsPane));
+        });
     }
 }

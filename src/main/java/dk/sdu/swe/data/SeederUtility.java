@@ -1,9 +1,9 @@
 package dk.sdu.swe.data;
 
-import dk.sdu.swe.data.seeders.v0_CreateCompanies;
-import dk.sdu.swe.data.seeders.v2_CreateChannels;
-import dk.sdu.swe.data.seeders.v1_CreateUsers;
-import dk.sdu.swe.data.seeders.v3_CreateProgrammesForThisWeek;
+import dk.sdu.swe.data.seeders.*;
+
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class SeederUtility {
     public static void run() {
@@ -11,7 +11,20 @@ public class SeederUtility {
             v0_CreateCompanies.run();
             v1_CreateUsers.run();
             v2_CreateChannels.run();
-            v3_CreateProgrammesForThisWeek.run();
+
+            DateTimeFormatter dft = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+            new Thread(() -> {
+                try {
+                    v3_CreateProgrammesForThisWeek.run(ZonedDateTime.now().format(dft), true);
+                    for (int i = 1; i < 8; i++) {
+                        v3_CreateProgrammesForThisWeek.run(ZonedDateTime.now().plusDays(i).format(dft), false);
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }).start();
+
+            v2_1_CreateCreditRoles.run();
         }
         catch (Exception e) {
             e.printStackTrace();

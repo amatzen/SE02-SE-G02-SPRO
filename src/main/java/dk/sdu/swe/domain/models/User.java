@@ -7,7 +7,7 @@ import org.hibernate.annotations.NaturalId;
 
 import javax.persistence.*;
 import java.util.Arrays;
-import java.util.Collection;
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -15,11 +15,16 @@ import java.util.Objects;
  */
 @Entity
 @Table(name = "users")
-@Inheritance(strategy = InheritanceType.JOINED)
+@Inheritance(strategy= InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(
+    name = "UserType",
+    discriminatorType = DiscriminatorType.STRING
+)
+@DiscriminatorValue("User")
 public class User implements IUser {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
     @NaturalId
     @Column(unique = true)
@@ -55,7 +60,7 @@ public class User implements IUser {
      * @param password the password
      * @throws Exception the exception
      */
-    public User(String username, String email, String name, String password, Company company) throws Exception {
+    public User(String username, String email, String name, String password, Company company) throws UserCreationException {
         this.company = company;
 
         // Validate username
@@ -90,7 +95,7 @@ public class User implements IUser {
         return name;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
@@ -121,5 +126,10 @@ public class User implements IUser {
 
     public void setCompany(Company company) {
         this.company = company;
+    }
+
+    public List<Programme> getProgrammes() {
+
+        return null;
     }
 }

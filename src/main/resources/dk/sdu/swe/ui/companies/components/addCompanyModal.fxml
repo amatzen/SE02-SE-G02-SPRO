@@ -13,17 +13,17 @@
          <children>
             <VBox prefHeight="469.0" prefWidth="349.0">
                <children>
-                  <JFXTextField fx:id="companyTextfield" prefHeight="50.0" prefWidth="309.0" promptText="Firma" style="-fx-border-color: #cccccc; -fx-border-radius: 5px;                                 -fx-padding: 0.333333em 1em 0.333333em 1em;                                 -fx-background-color: transparent; -jfx-unfocus-color: transparent;                                 -jfx-focus-color: transparent;">
+                  <JFXTextField fx:id="companyName" prefHeight="50.0" prefWidth="309.0" promptText="Firma" style="-fx-border-color: #cccccc; -fx-border-radius: 5px;                                 -fx-padding: 0.333333em 1em 0.333333em 1em;                                 -fx-background-color: transparent; -jfx-unfocus-color: transparent;                                 -jfx-focus-color: transparent;">
                      <VBox.margin>
                         <Insets left="30.0" right="10.0" top="30.0" />
                      </VBox.margin>
                   </JFXTextField>
-                  <JFXTextField fx:id="cvrTextField" layoutX="10.0" layoutY="10.0" prefHeight="49.0" prefWidth="309.0" promptText="CVR" style="-fx-background-color: transparent;                                 -fx-border-color: #CCCCCC;                                 -fx-padding: 0.333333em 1em 0.333333em 1em;                                 -jfx-unfocus-color: transparent;                                 -fx-border-radius: 5px; -jfx-focus-color: transparent;">
+                  <JFXTextField fx:id="cvrNumber" layoutX="10.0" layoutY="10.0" prefHeight="49.0" prefWidth="309.0" promptText="CVR" style="-fx-background-color: transparent;                                 -fx-border-color: #CCCCCC;                                 -fx-padding: 0.333333em 1em 0.333333em 1em;                                 -jfx-unfocus-color: transparent;                                 -fx-border-radius: 5px; -jfx-focus-color: transparent;">
                      <VBox.margin>
                         <Insets left="30.0" right="10.0" top="20.0" />
                      </VBox.margin>
                   </JFXTextField>
-                  <JFXTextField fx:id="adresseTextField" prefHeight="50.0" prefWidth="309.0" promptText="Adresse" style="-fx-border-color: #cccccc; -fx-border-radius: 5px;                                 -fx-padding: 0.333333em 1em 0.333333em 1em;                                 -fx-background-color: transparent; -jfx-unfocus-color: transparent;                                 -jfx-focus-color: transparent;">
+                  <JFXTextField fx:id="address" prefHeight="50.0" prefWidth="309.0" promptText="Adresse" style="-fx-border-color: #cccccc; -fx-border-radius: 5px;                                 -fx-padding: 0.333333em 1em 0.333333em 1em;                                 -fx-background-color: transparent; -jfx-unfocus-color: transparent;                                 -jfx-focus-color: transparent;">
                      <VBox.margin>
                         <Insets left="30.0" right="10.0" top="20.0" />
                      </VBox.margin>
@@ -42,7 +42,7 @@
                   </VBox>
                   <HBox alignment="BOTTOM_RIGHT" layoutX="10.0" layoutY="250.0" prefHeight="169.0" prefWidth="349.0">
                      <children>
-                        <JFXButton fx:id="saveBtn" buttonType="RAISED" prefHeight="35.0" prefWidth="78.0" style="-fx-background-color: #FF9800;" text="Gem" textAlignment="RIGHT" textFill="WHITE">
+                        <JFXButton fx:id="saveBtn" buttonType="RAISED" onAction="#save" prefHeight="35.0" prefWidth="78.0" style="-fx-background-color: #FF9800;" text="Gem" textAlignment="RIGHT" textFill="WHITE">
                            <HBox.margin>
                               <Insets bottom="30.0" right="50.0" />
                            </HBox.margin>

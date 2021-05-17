@@ -4,6 +4,7 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXListView;
 import dk.sdu.swe.domain.models.Company;
 import dk.sdu.swe.domain.models.User;
+import dk.sdu.swe.views.modals.users.UserModal;
 import dk.sdu.swe.views.partials.UserListItem;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -16,8 +17,8 @@ import javafx.stage.StageStyle;
 import javafx.stage.Window;
 
 import java.io.IOException;
-import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 
 public class UserAdministrationDialog extends Dialog<Boolean> {
 
@@ -39,6 +40,7 @@ public class UserAdministrationDialog extends Dialog<Boolean> {
     public UserAdministrationDialog(Window window, Company company) {
         this.company = company;
 
+        this.setResultConverter(param -> null);
         this.initOwner(window);
         this.initModality(Modality.APPLICATION_MODAL);
         this.initStyle(StageStyle.UNDECORATED);
@@ -74,5 +76,14 @@ public class UserAdministrationDialog extends Dialog<Boolean> {
     private void handleClose(ActionEvent event) {
         setResult(false);
         hide();
+    }
+
+    @FXML
+    private void addUser(ActionEvent event) {
+        Dialog<User> userModal = new UserModal(this.getDialogPane().getScene().getWindow(), this.company);
+        Optional<User> user = userModal.showAndWait();
+        user.ifPresent(user1 -> {
+            usersListView.getItems().add(new UserListItem(user1));
+        });
     }
 }

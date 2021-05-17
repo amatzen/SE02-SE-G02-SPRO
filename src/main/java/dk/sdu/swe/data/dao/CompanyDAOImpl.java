@@ -1,7 +1,14 @@
 package dk.sdu.swe.data.dao;
 
+import dk.sdu.swe.data.DB;
 import dk.sdu.swe.domain.models.Company;
+import dk.sdu.swe.domain.models.Person;
 import dk.sdu.swe.domain.persistence.ICompanyDAO;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+import org.hibernate.query.Query;
+
+import java.util.List;
 
 public class CompanyDAOImpl extends AbstractDAO<Company> implements ICompanyDAO {
 
@@ -18,4 +25,25 @@ public class CompanyDAOImpl extends AbstractDAO<Company> implements ICompanyDAO 
         super(Company.class);
     }
 
+    @Override
+    public List<Company> search(String searchTerm) {
+        searchTerm = '%' + searchTerm + '%';
+        String hql = "FROM Company WHERE name LIKE :search_term OR lei LIKE :search_term";
+
+        Session session = DB.openSession();
+        Transaction trans = session.beginTransaction();
+
+        List<Company> companyList = null;
+
+        try {
+            Query query = session.createQuery(hql);
+            query.setParameter("search_term", searchTerm);
+            companyList = query.list();
+        } finally {
+            trans.commit();
+            session.close();
+        }
+
+        return companyList;
+    }
 }

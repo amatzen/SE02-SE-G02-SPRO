@@ -1,10 +1,11 @@
 package dk.sdu.swe.domain.models;
 
-import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 import org.json.JSONObject;
 
 import javax.persistence.*;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -15,7 +16,7 @@ public class Person {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
     private String name;
 
@@ -25,25 +26,40 @@ public class Person {
 
     private String image;
 
+    @Transient
+    private DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ISO_DATE_TIME;
+
+
     @ElementCollection
     @CollectionTable(
         name = "people_contact_details",
         joinColumns = {@JoinColumn(name = "person_id", referencedColumnName = "id")}
     )
+
     @MapKeyColumn(name = "key")
     @Column(name = "value")
     private Map<String, String> contactDetails = new HashMap<>();
 
+    @OneToMany(mappedBy = "person")
+    private List<Credit> credits;
+
     public Person() {
     }
 
-    public Person(String name, String image, String dateOfBirth) {
+    public Person(String name, String image, ZonedDateTime dateOfBirth) {
         this.name = name;
         this.image = image;
-        this.dateOfBirth = dateOfBirth;
+        setDateOfBirth(dateOfBirth);
     }
 
-    public int getId() {
+    public Person(String name, String image, String email, ZonedDateTime dateOfBirth) {
+        this.name = name;
+        this.image = image;
+        setDateOfBirth(dateOfBirth);
+        putContactDetail("email", email);
+    }
+
+    public Long getId() {
         return id;
     }
 
@@ -71,4 +87,35 @@ public class Person {
         return contactDetails.get(key);
     }
 
+    public String getEmail() {
+        return getContactDetail("email");
+    }
+
+    public List<Credit> getCredits() {
+        return credits;
+    }
+
+    public void setCredits(List<Credit> credits) {
+        this.credits = credits;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setDateOfBirth(String dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
+
+    public void setDateOfBirth(ZonedDateTime dateOfBirth) {
+        setDateOfBirth(dateOfBirth.format(dateTimeFormatter));
+    }
+
+    public ZonedDateTime getZonedDate() {
+        return ZonedDateTime.parse(dateOfBirth, dateTimeFormatter);
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
 }
