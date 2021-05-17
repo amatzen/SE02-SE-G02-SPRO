@@ -37,7 +37,7 @@ public class UserListItem extends HBox {
         FXMLLoader fxmlLoader = new FXMLLoader(
             Objects.requireNonNull(
                 getClass().getClassLoader().getResource(
-                    "dk/sdu/swe/ui/admin/components/UserListItem.fxml")));
+                        "dk/sdu/swe/views/admin/components/UserListItem.fxml")));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
 

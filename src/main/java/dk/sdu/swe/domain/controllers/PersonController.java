@@ -26,12 +26,14 @@ public class PersonController {
 
     public List<Person> getAll() {
         List<Person> people = PersonDAOImpl.getInstance().getAll();
-        people.sort((o1, o2) -> o1.getName().compareTo(o2.getName()));
+        people.sort(Comparator.comparing(Person::getName));
         return people;
     }
 
     public List<Person> search(String searchTerm) {
-        return PersonDAOImpl.getInstance().searchByName(searchTerm);
+        List<Person> people = PersonDAOImpl.getInstance().searchByName(searchTerm);
+        people.sort(Comparator.comparing(Person::getName));
+        return people;
     }
 
     public void delete(Person person) {

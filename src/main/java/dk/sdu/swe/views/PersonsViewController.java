@@ -34,7 +34,7 @@ public class PersonsViewController extends VBox {
     public PersonsViewController() {
         FXMLLoader fxmlLoader = new FXMLLoader(
             Objects.requireNonNull(
-                getClass().getClassLoader().getResource("dk/sdu/swe/ui/persons/PersonsView.fxml")));
+                getClass().getClassLoader().getResource("dk/sdu/swe/views/persons/PersonView.fxml")));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
 

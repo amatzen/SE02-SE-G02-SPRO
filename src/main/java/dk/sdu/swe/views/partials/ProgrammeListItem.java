@@ -36,7 +36,7 @@ public class ProgrammeListItem extends AnchorPane {
 
         FXMLLoader fxmlLoader = new FXMLLoader(
             Objects.requireNonNull(
-                getClass().getClassLoader().getResource("dk/sdu/swe/ui/programmes/ProgrammeListItem.fxml")));
+                getClass().getClassLoader().getResource("dk/sdu/swe/views/programmes/ProgrammeListItem.fxml")));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
 

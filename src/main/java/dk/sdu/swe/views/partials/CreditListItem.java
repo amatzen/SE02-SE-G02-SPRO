@@ -36,7 +36,7 @@ public class CreditListItem extends HBox {
 
         FXMLLoader fxmlLoader = new FXMLLoader(
             Objects.requireNonNull(
-                getClass().getClassLoader().getResource("dk/sdu/swe/ui/credits/components/CreditListItem.fxml")));
+                getClass().getClassLoader().getResource("dk/sdu/swe/views/credits/components/CreditListItem.fxml")));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
 
