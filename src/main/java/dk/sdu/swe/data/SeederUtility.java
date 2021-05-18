@@ -11,20 +11,20 @@ public class SeederUtility {
             v0_CreateCompanies.run();
             v1_CreateUsers.run();
             v2_CreateChannels.run();
+            v2_1_CreateCreditRoles.run();
 
             DateTimeFormatter dft = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-            new Thread(() -> {
-                try {
-                    v3_CreateProgrammesForThisWeek.run(ZonedDateTime.now().format(dft), true);
-                    for (int i = 1; i < 8; i++) {
-                        v3_CreateProgrammesForThisWeek.run(ZonedDateTime.now().plusDays(i).format(dft), false);
-                    }
-                } catch (Exception e) {
-                    e.printStackTrace();
+            try {
+                v3_CreateProgrammesForThisWeek.run(ZonedDateTime.now().format(dft), true);
+                for (int i = 1; i < 8; i++) {
+                    v3_CreateProgrammesForThisWeek.run(ZonedDateTime.now().plusDays(i).format(dft), false);
                 }
-            }).start();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
 
-            v2_1_CreateCreditRoles.run();
+
+
         }
         catch (Exception e) {
             e.printStackTrace();
