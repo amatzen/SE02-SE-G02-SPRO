@@ -46,6 +46,10 @@ public class Programme {
     public Programme() {
     }
 
+    public Long getId() {
+        return id;
+    }
+
     public List<Credit> getCredits() {
         return credits;
     }
