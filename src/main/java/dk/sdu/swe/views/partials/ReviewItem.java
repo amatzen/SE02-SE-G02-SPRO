@@ -10,7 +10,7 @@ public class ReviewItem {
     public ReviewItem() {
         FXMLLoader fxmlLoader = new FXMLLoader(
             Objects.requireNonNull(
-                getClass().getClassLoader().getResource("dk/sdu/swe/views/admin/components/review.fxml")));
+                getClass().getClassLoader().getResource("dk/sdu/swe/views/admin/components/ReviewListItem.fxml")));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
 

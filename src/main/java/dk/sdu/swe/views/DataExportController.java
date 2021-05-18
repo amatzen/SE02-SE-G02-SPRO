@@ -29,7 +29,7 @@ public class DataExportController extends VBox {
     public DataExportController() {
         FXMLLoader fxmlLoader = new FXMLLoader(
             Objects.requireNonNull(
-                getClass().getClassLoader().getResource("dk/sdu/swe/views/admin/components/exportBar.fxml")));
+                getClass().getClassLoader().getResource("dk/sdu/swe/views/admin/components/DataExportView.fxml")));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
 

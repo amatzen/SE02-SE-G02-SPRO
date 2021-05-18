@@ -64,4 +64,12 @@ public class CompanyController {
         companyDAO.save(companyObj);
         return companyObj;
     }
+
+    public void update(Company company) {
+        companyDAO.update(company);
+    }
+
+    public Company get(Long id) {
+        return companyDAO.getById(id).orElse(null);
+    }
 }
