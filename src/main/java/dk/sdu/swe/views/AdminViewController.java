@@ -74,8 +74,8 @@ public class AdminViewController extends BorderPane implements Observer {
         switch (routeName) {
             case "UserControlViewController" -> this.userControlBtn.getStyleClass().add("indicator");
             case "CreditGroupViewController" -> this.creditGroupBtn.getStyleClass().add("indicator");
-            case "DataExportViewController" -> this.dataExportBtn.getStyleClass().add("indicator");
-            default -> this.reviewsBtn.getStyleClass().add("indicator");
+            case "DataExportViewController"  ->  this.dataExportBtn.getStyleClass().add("indicator");
+            default                          ->     this.reviewsBtn.getStyleClass().add("indicator");
         }
     }
 
