@@ -10,17 +10,17 @@ import java.util.List;
 public class CsvExport {
 
     // Test data
-    private static List<List<String>> Credits = Arrays.asList(
+    private static List<List<String>> creditList = Arrays.asList(
         Arrays.asList("Biddragyder 1", "Biddragyder 2", "Biddragyder 3")
     );
 
     // Test data
-    private static List<List<String>> Programs = Arrays.asList(
+    private static List<List<String>> programList = Arrays.asList(
         Arrays.asList("Program 1", "Program 2", "Program 3")
     );
 
     // Test data
-    private static List<List<String>> Companies = Arrays.asList(
+    private static List<List<String>> companyList = Arrays.asList(
         Arrays.asList("Virksomhed 1", "Virksomhed 2", "Virksomhed 3")
     );
 
@@ -34,7 +34,7 @@ public class CsvExport {
             csvWriter.append(",");
             csvWriter.append("\n");
 
-            for (List<String> data : Credits) {
+            for (List<String> data : creditList) {
                 csvWriter.append(String.join(",", data));
                 csvWriter.append("\n");
             }
@@ -56,10 +56,13 @@ public class CsvExport {
             cswWriter.append(",");
             cswWriter.append("\n");
 
-            for (List<String> data : Programs) {
+            for (List<String> data : programList) {
                 cswWriter.append(String.join(",", data));
                 cswWriter.append("\n");
             }
+
+            cswWriter.flush();
+            cswWriter.close();
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -73,10 +76,13 @@ public class CsvExport {
             cswWriter.append(",");
             cswWriter.append("\n");
 
-            for (List<String> data : Companies) {
+            for (List<String> data : companyList) {
                 cswWriter.append(String.join(",", data));
                 cswWriter.append("\n");
             }
+
+            cswWriter.flush();
+            cswWriter.close();
 
         } catch (Exception e) {
             e.printStackTrace();

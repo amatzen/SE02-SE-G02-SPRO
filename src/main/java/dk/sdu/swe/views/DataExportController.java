@@ -11,7 +11,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Alert;
 import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
-
 import java.io.IOException;
 import java.util.Objects;
 
@@ -42,7 +41,7 @@ public class DataExportController extends VBox {
     }
 
     @FXML
-    private void exportCsv(ActionEvent event) {
+    private void Export(ActionEvent event) {
         if (csvBtn.isSelected() == false && jsonBtn.isSelected() == false) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Fejl!");
@@ -68,13 +67,13 @@ public class DataExportController extends VBox {
             CsvExport.csvExportCompanies(new FileChooser().showSaveDialog(getScene().getWindow()));
         }
         if (jsonBtn.isSelected() && creditData.isSelected()) {
-            JsonExport.JsonExportCredits();
+            JsonExport.JsonExportCredits(new FileChooser().showSaveDialog(getScene().getWindow()));
         }
         if (jsonBtn.isSelected() && programData.isSelected()) {
-            JsonExport.JsonExportPrograms();
+            JsonExport.JsonExportPrograms(new FileChooser().showSaveDialog(getScene().getWindow()));
         }
         if (jsonBtn.isSelected() && companyData.isSelected()) {
-            JsonExport.JsonExportCompanies();
+            JsonExport.JsonExportCompanies(new FileChooser().showSaveDialog(getScene().getWindow()));
         }
     }
 
