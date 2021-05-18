@@ -11,15 +11,6 @@
 
 <fx:root type="VBox" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
     <children>
-        <HBox prefHeight="25.0" prefWidth="1193.0">
-            <children>
-                <Separator prefHeight="0.0" prefWidth="1192.0">
-                    <HBox.margin>
-                        <Insets left="45.0" right="45.0" top="15.0" />
-                    </HBox.margin>
-                </Separator>
-            </children>
-        </HBox>
         <HBox alignment="CENTER" prefHeight="119.0" prefWidth="1192.0" spacing="10.0">
             <children>
                 <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="1037.0" style="-fx-background-color: #ededed;">
@@ -36,7 +27,7 @@
                                                 <Insets left="15.0" top="5.0" />
                                             </HBox.margin>
                                         </Label>
-                                        <Label prefHeight="47.0" prefWidth="234.0" text="Program_her">
+                                        <Label fx:id="lbl_ProgramTitle" prefHeight="47.0" prefWidth="234.0" text="Program_her">
                                             <font>
                                                 <Font name="System Bold" size="16.0" />
                                             </font>
@@ -51,7 +42,7 @@
                                         <Insets left="15.0" />
                                     </VBox.margin>
                                     <children>
-                                        <JFXTextArea focusColor="#405aa800" prefHeight="69.0" prefWidth="322.0" text="Beskrivelse her&#10;">
+                                        <JFXTextArea fx:id="txt_Description" focusColor="#405aa800" prefHeight="69.0" prefWidth="322.0" text="Beskrivelse her&#10;">
                                             <font>
                                                 <Font size="14.0" />
                                             </font>
@@ -64,11 +55,6 @@
                             <children>
                                 <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                                     <children>
-                                        <Label text="Foretaget af">
-                                            <font>
-                                                <Font size="16.0" />
-                                            </font>
-                                        </Label>
                                         <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true">
                                             <HBox.margin>
                                                 <Insets left="20.0" />
@@ -79,12 +65,12 @@
                                                 <Insets left="20.0" />
                                             </HBox.margin>
                                             <children>
-                                                <Label prefHeight="30.0" prefWidth="199.0" text="Navn">
+                                                <Label fx:id="lbl_RequesterName" prefHeight="30.0" prefWidth="199.0" text="Navn">
                                                     <font>
                                                         <Font name="System Bold" size="16.0" />
                                                     </font>
                                                 </Label>
-                                                <Label prefHeight="21.0" prefWidth="199.0" text="Virksomhed">
+                                                <Label fx:id="lbl_RequesterCompany" prefHeight="21.0" prefWidth="199.0" text="Virksomhed">
                                                     <font>
                                                         <Font size="15.0" />
                                                     </font>
@@ -92,6 +78,9 @@
                                             </children>
                                         </VBox>
                                     </children>
+                           <padding>
+                              <Insets left="30.0" />
+                           </padding>
                                 </HBox>
                             </children>
                         </VBox>
@@ -99,12 +88,12 @@
                             <children>
                                 <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
                                     <children>
-                                        <JFXButton prefHeight="46.0" prefWidth="113.0" ripplerFill="WHITE" style="-jfx-button-type: RAISED; -fx-background-color: #FF9800;" text="GODKEND" textFill="WHITE">
+                                        <JFXButton fx:id="btn_ApproveReview" prefHeight="46.0" prefWidth="113.0" ripplerFill="WHITE" style="-jfx-button-type: RAISED; -fx-background-color: #FF9800;" text="GODKEND" textFill="WHITE">
                                             <font>
                                                 <Font name="System Bold" size="12.0" />
                                             </font>
                                         </JFXButton>
-                                        <JFXButton layoutX="10.0" layoutY="10.0" prefHeight="46.0" prefWidth="90.0" ripplerFill="#9a8c8c" text="AFVIS" textFill="#6b6b6b">
+                                        <JFXButton fx:id="btn_DeclineReview" layoutX="10.0" layoutY="10.0" prefHeight="46.0" prefWidth="90.0" ripplerFill="#9a8c8c" text="AFVIS" textFill="#6b6b6b">
                                             <font>
                                                 <Font name="System Bold" size="12.0" />
                                             </font>

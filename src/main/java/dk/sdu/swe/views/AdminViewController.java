@@ -3,6 +3,7 @@ package dk.sdu.swe.views;
 import com.jfoenix.controls.JFXButton;
 import dk.sdu.swe.helpers.Observer;
 import dk.sdu.swe.helpers.PubSub;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -26,6 +27,7 @@ public class AdminViewController extends BorderPane implements Observer {
     @FXML
     private void initialize() {
         router = new Router(contentPane);
+        Platform.runLater(() -> router.goTo(ReviewViewController.class));
     }
 
     public AdminViewController() {
@@ -72,8 +74,8 @@ public class AdminViewController extends BorderPane implements Observer {
         switch (routeName) {
             case "UserControlViewController" -> this.userControlBtn.getStyleClass().add("indicator");
             case "CreditGroupViewController" -> this.creditGroupBtn.getStyleClass().add("indicator");
-            case "DataExportViewController" -> this.dataExportBtn.getStyleClass().add("indicator");
-            default -> this.reviewsBtn.getStyleClass().add("indicator");
+            case "DataExportViewController"  ->  this.dataExportBtn.getStyleClass().add("indicator");
+            default                          ->     this.reviewsBtn.getStyleClass().add("indicator");
         }
     }
 

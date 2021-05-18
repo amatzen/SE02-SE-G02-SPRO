@@ -3,7 +3,7 @@ package dk.sdu.swe.views.partials;
 import com.jfoenix.controls.JFXPopup;
 import dk.sdu.swe.domain.controllers.CreditRoleController;
 import dk.sdu.swe.domain.models.CreditRole;
-import dk.sdu.swe.views.modals.credits.CreditRoleModal;
+import dk.sdu.swe.views.modals.credits.CreditGroupModal;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
@@ -72,7 +72,7 @@ public class CreditGroupListItem extends HBox {
     }
 
     private void editGroup() {
-        Dialog<CreditRole> creditRoleModal = new CreditRoleModal(getScene().getWindow(), creditRole);
+        Dialog<CreditRole> creditRoleModal = new CreditGroupModal(getScene().getWindow(), creditRole);
         Optional<CreditRole> creditRole = creditRoleModal.showAndWait();
         creditRole.ifPresent(creditRoleObj -> {
             CreditRoleController.getInstance().update(creditRoleObj);

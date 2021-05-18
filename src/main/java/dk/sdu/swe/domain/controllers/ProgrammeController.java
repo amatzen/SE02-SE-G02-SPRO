@@ -1,6 +1,7 @@
 package dk.sdu.swe.domain.controllers;
 
 import dk.sdu.swe.data.dao.CategoryDAOImpl;
+import dk.sdu.swe.data.dao.CompanyDAOImpl;
 import dk.sdu.swe.data.dao.ProgrammeDAOImpl;
 import dk.sdu.swe.domain.models.Category;
 import dk.sdu.swe.domain.models.Channel;
@@ -8,10 +9,8 @@ import dk.sdu.swe.domain.models.Company;
 import dk.sdu.swe.domain.models.Programme;
 import dk.sdu.swe.domain.persistence.IProgrammeDAO;
 
-import java.util.Comparator;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class ProgrammeController {
 
@@ -33,7 +32,31 @@ public class ProgrammeController {
     public List<Programme> getAll() {
         List<Programme> programmes = ProgrammeDAOImpl.getInstance().getAll();
         programmes.sort(Comparator.comparing(Programme::getTitle));
-        return programmes;
+
+        if(AuthController.getInstance().getUser().hasPermission("programmes.list.all")) {
+            return programmes;
+        }
+
+        return
+            programmes
+            .stream()
+            .filter(i -> {
+                if(Objects.isNull(i.getCompany())) return false;
+
+                Company x = i.getCompany();
+
+                boolean userCompany = Objects.equals(x.getId(), AuthController.getInstance().getUser().getCompany().getId());
+                boolean subCompany = false;
+
+                Company currentCompany = x.getParentCompany();
+                while(Objects.nonNull(currentCompany)) {
+                    subCompany = Objects.equals(currentCompany.getId(), AuthController.getInstance().getUser().getCompany().getId());
+                    currentCompany = currentCompany.getParentCompany();
+                }
+
+                return userCompany || subCompany;
+            })
+            .collect(Collectors.toList());
     }
 
     public List<Programme> search(String searchTerm, Channel channel, Category category) {
