@@ -4,6 +4,7 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPopup;
 import dk.sdu.swe.domain.controllers.PersonController;
 import dk.sdu.swe.domain.models.Person;
+import dk.sdu.swe.views.modals.persons.MergeModal;
 import dk.sdu.swe.views.modals.persons.PersonModal;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -26,6 +27,7 @@ public class PersonListItem extends VBox {
     private Map<String, Runnable> options = new LinkedHashMap<>() {{
         put("Rediger", PersonListItem.this::editPerson);
         put("Slet", PersonListItem.this::deletePerson);
+        put("Flet", PersonListItem.this::mergePerson);
     }};
 
     private Person person;
@@ -71,7 +73,9 @@ public class PersonListItem extends VBox {
 
     private void updateState() {
         nameLbl.setText(person.getName());
-        dobLbl.setText(person.getZonedDate().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")));
+        if (person.getZonedDate() != null) {
+            dobLbl.setText(person.getZonedDate().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")));
+        }
         emailLbl.setText(person.getContactDetail("email"));
         personImageView.setImage(new Image(person.getImage(), true));
     }
@@ -90,4 +94,17 @@ public class PersonListItem extends VBox {
         PersonController.getInstance().delete(person);
     }
 
+    private void mergePerson() {
+        Dialog<Person> mergeModal = new MergeModal(getScene().getWindow(), person);
+        Optional<Person> mergedPerson = mergeModal.showAndWait();
+        mergedPerson.ifPresent(personToRemove -> {
+            container.getItems().removeIf(personListItem -> {
+                return personListItem.getPerson().getId().equals(personToRemove.getId());
+            });
+        });
+    }
+
+    public Person getPerson() {
+        return person;
+    }
 }

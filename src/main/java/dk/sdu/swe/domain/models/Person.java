@@ -1,6 +1,9 @@
 package dk.sdu.swe.domain.models;
 
 import com.google.gson.annotations.SerializedName;
+import dk.sdu.swe.exceptions.InvalidNameException;
+import dk.sdu.swe.exceptions.PersonCreationException;
+import dk.sdu.swe.exceptions.UserCreationException;
 import org.json.JSONObject;
 
 import javax.persistence.*;
@@ -46,13 +49,16 @@ public class Person {
     public Person() {
     }
 
-    public Person(String name, String image, ZonedDateTime dateOfBirth) {
-        this.name = name;
-        this.image = image;
-        setDateOfBirth(dateOfBirth);
-    }
+    public Person(String name, String image, String email, ZonedDateTime dateOfBirth) throws PersonCreationException {
+        if (name.trim().length() < 3) {
+            throw new PersonCreationException("Navnet skal indeholde mindst 3 tegn.");
+        }
 
-    public Person(String name, String image, String email, ZonedDateTime dateOfBirth) {
+        // Validate email
+        if (!email.trim().matches("[^@ \\t\\r\\n]+@[^@ \\t\\r\\n]+\\.[^@ \\t\\r\\n]+")) {
+            throw new PersonCreationException("Invalid email.");
+        }
+
         this.name = name;
         this.image = image;
         setDateOfBirth(dateOfBirth);
@@ -108,11 +114,19 @@ public class Person {
     }
 
     public void setDateOfBirth(ZonedDateTime dateOfBirth) {
-        setDateOfBirth(dateOfBirth.format(dateTimeFormatter));
+        if (dateOfBirth == null) {
+            this.dateOfBirth = null;
+        } else {
+            setDateOfBirth(dateOfBirth.format(dateTimeFormatter));
+        }
     }
 
     public ZonedDateTime getZonedDate() {
-        return ZonedDateTime.parse(dateOfBirth, dateTimeFormatter);
+        if (dateOfBirth == null) {
+            return null;
+        } else {
+            return ZonedDateTime.parse(dateOfBirth, dateTimeFormatter);
+        }
     }
 
     public void setImage(String image) {

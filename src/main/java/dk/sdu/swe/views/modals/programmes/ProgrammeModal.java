@@ -2,16 +2,14 @@ package dk.sdu.swe.views.modals.programmes;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
-import dk.sdu.swe.data.dao.CompanyDAOImpl;
-import dk.sdu.swe.data.dao.CreditDAOImpl;
 import dk.sdu.swe.data.dao.ReviewDAOImpl;
 import dk.sdu.swe.domain.controllers.AuthController;
 import dk.sdu.swe.domain.controllers.ChannelController;
 import dk.sdu.swe.domain.controllers.CompanyController;
 import dk.sdu.swe.domain.controllers.ProgrammeController;
 import dk.sdu.swe.domain.models.*;
-import dk.sdu.swe.domain.persistence.ICreditDAO;
 import dk.sdu.swe.helpers.PubSub;
+import dk.sdu.swe.views.AlertHelper;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -23,7 +21,6 @@ import javafx.stage.Window;
 import org.json.JSONObject;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.Set;
@@ -135,11 +132,28 @@ public class ProgrammeModal extends Dialog<Programme> {
     @FXML
     private void save(ActionEvent event) {
         String title = this.title.getText();
-        int prodYear = Integer.parseInt(this.prodYear.getText());
-        Channel channel = (Channel) this.channel.getSelectedToggle().getUserData();
-        Category category = (Category) this.category.getSelectionModel().getSelectedItem().getUserData();
-        Company company = CompanyDAOImpl.getInstance().getById(1L).orElse(null);
-        if(Objects.nonNull(this.prodCompany.getSelectionModel().getSelectedItem().getUserData())) {
+        int prodYear = 0;
+        try {
+             prodYear = Integer.parseInt(this.prodYear.getText());
+        } catch (NumberFormatException e) {
+            AlertHelper.show(Alert.AlertType.ERROR,
+                getOwner(), "Ikke et tal",
+                "Produktionsåret skal være et tal.");
+            return;
+        }
+
+        Channel channel = null;
+        if (this.channel.getSelectedToggle() != null) {
+            channel = (Channel) this.channel.getSelectedToggle().getUserData();
+        }
+
+        Category category = null;
+        if (this.category.getSelectionModel().getSelectedItem() != null) {
+            category = (Category) this.category.getSelectionModel().getSelectedItem().getUserData();
+        }
+
+        Company company = null;
+        if (this.prodCompany.getSelectionModel().getSelectedItem() != null) {
             company = (Company) this.prodCompany.getSelectionModel().getSelectedItem().getUserData();
         }
 
