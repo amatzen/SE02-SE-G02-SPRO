@@ -150,7 +150,6 @@ public class v3_CreateProgrammesForThisWeek {
 
         JSONObject randomPersons = new JSONObject(content1.toString());
         JSONArray randomPersonsResults = randomPersons.getJSONArray("results");
-        System.out.println(randomPersonsResults.length());
 
         addedProgrammes.forEach(programme -> {
             int rnd = new Random().nextInt((randomPersonsResults.length() -1) + 1);
