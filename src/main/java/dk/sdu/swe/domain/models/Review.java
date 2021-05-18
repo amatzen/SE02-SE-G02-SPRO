@@ -9,6 +9,7 @@ import java.time.ZoneId;
 import java.time.ZonedDateTime;
 
 @Entity
+@Table(name = "reviews")
 public class Review {
     @Id
     @GeneratedValue
@@ -68,8 +69,3 @@ public class Review {
     }
 }
 
-enum ReviewState {
-    AWAITING,
-    ACCEPTED,
-    DENIED
-}
