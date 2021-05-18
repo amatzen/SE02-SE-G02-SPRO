@@ -23,7 +23,7 @@ public class SeederUtility {
                 e.printStackTrace();
             }
 
-
+            v4_AddGamerIArbejdstoej.run();
 
         }
         catch (Exception e) {

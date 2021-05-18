@@ -90,7 +90,7 @@ public class ProgrammeListItem extends AnchorPane {
     }
 
     private Image getReviewStateButtonImg(String slug) {
-        InputStream is = Application.class.getResourceAsStream("ui/images/review_btn/"+slug+".png");
+        InputStream is = Application.class.getResourceAsStream("views/images/review_btn/"+slug+".png");
         return new Image(is);
     }
 
