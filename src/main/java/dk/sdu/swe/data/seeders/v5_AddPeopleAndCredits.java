@@ -31,7 +31,7 @@ public class v5_AddPeopleAndCredits {
         int creditRolesCount = CreditRoleDAOImpl.getInstance().getAll().size();
         List<CreditRole> creditRoles = CreditRoleDAOImpl.getInstance().getAll();
 
-        Set<Programme> addedProgrammes = new LinkedHashSet<>(ProgrammeController.getInstance().getAll());
+        Set<Programme> addedProgrammes = new LinkedHashSet<>(ProgrammeDAOImpl.getInstance().getAll());
 
         HttpURLConnection conn1 = (HttpURLConnection) new URL("https://randomuser.me/api/?results=800").openConnection();
         conn1.setRequestMethod("GET");

@@ -1,7 +1,7 @@
 package dk.sdu.swe.views;
 import dk.sdu.swe.domain.controllers.CreditRoleController;
 import dk.sdu.swe.domain.models.CreditRole;
-import dk.sdu.swe.views.modals.credits.CreditRoleModal;
+import dk.sdu.swe.views.modals.credits.CreditGroupModal;
 import dk.sdu.swe.views.partials.CreditGroupListItem;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -44,7 +44,7 @@ public class CreditGroupViewController extends VBox {
 
     @FXML
     private void addCreditRole(ActionEvent event) {
-        Dialog<CreditRole> creditRoleModal = new CreditRoleModal(getScene().getWindow());
+        Dialog<CreditRole> creditRoleModal = new CreditGroupModal(getScene().getWindow());
         Optional<CreditRole> creditRole = creditRoleModal.showAndWait();
         creditRole.ifPresent(creditRoleObj -> {
             creditRoles.getItems().add(new CreditGroupListItem(creditRoleObj, creditRoles));

@@ -2,14 +2,12 @@ package dk.sdu.swe.views.modals.programmes;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
-import dk.sdu.swe.data.dao.CreditDAOImpl;
 import dk.sdu.swe.data.dao.ReviewDAOImpl;
 import dk.sdu.swe.domain.controllers.AuthController;
 import dk.sdu.swe.domain.controllers.ChannelController;
 import dk.sdu.swe.domain.controllers.CompanyController;
 import dk.sdu.swe.domain.controllers.ProgrammeController;
 import dk.sdu.swe.domain.models.*;
-import dk.sdu.swe.domain.persistence.ICreditDAO;
 import dk.sdu.swe.helpers.PubSub;
 import dk.sdu.swe.views.AlertHelper;
 import javafx.event.ActionEvent;
@@ -23,7 +21,9 @@ import javafx.stage.Window;
 import org.json.JSONObject;
 
 import java.io.IOException;
-import java.util.*;
+import java.util.List;
+import java.util.Objects;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 
