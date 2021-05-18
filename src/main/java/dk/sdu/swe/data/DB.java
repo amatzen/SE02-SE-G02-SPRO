@@ -1,5 +1,6 @@
 package dk.sdu.swe.data;
 
+import dk.sdu.swe.data.dao.ReviewDAOImpl;
 import dk.sdu.swe.domain.models.*;
 import dk.sdu.swe.helpers.EnvironmentSelector;
 import org.hibernate.Session;
@@ -83,7 +84,6 @@ public class DB {
         annotatedClasses.add(User.class);
         annotatedClasses.add(SystemAdministrator.class);
         annotatedClasses.add(CompanyAdministrator.class);
-
         annotatedClasses.add(Programme.class);
         annotatedClasses.add(Credit.class);
         annotatedClasses.add(CreditRole.class);
@@ -91,8 +91,8 @@ public class DB {
         annotatedClasses.add(Channel.class);
         annotatedClasses.add(EPGProgramme.class);
         annotatedClasses.add(Category.class);
-
         annotatedClasses.add(Company.class);
+        annotatedClasses.add(Review.class);
     }
 
     public synchronized static Session openSession() {

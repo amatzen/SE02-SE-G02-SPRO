@@ -3,6 +3,7 @@ package dk.sdu.swe.views.modals.companies;
 import com.jfoenix.controls.JFXButton;
 import dk.sdu.swe.domain.controllers.CompanyController;
 import dk.sdu.swe.domain.models.Company;
+import dk.sdu.swe.helpers.PubSub;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
