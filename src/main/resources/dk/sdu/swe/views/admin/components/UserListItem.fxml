@@ -8,7 +8,7 @@
 
 <fx:root alignment="CENTER_LEFT" prefHeight="26.0" prefWidth="698.0" spacing="10.0" type="HBox" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
     <children>
-        <JFXButton buttonType="RAISED" onAction="#delete" style="-fx-background-color: red;" text="Slet" textFill="WHITE">
+        <JFXButton fx:id="deleteBtn" buttonType="RAISED" onAction="#delete" style="-fx-background-color: red;" text="Slet" textFill="WHITE">
         </JFXButton>
         <HBox prefHeight="26.0" prefWidth="262.0">
             <children>

@@ -14,7 +14,7 @@ import javafx.stage.FileChooser;
 import java.io.IOException;
 import java.util.Objects;
 
-public class DataExportController extends VBox {
+public class DataExportViewController extends VBox {
 
     @FXML
     private JFXCheckBox creditData, programData, companyData;
@@ -26,7 +26,7 @@ public class DataExportController extends VBox {
     private JFXButton exportBtn;
 
 
-    public DataExportController() {
+    public DataExportViewController() {
         FXMLLoader fxmlLoader = new FXMLLoader(
             Objects.requireNonNull(
                 getClass().getClassLoader().getResource("dk/sdu/swe/views/admin/components/DataExportView.fxml")));

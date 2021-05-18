@@ -66,6 +66,10 @@ public class PersonListItem extends VBox {
             popupList.show(actionBtn, JFXPopup.PopupVPosition.TOP, JFXPopup.PopupHPosition.RIGHT);
         });
 
+        updateState();
+    }
+
+    private void updateState() {
         nameLbl.setText(person.getName());
         dobLbl.setText(person.getZonedDate().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")));
         emailLbl.setText(person.getContactDetail("email"));
@@ -77,6 +81,7 @@ public class PersonListItem extends VBox {
         Optional<Person> person = personEditDialog.showAndWait();
         person.ifPresent(personObj -> {
             PersonController.getInstance().update(personObj);
+            updateState();
         });
     }
 

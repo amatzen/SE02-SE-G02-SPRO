@@ -67,19 +67,22 @@ public class CompanyListItem extends VBox {
             popupList.show(actionsBtn, JFXPopup.PopupVPosition.TOP, JFXPopup.PopupHPosition.RIGHT);
         });
 
+        updateState();
+    }
+
+    private void updateState() {
         companyNameLabel.setText(company.getName());
         cvrLabel.setText("CVR: " + company.getCompanyDetails().getNbr());
     }
 
     private void editCompany() {
-
         Dialog<Company> editCompanyDialog = new CompanyModal(getScene().getWindow(), company);
         Optional<Company> company = editCompanyDialog.showAndWait();
 
-        company.ifPresent(company1 -> {
-            CompanyDAOImpl.getInstance().update(company1);
+        company.ifPresent(companyObj -> {
+            CompanyDAOImpl.getInstance().update(companyObj);
+            updateState();
         });
-
     }
 
     private void deleteCompany() {
