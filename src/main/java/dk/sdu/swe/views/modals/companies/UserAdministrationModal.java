@@ -2,6 +2,7 @@ package dk.sdu.swe.views.modals.companies;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXListView;
+import dk.sdu.swe.domain.controllers.CompanyController;
 import dk.sdu.swe.domain.models.Company;
 import dk.sdu.swe.domain.models.User;
 import dk.sdu.swe.views.modals.users.UserModal;
@@ -38,7 +39,7 @@ public class UserAdministrationModal extends Dialog<Boolean> {
     private JFXListView usersListView;
 
     public UserAdministrationModal(Window window, Company company) {
-        this.company = company;
+        this.company = CompanyController.getInstance().get(company.getId());
 
         this.setResultConverter(param -> null);
         this.initOwner(window);
@@ -54,7 +55,7 @@ public class UserAdministrationModal extends Dialog<Boolean> {
 
         FXMLLoader fxmlLoader = new FXMLLoader(
             Objects.requireNonNull(
-                getClass().getClassLoader().getResource("dk/sdu/swe/views/programmes/UserAdministration.fxml")));
+                getClass().getClassLoader().getResource("dk/sdu/swe/views/programmes/UserAdministrationModal.fxml")));
         fxmlLoader.setController(this);
 
         try {

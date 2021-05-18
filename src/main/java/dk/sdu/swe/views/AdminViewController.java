@@ -32,7 +32,7 @@ public class AdminViewController extends BorderPane implements Observer {
         PubSub.subscribe("routeChange", this);
         FXMLLoader fxmlLoader = new FXMLLoader(
             Objects.requireNonNull(
-                getClass().getClassLoader().getResource("dk/sdu/swe/views/admin/admin.fxml")));
+                getClass().getClassLoader().getResource("dk/sdu/swe/views/admin/AdminView.fxml")));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
 
@@ -53,10 +53,10 @@ public class AdminViewController extends BorderPane implements Observer {
 
         }
         else if (source==userControlBtn){
-            router.goTo(UserControlController.class);
+            router.goTo(UserControlViewController.class);
         }
         else if (source==creditGroupBtn){
-            router.goTo(CreditGroupController.class);
+            router.goTo(CreditGroupViewController.class);
 
         } else if (source==dataExportBtn){
             router.goTo(DataExportController.class);

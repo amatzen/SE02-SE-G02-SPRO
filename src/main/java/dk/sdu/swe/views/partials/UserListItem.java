@@ -2,6 +2,7 @@ package dk.sdu.swe.views.partials;
 
 import dk.sdu.swe.data.dao.UserDAOImpl;
 import dk.sdu.swe.domain.controllers.AuthController;
+import dk.sdu.swe.domain.controllers.CompanyController;
 import dk.sdu.swe.domain.controllers.UserController;
 import dk.sdu.swe.domain.models.CompanyAdministrator;
 import dk.sdu.swe.domain.models.SystemAdministrator;
@@ -73,6 +74,8 @@ public class UserListItem extends HBox {
         } else {
             UserDAOImpl.getInstance().promoteUser(user, "User");
         }
+
+        CompanyController.getInstance().update(user.getCompany());
 
     }
 

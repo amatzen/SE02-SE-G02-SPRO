@@ -9,10 +9,8 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class ProgrammeDAOImpl extends AbstractDAO<Programme> implements IProgrammeDAO {
     private static ProgrammeDAOImpl instance;
@@ -54,7 +52,7 @@ public class ProgrammeDAOImpl extends AbstractDAO<Programme> implements IProgram
             query.setParameter("category_title", category.getCategoryTitle());
         }
 
-        List<Programme> res = query.list();
+        List<Programme> res = (List<Programme>) query.list().stream().distinct().collect(Collectors.toList());
 
         session.close();
 
@@ -66,16 +64,16 @@ public class ProgrammeDAOImpl extends AbstractDAO<Programme> implements IProgram
         Session session = DB.openSession();
         Transaction transaction = session.beginTransaction();
 
-        Set<Programme> result;
+        List<Programme> result;
         try {
-            result = new HashSet<>(session.createQuery(
+            result = (List<Programme>) session.createQuery(
                 "FROM Programme as p " +
                 "INNER JOIN FETCH p.categories " +
-                "INNER JOIN FETCH p.channel").list());
+                "INNER JOIN FETCH p.channel").list().stream().distinct().collect(Collectors.toList());
         } finally {
             transaction.commit();
             session.close();
         }
-        return new ArrayList<>(result);
+        return result;
     }
 }

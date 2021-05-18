@@ -13,7 +13,6 @@ import java.util.Map;
 
 public class Router {
 
-    //private static Map<Class<? extends Parent>, Parent> components = new HashMap<>();
     private static Router sceneRouter;
 
     @FXML
@@ -21,33 +20,37 @@ public class Router {
 
     private boolean doFadeAnimation = false;
 
+    /**
+     * Create instance of router with a given container to show content in.
+     * @param container Container to fill with content.
+     */
     public Router(Pane container) {
         this.container = container;
-        //components = new HashMap<>();
     }
 
+    /**
+     * Swap contents of given container with a new instance of given class type.
+     * @param componentClass Class type of component.
+     * @param container Container to fill with content.
+     */
     private void goTo(Class<? extends Parent> componentClass, Pane container) {
         Parent component = null;
 
-        /*if (components.containsKey(componentClass)) {
-            component = components.get(componentClass);
-        } else {*/
-            try {
-                component = componentClass.getDeclaredConstructor().newInstance();
-            } catch (InstantiationException e) {
-                e.printStackTrace();
-            } catch (IllegalAccessException e) {
-                e.printStackTrace();
-            } catch (InvocationTargetException e) {
-                e.printStackTrace();
-            } catch (NoSuchMethodException e) {
-                e.printStackTrace();
-            }
-        //}
+        try {
+            component = componentClass.getDeclaredConstructor().newInstance();
+        } catch (InstantiationException | NoSuchMethodException
+            | InvocationTargetException | IllegalAccessException e) {
+            e.printStackTrace();
+        }
 
         goTo(component, container);
     }
 
+    /**
+     * Swap contents of given container to the given component instance.
+     * @param component Content to show in container.
+     * @param container Container to fill with content.
+     */
     private void goTo(Parent component, Pane container) {
         //components.put(component.getClass(), component);
 
@@ -60,6 +63,11 @@ public class Router {
         PubSub.publish("routeChange", component.getClass().getSimpleName());
     }
 
+    /**
+     * Does a fade transition from the current content in the given container to the given component.
+     * @param component Component to transition to.
+     * @param container Container to fill with content.
+     */
     private void fadeOut(Parent component, Pane container) {
         Pane paneToRemove = (Pane) container.getChildren().get(0);
         if (!paneToRemove.equals(component)) {
@@ -79,14 +87,26 @@ public class Router {
         }
     }
 
+    /**
+     * Swaps current content with a new instance of the given class type.
+     * @param componentClass Class type of component.
+     */
     public void goTo(Class<? extends Parent> componentClass) {
         goTo(componentClass, container);
     }
 
+    /**
+     * Swap contents of container with given Parent instance.
+     * @param component New content.
+     */
     public void goTo(Parent component) {
         goTo(component, container);
     }
 
+    /**
+     * Returns instance of Router, that controls the scene root.
+     * @return Scene root Router
+     */
     public static Router getSceneRouter() {
         return Router.sceneRouter;
     }

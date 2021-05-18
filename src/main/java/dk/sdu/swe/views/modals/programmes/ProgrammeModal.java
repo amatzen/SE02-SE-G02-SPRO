@@ -64,7 +64,7 @@ public class ProgrammeModal extends Dialog<Programme> {
 
         FXMLLoader fxmlLoader = new FXMLLoader(
             Objects.requireNonNull(
-                getClass().getClassLoader().getResource("dk/sdu/swe/views/programmes/addProgramme.fxml")));
+                getClass().getClassLoader().getResource("dk/sdu/swe/views/programmes/ProgrammeModal.fxml")));
         fxmlLoader.setController(this);
 
         try {
