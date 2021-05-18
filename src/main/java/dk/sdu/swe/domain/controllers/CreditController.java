@@ -25,7 +25,7 @@ public class CreditController {
         return instance;
     }
 
-    public Credit createCredit(String name, Person person, CreditRole creditRole, Programme programme) {
+    public Credit createCredit(Person person, CreditRole creditRole, Programme programme) {
         Credit credit = new Credit(person, creditRole);
         credit.setProgramme(programme);
         programme.getCredits().add(credit);

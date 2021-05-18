@@ -107,13 +107,12 @@ public class CreditModal extends Dialog<Credit> {
 
     @FXML
     private void save(ActionEvent event) {
-        String name = this.name.getText();
         Person person = (Person) this.person.getSelectionModel().getSelectedItem().getUserData();
         CreditRole creditRole = (CreditRole) this.creditRole.getSelectionModel().getSelectedItem().getUserData();
 
         Credit credit;
         if (this.credit == null) {
-            credit = CreditController.getInstance().createCredit(name, person, creditRole, programme);
+            credit = CreditController.getInstance().createCredit(person, creditRole, programme);
         } else {
             this.credit.setPerson(person);
             this.credit.setRole(creditRole);
