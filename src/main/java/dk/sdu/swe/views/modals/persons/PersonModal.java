@@ -4,6 +4,8 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import dk.sdu.swe.domain.controllers.PersonController;
 import dk.sdu.swe.domain.models.Person;
+import dk.sdu.swe.exceptions.PersonCreationException;
+import dk.sdu.swe.views.AlertHelper;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -103,7 +105,12 @@ public class PersonModal extends Dialog<Person> {
 
         Person person = null;
         if (this.person == null) {
-            person = PersonController.getInstance().createPerson(name, image, email, bday);
+            try {
+                person = PersonController.getInstance().createPerson(name, image, email, bday);
+            } catch (PersonCreationException e) {
+                AlertHelper.show(Alert.AlertType.ERROR, getOwner(), "Kunne ikke oprette person", e.getMessage());
+                return;
+            }
         } else {
             this.person.setName(name);
             this.person.setImage(image);

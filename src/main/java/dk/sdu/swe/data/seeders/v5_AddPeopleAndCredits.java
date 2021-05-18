@@ -10,6 +10,7 @@ import dk.sdu.swe.domain.models.Credit;
 import dk.sdu.swe.domain.models.CreditRole;
 import dk.sdu.swe.domain.models.Person;
 import dk.sdu.swe.domain.models.Programme;
+import dk.sdu.swe.exceptions.PersonCreationException;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -56,7 +57,12 @@ public class v5_AddPeopleAndCredits {
             String name = randomPerson.getJSONObject("name").getString("first") + " " + randomPerson.getJSONObject("name").getString("last");
             String img = randomPerson.getJSONObject("picture").getString("large");
 
-            Person person = new Person(name, img, randomPerson.getString("email"), ZonedDateTime.parse(randomPerson.getJSONObject("dob").getString("date")));
+            Person person = null;
+            try {
+                person = new Person(name, img, randomPerson.getString("email"), ZonedDateTime.parse(randomPerson.getJSONObject("dob").getString("date")));
+            } catch (PersonCreationException e) {
+                e.printStackTrace();
+            }
             PersonDAOImpl.getInstance().save(person);
 
             int rnd1 = new Random().nextInt(creditRolesCount);

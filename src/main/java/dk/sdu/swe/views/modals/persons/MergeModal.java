@@ -1,4 +1,4 @@
-package dk.sdu.swe.views.modals.credits;
+package dk.sdu.swe.views.modals.persons;
 
 import com.jfoenix.controls.JFXComboBox;
 import dk.sdu.swe.domain.controllers.CreditController;
@@ -26,30 +26,23 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Objects;
 
-public class CreditModal extends Dialog<Credit> {
+public class MergeModal extends Dialog<Person> {
 
     @FXML
     private JFXComboBox<Label> creditRole, person;
 
     private GaussianBlur backgroundEffect;
 
-    private Credit credit;
-
     @FXML
     private ImageView image;
 
     @FXML
-    private TextField name;
+    private Label name;
 
-    private Programme programme;
+    private Person personObj;
 
-    public CreditModal(Window window, Programme programme) {
-        this(window, null, programme);
-    }
-
-    public CreditModal(Window window, Credit credit, Programme programme) {
-        this.credit = credit;
-        this.programme = programme;
+    public MergeModal(Window window, Person person) {
+        this.personObj = person;
 
         this.setResultConverter(param -> null);
         this.initOwner(window);
@@ -64,7 +57,7 @@ public class CreditModal extends Dialog<Credit> {
         });
         FXMLLoader fxmlLoader = new FXMLLoader(
             Objects.requireNonNull(
-                getClass().getClassLoader().getResource("dk/sdu/swe/views/credits/CreditModal.fxml")));
+                getClass().getClassLoader().getResource("dk/sdu/swe/views/persons/components/MergeModal.fxml")));
         fxmlLoader.setController(this);
 
         try {
@@ -76,29 +69,18 @@ public class CreditModal extends Dialog<Credit> {
 
     @FXML
     private void initialize() {
-        List<CreditRole> creditRoleList = CreditRoleController.getInstance().getAll();
-        creditRoleList.forEach(creditRoleObj -> {
-            Label label = new Label(creditRoleObj.getTitle());
-            label.setUserData(creditRoleObj);
-            creditRole.getItems().add(label);
-            if (credit != null) {
-                if (credit.getRole().getId().equals(creditRoleObj.getId())) {
-                    creditRole.getSelectionModel().select(label);
-                }
-            }
-        });
+        image.setImage(new Image(personObj.getImage()));
+        name.setText(personObj.getName());
 
         List<Person> personList = PersonController.getInstance().getAll();
-        personList.forEach(personObj -> {
+        for (Person personObj : personList) {
+            if (personObj.getId().equals(this.personObj.getId())) {
+                continue;
+            }
             Label label = new Label(personObj.getName());
             label.setUserData(personObj);
             person.getItems().add(label);
-            if (credit != null) {
-                if (credit.getPerson().getId().equals(personObj.getId())) {
-                    person.getSelectionModel().select(label);
-                }
-            }
-        });
+        }
 
     }
 
@@ -111,19 +93,10 @@ public class CreditModal extends Dialog<Credit> {
 
     @FXML
     private void save(ActionEvent event) {
-        Person person = (Person) this.person.getSelectionModel().getSelectedItem().getUserData();
-        CreditRole creditRole = (CreditRole) this.creditRole.getSelectionModel().getSelectedItem().getUserData();
+        Person personToMerge = (Person) this.person.getSelectionModel().getSelectedItem().getUserData();
+        PersonController.getInstance().merge(this.personObj, personToMerge);
 
-        Credit credit;
-        if (this.credit == null) {
-            credit = CreditController.getInstance().createCredit(person, creditRole, programme);
-        } else {
-            this.credit.setPerson(person);
-            this.credit.setRole(creditRole);
-            credit = this.credit;
-        }
-
-        setResult(credit);
+        setResult(personToMerge);
         hide();
     }
 

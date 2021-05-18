@@ -46,6 +46,24 @@ public class PersonDAOImpl extends AbstractDAO<Person> implements IPersonDAO {
     }
 
     @Override
+    public void merge(Person person1, Person person2) {
+        String sql = "UPDATE Credit SET person_id = :person1_id WHERE person_id = :person2_id";
+
+        Session session = DB.openSession();
+        Transaction transaction = session.beginTransaction();
+        try {
+            Query query = session.createQuery(sql);
+            query.setParameter("person1_id", person1.getId());
+            query.setParameter("person2_id", person2.getId());
+            query.executeUpdate();
+            session.delete(person2);
+        } finally {
+            transaction.commit();
+            session.close();
+        }
+    }
+
+    @Override
     public void delete(Person obj) {
         Session session = DB.openSession();
         try {
