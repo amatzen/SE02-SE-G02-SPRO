@@ -105,7 +105,7 @@ public class ProgrammeModal extends Dialog<Programme> {
                 Label label = new Label(categoryObj.getCategoryTitle());
                 label.setUserData(categoryObj);
                 category.getItems().add(label);
-                if (programme != null && programme.getCategories().stream().map(category1 -> category1.getId()).collect(Collectors.toSet()).contains(categoryObj.getId())) {
+                if (programme != null && programme.getCategories().stream().map(Category::getId).collect(Collectors.toSet()).contains(categoryObj.getId())) {
                     category.getSelectionModel().select(label);
                 }
             }
