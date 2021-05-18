@@ -3,9 +3,11 @@ package dk.sdu.swe.views.partials;
 import com.jfoenix.controls.JFXPopup;
 import dk.sdu.swe.domain.controllers.CreditRoleController;
 import dk.sdu.swe.domain.models.CreditRole;
+import dk.sdu.swe.views.modals.credits.CreditRoleModal;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
+import javafx.scene.control.Dialog;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.HBox;
@@ -13,6 +15,7 @@ import java.io.IOException;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
 
 public class CreditGroupListItem extends HBox {
 
@@ -50,13 +53,17 @@ public class CreditGroupListItem extends HBox {
 
     @FXML
     private void initialize() {
-        role.setText(creditRole.getTitle());
-
         PopupListMenu popupList = new PopupListMenu(options);
 
         actionsBtn.setOnMouseClicked(e -> {
             popupList.show(actionsBtn, JFXPopup.PopupVPosition.TOP, JFXPopup.PopupHPosition.RIGHT);
         });
+
+        updateState();
+    }
+
+    private void updateState() {
+        role.setText(creditRole.getTitle());
     }
 
     private void deleteGroup() {
@@ -65,6 +72,12 @@ public class CreditGroupListItem extends HBox {
     }
 
     private void editGroup() {
+        Dialog<CreditRole> creditRoleModal = new CreditRoleModal(getScene().getWindow(), creditRole);
+        Optional<CreditRole> creditRole = creditRoleModal.showAndWait();
+        creditRole.ifPresent(creditRoleObj -> {
+            CreditRoleController.getInstance().update(creditRoleObj);
+            updateState();
+        });
     }
 
 }

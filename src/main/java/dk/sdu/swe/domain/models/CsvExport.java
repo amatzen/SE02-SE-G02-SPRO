@@ -1,6 +1,11 @@
 package dk.sdu.swe.domain.models;
 
+import dk.sdu.swe.domain.controllers.CompanyController;
 import dk.sdu.swe.domain.controllers.CreditController;
+import dk.sdu.swe.domain.controllers.ProgrammeController;
+import org.apache.commons.csv.CSVFormat;
+import org.apache.commons.csv.CSVPrinter;
+
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -9,38 +14,28 @@ import java.util.List;
 
 public class CsvExport {
 
-    // Test data
-    private static List<List<String>> creditList = Arrays.asList(
-        Arrays.asList("Biddragyder 1", "Biddragyder 2", "Biddragyder 3")
-    );
-
-    // Test data
-    private static List<List<String>> programList = Arrays.asList(
-        Arrays.asList("Program 1", "Program 2", "Program 3")
-    );
-
-    // Test data
-    private static List<List<String>> companyList = Arrays.asList(
-        Arrays.asList("Virksomhed 1", "Virksomhed 2", "Virksomhed 3")
-    );
-
     public static void csvExportCredits(File file) {
 
         List<Credit> credits = CreditController.getInstance().getAll();
 
+        String[] headers = {"person", "programme", "role"};
+
         try {
             FileWriter csvWriter = new FileWriter(file);
-            csvWriter.append("Biddragydere");
-            csvWriter.append(",");
-            csvWriter.append("\n");
+            CSVPrinter printer = new CSVPrinter(csvWriter, CSVFormat.DEFAULT
+                .withHeader(headers)
+                .withDelimiter(';'));
 
-            for (List<String> data : creditList) {
-                csvWriter.append(String.join(",", data));
-                csvWriter.append("\n");
+            for (Credit credit : credits) {
+                String person = credit.getPerson().getName();
+                String programme = credit.getProgramme().getTitle();
+                String role = credit.getRole().getTitle();
+
+                printer.printRecord(person, programme, role);
             }
 
-            csvWriter.flush();
-            csvWriter.close();
+            printer.flush();
+            printer.close();
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -50,39 +45,50 @@ public class CsvExport {
 
     public static void csvExportPrograms(File file) {
 
-        try {
-            FileWriter cswWriter = new FileWriter(file);
-            cswWriter.append("Programmer");
-            cswWriter.append(",");
-            cswWriter.append("\n");
+        List<Programme> programmes = ProgrammeController.getInstance().getAll();
 
-            for (List<String> data : programList) {
-                cswWriter.append(String.join(",", data));
-                cswWriter.append("\n");
+        String[] headers = {"title", "prodYear", "channel", "company"};
+
+        try {
+            FileWriter csvWriter = new FileWriter(file);
+            CSVPrinter printer = new CSVPrinter(csvWriter, CSVFormat.DEFAULT
+                .withHeader(headers)
+                .withDelimiter(';'));
+
+            for (Programme programme : programmes) {
+                String title = programme.getTitle();
+                int prodYear = programme.getProdYear();
+                String channel = programme.getChannel() == null ? null : programme.getChannel().getName();
+                String company = programme.getCompany() == null ? null : programme.getCompany().getName();
+                printer.printRecord(title, prodYear, channel, company);
             }
 
-            cswWriter.flush();
-            cswWriter.close();
-
+            printer.flush();
+            printer.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
     public static void csvExportCompanies(File file) {
-        try {
-            FileWriter cswWriter = new FileWriter(file);
-            cswWriter.append("Virksomheder");
-            cswWriter.append(",");
-            cswWriter.append("\n");
+        List<Company> companies = CompanyController.getInstance().getAll();
 
-            for (List<String> data : companyList) {
-                cswWriter.append(String.join(",", data));
-                cswWriter.append("\n");
+        String[] headers = {"name", "address", "nbr"};
+        try {
+            FileWriter csvWriter = new FileWriter(file);
+            CSVPrinter printer = new CSVPrinter(csvWriter, CSVFormat.DEFAULT
+                .withHeader(headers)
+                .withDelimiter(';'));
+
+            for (Company company : companies) {
+                String name = company.getName();
+                String address = company.getCompanyDetails().getAddress();
+                String nbr = company.getCompanyDetails().getNbr();
+                printer.printRecord(name, address, nbr);
             }
 
-            cswWriter.flush();
-            cswWriter.close();
+            printer.flush();
+            printer.close();
 
         } catch (Exception e) {
             e.printStackTrace();
