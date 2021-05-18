@@ -14,6 +14,7 @@ public class SystemAdministrator extends User {
         "programmes.epg",
         "programmes.list",
         "programmes.filter",
+        "programmes.change.no_review",
         "companies",
         "companies.list",
         "companies.list.all",
