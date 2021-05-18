@@ -4,6 +4,7 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXListView;
 import dk.sdu.swe.data.DB;
+import dk.sdu.swe.data.dao.CategoryDAOImpl;
 import dk.sdu.swe.domain.controllers.ChannelController;
 import dk.sdu.swe.domain.controllers.ProgrammeController;
 import dk.sdu.swe.domain.models.Category;
@@ -147,6 +148,8 @@ public class ProgrammesViewController extends BorderPane implements Observer {
 
     @Override
     public void onNotify(String topic, Object payload) {
-        updateData();
+        updateChannels(ChannelController.getInstance().getAll());
+        updateCategories(CategoryDAOImpl.getInstance().getAll());
+        search();
     }
 }
