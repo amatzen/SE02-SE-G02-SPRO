@@ -110,6 +110,10 @@ public class ProgrammeListItem extends AnchorPane {
                 rs_awaiting_img.setImage(getReviewStateButtonImg("rs_awaiting_default"));
                 rs_complete_img.setImage(getReviewStateButtonImg("rs_complete_active"));
             }
+        if (channel != null) {
+            Image logo = new Image(channel.getLogo(), 48, 48, true, false, true);
+            channelsPane.getChildren().clear();
+            channelsPane.getChildren().add(new ImageView(logo));
         }
     }
 
@@ -125,6 +129,7 @@ public class ProgrammeListItem extends AnchorPane {
         Optional<Programme> programme = programmeDialog.showAndWait();
         programme.ifPresent(programmeObj -> {
             ProgrammeController.getInstance().updateProgramme(programmeObj);
+            updateState();
         });
     }
 

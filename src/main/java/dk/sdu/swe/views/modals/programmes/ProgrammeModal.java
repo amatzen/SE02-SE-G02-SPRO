@@ -114,12 +114,14 @@ public class ProgrammeModal extends Dialog<Programme> {
             }
         );
 
-        CompanyController.getInstance().getAll().forEach(x -> {
-            Label l = new Label(x.getName());
-            l.setUserData(x);
-            prodCompany.getItems().add(l);
+        CompanyController.getInstance().getAll().forEach(company -> {
+            Label companyLbl = new Label(company.getName());
+            companyLbl.setUserData(company);
+            prodCompany.getItems().add(companyLbl);
+            if (programme.getCompany() != null && company.getId().equals(programme.getCompany().getId())) {
+                prodCompany.getSelectionModel().select(companyLbl);
+            }
         });
-        prodCompany.getSelectionModel().selectFirst();
     }
 
     @FXML

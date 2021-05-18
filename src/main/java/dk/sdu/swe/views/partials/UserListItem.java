@@ -10,6 +10,7 @@ import dk.sdu.swe.domain.models.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
@@ -25,6 +26,9 @@ public class UserListItem extends HBox {
 
     @FXML
     private CheckBox suspendedCheckbox, administratorCheckbox;
+
+    @FXML
+    private Button deleteBtn;
 
     private User user;
 
@@ -55,6 +59,7 @@ public class UserListItem extends HBox {
 
         if (user instanceof SystemAdministrator) {
             administratorCheckbox.setDisable(true);
+            deleteBtn.setDisable(true);
         }
 
         if (user instanceof CompanyAdministrator) {

@@ -49,6 +49,10 @@ public class CreditListItem extends HBox {
 
     @FXML
     private void initialize() {
+        updateState();
+    }
+
+    private void updateState() {
         Person p = credit.getPerson();
 
         creditImageView.setImage(new Image(p.getImage(), true));
@@ -63,6 +67,7 @@ public class CreditListItem extends HBox {
         Optional<Credit> credit = editDialog.showAndWait();
         credit.ifPresent(creditObj -> {
             CreditController.getInstance().update(creditObj);
+            updateState();
         });
     }
 

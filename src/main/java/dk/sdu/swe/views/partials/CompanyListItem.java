@@ -69,6 +69,10 @@ public class CompanyListItem extends VBox {
             popupList.show(actionsBtn, JFXPopup.PopupVPosition.TOP, JFXPopup.PopupHPosition.RIGHT);
         });
 
+        updateState();
+    }
+
+    private void updateState() {
         companyNameLabel.setText(company.getName());
         if(company.getCompanyDetails().getNbr().isEmpty()) {
             cvrLabel.setText("");
@@ -79,14 +83,12 @@ public class CompanyListItem extends VBox {
     }
 
     private void editCompany() {
-
         Dialog<Company> editCompanyDialog = new CompanyModal(getScene().getWindow(), company);
         Optional<Company> company = editCompanyDialog.showAndWait();
 
-        company.ifPresent(company1 -> {
             CompanyController.getInstance().update(company1);
+            updateState();
         });
-
     }
 
     private void deleteCompany() {
