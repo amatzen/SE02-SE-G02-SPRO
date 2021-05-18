@@ -1,11 +1,12 @@
 package dk.sdu.swe.domain.models;
 
+import dk.sdu.swe.data.dao.CreditDAOImpl;
+import dk.sdu.swe.domain.persistence.ICreditDAO;
 import org.json.JSONObject;
 
 import javax.persistence.*;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
+import java.util.stream.Collectors;
 
 @Entity
 @Table(name = "programme")
@@ -31,11 +32,7 @@ public class Programme {
     @ManyToOne
     private Company company;
 
-    @OneToMany(mappedBy = "programme")
-    private List<Credit> credits;
-
     public Programme(String title, Channel channel, int prodYear, Set<Category> categories, Company company) {
-        this.credits = new LinkedList<>();
         this.title = title;
         this.channel = channel;
         this.prodYear = prodYear;
@@ -51,7 +48,7 @@ public class Programme {
     }
 
     public List<Credit> getCredits() {
-        return credits;
+        return CreditDAOImpl.getInstance().getAll().stream().filter(x -> Objects.equals(x.getProgramme().getId(), this.getId())).collect(Collectors.toList());
     }
 
     public String getTitle() {
@@ -91,17 +88,21 @@ public class Programme {
     }
 
     public void setCredits(List<Credit> credits) {
-        this.credits = credits;
+        ICreditDAO dao = CreditDAOImpl.getInstance();
+        credits.forEach(x -> {
+            x.setProgramme(this);
+            dao.save(x);
+        });
     }
 
     public JSONObject toJson() {
         JSONObject json = new JSONObject();
         json.put("title", this.title);
         json.put("prodYear", this.prodYear);
-        json.put("epgDates", this.epgDates.toArray());
+        //json.put("epgDates", Objects.requireNonNullElse(this.epgDates, new ArrayList<>()).toArray());
         json.put("categories", this.categories.stream().map(Category::getId).toArray());
         json.put("channel", this.channel.getId());
-        json.put("credits", this.credits.toArray());
+        //json.put("credits", this.getCredits().toArray());
         return json;
     }
 

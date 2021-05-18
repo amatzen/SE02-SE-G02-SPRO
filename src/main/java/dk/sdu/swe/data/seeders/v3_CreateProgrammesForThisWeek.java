@@ -165,11 +165,6 @@ public class v3_CreateProgrammesForThisWeek {
             Credit credit = new Credit(person, cr);
             credit.setProgramme(programme);
 
-            List<Credit> credits = new LinkedList<>();
-            credits.add(credit);
-
-            programme.setCredits(credits);
-
             ProgrammeDAOImpl.getInstance().save(programme);
             CreditDAOImpl.getInstance().save(credit);
         });
