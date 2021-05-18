@@ -30,7 +30,7 @@
         </VBox>
     </top>
    <left>
-      <VBox maxHeight="1.7976931348623157E308" prefWidth="248.0" style="-fx-background-color: #37474F;" BorderPane.alignment="CENTER">
+      <VBox maxHeight="1.7976931348623157E308" prefWidth="248.0" style="-fx-background-color: #37474F;" styleClass="admin-navbar" BorderPane.alignment="CENTER">
          <children>
             <HBox prefHeight="65.0" prefWidth="248.0">
                <children>
