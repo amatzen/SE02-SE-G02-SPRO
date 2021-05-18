@@ -121,7 +121,7 @@ public class v3_CreateProgrammesForThisWeek {
                     Programme programme = new Programme(
                         epgObj.getString("title"),
                         channelDAO.getByEpgId(channelObj.getLong("id")).orElse(null),
-                        0,
+                        (int)(Math.random() * ((2021 - 1980) + 1)) + 1980,
                         new HashSet(categories.stream().filter(distinctByKey(Category::getCategoryTitle)).collect(Collectors.toList())),
                         null
                     );
