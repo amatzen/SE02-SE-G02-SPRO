@@ -9,8 +9,11 @@ import dk.sdu.swe.domain.controllers.ProgrammeController;
 import dk.sdu.swe.domain.models.Category;
 import dk.sdu.swe.domain.models.Channel;
 import dk.sdu.swe.domain.models.Programme;
+import dk.sdu.swe.helpers.Observer;
+import dk.sdu.swe.helpers.PubSub;
 import dk.sdu.swe.views.modals.programmes.ProgrammeModal;
 import dk.sdu.swe.views.partials.ProgrammeListItem;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -24,7 +27,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 
-public class ProgrammesViewController extends BorderPane {
+public class ProgrammesViewController extends BorderPane implements Observer {
 
     @FXML
     private JFXListView<ProgrammeListItem> programmesListView;
@@ -61,6 +64,11 @@ public class ProgrammesViewController extends BorderPane {
 
     @FXML
     private void initialize() {
+        PubSub.subscribe("trigger_update:programmes:refresh", this);
+        Platform.runLater(this::updateData);
+    }
+
+    private void updateData() {
         new Thread(() -> {
             updateChannels(ChannelController.getInstance().getAll());
             updateCategories(ProgrammeController.getInstance().getCategories());
@@ -137,4 +145,8 @@ public class ProgrammesViewController extends BorderPane {
         updateProgrammes(ProgrammeController.getInstance().getAll());
     }
 
+    @Override
+    public void onNotify(String topic, Object payload) {
+        updateData();
+    }
 }

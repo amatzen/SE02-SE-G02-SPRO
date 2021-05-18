@@ -3,6 +3,7 @@ package dk.sdu.swe.views.partials;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPopup;
 import dk.sdu.swe.data.dao.CompanyDAOImpl;
+import dk.sdu.swe.domain.controllers.CompanyController;
 import dk.sdu.swe.domain.models.Company;
 import dk.sdu.swe.views.modals.companies.CompanyModal;
 import dk.sdu.swe.views.modals.companies.UserAdministrationModal;
@@ -83,7 +84,7 @@ public class CompanyListItem extends VBox {
         Optional<Company> company = editCompanyDialog.showAndWait();
 
         company.ifPresent(company1 -> {
-            CompanyDAOImpl.getInstance().update(company1);
+            CompanyController.getInstance().update(company1);
         });
 
     }

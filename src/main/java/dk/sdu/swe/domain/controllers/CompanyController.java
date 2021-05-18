@@ -4,6 +4,7 @@ import dk.sdu.swe.data.dao.CompanyDAOImpl;
 import dk.sdu.swe.domain.models.Company;
 import dk.sdu.swe.domain.models.CompanyDetails;
 import dk.sdu.swe.domain.persistence.ICompanyDAO;
+import dk.sdu.swe.helpers.PubSub;
 
 import java.util.Comparator;
 import java.util.List;
@@ -62,11 +63,13 @@ public class CompanyController {
         CompanyDetails companyDetails = new CompanyDetails(address, null, cvr);
         Company companyObj = new Company(company, null, companyDetails, null);
         companyDAO.save(companyObj);
+        PubSub.publish("trigger_update:companies:refresh", true);
         return companyObj;
     }
 
     public void update(Company company) {
         companyDAO.update(company);
+        PubSub.publish("trigger_update:companies:refresh", true);
     }
 
     public Company get(Long id) {

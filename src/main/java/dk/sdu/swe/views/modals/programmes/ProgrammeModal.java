@@ -10,6 +10,7 @@ import dk.sdu.swe.domain.controllers.CompanyController;
 import dk.sdu.swe.domain.controllers.ProgrammeController;
 import dk.sdu.swe.domain.models.*;
 import dk.sdu.swe.domain.persistence.ICreditDAO;
+import dk.sdu.swe.helpers.PubSub;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -166,6 +167,7 @@ public class ProgrammeModal extends Dialog<Programme> {
         }
 
         setResult(this.programme);
+        PubSub.publish("trigger_update:programmes:refresh", true);
         hide();
     }
 
