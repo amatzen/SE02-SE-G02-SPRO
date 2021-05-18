@@ -2,17 +2,12 @@ package dk.sdu.swe.views.modals.credits;
 
 import dk.sdu.swe.data.dao.UserDAOImpl;
 import dk.sdu.swe.domain.controllers.CreditRoleController;
-import dk.sdu.swe.domain.controllers.UserController;
 import dk.sdu.swe.domain.models.Company;
 import dk.sdu.swe.domain.models.CreditRole;
-import dk.sdu.swe.domain.models.User;
 import dk.sdu.swe.domain.persistence.IUserDAO;
-import dk.sdu.swe.exceptions.UserCreationException;
-import dk.sdu.swe.views.AlertHelper;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Dialog;
 import javafx.scene.control.TextField;
@@ -24,7 +19,7 @@ import javafx.stage.Window;
 import java.io.IOException;
 import java.util.Objects;
 
-public class CreditRoleModal extends Dialog<CreditRole> {
+public class CreditGroupModal extends Dialog<CreditRole> {
 
     private IUserDAO userDAO;
 
@@ -37,11 +32,11 @@ public class CreditRoleModal extends Dialog<CreditRole> {
 
     private GaussianBlur backgroundEffect;
 
-    public CreditRoleModal(Window window) {
+    public CreditGroupModal(Window window) {
         this(window, null);
     }
 
-    public CreditRoleModal(Window window, CreditRole creditRole) {
+    public CreditGroupModal(Window window, CreditRole creditRole) {
         userDAO = UserDAOImpl.getInstance();
         this.creditRoleObj = creditRole;
 
@@ -59,7 +54,7 @@ public class CreditRoleModal extends Dialog<CreditRole> {
 
         FXMLLoader fxmlLoader = new FXMLLoader(
             Objects.requireNonNull(
-                getClass().getClassLoader().getResource("dk/sdu/swe/views/admin/components/CreditRoleModal.fxml")));
+                getClass().getClassLoader().getResource("dk/sdu/swe/views/admin/components/CreditGroupModal.fxml")));
         fxmlLoader.setController(this);
 
         try {
