@@ -1,5 +1,6 @@
 package dk.sdu.swe.domain.models;
 
+import com.google.gson.annotations.Expose;
 import org.json.JSONObject;
 
 import javax.persistence.*;

@@ -6,11 +6,12 @@ import javax.persistence.Id;
 
 @Entity
 public class CreditRole {
-    String title;
 
     @Id
     @GeneratedValue
     private Integer id;
+
+    private String title;
 
     public CreditRole() {}
 
