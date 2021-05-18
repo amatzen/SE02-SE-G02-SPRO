@@ -27,4 +27,7 @@ public class CreditRoleController {
         return creditRoleDAO.getAll();
     }
 
+    public void delete(CreditRole creditRole) {
+        creditRoleDAO.delete(creditRole);
+    }
 }

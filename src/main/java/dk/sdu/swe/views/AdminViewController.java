@@ -56,7 +56,7 @@ public class AdminViewController extends BorderPane implements Observer {
             router.goTo(UserControlController.class);
         }
         else if (source==creditGroupBtn){
-            router.goTo(CreditGroupController.class);
+            router.goTo(CreditGroupViewController.class);
 
         } else if (source==dataExportBtn){
             router.goTo(DataExportController.class);

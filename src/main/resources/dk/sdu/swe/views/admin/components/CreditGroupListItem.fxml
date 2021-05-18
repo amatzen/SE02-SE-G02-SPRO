@@ -19,7 +19,7 @@
         </HBox>
         <HBox alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS">
             <children>
-                <JFXButton fx:id="actionBtn21" alignment="CENTER" style="-fx-background-color: transparent;" text="Handlinger" textFill="#ff9800">
+                <JFXButton fx:id="actionsBtn" alignment="CENTER" style="-fx-background-color: transparent;" text="Handlinger" textFill="#ff9800">
                     <font>
                         <Font name="System Bold" size="14.0" />
                     </font>
