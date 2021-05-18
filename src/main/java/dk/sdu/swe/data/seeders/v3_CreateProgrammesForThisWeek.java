@@ -7,6 +7,7 @@ import dk.sdu.swe.domain.controllers.PersonController;
 import dk.sdu.swe.domain.models.*;
 import dk.sdu.swe.domain.persistence.ICategoryDAO;
 import dk.sdu.swe.domain.persistence.IChannelDAO;
+import dk.sdu.swe.domain.persistence.ICompanyDAO;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.json.JSONArray;
@@ -116,12 +117,13 @@ public class v3_CreateProgrammesForThisWeek {
                     }
 
                     IChannelDAO channelDAO = ChannelDAOImpl.getInstance();
+                    ICompanyDAO companyDAO = CompanyDAOImpl.getInstance();
                     Programme programme = new Programme(
                         epgObj.getString("title"),
                         channelDAO.getByEpgId(channelObj.getLong("id")).orElse(null),
                         (int)(Math.random() * ((2021 - 1980) + 1)) + 1980,
                         new HashSet(categories.stream().filter(distinctByKey(Category::getCategoryTitle)).collect(Collectors.toList())),
-                        null
+                        companyDAO.getById(2l).orElse(null)
                     );
 
                     addedProgrammes.add(programme);

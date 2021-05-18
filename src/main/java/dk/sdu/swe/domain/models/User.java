@@ -129,7 +129,6 @@ public class User implements IUser {
     }
 
     public List<Programme> getProgrammes() {
-
         return null;
     }
 }

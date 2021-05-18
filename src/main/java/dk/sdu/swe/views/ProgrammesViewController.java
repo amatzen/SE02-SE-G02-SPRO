@@ -65,7 +65,7 @@ public class ProgrammesViewController extends BorderPane {
 
     @FXML
     private void initialize() {
-        Platform.runLater(this::updateData);
+        updateData();
     }
 
     private void updateData() {
