@@ -49,6 +49,10 @@ public class ProgrammeListItem extends AnchorPane {
 
     @FXML
     private void initialize() {
+        updateState();
+    }
+
+    private void updateState() {
         nameLbl.setText(programme.getTitle());
         categoryLbl.setText(programme.getCategories().stream()
             .map(Category::getCategoryTitle)
@@ -59,6 +63,7 @@ public class ProgrammeListItem extends AnchorPane {
 
         if (channel != null) {
             Image logo = new Image(channel.getLogo(), 48, 48, true, false, true);
+            channelsPane.getChildren().clear();
             channelsPane.getChildren().add(new ImageView(logo));
         }
     }
@@ -75,6 +80,7 @@ public class ProgrammeListItem extends AnchorPane {
         Optional<Programme> programme = programmeDialog.showAndWait();
         programme.ifPresent(programmeObj -> {
             ProgrammeController.getInstance().updateProgramme(programmeObj);
+            updateState();
         });
     }
 

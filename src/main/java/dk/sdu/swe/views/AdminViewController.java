@@ -59,7 +59,7 @@ public class AdminViewController extends BorderPane implements Observer {
             router.goTo(CreditGroupViewController.class);
 
         } else if (source==dataExportBtn){
-            router.goTo(DataExportController.class);
+            router.goTo(DataExportViewController.class);
 
         }
 
@@ -76,9 +76,9 @@ public class AdminViewController extends BorderPane implements Observer {
         }
         switch (routeName) {
             case "ReviewViewController" -> this.reviewsBtn.getStyleClass().add("indicator");
-            case "UserControlController" -> this.userControlBtn.getStyleClass().add("indicator");
-            case "CreditGroupController" -> this.creditGroupBtn.getStyleClass().add("indicator");
-            case "DataExportController" -> this.dataExportBtn.getStyleClass().add("indicator");
+            case "UserControlViewController" -> this.userControlBtn.getStyleClass().add("indicator");
+            case "CreditGroupViewController" -> this.creditGroupBtn.getStyleClass().add("indicator");
+            case "DataExportViewController" -> this.dataExportBtn.getStyleClass().add("indicator");
 
         }
     }

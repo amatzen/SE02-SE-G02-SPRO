@@ -7,9 +7,9 @@ import javafx.scene.layout.VBox;
 import java.io.IOException;
 import java.util.Objects;
 
-public class DataExportController extends VBox {
+public class DataExportViewController extends VBox {
 
-    public DataExportController() {
+    public DataExportViewController() {
         FXMLLoader fxmlLoader = new FXMLLoader(
             Objects.requireNonNull(
                 getClass().getClassLoader().getResource("dk/sdu/swe/views/admin/components/DataExportView.fxml")));
