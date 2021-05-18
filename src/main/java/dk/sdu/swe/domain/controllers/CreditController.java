@@ -8,6 +8,8 @@ import dk.sdu.swe.domain.models.Programme;
 import dk.sdu.swe.domain.persistence.ICreditDAO;
 import dk.sdu.swe.domain.persistence.ICreditRoleDAO;
 
+import java.util.List;
+
 public class CreditController {
 
     private ICreditDAO creditDAO;
@@ -43,5 +45,9 @@ public class CreditController {
         programme.getCredits().remove(credit);
         creditDAO.delete(credit);
         ProgrammeController.getInstance().updateProgramme(programme);
+    }
+
+    public List<Credit> getAll() {
+        return creditDAO.getAll();
     }
 }
