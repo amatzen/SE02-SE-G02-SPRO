@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<fx:root maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="328.0" prefWidth="708.0" spacing="20.0" type="VBox" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="608.0" prefWidth="1015.0" spacing="20.0" type="VBox" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Label text="Brugerstyring">
          <font>
@@ -56,6 +56,18 @@
                                </Label>
                            </children>
                        </HBox>
+                  <HBox alignment="CENTER_LEFT" layoutX="309.0" layoutY="10.0" prefHeight="25.0" prefWidth="239.0">
+                     <children>
+                        <Label maxWidth="1.7976931348623157E308" prefHeight="25.0" text="Virksomhed">
+                           <HBox.margin>
+                              <Insets left="23.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
                    </children>
                    <VBox.margin>
                        <Insets bottom="3.0" />
