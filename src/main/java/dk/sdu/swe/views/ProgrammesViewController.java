@@ -148,8 +148,13 @@ public class ProgrammesViewController extends BorderPane implements Observer {
 
     @Override
     public void onNotify(String topic, Object payload) {
-        updateChannels(ChannelController.getInstance().getAll());
-        updateCategories(CategoryDAOImpl.getInstance().getAll());
-        search();
+        try {
+            Thread.sleep(400);
+            updateChannels(ChannelController.getInstance().getAll());
+            updateCategories(CategoryDAOImpl.getInstance().getAll());
+            search();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }

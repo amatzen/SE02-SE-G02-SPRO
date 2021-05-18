@@ -114,6 +114,22 @@ public class ProgrammeListItem extends AnchorPane {
         }
     }
 
+    private void updateState() {
+        nameLbl.setText(programme.getTitle());
+        categoryLbl.setText(programme.getCategories().stream()
+            .map(Category::getCategoryTitle)
+            .collect(Collectors.joining(", ")));
+        releaseYearLbl.setText(String.valueOf(programme.getProdYear()));
+
+        Channel channel = programme.getChannel();
+
+        if (channel != null) {
+            Image logo = new Image(channel.getLogo(), 48, 48, true, false, true);
+            channelsPane.getChildren().clear();
+            channelsPane.getChildren().add(new ImageView(logo));
+        }
+    }
+
     @FXML
     private void showCredits() {
         Dialog creditListModal = new CreditListModal(getScene().getWindow(), programme);
@@ -126,6 +142,7 @@ public class ProgrammeListItem extends AnchorPane {
         Optional<Programme> programme = programmeDialog.showAndWait();
         programme.ifPresent(programmeObj -> {
             ProgrammeController.getInstance().updateProgramme(programmeObj);
+            updateState();
         });
     }
 
