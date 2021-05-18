@@ -28,7 +28,7 @@
             <children>
                 <HBox prefHeight="100.0" prefWidth="722.0">
                     <children>
-                        <Label text="Redigér kreditteringsgruppe">
+                        <Label text="Redigér krediteringsgruppe">
                             <font>
                                 <Font size="24.0" />
                             </font>

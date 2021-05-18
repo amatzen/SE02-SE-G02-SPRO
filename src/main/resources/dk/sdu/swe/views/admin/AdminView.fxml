@@ -64,7 +64,7 @@
             </HBox>
             <HBox prefHeight="65.0" prefWidth="248.0">
                <children>
-                  <JFXButton fx:id="creditGroupBtn" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0" onAction="#handleSelectedSection" prefHeight="65.0" prefWidth="248.0" text="Kreditteringsgrupper" textFill="WHITE">
+                  <JFXButton fx:id="creditGroupBtn" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0" onAction="#handleSelectedSection" prefHeight="65.0" prefWidth="248.0" text="Krediteringsgrupper" textFill="WHITE">
                      <font>
                         <Font size="16.0" />
                      </font>

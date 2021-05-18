@@ -116,7 +116,9 @@ public class ProgrammeModal extends Dialog<Programme> {
             Label companyLbl = new Label(company.getName());
             companyLbl.setUserData(company);
             prodCompany.getItems().add(companyLbl);
-            if (programme.getCompany() != null && company.getId().equals(programme.getCompany().getId())) {
+            if (programme != null &&
+                programme.getCompany() != null
+                && company.getId().equals(programme.getCompany().getId())) {
                 prodCompany.getSelectionModel().select(companyLbl);
             }
         });
@@ -173,7 +175,7 @@ public class ProgrammeModal extends Dialog<Programme> {
 
             ReviewDAOImpl.getInstance().save(new Review(programme, original, updated));
         } else {
-            Programme programme = null;
+            Programme programme;
             if (this.programme == null) {
                 programme = ProgrammeController.getInstance()
                     .createProgramme(title, prodYear, channel, Set.of(category), company);
@@ -185,9 +187,9 @@ public class ProgrammeModal extends Dialog<Programme> {
                 this.programme.setChannel(channel);
                 programme = this.programme;
             }
+            setResult(programme);
         }
 
-        setResult(this.programme);
         PubSub.publish("trigger_update:programmes:refresh", true);
         hide();
     }
