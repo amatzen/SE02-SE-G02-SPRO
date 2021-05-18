@@ -21,7 +21,7 @@ public abstract class AbstractDAO<T> implements IDAO<T> {
     }
 
     @Override
-    public List getAll() {
+    public List<T> getAll() {
         Session session = DB.openSession();
 
         List<T> res = null;
