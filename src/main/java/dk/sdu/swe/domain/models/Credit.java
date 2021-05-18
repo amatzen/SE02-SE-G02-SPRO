@@ -1,5 +1,7 @@
 package dk.sdu.swe.domain.models;
 
+import org.json.JSONObject;
+
 import javax.persistence.*;
 
 @Entity
@@ -9,12 +11,6 @@ public class Credit {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    @Column(name = "is_custom_role", nullable = false)
-    private boolean customRole;
-
-    @Column(name = "custom_role_text", nullable = true)
-    private String customRoleText;
 
     @ManyToOne(optional = true)
     private CreditRole role;
@@ -30,6 +26,27 @@ public class Credit {
     public Credit(Person person, CreditRole creditRole) {
         this.person = person;
         this.role = creditRole;
+    }
+
+    @Override
+    public String toString() {
+        return "Credit{" +
+            "id=" + id +
+            ", role=" + role +
+            ", person=" + person +
+            ", programme=" + programme +
+            '}';
+    }
+
+    public JSONObject toJson() {
+        JSONObject a = new JSONObject();
+
+        a.put("id", id);
+        a.put("role", new JSONObject().put("id", getRole().getId()).put("title", getRole().getTitle()));
+        a.put("person", new JSONObject().put("id", getPerson().getId()).put("name", getPerson().getName()));
+        a.put("programme", programme.getId());
+
+        return a;
     }
 
     public Credit() {}

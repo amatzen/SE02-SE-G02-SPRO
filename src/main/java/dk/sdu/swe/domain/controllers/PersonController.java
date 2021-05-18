@@ -3,6 +3,7 @@ package dk.sdu.swe.domain.controllers;
 import dk.sdu.swe.data.dao.PersonDAOImpl;
 import dk.sdu.swe.domain.models.Person;
 import dk.sdu.swe.domain.persistence.IPersonDAO;
+import dk.sdu.swe.helpers.PubSub;
 
 import java.time.ZonedDateTime;
 import java.util.Comparator;
@@ -47,16 +48,19 @@ public class PersonController {
         Person person = new Person(name, image, bday);
         person.putContactDetail("email", email);
         personDAO.save(person);
+        PubSub.publish("trigger_update:person:refresh", true);
         return person;
     }
 
     public Person createPerson(String name, String image, ZonedDateTime bday) {
         Person person = new Person(name, image, bday);
         personDAO.save(person);
+        PubSub.publish("trigger_update:person:refresh", true);
         return person;
     }
 
     public void update(Person personObj) {
         personDAO.update(personObj);
+        PubSub.publish("trigger_update:person:refresh", true);
     }
 }

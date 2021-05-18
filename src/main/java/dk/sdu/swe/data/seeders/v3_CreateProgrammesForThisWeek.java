@@ -121,7 +121,7 @@ public class v3_CreateProgrammesForThisWeek {
                     Programme programme = new Programme(
                         epgObj.getString("title"),
                         channelDAO.getByEpgId(channelObj.getLong("id")).orElse(null),
-                        0,
+                        (int)(Math.random() * ((2021 - 1980) + 1)) + 1980,
                         new HashSet(categories.stream().filter(distinctByKey(Category::getCategoryTitle)).collect(Collectors.toList())),
                         null
                     );
@@ -133,7 +133,7 @@ public class v3_CreateProgrammesForThisWeek {
         }
         session1.close();
 
-        HttpURLConnection conn1 = (HttpURLConnection) new URL("https://randomuser.me/api/?results=200").openConnection();
+        HttpURLConnection conn1 = (HttpURLConnection) new URL("https://randomuser.me/api/?results=800").openConnection();
         conn1.setRequestMethod("GET");
         conn1.setRequestProperty("Accept", "application/json");
         conn1.setRequestProperty("Accept-Charset", "utf-8");
@@ -150,25 +150,21 @@ public class v3_CreateProgrammesForThisWeek {
 
         JSONObject randomPersons = new JSONObject(content1.toString());
         JSONArray randomPersonsResults = randomPersons.getJSONArray("results");
+        System.out.println(randomPersonsResults.length());
 
         addedProgrammes.forEach(programme -> {
             int rnd = new Random().nextInt((randomPersonsResults.length() -1) + 1);
             JSONObject randomPerson = randomPersonsResults.getJSONObject(rnd);
             String name = randomPerson.getJSONObject("name").getString("first") + " " + randomPerson.getJSONObject("name").getString("last");
-            String img = randomPerson.getJSONObject("picture").getString("medium");
+            String img = randomPerson.getJSONObject("picture").getString("large");
 
-            Person person = new Person(name, img, randomPerson.getString("email"), ZonedDateTime.now(ZoneId.of("UTC")));
+            Person person = new Person(name, img, randomPerson.getString("email"), ZonedDateTime.parse(randomPerson.getJSONObject("dob").getString("date")));
             PersonDAOImpl.getInstance().save(person);
 
             int rnd1 = new Random().nextInt(creditRolesCount);
             CreditRole cr = creditRoles.get(rnd1);
             Credit credit = new Credit(person, cr);
             credit.setProgramme(programme);
-
-            List<Credit> credits = new LinkedList<>();
-            credits.add(credit);
-
-            programme.setCredits(credits);
 
             ProgrammeDAOImpl.getInstance().save(programme);
             CreditDAOImpl.getInstance().save(credit);

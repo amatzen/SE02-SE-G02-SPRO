@@ -9,6 +9,7 @@ import java.time.ZoneId;
 import java.time.ZonedDateTime;
 
 @Entity
+@Table(name = "reviews")
 public class Review {
     @Id
     @GeneratedValue
@@ -23,18 +24,24 @@ public class Review {
     private ZonedDateTime submission_time;
 
     @Convert(converter = JSONConverter.class)
-    private JSONObject newProgramme;
+    private JSONObject original;
+
+    @Convert(converter = JSONConverter.class)
+    private JSONObject updated;
 
     private ReviewState state;
 
     public Review() {
     }
 
-    public Review(Programme programme, JSONObject newProgramme) {
+    public Review(Programme programme, JSONObject original, JSONObject updated) {
         this.programme = programme;
+
+        this.original = original;
+        this.updated = updated;
+
         this.user = AuthController.getInstance().getUser();
         this.submission_time = ZonedDateTime.now(ZoneId.of("UTC"));
-        this.newProgramme = newProgramme;
 
         this.state = ReviewState.AWAITING;
     }
@@ -47,16 +54,20 @@ public class Review {
         return state;
     }
 
-    public Programme getProgramme() {
-        return programme;
-    }
-
     public ZonedDateTime getSubmission_time() {
         return submission_time;
     }
 
-    public JSONObject getNewProgramme() {
-        return newProgramme;
+    public JSONObject getOriginal() {
+        return original;
+    }
+
+    public JSONObject getUpdated() {
+        return updated;
+    }
+
+    public Programme getProgramme() {
+        return programme;
     }
 
     public User getUser() {
@@ -68,8 +79,3 @@ public class Review {
     }
 }
 
-enum ReviewState {
-    AWAITING,
-    ACCEPTED,
-    DENIED
-}
