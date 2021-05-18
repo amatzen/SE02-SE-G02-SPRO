@@ -17,7 +17,7 @@
             <Insets />
          </VBox.margin>
       </Label>
-      <HBox>
+      <HBox spacing="20.0">
          <children>
             <JFXCheckBox fx:id="creditData" checkedColor="#ff9800" text="Krediteringer">
                <HBox.margin>
@@ -26,12 +26,12 @@
             </JFXCheckBox>
             <JFXCheckBox fx:id="programData" checkedColor="#ff9800" layoutX="60.0" layoutY="10.0" text="Programmer">
                <HBox.margin>
-                  <Insets left="20.0" />
+                  <Insets />
                </HBox.margin>
             </JFXCheckBox>
             <JFXCheckBox fx:id="companyData" checkedColor="#ff9800" layoutX="409.0" layoutY="10.0" text="Virksomheder">
                <HBox.margin>
-                  <Insets left="20.0" />
+                  <Insets />
                </HBox.margin>
             </JFXCheckBox>
          </children>
