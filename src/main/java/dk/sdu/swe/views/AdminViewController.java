@@ -75,11 +75,10 @@ public class AdminViewController extends BorderPane implements Observer {
             jfxButton.getStyleClass().remove("indicator");
         }
         switch (routeName) {
-            case "ReviewViewController" -> this.reviewsBtn.getStyleClass().add("indicator");
             case "UserControlViewController" -> this.userControlBtn.getStyleClass().add("indicator");
             case "CreditGroupViewController" -> this.creditGroupBtn.getStyleClass().add("indicator");
             case "DataExportViewController" -> this.dataExportBtn.getStyleClass().add("indicator");
-
+            default -> this.reviewsBtn.getStyleClass().add("indicator");
         }
     }
 
