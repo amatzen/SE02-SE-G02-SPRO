@@ -4,6 +4,8 @@ import com.jfoenix.controls.JFXListView;
 import com.jfoenix.controls.JFXTextField;
 import dk.sdu.swe.domain.controllers.CompanyController;
 import dk.sdu.swe.domain.models.Company;
+import dk.sdu.swe.helpers.Observer;
+import dk.sdu.swe.helpers.PubSub;
 import dk.sdu.swe.views.modals.companies.CompanyModal;
 import dk.sdu.swe.views.partials.CompanyListItem;
 import javafx.application.Platform;
@@ -18,7 +20,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 
-public class CompanyViewController extends BorderPane {
+public class CompanyViewController extends BorderPane implements Observer {
 
     @FXML
     private JFXListView companyListView;
@@ -42,6 +44,7 @@ public class CompanyViewController extends BorderPane {
 
     @FXML
     private void initialize() {
+        PubSub.subscribe("trigger_update:companies:refresh", this);
         Platform.runLater(() -> {
             new Thread(() -> {
                 List<Company> companies = CompanyController.getInstance().getAll();
@@ -77,6 +80,11 @@ public class CompanyViewController extends BorderPane {
     @FXML
     private void resetSearch(ActionEvent event) {
         searchField.clear();
+        updateCompanies(CompanyController.getInstance().getAll());
+    }
+
+    @Override
+    public void onNotify(String topic, Object payload) {
         updateCompanies(CompanyController.getInstance().getAll());
     }
 }

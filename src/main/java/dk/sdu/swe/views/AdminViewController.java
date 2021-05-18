@@ -48,19 +48,14 @@ public class AdminViewController extends BorderPane implements Observer {
 
         Object source = e.getSource();
 
-        if (source==reviewsBtn){
-            router.goTo(ReviewViewController.class);
-
-        }
-        else if (source==userControlBtn){
-            router.goTo(UserControlViewController.class);
-        }
-        else if (source==creditGroupBtn){
-            router.goTo(CreditGroupViewController.class);
-
-        } else if (source==dataExportBtn){
+        if (dataExportBtn.equals(source)) {
             router.goTo(DataExportViewController.class);
-
+        } else if (userControlBtn.equals(source)) {
+            router.goTo(UserControlViewController.class);
+        } else if (creditGroupBtn.equals(source)) {
+            router.goTo(CreditGroupViewController.class);
+        } else {
+            router.goTo(ReviewViewController.class);
         }
 
     }
@@ -75,11 +70,10 @@ public class AdminViewController extends BorderPane implements Observer {
             jfxButton.getStyleClass().remove("indicator");
         }
         switch (routeName) {
-            case "ReviewViewController" -> this.reviewsBtn.getStyleClass().add("indicator");
             case "UserControlViewController" -> this.userControlBtn.getStyleClass().add("indicator");
             case "CreditGroupViewController" -> this.creditGroupBtn.getStyleClass().add("indicator");
             case "DataExportViewController" -> this.dataExportBtn.getStyleClass().add("indicator");
-
+            default -> this.reviewsBtn.getStyleClass().add("indicator");
         }
     }
 

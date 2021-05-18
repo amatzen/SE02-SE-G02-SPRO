@@ -1,12 +1,18 @@
-package dk.sdu.swe.views.modals.companies;
+package dk.sdu.swe.views.modals.credits;
 
-import com.jfoenix.controls.JFXButton;
-import dk.sdu.swe.domain.controllers.CompanyController;
+import dk.sdu.swe.data.dao.UserDAOImpl;
+import dk.sdu.swe.domain.controllers.CreditRoleController;
+import dk.sdu.swe.domain.controllers.UserController;
 import dk.sdu.swe.domain.models.Company;
-import dk.sdu.swe.helpers.PubSub;
+import dk.sdu.swe.domain.models.CreditRole;
+import dk.sdu.swe.domain.models.User;
+import dk.sdu.swe.domain.persistence.IUserDAO;
+import dk.sdu.swe.exceptions.UserCreationException;
+import dk.sdu.swe.views.AlertHelper;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Dialog;
 import javafx.scene.control.TextField;
@@ -18,32 +24,26 @@ import javafx.stage.Window;
 import java.io.IOException;
 import java.util.Objects;
 
-public class CompanyModal extends Dialog<Company> {
+public class CreditRoleModal extends Dialog<CreditRole> {
 
-   @FXML
-    private TextField companyName;
-
-    @FXML
-    private TextField cvrNumber;
-
-    @FXML
-    private TextField address;
-
-    @FXML
-    private JFXButton editBtn;
-
-    @FXML
-    private JFXButton saveBtn;
-    private GaussianBlur backgroundEffect;
+    private IUserDAO userDAO;
 
     private Company company;
 
-    public CompanyModal(Window window) {
+    @FXML
+    private TextField creditRole;
+
+    private CreditRole creditRoleObj;
+
+    private GaussianBlur backgroundEffect;
+
+    public CreditRoleModal(Window window) {
         this(window, null);
     }
 
-    public CompanyModal(Window window, Company company) {
-        this.company = company;
+    public CreditRoleModal(Window window, CreditRole creditRole) {
+        userDAO = UserDAOImpl.getInstance();
+        this.creditRoleObj = creditRole;
 
         this.setResultConverter(param -> null);
         this.initOwner(window);
@@ -59,7 +59,7 @@ public class CompanyModal extends Dialog<Company> {
 
         FXMLLoader fxmlLoader = new FXMLLoader(
             Objects.requireNonNull(
-                getClass().getClassLoader().getResource("dk/sdu/swe/views/companies/components/CompanyModal.fxml")));
+                getClass().getClassLoader().getResource("dk/sdu/swe/views/credits/CreditRoleModal.fxml")));
         fxmlLoader.setController(this);
 
         try {
@@ -71,10 +71,8 @@ public class CompanyModal extends Dialog<Company> {
 
     @FXML
     private void initialize() {
-        if (this.company != null) {
-            companyName.setText(company.getName());
-            cvrNumber.setText(company.getCompanyDetails().getNbr());
-            address.setText(company.getCompanyDetails().getAddress());
+        if (this.creditRoleObj != null) {
+            creditRole.setText(this.creditRoleObj.getTitle());
         }
     }
 
@@ -87,19 +85,16 @@ public class CompanyModal extends Dialog<Company> {
 
     @FXML
     private void save(ActionEvent event) {
-        String company = this.companyName.getText();
-        String cvr = this.cvrNumber.getText();
-        String address = this.address.getText();
-        Company companyObj;
-        if (this.company == null) {
-            companyObj = CompanyController.getInstance().createCompany(company, cvr, address);
+        String role = this.creditRole.getText();
+
+        CreditRole creditRole = null;
+        if (this.creditRoleObj == null) {
+             creditRole = CreditRoleController.getInstance().createRole(role);
         } else {
-            this.company.setName(company);
-            this.company.getCompanyDetails().setNbr(cvr);
-            this.company.getCompanyDetails().setAddress(address);
-            companyObj = this.company;
+            this.creditRoleObj.setTitle(role);
+            creditRole = this.creditRoleObj;
         }
-        setResult(companyObj);
+        setResult(creditRole);
         hide();
     }
 

@@ -88,9 +88,5 @@
                 </VBox>
             </children>
         </HBox>
-        <Separator prefWidth="200.0">
-         <VBox.margin>
-            <Insets top="5.0" />
-         </VBox.margin></Separator>
     </children>
 </fx:root>

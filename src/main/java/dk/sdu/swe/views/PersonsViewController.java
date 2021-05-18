@@ -5,6 +5,8 @@ import com.jfoenix.controls.JFXListView;
 import com.jfoenix.controls.JFXTextField;
 import dk.sdu.swe.domain.controllers.PersonController;
 import dk.sdu.swe.domain.models.Person;
+import dk.sdu.swe.helpers.Observer;
+import dk.sdu.swe.helpers.PubSub;
 import dk.sdu.swe.views.modals.persons.PersonModal;
 import dk.sdu.swe.views.partials.PersonListItem;
 import javafx.application.Platform;
@@ -20,7 +22,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 
-public class PersonsViewController extends VBox {
+public class PersonsViewController extends VBox implements Observer {
 
     @FXML
     private JFXListView peopleListView;
@@ -47,6 +49,7 @@ public class PersonsViewController extends VBox {
 
     @FXML
     private void initialize() {
+        PubSub.subscribe("trigger_update:person:refresh", this);
         Platform.runLater(() -> {
             new Thread(() -> {
                 List<Person> people = PersonController.getInstance().getAll();
@@ -83,4 +86,8 @@ public class PersonsViewController extends VBox {
         updatePeople(PersonController.getInstance().getAll());
     }
 
+    @Override
+    public void onNotify(String topic, Object payload) {
+        updatePeople(PersonController.getInstance().getAll());
+    }
 }

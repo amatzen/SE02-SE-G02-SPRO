@@ -1,16 +1,16 @@
 package dk.sdu.swe.domain.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class CreditRole {
-    String title;
 
     @Id
     @GeneratedValue
     private Integer id;
+
+    @Column(unique = true)
+    private String title;
 
     public CreditRole() {}
 

@@ -57,7 +57,9 @@ public class DataExportViewController extends VBox {
             alert.setContentText("Vælg venligst eksport data");
             alert.showAndWait();
         }
+        FileChooser fileChooser = new FileChooser();
         if (csvBtn.isSelected() && creditData.isSelected()) {
+            fileChooser.setTitle("");
             CsvExport.csvExportCredits(new FileChooser().showSaveDialog(getScene().getWindow()));
         }
         if (csvBtn.isSelected() && programData.isSelected()) {

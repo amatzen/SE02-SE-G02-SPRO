@@ -2,6 +2,7 @@ package dk.sdu.swe.views;
 
 import dk.sdu.swe.domain.controllers.UserController;
 import dk.sdu.swe.domain.models.User;
+import dk.sdu.swe.views.partials.UserControlListItem;
 import dk.sdu.swe.views.partials.UserListItem;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -16,7 +17,7 @@ import java.util.Objects;
 public class UserControlViewController extends VBox {
 
     @FXML
-    private ListView<UserListItem> userList;
+    private ListView<UserControlListItem> userList;
 
     public UserControlViewController() {
         FXMLLoader fxmlLoader = new FXMLLoader(
@@ -36,7 +37,7 @@ public class UserControlViewController extends VBox {
     private void initialize() {
         List<User> users = UserController.getInstance().getAll();
         for (User user : users) {
-            userList.getItems().add(new UserListItem(user, userList));
+            userList.getItems().add(new UserControlListItem(user, userList));
         }
     }
 

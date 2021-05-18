@@ -3,6 +3,7 @@ package dk.sdu.swe.views.partials;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPopup;
 import dk.sdu.swe.data.dao.CompanyDAOImpl;
+import dk.sdu.swe.domain.controllers.CompanyController;
 import dk.sdu.swe.domain.models.Company;
 import dk.sdu.swe.views.modals.companies.CompanyModal;
 import dk.sdu.swe.views.modals.companies.UserAdministrationModal;
@@ -61,6 +62,7 @@ public class CompanyListItem extends VBox {
 
     @FXML
     private void initialize() {
+        if(company.getUsers().size() > 0) options.remove("Slet");
         PopupListMenu popupList = new PopupListMenu(options);
 
         actionsBtn.setOnMouseClicked(e -> {
@@ -72,15 +74,20 @@ public class CompanyListItem extends VBox {
 
     private void updateState() {
         companyNameLabel.setText(company.getName());
-        cvrLabel.setText("CVR: " + company.getCompanyDetails().getNbr());
+        if(company.getCompanyDetails().getNbr().isEmpty()) {
+            cvrLabel.setText("");
+        } else {
+            cvrLabel.setText("CVR: " + company.getCompanyDetails().getNbr());
+
+        }
     }
 
     private void editCompany() {
         Dialog<Company> editCompanyDialog = new CompanyModal(getScene().getWindow(), company);
         Optional<Company> company = editCompanyDialog.showAndWait();
 
-        company.ifPresent(companyObj -> {
-            CompanyDAOImpl.getInstance().update(companyObj);
+        company.ifPresent(company1 -> {
+            CompanyController.getInstance().update(company1);
             updateState();
         });
     }
