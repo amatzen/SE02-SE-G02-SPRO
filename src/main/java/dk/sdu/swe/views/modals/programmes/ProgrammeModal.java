@@ -2,6 +2,7 @@ package dk.sdu.swe.views.modals.programmes;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
+import dk.sdu.swe.data.dao.CompanyDAOImpl;
 import dk.sdu.swe.data.dao.CreditDAOImpl;
 import dk.sdu.swe.data.dao.ReviewDAOImpl;
 import dk.sdu.swe.domain.controllers.AuthController;
@@ -137,7 +138,10 @@ public class ProgrammeModal extends Dialog<Programme> {
         int prodYear = Integer.parseInt(this.prodYear.getText());
         Channel channel = (Channel) this.channel.getSelectedToggle().getUserData();
         Category category = (Category) this.category.getSelectionModel().getSelectedItem().getUserData();
-        Company company = (Company) this.prodCompany.getSelectionModel().getSelectedItem().getUserData();
+        Company company = CompanyDAOImpl.getInstance().getById(1L).orElse(null);
+        if(Objects.nonNull(this.prodCompany.getSelectionModel().getSelectedItem().getUserData())) {
+            company = (Company) this.prodCompany.getSelectionModel().getSelectedItem().getUserData();
+        }
 
         if ( !AuthController.getInstance().getUser().hasPermission("programmes.change.no_review") ) {
             Programme newProgramme = programme.clone();
