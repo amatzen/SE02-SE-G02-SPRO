@@ -1,10 +1,8 @@
 package dk.sdu.swe.views.modals.companies;
 
-
 import com.jfoenix.controls.JFXButton;
 import dk.sdu.swe.domain.controllers.CompanyController;
 import dk.sdu.swe.domain.models.Company;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -19,9 +17,9 @@ import javafx.stage.Window;
 import java.io.IOException;
 import java.util.Objects;
 
-public class EditCompanyDialog extends Dialog<Company> {
+public class CompanyModal extends Dialog<Company> {
 
-    @FXML
+   @FXML
     private TextField companyName;
 
     @FXML
@@ -31,18 +29,19 @@ public class EditCompanyDialog extends Dialog<Company> {
     private TextField address;
 
     @FXML
+    private JFXButton editBtn;
+
+    @FXML
     private JFXButton saveBtn;
-
-    @FXML
-    private JFXButton closeBtn;
-
-    @FXML
-    private Company company;
-
-    @FXML
     private GaussianBlur backgroundEffect;
 
-    public EditCompanyDialog(Window window, Company company) {
+    private Company company;
+
+    public CompanyModal(Window window) {
+        this(window, null);
+    }
+
+    public CompanyModal(Window window, Company company) {
         this.company = company;
 
         this.setResultConverter(param -> null);
@@ -59,7 +58,7 @@ public class EditCompanyDialog extends Dialog<Company> {
 
         FXMLLoader fxmlLoader = new FXMLLoader(
             Objects.requireNonNull(
-                getClass().getClassLoader().getResource("dk/sdu/swe/ui/companies/components/EditCompanyModal.fxml")));
+                getClass().getClassLoader().getResource("dk/sdu/swe/views/companies/components/CompanyModal.fxml")));
         fxmlLoader.setController(this);
 
         try {
@@ -71,9 +70,11 @@ public class EditCompanyDialog extends Dialog<Company> {
 
     @FXML
     private void initialize() {
-        companyName.setText(company.getName());
-        cvrNumber.setText(company.getCompanyDetails().getNbr());
-        address.setText(company.getCompanyDetails().getAddress());
+        if (this.company != null) {
+            companyName.setText(company.getName());
+            cvrNumber.setText(company.getCompanyDetails().getNbr());
+            address.setText(company.getCompanyDetails().getAddress());
+        }
     }
 
     @FXML
@@ -88,12 +89,17 @@ public class EditCompanyDialog extends Dialog<Company> {
         String company = this.companyName.getText();
         String cvr = this.cvrNumber.getText();
         String address = this.address.getText();
-        this.company.setName(company);
-        this.company.getCompanyDetails().setNbr(cvr);
-        this.company.getCompanyDetails().setAddress(address);
-        setResult(this.company);
+        Company companyObj;
+        if (this.company == null) {
+            companyObj = CompanyController.getInstance().createCompany(company, cvr, address);
+        } else {
+            this.company.setName(company);
+            this.company.getCompanyDetails().setNbr(cvr);
+            this.company.getCompanyDetails().setAddress(address);
+            companyObj = this.company;
+        }
+        setResult(companyObj);
         hide();
     }
-
 
 }

@@ -43,7 +43,7 @@ public class Navbar extends VBox implements Observer {
 
         FXMLLoader fxmlLoader = new FXMLLoader(
             Objects.requireNonNull(
-                getClass().getClassLoader().getResource("dk/sdu/swe/ui/Navbar.fxml")));
+                getClass().getClassLoader().getResource("dk/sdu/swe/views/Navbar.fxml")));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
 

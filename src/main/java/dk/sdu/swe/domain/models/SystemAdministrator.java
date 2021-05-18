@@ -19,6 +19,7 @@ public class SystemAdministrator extends User {
         "companies.list",
         "companies.list.all",
         "companies.add",
+        "companies.user.promote",
         "people",
         "admin",
         "admin.reviews",

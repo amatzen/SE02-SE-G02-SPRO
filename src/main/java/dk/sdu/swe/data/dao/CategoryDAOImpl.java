@@ -12,7 +12,7 @@ public class CategoryDAOImpl extends AbstractDAO<Category> implements ICategoryD
 
     private static CategoryDAOImpl instance;
 
-    public static CategoryDAOImpl getInstance() {
+    public synchronized static CategoryDAOImpl getInstance() {
         if (instance == null) {
             instance = new CategoryDAOImpl();
         }

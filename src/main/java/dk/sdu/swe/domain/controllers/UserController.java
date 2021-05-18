@@ -10,6 +10,9 @@ import dk.sdu.swe.exceptions.UserCreationException;
 import dk.sdu.swe.helpers.Utilities;
 import dk.sdu.swe.provider.EmailProvider;
 
+import java.util.Comparator;
+import java.util.List;
+
 public class UserController {
 
     private IUserDAO userDAO;
@@ -52,6 +55,17 @@ public class UserController {
         } catch (Exception e) {
             throw new UserCreationException("Could not create user.", e);
         }
+    }
+
+    public void delete(User user) {
+        user.getCompany().getUsers().remove(user);
+        userDAO.delete(user);
+    }
+
+    public List<User> getAll() {
+        List<User> users = userDAO.getAll();
+        users.sort(Comparator.comparing(User::getUsername));
+        return  users;
     }
 
 /*

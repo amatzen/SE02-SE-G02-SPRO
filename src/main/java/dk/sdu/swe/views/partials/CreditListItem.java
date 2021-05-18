@@ -3,13 +3,12 @@ package dk.sdu.swe.views.partials;
 import dk.sdu.swe.domain.controllers.CreditController;
 import dk.sdu.swe.domain.models.Credit;
 import dk.sdu.swe.domain.models.Person;
-import dk.sdu.swe.views.modals.CreditModal;
+import dk.sdu.swe.views.modals.credits.CreditModal;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Dialog;
 import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.FlowPane;
@@ -37,7 +36,7 @@ public class CreditListItem extends HBox {
 
         FXMLLoader fxmlLoader = new FXMLLoader(
             Objects.requireNonNull(
-                getClass().getClassLoader().getResource("dk/sdu/swe/ui/credits/components/CreditListItem.fxml")));
+                getClass().getClassLoader().getResource("dk/sdu/swe/views/credits/components/CreditListItem.fxml")));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
 

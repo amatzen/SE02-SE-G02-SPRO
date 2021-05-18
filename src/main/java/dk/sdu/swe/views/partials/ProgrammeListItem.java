@@ -6,6 +6,10 @@ import dk.sdu.swe.data.dao.ReviewDAOImpl;
 import dk.sdu.swe.domain.controllers.ProgrammeController;
 import dk.sdu.swe.domain.models.*;
 import dk.sdu.swe.views.modals.CreditListModal;
+import dk.sdu.swe.domain.models.Category;
+import dk.sdu.swe.domain.models.Channel;
+import dk.sdu.swe.domain.models.Programme;
+import dk.sdu.swe.views.modals.credits.CreditListModal;
 import dk.sdu.swe.views.modals.programmes.ProgrammeModal;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
@@ -49,7 +53,7 @@ public class ProgrammeListItem extends AnchorPane {
 
         FXMLLoader fxmlLoader = new FXMLLoader(
             Objects.requireNonNull(
-                getClass().getClassLoader().getResource("dk/sdu/swe/ui/programmes/ProgrammeListItem.fxml")));
+                getClass().getClassLoader().getResource("dk/sdu/swe/views/programmes/ProgrammeListItem.fxml")));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
 

@@ -1,7 +1,6 @@
-package dk.sdu.swe.views.modals;
+package dk.sdu.swe.views.modals.credits;
 
 import com.jfoenix.controls.JFXButton;
-import dk.sdu.swe.domain.controllers.CreditController;
 import dk.sdu.swe.domain.models.Category;
 import dk.sdu.swe.domain.models.Credit;
 import dk.sdu.swe.domain.models.Programme;
@@ -56,7 +55,7 @@ public class CreditListModal extends Dialog<Boolean> {
 
         FXMLLoader fxmlLoader = new FXMLLoader(
             Objects.requireNonNull(
-                getClass().getClassLoader().getResource("dk/sdu/swe/ui/credits/CreditList.fxml")));
+                getClass().getClassLoader().getResource("dk/sdu/swe/views/credits/CreditList.fxml")));
         fxmlLoader.setController(this);
 
         try {
