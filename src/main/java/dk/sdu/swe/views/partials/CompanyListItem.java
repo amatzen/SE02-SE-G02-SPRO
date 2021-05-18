@@ -86,6 +86,7 @@ public class CompanyListItem extends VBox {
         Dialog<Company> editCompanyDialog = new CompanyModal(getScene().getWindow(), company);
         Optional<Company> company = editCompanyDialog.showAndWait();
 
+        company.ifPresent(company1 -> {
             CompanyController.getInstance().update(company1);
             updateState();
         });

@@ -83,6 +83,7 @@ public class ProgrammeListItem extends AnchorPane {
 
             if (channel != null) {
                 Image logo = new Image(channel.getLogo(), 48, 48, true, false, true);
+                channelsPane.getChildren().clear();
                 channelsPane.getChildren().add(new ImageView(logo));
             }
         });
@@ -96,24 +97,20 @@ public class ProgrammeListItem extends AnchorPane {
     private void setReviewState(ReviewState rs) {
         switch (rs) {
             case DRAFT -> {
-                   rs_draft_img.setImage(getReviewStateButtonImg("rs_draft_active"));
+                rs_draft_img.setImage(getReviewStateButtonImg("rs_draft_active"));
                 rs_awaiting_img.setImage(getReviewStateButtonImg("rs_awaiting_default"));
                 rs_complete_img.setImage(getReviewStateButtonImg("rs_complete_default"));
             }
             case AWAITING -> {
-                   rs_draft_img.setImage(getReviewStateButtonImg("rs_draft_default"));
+                rs_draft_img.setImage(getReviewStateButtonImg("rs_draft_default"));
                 rs_awaiting_img.setImage(getReviewStateButtonImg("rs_awaiting_active"));
                 rs_complete_img.setImage(getReviewStateButtonImg("rs_complete_default"));
             }
             default -> {
-                   rs_draft_img.setImage(getReviewStateButtonImg("rs_draft_default"));
+                rs_draft_img.setImage(getReviewStateButtonImg("rs_draft_default"));
                 rs_awaiting_img.setImage(getReviewStateButtonImg("rs_awaiting_default"));
                 rs_complete_img.setImage(getReviewStateButtonImg("rs_complete_active"));
             }
-        if (channel != null) {
-            Image logo = new Image(channel.getLogo(), 48, 48, true, false, true);
-            channelsPane.getChildren().clear();
-            channelsPane.getChildren().add(new ImageView(logo));
         }
     }
 
@@ -129,7 +126,6 @@ public class ProgrammeListItem extends AnchorPane {
         Optional<Programme> programme = programmeDialog.showAndWait();
         programme.ifPresent(programmeObj -> {
             ProgrammeController.getInstance().updateProgramme(programmeObj);
-            updateState();
         });
     }
 
