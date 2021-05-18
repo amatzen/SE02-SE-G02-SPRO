@@ -2,6 +2,7 @@ package dk.sdu.swe.domain.models;
 
 import dk.sdu.swe.data.dao.CreditDAOImpl;
 import dk.sdu.swe.domain.persistence.ICreditDAO;
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import javax.persistence.*;
@@ -48,7 +49,16 @@ public class Programme {
     }
 
     public List<Credit> getCredits() {
-        return CreditDAOImpl.getInstance().getAll().stream().filter(x -> Objects.equals(x.getProgramme().getId(), this.getId())).collect(Collectors.toList());
+        return CreditDAOImpl.getInstance().getAll()
+            .stream()
+            .filter(x -> Objects.equals(x.getProgramme().getId(), this.getId()))
+            .collect(Collectors.toList());
+    }
+
+    public JSONArray getCreditsJson() {
+        JSONArray a = new JSONArray();
+        getCredits().forEach(x -> a.put(x.toJson()));
+        return a;
     }
 
     public String getTitle() {
@@ -87,14 +97,6 @@ public class Programme {
         this.channel = channel;
     }
 
-    public void setCredits(List<Credit> credits) {
-        ICreditDAO dao = CreditDAOImpl.getInstance();
-        credits.forEach(x -> {
-            x.setProgramme(this);
-            dao.save(x);
-        });
-    }
-
     public JSONObject toJson() {
         JSONObject json = new JSONObject();
         json.put("title", this.title);
@@ -102,7 +104,7 @@ public class Programme {
         //json.put("epgDates", Objects.requireNonNullElse(this.epgDates, new ArrayList<>()).toArray());
         json.put("categories", this.categories.stream().map(Category::getId).toArray());
         json.put("channel", this.channel.getId());
-        //json.put("credits", this.getCredits().toArray());
+        json.put("credits", this.getCreditsJson());
         return json;
     }
 
@@ -110,7 +112,8 @@ public class Programme {
         try {
             return (Programme) super.clone();
         } catch (CloneNotSupportedException e) {
-            return new Programme(this.title, this.channel, this.prodYear, this.categories, this.company);
+            Programme x = new Programme(this.title, this.channel, this.prodYear, this.categories, this.company);
+            return x;
         }
     }
 

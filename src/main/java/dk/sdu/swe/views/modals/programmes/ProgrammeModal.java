@@ -2,14 +2,14 @@ package dk.sdu.swe.views.modals.programmes;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
+import dk.sdu.swe.data.dao.CreditDAOImpl;
+import dk.sdu.swe.data.dao.ReviewDAOImpl;
 import dk.sdu.swe.domain.controllers.AuthController;
 import dk.sdu.swe.domain.controllers.ChannelController;
 import dk.sdu.swe.domain.controllers.CompanyController;
 import dk.sdu.swe.domain.controllers.ProgrammeController;
-import dk.sdu.swe.domain.models.Category;
-import dk.sdu.swe.domain.models.Channel;
-import dk.sdu.swe.domain.models.Company;
-import dk.sdu.swe.domain.models.Programme;
+import dk.sdu.swe.domain.models.*;
+import dk.sdu.swe.domain.persistence.ICreditDAO;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -18,8 +18,10 @@ import javafx.scene.effect.GaussianBlur;
 import javafx.stage.Modality;
 import javafx.stage.StageStyle;
 import javafx.stage.Window;
+import org.json.JSONObject;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.Set;
@@ -133,19 +135,37 @@ public class ProgrammeModal extends Dialog<Programme> {
         Channel channel = (Channel) this.channel.getSelectedToggle().getUserData();
         Category category = (Category) this.category.getSelectionModel().getSelectedItem().getUserData();
         Company company = (Company) this.prodCompany.getSelectionModel().getSelectedItem().getUserData();
-        Programme programme = null;
-        if (this.programme == null) {
-            programme = ProgrammeController.getInstance()
-                .createProgramme(title, prodYear, channel, Set.of(category), company);
+
+        if ( !AuthController.getInstance().getUser().hasPermission("programmes.change.no_review") ) {
+            Programme newProgramme = programme.clone();
+
+            newProgramme.setTitle(title);
+            newProgramme.setCategories(Set.of(category));
+            newProgramme.setProdYear(prodYear);
+            newProgramme.setCompany(company);
+            newProgramme.setChannel(channel);
+
+            JSONObject original = programme.toJson();
+            JSONObject updated = newProgramme.toJson();
+            updated.put("credits", programme.getCreditsJson());
+
+            ReviewDAOImpl.getInstance().save(new Review(programme, original, updated));
         } else {
-            this.programme.setTitle(title);
-            this.programme.setCategories(Set.of(category));
-            this.programme.setProdYear(prodYear);
-            this.programme.setCompany(company);
-            this.programme.setChannel(channel);
-            programme = this.programme;
+            Programme programme = null;
+            if (this.programme == null) {
+                programme = ProgrammeController.getInstance()
+                    .createProgramme(title, prodYear, channel, Set.of(category), company);
+            } else {
+                this.programme.setTitle(title);
+                this.programme.setCategories(Set.of(category));
+                this.programme.setProdYear(prodYear);
+                this.programme.setCompany(company);
+                this.programme.setChannel(channel);
+                programme = this.programme;
+            }
         }
-        setResult(programme);
+
+        setResult(this.programme);
         hide();
     }
 
