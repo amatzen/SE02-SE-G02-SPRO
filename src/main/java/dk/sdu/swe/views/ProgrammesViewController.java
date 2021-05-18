@@ -28,7 +28,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 
-public class ProgrammesViewController extends BorderPane implements Observer {
+public class ProgrammesViewController extends BorderPane {
 
     @FXML
     private JFXListView<ProgrammeListItem> programmesListView;
@@ -65,7 +65,6 @@ public class ProgrammesViewController extends BorderPane implements Observer {
 
     @FXML
     private void initialize() {
-        PubSub.subscribe("trigger_update:programmes:refresh", this);
         Platform.runLater(this::updateData);
     }
 
@@ -146,15 +145,4 @@ public class ProgrammesViewController extends BorderPane implements Observer {
         updateProgrammes(ProgrammeController.getInstance().getAll());
     }
 
-    @Override
-    public void onNotify(String topic, Object payload) {
-        try {
-            Thread.sleep(400);
-            updateChannels(ChannelController.getInstance().getAll());
-            updateCategories(CategoryDAOImpl.getInstance().getAll());
-            search();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-    }
 }
