@@ -132,7 +132,6 @@ public class ProgrammeModal extends Dialog<Programme> {
     @FXML
     private void save(ActionEvent event) {
         String title = this.title.getText();
-
         int prodYear = 0;
         try {
              prodYear = Integer.parseInt(this.prodYear.getText());
