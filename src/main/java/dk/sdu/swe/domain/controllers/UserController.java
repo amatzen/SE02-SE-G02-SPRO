@@ -3,6 +3,7 @@ package dk.sdu.swe.domain.controllers;
 import com.sendgrid.Content;
 import com.sendgrid.Email;
 import dk.sdu.swe.data.dao.UserDAOImpl;
+import dk.sdu.swe.domain.controllers.contracts.IUserController;
 import dk.sdu.swe.domain.models.Company;
 import dk.sdu.swe.domain.models.User;
 import dk.sdu.swe.domain.persistence.IUserDAO;
@@ -13,23 +14,24 @@ import dk.sdu.swe.provider.EmailProvider;
 import java.util.Comparator;
 import java.util.List;
 
-public class UserController {
+public class UserController implements IUserController {
 
     private IUserDAO userDAO;
 
-    private static UserController UserControllerInstance;
+    private static IUserController userControllerInstance;
 
     private UserController() {
         userDAO = UserDAOImpl.getInstance();
     }
 
-    public static synchronized UserController getInstance() {
-        if (UserControllerInstance == null) {
-            UserControllerInstance = new UserController();
+    public static synchronized IUserController getInstance() {
+        if (userControllerInstance == null) {
+            userControllerInstance = new UserController();
         }
-        return UserControllerInstance;
+        return userControllerInstance;
     }
 
+    @Override
     public User createUser(String username, String email, String name, Company company) throws UserCreationException {
         String pw = Utilities.createRandomPassword(12);
 
@@ -57,11 +59,13 @@ public class UserController {
         }
     }
 
+    @Override
     public void delete(User user) {
         user.getCompany().getUsers().remove(user);
         userDAO.delete(user);
     }
 
+    @Override
     public List<User> getAll() {
         List<User> users = userDAO.getAll();
         users.sort(Comparator.comparing(User::getUsername));
