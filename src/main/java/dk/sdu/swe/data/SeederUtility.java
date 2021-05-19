@@ -33,6 +33,8 @@ public class SeederUtility {
             v4_AddGamerIArbejdstoej.run();
             v5_AddPeopleAndCredits.run();
 
+            runSQLScript("v6_AddEPGProgrammesToProgrammes.sql");
+
         }
         catch (Exception e) {
             e.printStackTrace();
