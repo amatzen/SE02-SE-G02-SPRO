@@ -1,18 +1,13 @@
 package dk.sdu.swe;
 
-import dk.sdu.swe.data.DB;
-import dk.sdu.swe.data.SeederUtility;
-import dk.sdu.swe.domain.models.User;
-import dk.sdu.swe.helpers.EnvironmentSelector;
-import dk.sdu.swe.helpers.Environment;
-import dk.sdu.swe.views.AuthViewController;
-import dk.sdu.swe.views.Router;
+import dk.sdu.swe.persistence.SeederUtility;
+import dk.sdu.swe.cross_cutting.helpers.EnvironmentSelector;
+import dk.sdu.swe.cross_cutting.helpers.Environment;
+import dk.sdu.swe.presentation.controllers.AuthViewController;
+import dk.sdu.swe.presentation.Router;
 import javafx.scene.Scene;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
 
 
 public class Application extends javafx.application.Application {

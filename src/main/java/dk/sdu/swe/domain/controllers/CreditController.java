@@ -1,6 +1,6 @@
 package dk.sdu.swe.domain.controllers;
 
-import dk.sdu.swe.data.dao.CreditDAOImpl;
+import dk.sdu.swe.persistence.dao.CreditDAOImpl;
 import dk.sdu.swe.domain.controllers.contracts.ICreditController;
 import dk.sdu.swe.domain.models.Credit;
 import dk.sdu.swe.domain.models.CreditRole;

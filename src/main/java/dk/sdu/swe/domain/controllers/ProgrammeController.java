@@ -1,8 +1,7 @@
 package dk.sdu.swe.domain.controllers;
 
-import dk.sdu.swe.data.dao.CategoryDAOImpl;
-import dk.sdu.swe.data.dao.CompanyDAOImpl;
-import dk.sdu.swe.data.dao.ProgrammeDAOImpl;
+import dk.sdu.swe.persistence.dao.CategoryDAOImpl;
+import dk.sdu.swe.persistence.dao.ProgrammeDAOImpl;
 import dk.sdu.swe.domain.controllers.contracts.IProgrammeController;
 import dk.sdu.swe.domain.models.Category;
 import dk.sdu.swe.domain.models.Channel;

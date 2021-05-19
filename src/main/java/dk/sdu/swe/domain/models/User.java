@@ -1,8 +1,8 @@
 package dk.sdu.swe.domain.models;
 
 import at.favre.lib.crypto.bcrypt.BCrypt;
-import dk.sdu.swe.data.converters.NameConverter;
-import dk.sdu.swe.exceptions.UserCreationException;
+import dk.sdu.swe.persistence.converters.NameConverter;
+import dk.sdu.swe.cross_cutting.exceptions.UserCreationException;
 import org.hibernate.annotations.NaturalId;
 
 import javax.persistence.*;
