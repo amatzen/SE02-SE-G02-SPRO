@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<fx:root id="loginRoot" style="-fx-background-color: #455A64;" stylesheets="@../../styles/background-image.css" type="HBox" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <HBox prefWidth="734.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <children>
+                <VBox alignment="CENTER" prefWidth="400.0" spacing="40.0" HBox.hgrow="ALWAYS">
+                    <children>
+                        <VBox fx:id="main" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="100.0" spacing="20.0" style="-fx-background-color: #fff;">
+                            <children>
+                                <VBox spacing="10.0">
+                                    <children>
+                                        <Text fill="#455a64" strokeType="OUTSIDE" strokeWidth="0.0" text="CrMS" wrappingWidth="106.7294921875">
+                                            <font>
+                                                <Font name="Roboto" size="39.0" />
+                                            </font>
+                                        </Text>
+                                        <Text fill="#666666" strokeType="OUTSIDE" strokeWidth="0.0" text="Log ind">
+                                            <font>
+                                                <Font name="Roboto" size="18.0" />
+                                            </font>
+                                        </Text>
+                                    </children>
+                                    <VBox.margin>
+                                        <Insets bottom="30.0" />
+                                    </VBox.margin>
+                                </VBox>
+                                <VBox spacing="30.0">
+                                    <children>
+                              <StackPane prefHeight="150.0" prefWidth="200.0">
+                                 <children>
+                                              <JFXTextField fx:id="textField" labelFloat="true" onAction="#onEnter" prefHeight="40.0" prefWidth="325.0" promptText="Brugernavn">
+                                                  <font>
+                                                      <Font size="13.0" />
+                                                  </font>
+                                              </JFXTextField>
+                                 </children>
+                              </StackPane>
+                                        <StackPane>
+                                            <children>
+                                                <StackPane>
+                                                    <children>
+                                                        <JFXPasswordField fx:id="passwordField" labelFloat="true" onAction="#onEnter" prefHeight="40.0" prefWidth="328.0" promptText="Adgangskode">
+                                                            <font>
+                                                                <Font name="Roboto" size="13.0" />
+                                                            </font>
+                                                        </JFXPasswordField>
+                                                        <JFXTextField fx:id="passwordField1" labelFloat="true" layoutX="10.0" layoutY="10.0" onAction="#onEnter" prefHeight="40.0" prefWidth="328.0" promptText="Adgangskode">
+                                                            <font>
+                                                                <Font name="Roboto" size="13.0" />
+                                                            </font>
+                                                        </JFXTextField>
+                                                    </children>
+                                                </StackPane>
+                                                <JFXButton fx:id="hs_button" alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" maxWidth="40.0" prefHeight="32.0" prefWidth="37.0" text=" " StackPane.alignment="CENTER_RIGHT">
+                                                    <graphic>
+                                                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                                            <image>
+                                                                <Image url="@../../images/materialbutton.png" />
+                                                            </image>
+                                                        </ImageView>
+                                                    </graphic>
+                                                </JFXButton>
+                                            </children>
+                                            <VBox.margin>
+                                                <Insets />
+                                            </VBox.margin>
+                                        </StackPane>
+                                    </children>
+                                    <VBox.margin>
+                                        <Insets bottom="20.0" />
+                                    </VBox.margin>
+                                </VBox>
+                                <VBox alignment="CENTER">
+                                    <children>
+                                        <JFXButton fx:id="button" maxWidth="1.7976931348623157E308" minHeight="49.0" prefHeight="49.0" prefWidth="328.0" style="-fx-background-color: #FF9800;" text="LOG IND" VBox.vgrow="ALWAYS" />
+                                        <Text fill="#666666" strokeType="OUTSIDE" strokeWidth="0.0" text="Kontakt din administrator ved glemt kode" VBox.vgrow="ALWAYS">
+                                            <font>
+                                                <Font name="Roboto" size="13.0" />
+                                            </font>
+                                            <VBox.margin>
+                                                <Insets top="10.0" />
+                                            </VBox.margin>
+                                        </Text>
+                                    </children>
+                                    <VBox.margin>
+                                        <Insets top="15.0" />
+                                    </VBox.margin>
+                                </VBox>
+                                <Label fx:id="showPswd" prefHeight="17.0" prefWidth="92.0" text=" " textFill="#616161f0">
+                                    <font>
+                                        <Font size="11.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                            <padding>
+                                <Insets bottom="20.0" left="30.0" right="30.0" top="40.0" />
+                            </padding>
+                        </VBox>
+                        <HBox maxHeight="80.0" maxWidth="1.7976931348623157E308" prefHeight="60.0" prefWidth="484.0" style="-fx-background-color: #fff;">
+                            <children>
+                        <Label maxHeight="1.7976931348623157E308" text="Vælg miljø:" HBox.hgrow="ALWAYS">
+                           <HBox.margin>
+                              <Insets right="20.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <JFXComboBox fx:id="environmentSelector" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS" />
+                            </children>
+                            <padding>
+                                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                            </padding>
+                        </HBox>
+                    </children>
+                </VBox>
+            </children>
+         <padding>
+            <Insets bottom="120.0" left="180.0" right="180.0" top="120.0" />
+         </padding>
+         <HBox.margin>
+            <Insets />
+         </HBox.margin>
+        </HBox>
+    </children>
+</fx:root>

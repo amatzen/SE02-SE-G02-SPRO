@@ -2,14 +2,14 @@ package dk.sdu.swe.domain.controllers;
 
 import com.sendgrid.Content;
 import com.sendgrid.Email;
-import dk.sdu.swe.data.dao.UserDAOImpl;
+import dk.sdu.swe.persistence.dao.UserDAOImpl;
 import dk.sdu.swe.domain.controllers.contracts.IUserController;
 import dk.sdu.swe.domain.models.Company;
 import dk.sdu.swe.domain.models.User;
 import dk.sdu.swe.domain.persistence.IUserDAO;
-import dk.sdu.swe.exceptions.UserCreationException;
-import dk.sdu.swe.helpers.Utilities;
-import dk.sdu.swe.provider.EmailProvider;
+import dk.sdu.swe.cross_cutting.exceptions.UserCreationException;
+import dk.sdu.swe.cross_cutting.helpers.Utilities;
+import dk.sdu.swe.cross_cutting.provider.EmailProvider;
 
 import java.util.Comparator;
 import java.util.List;

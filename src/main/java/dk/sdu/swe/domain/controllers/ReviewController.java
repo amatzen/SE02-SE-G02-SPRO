@@ -1,6 +1,6 @@
 package dk.sdu.swe.domain.controllers;
 
-import dk.sdu.swe.data.dao.ReviewDAOImpl;
+import dk.sdu.swe.persistence.dao.ReviewDAOImpl;
 import dk.sdu.swe.domain.controllers.contracts.IReviewController;
 import dk.sdu.swe.domain.models.Review;
 import dk.sdu.swe.domain.persistence.IReviewDAO;

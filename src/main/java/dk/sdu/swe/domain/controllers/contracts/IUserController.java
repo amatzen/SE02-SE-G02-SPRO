@@ -2,7 +2,7 @@ package dk.sdu.swe.domain.controllers.contracts;
 
 import dk.sdu.swe.domain.models.Company;
 import dk.sdu.swe.domain.models.User;
-import dk.sdu.swe.exceptions.UserCreationException;
+import dk.sdu.swe.cross_cutting.exceptions.UserCreationException;
 
 import java.util.List;
 

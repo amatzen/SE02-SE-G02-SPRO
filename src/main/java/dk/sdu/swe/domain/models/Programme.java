@@ -1,7 +1,6 @@
 package dk.sdu.swe.domain.models;
 
-import dk.sdu.swe.data.dao.CreditDAOImpl;
-import dk.sdu.swe.domain.persistence.ICreditDAO;
+import dk.sdu.swe.persistence.dao.CreditDAOImpl;
 import org.json.JSONArray;
 import org.json.JSONObject;
 

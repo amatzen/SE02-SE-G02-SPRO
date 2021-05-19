@@ -1,11 +1,11 @@
 package dk.sdu.swe.domain.controllers;
 
-import dk.sdu.swe.data.dao.CompanyDAOImpl;
+import dk.sdu.swe.persistence.dao.CompanyDAOImpl;
 import dk.sdu.swe.domain.controllers.contracts.ICompanyController;
 import dk.sdu.swe.domain.models.Company;
 import dk.sdu.swe.domain.models.CompanyDetails;
 import dk.sdu.swe.domain.persistence.ICompanyDAO;
-import dk.sdu.swe.helpers.PubSub;
+import dk.sdu.swe.cross_cutting.helpers.PubSub;
 
 import java.util.Comparator;
 import java.util.List;
