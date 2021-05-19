@@ -1,9 +1,16 @@
 package dk.sdu.swe.data;
 
 import dk.sdu.swe.data.seeders.*;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+import org.hibernate.query.NativeQuery;
 
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.stream.Collectors;
 
 public class SeederUtility {
     public static void run() {
@@ -26,10 +33,26 @@ public class SeederUtility {
             v4_AddGamerIArbejdstoej.run();
             v5_AddPeopleAndCredits.run();
 
+            runSQLScript("v6_AddEPGProgrammesToProgrammes.sql");
+
         }
         catch (Exception e) {
             e.printStackTrace();
             System.out.println("Failed one or more seeders!");
         }
+    }
+
+    public static void runSQLScript(String sqlFile) {
+        Session s = DB.openSession();
+        InputStream is = SeederUtility.class.getResourceAsStream("./seeders/"+sqlFile);
+        String rs = new BufferedReader(new InputStreamReader(is)).lines().collect(Collectors.joining(" "));
+
+        Transaction transaction = s.beginTransaction();
+
+        NativeQuery sqlQuery = s.createSQLQuery(rs);
+        sqlQuery.executeUpdate();
+
+        transaction.commit();
+        s.close();
     }
 }
