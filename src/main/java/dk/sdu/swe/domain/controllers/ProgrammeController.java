@@ -3,6 +3,7 @@ package dk.sdu.swe.domain.controllers;
 import dk.sdu.swe.data.dao.CategoryDAOImpl;
 import dk.sdu.swe.data.dao.CompanyDAOImpl;
 import dk.sdu.swe.data.dao.ProgrammeDAOImpl;
+import dk.sdu.swe.domain.controllers.contracts.IProgrammeController;
 import dk.sdu.swe.domain.models.Category;
 import dk.sdu.swe.domain.models.Channel;
 import dk.sdu.swe.domain.models.Company;
@@ -12,23 +13,24 @@ import dk.sdu.swe.domain.persistence.IProgrammeDAO;
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class ProgrammeController {
+public class ProgrammeController implements IProgrammeController {
 
     private IProgrammeDAO programmeDAO;
 
-    private static ProgrammeController instance;
+    private static IProgrammeController instance;
 
     private ProgrammeController() {
         programmeDAO = ProgrammeDAOImpl.getInstance();
     }
 
-    public static ProgrammeController getInstance() {
+    public static IProgrammeController getInstance() {
         if (instance == null) {
             instance = new ProgrammeController();
         }
         return instance;
     }
 
+    @Override
     public List<Programme> getAll() {
         List<Programme> programmes = ProgrammeDAOImpl.getInstance().getAll();
         programmes.sort(Comparator.comparing(Programme::getTitle));
@@ -59,25 +61,28 @@ public class ProgrammeController {
             .collect(Collectors.toList());
     }
 
+    @Override
     public List<Programme> search(String searchTerm, Channel channel, Category category) {
         List<Programme> programmes = ProgrammeDAOImpl.getInstance().search(searchTerm, channel, category);
         programmes.sort(Comparator.comparing(Programme::getTitle));
         return programmes;
     }
 
+    @Override
     public List<Category> getCategories() {
         List<Category> categories = CategoryDAOImpl.getInstance().getAll();
         categories.sort(Comparator.comparing(Category::getCategoryTitle));
         return categories;
     }
 
+    @Override
     public Programme createProgramme(String title, int prodYear, Channel channel, Set<Category> categories, Company company) {
         Programme programme = new Programme(title, channel, prodYear, categories, company);
         programmeDAO.save(programme);
         return programme;
     }
 
-
+    @Override
     public void updateProgramme(Programme programmeObj) {
         programmeDAO.update(programmeObj);
     }

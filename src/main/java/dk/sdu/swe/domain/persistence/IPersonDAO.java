@@ -8,4 +8,5 @@ public interface IPersonDAO extends IDAO<Person> {
 
     public List<Person> searchByName(String name);
 
+    public void merge(Person person1, Person person2);
 }

@@ -10,13 +10,14 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
-public class ReviewListItem extends HBox implements Initializable {
+public class ReviewListItem extends VBox {
     Review review;
 
     @FXML
@@ -44,17 +45,8 @@ public class ReviewListItem extends HBox implements Initializable {
         }
     }
 
-
-    /**
-     * Called to initialize a controller after its root element has been
-     * completely processed.
-     *
-     * @param location  The location used to resolve relative paths for the root object, or
-     *                  {@code null} if the location is not known.
-     * @param resources The resources used to localize the root object, or {@code null} if
-     */
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
+    @FXML
+    public void initialize() {
         lbl_ProgramTitle.setText(review.getProgramme().getTitle());
         lbl_RequesterName.setText(review.getUser().getName().toString());
         lbl_RequesterCompany.setText(review.getUser().getCompany().getName());

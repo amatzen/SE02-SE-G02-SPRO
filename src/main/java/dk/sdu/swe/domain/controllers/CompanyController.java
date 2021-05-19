@@ -1,6 +1,7 @@
 package dk.sdu.swe.domain.controllers;
 
 import dk.sdu.swe.data.dao.CompanyDAOImpl;
+import dk.sdu.swe.domain.controllers.contracts.ICompanyController;
 import dk.sdu.swe.domain.models.Company;
 import dk.sdu.swe.domain.models.CompanyDetails;
 import dk.sdu.swe.domain.persistence.ICompanyDAO;
@@ -11,22 +12,23 @@ import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
-public class CompanyController {
+public class CompanyController implements ICompanyController {
 
     private ICompanyDAO companyDAO;
-    private static CompanyController instance;
+    private static ICompanyController instance;
 
     private CompanyController() {
         companyDAO = CompanyDAOImpl.getInstance();
     }
 
-    public static CompanyController getInstance() {
+    public static ICompanyController getInstance() {
         if (instance == null) {
             instance = new CompanyController();
         }
         return instance;
     }
 
+    @Override
     public List<Company> getAll() {
         if(AuthController.getInstance().getUser().hasPermission("companies.list.all")) {
             List<Company> companies = CompanyDAOImpl.getInstance().getAll();
@@ -55,10 +57,12 @@ public class CompanyController {
         return companies;
     }
 
+    @Override
     public List<Company> search(String searchTerm) {
         return CompanyDAOImpl.getInstance().search(searchTerm);
     }
 
+    @Override
     public Company createCompany(String company, String cvr, String address) {
         CompanyDetails companyDetails = new CompanyDetails(address, null, cvr);
         Company companyObj = new Company(company, null, companyDetails, null);
@@ -67,11 +71,13 @@ public class CompanyController {
         return companyObj;
     }
 
+    @Override
     public void update(Company company) {
         companyDAO.update(company);
         PubSub.publish("trigger_update:companies:refresh", true);
     }
 
+    @Override
     public Company get(Long id) {
         return companyDAO.getById(id).orElse(null);
     }
