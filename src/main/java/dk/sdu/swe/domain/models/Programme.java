@@ -21,8 +21,9 @@ public class Programme {
 
     private int prodYear;
 
-    @Transient
-    private List<EPGProgramme> epgDates;
+    @OneToMany
+    @JoinTable(name = "programme_epg_entries")
+    private List<EPGProgramme> epgProgrammes;
 
     @ManyToMany(fetch = FetchType.EAGER)
     private Set<Category> categories;
@@ -77,8 +78,20 @@ public class Programme {
         return prodYear;
     }
 
-    public List<EPGProgramme> getEpgDates() {
-        return epgDates;
+    public List<EPGProgramme> getEpgProgrammes() {
+        return epgProgrammes;
+    }
+
+    public void setEpgProgrammes(List<EPGProgramme> epgProgrammes) {
+        this.epgProgrammes = epgProgrammes;
+    }
+
+    public void addEpgProgrammme(EPGProgramme epgProgramme) {
+        this.epgProgrammes.add(epgProgramme);
+    }
+
+    public void removeEpgProgramme(EPGProgramme epgProgramme) {
+        this.epgProgrammes.remove(epgProgramme);
     }
 
     public Channel getChannel() {
