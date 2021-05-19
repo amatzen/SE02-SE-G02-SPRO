@@ -15,7 +15,7 @@
         <Label fx:id="categoryLbl" ellipsisString="" layoutX="779.0" layoutY="34.0" text="Kategori" />
         <HBox alignment="CENTER_RIGHT" layoutX="1267.0" layoutY="17.0" prefHeight="44.0" AnchorPane.rightAnchor="25.0">
             <children>
-              <JFXButton buttonType="RAISED" onAction="#showCredits" prefHeight="36.0" style="-fx-background-color: #FF9800;" text="SE KREDITTERINGER" textFill="WHITE">
+              <JFXButton buttonType="RAISED" onAction="#showCredits" prefHeight="36.0" style="-fx-background-color: #FF9800;" text="SE KREDITERINGER" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>

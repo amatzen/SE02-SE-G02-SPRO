@@ -3,11 +3,12 @@ package dk.sdu.swe.data.dao;
 import dk.sdu.swe.domain.models.Programme;
 import dk.sdu.swe.domain.models.Review;
 import dk.sdu.swe.domain.persistence.IDAO;
+import dk.sdu.swe.domain.persistence.IReviewDAO;
 
 import java.util.List;
 import java.util.Objects;
 
-public class ReviewDAOImpl extends AbstractDAO<Review> implements IDAO<Review> {
+public class ReviewDAOImpl extends AbstractDAO<Review> implements IReviewDAO {
     private static ReviewDAOImpl instance;
 
     public synchronized static ReviewDAOImpl getInstance() {

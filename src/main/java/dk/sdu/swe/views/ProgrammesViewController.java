@@ -65,7 +65,7 @@ public class ProgrammesViewController extends BorderPane {
 
     @FXML
     private void initialize() {
-        Platform.runLater(this::updateData);
+        updateData();
     }
 
     private void updateData() {
@@ -129,7 +129,7 @@ public class ProgrammesViewController extends BorderPane {
     }
 
     @FXML
-    void addProgramme(ActionEvent event) {
+    private void addProgramme(ActionEvent event) {
         Dialog<Programme> addProgrammesModal = new ProgrammeModal(getScene().getWindow());
         Optional<Programme> programme = addProgrammesModal.showAndWait();
         programme.ifPresent(programmeObj -> {

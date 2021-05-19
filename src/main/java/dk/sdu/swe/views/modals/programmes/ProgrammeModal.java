@@ -3,10 +3,7 @@ package dk.sdu.swe.views.modals.programmes;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import dk.sdu.swe.data.dao.ReviewDAOImpl;
-import dk.sdu.swe.domain.controllers.AuthController;
-import dk.sdu.swe.domain.controllers.ChannelController;
-import dk.sdu.swe.domain.controllers.CompanyController;
-import dk.sdu.swe.domain.controllers.ProgrammeController;
+import dk.sdu.swe.domain.controllers.*;
 import dk.sdu.swe.domain.models.*;
 import dk.sdu.swe.helpers.PubSub;
 import dk.sdu.swe.views.AlertHelper;
@@ -116,7 +113,9 @@ public class ProgrammeModal extends Dialog<Programme> {
             Label companyLbl = new Label(company.getName());
             companyLbl.setUserData(company);
             prodCompany.getItems().add(companyLbl);
-            if (programme.getCompany() != null && company.getId().equals(programme.getCompany().getId())) {
+            if (programme != null &&
+                programme.getCompany() != null
+                && company.getId().equals(programme.getCompany().getId())) {
                 prodCompany.getSelectionModel().select(companyLbl);
             }
         });
@@ -157,7 +156,7 @@ public class ProgrammeModal extends Dialog<Programme> {
             company = (Company) this.prodCompany.getSelectionModel().getSelectedItem().getUserData();
         }
 
-        if ( !AuthController.getInstance().getUser().hasPermission("programmes.change.no_review") ) {
+        if (!AuthController.getInstance().getUser().hasPermission("programmes.change.no_review")) {
             Programme newProgramme = programme.clone();
 
             newProgramme.setTitle(title);
@@ -170,9 +169,11 @@ public class ProgrammeModal extends Dialog<Programme> {
             JSONObject updated = newProgramme.toJson();
             updated.put("credits", programme.getCreditsJson());
 
-            ReviewDAOImpl.getInstance().save(new Review(programme, original, updated));
+            ReviewController.getInstance().save(new Review(programme, original, updated));
+
+            setResult(null);
         } else {
-            Programme programme = null;
+            Programme programme;
             if (this.programme == null) {
                 programme = ProgrammeController.getInstance()
                     .createProgramme(title, prodYear, channel, Set.of(category), company);
@@ -184,9 +185,9 @@ public class ProgrammeModal extends Dialog<Programme> {
                 this.programme.setChannel(channel);
                 programme = this.programme;
             }
+            setResult(programme);
         }
 
-        setResult(this.programme);
         PubSub.publish("trigger_update:programmes:refresh", true);
         hide();
     }
