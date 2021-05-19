@@ -32,4 +32,18 @@ public class SeederUtility {
             System.out.println("Failed one or more seeders!");
         }
     }
+
+    public static void runSQLScript(String sqlFile) {
+        Session s = DB.openSession();
+        InputStream is = SeederUtility.class.getResourceAsStream("./seeders/"+sqlFile);
+        String rs = new BufferedReader(new InputStreamReader(is)).lines().collect(Collectors.joining(" "));
+
+        Transaction transaction = s.beginTransaction();
+
+        NativeQuery sqlQuery = s.createSQLQuery(rs);
+        sqlQuery.executeUpdate();
+
+        transaction.commit();
+        s.close();
+    }
 }
