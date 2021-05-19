@@ -111,7 +111,7 @@ public class Navbar extends VBox implements Observer {
             case "CompanyViewController" -> this.companyBtn.getStyleClass().add("indicator");
             case "PersonsViewController" -> this.pplBtn.getStyleClass().add("indicator");
             case "AdminViewController",
-                "ReviewViewViewController",
+                "ReviewViewController",
                 "UserControlViewController",
                 "CreditGroupViewController",
                 "DataExportViewController" -> this.adminBtn.getStyleClass().add("indicator");
