@@ -2,31 +2,43 @@ package dk.sdu.swe.domain.controllers;
 
 import com.sendgrid.Content;
 import com.sendgrid.Email;
-import dk.sdu.swe.data.dao.UserDAOImpl;
+import dk.sdu.swe.cross_cutting.exceptions.UserCreationException;
+import dk.sdu.swe.cross_cutting.helpers.Utilities;
+import dk.sdu.swe.cross_cutting.provider.EmailProvider;
+import dk.sdu.swe.domain.controllers.contracts.IUserController;
 import dk.sdu.swe.domain.models.Company;
 import dk.sdu.swe.domain.models.User;
 import dk.sdu.swe.domain.persistence.IUserDAO;
-import dk.sdu.swe.exceptions.UserCreationException;
-import dk.sdu.swe.helpers.Utilities;
-import dk.sdu.swe.provider.EmailProvider;
+import dk.sdu.swe.persistence.dao.UserDAOImpl;
 
-public class UserController {
+import java.util.Comparator;
+import java.util.List;
 
-    private IUserDAO userDAO;
+/**
+ * The type User controller.
+ */
+public class UserController implements IUserController {
 
-    private static UserController UserControllerInstance;
+    private static IUserController userControllerInstance;
+    private final IUserDAO userDAO;
 
     private UserController() {
         userDAO = UserDAOImpl.getInstance();
     }
 
-    public static synchronized UserController getInstance() {
-        if (UserControllerInstance == null) {
-            UserControllerInstance = new UserController();
+    /**
+     * Gets instance.
+     *
+     * @return the instance
+     */
+    public static synchronized IUserController getInstance() {
+        if (userControllerInstance == null) {
+            userControllerInstance = new UserController();
         }
-        return UserControllerInstance;
+        return userControllerInstance;
     }
 
+    @Override
     public User createUser(String username, String email, String name, Company company) throws UserCreationException {
         String pw = Utilities.createRandomPassword(12);
 
@@ -52,6 +64,19 @@ public class UserController {
         } catch (Exception e) {
             throw new UserCreationException("Could not create user.", e);
         }
+    }
+
+    @Override
+    public void delete(User user) {
+        user.getCompany().getUsers().remove(user);
+        userDAO.delete(user);
+    }
+
+    @Override
+    public List<User> getAll() {
+        List<User> users = userDAO.getAll();
+        users.sort(Comparator.comparing(User::getUsername));
+        return users;
     }
 
 /*

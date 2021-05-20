@@ -5,8 +5,11 @@ import java.time.Instant;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * The type Epg programme.
+ */
 @Entity
-@Table(name = "programme_epg_entries")
+@Table(name = "programme_epg")
 public class EPGProgramme {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,6 +30,17 @@ public class EPGProgramme {
     @Transient
     private Map<String, Boolean> options;
 
+    /**
+     * Instantiates a new Epg programme.
+     *
+     * @param epgChannelId  the epg channel id
+     * @param start         the start
+     * @param stop          the stop
+     * @param categories    the categories
+     * @param epgIdentifier the epg identifier
+     * @param title         the title
+     * @param options       the options
+     */
     public EPGProgramme(Long epgChannelId, Instant start, Instant stop, List<String> categories, String epgIdentifier, String title, Map<String, Boolean> options) {
         this.epgChannelId = epgChannelId;
         this.start = start.toString();
@@ -37,30 +51,63 @@ public class EPGProgramme {
         this.options = options;
     }
 
+    /**
+     * Instantiates a new Epg programme.
+     */
     public EPGProgramme() {
 
     }
 
+    /**
+     * Gets start.
+     *
+     * @return the start
+     */
     public String getStart() {
         return start;
     }
 
+    /**
+     * Gets stop.
+     *
+     * @return the stop
+     */
     public String getStop() {
         return stop;
     }
 
+    /**
+     * Gets categories.
+     *
+     * @return the categories
+     */
     public List<String> getCategories() {
         return categories;
     }
 
+    /**
+     * Gets epg identifier.
+     *
+     * @return the epg identifier
+     */
     public String getEpgIdentifier() {
         return epgIdentifier;
     }
 
+    /**
+     * Gets title.
+     *
+     * @return the title
+     */
     public String getTitle() {
         return title;
     }
 
+    /**
+     * Gets options.
+     *
+     * @return the options
+     */
     public Map<String, Boolean> getOptions() {
         return options;
     }

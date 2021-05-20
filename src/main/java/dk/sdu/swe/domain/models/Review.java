@@ -1,14 +1,18 @@
 package dk.sdu.swe.domain.models;
 
-import dk.sdu.swe.data.converters.JSONConverter;
 import dk.sdu.swe.domain.controllers.AuthController;
+import dk.sdu.swe.persistence.converters.JSONConverter;
 import org.json.JSONObject;
 
 import javax.persistence.*;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 
+/**
+ * The type Review.
+ */
 @Entity
+@Table(name = "reviews")
 public class Review {
     @Id
     @GeneratedValue
@@ -23,53 +27,108 @@ public class Review {
     private ZonedDateTime submission_time;
 
     @Convert(converter = JSONConverter.class)
-    private JSONObject newProgramme;
+    private JSONObject original;
+
+    @Convert(converter = JSONConverter.class)
+    private JSONObject updated;
 
     private ReviewState state;
 
+    /**
+     * Instantiates a new Review.
+     */
     public Review() {
     }
 
-    public Review(Programme programme, JSONObject newProgramme) {
+    /**
+     * Instantiates a new Review.
+     *
+     * @param programme the programme
+     * @param original  the original
+     * @param updated   the updated
+     */
+    public Review(Programme programme, JSONObject original, JSONObject updated) {
         this.programme = programme;
+
+        this.original = original;
+        this.updated = updated;
+
         this.user = AuthController.getInstance().getUser();
         this.submission_time = ZonedDateTime.now(ZoneId.of("UTC"));
-        this.newProgramme = newProgramme;
 
         this.state = ReviewState.AWAITING;
     }
 
-    public void setState(ReviewState state) {
-        this.state = state;
-    }
-
+    /**
+     * Gets state.
+     *
+     * @return the state
+     */
     public ReviewState getState() {
         return state;
     }
 
-    public Programme getProgramme() {
-        return programme;
+    /**
+     * Sets state.
+     *
+     * @param state the state
+     */
+    public void setState(ReviewState state) {
+        this.state = state;
     }
 
+    /**
+     * Gets submission time.
+     *
+     * @return the submission time
+     */
     public ZonedDateTime getSubmission_time() {
         return submission_time;
     }
 
-    public JSONObject getNewProgramme() {
-        return newProgramme;
+    /**
+     * Gets original.
+     *
+     * @return the original
+     */
+    public JSONObject getOriginal() {
+        return original;
     }
 
+    /**
+     * Gets updated.
+     *
+     * @return the updated
+     */
+    public JSONObject getUpdated() {
+        return updated;
+    }
+
+    /**
+     * Gets programme.
+     *
+     * @return the programme
+     */
+    public Programme getProgramme() {
+        return programme;
+    }
+
+    /**
+     * Gets user.
+     *
+     * @return the user
+     */
     public User getUser() {
         return user;
     }
 
+    /**
+     * Gets id.
+     *
+     * @return the id
+     */
     public Integer getId() {
         return id;
     }
 }
 
-enum ReviewState {
-    AWAITING,
-    ACCEPTED,
-    DENIED
-}

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<BorderPane prefHeight="469.0" prefWidth="698.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <top>
+        <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #FF9800;" BorderPane.alignment="CENTER">
+            <children>
+                <HBox prefHeight="100.0" prefWidth="722.0">
+                    <children>
+                        <Label text="Brugeradministration:">
+                            <font>
+                                <Font size="24.0" />
+                            </font>
+                            <HBox.margin>
+                                <Insets left="30.0" top="30.0" />
+                            </HBox.margin>
+                        </Label>
+                        <Label fx:id="companyName" text="CompanyName">
+                            <font>
+                                <Font name="System Bold" size="24.0" />
+                            </font>
+                            <HBox.margin>
+                                <Insets left="5.0" top="30.0" />
+                            </HBox.margin>
+                        </Label>
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                    <children>
+                        <JFXButton fx:id="closeBtn" onAction="#handleClose" prefHeight="45.0" prefWidth="45.0" style="-fx-background-color: #FF9800;" text="X" textAlignment="RIGHT">
+                            <font>
+                                <Font name="Comic Sans MS" size="18.0" />
+                            </font>
+                            <HBox.margin>
+                                <Insets bottom="10.0" />
+                            </HBox.margin>
+                        </JFXButton>
+                    </children>
+                </HBox>
+            </children>
+        </HBox>
+    </top>
+    <bottom>
+        <HBox prefHeight="81.0" prefWidth="698.0" BorderPane.alignment="CENTER">
+            <children>
+                <HBox alignment="CENTER_RIGHT" prefWidth="699.0" spacing="10.0">
+                    <children>
+                        <JFXButton fx:id="newUserButton" layoutX="601.0" layoutY="18.0" onAction="#addUser" prefHeight="35.0" prefWidth="90.0" style="-fx-background-color: transparent;" text="+ Ny Bruger" textAlignment="RIGHT" textFill="#515050">
+                            <HBox.margin>
+                                <Insets />
+                            </HBox.margin>
+                            <font>
+                                <Font name="System Bold" size="12.0" />
+                            </font>
+                        </JFXButton>
+                    </children>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <padding>
+                  <Insets right="30.0" />
+               </padding>
+                </HBox>
+            </children>
+        </HBox>
+    </bottom>
+    <center>
+        <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+            <children>
+                <HBox alignment="CENTER_LEFT" prefHeight="47.0" prefWidth="698.0">
+                    <children>
+                        <HBox alignment="CENTER_LEFT" prefHeight="25.0" prefWidth="279.0">
+                            <children>
+                                <Label contentDisplay="CENTER" maxWidth="1.7976931348623157E308" text="Email">
+                                    <HBox.margin>
+                                        <Insets left="10.0" />
+                                    </HBox.margin>
+                                    <font>
+                                        <Font name="System Bold" size="16.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="25.0" prefWidth="239.0">
+                            <children>
+                                <Label maxWidth="1.7976931348623157E308" prefHeight="25.0" text="Brugernavn">
+                                    <HBox.margin>
+                                        <Insets left="23.0" />
+                                    </HBox.margin>
+                                    <font>
+                                        <Font name="System Bold" size="16.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" layoutX="410.0" layoutY="10.0" prefHeight="47.0" prefWidth="138.0">
+                            <children>
+                                <Label maxWidth="1.7976931348623157E308" text="Virk. adm">
+                                    <font>
+                                        <Font name="System Bold" size="16.0" />
+                                    </font>
+                           <HBox.margin>
+                              <Insets left="14.0" />
+                           </HBox.margin>
+                                </Label>
+                            </children>
+                        </HBox>
+                    </children>
+               <VBox.margin>
+                  <Insets bottom="3.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+                </HBox>
+            <JFXListView fx:id="usersListView" VBox.vgrow="ALWAYS" />
+            </children>
+        </VBox>
+    </center>
+</BorderPane>

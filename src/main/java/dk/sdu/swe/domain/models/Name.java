@@ -1,7 +1,6 @@
 package dk.sdu.swe.domain.models;
 
-import dk.sdu.swe.exceptions.InvalidNameException;
-import dk.sdu.swe.exceptions.UserCreationException;
+import dk.sdu.swe.cross_cutting.exceptions.InvalidNameException;
 
 /**
  * Name
@@ -31,21 +30,31 @@ public class Name {
      * Instantiates a new Name.
      *
      * @param name the name
-     * @throws Exception the exception
+     * @throws InvalidNameException the invalid name exception
      */
     public Name(String name) throws InvalidNameException {
         if (name.trim().split(" ").length != 2) {
-            throw new InvalidNameException("Name must contain both first and last name. No middle names allowed!");
+            throw new InvalidNameException("Navn skal indeholde både fornavn og efternavn. Ingen mellemnavne tilladt!");
         }
 
         this.firstName = name.trim().split(" ")[0];
         this.lastName = name.trim().split(" ")[1];
     }
 
+    /**
+     * Gets first name.
+     *
+     * @return the first name
+     */
     public String getFirstName() {
         return firstName;
     }
 
+    /**
+     * Gets last name.
+     *
+     * @return the last name
+     */
     public String getLastName() {
         return lastName;
     }

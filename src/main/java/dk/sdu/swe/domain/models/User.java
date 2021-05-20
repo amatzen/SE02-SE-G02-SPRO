@@ -1,8 +1,8 @@
 package dk.sdu.swe.domain.models;
 
 import at.favre.lib.crypto.bcrypt.BCrypt;
-import dk.sdu.swe.data.converters.NameConverter;
-import dk.sdu.swe.exceptions.UserCreationException;
+import dk.sdu.swe.cross_cutting.exceptions.UserCreationException;
+import dk.sdu.swe.persistence.converters.NameConverter;
 import org.hibernate.annotations.NaturalId;
 
 import javax.persistence.*;
@@ -15,30 +15,13 @@ import java.util.Objects;
  */
 @Entity
 @Table(name = "users")
-@Inheritance(strategy= InheritanceType.SINGLE_TABLE)
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(
     name = "UserType",
     discriminatorType = DiscriminatorType.STRING
 )
 @DiscriminatorValue("User")
 public class User implements IUser {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    @NaturalId
-    @Column(unique = true)
-    private String username;
-
-    @Column
-    private String email;
-
-    @Convert(converter = NameConverter.class)
-    private Name name;
-
-    @Column
-    private String passwordHash;
-
     @Transient
     private final String[] permissions = {
         "programmes",
@@ -47,7 +30,18 @@ public class User implements IUser {
         "programmes.filter",
         "people"
     };
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    @NaturalId
+    @Column(unique = true)
+    private String username;
+    @Column
+    private String email;
+    @Convert(converter = NameConverter.class)
+    private Name name;
+    @Column
+    private String passwordHash;
     @ManyToOne(optional = true)
     private Company company;
 
@@ -58,19 +52,20 @@ public class User implements IUser {
      * @param email    the email
      * @param name     the name
      * @param password the password
-     * @throws Exception the exception
+     * @param company  the company
+     * @throws UserCreationException the user creation exception
      */
     public User(String username, String email, String name, String password, Company company) throws UserCreationException {
         this.company = company;
 
         // Validate username
         if (username.trim().length() < 3 || username.trim().length() > 24) {
-            throw new UserCreationException("Username must be between 3 and 24 characters long");
+            throw new UserCreationException("Brugernavnet skal være mellem 3 og 24 karakterer langt");
         }
 
         // Validate email
         if (!email.trim().matches("[^@ \\t\\r\\n]+@[^@ \\t\\r\\n]+\\.[^@ \\t\\r\\n]+")) {
-            throw new UserCreationException("Email invalid.");
+            throw new UserCreationException("Invalid email.");
         }
 
         // Validate
@@ -81,24 +76,54 @@ public class User implements IUser {
         this.passwordHash = BCrypt.withDefaults().hashToString(12, password.toCharArray());
     }
 
-    public User() {}
+    /**
+     * Instantiates a new User.
+     */
+    public User() {
+    }
 
+    /**
+     * Gets username.
+     *
+     * @return the username
+     */
     public String getUsername() {
         return username;
     }
 
+    /**
+     * Gets email.
+     *
+     * @return the email
+     */
     public String getEmail() {
         return email;
     }
 
+    /**
+     * Gets name.
+     *
+     * @return the name
+     */
     public Name getName() {
         return name;
     }
 
+    /**
+     * Gets id.
+     *
+     * @return the id
+     */
     public Long getId() {
         return id;
     }
 
+    /**
+     * Match password boolean.
+     *
+     * @param password the password
+     * @return the boolean
+     */
     public boolean matchPassword(String password) {
         return BCrypt.verifyer().verify(password.toCharArray(), this.passwordHash.toCharArray()).verified;
     }
@@ -120,16 +145,30 @@ public class User implements IUser {
             '}';
     }
 
+    /**
+     * Gets company.
+     *
+     * @return the company
+     */
     public Company getCompany() {
         return company;
     }
 
+    /**
+     * Sets company.
+     *
+     * @param company the company
+     */
     public void setCompany(Company company) {
         this.company = company;
     }
 
+    /**
+     * Gets programmes.
+     *
+     * @return the programmes
+     */
     public List<Programme> getProgrammes() {
-
         return null;
     }
 }
