@@ -18,6 +18,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
 
+/**
+ * The type Company list item.
+ */
 public class CompanyListItem extends VBox {
 
     private Map<String, Runnable> options = new LinkedHashMap<>() {{
@@ -43,6 +46,11 @@ public class CompanyListItem extends VBox {
     @FXML
     private Label companyNameLabel;
 
+    /**
+     * Instantiates a new Company list item.
+     *
+     * @param company the company
+     */
     public CompanyListItem(Company company) {
         this.company = company;
 

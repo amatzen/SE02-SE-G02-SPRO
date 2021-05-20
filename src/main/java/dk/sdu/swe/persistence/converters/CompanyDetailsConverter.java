@@ -5,6 +5,9 @@ import org.json.JSONObject;
 
 import javax.persistence.AttributeConverter;
 
+/**
+ * The type Company details converter.
+ */
 public class CompanyDetailsConverter implements AttributeConverter<CompanyDetails, String> {
     /**
      * Converts the value stored in the entity attribute into the

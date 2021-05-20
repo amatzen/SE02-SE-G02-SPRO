@@ -19,6 +19,9 @@ import javafx.stage.Window;
 import java.io.IOException;
 import java.util.Objects;
 
+/**
+ * The type User modal.
+ */
 public class UserModal extends Dialog<User> {
 
     private IUserDAO userDAO;
@@ -30,6 +33,12 @@ public class UserModal extends Dialog<User> {
 
     private GaussianBlur backgroundEffect;
 
+    /**
+     * Instantiates a new User modal.
+     *
+     * @param window  the window
+     * @param company the company
+     */
     public UserModal(Window window, Company company) {
         userDAO = UserDAOImpl.getInstance();
         this.company = company;

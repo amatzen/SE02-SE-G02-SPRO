@@ -21,6 +21,9 @@ import java.io.IOException;
 import java.util.Objects;
 import java.util.Optional;
 
+/**
+ * The type User administration modal.
+ */
 public class UserAdministrationModal extends Dialog<Boolean> {
 
     @FXML
@@ -38,6 +41,12 @@ public class UserAdministrationModal extends Dialog<Boolean> {
     @FXML
     private JFXListView usersListView;
 
+    /**
+     * Instantiates a new User administration modal.
+     *
+     * @param window  the window
+     * @param company the company
+     */
     public UserAdministrationModal(Window window, Company company) {
         this.company = CompanyController.getInstance().get(company.getId());
 

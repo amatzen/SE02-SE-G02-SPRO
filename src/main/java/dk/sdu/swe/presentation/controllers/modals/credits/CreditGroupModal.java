@@ -19,6 +19,9 @@ import javafx.stage.Window;
 import java.io.IOException;
 import java.util.Objects;
 
+/**
+ * The type Credit group modal.
+ */
 public class CreditGroupModal extends Dialog<CreditRole> {
 
     private IUserDAO userDAO;
@@ -32,10 +35,21 @@ public class CreditGroupModal extends Dialog<CreditRole> {
 
     private GaussianBlur backgroundEffect;
 
+    /**
+     * Instantiates a new Credit group modal.
+     *
+     * @param window the window
+     */
     public CreditGroupModal(Window window) {
         this(window, null);
     }
 
+    /**
+     * Instantiates a new Credit group modal.
+     *
+     * @param window     the window
+     * @param creditRole the credit role
+     */
     public CreditGroupModal(Window window, CreditRole creditRole) {
         userDAO = UserDAOImpl.getInstance();
         this.creditRoleObj = creditRole;

@@ -8,10 +8,18 @@ import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 import java.util.List;
 
+/**
+ * The type Person dao.
+ */
 public class PersonDAOImpl extends AbstractDAO<Person> implements IPersonDAO {
 
     private static PersonDAOImpl instance;
 
+    /**
+     * Gets instance.
+     *
+     * @return the instance
+     */
     public synchronized static PersonDAOImpl getInstance() {
         if (instance == null) {
             instance = new PersonDAOImpl();

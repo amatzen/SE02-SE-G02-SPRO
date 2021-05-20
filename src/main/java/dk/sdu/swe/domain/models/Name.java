@@ -30,7 +30,7 @@ public class Name {
      * Instantiates a new Name.
      *
      * @param name the name
-     * @throws Exception the exception
+     * @throws InvalidNameException the invalid name exception
      */
     public Name(String name) throws InvalidNameException {
         if (name.trim().split(" ").length != 2) {
@@ -41,10 +41,20 @@ public class Name {
         this.lastName = name.trim().split(" ")[1];
     }
 
+    /**
+     * Gets first name.
+     *
+     * @return the first name
+     */
     public String getFirstName() {
         return firstName;
     }
 
+    /**
+     * Gets last name.
+     *
+     * @return the last name
+     */
     public String getLastName() {
         return lastName;
     }

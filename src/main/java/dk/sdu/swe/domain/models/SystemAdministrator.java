@@ -5,6 +5,9 @@ import javax.persistence.Entity;
 import javax.persistence.Transient;
 import java.util.Arrays;
 
+/**
+ * The type System administrator.
+ */
 @Entity
 @DiscriminatorValue("SystemAdministrator")
 public class SystemAdministrator extends User {
@@ -34,12 +37,17 @@ public class SystemAdministrator extends User {
      * @param username the username
      * @param email    the email
      * @param name     the name
+     * @param password the password
+     * @param company  the company
      * @throws Exception the exception
      */
     public SystemAdministrator(String username, String email, String name, String password, Company company) throws Exception {
         super(username, email, name, password, company);
     }
 
+    /**
+     * Instantiates a new System administrator.
+     */
     public SystemAdministrator() {
 
     }

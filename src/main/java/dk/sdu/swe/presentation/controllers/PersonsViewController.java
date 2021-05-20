@@ -21,6 +21,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 
+/**
+ * The type Persons view controller.
+ */
 public class PersonsViewController extends VBox implements Observer {
 
     @FXML
@@ -32,6 +35,9 @@ public class PersonsViewController extends VBox implements Observer {
     @FXML
     private JFXTextField searchField;
 
+    /**
+     * Instantiates a new Persons view controller.
+     */
     public PersonsViewController() {
         FXMLLoader fxmlLoader = new FXMLLoader(
             Objects.requireNonNull(

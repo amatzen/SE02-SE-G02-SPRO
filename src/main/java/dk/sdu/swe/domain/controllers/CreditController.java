@@ -10,6 +10,9 @@ import dk.sdu.swe.persistence.dao.CreditDAOImpl;
 
 import java.util.List;
 
+/**
+ * The type Credit controller.
+ */
 public class CreditController implements ICreditController {
 
     private static ICreditController instance;
@@ -19,6 +22,11 @@ public class CreditController implements ICreditController {
         creditDAO = CreditDAOImpl.getInstance();
     }
 
+    /**
+     * Gets instance.
+     *
+     * @return the instance
+     */
     public static ICreditController getInstance() {
         if (instance == null) {
             instance = new CreditController();

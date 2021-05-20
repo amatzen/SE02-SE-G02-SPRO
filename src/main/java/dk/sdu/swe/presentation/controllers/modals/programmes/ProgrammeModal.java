@@ -23,6 +23,9 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 
+/**
+ * The type Programme modal.
+ */
 public class ProgrammeModal extends Dialog<Programme> {
 
     @FXML
@@ -45,6 +48,12 @@ public class ProgrammeModal extends Dialog<Programme> {
 
     private Programme programme;
 
+    /**
+     * Instantiates a new Programme modal.
+     *
+     * @param window    the window
+     * @param programme the programme
+     */
     public ProgrammeModal(Window window, Programme programme) {
         this.programme = programme;
 
@@ -72,6 +81,11 @@ public class ProgrammeModal extends Dialog<Programme> {
         }
     }
 
+    /**
+     * Instantiates a new Programme modal.
+     *
+     * @param window the window
+     */
     public ProgrammeModal(Window window) {
         this(window, null);
     }

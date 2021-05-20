@@ -23,7 +23,15 @@ import java.util.List;
 import java.util.Random;
 import java.util.Set;
 
+/**
+ * The type V 5 add people and credits.
+ */
 public class v5_AddPeopleAndCredits {
+    /**
+     * Run.
+     *
+     * @throws Exception the exception
+     */
     public static void run() throws Exception {
         int creditRolesCount = CreditRoleDAOImpl.getInstance().getAll().size();
         List<CreditRole> creditRoles = CreditRoleDAOImpl.getInstance().getAll();

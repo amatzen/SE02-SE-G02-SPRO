@@ -18,6 +18,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+/**
+ * The type Review view controller.
+ */
 public class ReviewViewController extends AnchorPane implements Observer {
 
     private List<Review> reviews_ = new ArrayList<>();
@@ -25,6 +28,9 @@ public class ReviewViewController extends AnchorPane implements Observer {
     @FXML
     private JFXListView<ReviewListItem> reviews;
 
+    /**
+     * Instantiates a new Review view controller.
+     */
     public ReviewViewController() {
         PubSub.subscribe("trigger_refresh:admin:reviews", this);
 

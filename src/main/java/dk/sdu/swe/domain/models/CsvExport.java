@@ -11,8 +11,16 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
 
+/**
+ * The type Csv export.
+ */
 public class CsvExport {
 
+    /**
+     * Csv export credits.
+     *
+     * @param file the file
+     */
     public static void csvExportCredits(File file) {
 
         List<Credit> credits = CreditController.getInstance().getAll();
@@ -42,6 +50,11 @@ public class CsvExport {
 
     }
 
+    /**
+     * Csv export programs.
+     *
+     * @param file the file
+     */
     public static void csvExportPrograms(File file) {
 
         List<Programme> programmes = ProgrammeController.getInstance().getAll();
@@ -69,6 +82,11 @@ public class CsvExport {
         }
     }
 
+    /**
+     * Csv export companies.
+     *
+     * @param file the file
+     */
     public static void csvExportCompanies(File file) {
         List<Company> companies = CompanyController.getInstance().getAll();
 

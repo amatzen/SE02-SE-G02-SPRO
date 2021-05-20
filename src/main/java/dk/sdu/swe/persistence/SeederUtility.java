@@ -12,7 +12,13 @@ import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.stream.Collectors;
 
+/**
+ * The type Seeder utility.
+ */
 public class SeederUtility {
+    /**
+     * Run.
+     */
     public static void run() {
         try {
             v0_CreateCompanies.run();
@@ -42,6 +48,11 @@ public class SeederUtility {
         }
     }
 
+    /**
+     * Run sql script.
+     *
+     * @param sqlFile the sql file
+     */
     public static void runSQLScript(String sqlFile) {
         Session s = DB.openSession();
         InputStream is = SeederUtility.class.getResourceAsStream("./seeders/"+sqlFile);

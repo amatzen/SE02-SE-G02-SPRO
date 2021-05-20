@@ -22,6 +22,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
 
+/**
+ * The type Person list item.
+ */
 public class PersonListItem extends VBox {
 
     private Map<String, Runnable> options = new LinkedHashMap<>() {{
@@ -43,6 +46,12 @@ public class PersonListItem extends VBox {
 
     private ListView<PersonListItem> container;
 
+    /**
+     * Instantiates a new Person list item.
+     *
+     * @param person    the person
+     * @param container the container
+     */
     public PersonListItem(Person person, ListView<PersonListItem> container) {
         this.person = person;
         this.container = container;
@@ -104,6 +113,11 @@ public class PersonListItem extends VBox {
         });
     }
 
+    /**
+     * Gets person.
+     *
+     * @return the person
+     */
     public Person getPerson() {
         return person;
     }

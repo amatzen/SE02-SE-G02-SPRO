@@ -15,11 +15,17 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 
+/**
+ * The type Credit group view controller.
+ */
 public class CreditGroupViewController extends VBox {
 
     @FXML
     private ListView<CreditGroupListItem> creditRoles;
 
+    /**
+     * Instantiates a new Credit group view controller.
+     */
     public CreditGroupViewController() {
         FXMLLoader fxmlLoader = new FXMLLoader(
             Objects.requireNonNull(

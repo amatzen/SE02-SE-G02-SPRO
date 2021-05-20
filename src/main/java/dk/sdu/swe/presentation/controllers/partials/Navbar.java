@@ -19,6 +19,9 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Objects;
 
+/**
+ * The type Navbar.
+ */
 public class Navbar extends VBox implements Observer {
 
     @FXML
@@ -37,6 +40,11 @@ public class Navbar extends VBox implements Observer {
         });
     }};
 
+    /**
+     * Instantiates a new Navbar.
+     *
+     * @param router the router
+     */
     public Navbar(Router router) {
         PubSub.subscribe("routeChange", this);
 

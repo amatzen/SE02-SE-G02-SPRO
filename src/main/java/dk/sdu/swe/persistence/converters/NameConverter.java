@@ -4,6 +4,9 @@ import dk.sdu.swe.domain.models.Name;
 
 import javax.persistence.AttributeConverter;
 
+/**
+ * The type Name converter.
+ */
 public class NameConverter implements AttributeConverter<Name, String> {
 
     /**

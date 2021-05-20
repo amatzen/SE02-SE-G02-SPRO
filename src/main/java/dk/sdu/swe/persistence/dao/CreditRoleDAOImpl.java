@@ -6,9 +6,17 @@ import dk.sdu.swe.domain.persistence.ICreditRoleDAO;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
 
+/**
+ * The type Credit role dao.
+ */
 public class CreditRoleDAOImpl extends AbstractDAO<CreditRole> implements ICreditRoleDAO {
     private static CreditRoleDAOImpl instance;
 
+    /**
+     * Gets instance.
+     *
+     * @return the instance
+     */
     public synchronized static ICreditRoleDAO getInstance() {
         if (instance == null) {
             instance = new CreditRoleDAOImpl();
@@ -16,6 +24,9 @@ public class CreditRoleDAOImpl extends AbstractDAO<CreditRole> implements ICredi
         return instance;
     }
 
+    /**
+     * Instantiates a new Credit role dao.
+     */
     public CreditRoleDAOImpl() {
         super(CreditRole.class);
     }

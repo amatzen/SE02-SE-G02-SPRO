@@ -4,6 +4,9 @@ import org.json.JSONObject;
 
 import javax.persistence.AttributeConverter;
 
+/**
+ * The type Json converter.
+ */
 public class JSONConverter implements AttributeConverter<JSONObject, String> {
     /**
      * Converts the value stored in the entity attribute into the

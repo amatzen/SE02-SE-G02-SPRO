@@ -24,6 +24,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 
+/**
+ * The type Programmes view controller.
+ */
 public class ProgrammesViewController extends BorderPane {
 
     @FXML
@@ -40,6 +43,9 @@ public class ProgrammesViewController extends BorderPane {
     @FXML
     private JFXComboBox<Label> categories;
 
+    /**
+     * Instantiates a new Programmes view controller.
+     */
     public ProgrammesViewController() {
 
         FXMLLoader fxmlLoader = new FXMLLoader(
@@ -55,6 +61,11 @@ public class ProgrammesViewController extends BorderPane {
         }
     }
 
+    /**
+     * Gets all programmes.
+     *
+     * @return the all programmes
+     */
     public List<Programme> getAllProgrammes() {
         return DB.loadAllData(Programme.class, DB.openSession());
     }

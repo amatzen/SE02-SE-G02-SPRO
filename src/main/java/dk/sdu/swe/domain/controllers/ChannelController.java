@@ -7,6 +7,9 @@ import dk.sdu.swe.persistence.dao.ChannelDAOImpl;
 
 import java.util.List;
 
+/**
+ * The type Channel controller.
+ */
 public class ChannelController implements IChannelController {
 
     private static IChannelController instance;
@@ -16,6 +19,11 @@ public class ChannelController implements IChannelController {
         channelDAO = ChannelDAOImpl.getInstance();
     }
 
+    /**
+     * Gets instance.
+     *
+     * @return the instance
+     */
     public static IChannelController getInstance() {
         if (instance == null) {
             instance = new ChannelController();

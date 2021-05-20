@@ -14,6 +14,9 @@ import dk.sdu.swe.persistence.dao.UserDAOImpl;
 import java.util.Comparator;
 import java.util.List;
 
+/**
+ * The type User controller.
+ */
 public class UserController implements IUserController {
 
     private static IUserController userControllerInstance;
@@ -23,6 +26,11 @@ public class UserController implements IUserController {
         userDAO = UserDAOImpl.getInstance();
     }
 
+    /**
+     * Gets instance.
+     *
+     * @return the instance
+     */
     public static synchronized IUserController getInstance() {
         if (userControllerInstance == null) {
             userControllerInstance = new UserController();

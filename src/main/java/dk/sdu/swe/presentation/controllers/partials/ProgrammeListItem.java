@@ -27,6 +27,9 @@ import java.util.Objects;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+/**
+ * The type Programme list item.
+ */
 public class ProgrammeListItem extends AnchorPane {
 
     @FXML
@@ -43,6 +46,11 @@ public class ProgrammeListItem extends AnchorPane {
     @FXML
     private FlowPane channelsPane;
 
+    /**
+     * Instantiates a new Programme list item.
+     *
+     * @param programme the programme
+     */
     public ProgrammeListItem(Programme programme) {
         this.programme = programme;
 

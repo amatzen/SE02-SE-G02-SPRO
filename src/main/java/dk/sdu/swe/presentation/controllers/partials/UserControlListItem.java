@@ -19,6 +19,9 @@ import javafx.scene.layout.HBox;
 import java.io.IOException;
 import java.util.Objects;
 
+/**
+ * The type User control list item.
+ */
 public class UserControlListItem extends HBox {
 
     @FXML
@@ -34,6 +37,12 @@ public class UserControlListItem extends HBox {
 
     private ListView<UserControlListItem> container;
 
+    /**
+     * Instantiates a new User control list item.
+     *
+     * @param user      the user
+     * @param container the container
+     */
     public UserControlListItem(User user, ListView<UserControlListItem> container) {
         this.user = user;
         this.container = container;

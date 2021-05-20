@@ -8,10 +8,18 @@ import org.hibernate.Transaction;
 
 import java.util.Optional;
 
+/**
+ * The type Category dao.
+ */
 public class CategoryDAOImpl extends AbstractDAO<Category> implements ICategoryDAO {
 
     private static CategoryDAOImpl instance;
 
+    /**
+     * Gets instance.
+     *
+     * @return the instance
+     */
     public synchronized static CategoryDAOImpl getInstance() {
         if (instance == null) {
             instance = new CategoryDAOImpl();

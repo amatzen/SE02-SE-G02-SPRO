@@ -9,9 +9,17 @@ import org.hibernate.query.Query;
 
 import java.util.Optional;
 
+/**
+ * The type User dao.
+ */
 public class UserDAOImpl extends AbstractDAO<User> implements IUserDAO {
     private static UserDAOImpl instance;
 
+    /**
+     * Gets instance.
+     *
+     * @return the instance
+     */
     public synchronized static UserDAOImpl getInstance() {
         if (instance == null) {
             instance = new UserDAOImpl();

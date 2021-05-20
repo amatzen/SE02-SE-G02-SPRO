@@ -5,7 +5,13 @@ import dk.sdu.swe.domain.models.CreditRole;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+/**
+ * The type V 2 1 create credit roles.
+ */
 public class v2_1_CreateCreditRoles {
+    /**
+     * Run.
+     */
     public static void run() {
         Session session = DB.openSession();
 

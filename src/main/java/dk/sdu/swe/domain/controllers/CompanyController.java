@@ -12,6 +12,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
+/**
+ * The type Company controller.
+ */
 public class CompanyController implements ICompanyController {
 
     private ICompanyDAO companyDAO;
@@ -21,6 +24,11 @@ public class CompanyController implements ICompanyController {
         companyDAO = CompanyDAOImpl.getInstance();
     }
 
+    /**
+     * Gets instance.
+     *
+     * @return the instance
+     */
     public static ICompanyController getInstance() {
         if (instance == null) {
             instance = new CompanyController();

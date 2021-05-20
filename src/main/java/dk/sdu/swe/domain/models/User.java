@@ -52,7 +52,8 @@ public class User implements IUser {
      * @param email    the email
      * @param name     the name
      * @param password the password
-     * @throws Exception the exception
+     * @param company  the company
+     * @throws UserCreationException the user creation exception
      */
     public User(String username, String email, String name, String password, Company company) throws UserCreationException {
         this.company = company;
@@ -75,25 +76,54 @@ public class User implements IUser {
         this.passwordHash = BCrypt.withDefaults().hashToString(12, password.toCharArray());
     }
 
+    /**
+     * Instantiates a new User.
+     */
     public User() {
     }
 
+    /**
+     * Gets username.
+     *
+     * @return the username
+     */
     public String getUsername() {
         return username;
     }
 
+    /**
+     * Gets email.
+     *
+     * @return the email
+     */
     public String getEmail() {
         return email;
     }
 
+    /**
+     * Gets name.
+     *
+     * @return the name
+     */
     public Name getName() {
         return name;
     }
 
+    /**
+     * Gets id.
+     *
+     * @return the id
+     */
     public Long getId() {
         return id;
     }
 
+    /**
+     * Match password boolean.
+     *
+     * @param password the password
+     * @return the boolean
+     */
     public boolean matchPassword(String password) {
         return BCrypt.verifyer().verify(password.toCharArray(), this.passwordHash.toCharArray()).verified;
     }
@@ -115,14 +145,29 @@ public class User implements IUser {
             '}';
     }
 
+    /**
+     * Gets company.
+     *
+     * @return the company
+     */
     public Company getCompany() {
         return company;
     }
 
+    /**
+     * Sets company.
+     *
+     * @param company the company
+     */
     public void setCompany(Company company) {
         this.company = company;
     }
 
+    /**
+     * Gets programmes.
+     *
+     * @return the programmes
+     */
     public List<Programme> getProgrammes() {
         return null;
     }

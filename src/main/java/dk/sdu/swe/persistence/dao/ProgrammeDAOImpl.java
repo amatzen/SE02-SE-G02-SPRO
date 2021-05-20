@@ -12,9 +12,17 @@ import org.hibernate.query.Query;
 import java.util.*;
 import java.util.stream.Collectors;
 
+/**
+ * The type Programme dao.
+ */
 public class ProgrammeDAOImpl extends AbstractDAO<Programme> implements IProgrammeDAO {
     private static ProgrammeDAOImpl instance;
 
+    /**
+     * Gets instance.
+     *
+     * @return the instance
+     */
     public synchronized static IProgrammeDAO getInstance() {
         if (instance == null) {
             instance = new ProgrammeDAOImpl();

@@ -9,10 +9,18 @@ import org.hibernate.query.Query;
 
 import java.util.List;
 
+/**
+ * The type Company dao.
+ */
 public class CompanyDAOImpl extends AbstractDAO<Company> implements ICompanyDAO {
 
     private static CompanyDAOImpl instance;
 
+    /**
+     * Gets instance.
+     *
+     * @return the instance
+     */
     public synchronized static ICompanyDAO getInstance() {
         if (instance == null) {
             instance = new CompanyDAOImpl();

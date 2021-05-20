@@ -18,6 +18,9 @@ import java.io.IOException;
 import java.util.Objects;
 import java.util.Optional;
 
+/**
+ * The type Credit list item.
+ */
 public class CreditListItem extends HBox {
 
     private Credit credit;
@@ -30,6 +33,12 @@ public class CreditListItem extends HBox {
 
     private FlowPane container;
 
+    /**
+     * Instantiates a new Credit list item.
+     *
+     * @param credit    the credit
+     * @param container the container
+     */
     public CreditListItem(Credit credit, FlowPane container) {
         this.credit = credit;
         this.container = container;

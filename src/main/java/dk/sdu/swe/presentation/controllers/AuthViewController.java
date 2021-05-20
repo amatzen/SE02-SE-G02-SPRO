@@ -20,34 +20,64 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+/**
+ * The type Auth view controller.
+ */
 public class AuthViewController extends HBox {
 
     private String modelPassword;
 
+    /**
+     * The Main.
+     */
     @FXML
     VBox main;
 
+    /**
+     * The Button.
+     */
     @FXML
     JFXButton button;
 
+    /**
+     * The Text field.
+     */
     @FXML
     TextField textField;
 
+    /**
+     * The Password field.
+     */
     @FXML
     PasswordField passwordField;
 
+    /**
+     * The Password field 1.
+     */
     @FXML
     TextField passwordField1;
 
+    /**
+     * The Show pswd.
+     */
     @FXML
     Label showPswd;
 
+    /**
+     * The Hs button.
+     */
     @FXML
     Button hs_button;
 
+    /**
+     * The Environment selector.
+     */
     @FXML
     JFXComboBox<String> environmentSelector;
 
+    /**
+     * Instantiates a new Auth view controller.
+     */
     public AuthViewController() {
         FXMLLoader fxmlLoader = new FXMLLoader(
             Objects.requireNonNull(
@@ -105,10 +135,18 @@ public class AuthViewController extends HBox {
         }
     }
 
+    /**
+     * On enter.
+     *
+     * @param ae the ae
+     */
     public void onEnter(ActionEvent ae) {
         login();
     }
 
+    /**
+     * Login.
+     */
     public void login() {
         if (textField.getText().isEmpty()) {
             AlertHelper.show(

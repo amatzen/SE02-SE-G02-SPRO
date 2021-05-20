@@ -12,6 +12,9 @@ import dk.sdu.swe.domain.persistence.IProgrammeDAO;
 import java.util.*;
 import java.util.stream.Collectors;
 
+/**
+ * The type Programme controller.
+ */
 public class ProgrammeController implements IProgrammeController {
 
     private IProgrammeDAO programmeDAO;
@@ -22,6 +25,11 @@ public class ProgrammeController implements IProgrammeController {
         programmeDAO = ProgrammeDAOImpl.getInstance();
     }
 
+    /**
+     * Gets instance.
+     *
+     * @return the instance
+     */
     public static IProgrammeController getInstance() {
         if (instance == null) {
             instance = new ProgrammeController();

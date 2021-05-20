@@ -11,6 +11,9 @@ import java.time.ZonedDateTime;
 import java.util.Comparator;
 import java.util.List;
 
+/**
+ * The type Person controller.
+ */
 public class PersonController implements IPersonController {
 
     private static IPersonController instance;
@@ -20,6 +23,11 @@ public class PersonController implements IPersonController {
         this.personDAO = PersonDAOImpl.getInstance();
     }
 
+    /**
+     * Gets instance.
+     *
+     * @return the instance
+     */
     public static IPersonController getInstance() {
         if (instance == null) {
             instance = new PersonController();

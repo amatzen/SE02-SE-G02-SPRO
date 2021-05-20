@@ -25,6 +25,9 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Objects;
 
+/**
+ * The type Credit modal.
+ */
 public class CreditModal extends Dialog<Credit> {
 
     @FXML
@@ -42,10 +45,23 @@ public class CreditModal extends Dialog<Credit> {
 
     private Programme programme;
 
+    /**
+     * Instantiates a new Credit modal.
+     *
+     * @param window    the window
+     * @param programme the programme
+     */
     public CreditModal(Window window, Programme programme) {
         this(window, null, programme);
     }
 
+    /**
+     * Instantiates a new Credit modal.
+     *
+     * @param window    the window
+     * @param credit    the credit
+     * @param programme the programme
+     */
     public CreditModal(Window window, Credit credit, Programme programme) {
         this.credit = credit;
         this.programme = programme;

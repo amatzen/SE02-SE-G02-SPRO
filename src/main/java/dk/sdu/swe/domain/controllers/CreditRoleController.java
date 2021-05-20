@@ -8,12 +8,20 @@ import dk.sdu.swe.domain.persistence.ICreditRoleDAO;
 import java.util.Comparator;
 import java.util.List;
 
+/**
+ * The type Credit role controller.
+ */
 public class CreditRoleController implements ICreditRoleController {
 
     private ICreditRoleDAO creditRoleDAO;
 
     private static ICreditRoleController instance;
 
+    /**
+     * Gets instance.
+     *
+     * @return the instance
+     */
     public static ICreditRoleController getInstance() {
         if (instance == null) {
             instance = new CreditRoleController();

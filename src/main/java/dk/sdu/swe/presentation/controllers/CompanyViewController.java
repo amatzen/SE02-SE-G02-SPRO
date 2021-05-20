@@ -20,6 +20,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 
+/**
+ * The type Company view controller.
+ */
 public class CompanyViewController extends BorderPane implements Observer {
 
     @FXML
@@ -28,6 +31,9 @@ public class CompanyViewController extends BorderPane implements Observer {
     @FXML
     private JFXTextField searchField;
 
+    /**
+     * Instantiates a new Company view controller.
+     */
     public CompanyViewController() {
         FXMLLoader fxmlLoader = new FXMLLoader(
             Objects.requireNonNull(

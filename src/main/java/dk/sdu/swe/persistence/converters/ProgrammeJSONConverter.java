@@ -10,6 +10,9 @@ import javax.persistence.AttributeConverter;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * The type Programme json converter.
+ */
 public class ProgrammeJSONConverter implements AttributeConverter<Programme, String> {
 
     /**

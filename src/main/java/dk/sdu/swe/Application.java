@@ -10,7 +10,16 @@ import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 
+/**
+ * The type Application.
+ */
 public class Application extends javafx.application.Application {
+    /**
+     * The entry point of application.
+     *
+     * @param args the input arguments
+     * @throws Exception the exception
+     */
     public static void main(String[] args) throws Exception {
         EnvironmentSelector.getInstance().setEnvironment(switch (System.getenv("DEFAULT_ENVIRONMENT")) {
             case "prod" -> Environment.PROD;
@@ -62,6 +71,10 @@ public class Application extends javafx.application.Application {
 
         stage.show();
     }
+
+    /**
+     * Disable warning.
+     */
     public static void disableWarning() {
         System.err.close();
         System.setErr(System.out);

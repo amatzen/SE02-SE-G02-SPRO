@@ -16,7 +16,13 @@ import javafx.scene.layout.VBox;
 import java.io.IOException;
 import java.util.Objects;
 
+/**
+ * The type Review list item.
+ */
 public class ReviewListItem extends VBox {
+    /**
+     * The Review.
+     */
     Review review;
 
     @FXML
@@ -28,6 +34,11 @@ public class ReviewListItem extends VBox {
     @FXML
     private JFXTextArea txt_Description;
 
+    /**
+     * Instantiates a new Review list item.
+     *
+     * @param review the review
+     */
     public ReviewListItem(Review review) {
         this.review = review;
 
@@ -44,6 +55,9 @@ public class ReviewListItem extends VBox {
         }
     }
 
+    /**
+     * Initialize.
+     */
     @FXML
     public void initialize() {
         lbl_ProgramTitle.setText(review.getProgramme().getTitle());

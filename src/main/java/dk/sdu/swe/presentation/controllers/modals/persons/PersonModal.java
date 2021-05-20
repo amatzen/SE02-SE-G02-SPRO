@@ -23,6 +23,9 @@ import java.time.ZonedDateTime;
 import java.util.Objects;
 import java.util.Optional;
 
+/**
+ * The type Person modal.
+ */
 public class PersonModal extends Dialog<Person> {
 
     @FXML
@@ -44,10 +47,21 @@ public class PersonModal extends Dialog<Person> {
 
     private Person person;
 
+    /**
+     * Instantiates a new Person modal.
+     *
+     * @param window the window
+     */
     public PersonModal(Window window) {
         this(window, null);
     }
 
+    /**
+     * Instantiates a new Person modal.
+     *
+     * @param window the window
+     * @param person the person
+     */
     public PersonModal(Window window, Person person) {
         this.person = person;
 

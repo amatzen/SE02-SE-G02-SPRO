@@ -8,9 +8,17 @@ import org.hibernate.Transaction;
 
 import java.util.Optional;
 
+/**
+ * The type Channel dao.
+ */
 public class ChannelDAOImpl extends AbstractDAO<Channel> implements IChannelDAO {
     private static ChannelDAOImpl instance;
 
+    /**
+     * Gets instance.
+     *
+     * @return the instance
+     */
     public synchronized static IChannelDAO getInstance() {
         if (instance == null) {
             instance = new ChannelDAOImpl();
