@@ -2,7 +2,6 @@ package dk.sdu.swe.presentation.controllers.partials;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextArea;
-import dk.sdu.swe.data.dao.ReviewDAOImpl;
 import dk.sdu.swe.domain.controllers.ReviewController;
 import dk.sdu.swe.domain.models.Person;
 import dk.sdu.swe.domain.models.Review;
