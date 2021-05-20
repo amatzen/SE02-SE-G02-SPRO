@@ -72,8 +72,8 @@ public class CreditListItem extends HBox {
 
     @FXML
     private void editBtn(ActionEvent event) {
-        Dialog<Credit> editDialog = new CreditModal(getScene().getWindow(), credit, credit.getProgramme());
-        Optional<Credit> credit = editDialog.showAndWait();
+        Dialog<Credit> creditModal = new CreditModal(getScene().getWindow(), credit, credit.getProgramme());
+        Optional<Credit> credit = creditModal.showAndWait();
         credit.ifPresent(creditObj -> {
             CreditController.getInstance().update(creditObj);
             updateState();

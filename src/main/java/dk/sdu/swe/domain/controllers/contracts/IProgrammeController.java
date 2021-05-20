@@ -53,5 +53,5 @@ public interface IProgrammeController {
      *
      * @param programmeObj the programme obj
      */
-    void updateProgramme(Programme programmeObj);
+    void update(Programme programmeObj);
 }

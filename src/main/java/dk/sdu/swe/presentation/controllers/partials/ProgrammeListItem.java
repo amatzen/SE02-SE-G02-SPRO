@@ -5,7 +5,6 @@ import dk.sdu.swe.Application;
 import dk.sdu.swe.domain.controllers.ProgrammeController;
 import dk.sdu.swe.domain.controllers.ReviewController;
 import dk.sdu.swe.domain.models.*;
-import dk.sdu.swe.persistence.dao.ReviewDAOImpl;
 import dk.sdu.swe.presentation.controllers.modals.credits.CreditListModal;
 import dk.sdu.swe.presentation.controllers.modals.programmes.ProgrammeModal;
 import javafx.application.Platform;
@@ -172,7 +171,7 @@ public class ProgrammeListItem extends AnchorPane {
         Dialog<Programme> programmeDialog = new ProgrammeModal(getScene().getWindow(), programme);
         Optional<Programme> programme = programmeDialog.showAndWait();
         programme.ifPresent(programmeObj -> {
-            ProgrammeController.getInstance().updateProgramme(programmeObj);
+            ProgrammeController.getInstance().update(programmeObj);
             updateState();
         });
     }

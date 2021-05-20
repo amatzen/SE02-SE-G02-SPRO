@@ -38,9 +38,6 @@ public class CreditController implements ICreditController {
     public Credit createCredit(Person person, CreditRole creditRole, Programme programme) {
         Credit credit = new Credit(person, creditRole);
         credit.setProgramme(programme);
-        programme.getCredits().add(credit);
-        creditDAO.save(credit);
-        ProgrammeController.getInstance().updateProgramme(programme);
         return credit;
     }
 
@@ -54,11 +51,15 @@ public class CreditController implements ICreditController {
         Programme programme = credit.getProgramme();
         programme.getCredits().remove(credit);
         creditDAO.delete(credit);
-        ProgrammeController.getInstance().updateProgramme(programme);
     }
 
     @Override
     public List<Credit> getAll() {
         return creditDAO.getAll();
+    }
+
+    @Override
+    public void save(Credit credit) {
+        creditDAO.save(credit);
     }
 }
