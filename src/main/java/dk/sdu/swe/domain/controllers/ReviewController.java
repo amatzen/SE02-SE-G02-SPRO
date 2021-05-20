@@ -53,4 +53,12 @@ public class ReviewController implements IReviewController {
     public Optional<Review> getLatestReview(Programme programme) {
         return reviewDAO.getLatestReview(programme);
     }
+
+    public void acceptReviewOnProgramme(Review review) {
+        Programme programme = review.getProgramme();
+
+
+
+        ProgrammeController.getInstance().updateProgramme(programme);
+    }
 }
