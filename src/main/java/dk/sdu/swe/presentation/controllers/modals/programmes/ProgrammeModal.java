@@ -38,6 +38,9 @@ public class ProgrammeModal extends Dialog<Programme> {
     private TextField title, prodYear;
 
     @FXML
+    private Label modalTitle;
+
+    @FXML
     private JFXComboBox<Label> category, prodCompany;
 
     @FXML
@@ -93,8 +96,11 @@ public class ProgrammeModal extends Dialog<Programme> {
     @FXML
     private void initialize() {
         if (programme != null) {
+            modalTitle.setText("Redigér program");
             title.setText(programme.getTitle());
             prodYear.setText(String.valueOf(programme.getProdYear()));
+        } else {
+            modalTitle.setText("Tilføj program");
         }
 
         List<Channel> channelList = ChannelController.getInstance().getAll();
