@@ -57,8 +57,6 @@ public class ReviewController implements IReviewController {
     public void acceptReviewOnProgramme(Review review) {
         Programme programme = review.getProgramme();
 
-
-
-        ProgrammeController.getInstance().updateProgramme(programme);
+        ProgrammeController.getInstance().update(programme);
     }
 }

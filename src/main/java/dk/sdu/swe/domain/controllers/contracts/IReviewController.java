@@ -32,4 +32,7 @@ public interface IReviewController {
     void update(Review review);
 
     Optional<Review> getLatestReview(Programme programme);
+
+    void acceptReviewOnProgramme(Review review);
+
 }
