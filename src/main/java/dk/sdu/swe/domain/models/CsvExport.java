@@ -5,7 +5,6 @@ import dk.sdu.swe.domain.controllers.CreditController;
 import dk.sdu.swe.domain.controllers.ProgrammeController;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVPrinter;
-
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -77,6 +76,7 @@ public class CsvExport {
 
             printer.flush();
             printer.close();
+
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -88,9 +88,11 @@ public class CsvExport {
      * @param file the file
      */
     public static void csvExportCompanies(File file) {
+
         List<Company> companies = CompanyController.getInstance().getAll();
 
         String[] headers = {"name", "address", "nbr"};
+
         try {
             FileWriter csvWriter = new FileWriter(file);
             CSVPrinter printer = new CSVPrinter(csvWriter, CSVFormat.DEFAULT
