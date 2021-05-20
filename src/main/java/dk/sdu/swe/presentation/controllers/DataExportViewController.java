@@ -11,8 +11,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Alert;
 import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
-
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Objects;
 
 /**
@@ -29,6 +30,7 @@ public class DataExportViewController extends VBox {
     @FXML
     private JFXButton exportBtn;
 
+    private String date = new SimpleDateFormat("yyyyMMdd").format(new Date());
 
     /**
      * Instantiates a new Data export view controller.
@@ -67,32 +69,38 @@ public class DataExportViewController extends VBox {
 
         FileChooser fileChooser = new FileChooser();
         if (csvBtn.isSelected() && creditData.isSelected()) {
-            fileChooser.setTitle("Kreditteringer - CSV");
+            fileChooser.setTitle("Krediteringer - CSV");
+            fileChooser.setInitialFileName("Krediteringer " + date);
             fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("CSV","*.csv"));
             CsvExport.csvExportCredits(fileChooser.showSaveDialog(getScene().getWindow()));
         }
         if (csvBtn.isSelected() && programData.isSelected()) {
             fileChooser.setTitle("Programmer - CSV");
+            fileChooser.setInitialFileName("Programmer " + date);
             fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("CSV", "*.csv"));
             CsvExport.csvExportPrograms(fileChooser.showSaveDialog(getScene().getWindow()));
         }
         if (csvBtn.isSelected() && companyData.isSelected()) {
             fileChooser.setTitle("Virksomheder - CSV");
+            fileChooser.setInitialFileName("Virksomheder " + date);
             fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("CSV", "*.csv"));
             CsvExport.csvExportCompanies(fileChooser.showSaveDialog(getScene().getWindow()));
         }
         if (jsonBtn.isSelected() && creditData.isSelected()) {
-            fileChooser.setTitle("Kreditteringer - JSON");
+            fileChooser.setTitle("Krediteringer - JSON");
+            fileChooser.setInitialFileName("Krediteringer " + date);
             fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("JSON", "*.json"));
             JsonExport.JsonExportCredits(fileChooser.showSaveDialog(getScene().getWindow()));
         }
         if (jsonBtn.isSelected() && programData.isSelected()) {
             fileChooser.setTitle("Programmer - JSON");
+            fileChooser.setInitialFileName("Programmer " + date);
             fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("JSON", "*.json"));
             JsonExport.JsonExportPrograms(fileChooser.showSaveDialog(getScene().getWindow()));
         }
         if (jsonBtn.isSelected() && companyData.isSelected()) {
             fileChooser.setTitle("Virksomheder - JSON");
+            fileChooser.setInitialFileName("Virksomheder " + date);
             fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("JSON", "*.json"));
             JsonExport.JsonExportCompanies(fileChooser.showSaveDialog(getScene().getWindow()));
         }
