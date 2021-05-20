@@ -77,6 +77,7 @@ public class CsvExport {
 
             printer.flush();
             printer.close();
+
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -88,9 +89,11 @@ public class CsvExport {
      * @param file the file
      */
     public static void csvExportCompanies(File file) {
+
         List<Company> companies = CompanyController.getInstance().getAll();
 
         String[] headers = {"name", "address", "nbr"};
+
         try {
             FileWriter csvWriter = new FileWriter(file);
             CSVPrinter printer = new CSVPrinter(csvWriter, CSVFormat.DEFAULT
