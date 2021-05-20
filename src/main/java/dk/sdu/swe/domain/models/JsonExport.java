@@ -1,8 +1,8 @@
 package dk.sdu.swe.domain.models;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
+import dk.sdu.swe.domain.controllers.CompanyController;
 import dk.sdu.swe.domain.controllers.CreditController;
+import dk.sdu.swe.domain.controllers.ProgrammeController;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -20,17 +20,14 @@ public class JsonExport {
      */
     public static void JsonExportCredits(File file) {
 
-        Gson gson = new GsonBuilder()
-            .setPrettyPrinting()
-            .create();
-
         List<Credit> credits = CreditController.getInstance().getAll();
 
         try {
             FileWriter jsonWriter = new FileWriter(file);
-            jsonWriter.write(gson.toJson(credits));
-            jsonWriter.close();
-        } catch (Exception e) {
+
+            }
+
+        catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -42,9 +39,11 @@ public class JsonExport {
      */
     public static void JsonExportPrograms(File file) {
 
+        List<Programme> programmes = ProgrammeController.getInstance().getAll();
+
         try {
             FileWriter jsonWriter = new FileWriter(file);
-            // Kode til JSON eksportering her
+
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -57,9 +56,11 @@ public class JsonExport {
      */
     public static void JsonExportCompanies(File file) {
 
+        List<Company> companies = CompanyController.getInstance().getAll();
+
         try {
             FileWriter jsonWriter = new FileWriter(file);
-            // Kode til JSON eksportering her
+
         } catch (Exception e) {
             e.printStackTrace();
         }
