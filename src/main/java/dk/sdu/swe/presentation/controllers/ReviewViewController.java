@@ -1,12 +1,12 @@
 package dk.sdu.swe.presentation.controllers;
 
 import com.jfoenix.controls.JFXListView;
+import dk.sdu.swe.cross_cutting.helpers.Observer;
+import dk.sdu.swe.cross_cutting.helpers.PubSub;
 import dk.sdu.swe.domain.controllers.ReviewController;
 import dk.sdu.swe.domain.models.Review;
 import dk.sdu.swe.domain.models.ReviewState;
-import dk.sdu.swe.helpers.Observer;
-import dk.sdu.swe.helpers.PubSub;
-import dk.sdu.swe.views.partials.ReviewListItem;
+import dk.sdu.swe.presentation.controllers.partials.ReviewListItem;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.AnchorPane;
