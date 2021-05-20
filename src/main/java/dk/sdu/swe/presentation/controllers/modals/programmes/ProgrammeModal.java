@@ -170,21 +170,33 @@ public class ProgrammeModal extends Dialog<Programme> {
         }
 
         if (!AuthController.getInstance().getUser().hasPermission("programmes.change.no_review")) {
-            Programme newProgramme = programme.clone();
+            JSONObject updated = new JSONObject();
+            boolean existingProgramme = true;
 
-            newProgramme.setTitle(title);
-            newProgramme.setCategories(Set.of(category));
-            newProgramme.setProdYear(prodYear);
-            newProgramme.setCompany(company);
-            newProgramme.setChannel(channel);
+            if (Objects.nonNull(programme)) {
+                existingProgramme = false;
+                Programme newProgramme = programme.clone();
 
-            JSONObject original = programme.toJson();
-            JSONObject updated = newProgramme.toJson();
+                newProgramme.setTitle(title);
+                newProgramme.setCategories(Set.of(category));
+                newProgramme.setProdYear(prodYear);
+                newProgramme.setCompany(company);
+                newProgramme.setChannel(channel);
+                updated = newProgramme.toJson();
+
+            }
+
+            if(!existingProgramme) {
+                programme = new Programme(title, channel, prodYear, Set.of(category), company);
+            }
+
             updated.put("credits", programme.getCreditsJson());
+            JSONObject original = programme.toJson();
+            programme = null;
 
             ReviewController.getInstance().save(new Review(programme, original, updated));
 
-            setResult(programme);
+            setResult(null);
         } else {
             Programme programme;
             if (this.programme == null) {
