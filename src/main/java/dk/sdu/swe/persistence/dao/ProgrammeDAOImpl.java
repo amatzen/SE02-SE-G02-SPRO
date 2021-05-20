@@ -1,15 +1,15 @@
 package dk.sdu.swe.persistence.dao;
 
-import dk.sdu.swe.persistence.DB;
 import dk.sdu.swe.domain.models.Category;
 import dk.sdu.swe.domain.models.Channel;
 import dk.sdu.swe.domain.models.Programme;
 import dk.sdu.swe.domain.persistence.IProgrammeDAO;
+import dk.sdu.swe.persistence.DB;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
-import java.util.*;
+import java.util.List;
 import java.util.stream.Collectors;
 
 /**

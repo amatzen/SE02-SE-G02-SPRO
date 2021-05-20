@@ -2,9 +2,9 @@ package dk.sdu.swe.presentation.controllers;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
-import dk.sdu.swe.domain.controllers.AuthController;
 import dk.sdu.swe.cross_cutting.helpers.Environment;
 import dk.sdu.swe.cross_cutting.helpers.EnvironmentSelector;
+import dk.sdu.swe.domain.controllers.AuthController;
 import dk.sdu.swe.presentation.AlertHelper;
 import dk.sdu.swe.presentation.Router;
 import javafx.collections.FXCollections;

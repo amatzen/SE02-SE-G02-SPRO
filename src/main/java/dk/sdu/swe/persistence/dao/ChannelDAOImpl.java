@@ -1,8 +1,8 @@
 package dk.sdu.swe.persistence.dao;
 
-import dk.sdu.swe.persistence.DB;
 import dk.sdu.swe.domain.models.Channel;
 import dk.sdu.swe.domain.persistence.IChannelDAO;
+import dk.sdu.swe.persistence.DB;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 

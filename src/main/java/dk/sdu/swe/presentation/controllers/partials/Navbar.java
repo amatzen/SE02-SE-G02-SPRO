@@ -2,9 +2,9 @@ package dk.sdu.swe.presentation.controllers.partials;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPopup;
-import dk.sdu.swe.domain.controllers.AuthController;
 import dk.sdu.swe.cross_cutting.helpers.Observer;
 import dk.sdu.swe.cross_cutting.helpers.PubSub;
+import dk.sdu.swe.domain.controllers.AuthController;
 import dk.sdu.swe.presentation.Router;
 import dk.sdu.swe.presentation.controllers.*;
 import javafx.event.ActionEvent;

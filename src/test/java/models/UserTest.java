@@ -1,11 +1,12 @@
 package models;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 import dk.sdu.swe.cross_cutting.exceptions.InvalidNameException;
 import dk.sdu.swe.cross_cutting.exceptions.UserCreationException;
 import dk.sdu.swe.domain.models.User;
 import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 /**
  * The type User test.

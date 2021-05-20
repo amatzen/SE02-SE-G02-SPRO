@@ -2,9 +2,9 @@ package dk.sdu.swe.presentation.controllers.modals.programmes;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
+import dk.sdu.swe.cross_cutting.helpers.PubSub;
 import dk.sdu.swe.domain.controllers.*;
 import dk.sdu.swe.domain.models.*;
-import dk.sdu.swe.cross_cutting.helpers.PubSub;
 import dk.sdu.swe.presentation.AlertHelper;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

@@ -2,9 +2,9 @@ package dk.sdu.swe.presentation.controllers.modals.persons;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
+import dk.sdu.swe.cross_cutting.exceptions.PersonCreationException;
 import dk.sdu.swe.domain.controllers.PersonController;
 import dk.sdu.swe.domain.models.Person;
-import dk.sdu.swe.cross_cutting.exceptions.PersonCreationException;
 import dk.sdu.swe.presentation.AlertHelper;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

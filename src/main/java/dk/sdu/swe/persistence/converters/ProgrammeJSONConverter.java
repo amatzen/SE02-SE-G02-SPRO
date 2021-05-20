@@ -1,9 +1,9 @@
 package dk.sdu.swe.persistence.converters;
 
-import dk.sdu.swe.persistence.dao.CategoryDAOImpl;
-import dk.sdu.swe.persistence.dao.ChannelDAOImpl;
 import dk.sdu.swe.domain.models.Category;
 import dk.sdu.swe.domain.models.Programme;
+import dk.sdu.swe.persistence.dao.CategoryDAOImpl;
+import dk.sdu.swe.persistence.dao.ChannelDAOImpl;
 import org.json.JSONObject;
 
 import javax.persistence.AttributeConverter;

@@ -8,7 +8,6 @@ import dk.sdu.swe.domain.models.Review;
 import dk.sdu.swe.domain.models.ReviewState;
 import dk.sdu.swe.presentation.Router;
 import dk.sdu.swe.presentation.controllers.partials.ReviewListItem;
-import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.AnchorPane;

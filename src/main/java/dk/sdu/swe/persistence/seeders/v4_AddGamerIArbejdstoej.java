@@ -1,7 +1,7 @@
 package dk.sdu.swe.persistence.seeders;
 
-import dk.sdu.swe.domain.controllers.PersonController;
 import dk.sdu.swe.cross_cutting.exceptions.PersonCreationException;
+import dk.sdu.swe.domain.controllers.PersonController;
 
 import java.time.ZonedDateTime;
 

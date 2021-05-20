@@ -1,8 +1,8 @@
 package dk.sdu.swe.persistence.dao;
 
-import dk.sdu.swe.persistence.DB;
 import dk.sdu.swe.domain.models.User;
 import dk.sdu.swe.domain.persistence.IUserDAO;
+import dk.sdu.swe.persistence.DB;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;

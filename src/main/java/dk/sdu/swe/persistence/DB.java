@@ -1,7 +1,7 @@
 package dk.sdu.swe.persistence;
 
-import dk.sdu.swe.domain.models.*;
 import dk.sdu.swe.cross_cutting.helpers.EnvironmentSelector;
+import dk.sdu.swe.domain.models.*;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;

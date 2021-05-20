@@ -1,8 +1,8 @@
 package dk.sdu.swe.persistence.dao;
 
-import dk.sdu.swe.persistence.DB;
 import dk.sdu.swe.domain.models.CreditRole;
 import dk.sdu.swe.domain.persistence.ICreditRoleDAO;
+import dk.sdu.swe.persistence.DB;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
 

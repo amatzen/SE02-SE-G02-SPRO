@@ -1,9 +1,9 @@
 package dk.sdu.swe.persistence.seeders;
 
-import dk.sdu.swe.persistence.dao.CompanyDAOImpl;
-import dk.sdu.swe.domain.persistence.IDAO;
 import dk.sdu.swe.domain.models.Company;
 import dk.sdu.swe.domain.models.CompanyDetails;
+import dk.sdu.swe.domain.persistence.IDAO;
+import dk.sdu.swe.persistence.dao.CompanyDAOImpl;
 
 /**
  * The type V 0 create companies.

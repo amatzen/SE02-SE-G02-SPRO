@@ -1,10 +1,10 @@
 package dk.sdu.swe.presentation.controllers.modals.credits;
 
-import dk.sdu.swe.persistence.dao.UserDAOImpl;
 import dk.sdu.swe.domain.controllers.CreditRoleController;
 import dk.sdu.swe.domain.models.Company;
 import dk.sdu.swe.domain.models.CreditRole;
 import dk.sdu.swe.domain.persistence.IUserDAO;
+import dk.sdu.swe.persistence.dao.UserDAOImpl;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

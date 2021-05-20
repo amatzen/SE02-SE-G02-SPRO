@@ -1,12 +1,12 @@
 package dk.sdu.swe.presentation.controllers.partials;
 
-import dk.sdu.swe.persistence.dao.UserDAOImpl;
 import dk.sdu.swe.domain.controllers.AuthController;
 import dk.sdu.swe.domain.controllers.CompanyController;
 import dk.sdu.swe.domain.controllers.UserController;
 import dk.sdu.swe.domain.models.CompanyAdministrator;
 import dk.sdu.swe.domain.models.SystemAdministrator;
 import dk.sdu.swe.domain.models.User;
+import dk.sdu.swe.persistence.dao.UserDAOImpl;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

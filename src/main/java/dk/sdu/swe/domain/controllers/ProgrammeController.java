@@ -1,15 +1,18 @@
 package dk.sdu.swe.domain.controllers;
 
-import dk.sdu.swe.persistence.dao.CategoryDAOImpl;
-import dk.sdu.swe.persistence.dao.ProgrammeDAOImpl;
 import dk.sdu.swe.domain.controllers.contracts.IProgrammeController;
 import dk.sdu.swe.domain.models.Category;
 import dk.sdu.swe.domain.models.Channel;
 import dk.sdu.swe.domain.models.Company;
 import dk.sdu.swe.domain.models.Programme;
 import dk.sdu.swe.domain.persistence.IProgrammeDAO;
+import dk.sdu.swe.persistence.dao.CategoryDAOImpl;
+import dk.sdu.swe.persistence.dao.ProgrammeDAOImpl;
 
-import java.util.*;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Objects;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 /**

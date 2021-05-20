@@ -1,12 +1,17 @@
 package dk.sdu.swe.persistence.seeders;
 
 import com.google.common.base.Charsets;
-import dk.sdu.swe.persistence.DB;
-import dk.sdu.swe.persistence.dao.*;
-import dk.sdu.swe.domain.models.*;
+import dk.sdu.swe.domain.models.Category;
+import dk.sdu.swe.domain.models.EPGProgramme;
+import dk.sdu.swe.domain.models.Programme;
 import dk.sdu.swe.domain.persistence.ICategoryDAO;
 import dk.sdu.swe.domain.persistence.IChannelDAO;
 import dk.sdu.swe.domain.persistence.ICompanyDAO;
+import dk.sdu.swe.persistence.DB;
+import dk.sdu.swe.persistence.dao.CategoryDAOImpl;
+import dk.sdu.swe.persistence.dao.ChannelDAOImpl;
+import dk.sdu.swe.persistence.dao.CompanyDAOImpl;
+import dk.sdu.swe.persistence.dao.ProgrammeDAOImpl;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.json.JSONArray;

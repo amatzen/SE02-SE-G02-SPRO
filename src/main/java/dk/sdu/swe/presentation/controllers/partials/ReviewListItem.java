@@ -4,7 +4,6 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextArea;
 import dk.sdu.swe.cross_cutting.helpers.PubSub;
 import dk.sdu.swe.domain.controllers.ReviewController;
-import dk.sdu.swe.domain.models.Person;
 import dk.sdu.swe.domain.models.Review;
 import dk.sdu.swe.domain.models.ReviewState;
 import javafx.event.ActionEvent;

@@ -1,10 +1,10 @@
 package dk.sdu.swe;
 
-import dk.sdu.swe.persistence.SeederUtility;
-import dk.sdu.swe.cross_cutting.helpers.EnvironmentSelector;
 import dk.sdu.swe.cross_cutting.helpers.Environment;
-import dk.sdu.swe.presentation.controllers.AuthViewController;
+import dk.sdu.swe.cross_cutting.helpers.EnvironmentSelector;
+import dk.sdu.swe.persistence.SeederUtility;
 import dk.sdu.swe.presentation.Router;
+import dk.sdu.swe.presentation.controllers.AuthViewController;
 import javafx.scene.Scene;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;

@@ -1,7 +1,7 @@
 package dk.sdu.swe.persistence.seeders;
 
-import dk.sdu.swe.persistence.DB;
 import dk.sdu.swe.domain.models.CreditRole;
+import dk.sdu.swe.persistence.DB;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
