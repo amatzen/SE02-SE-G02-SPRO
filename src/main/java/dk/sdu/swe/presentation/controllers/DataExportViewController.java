@@ -30,7 +30,7 @@ public class DataExportViewController extends VBox {
     @FXML
     private JFXButton exportBtn;
 
-    private String date = new SimpleDateFormat("dd-MM-yyyy").format(new Date());
+    private String date = new SimpleDateFormat("yyyyMMdd").format(new Date());
 
     /**
      * Instantiates a new Data export view controller.
