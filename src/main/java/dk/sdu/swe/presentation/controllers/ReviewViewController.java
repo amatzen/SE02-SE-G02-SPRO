@@ -13,11 +13,12 @@ import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class ReviewViewController extends AnchorPane implements Observer {
 
-    private ArrayList<Review> reviews_;
+    private List<Review> reviews_ = new ArrayList<>();
 
     @FXML
     private JFXListView<ReviewListItem> reviews;
@@ -49,6 +50,7 @@ public class ReviewViewController extends AnchorPane implements Observer {
     @FXML
     private void initialize() {
         ReviewController.getInstance().getAll().stream().filter(x -> x.getState() == ReviewState.AWAITING).forEach(x -> {
+            reviews_.add(x);
             try {
                 createListItem(x);
             } catch (IOException e) {
