@@ -10,6 +10,7 @@ import org.hibernate.query.Query;
 
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 
 /**
  * The type Review dao.
@@ -43,16 +44,17 @@ public class ReviewDAOImpl extends AbstractDAO<Review> implements IReviewDAO {
      * @param programme the programme
      * @return the latest review
      */
-    public Review getLatestReview(Programme programme) {
+    public Optional<Review> getLatestReview(Programme programme) {
         Session session = DB.openSession();
         Transaction t = session.beginTransaction();
+        try {
+            Query query = session.createQuery("FROM Review WHERE programme = :p ORDER BY id DESC");
+            query.setParameter("p", programme);
 
-        Query query = session.createQuery("FROM Review WHERE Programme = :p ORDER BY id DESC");
-        query.setParameter("p", programme);
-
-        t.commit();
-        session.close();
-
-        return (Review) query.getResultList().get(query.getResultList().size() - 1);
+            return query.stream().reduce((o, o2) -> o2);
+        } finally {
+            t.commit();
+            session.close();
+        }
     }
 }

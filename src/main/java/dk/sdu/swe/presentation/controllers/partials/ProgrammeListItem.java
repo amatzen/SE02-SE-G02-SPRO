@@ -97,7 +97,7 @@ public class ProgrammeListItem extends AnchorPane {
     }
 
     private void checkReviewState() {
-        review = ReviewDAOImpl.getInstance().getLatestReview(programme);
+        review = ReviewDAOImpl.getInstance().getLatestReview(programme).orElse(null);
         if(!Objects.nonNull(review)) {
             setReviewState(ReviewState.ACCEPTED);
         } else {
