@@ -1,21 +1,17 @@
 package dk.sdu.swe.presentation.controllers.partials;
 
 import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXDialog;
-import com.jfoenix.controls.JFXDialogLayout;
 import dk.sdu.swe.Application;
 import dk.sdu.swe.domain.controllers.ProgrammeController;
 import dk.sdu.swe.domain.controllers.ReviewController;
 import dk.sdu.swe.domain.models.*;
 import dk.sdu.swe.persistence.dao.ReviewDAOImpl;
-import dk.sdu.swe.presentation.controllers.AppViewController;
 import dk.sdu.swe.presentation.controllers.modals.credits.CreditListModal;
 import dk.sdu.swe.presentation.controllers.modals.programmes.ProgrammeModal;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Dialog;
@@ -24,13 +20,9 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
-import javafx.scene.layout.StackPane;
-import javafx.scene.text.Text;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.stream.Collectors;

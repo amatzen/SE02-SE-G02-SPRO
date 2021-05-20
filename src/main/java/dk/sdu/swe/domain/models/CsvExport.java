@@ -5,6 +5,7 @@ import dk.sdu.swe.domain.controllers.CreditController;
 import dk.sdu.swe.domain.controllers.ProgrammeController;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVPrinter;
+
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;

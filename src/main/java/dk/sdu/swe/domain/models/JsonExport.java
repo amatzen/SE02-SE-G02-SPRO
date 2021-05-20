@@ -3,6 +3,7 @@ package dk.sdu.swe.domain.models;
 import dk.sdu.swe.domain.controllers.CompanyController;
 import dk.sdu.swe.domain.controllers.CreditController;
 import dk.sdu.swe.domain.controllers.ProgrammeController;
+
 import java.io.File;
 import java.io.FileWriter;
 import java.util.List;
