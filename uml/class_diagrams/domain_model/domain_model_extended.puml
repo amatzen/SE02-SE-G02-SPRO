@@ -52,6 +52,8 @@ package "domain" {
         - title : String
     }
 
+    class Review {
+    }
 
     class Credit {
         - name : String
@@ -75,13 +77,16 @@ package "domain" {
     }
 
     class Person {
+        -name: String
+        -contactDetails: Map
     }
 
     class ContactDetails {
     }
 }
 
-SystemAdministrator "1" --> "1..*" Credit : "Approves >"
+SystemAdministrator "1" --> "1..*" Review : "Approves >"
+Review "1" -- "1" Credit : "Created on >"
 SystemAdministrator -|> CompanyAdministrator
 
 CompanyAdministrator -|> Producer

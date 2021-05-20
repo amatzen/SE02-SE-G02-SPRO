@@ -58,9 +58,12 @@ package "domain" {
         - role : CreditRole
         - date : OffsetDateTime
         --
-        + getName() : String
         + getRole() : CreditRole
         + getDate() : OffsetDateTime
+    }
+
+    class Review {
+
     }
 
     'Controller
@@ -75,10 +78,13 @@ package "domain" {
     }
 
     class Person {
+        -name: String
+        -contactDetails: Map
     }
 }
 
-SystemAdministrator "1" -- "1..*" Credit : "Approves >"
+SystemAdministrator "1" -- "1..*" Review : "Approves >"
+Review "1" -- "1" Credit : "Created on >"
 SystemAdministrator -|> CompanyAdministrator
 
 CompanyAdministrator -|> Producer
