@@ -1,5 +1,14 @@
 package dk.sdu.swe.domain.models;
 
+/**
+ * The interface User.
+ */
 public interface IUser {
-    public boolean hasPermission(String permissionKey);
+    /**
+     * Has permission boolean.
+     *
+     * @param permissionKey the permission key
+     * @return the boolean
+     */
+    boolean hasPermission(String permissionKey);
 }

@@ -1,16 +1,19 @@
 package dk.sdu.swe.presentation.controllers.modals.users;
 
-import dk.sdu.swe.persistence.dao.UserDAOImpl;
+import dk.sdu.swe.cross_cutting.exceptions.UserCreationException;
 import dk.sdu.swe.domain.controllers.UserController;
 import dk.sdu.swe.domain.models.Company;
 import dk.sdu.swe.domain.models.User;
 import dk.sdu.swe.domain.persistence.IUserDAO;
-import dk.sdu.swe.cross_cutting.exceptions.UserCreationException;
+import dk.sdu.swe.persistence.dao.UserDAOImpl;
 import dk.sdu.swe.presentation.AlertHelper;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.control.*;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.Dialog;
+import javafx.scene.control.TextField;
 import javafx.scene.effect.GaussianBlur;
 import javafx.stage.Modality;
 import javafx.stage.StageStyle;
@@ -19,6 +22,9 @@ import javafx.stage.Window;
 import java.io.IOException;
 import java.util.Objects;
 
+/**
+ * The type User modal.
+ */
 public class UserModal extends Dialog<User> {
 
     private IUserDAO userDAO;
@@ -30,6 +36,12 @@ public class UserModal extends Dialog<User> {
 
     private GaussianBlur backgroundEffect;
 
+    /**
+     * Instantiates a new User modal.
+     *
+     * @param window  the window
+     * @param company the company
+     */
     public UserModal(Window window, Company company) {
         userDAO = UserDAOImpl.getInstance();
         this.company = company;

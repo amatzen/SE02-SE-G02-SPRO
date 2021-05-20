@@ -2,12 +2,9 @@ package dk.sdu.swe.presentation.controllers.partials;
 
 import com.jfoenix.controls.JFXButton;
 import dk.sdu.swe.Application;
-import dk.sdu.swe.persistence.dao.ReviewDAOImpl;
 import dk.sdu.swe.domain.controllers.ProgrammeController;
 import dk.sdu.swe.domain.models.*;
-import dk.sdu.swe.domain.models.Category;
-import dk.sdu.swe.domain.models.Channel;
-import dk.sdu.swe.domain.models.Programme;
+import dk.sdu.swe.persistence.dao.ReviewDAOImpl;
 import dk.sdu.swe.presentation.controllers.modals.credits.CreditListModal;
 import dk.sdu.swe.presentation.controllers.modals.programmes.ProgrammeModal;
 import javafx.application.Platform;
@@ -27,6 +24,9 @@ import java.util.Objects;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+/**
+ * The type Programme list item.
+ */
 public class ProgrammeListItem extends AnchorPane {
 
     @FXML
@@ -43,6 +43,11 @@ public class ProgrammeListItem extends AnchorPane {
     @FXML
     private FlowPane channelsPane;
 
+    /**
+     * Instantiates a new Programme list item.
+     *
+     * @param programme the programme
+     */
     public ProgrammeListItem(Programme programme) {
         this.programme = programme;
 

@@ -14,6 +14,9 @@ import javafx.scene.layout.Pane;
 import java.io.IOException;
 import java.util.Objects;
 
+/**
+ * The type Admin view controller.
+ */
 public class AdminViewController extends BorderPane implements Observer {
 
     @FXML
@@ -31,7 +34,25 @@ public class AdminViewController extends BorderPane implements Observer {
         Platform.runLater(() -> router.goTo(ReviewViewController.class));
     }
 
+    private static volatile AdminViewController instance = null;
+
+    /**
+     * Gets router.
+     *
+     * @return the router
+     */
+    public static Router getRouter() {
+        return instance.router;
+    }
+
+    /**
+     * Instantiates a new Admin view controller.
+     */
     public AdminViewController() {
+        if(instance == null) {
+            instance = this;
+        }
+
         PubSub.subscribe("routeChange", this);
         FXMLLoader fxmlLoader = new FXMLLoader(
             Objects.requireNonNull(

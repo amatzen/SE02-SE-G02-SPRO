@@ -17,6 +17,9 @@ import javafx.stage.Window;
 import java.io.IOException;
 import java.util.Objects;
 
+/**
+ * The type Company modal.
+ */
 public class CompanyModal extends Dialog<Company> {
 
    @FXML
@@ -37,10 +40,21 @@ public class CompanyModal extends Dialog<Company> {
 
     private Company company;
 
+    /**
+     * Instantiates a new Company modal.
+     *
+     * @param window the window
+     */
     public CompanyModal(Window window) {
         this(window, null);
     }
 
+    /**
+     * Instantiates a new Company modal.
+     *
+     * @param window  the window
+     * @param company the company
+     */
     public CompanyModal(Window window, Company company) {
         this.company = company;
 

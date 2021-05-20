@@ -1,17 +1,25 @@
 package dk.sdu.swe.persistence.dao;
 
-import dk.sdu.swe.persistence.DB;
 import dk.sdu.swe.domain.models.Category;
 import dk.sdu.swe.domain.persistence.ICategoryDAO;
+import dk.sdu.swe.persistence.DB;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import java.util.Optional;
 
+/**
+ * The type Category dao.
+ */
 public class CategoryDAOImpl extends AbstractDAO<Category> implements ICategoryDAO {
 
     private static CategoryDAOImpl instance;
 
+    /**
+     * Gets instance.
+     *
+     * @return the instance
+     */
     public synchronized static CategoryDAOImpl getInstance() {
         if (instance == null) {
             instance = new CategoryDAOImpl();

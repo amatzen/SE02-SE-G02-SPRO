@@ -5,6 +5,9 @@ import javax.persistence.Entity;
 import javax.persistence.Transient;
 import java.util.Arrays;
 
+/**
+ * The type Company administrator.
+ */
 @Entity
 @DiscriminatorValue("CompanyAdministrator")
 public class CompanyAdministrator extends User {
@@ -27,13 +30,19 @@ public class CompanyAdministrator extends User {
      * @param username the username
      * @param email    the email
      * @param name     the name
+     * @param password the password
+     * @param company  the company
      * @throws Exception the exception
      */
     public CompanyAdministrator(String username, String email, String name, String password, Company company) throws Exception {
         super(username, email, name, password, company);
     }
 
-    public CompanyAdministrator() { }
+    /**
+     * Instantiates a new Company administrator.
+     */
+    public CompanyAdministrator() {
+    }
 
     @Override
     public boolean hasPermission(String permissionKey) {

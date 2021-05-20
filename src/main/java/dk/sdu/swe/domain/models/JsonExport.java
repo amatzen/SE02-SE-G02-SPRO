@@ -8,8 +8,16 @@ import java.io.File;
 import java.io.FileWriter;
 import java.util.List;
 
+/**
+ * The type Json export.
+ */
 public class JsonExport {
 
+    /**
+     * Json export credits.
+     *
+     * @param file the file
+     */
     public static void JsonExportCredits(File file) {
 
         Gson gson = new GsonBuilder()
@@ -27,6 +35,11 @@ public class JsonExport {
         }
     }
 
+    /**
+     * Json export programs.
+     *
+     * @param file the file
+     */
     public static void JsonExportPrograms(File file) {
 
         try {
@@ -37,6 +50,11 @@ public class JsonExport {
         }
     }
 
+    /**
+     * Json export companies.
+     *
+     * @param file the file
+     */
     public static void JsonExportCompanies(File file) {
 
         try {

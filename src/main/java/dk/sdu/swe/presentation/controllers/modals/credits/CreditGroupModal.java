@@ -1,10 +1,10 @@
 package dk.sdu.swe.presentation.controllers.modals.credits;
 
-import dk.sdu.swe.persistence.dao.UserDAOImpl;
 import dk.sdu.swe.domain.controllers.CreditRoleController;
 import dk.sdu.swe.domain.models.Company;
 import dk.sdu.swe.domain.models.CreditRole;
 import dk.sdu.swe.domain.persistence.IUserDAO;
+import dk.sdu.swe.persistence.dao.UserDAOImpl;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -19,6 +19,9 @@ import javafx.stage.Window;
 import java.io.IOException;
 import java.util.Objects;
 
+/**
+ * The type Credit group modal.
+ */
 public class CreditGroupModal extends Dialog<CreditRole> {
 
     private IUserDAO userDAO;
@@ -32,10 +35,21 @@ public class CreditGroupModal extends Dialog<CreditRole> {
 
     private GaussianBlur backgroundEffect;
 
+    /**
+     * Instantiates a new Credit group modal.
+     *
+     * @param window the window
+     */
     public CreditGroupModal(Window window) {
         this(window, null);
     }
 
+    /**
+     * Instantiates a new Credit group modal.
+     *
+     * @param window     the window
+     * @param creditRole the credit role
+     */
     public CreditGroupModal(Window window, CreditRole creditRole) {
         userDAO = UserDAOImpl.getInstance();
         this.creditRoleObj = creditRole;

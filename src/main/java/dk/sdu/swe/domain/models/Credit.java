@@ -1,10 +1,12 @@
 package dk.sdu.swe.domain.models;
 
-import com.google.gson.annotations.Expose;
 import org.json.JSONObject;
 
 import javax.persistence.*;
 
+/**
+ * The type Credit.
+ */
 @Entity
 @Table(name = "credits")
 public class Credit {
@@ -24,9 +26,21 @@ public class Credit {
     @JoinColumn(name = "programme_id", referencedColumnName = "id")
     private Programme programme;
 
+    /**
+     * Instantiates a new Credit.
+     *
+     * @param person     the person
+     * @param creditRole the credit role
+     */
     public Credit(Person person, CreditRole creditRole) {
         this.person = person;
         this.role = creditRole;
+    }
+
+    /**
+     * Instantiates a new Credit.
+     */
+    public Credit() {
     }
 
     @Override
@@ -39,6 +53,11 @@ public class Credit {
             '}';
     }
 
+    /**
+     * To json json object.
+     *
+     * @return the json object
+     */
     public JSONObject toJson() {
         JSONObject a = new JSONObject();
 
@@ -50,28 +69,56 @@ public class Credit {
         return a;
     }
 
-    public Credit() {}
-
+    /**
+     * Gets person.
+     *
+     * @return the person
+     */
     public Person getPerson() {
         return person;
     }
 
+    /**
+     * Sets person.
+     *
+     * @param person the person
+     */
     public void setPerson(Person person) {
         this.person = person;
     }
 
+    /**
+     * Gets programme.
+     *
+     * @return the programme
+     */
     public Programme getProgramme() {
         return programme;
     }
 
+    /**
+     * Sets programme.
+     *
+     * @param programme the programme
+     */
     public void setProgramme(Programme programme) {
         this.programme = programme;
     }
 
+    /**
+     * Gets role.
+     *
+     * @return the role
+     */
     public CreditRole getRole() {
         return role;
     }
 
+    /**
+     * Sets role.
+     *
+     * @param role the role
+     */
     public void setRole(CreditRole role) {
         this.role = role;
     }

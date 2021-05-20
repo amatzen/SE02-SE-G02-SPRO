@@ -5,8 +5,14 @@ import javafx.fxml.FXMLLoader;
 import java.io.IOException;
 import java.util.Objects;
 
+/**
+ * The type Review item.
+ */
 public class ReviewItem {
 
+    /**
+     * Instantiates a new Review item.
+     */
     public ReviewItem() {
         FXMLLoader fxmlLoader = new FXMLLoader(
             Objects.requireNonNull(

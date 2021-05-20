@@ -7,9 +7,17 @@ import dk.sdu.swe.domain.persistence.IReviewDAO;
 import java.util.List;
 import java.util.Objects;
 
+/**
+ * The type Review dao.
+ */
 public class ReviewDAOImpl extends AbstractDAO<Review> implements IReviewDAO {
     private static ReviewDAOImpl instance;
 
+    /**
+     * Gets instance.
+     *
+     * @return the instance
+     */
     public synchronized static ReviewDAOImpl getInstance() {
         if (instance == null) {
             instance = new ReviewDAOImpl();
@@ -25,6 +33,12 @@ public class ReviewDAOImpl extends AbstractDAO<Review> implements IReviewDAO {
         return super.getAll();
     }
 
+    /**
+     * Gets latest review.
+     *
+     * @param programme the programme
+     * @return the latest review
+     */
     public Review getLatestReview(Programme programme) {
         return getAll().stream()
             .filter(x -> Objects.equals(x.getProgramme().getId(), programme.getId()))

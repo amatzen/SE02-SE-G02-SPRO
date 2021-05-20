@@ -22,6 +22,9 @@ import java.util.Objects;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+/**
+ * The type Credit list modal.
+ */
 public class CreditListModal extends Dialog<Boolean> {
 
     @FXML
@@ -38,6 +41,12 @@ public class CreditListModal extends Dialog<Boolean> {
 
     private Programme programme;
 
+    /**
+     * Instantiates a new Credit list modal.
+     *
+     * @param window    the window
+     * @param programme the programme
+     */
     public CreditListModal(Window window, Programme programme) {
         this.programme = programme;
 

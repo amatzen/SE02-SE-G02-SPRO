@@ -1,11 +1,19 @@
 package dk.sdu.swe.persistence.seeders;
 
-import dk.sdu.swe.persistence.dao.CompanyDAOImpl;
-import dk.sdu.swe.domain.persistence.IDAO;
 import dk.sdu.swe.domain.models.Company;
 import dk.sdu.swe.domain.models.CompanyDetails;
+import dk.sdu.swe.domain.persistence.IDAO;
+import dk.sdu.swe.persistence.dao.CompanyDAOImpl;
 
+/**
+ * The type V 0 create companies.
+ */
 public class v0_CreateCompanies {
+    /**
+     * Run.
+     *
+     * @throws Exception the exception
+     */
     public static void run() throws Exception {
         IDAO<Company> dao = CompanyDAOImpl.getInstance();
 

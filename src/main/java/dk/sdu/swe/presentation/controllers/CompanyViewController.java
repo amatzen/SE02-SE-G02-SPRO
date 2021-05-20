@@ -2,10 +2,10 @@ package dk.sdu.swe.presentation.controllers;
 
 import com.jfoenix.controls.JFXListView;
 import com.jfoenix.controls.JFXTextField;
-import dk.sdu.swe.domain.controllers.CompanyController;
-import dk.sdu.swe.domain.models.Company;
 import dk.sdu.swe.cross_cutting.helpers.Observer;
 import dk.sdu.swe.cross_cutting.helpers.PubSub;
+import dk.sdu.swe.domain.controllers.CompanyController;
+import dk.sdu.swe.domain.models.Company;
 import dk.sdu.swe.presentation.controllers.modals.companies.CompanyModal;
 import dk.sdu.swe.presentation.controllers.partials.CompanyListItem;
 import javafx.application.Platform;
@@ -20,6 +20,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 
+/**
+ * The type Company view controller.
+ */
 public class CompanyViewController extends BorderPane implements Observer {
 
     @FXML
@@ -28,6 +31,9 @@ public class CompanyViewController extends BorderPane implements Observer {
     @FXML
     private JFXTextField searchField;
 
+    /**
+     * Instantiates a new Company view controller.
+     */
     public CompanyViewController() {
         FXMLLoader fxmlLoader = new FXMLLoader(
             Objects.requireNonNull(

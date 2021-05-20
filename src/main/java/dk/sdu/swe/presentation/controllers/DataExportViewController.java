@@ -11,9 +11,13 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Alert;
 import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
+
 import java.io.IOException;
 import java.util.Objects;
 
+/**
+ * The type Data export view controller.
+ */
 public class DataExportViewController extends VBox {
 
     @FXML
@@ -26,6 +30,9 @@ public class DataExportViewController extends VBox {
     private JFXButton exportBtn;
 
 
+    /**
+     * Instantiates a new Data export view controller.
+     */
     public DataExportViewController() {
         FXMLLoader fxmlLoader = new FXMLLoader(
             Objects.requireNonNull(

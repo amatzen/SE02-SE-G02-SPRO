@@ -2,9 +2,9 @@ package dk.sdu.swe.presentation.controllers.modals.persons;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
+import dk.sdu.swe.cross_cutting.exceptions.PersonCreationException;
 import dk.sdu.swe.domain.controllers.PersonController;
 import dk.sdu.swe.domain.models.Person;
-import dk.sdu.swe.cross_cutting.exceptions.PersonCreationException;
 import dk.sdu.swe.presentation.AlertHelper;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -23,6 +23,9 @@ import java.time.ZonedDateTime;
 import java.util.Objects;
 import java.util.Optional;
 
+/**
+ * The type Person modal.
+ */
 public class PersonModal extends Dialog<Person> {
 
     @FXML
@@ -44,10 +47,21 @@ public class PersonModal extends Dialog<Person> {
 
     private Person person;
 
+    /**
+     * Instantiates a new Person modal.
+     *
+     * @param window the window
+     */
     public PersonModal(Window window) {
         this(window, null);
     }
 
+    /**
+     * Instantiates a new Person modal.
+     *
+     * @param window the window
+     * @param person the person
+     */
     public PersonModal(Window window, Person person) {
         this.person = person;
 
