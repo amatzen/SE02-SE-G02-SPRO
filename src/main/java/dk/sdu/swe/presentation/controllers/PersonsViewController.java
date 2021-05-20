@@ -3,10 +3,10 @@ package dk.sdu.swe.presentation.controllers;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXListView;
 import com.jfoenix.controls.JFXTextField;
-import dk.sdu.swe.domain.controllers.PersonController;
-import dk.sdu.swe.domain.models.Person;
 import dk.sdu.swe.cross_cutting.helpers.Observer;
 import dk.sdu.swe.cross_cutting.helpers.PubSub;
+import dk.sdu.swe.domain.controllers.PersonController;
+import dk.sdu.swe.domain.models.Person;
 import dk.sdu.swe.presentation.controllers.modals.persons.PersonModal;
 import dk.sdu.swe.presentation.controllers.partials.PersonListItem;
 import javafx.application.Platform;
@@ -21,6 +21,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 
+/**
+ * The type Persons view controller.
+ */
 public class PersonsViewController extends VBox implements Observer {
 
     @FXML
@@ -32,6 +35,9 @@ public class PersonsViewController extends VBox implements Observer {
     @FXML
     private JFXTextField searchField;
 
+    /**
+     * Instantiates a new Persons view controller.
+     */
     public PersonsViewController() {
         FXMLLoader fxmlLoader = new FXMLLoader(
             Objects.requireNonNull(

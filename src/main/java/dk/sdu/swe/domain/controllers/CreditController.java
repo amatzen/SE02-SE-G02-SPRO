@@ -1,25 +1,32 @@
 package dk.sdu.swe.domain.controllers;
 
-import dk.sdu.swe.persistence.dao.CreditDAOImpl;
 import dk.sdu.swe.domain.controllers.contracts.ICreditController;
 import dk.sdu.swe.domain.models.Credit;
 import dk.sdu.swe.domain.models.CreditRole;
 import dk.sdu.swe.domain.models.Person;
 import dk.sdu.swe.domain.models.Programme;
 import dk.sdu.swe.domain.persistence.ICreditDAO;
+import dk.sdu.swe.persistence.dao.CreditDAOImpl;
 
 import java.util.List;
 
+/**
+ * The type Credit controller.
+ */
 public class CreditController implements ICreditController {
 
-    private ICreditDAO creditDAO;
-
     private static ICreditController instance;
+    private final ICreditDAO creditDAO;
 
     private CreditController() {
         creditDAO = CreditDAOImpl.getInstance();
     }
 
+    /**
+     * Gets instance.
+     *
+     * @return the instance
+     */
     public static ICreditController getInstance() {
         if (instance == null) {
             instance = new CreditController();

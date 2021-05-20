@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.StackPane?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.*?>
 <fx:root type="VBox" xmlns:fx="http://javafx.com/fxml/1" fx:id="content" maxHeight="1.7976931348623157E308"
-      maxWidth="1.7976931348623157E308"
-      prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/">
+         maxWidth="1.7976931348623157E308"
+         prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/">
     <children>
         <StackPane fx:id="navbarPane"/>
         <StackPane fx:id="contentPane" VBox.vgrow="ALWAYS"/>

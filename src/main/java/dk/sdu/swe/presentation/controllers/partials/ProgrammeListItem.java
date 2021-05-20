@@ -2,18 +2,18 @@ package dk.sdu.swe.presentation.controllers.partials;
 
 import com.jfoenix.controls.JFXButton;
 import dk.sdu.swe.Application;
-import dk.sdu.swe.persistence.dao.ReviewDAOImpl;
 import dk.sdu.swe.domain.controllers.ProgrammeController;
+import dk.sdu.swe.domain.controllers.ReviewController;
 import dk.sdu.swe.domain.models.*;
-import dk.sdu.swe.domain.models.Category;
-import dk.sdu.swe.domain.models.Channel;
-import dk.sdu.swe.domain.models.Programme;
+import dk.sdu.swe.persistence.dao.ReviewDAOImpl;
 import dk.sdu.swe.presentation.controllers.modals.credits.CreditListModal;
 import dk.sdu.swe.presentation.controllers.modals.programmes.ProgrammeModal;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Dialog;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -27,6 +27,9 @@ import java.util.Objects;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+/**
+ * The type Programme list item.
+ */
 public class ProgrammeListItem extends AnchorPane {
 
     @FXML
@@ -38,11 +41,17 @@ public class ProgrammeListItem extends AnchorPane {
     @FXML
     private ImageView rs_draft_img, rs_awaiting_img, rs_complete_img;
 
-    private Programme programme;
-
     @FXML
     private FlowPane channelsPane;
 
+    private Programme programme;
+    private Review review;
+
+    /**
+     * Instantiates a new Programme list item.
+     *
+     * @param programme the programme
+     */
     public ProgrammeListItem(Programme programme) {
         this.programme = programme;
 
@@ -62,13 +71,7 @@ public class ProgrammeListItem extends AnchorPane {
     @FXML
     private void initialize() {
         Platform.runLater(() -> {
-            Review review = ReviewDAOImpl.getInstance().getLatestReview(programme);
-            if(!Objects.nonNull(review)) {
-                setReviewState(ReviewState.ACCEPTED);
-            } else {
-                setReviewState(review.getState());
-            }
-
+            checkReviewState();
             nameLbl.setText(programme.getTitle());
             categoryLbl.setText(programme.getCategories().stream()
                 .map(Category::getCategoryTitle)
@@ -83,6 +86,15 @@ public class ProgrammeListItem extends AnchorPane {
                 channelsPane.getChildren().add(new ImageView(logo));
             }
         });
+    }
+
+    private void checkReviewState() {
+        review = ReviewController.getInstance().getLatestReview(programme).orElse(null);
+        if(!Objects.nonNull(review)) {
+            setReviewState(ReviewState.ACCEPTED);
+        } else {
+            setReviewState(review.getState());
+        }
     }
 
     private Image getReviewStateButtonImg(String slug) {
@@ -134,6 +146,29 @@ public class ProgrammeListItem extends AnchorPane {
 
     @FXML
     private void edit(ActionEvent event) {
+        if(Objects.nonNull(review) && review.getState() == ReviewState.AWAITING) {
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+
+            alert.setTitle("Bekræft overskrivning");
+            alert.setHeaderText("Vil du overskrive den afventende ændring?");
+            alert.setContentText("Der er i forvejen en ændring på dette program som afventer godkendelse. Hvis du fortsætter, så sletter du den tidligere ændring.");
+
+            ButtonType continueBtn = new ButtonType("Fortsæt");
+            ButtonType cancelBtn = new ButtonType("Annuller");
+
+            alert.getButtonTypes().setAll(continueBtn, cancelBtn);
+            Optional<ButtonType> result = alert.showAndWait();
+
+            if(result.isEmpty() || result.get() != continueBtn) return;
+
+            review.setState(ReviewState.DENIED);
+            ReviewController.getInstance().update(review);
+            updateState();
+        }
+
+        this.review = null;
+        checkReviewState();
+
         Dialog<Programme> programmeDialog = new ProgrammeModal(getScene().getWindow(), programme);
         Optional<Programme> programme = programmeDialog.showAndWait();
         programme.ifPresent(programmeObj -> {

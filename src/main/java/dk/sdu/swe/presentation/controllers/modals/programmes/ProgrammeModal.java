@@ -2,9 +2,9 @@ package dk.sdu.swe.presentation.controllers.modals.programmes;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
+import dk.sdu.swe.cross_cutting.helpers.PubSub;
 import dk.sdu.swe.domain.controllers.*;
 import dk.sdu.swe.domain.models.*;
-import dk.sdu.swe.cross_cutting.helpers.PubSub;
 import dk.sdu.swe.presentation.AlertHelper;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -23,6 +23,9 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 
+/**
+ * The type Programme modal.
+ */
 public class ProgrammeModal extends Dialog<Programme> {
 
     @FXML
@@ -45,6 +48,12 @@ public class ProgrammeModal extends Dialog<Programme> {
 
     private Programme programme;
 
+    /**
+     * Instantiates a new Programme modal.
+     *
+     * @param window    the window
+     * @param programme the programme
+     */
     public ProgrammeModal(Window window, Programme programme) {
         this.programme = programme;
 
@@ -72,6 +81,11 @@ public class ProgrammeModal extends Dialog<Programme> {
         }
     }
 
+    /**
+     * Instantiates a new Programme modal.
+     *
+     * @param window the window
+     */
     public ProgrammeModal(Window window) {
         this(window, null);
     }
@@ -170,7 +184,7 @@ public class ProgrammeModal extends Dialog<Programme> {
 
             ReviewController.getInstance().save(new Review(programme, original, updated));
 
-            setResult(null);
+            setResult(programme);
         } else {
             Programme programme;
             if (this.programme == null) {
@@ -190,6 +204,5 @@ public class ProgrammeModal extends Dialog<Programme> {
         PubSub.publish("trigger_update:programmes:refresh", true);
         hide();
     }
-
 }
 

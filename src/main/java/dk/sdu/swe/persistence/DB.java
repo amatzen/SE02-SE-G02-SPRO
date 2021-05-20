@@ -1,7 +1,7 @@
 package dk.sdu.swe.persistence;
 
-import dk.sdu.swe.domain.models.*;
 import dk.sdu.swe.cross_cutting.helpers.EnvironmentSelector;
+import dk.sdu.swe.domain.models.*;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -13,9 +13,18 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
+/**
+ * The type Db.
+ */
 public class DB {
     private volatile static SessionFactory sessionFactory;
     private volatile static List<Class> annotatedClasses = new ArrayList<>();
+
+    /**
+     * Gets session factory.
+     *
+     * @return the session factory
+     */
     public synchronized static SessionFactory getSessionFactory() {
         if(sessionFactory == null) {
             dk.sdu.swe.cross_cutting.helpers.Environment env = EnvironmentSelector.getInstance().getEnvironment();
@@ -73,11 +82,17 @@ public class DB {
         return sessionFactory;
     }
 
+    /**
+     * Reset session factory.
+     */
     public synchronized static void resetSessionFactory() {
         sessionFactory = null;
         getSessionFactory();
     }
 
+    /**
+     * Add annotated classes.
+     */
     public synchronized static void addAnnotatedClasses() {
         annotatedClasses.add(User.class);
         annotatedClasses.add(SystemAdministrator.class);
@@ -93,10 +108,23 @@ public class DB {
         annotatedClasses.add(Review.class);
     }
 
+    /**
+     * Open session session.
+     *
+     * @return the session
+     */
     public synchronized static Session openSession() {
         return getSessionFactory().openSession();
     }
 
+    /**
+     * Load all data list.
+     *
+     * @param <T>     the type parameter
+     * @param type    the type
+     * @param session the session
+     * @return the list
+     */
     public static <T> List<T> loadAllData(Class<T> type, Session session) {
         CriteriaBuilder builder = session.getCriteriaBuilder();
         CriteriaQuery<T> criteria = builder.createQuery(type);

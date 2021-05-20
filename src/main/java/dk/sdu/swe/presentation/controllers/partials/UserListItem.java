@@ -1,12 +1,12 @@
 package dk.sdu.swe.presentation.controllers.partials;
 
-import dk.sdu.swe.persistence.dao.UserDAOImpl;
 import dk.sdu.swe.domain.controllers.AuthController;
 import dk.sdu.swe.domain.controllers.CompanyController;
 import dk.sdu.swe.domain.controllers.UserController;
 import dk.sdu.swe.domain.models.CompanyAdministrator;
 import dk.sdu.swe.domain.models.SystemAdministrator;
 import dk.sdu.swe.domain.models.User;
+import dk.sdu.swe.persistence.dao.UserDAOImpl;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -19,6 +19,9 @@ import javafx.scene.layout.HBox;
 import java.io.IOException;
 import java.util.Objects;
 
+/**
+ * The type User list item.
+ */
 public class UserListItem extends HBox {
 
     @FXML
@@ -34,6 +37,12 @@ public class UserListItem extends HBox {
 
     private ListView<UserListItem> container;
 
+    /**
+     * Instantiates a new User list item.
+     *
+     * @param user      the user
+     * @param container the container
+     */
     public UserListItem(User user, ListView<UserListItem> container) {
         this.user = user;
         this.container = container;

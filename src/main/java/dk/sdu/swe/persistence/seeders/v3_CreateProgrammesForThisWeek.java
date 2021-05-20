@@ -1,12 +1,17 @@
 package dk.sdu.swe.persistence.seeders;
 
 import com.google.common.base.Charsets;
-import dk.sdu.swe.persistence.DB;
-import dk.sdu.swe.persistence.dao.*;
-import dk.sdu.swe.domain.models.*;
+import dk.sdu.swe.domain.models.Category;
+import dk.sdu.swe.domain.models.EPGProgramme;
+import dk.sdu.swe.domain.models.Programme;
 import dk.sdu.swe.domain.persistence.ICategoryDAO;
 import dk.sdu.swe.domain.persistence.IChannelDAO;
 import dk.sdu.swe.domain.persistence.ICompanyDAO;
+import dk.sdu.swe.persistence.DB;
+import dk.sdu.swe.persistence.dao.CategoryDAOImpl;
+import dk.sdu.swe.persistence.dao.ChannelDAOImpl;
+import dk.sdu.swe.persistence.dao.CompanyDAOImpl;
+import dk.sdu.swe.persistence.dao.ProgrammeDAOImpl;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.json.JSONArray;
@@ -24,7 +29,17 @@ import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
+/**
+ * The type V 3 create programmes for this week.
+ */
 public class v3_CreateProgrammesForThisWeek {
+    /**
+     * Run.
+     *
+     * @param date  the date
+     * @param first the first
+     * @throws Exception the exception
+     */
     public static void run(String date, boolean first) throws Exception {
 
         // Step 1: Get channels firstly
@@ -133,7 +148,14 @@ public class v3_CreateProgrammesForThisWeek {
 
     }
 
-    // https://howtodoinjava.com/java8/java-stream-distinct-examples/
+    /**
+     * Distinct by key predicate.
+     *
+     * @param <T>          the type parameter
+     * @param keyExtractor the key extractor
+     * @return the predicate
+     */
+// https://howtodoinjava.com/java8/java-stream-distinct-examples/
     public static <T> Predicate<T> distinctByKey(Function<? super T, Object> keyExtractor)
     {
         Map<Object, Boolean> map = new ConcurrentHashMap<>();

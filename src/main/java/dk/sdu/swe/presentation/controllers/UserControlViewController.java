@@ -12,11 +12,17 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Objects;
 
+/**
+ * The type User control view controller.
+ */
 public class UserControlViewController extends VBox {
 
     @FXML
     private ListView<UserControlListItem> userList;
 
+    /**
+     * Instantiates a new User control view controller.
+     */
     public UserControlViewController() {
         FXMLLoader fxmlLoader = new FXMLLoader(
             Objects.requireNonNull(

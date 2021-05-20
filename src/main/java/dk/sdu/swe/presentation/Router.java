@@ -8,6 +8,9 @@ import javafx.util.Duration;
 
 import java.lang.reflect.InvocationTargetException;
 
+/**
+ * The type Router.
+ */
 public class Router {
 
     private static Router sceneRouter;
@@ -18,6 +21,7 @@ public class Router {
 
     /**
      * Create instance of router with a given container to show content in.
+     *
      * @param container Container to fill with content.
      */
     public Router(Pane container) {
@@ -85,6 +89,7 @@ public class Router {
 
     /**
      * Swaps current content with a new instance of the given class type.
+     *
      * @param componentClass Class type of component.
      */
     public void goTo(Class<? extends Parent> componentClass) {
@@ -93,6 +98,7 @@ public class Router {
 
     /**
      * Swap contents of container with given Parent instance.
+     *
      * @param component New content.
      */
     public void goTo(Parent component) {
@@ -101,16 +107,27 @@ public class Router {
 
     /**
      * Returns instance of Router, that controls the scene root.
+     *
      * @return Scene root Router
      */
     public static Router getSceneRouter() {
         return Router.sceneRouter;
     }
 
+    /**
+     * Sets scene router.
+     *
+     * @param router the router
+     */
     public static void setSceneRouter(Router router) {
         Router.sceneRouter = router;
     }
 
+    /**
+     * Sets fade animation.
+     *
+     * @param doFadeAnimation the do fade animation
+     */
     public void setFadeAnimation(boolean doFadeAnimation) {
         this.doFadeAnimation = doFadeAnimation;
     }

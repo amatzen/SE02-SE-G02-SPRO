@@ -1,17 +1,26 @@
 package dk.sdu.swe.persistence.dao;
 
-import dk.sdu.swe.persistence.DB;
 import dk.sdu.swe.domain.models.Person;
 import dk.sdu.swe.domain.persistence.IPersonDAO;
+import dk.sdu.swe.persistence.DB;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
+
 import java.util.List;
 
+/**
+ * The type Person dao.
+ */
 public class PersonDAOImpl extends AbstractDAO<Person> implements IPersonDAO {
 
     private static PersonDAOImpl instance;
 
+    /**
+     * Gets instance.
+     *
+     * @return the instance
+     */
     public synchronized static PersonDAOImpl getInstance() {
         if (instance == null) {
             instance = new PersonDAOImpl();

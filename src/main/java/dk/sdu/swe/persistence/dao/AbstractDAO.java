@@ -1,7 +1,7 @@
 package dk.sdu.swe.persistence.dao;
 
-import dk.sdu.swe.persistence.DB;
 import dk.sdu.swe.domain.persistence.IDAO;
+import dk.sdu.swe.persistence.DB;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -11,10 +11,20 @@ import javax.persistence.criteria.Root;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * The type Abstract dao.
+ *
+ * @param <T> the type parameter
+ */
 public abstract class AbstractDAO<T> implements IDAO<T> {
 
     private Class<T> type;
 
+    /**
+     * Instantiates a new Abstract dao.
+     *
+     * @param tClass the t class
+     */
     public AbstractDAO(Class<T> tClass) {
         this.type = tClass;
     }

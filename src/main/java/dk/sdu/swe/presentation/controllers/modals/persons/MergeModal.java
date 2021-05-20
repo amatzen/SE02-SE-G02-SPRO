@@ -20,6 +20,9 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Objects;
 
+/**
+ * The type Merge modal.
+ */
 public class MergeModal extends Dialog<Person> {
 
     @FXML
@@ -35,6 +38,12 @@ public class MergeModal extends Dialog<Person> {
 
     private Person personObj;
 
+    /**
+     * Instantiates a new Merge modal.
+     *
+     * @param window the window
+     * @param person the person
+     */
     public MergeModal(Window window, Person person) {
         this.personObj = person;
 

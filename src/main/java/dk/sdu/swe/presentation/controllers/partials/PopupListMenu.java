@@ -7,11 +7,19 @@ import javafx.scene.control.Label;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * The type Popup list menu.
+ */
 public class PopupListMenu extends JFXPopup {
 
     private JFXListView<Label> listView;
     private Map<Label, Runnable> actions;
 
+    /**
+     * Instantiates a new Popup list menu.
+     *
+     * @param actions the actions
+     */
     public PopupListMenu(Map<String, Runnable> actions) {
         listView = new JFXListView<>();
         this.actions = new HashMap<>();

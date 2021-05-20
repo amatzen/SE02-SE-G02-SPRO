@@ -11,12 +11,16 @@ import javafx.scene.control.Dialog;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.HBox;
+
 import java.io.IOException;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
 
+/**
+ * The type Credit group list item.
+ */
 public class CreditGroupListItem extends HBox {
 
     private Map<String, Runnable> options = new LinkedHashMap<>() {{
@@ -34,6 +38,12 @@ public class CreditGroupListItem extends HBox {
 
     private ListView<CreditGroupListItem> container;
 
+    /**
+     * Instantiates a new Credit group list item.
+     *
+     * @param creditRole the credit role
+     * @param container  the container
+     */
     public CreditGroupListItem(CreditRole creditRole, ListView<CreditGroupListItem> container) {
         this.creditRole = creditRole;
         this.container = container;

@@ -1,15 +1,15 @@
 package dk.sdu.swe.persistence.seeders;
 
 import com.google.common.base.Charsets;
-import dk.sdu.swe.persistence.dao.CreditDAOImpl;
-import dk.sdu.swe.persistence.dao.CreditRoleDAOImpl;
-import dk.sdu.swe.persistence.dao.PersonDAOImpl;
-import dk.sdu.swe.persistence.dao.ProgrammeDAOImpl;
+import dk.sdu.swe.cross_cutting.exceptions.PersonCreationException;
 import dk.sdu.swe.domain.models.Credit;
 import dk.sdu.swe.domain.models.CreditRole;
 import dk.sdu.swe.domain.models.Person;
 import dk.sdu.swe.domain.models.Programme;
-import dk.sdu.swe.cross_cutting.exceptions.PersonCreationException;
+import dk.sdu.swe.persistence.dao.CreditDAOImpl;
+import dk.sdu.swe.persistence.dao.CreditRoleDAOImpl;
+import dk.sdu.swe.persistence.dao.PersonDAOImpl;
+import dk.sdu.swe.persistence.dao.ProgrammeDAOImpl;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -23,7 +23,15 @@ import java.util.List;
 import java.util.Random;
 import java.util.Set;
 
+/**
+ * The type V 5 add people and credits.
+ */
 public class v5_AddPeopleAndCredits {
+    /**
+     * Run.
+     *
+     * @throws Exception the exception
+     */
     public static void run() throws Exception {
         int creditRolesCount = CreditRoleDAOImpl.getInstance().getAll().size();
         List<CreditRole> creditRoles = CreditRoleDAOImpl.getInstance().getAll();

@@ -1,17 +1,20 @@
 package dk.sdu.swe.domain.controllers;
 
-import dk.sdu.swe.persistence.dao.CompanyDAOImpl;
+import dk.sdu.swe.cross_cutting.helpers.PubSub;
 import dk.sdu.swe.domain.controllers.contracts.ICompanyController;
 import dk.sdu.swe.domain.models.Company;
 import dk.sdu.swe.domain.models.CompanyDetails;
 import dk.sdu.swe.domain.persistence.ICompanyDAO;
-import dk.sdu.swe.cross_cutting.helpers.PubSub;
+import dk.sdu.swe.persistence.dao.CompanyDAOImpl;
 
 import java.util.Comparator;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
+/**
+ * The type Company controller.
+ */
 public class CompanyController implements ICompanyController {
 
     private ICompanyDAO companyDAO;
@@ -21,6 +24,11 @@ public class CompanyController implements ICompanyController {
         companyDAO = CompanyDAOImpl.getInstance();
     }
 
+    /**
+     * Gets instance.
+     *
+     * @return the instance
+     */
     public static ICompanyController getInstance() {
         if (instance == null) {
             instance = new CompanyController();
@@ -30,7 +38,7 @@ public class CompanyController implements ICompanyController {
 
     @Override
     public List<Company> getAll() {
-        if(AuthController.getInstance().getUser().hasPermission("companies.list.all")) {
+        if (AuthController.getInstance().getUser().hasPermission("companies.list.all")) {
             List<Company> companies = CompanyDAOImpl.getInstance().getAll();
             companies.sort(Comparator.comparing(Company::getName));
             return companies;
@@ -43,7 +51,7 @@ public class CompanyController implements ICompanyController {
                 boolean subCompany = false;
 
                 Company currentCompany = x.getParentCompany();
-                while(Objects.nonNull(currentCompany)) {
+                while (Objects.nonNull(currentCompany)) {
                     subCompany = Objects.equals(currentCompany.getId(), AuthController.getInstance().getUser().getCompany().getId());
                     currentCompany = currentCompany.getParentCompany();
                 }
