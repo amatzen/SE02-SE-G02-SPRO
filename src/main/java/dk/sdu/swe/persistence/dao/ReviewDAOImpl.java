@@ -49,6 +49,7 @@ public class ReviewDAOImpl extends AbstractDAO<Review> implements IReviewDAO {
         Transaction t = session.beginTransaction();
         try {
             Query query = session.createQuery("FROM Review WHERE programme = :p ORDER BY id DESC");
+            query.setMaxResults(1);
             query.setParameter("p", programme);
 
             return query.stream().reduce((o, o2) -> o2);
