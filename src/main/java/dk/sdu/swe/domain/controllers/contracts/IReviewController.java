@@ -1,8 +1,10 @@
 package dk.sdu.swe.domain.controllers.contracts;
 
+import dk.sdu.swe.domain.models.Programme;
 import dk.sdu.swe.domain.models.Review;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * The interface Review controller.
@@ -28,4 +30,6 @@ public interface IReviewController {
      * @param review the review
      */
     void update(Review review);
+
+    Optional<Review> getLatestReview(Programme programme);
 }
