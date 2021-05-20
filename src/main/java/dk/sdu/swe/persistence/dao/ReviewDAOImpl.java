@@ -3,6 +3,10 @@ package dk.sdu.swe.persistence.dao;
 import dk.sdu.swe.domain.models.Programme;
 import dk.sdu.swe.domain.models.Review;
 import dk.sdu.swe.domain.persistence.IReviewDAO;
+import dk.sdu.swe.persistence.DB;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 
 import java.util.List;
 import java.util.Objects;
@@ -40,8 +44,15 @@ public class ReviewDAOImpl extends AbstractDAO<Review> implements IReviewDAO {
      * @return the latest review
      */
     public Review getLatestReview(Programme programme) {
-        return getAll().stream()
-            .filter(x -> Objects.equals(x.getProgramme().getId(), programme.getId()))
-            .findFirst().orElse(null);
+        Session session = DB.openSession();
+        Transaction t = session.beginTransaction();
+
+        Query query = session.createQuery("FROM Review WHERE Programme = :p ORDER BY id DESC");
+        query.setParameter("p", programme);
+
+        t.commit();
+        session.close();
+
+        return (Review) query.getResultList().get(query.getResultList().size() - 1);
     }
 }
