@@ -64,25 +64,37 @@ public class DataExportViewController extends VBox {
             alert.setContentText("Vælg venligst eksport data");
             alert.showAndWait();
         }
+
         FileChooser fileChooser = new FileChooser();
         if (csvBtn.isSelected() && creditData.isSelected()) {
-            fileChooser.setTitle("");
-            CsvExport.csvExportCredits(new FileChooser().showSaveDialog(getScene().getWindow()));
+            fileChooser.setTitle("Kreditteringer - CSV");
+            fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("CSV","*.csv"));
+            CsvExport.csvExportCredits(fileChooser.showSaveDialog(getScene().getWindow()));
         }
         if (csvBtn.isSelected() && programData.isSelected()) {
-            CsvExport.csvExportPrograms(new FileChooser().showSaveDialog(getScene().getWindow()));
+            fileChooser.setTitle("Programmer - CSV");
+            fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("CSV", "*.csv"));
+            CsvExport.csvExportPrograms(fileChooser.showSaveDialog(getScene().getWindow()));
         }
         if (csvBtn.isSelected() && companyData.isSelected()) {
-            CsvExport.csvExportCompanies(new FileChooser().showSaveDialog(getScene().getWindow()));
+            fileChooser.setTitle("Virksomheder - CSV");
+            fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("CSV", "*.csv"));
+            CsvExport.csvExportCompanies(fileChooser.showSaveDialog(getScene().getWindow()));
         }
         if (jsonBtn.isSelected() && creditData.isSelected()) {
-            JsonExport.JsonExportCredits(new FileChooser().showSaveDialog(getScene().getWindow()));
+            fileChooser.setTitle("Kreditteringer - JSON");
+            fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("JSON", "*.json"));
+            JsonExport.JsonExportCredits(fileChooser.showSaveDialog(getScene().getWindow()));
         }
         if (jsonBtn.isSelected() && programData.isSelected()) {
-            JsonExport.JsonExportPrograms(new FileChooser().showSaveDialog(getScene().getWindow()));
+            fileChooser.setTitle("Programmer - JSON");
+            fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("JSON", "*.json"));
+            JsonExport.JsonExportPrograms(fileChooser.showSaveDialog(getScene().getWindow()));
         }
         if (jsonBtn.isSelected() && companyData.isSelected()) {
-            JsonExport.JsonExportCompanies(new FileChooser().showSaveDialog(getScene().getWindow()));
+            fileChooser.setTitle("Virksomheder - JSON");
+            fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("JSON", "*.json"));
+            JsonExport.JsonExportCompanies(fileChooser.showSaveDialog(getScene().getWindow()));
         }
     }
 
