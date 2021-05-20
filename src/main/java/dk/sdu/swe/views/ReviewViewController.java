@@ -13,11 +13,12 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Objects;
 
 public class ReviewViewController extends AnchorPane implements Observer {
 
-
+    private ArrayList<Review> reviews_;
 
     @FXML
     private JFXListView<ReviewListItem> reviews;
@@ -38,8 +39,12 @@ public class ReviewViewController extends AnchorPane implements Observer {
         }
     }
 
-    public void createListItem(Review review) throws IOException {
+    private void createListItem(Review review) throws IOException {
         reviews.getItems().add(new ReviewListItem(review));
+    }
+
+    private void clear() {
+        reviews.getItems().clear();
     }
 
     @FXML
@@ -55,6 +60,12 @@ public class ReviewViewController extends AnchorPane implements Observer {
 
     @Override
     public void onNotify(String topic, Object payload) {
-        review
+        clear();
+        for (Review r: reviews_) {
+            try {
+                createListItem(r);
+            } catch (IOException e) {
+            }
+        }
     }
 }
