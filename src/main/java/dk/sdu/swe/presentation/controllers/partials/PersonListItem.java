@@ -90,8 +90,8 @@ public class PersonListItem extends VBox {
     }
 
     private void editPerson(){
-        Dialog<Person> personEditDialog = new PersonModal(getScene().getWindow(), person);
-        Optional<Person> person = personEditDialog.showAndWait();
+        Dialog<Person> personModal = new PersonModal(getScene().getWindow(), person);
+        Optional<Person> person = personModal.showAndWait();
         person.ifPresent(personObj -> {
             PersonController.getInstance().update(personObj);
             updateState();
