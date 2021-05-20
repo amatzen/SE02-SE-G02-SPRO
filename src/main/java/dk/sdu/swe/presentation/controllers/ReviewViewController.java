@@ -6,7 +6,9 @@ import dk.sdu.swe.cross_cutting.helpers.PubSub;
 import dk.sdu.swe.domain.controllers.ReviewController;
 import dk.sdu.swe.domain.models.Review;
 import dk.sdu.swe.domain.models.ReviewState;
+import dk.sdu.swe.presentation.Router;
 import dk.sdu.swe.presentation.controllers.partials.ReviewListItem;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.AnchorPane;
@@ -61,12 +63,7 @@ public class ReviewViewController extends AnchorPane implements Observer {
 
     @Override
     public void onNotify(String topic, Object payload) {
-        clear();
-        for (Review r: reviews_) {
-            try {
-                createListItem(r);
-            } catch (IOException e) {
-            }
-        }
+        Router r = AdminViewController.getRouter();
+        r.goTo(ReviewViewController.class);
     }
 }

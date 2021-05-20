@@ -31,7 +31,17 @@ public class AdminViewController extends BorderPane implements Observer {
         Platform.runLater(() -> router.goTo(ReviewViewController.class));
     }
 
+    private static volatile AdminViewController instance = null;
+
+    public static Router getRouter() {
+        return instance.router;
+    }
+
     public AdminViewController() {
+        if(instance == null) {
+            instance = this;
+        }
+
         PubSub.subscribe("routeChange", this);
         FXMLLoader fxmlLoader = new FXMLLoader(
             Objects.requireNonNull(
