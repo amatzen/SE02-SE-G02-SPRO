@@ -33,4 +33,7 @@ public class ReviewController implements IReviewController {
     public void save(Review review) {
         reviewDAO.save(review);
     }
+
+    @Override
+    public void update(Review review) { reviewDAO.update(review); }
 }

@@ -8,4 +8,6 @@ public interface IReviewController {
     List<Review> getAll();
 
     void save(Review review);
+
+    void update(Review review);
 }
