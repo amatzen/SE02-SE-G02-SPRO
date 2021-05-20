@@ -1,9 +1,7 @@
 package dk.sdu.swe.domain.models;
 
 import com.google.gson.annotations.SerializedName;
-import dk.sdu.swe.cross_cutting.exceptions.InvalidNameException;
 import dk.sdu.swe.cross_cutting.exceptions.PersonCreationException;
-import dk.sdu.swe.cross_cutting.exceptions.UserCreationException;
 import org.json.JSONObject;
 
 import javax.persistence.*;
@@ -30,7 +28,7 @@ public class Person {
     private String image;
 
     @Transient
-    private DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ISO_DATE_TIME;
+    private final DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ISO_DATE_TIME;
 
 
     @ElementCollection
@@ -41,7 +39,7 @@ public class Person {
 
     @MapKeyColumn(name = "key")
     @Column(name = "value")
-    private Map<String, String> contactDetails = new HashMap<>();
+    private final Map<String, String> contactDetails = new HashMap<>();
 
     @OneToMany(mappedBy = "person")
     private List<Credit> credits;
@@ -73,12 +71,32 @@ public class Person {
         return name;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public String getDateOfBirth() {
         return dateOfBirth;
     }
 
+    public void setDateOfBirth(String dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
+
+    public void setDateOfBirth(ZonedDateTime dateOfBirth) {
+        if (dateOfBirth == null) {
+            this.dateOfBirth = null;
+        } else {
+            setDateOfBirth(dateOfBirth.format(dateTimeFormatter));
+        }
+    }
+
     public String getImage() {
         return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 
     public JSONObject getContactDetails() {
@@ -105,31 +123,11 @@ public class Person {
         this.credits = credits;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setDateOfBirth(String dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
-    }
-
-    public void setDateOfBirth(ZonedDateTime dateOfBirth) {
-        if (dateOfBirth == null) {
-            this.dateOfBirth = null;
-        } else {
-            setDateOfBirth(dateOfBirth.format(dateTimeFormatter));
-        }
-    }
-
     public ZonedDateTime getZonedDate() {
         if (dateOfBirth == null) {
             return null;
         } else {
             return ZonedDateTime.parse(dateOfBirth, dateTimeFormatter);
         }
-    }
-
-    public void setImage(String image) {
-        this.image = image;
     }
 }

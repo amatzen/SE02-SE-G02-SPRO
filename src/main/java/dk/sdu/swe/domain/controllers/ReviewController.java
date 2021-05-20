@@ -1,9 +1,9 @@
 package dk.sdu.swe.domain.controllers;
 
-import dk.sdu.swe.persistence.dao.ReviewDAOImpl;
 import dk.sdu.swe.domain.controllers.contracts.IReviewController;
 import dk.sdu.swe.domain.models.Review;
 import dk.sdu.swe.domain.persistence.IReviewDAO;
+import dk.sdu.swe.persistence.dao.ReviewDAOImpl;
 
 import java.util.List;
 
@@ -11,7 +11,7 @@ public class ReviewController implements IReviewController {
 
     private static IReviewController reviewControllerInstance;
 
-    private IReviewDAO reviewDAO;
+    private final IReviewDAO reviewDAO;
 
     private ReviewController() {
         reviewDAO = ReviewDAOImpl.getInstance();
@@ -35,5 +35,7 @@ public class ReviewController implements IReviewController {
     }
 
     @Override
-    public void update(Review review) { reviewDAO.update(review); }
+    public void update(Review review) {
+        reviewDAO.update(review);
+    }
 }

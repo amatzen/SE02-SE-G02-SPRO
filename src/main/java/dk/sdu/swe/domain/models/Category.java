@@ -17,7 +17,8 @@ public class Category {
     @Column(unique = true)
     private String categoryTitle;
 
-    public Category() {}
+    public Category() {
+    }
 
     public Category(String categoryTitle) {
         this.categoryTitle = categoryTitle;

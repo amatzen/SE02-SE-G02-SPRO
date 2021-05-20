@@ -1,6 +1,5 @@
 package dk.sdu.swe.domain.models;
 
-import com.google.gson.annotations.Expose;
 import org.json.JSONObject;
 
 import javax.persistence.*;
@@ -29,6 +28,9 @@ public class Credit {
         this.role = creditRole;
     }
 
+    public Credit() {
+    }
+
     @Override
     public String toString() {
         return "Credit{" +
@@ -49,8 +51,6 @@ public class Credit {
 
         return a;
     }
-
-    public Credit() {}
 
     public Person getPerson() {
         return person;

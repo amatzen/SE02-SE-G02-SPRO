@@ -1,11 +1,11 @@
 package dk.sdu.swe.domain.controllers;
 
-import dk.sdu.swe.persistence.dao.PersonDAOImpl;
+import dk.sdu.swe.cross_cutting.exceptions.PersonCreationException;
+import dk.sdu.swe.cross_cutting.helpers.PubSub;
 import dk.sdu.swe.domain.controllers.contracts.IPersonController;
 import dk.sdu.swe.domain.models.Person;
 import dk.sdu.swe.domain.persistence.IPersonDAO;
-import dk.sdu.swe.cross_cutting.exceptions.PersonCreationException;
-import dk.sdu.swe.cross_cutting.helpers.PubSub;
+import dk.sdu.swe.persistence.dao.PersonDAOImpl;
 
 import java.time.ZonedDateTime;
 import java.util.Comparator;
@@ -13,8 +13,8 @@ import java.util.List;
 
 public class PersonController implements IPersonController {
 
-    private IPersonDAO personDAO;
     private static IPersonController instance;
+    private final IPersonDAO personDAO;
 
     private PersonController() {
         this.personDAO = PersonDAOImpl.getInstance();

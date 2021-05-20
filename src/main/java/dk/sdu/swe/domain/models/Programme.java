@@ -5,7 +5,9 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import javax.persistence.*;
-import java.util.*;
+import java.util.List;
+import java.util.Objects;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 @Entity
@@ -69,12 +71,12 @@ public class Programme {
         this.title = title;
     }
 
-    public void setProdYear(int prodYear) {
-        this.prodYear = prodYear;
-    }
-
     public int getProdYear() {
         return prodYear;
+    }
+
+    public void setProdYear(int prodYear) {
+        this.prodYear = prodYear;
     }
 
     public List<EPGProgramme> getEpgProgrammes() {
@@ -97,16 +99,16 @@ public class Programme {
         return channel;
     }
 
+    public void setChannel(Channel channel) {
+        this.channel = channel;
+    }
+
     public Set<Category> getCategories() {
         return categories;
     }
 
     public void setCategories(Set<Category> categories) {
         this.categories = categories;
-    }
-
-    public void setChannel(Channel channel) {
-        this.channel = channel;
     }
 
     public JSONObject toJson() {

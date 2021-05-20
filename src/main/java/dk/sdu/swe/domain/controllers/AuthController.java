@@ -1,7 +1,7 @@
 package dk.sdu.swe.domain.controllers;
 
-import dk.sdu.swe.persistence.dao.UserDAOImpl;
 import dk.sdu.swe.domain.models.User;
+import dk.sdu.swe.persistence.dao.UserDAOImpl;
 
 public class AuthController {
 
@@ -27,7 +27,7 @@ public class AuthController {
             return false;
         }
 
-        if(!user.matchPassword(password)) {
+        if (!user.matchPassword(password)) {
             return false;
         }
 

@@ -1,8 +1,8 @@
 package dk.sdu.swe.domain.models;
 
 import at.favre.lib.crypto.bcrypt.BCrypt;
-import dk.sdu.swe.persistence.converters.NameConverter;
 import dk.sdu.swe.cross_cutting.exceptions.UserCreationException;
+import dk.sdu.swe.persistence.converters.NameConverter;
 import org.hibernate.annotations.NaturalId;
 
 import javax.persistence.*;
@@ -15,30 +15,13 @@ import java.util.Objects;
  */
 @Entity
 @Table(name = "users")
-@Inheritance(strategy= InheritanceType.SINGLE_TABLE)
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(
     name = "UserType",
     discriminatorType = DiscriminatorType.STRING
 )
 @DiscriminatorValue("User")
 public class User implements IUser {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    @NaturalId
-    @Column(unique = true)
-    private String username;
-
-    @Column
-    private String email;
-
-    @Convert(converter = NameConverter.class)
-    private Name name;
-
-    @Column
-    private String passwordHash;
-
     @Transient
     private final String[] permissions = {
         "programmes",
@@ -47,7 +30,18 @@ public class User implements IUser {
         "programmes.filter",
         "people"
     };
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    @NaturalId
+    @Column(unique = true)
+    private String username;
+    @Column
+    private String email;
+    @Convert(converter = NameConverter.class)
+    private Name name;
+    @Column
+    private String passwordHash;
     @ManyToOne(optional = true)
     private Company company;
 
@@ -81,7 +75,8 @@ public class User implements IUser {
         this.passwordHash = BCrypt.withDefaults().hashToString(12, password.toCharArray());
     }
 
-    public User() {}
+    public User() {
+    }
 
     public String getUsername() {
         return username;

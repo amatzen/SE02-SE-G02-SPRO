@@ -33,7 +33,8 @@ public class CompanyAdministrator extends User {
         super(username, email, name, password, company);
     }
 
-    public CompanyAdministrator() { }
+    public CompanyAdministrator() {
+    }
 
     @Override
     public boolean hasPermission(String permissionKey) {

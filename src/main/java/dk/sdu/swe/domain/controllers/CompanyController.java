@@ -30,7 +30,7 @@ public class CompanyController implements ICompanyController {
 
     @Override
     public List<Company> getAll() {
-        if(AuthController.getInstance().getUser().hasPermission("companies.list.all")) {
+        if (AuthController.getInstance().getUser().hasPermission("companies.list.all")) {
             List<Company> companies = CompanyDAOImpl.getInstance().getAll();
             companies.sort(Comparator.comparing(Company::getName));
             return companies;
@@ -43,7 +43,7 @@ public class CompanyController implements ICompanyController {
                 boolean subCompany = false;
 
                 Company currentCompany = x.getParentCompany();
-                while(Objects.nonNull(currentCompany)) {
+                while (Objects.nonNull(currentCompany)) {
                     subCompany = Objects.equals(currentCompany.getId(), AuthController.getInstance().getUser().getCompany().getId());
                     currentCompany = currentCompany.getParentCompany();
                 }

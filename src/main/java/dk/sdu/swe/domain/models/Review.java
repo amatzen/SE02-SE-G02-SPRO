@@ -1,7 +1,7 @@
 package dk.sdu.swe.domain.models;
 
-import dk.sdu.swe.persistence.converters.JSONConverter;
 import dk.sdu.swe.domain.controllers.AuthController;
+import dk.sdu.swe.persistence.converters.JSONConverter;
 import org.json.JSONObject;
 
 import javax.persistence.*;
@@ -46,12 +46,12 @@ public class Review {
         this.state = ReviewState.AWAITING;
     }
 
-    public void setState(ReviewState state) {
-        this.state = state;
-    }
-
     public ReviewState getState() {
         return state;
+    }
+
+    public void setState(ReviewState state) {
+        this.state = state;
     }
 
     public ZonedDateTime getSubmission_time() {
