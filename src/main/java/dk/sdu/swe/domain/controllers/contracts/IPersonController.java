@@ -1,7 +1,7 @@
 package dk.sdu.swe.domain.controllers.contracts;
 
 import dk.sdu.swe.domain.models.Person;
-import dk.sdu.swe.exceptions.PersonCreationException;
+import dk.sdu.swe.cross_cutting.exceptions.PersonCreationException;
 
 import java.time.ZonedDateTime;
 import java.util.List;

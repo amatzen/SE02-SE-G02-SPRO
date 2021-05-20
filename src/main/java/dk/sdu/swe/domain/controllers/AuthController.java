@@ -1,6 +1,6 @@
 package dk.sdu.swe.domain.controllers;
 
-import dk.sdu.swe.data.dao.UserDAOImpl;
+import dk.sdu.swe.persistence.dao.UserDAOImpl;
 import dk.sdu.swe.domain.models.User;
 
 public class AuthController {

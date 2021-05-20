@@ -1,6 +1,6 @@
 package dk.sdu.swe.domain.models;
 
-import dk.sdu.swe.data.converters.JSONConverter;
+import dk.sdu.swe.persistence.converters.JSONConverter;
 import dk.sdu.swe.domain.controllers.AuthController;
 import org.json.JSONObject;
 
