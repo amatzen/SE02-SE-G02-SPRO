@@ -3,6 +3,8 @@ package dk.sdu.swe.presentation.controllers;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXListView;
+import dk.sdu.swe.cross_cutting.helpers.Observer;
+import dk.sdu.swe.cross_cutting.helpers.PubSub;
 import dk.sdu.swe.domain.controllers.ChannelController;
 import dk.sdu.swe.domain.controllers.ProgrammeController;
 import dk.sdu.swe.domain.models.Category;
@@ -27,7 +29,7 @@ import java.util.Optional;
 /**
  * The type Programmes view controller.
  */
-public class ProgrammesViewController extends BorderPane {
+public class ProgrammesViewController extends BorderPane implements Observer {
 
     @FXML
     private JFXListView<ProgrammeListItem> programmesListView;
@@ -47,7 +49,7 @@ public class ProgrammesViewController extends BorderPane {
      * Instantiates a new Programmes view controller.
      */
     public ProgrammesViewController() {
-
+        PubSub.subscribe("trigger_update:programmes:refresh", this);
         FXMLLoader fxmlLoader = new FXMLLoader(
             Objects.requireNonNull(
                 getClass().getClassLoader().getResource("dk/sdu/swe/presentation/views/programmes/ProgrammesView.fxml")));
@@ -152,4 +154,14 @@ public class ProgrammesViewController extends BorderPane {
         updateProgrammes(ProgrammeController.getInstance().getAll());
     }
 
+    /**
+     * On notify.
+     *
+     * @param topic   the topic
+     * @param payload the payload
+     */
+    @Override
+    public void onNotify(String topic, Object payload) {
+        updateData();
+    }
 }

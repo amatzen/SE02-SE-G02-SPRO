@@ -184,7 +184,7 @@ public class ProgrammeModal extends Dialog<Programme> {
 
             ReviewController.getInstance().save(new Review(programme, original, updated));
 
-            setResult(null);
+            setResult(programme);
         } else {
             Programme programme;
             if (this.programme == null) {
@@ -204,6 +204,5 @@ public class ProgrammeModal extends Dialog<Programme> {
         PubSub.publish("trigger_update:programmes:refresh", true);
         hide();
     }
-
 }
 
