@@ -43,6 +43,5 @@ public interface ICreditController {
     List<Credit> getAll();
 
     void save(Credit credit);
-
-    // pr
+    
 }
