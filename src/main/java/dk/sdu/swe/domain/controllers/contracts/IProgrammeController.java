@@ -1,9 +1,6 @@
 package dk.sdu.swe.domain.controllers.contracts;
 
-import dk.sdu.swe.domain.models.Category;
-import dk.sdu.swe.domain.models.Channel;
-import dk.sdu.swe.domain.models.Company;
-import dk.sdu.swe.domain.models.Programme;
+import dk.sdu.swe.domain.models.*;
 
 import java.util.List;
 import java.util.Set;
@@ -53,5 +50,5 @@ public interface IProgrammeController {
      *
      * @param programmeObj the programme obj
      */
-    void updateProgramme(Programme programmeObj);
+    void update(Programme programmeObj);
 }

@@ -93,7 +93,7 @@ public class ProgrammeController implements IProgrammeController {
     }
 
     @Override
-    public void updateProgramme(Programme programmeObj) {
+    public void update(Programme programmeObj) {
         programmeDAO.update(programmeObj);
     }
 }
