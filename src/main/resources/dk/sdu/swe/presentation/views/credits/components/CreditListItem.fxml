@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.*?>
 <?import javafx.geometry.*?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.effect.DropShadow?>
-<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.paint.Color?>
-<?import javafx.scene.text.Font?>
-<fx:root alignment="CENTER" prefHeight="100.0" prefWidth="282.0" style="-fx-background-color: #ededed;" type="HBox" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<fx:root alignment="CENTER" prefHeight="100.0" prefWidth="310.0" style="-fx-background-color: #ededed;" type="HBox" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <ImageView fx:id="creditImageView" fitHeight="100.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="creditImageView" fitHeight="100.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
          <HBox.margin>
             <Insets />
          </HBox.margin>

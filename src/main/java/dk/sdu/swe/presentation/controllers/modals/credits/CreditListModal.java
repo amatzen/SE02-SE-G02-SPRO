@@ -105,7 +105,6 @@ public class CreditListModal extends Dialog<Boolean> {
         Dialog<Credit> creditModal = new CreditModal(getDialogPane().getScene().getWindow(), programme);
         Optional<Credit> credit = creditModal.showAndWait();
         credit.ifPresent(creditObj -> {
-            CreditController.getInstance().save(creditObj);
             creditsPane.getChildren().add(new CreditListItem(creditObj, creditsPane));
         });
     }
