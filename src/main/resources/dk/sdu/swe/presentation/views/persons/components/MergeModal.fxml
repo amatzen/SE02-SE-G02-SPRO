@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXComboBox?>
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.image.ImageView?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.*?>
+
 <BorderPane prefHeight="366.0" prefWidth="542.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <center>
         <HBox alignment="CENTER" prefHeight="220.0" spacing="10.0">
@@ -16,12 +16,24 @@
                  <children>
                     <HBox>
                        <children>
-                          <Label text="Sammenflet " />
-                          <Label fx:id="name" text="{name}" />
-                          <Label text=" med:" />
+                          <Label text="Sammenflet ">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Label>
+                          <Label fx:id="name" text="{name}">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Label>
+                          <Label text=" med:">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Label>
                        </children>
+                     <VBox.margin>
+                        <Insets left="1.0" />
+                     </VBox.margin>
                     </HBox>
-                    <JFXComboBox fx:id="person" layoutX="10.0" layoutY="10.0" maxWidth="1.7976931348623157E308" prefHeight="50.0" promptText="Person" style="-fx-border-color: #cccccc; -fx-border-radius: 5px;                                 -fx-padding: 0.333333em 1em 0.333333em 1em;                                 -fx-background-color: transparent; -jfx-unfocus-color: transparent;                                 -jfx-focus-color: transparent;" />
+                    <JFXComboBox fx:id="person" layoutX="10.0" layoutY="10.0" maxWidth="1.7976931348623157E308" prefHeight="50.0" promptText="Vælg person" style="-fx-border-color: #cccccc; -fx-border-radius: 5px;                                 -fx-padding: 0.333333em 1em 0.333333em 1em;                                 -fx-background-color: transparent; -jfx-unfocus-color: transparent;                                 -jfx-focus-color: transparent;" />
                  </children>
               </VBox>
            </children>
@@ -35,7 +47,7 @@
          <children>
             <Label maxWidth="1.7976931348623157E308" prefHeight="30.0" prefWidth="419.0" text="Sammenflet personer">
                <font>
-                  <Font size="20.0" />
+                  <Font name="System Bold" size="20.0" />
                </font>
                <HBox.margin>
                   <Insets />
