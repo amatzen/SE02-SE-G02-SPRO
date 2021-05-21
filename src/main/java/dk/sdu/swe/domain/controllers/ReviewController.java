@@ -3,7 +3,6 @@ package dk.sdu.swe.domain.controllers;
 import dk.sdu.swe.cross_cutting.helpers.PubSub;
 import dk.sdu.swe.domain.controllers.contracts.IReviewController;
 import dk.sdu.swe.domain.models.*;
-import dk.sdu.swe.domain.persistence.IProgrammeDAO;
 import dk.sdu.swe.domain.persistence.IReviewDAO;
 import dk.sdu.swe.persistence.dao.CategoryDAOImpl;
 import dk.sdu.swe.persistence.dao.ReviewDAOImpl;

@@ -1,6 +1,9 @@
 package dk.sdu.swe.domain.controllers.contracts;
 
-import dk.sdu.swe.domain.models.*;
+import dk.sdu.swe.domain.models.Category;
+import dk.sdu.swe.domain.models.Channel;
+import dk.sdu.swe.domain.models.Company;
+import dk.sdu.swe.domain.models.Programme;
 
 import java.util.List;
 import java.util.Set;

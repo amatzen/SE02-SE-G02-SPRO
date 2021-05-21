@@ -1,7 +1,6 @@
 package dk.sdu.swe.domain.controllers.contracts;
 
 import dk.sdu.swe.domain.models.Channel;
-import org.checkerframework.checker.units.qual.C;
 
 import java.util.List;
 import java.util.Optional;
