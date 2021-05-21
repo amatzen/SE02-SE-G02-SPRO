@@ -3,7 +3,6 @@ package dk.sdu.swe.presentation.controllers.partials;
 import dk.sdu.swe.domain.controllers.CreditController;
 import dk.sdu.swe.domain.models.Credit;
 import dk.sdu.swe.domain.models.Person;
-import dk.sdu.swe.presentation.controllers.modals.credits.CreditListModal;
 import dk.sdu.swe.presentation.controllers.modals.credits.CreditModal;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
