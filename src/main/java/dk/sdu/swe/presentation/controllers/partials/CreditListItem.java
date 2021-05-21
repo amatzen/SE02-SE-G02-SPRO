@@ -3,6 +3,7 @@ package dk.sdu.swe.presentation.controllers.partials;
 import dk.sdu.swe.domain.controllers.CreditController;
 import dk.sdu.swe.domain.models.Credit;
 import dk.sdu.swe.domain.models.Person;
+import dk.sdu.swe.presentation.controllers.modals.credits.CreditListModal;
 import dk.sdu.swe.presentation.controllers.modals.credits.CreditModal;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -32,6 +33,7 @@ public class CreditListItem extends HBox {
     private ImageView creditImageView;
 
     private FlowPane container;
+    private Runnable callback;
 
     /**
      * Instantiates a new Credit list item.
@@ -54,6 +56,11 @@ public class CreditListItem extends HBox {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public CreditListItem(Runnable callback, Credit credit, FlowPane container) {
+        this(credit, container);
+        this.callback = callback;
     }
 
     @FXML
