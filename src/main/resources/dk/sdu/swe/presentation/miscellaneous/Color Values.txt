@@ -1,0 +1,5 @@
+Color Values:
+
+For Buttons 	#FF9800 (Orange)
+Header	        #E0E0E0 (Gray)
+Background	    #F5F5F5 (White)

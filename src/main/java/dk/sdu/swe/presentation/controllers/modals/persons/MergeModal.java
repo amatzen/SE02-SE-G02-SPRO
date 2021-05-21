@@ -96,11 +96,14 @@ public class MergeModal extends Dialog<Person> {
 
     @FXML
     private void save(ActionEvent event) {
+        try {
         Person personToMerge = (Person) this.person.getSelectionModel().getSelectedItem().getUserData();
         PersonController.getInstance().merge(this.personObj, personToMerge);
 
         setResult(personToMerge);
         hide();
+        } catch (Exception ignored){ //Ignoring exceptions
+        }
     }
 
 }
