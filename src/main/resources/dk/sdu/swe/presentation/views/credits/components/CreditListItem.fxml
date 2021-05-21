@@ -12,7 +12,7 @@
 
 <fx:root alignment="CENTER" prefHeight="100.0" prefWidth="310.0" style="-fx-background-color: #ededed;" type="HBox" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <HBox prefHeight="100.0" prefWidth="7.0" />
+      <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="7.0" />
       <ImageView fx:id="creditImageView" fitHeight="100.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
          <HBox.margin>
             <Insets />
