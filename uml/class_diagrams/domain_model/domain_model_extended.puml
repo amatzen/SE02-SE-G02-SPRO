@@ -72,21 +72,19 @@ package "domain" {
         + signIn() : Producer
     }
 
-    'Statics
-    class DB {
-    }
-
     class Person {
         -name: String
         -contactDetails: Map
     }
 
-    class ContactDetails {
+    class CompanyDetails {
+
     }
 }
 
 SystemAdministrator "1" --> "1..*" Review : "Approves >"
-Review "1" -- "1" Credit : "Created on >"
+Review "1..*" o--> "1" Producer : "Created by"
+Review "1" o--> "1" Credit : "Created for >"
 SystemAdministrator -|> CompanyAdministrator
 
 CompanyAdministrator -|> Producer
@@ -96,7 +94,8 @@ CompanyAdministrator "*" o--> "*" Channel : "Manages >"
 Producer "1" <--o "1..*" Program : "Owns >"
 Producer "1" <-o "1" AuthController : "Authenticates <"
 Producer o--> Company : "Part of >"
-Producer "1..*" -- "1" DB : "Contains <"
+
+CompanyDetails "1" <--* "1" Company : Has
 
 Channel "1" <--o "1..*" Program : "Shows >"
 
@@ -105,6 +104,5 @@ Credit "1" o-> "1..*" CreditRole : "Has >"
 Program "1" <--o "1..*" Credit : "Has >"
 
 Person "1" <-o "1" Credit
-ContactDetails "1" <-* "1" Person
 
 @enduml
