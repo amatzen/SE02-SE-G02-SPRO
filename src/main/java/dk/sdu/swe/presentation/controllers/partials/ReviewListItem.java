@@ -68,9 +68,7 @@ public class ReviewListItem extends VBox {
     }
 
     private void approve(ActionEvent event) {
-        review.setState(ReviewState.ACCEPTED);
-        ReviewController.getInstance().update(review);
-        PubSub.publish("trigger_refresh:admin:reviews", true);
+        ReviewController.getInstance().acceptReviewOnProgramme(review);
     }
 
     private void decline(ActionEvent event) {

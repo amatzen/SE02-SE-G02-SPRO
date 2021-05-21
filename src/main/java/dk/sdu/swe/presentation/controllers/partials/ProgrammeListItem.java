@@ -2,6 +2,7 @@ package dk.sdu.swe.presentation.controllers.partials;
 
 import com.jfoenix.controls.JFXButton;
 import dk.sdu.swe.Application;
+import dk.sdu.swe.domain.controllers.AuthController;
 import dk.sdu.swe.domain.controllers.ProgrammeController;
 import dk.sdu.swe.domain.controllers.ReviewController;
 import dk.sdu.swe.domain.models.*;
@@ -145,7 +146,7 @@ public class ProgrammeListItem extends AnchorPane {
 
     @FXML
     private void edit(ActionEvent event) {
-        if(Objects.nonNull(review) && review.getState() == ReviewState.AWAITING) {
+        if(Objects.nonNull(review) && review.getState() == ReviewState.AWAITING && !AuthController.getInstance().getUser().hasPermission("programmes.change.no_review")) {
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
 
             alert.setTitle("Bekræft overskrivning");
