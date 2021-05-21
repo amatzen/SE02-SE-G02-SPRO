@@ -176,11 +176,16 @@ public class ProgrammeModal extends Dialog<Programme> {
         }
 
         if (!AuthController.getInstance().getUser().hasPermission("programmes.change.no_review")) {
-            JSONObject updated = new JSONObject();
-            boolean existingProgramme = true;
+            JSONObject updated, original;
 
-            if (Objects.nonNull(programme)) {
-                existingProgramme = false;
+            boolean existingProgramme = Objects.nonNull(programme);
+
+            if(!existingProgramme) {
+                Programme newProgramme = new Programme(title, channel, prodYear, Set.of(category), company);
+                updated = newProgramme.toJson();
+
+                original = new JSONObject();
+            } else {
                 Programme newProgramme = programme.clone();
 
                 newProgramme.setTitle(title);
@@ -189,19 +194,12 @@ public class ProgrammeModal extends Dialog<Programme> {
                 newProgramme.setCompany(company);
                 newProgramme.setChannel(channel);
                 updated = newProgramme.toJson();
+                updated.put("credits", programme.getCreditsJson());
 
+                original = programme.toJson();
             }
-
-            if(!existingProgramme) {
-                programme = new Programme(title, channel, prodYear, Set.of(category), company);
-            }
-
-            updated.put("credits", programme.getCreditsJson());
-            JSONObject original = programme.toJson();
-            programme = null;
 
             ReviewController.getInstance().save(new Review(programme, original, updated));
-
             setResult(null);
         } else {
             Programme programme;
@@ -217,10 +215,12 @@ public class ProgrammeModal extends Dialog<Programme> {
                 programme = this.programme;
             }
             setResult(programme);
+            hide();
+            return;
         }
 
-        PubSub.publish("trigger_update:programmes:refresh", true);
-        hide();
+        new Thread(() -> PubSub.publish("trigger_update:programmes:refresh", true)).start();
+        handleClose(new ActionEvent());
     }
 }
 
