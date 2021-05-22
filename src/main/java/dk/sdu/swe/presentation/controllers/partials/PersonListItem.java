@@ -8,9 +8,7 @@ import dk.sdu.swe.presentation.controllers.modals.persons.MergeModal;
 import dk.sdu.swe.presentation.controllers.modals.persons.PersonModal;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.control.Dialog;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
@@ -89,7 +87,7 @@ public class PersonListItem extends VBox {
         personImageView.setImage(new Image(person.getImage(), true));
     }
 
-    private void editPerson(){
+    private void editPerson() {
         Dialog<Person> personModal = new PersonModal(getScene().getWindow(), person);
         Optional<Person> person = personModal.showAndWait();
         person.ifPresent(personObj -> {
@@ -98,9 +96,26 @@ public class PersonListItem extends VBox {
         });
     }
 
-    private void deletePerson(){
-        container.getItems().remove(this);
-        PersonController.getInstance().delete(person);
+    private void deletePerson() {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Slet Person");
+        alert.setHeaderText(null);
+        alert.setContentText("Er du sikker på at du vil slette denne person?");
+
+        ButtonType delete = new ButtonType("Slet");
+        ButtonType cancel = new ButtonType("Fortryd");
+
+        alert.getButtonTypes().setAll(delete, cancel);
+
+        Optional<ButtonType> result = alert.showAndWait();
+
+        if (result.get() == delete) {
+            container.getItems().remove(this);
+            PersonController.getInstance().delete(person);
+        }
+        else if (result.get() == cancel) {
+            alert.close();
+        }
     }
 
     private void mergePerson() {
