@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<fx:root prefHeight="89.0" prefWidth="1200.0" type="AnchorPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <Label fx:id="nameLbl" ellipsisString="" layoutX="41.0" layoutY="35.0" text="Programtitel" />
+        <FlowPane fx:id="channelsPane" layoutX="303.0" layoutY="21.0" prefHeight="46.0" prefWidth="217.0" />
+        <Label fx:id="releaseYearLbl" ellipsisString="" layoutX="520.0" layoutY="34.0" prefHeight="17.0" text="Produktionsår" />
+        <Label fx:id="categoryLbl" ellipsisString="" layoutX="779.0" layoutY="34.0" text="Kategori" />
+        <HBox alignment="CENTER_RIGHT" layoutX="1267.0" layoutY="17.0" prefHeight="44.0" AnchorPane.rightAnchor="25.0">
+            <children>
+              <JFXButton fx:id="showCreditsButton" buttonType="RAISED" onAction="#showCredits" prefHeight="36.0" style="-fx-background-color: #FF9800;" text="SE KREDITERINGER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <HBox.margin>
+                  <Insets right="30.0" />
+               </HBox.margin>
+            </JFXButton>
+                <JFXButton fx:id="rs_draft" alignment="CENTER" contentDisplay="CENTER" ellipsisString="" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#edit" prefHeight="48.0" prefWidth="48.0" text=" ">
+                    <graphic>
+                        <ImageView fx:id="rs_draft_img" fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../images/review_btn/rs_draft_default.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </JFXButton>
+                <JFXButton fx:id="rs_awaiting" alignment="CENTER" contentDisplay="CENTER" ellipsisString="" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="48.0" prefWidth="48.0" text=" ">
+                    <graphic>
+                        <ImageView fx:id="rs_awaiting_img" fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../images/review_btn/rs_awaiting_default.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </JFXButton>
+                <JFXButton fx:id="rs_complete" alignment="CENTER" contentDisplay="CENTER" ellipsisString="" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="48.0" prefWidth="48.0" text=" ">
+                    <graphic>
+                        <ImageView fx:id="rs_complete_img" fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../images/review_btn/rs_complete_default.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </JFXButton>
+            </children>
+        </HBox>
+    </children>
+</fx:root>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<fx:root alignment="CENTER_LEFT" prefHeight="26.0" prefWidth="855.0" spacing="10.0" type="HBox" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <JFXButton fx:id="deleteBtn" buttonType="RAISED" onAction="#delete" style="-fx-background-color: red;" text="Slet" textFill="WHITE">
+        </JFXButton>
+        <HBox prefHeight="26.0" prefWidth="262.0">
+            <children>
+                <Label fx:id="emailLbl" maxWidth="1.7976931348623157E308" prefHeight="25.0" text="Email">
+                    <HBox.margin>
+                        <Insets />
+                    </HBox.margin>
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </Label>
+            </children>
+        </HBox>
+        <HBox layoutX="10.0" layoutY="10.0" prefHeight="26.0" prefWidth="255.0">
+            <children>
+                <Label fx:id="usernameLbl" maxWidth="1.7976931348623157E308" prefHeight="25.0" text="Navn">
+                    <HBox.margin>
+                        <Insets />
+                    </HBox.margin>
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </Label>
+            </children>
+        </HBox>
+        <HBox alignment="CENTER_LEFT" layoutX="410.0" layoutY="10.0" prefHeight="26.0" prefWidth="94.0">
+            <children>
+                <JFXCheckBox fx:id="administratorCheckbox" onAction="#onAdministratorChange" text=" " />
+            </children>
+        </HBox>
+      <HBox layoutX="329.0" layoutY="10.0" prefHeight="26.0" prefWidth="167.0">
+         <children>
+            <Label fx:id="companyLbl" maxWidth="1.7976931348623157E308" prefHeight="25.0" text="Virksomhed">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+    </children>
+</fx:root>

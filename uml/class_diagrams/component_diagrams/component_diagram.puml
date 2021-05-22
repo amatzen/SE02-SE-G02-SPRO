@@ -1,0 +1,19 @@
+@startuml
+'https://plantuml.com/component-diagram
+package "dk.sdu.swe" {
+component "domain" as domain {
+
+}
+
+component "data" as data {
+}
+
+component "views" as views {
+}
+
+domain -(0- data
+views -(0- domain
+
+}
+
+@enduml

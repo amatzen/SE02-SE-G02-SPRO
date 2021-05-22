@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<BorderPane prefHeight="366.0" prefWidth="542.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <center>
+      <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="15.0" BorderPane.alignment="CENTER">
+         <children>
+            <JFXComboBox fx:id="person" maxWidth="1.7976931348623157E308" prefHeight="50.0" promptText="Person" style="-fx-border-color: #cccccc; -fx-border-radius: 5px;                                 -fx-padding: 0.333333em 1em 0.333333em 1em;                                 -fx-background-color: transparent; -jfx-unfocus-color: transparent;                                 -jfx-focus-color: transparent;" />
+            <JFXComboBox fx:id="creditRole" maxWidth="1.7976931348623157E308" prefHeight="50.0" promptText="Krediteringsgruppe" style="-fx-border-color: #cccccc; -fx-border-radius: 5px;                                 -fx-padding: 0.333333em 1em 0.333333em 1em;                                 -fx-background-color: transparent; -jfx-unfocus-color: transparent;                                 -jfx-focus-color: transparent;" />
+         </children>
+         <padding>
+            <Insets left="100.0" right="100.0" />
+         </padding>
+      </VBox>
+   </center>
+   <top>
+      <HBox alignment="CENTER" prefHeight="79.0" prefWidth="508.0" style="-fx-background-color: #ffa500;" BorderPane.alignment="CENTER">
+         <children>
+            <Label maxWidth="1.7976931348623157E308" prefHeight="30.0" prefWidth="419.0" text="Tilføj kreditering">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Label>
+            <JFXButton fx:id="closeBtn" onAction="#handleClose" prefHeight="45.0" prefWidth="45.0" text="X" textAlignment="RIGHT">
+               <font>
+                  <Font name="Comic Sans MS" size="18.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </HBox>
+   </top>
+   <bottom>
+      <HBox alignment="TOP_RIGHT" prefHeight="61.0" prefWidth="542.0" BorderPane.alignment="TOP_CENTER">
+         <children>
+            <JFXButton fx:id="saveBtn" buttonType="RAISED" onAction="#save" prefHeight="35.0" prefWidth="78.0" style="-fx-background-color: FF9800;" text="GEM" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <HBox.margin>
+                  <Insets right="30.0" />
+               </HBox.margin>
+            </JFXButton>
+         </children>
+      </HBox>
+   </bottom>
+</BorderPane>

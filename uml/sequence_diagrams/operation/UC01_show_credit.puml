@@ -5,42 +5,52 @@ autonumber
 
 box Se kreditering (UC01)
     participant ":Producer" as producer
-    participant ":ProgramController" as programController <<Control>>
-    participant ":EPG-system" as epg <<Entity>>
-    participant ":DB" as db <<Entity>>
+    participant ":ProgrammeViewController" as programController <<Control>>
     participant ":Program" as program <<Entity>>
     participant ":Credit" as credit <<Entity>>
-    participant ":CreditModal" as creditModal <<Entity>>
+    participant ":FacadeDB" as db <<Entity>>
 end box
 
+activate producer
 producer -> programController : showPrograms()
-programController -> epg : getPrograms()
-programController <-- epg : Programs
+activate programController
+programController -> program : getAll()
+activate program
+programController <-- program : Programs
+deactivate program
 producer <-- programController : Programs
+deactivate programController
 
 opt Filtrér krediteringer (UC02)
-    producer -> programController : search(query)
-    programController -> db : getProgramsWithCreditsLike(query)
-    loop for each query result
-        db -> program : <<create(query data)>>
-        db <-- program : Insert program in list
-    end
-    programController <-- db : Programs
-    producer <-- programController : Programs
+    ref over producer, programController : UC02
 end
 
-producer -> programController : showCredits(program)
-programController -> db : getCredits(program)
+producer -> programController : showCredits()
+activate programController
+programController -> credit : getAll()
+activate credit
+
+credit -> db : getCredits()
+activate db
+credit <-- db : Credits
+deactivate db
+
 loop for each program credit
-db -> credit : <<create(credit data)>>
-db <-- credit : Insert credit in list
+credit -> credit : <<create(credit data)>>
+activate credit
+credit <-- credit : Insert credit in list
+deactivate credit
 end
-programController <-- db : Program getCredits
-producer <-- programController : Program creditss
+
+programController <-- credit : Program getCredits
+deactivate credit
+producer <-- programController : Program credits
+deactivate programController
 
 producer -> programController : showCredit(credit)
-programController -> creditModal : <<create(credit)>>
-programController <-- creditModal
+activate programController
+
 producer <-- programController : Credit information
+deactivate programController
 
 @enduml

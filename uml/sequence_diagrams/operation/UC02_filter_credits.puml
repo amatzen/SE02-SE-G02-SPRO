@@ -1,0 +1,28 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+box Filtrer krediteringer (UC02)
+    participant ":Producer" as producer
+    participant ":ProgrammeViewController" as programController <<Control>>
+    participant ":DB" as db <<Entity>>
+    participant ":Program" as program <<Entity>>
+end box
+
+activate producer
+producer -> programController : search(term)
+activate programController
+programController -> db : getCreditsLike(term)
+activate db
+loop for each query result
+    db -> program : <<create(search result)>>
+    activate program
+    db <-- program : Insert program in list
+    deactivate program
+end
+programController <-- db : Programs
+deactivate db
+producer <-- programController : Programs
+deactivate programController
+@enduml

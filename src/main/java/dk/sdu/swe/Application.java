@@ -1,23 +1,42 @@
 package dk.sdu.swe;
 
-import dk.sdu.swe.helpers.EnvironmentSelector;
-import dk.sdu.swe.helpers.Environment;
-import dk.sdu.swe.views.AuthViewController;
-import dk.sdu.swe.views.Router;
+import dk.sdu.swe.cross_cutting.helpers.Environment;
+import dk.sdu.swe.cross_cutting.helpers.EnvironmentSelector;
+import dk.sdu.swe.persistence.SeederUtility;
+import dk.sdu.swe.presentation.Router;
+import dk.sdu.swe.presentation.controllers.AuthViewController;
 import javafx.scene.Scene;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 
+/**
+ * The type Application.
+ */
 public class Application extends javafx.application.Application {
-    public static void main(String[] args) {
+    /**
+     * The entry point of application.
+     *
+     * @param args the input arguments
+     * @throws Exception the exception
+     */
+    public static void main(String[] args) throws Exception {
         EnvironmentSelector.getInstance().setEnvironment(switch (System.getenv("DEFAULT_ENVIRONMENT")) {
-            case "local" -> Environment.LOCAL;
             case "prod" -> Environment.PROD;
-            default -> Environment.FLATFILE;
+            default -> Environment.LOCAL;
         });
 
-        launch();
+        if(EnvironmentSelector.getInstance().getEnvironment() == Environment.LOCAL) {
+            (new Thread(() -> {
+                SeederUtility.run();
+            })).start();
+        }
+
+        try {
+            launch();
+        } catch (IllegalStateException e) {
+            // Ignore JavaFX async whine
+        }
     }
 
     /**
@@ -52,6 +71,10 @@ public class Application extends javafx.application.Application {
 
         stage.show();
     }
+
+    /**
+     * Disable warning.
+     */
     public static void disableWarning() {
         System.err.close();
         System.setErr(System.out);

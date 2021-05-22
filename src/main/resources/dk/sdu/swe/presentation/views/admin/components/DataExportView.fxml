@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+<fx:root maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="20.0" type="VBox" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label text="Dataeksport">
+         <font>
+            <Font name="System Bold" size="26.0" />
+         </font>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </Label>
+      <HBox spacing="20.0">
+         <children>
+            <JFXCheckBox fx:id="creditData" checkedColor="#ff9800" text="Krediteringer">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </JFXCheckBox>
+            <JFXCheckBox fx:id="programData" checkedColor="#ff9800" layoutX="60.0" layoutY="10.0" text="Programmer">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </JFXCheckBox>
+            <JFXCheckBox fx:id="companyData" checkedColor="#ff9800" layoutX="409.0" layoutY="10.0" text="Virksomheder">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </JFXCheckBox>
+         </children>
+         <VBox.margin>
+            <Insets top="5.0" />
+         </VBox.margin>
+      </HBox>
+      <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="10.0">
+         <children>
+            <Label text="Vælg Filtype">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Label>
+            <JFXRadioButton fx:id="csvBtn" text="CSV">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <toggleGroup>
+                  <ToggleGroup fx:id="fileTypeToggleGroup" />
+               </toggleGroup>
+               <selectedColor>
+                  <Color red="1.0" green="0.5960784554481506" />
+               </selectedColor>
+            </JFXRadioButton>
+            <JFXRadioButton fx:id="jsonBtn" layoutX="10.0" layoutY="27.0" text="JSON" toggleGroup="$fileTypeToggleGroup">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <selectedColor>
+                  <Color red="1.0" green="0.5960784554481506" />
+               </selectedColor>
+            </JFXRadioButton>
+         </children>
+      </VBox>
+      <JFXButton fx:id="exportBtn" minHeight="-Infinity" minWidth="-Infinity" onAction="#Export" prefHeight="35.0" prefWidth="70.0" style="-jfx-button-type: RAISED; -fx-background-color: #FF9800;" text="Eksport" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+   </children>
+   <padding>
+      <Insets bottom="20.0" left="50.0" right="50.0" top="20.0" />
+   </padding>
+</fx:root>

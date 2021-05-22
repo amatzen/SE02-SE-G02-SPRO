@@ -1,38 +1,54 @@
 package models;
 
-import static org.junit.jupiter.api.Assertions.*;
-
-import dk.sdu.swe.exceptions.InvalidNameException;
-import dk.sdu.swe.exceptions.UserCreationException;
-import dk.sdu.swe.models.User;
+import dk.sdu.swe.cross_cutting.exceptions.InvalidNameException;
+import dk.sdu.swe.cross_cutting.exceptions.UserCreationException;
+import dk.sdu.swe.domain.models.User;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
+/**
+ * The type User test.
+ */
 public class UserTest {
+    /**
+     * Test user creation.
+     */
     @Test
     void testUserCreation() {
         assertDoesNotThrow(() -> {
-            new User(1, "almat20", "alexander@alexander.dk", "Alexander Matzen");
+            new User( "almat20", "alexander@alexander.dk", "Alexander Matzen", "alexander", null);
         });
     }
 
+    /**
+     * Test user creation with incorrect name.
+     */
     @Test
     void testUserCreationWithIncorrectName() {
         assertThrows(InvalidNameException.class, () -> {
-            new User(2, "almat20", "alexander@alexander.dk", "Alexander");
+            new User("almat20", "alexander@alexander.dk", "Alexander", "alexander", null);
         });
     }
 
+    /**
+     * Test user creation with incorrect email.
+     */
     @Test
     void testUserCreationWithIncorrectEmail() {
         assertThrows(UserCreationException.class, () -> {
-            new User(3, "almat20", "alexanderalexander.dk", "Alexander Matzen");
+            new User("almat20", "alexanderalexander.dk", "Alexander Matzen", "alexander", null);
         });
     }
 
+    /**
+     * Test user creation with too short username.
+     */
     @Test
     void testUserCreationWithTooShortUsername() {
         assertThrows(UserCreationException.class, () -> {
-           new User(4, "am", "alexander@alexander.dk", "Alexander Matzen");
+           new User("am", "alexander@alexander.dk", "Alexander Matzen", "alexander", null);
         });
     }
 }
