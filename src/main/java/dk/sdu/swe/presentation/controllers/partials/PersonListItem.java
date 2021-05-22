@@ -98,7 +98,7 @@ public class PersonListItem extends VBox {
 
     private void deletePerson() {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Slet Person");
+        alert.setTitle("Slet person?");
         alert.setHeaderText(null);
         alert.setContentText("Er du sikker på at du vil slette denne person?");
 
