@@ -7,6 +7,8 @@ import dk.sdu.swe.presentation.controllers.modals.credits.CreditModal;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Dialog;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -88,7 +90,24 @@ public class CreditListItem extends HBox {
 
     @FXML
     private void delete(ActionEvent event) {
-        CreditController.getInstance().delete(credit);
-        container.getChildren().remove(this);
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Slet medvirkende?");
+        alert.setHeaderText(null);
+        alert.setContentText("Er du sikker på at du vil slette denne person fra \"Medvirkende\"?");
+        ButtonType delete = new ButtonType("Slet");
+        ButtonType cancel = new ButtonType("Fortryd");
+
+        alert.getButtonTypes().setAll(delete, cancel);
+
+        Optional<ButtonType> result = alert.showAndWait();
+
+        if (result.get() == delete) {
+            CreditController.getInstance().delete(credit);
+            container.getChildren().remove(this);
+        }
+        else if (result.get() == cancel) {
+            alert.close();
+        }
     }
+
 }
