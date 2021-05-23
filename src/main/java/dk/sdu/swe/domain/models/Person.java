@@ -2,7 +2,6 @@ package dk.sdu.swe.domain.models;
 
 import com.google.gson.annotations.SerializedName;
 import dk.sdu.swe.cross_cutting.exceptions.PersonCreationException;
-import dk.sdu.swe.cross_cutting.exceptions.UserCreationException;
 import org.json.JSONObject;
 
 import javax.persistence.*;
