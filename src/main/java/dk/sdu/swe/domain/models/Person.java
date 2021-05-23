@@ -63,14 +63,10 @@ public class Person {
      * @throws PersonCreationException the person creation exception
      */
     public Person(String name, String image, String email, ZonedDateTime dateOfBirth) throws PersonCreationException {
-        if (name.trim().length() < 3) {
-            throw new PersonCreationException("Navnet skal indeholde mindst 3 tegn.");
-        }
 
-        // Validate email
-        if (!email.trim().matches("[^@ \\t\\r\\n]+@[^@ \\t\\r\\n]+\\.[^@ \\t\\r\\n]+")) {
-            throw new PersonCreationException("Invalid email.");
-        }
+        setName(name);
+        setEmail(email);
+        setDateOfBirth(dateOfBirth);
 
         this.name = name;
         this.image = image;
@@ -101,7 +97,10 @@ public class Person {
      *
      * @param name the name
      */
-    public void setName(String name) {
+    public void setName(String name) throws PersonCreationException {
+        if (name.trim().length() < 3 || name.trim().length() > 24) {
+            throw new PersonCreationException("Brugernavnet skal være mellem 3 og 24 tegn langt");
+        }
         this.name = name;
     }
 
@@ -128,9 +127,9 @@ public class Person {
      *
      * @param dateOfBirth the date of birth
      */
-    public void setDateOfBirth(ZonedDateTime dateOfBirth) {
+    public void setDateOfBirth(ZonedDateTime dateOfBirth) throws PersonCreationException {
         if (dateOfBirth == null) {
-            this.dateOfBirth = null;
+            throw new PersonCreationException("Vælg venligst fødselsdato");
         } else {
             setDateOfBirth(dateOfBirth.format(dateTimeFormatter));
         }
@@ -190,6 +189,13 @@ public class Person {
      */
     public String getEmail() {
         return getContactDetail("email");
+    }
+
+    public void setEmail(String email) throws PersonCreationException {
+        if (!email.trim().matches("[^@ \\t\\r\\n]+@[^@ \\t\\r\\n]+\\.[^@ \\t\\r\\n]+")) {
+            throw new PersonCreationException("Ugyldig email");
+        }
+        putContactDetail("email", email);
     }
 
     /**
