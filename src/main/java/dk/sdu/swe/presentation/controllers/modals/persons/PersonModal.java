@@ -126,12 +126,16 @@ public class PersonModal extends Dialog<Person> {
                 return;
             }
         } else {
-            this.person.setName(name);
-            this.person.setImage(image);
-            this.person.setDateOfBirth(bday);
-            this.person.putContactDetail("email", email);
-            this.person.setImage(image);
-            person = this.person;
+            try {
+                this.person.setName(name);
+                this.person.setImage(image);
+                this.person.setDateOfBirth(bday);
+                this.person.setEmail(email);
+                this.person.setImage(image);
+                person = this.person;
+            } catch (PersonCreationException e) {
+                AlertHelper.show(Alert.AlertType.ERROR, getOwner(), "Kunne ikke ændre person", e.getMessage());
+            }
         }
         setResult(person);
         hide();
