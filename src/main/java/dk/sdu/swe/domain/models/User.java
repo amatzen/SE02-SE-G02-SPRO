@@ -60,12 +60,12 @@ public class User implements IUser {
 
         // Validate username
         if (username.trim().length() < 3 || username.trim().length() > 24) {
-            throw new UserCreationException("Brugernavnet skal være mellem 3 og 24 karakterer langt");
+            throw new UserCreationException("Brugernavnet skal være mellem 3 og 24 tegn langt");
         }
 
         // Validate email
         if (!email.trim().matches("[^@ \\t\\r\\n]+@[^@ \\t\\r\\n]+\\.[^@ \\t\\r\\n]+")) {
-            throw new UserCreationException("Invalid email.");
+            throw new UserCreationException("Ugyldig email");
         }
 
         // Validate
