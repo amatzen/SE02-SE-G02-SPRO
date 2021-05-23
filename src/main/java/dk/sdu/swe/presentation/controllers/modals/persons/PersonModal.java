@@ -3,6 +3,7 @@ package dk.sdu.swe.presentation.controllers.modals.persons;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import dk.sdu.swe.cross_cutting.exceptions.PersonCreationException;
+import dk.sdu.swe.cross_cutting.exceptions.UserCreationException;
 import dk.sdu.swe.domain.controllers.PersonController;
 import dk.sdu.swe.domain.models.Person;
 import dk.sdu.swe.presentation.AlertHelper;
@@ -126,12 +127,16 @@ public class PersonModal extends Dialog<Person> {
                 return;
             }
         } else {
-            this.person.setName(name);
-            this.person.setImage(image);
-            this.person.setDateOfBirth(bday);
-            this.person.putContactDetail("email", email);
-            this.person.setImage(image);
-            person = this.person;
+            try {
+                this.person.setName(name);
+                this.person.setImage(image);
+                this.person.setDateOfBirth(bday);
+                this.person.setEmail(email);
+                this.person.setImage(image);
+                person = this.person;
+            } catch (PersonCreationException e) {
+                AlertHelper.show(Alert.AlertType.ERROR, getOwner(), "Kunne ikke ændre person", e.getMessage());
+            }
         }
         setResult(person);
         hide();
