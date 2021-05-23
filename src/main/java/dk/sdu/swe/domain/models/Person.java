@@ -64,12 +64,17 @@ public class Person {
      */
     public Person(String name, String image, String email, ZonedDateTime dateOfBirth) throws PersonCreationException {
         if (name.trim().length() < 3) {
-            throw new PersonCreationException("Navnet skal indeholde mindst 3 tegn.");
+            throw new PersonCreationException("Navnet skal indeholde mindst 3 tegn");
         }
 
         // Validate email
         if (!email.trim().matches("[^@ \\t\\r\\n]+@[^@ \\t\\r\\n]+\\.[^@ \\t\\r\\n]+")) {
-            throw new PersonCreationException("Invalid email.");
+            throw new PersonCreationException("Ugyldig email");
+        }
+
+        // Validate birthday
+        if (dateOfBirth == null) {
+            throw new PersonCreationException("Vælg venligst fødselsdato");
         }
 
         this.name = name;
