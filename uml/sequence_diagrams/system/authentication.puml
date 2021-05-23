@@ -1,0 +1,17 @@
+@startuml
+' https://plantuml.com/sequence-diagram
+
+autonumber
+
+box "Authentication"
+    participant ":Producer" as producer
+    participant ":System" as system
+end box
+
+activate producer
+producer -> system : signIn(username, password)
+activate system
+producer <-- system : Authentication
+deactivate system
+
+@enduml
