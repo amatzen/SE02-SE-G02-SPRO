@@ -38,7 +38,6 @@ public class v2_CreateChannels {
         b.setEpgId(12566L);
         c.setEpgId(31L);
         d.setEpgId(4L);
-
         e.setEpgId(133L);
         f.setEpgId(77L);
         g.setEpgId(2147483561L);

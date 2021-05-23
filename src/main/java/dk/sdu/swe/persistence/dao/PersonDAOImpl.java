@@ -85,4 +85,24 @@ public class PersonDAOImpl extends AbstractDAO<Person> implements IPersonDAO {
             session.close();
         }
     }
+
+    @Override
+    public List<Person> getAll() {
+
+        String hql = "FROM Person as p LEFT JOIN FETCH p.contactDetails";
+
+        Session session = DB.openSession();
+        Transaction transaction = session.beginTransaction();
+
+        List<Person> personList = null;
+        try {
+            Query query = session.createQuery(hql);
+            personList = query.list();
+        } finally {
+            transaction.commit();
+            session.close();
+        }
+
+        return personList;
+    }
 }
