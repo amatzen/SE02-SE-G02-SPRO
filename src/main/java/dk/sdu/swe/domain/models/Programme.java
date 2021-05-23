@@ -1,5 +1,6 @@
 package dk.sdu.swe.domain.models;
 
+import dk.sdu.swe.domain.controllers.CreditController;
 import dk.sdu.swe.persistence.dao.CreditDAOImpl;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -76,10 +77,7 @@ public class Programme {
      * @return the credits
      */
     public List<Credit> getCredits() {
-        return CreditDAOImpl.getInstance().getAll()
-            .stream()
-            .filter(x -> Objects.equals(x.getProgramme().getId(), this.getId()))
-            .collect(Collectors.toList());
+        return CreditController.getInstance().getCredits(this);
     }
 
     /**

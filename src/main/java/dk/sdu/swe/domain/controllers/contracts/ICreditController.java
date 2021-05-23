@@ -43,5 +43,12 @@ public interface ICreditController {
     List<Credit> getAll();
 
     void save(Credit credit);
-    
+
+    /**
+     * Returns a list of credits for a given programme.
+     * @param programme Programme to get credits for.
+     * @return List of credits associated with the programme.
+     */
+    List<Credit> getCredits(Programme programme);
+
 }

@@ -62,4 +62,9 @@ public class CreditController implements ICreditController {
     public void save(Credit credit) {
         creditDAO.save(credit);
     }
+
+    @Override
+    public List<Credit> getCredits(Programme programme) {
+        return creditDAO.getCredits(programme);
+    }
 }
