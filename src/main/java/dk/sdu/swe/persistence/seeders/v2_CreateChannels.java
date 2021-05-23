@@ -21,10 +21,16 @@ public class v2_CreateChannels {
             return;
         }
 
-        Channel a = (new Channel("TV 2", "https://pbs.twimg.com/profile_images/469398737484144640/o1P1XYg8.png"));
-        Channel b = (new Channel("TV 2 Fri", "https://scontent.fcph2-1.fna.fbcdn.net/v/t1.6435-9/41502650_1847272165361954_6425328215060905984_n.jpg?_nc_cat=100&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=AA3i-a1ACUwAX-9Kgoa&_nc_ht=scontent.fcph2-1.fna&oh=56c23ed42871bcdaf98e05c4aec1d8d9&oe=60B119A9"));
-        Channel c = (new Channel("TV 2 Charlie", "https://static.wikia.nocookie.net/logopedia/images/6/62/TV2_Charlie_Logo_%282017-present%29.png/revision/latest/scale-to-width-down/250?cb=20171115085533"));
-        Channel d = (new Channel("TV 2 Zulu", "https://digitalt.tv/wp-content/uploads/2019/07/kanallogo-tv2zulu.png"));
+        Channel a = (new Channel("TV 2", "https://digitalt.tv/pics/kanalloger/tv2.png"));
+        Channel b = (new Channel("TV 2 Fri", "https://digitalt.tv/pics/kanalloger/tv2fri.png"));
+        Channel c = (new Channel("TV 2 Charlie", "https://digitalt.tv/pics/kanalloger/tv2charlie.png"));
+        Channel d = (new Channel("TV 2 Zulu", "https://digitalt.tv/pics/kanalloger/tv2zulu.png"));
+        Channel e = (new Channel("TV 2 News", "https://digitalt.tv/pics/kanalloger/tv2news.png"));
+        Channel f = (new Channel("TV 2 Sport", "https://digitalt.tv/pics/kanalloger/tv2sport.png"));
+        Channel g = (new Channel("TV 2 Sport X", "https://digitalt.tv/pics/kanalloger/tv2sportx.png"));
+
+
+
 
         // Values fetched from
         // https://tvtid-api.api.tv2.dk/api/tvtid/v1/schedules/channels
@@ -33,10 +39,17 @@ public class v2_CreateChannels {
         c.setEpgId(31L);
         d.setEpgId(4L);
 
+        e.setEpgId(133L);
+        f.setEpgId(77L);
+        g.setEpgId(2147483561L);
+
         session.saveOrUpdate(a);
         session.saveOrUpdate(b);
         session.saveOrUpdate(c);
         session.saveOrUpdate(d);
+        session.saveOrUpdate(e);
+        session.saveOrUpdate(f);
+        session.saveOrUpdate(g);
 
         session.close();
     }

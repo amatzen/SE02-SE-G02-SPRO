@@ -35,7 +35,7 @@ public class PersonDAOImpl extends AbstractDAO<Person> implements IPersonDAO {
     @Override
     public List<Person> searchByName(String searchTerm) {
         searchTerm = '%' + searchTerm + '%';
-        String hql = "FROM Person WHERE name LIKE :search_term";
+        String hql = "FROM Person WHERE LOWER(name) LIKE LOWER(:search_term)";
 
         Session session = DB.openSession();
         Transaction trans = session.beginTransaction();
