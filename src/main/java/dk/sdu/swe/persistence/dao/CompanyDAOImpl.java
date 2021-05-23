@@ -35,7 +35,7 @@ public class CompanyDAOImpl extends AbstractDAO<Company> implements ICompanyDAO 
     @Override
     public List<Company> search(String searchTerm) {
         searchTerm = '%' + searchTerm + '%';
-        String hql = "FROM Company WHERE name LIKE :search_term OR nbr LIKE :search_term";
+        String hql = "FROM Company WHERE LOWER(name) LIKE LOWER(:search_term) OR nbr LIKE :search_term";
 
         Session session = DB.openSession();
         Transaction trans = session.beginTransaction();

@@ -37,7 +37,7 @@ public class ProgrammeDAOImpl extends AbstractDAO<Programme> implements IProgram
     public List<Programme> search(String searchTerm, Channel channel, Category category) {
         searchTerm = '%' + searchTerm + '%';
 
-        String hql = "FROM Programme p JOIN FETCH p.categories WHERE p.title LIKE :search_term";
+        String hql = "FROM Programme p JOIN FETCH p.categories WHERE LOWER(p.title) LIKE LOWER(:search_term)";
 
         if (channel != null) {
             hql += " AND channel_id = :channel_id";
