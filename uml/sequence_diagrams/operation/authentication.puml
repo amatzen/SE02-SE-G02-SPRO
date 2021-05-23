@@ -5,7 +5,7 @@ autonumber
 
 box "Authentication"
     participant ":Producer" as producer
-    participant ":AuthController" as authController <<Control>>
+    participant ":AuthController" as authController <<control>>
     participant ":User" as user
     participant ":DB" as db
 end box
@@ -13,9 +13,13 @@ end box
 activate producer
 producer -> authController : signIn(username, password)
 activate authController
-authController -> db : Retrieve user hash
+authController -> db : getUserByUsername(username)
 activate db
-authController <-- db
+db -> user : <<create>>
+activate user
+db <-- user : user
+deactivate user
+authController <-- db : user
 deactivate db
 
 authController -> authController : Compare password\n against hash
@@ -24,12 +28,9 @@ authController <-- authController : Comparison result
 deactivate authController
 
 opt if equal
-authController -> user : <<create>>
-activate user
-authController <-- user : loggedin
-deactivate user
+authController --> producer : Successful authentication
 end
-producer <-- authController : Authentication
+producer <-- authController : Unsucessful authentication
 deactivate authController
 
 @enduml
