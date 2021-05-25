@@ -5,7 +5,6 @@ import dk.sdu.swe.cross_cutting.helpers.Environment;
 import dk.sdu.swe.cross_cutting.helpers.EnvironmentSelector;
 import dk.sdu.swe.domain.models.Person;
 import dk.sdu.swe.domain.persistence.IPersonDAO;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -70,7 +69,7 @@ class PersonDAOImplTest {
         assertTrue(personDAO.searchByName("Søren").size() == 2);
 
         assertTrue(isInList(person, personList));
-        
+
         Person dbPerson = personDAO.getById(person.getId()).orElse(null);
 
         assertEquals(dbPerson.getId(), person.getId());
