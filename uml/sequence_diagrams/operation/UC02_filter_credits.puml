@@ -5,16 +5,22 @@ autonumber
 
 box Filtrer krediteringer (UC02)
     participant ":Producer" as producer
-    participant ":ProgrammeViewController" as programController <<Control>>
-    participant ":DB" as db <<Entity>>
+    participant ":ProgrammeController" as programController <<Control>>
     participant ":Program" as program <<Entity>>
+    participant ":DB" as db <<Entity>>
 end box
 
 activate producer
-producer -> programController : search(term)
+producer -> programController : search(searchTerm, channel, category)
 activate programController
-programController -> db : getCreditsLike(term)
+
+programController -> db : search(searchTerm, channel, category)
 activate db
+db -> db : find credits like \n term with channel \n and category
+activate db
+db <-- db
+deactivate db
+
 loop for each query result
     db -> program : <<create(search result)>>
     activate program

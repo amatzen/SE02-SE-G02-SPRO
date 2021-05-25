@@ -1,10 +1,22 @@
 image: gradle:6.8.3-jdk15
 
+services:
+    - postgres:12.2-alpine
+
 variables:
     GRADLE_OPTS: "-Dorg.gradle.daemon=false"
+    POSTGRES_DB: se02
+    POSTGRES_USER: se02
+    POSTGRES_PASSWORD: se02
+    POSTGRES_HOST_AUTH_METHOD: trust
 
 before_script:
     - export GRADLE_USER_HOME=`pwd`/.gradle
+    - touch .env
+    - echo "DATABASE_LOCAL_HOST=postgres" >> .env
+    - echo "DATABASE_LOCAL_USER=se02" >> .env
+    - echo "DATABASE_LOCAL_PASS=se02" >> .env
+    - echo "DATABASE_LOCAL_DB=se02" >> .env
 
 build:
     only:

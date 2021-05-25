@@ -1,17 +1,23 @@
 package dk.sdu.swe.domain.controllers;
 
+import dk.sdu.swe.domain.controllers.contracts.IAuthController;
+import dk.sdu.swe.domain.controllers.contracts.IUserController;
 import dk.sdu.swe.domain.models.User;
+import dk.sdu.swe.domain.persistence.IUserDAO;
 import dk.sdu.swe.persistence.dao.UserDAOImpl;
 
 /**
  * The type Auth controller.
  */
-public class AuthController {
+public class AuthController implements IAuthController {
 
     private static AuthController AuthControllerInstance;
     private User currentUser;
 
+    private IUserDAO userDAO;
+
     private AuthController() {
+        userDAO = UserDAOImpl.getInstance();
     }
 
     /**
@@ -19,7 +25,7 @@ public class AuthController {
      *
      * @return the instance
      */
-    public static synchronized AuthController getInstance() {
+    public static synchronized IAuthController getInstance() {
         if (AuthControllerInstance == null) {
             AuthControllerInstance = new AuthController();
         }
@@ -34,10 +40,11 @@ public class AuthController {
      * @return the boolean
      * @throws Exception the exception
      */
+    @Override
     public boolean signIn(String username, String password) throws Exception {
         User user = null;
 
-        user = UserDAOImpl.getInstance().getByUsername(username).get();
+        user = userDAO.getByUsername(username).get();
 
         if (user == null) {
             return false;
@@ -54,6 +61,7 @@ public class AuthController {
     /**
      * Logout.
      */
+    @Override
     public void logout() {
         this.currentUser = null;
     }
@@ -63,6 +71,7 @@ public class AuthController {
      *
      * @return the user
      */
+    @Override
     public User getUser() {
         return this.currentUser;
     }

@@ -63,15 +63,6 @@ public class ProgrammesViewController extends BorderPane implements Observer {
         }
     }
 
-    /**
-     * Gets all programmes.
-     *
-     * @return the all programmes
-     */
-    public List<Programme> getAllProgrammes() {
-        return DB.loadAllData(Programme.class, DB.openSession());
-    }
-
     @FXML
     private void initialize() {
         updateData();

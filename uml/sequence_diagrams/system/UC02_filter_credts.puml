@@ -3,12 +3,16 @@
 
 autonumber
 
-box Se kreditering (UC01)
+box Filtrer krediteringer (UC02)
     participant ":Producer" as producer
     participant ":System" as system
 end box
 
-producer -> system : search(term)
+activate producer
+
+producer -> system : search(term, channel, category)
+activate system
 producer <-- system : Programs
+deactivate system
 
 @enduml

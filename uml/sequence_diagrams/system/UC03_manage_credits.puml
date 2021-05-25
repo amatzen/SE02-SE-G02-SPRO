@@ -4,27 +4,58 @@
 autonumber
 
 box "Håndtér kreditering (UC03)"
-    participant ":Producer" as producer
-    participant ":System" as system
+    participant ":Producer" as producer <<Actor>>
+    participant ":CreditController" as creditController <<Control>>
+    participant ":Credit" as credit <<Entity>>
+    participant ":DB" as db
 end box
 
-producer -> system : signIn(username, password)
-producer <-- system : Authentication response
+activate producer
 
 alt Create credit
-    producer -> system : createCredit(credit)
-    system -> system : saveCredit(credit)
-    producer <-- system : Credit
-else Edit credit
-    producer -> system : updateCredit(credit)
-    system -> system : updateCredit(credit)
-    producer <-- system : Credit
-else Delete credit
-    producer -> system : deleteCredit(credit)
-    system -> system : deleteCredit(credit)
-    producer <-- system : Success
-end
+    producer -> creditController : createCredit(person, creditRole, programme)
+    activate creditController
 
-system -> system : Notify system administrator
+    creditController -> credit : <<create>>
+    activate credit
+    creditController <-- credit : Credit
+    deactivate credit
+
+    creditController -> creditController : save(credit)
+    activate creditController
+
+    creditController -> db : save(credit)
+    activate db
+    creditController <-- db
+    deactivate db
+
+    creditController <-- creditController
+    deactivate creditController
+
+    producer <-- creditController : Credit
+    deactivate creditController
+else Edit credit
+
+    producer -> creditController : updateCredit(credit)
+    activate creditController
+    creditController -> db : updateCredit(credit)
+    activate db
+    creditController <-- db
+    deactivate db
+    producer <-- creditController : Credit
+    deactivate creditController
+
+else Delete credit
+    producer -> creditController : deleteCredit(credit)
+    activate creditController
+
+    creditController -> db : deleteCredit(credit)
+    activate db
+    creditController <-- db
+    deactivate db
+
+    producer <-- creditController
+    deactivate creditController
+end
 
 @enduml
