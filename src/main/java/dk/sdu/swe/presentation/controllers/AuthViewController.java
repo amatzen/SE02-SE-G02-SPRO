@@ -5,6 +5,7 @@ import com.jfoenix.controls.JFXComboBox;
 import dk.sdu.swe.cross_cutting.helpers.Environment;
 import dk.sdu.swe.cross_cutting.helpers.EnvironmentSelector;
 import dk.sdu.swe.domain.controllers.AuthController;
+import dk.sdu.swe.domain.controllers.contracts.IAuthController;
 import dk.sdu.swe.presentation.AlertHelper;
 import dk.sdu.swe.presentation.Router;
 import javafx.collections.FXCollections;
@@ -168,7 +169,7 @@ public class AuthViewController extends HBox {
             return;
         }
 
-        AuthController authController = AuthController.getInstance();
+        IAuthController authController = AuthController.getInstance();
         boolean signIn = false;
         try {
             signIn = authController.signIn(textField.getText(), passwordField.getText());
