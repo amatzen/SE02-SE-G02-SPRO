@@ -1,0 +1,141 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+package "domain" {
+    'Personer her
+    class Producer {
+        - email : String
+        - name : String
+        - image : String
+        --
+        + getName() : String
+        + getEmail() : String
+        + getImage(): String
+        + validatePassword(String) : boolean
+    }
+
+    class DB {
+        --
+        + save(obj): void
+        + update(obj): void
+        + delete(obj): void
+        + getAll(): List<Object>
+        + getUserByUsername(username): Producer
+        + search(term, channel, category): List<Program>
+    }
+
+    class CreditController {
+        --
+        + createCredit(person, creditRole, program): Credit
+        + update(credit): void
+        + delete(credit): void
+        + save(credit): void
+        + getCredits(program): void
+    }
+
+    class ProgramController {
+        --
+        + getAll(): List<Program
+        + search(term, channel, category): List<Program>
+        + getCategories(): List<Category>
+    }
+
+    class CompanyAdministrator {
+        - company: Company
+    }
+
+    class SystemAdministrator {
+    }
+
+    'Naeste
+    class Company {
+        - name : String
+        --
+        + getRegNo() : int
+        + getName() : String
+        + getManager() : String
+    }
+
+    class Channel {
+        - name: String
+        - category: String
+        --
+        + getName() : String
+        + getCategory() : String
+    }
+
+    class Program {
+        - title: String
+        -startTime: long
+        -endTime: long
+        --
+        + getTitle() : String
+    }
+
+    class CreditRole {
+        - title : String
+    }
+
+    class Review {
+    }
+
+    class Credit {
+        - name : String
+        - role : CreditRole
+        - date : OffsetDateTime
+        --
+        + getName() : String
+        + getRole() : CreditRole
+        + getDate() : OffsetDateTime
+    }
+
+    'Controller
+    class AuthController {
+        --
+        + signIn() : Producer
+    }
+
+    class Person {
+        -name: String
+        -contactDetails: Map
+    }
+
+    class CompanyDetails {
+        - address: String
+        - nbr: String
+    }
+}
+
+SystemAdministrator "1" -l-> "1..*" Review : "Approves >"
+Review "1..*" o--> "1" Producer : "Created by"
+Review "1" o--> "1" Credit : "Created for >"
+SystemAdministrator -|> CompanyAdministrator
+
+CompanyAdministrator -|> Producer
+CompanyAdministrator "*" o--> "1" Company : "Manages >"
+CompanyAdministrator "*" o--> "*" Channel : "Manages >"
+
+Producer "1" <--o "1..*" Program : "Owns >"
+Producer "1" <-o "1" AuthController : "Authenticates <"
+Producer o--> Company : "Part of >"
+
+CompanyDetails "1" <--* "1" Company : Has <
+
+Channel "1" <--o "1..*" Program : "Shows >"
+
+Credit "1" o-> "1..*" CreditRole : "Has >"
+
+Program "1" <--o "1..*" Credit : "Has >"
+
+Person "1" <-o "1" Credit
+
+Program -- DB : Stores <
+Company -- DB : Stores <
+Producer - DB : Stores <
+Channel -- DB : Stores <
+CreditRole - DB : Stores <
+
+CreditController o--> DB
+ProgramController o--> DB
+
+@enduml

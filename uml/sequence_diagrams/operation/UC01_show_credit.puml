@@ -4,11 +4,11 @@
 autonumber
 
 box Se kreditering (UC01)
-    participant ":Producer" as producer
+    participant ":Producer" as producer <<Actor>>
     participant ":ProgrammeController" as programController <<Control>>
     participant ":Programme" as program <<Entity>>
     participant ":Credit" as credit <<Entity>>
-    participant ":DB" as db <<Entity>>
+    participant ":DB" as db
 end box
 
 activate producer
@@ -30,7 +30,7 @@ producer <-- programController : Programs
 deactivate programController
 
 opt Filtrér krediteringer (UC02)
-    ref over producer : UC02
+    ref over producer, programController : UC02
 end
 
 producer -> program: getCredits()
@@ -62,12 +62,6 @@ producer <-- program : Program credits
 deactivate program
 deactivate programController
 
-ref over producer, program : UC02
-
-producer -> programController : showCredit(credit)
-activate programController
-
-producer <-- programController : Credit information
-deactivate programController
+ref over producer, programController : UC03
 
 @enduml

@@ -67,11 +67,8 @@ public class Person {
         setName(name);
         setEmail(email);
         setDateOfBirth(dateOfBirth);
+        setImage(image);
 
-        this.name = name;
-        this.image = image;
-        setDateOfBirth(dateOfBirth);
-        putContactDetail("email", email);
     }
 
     /**

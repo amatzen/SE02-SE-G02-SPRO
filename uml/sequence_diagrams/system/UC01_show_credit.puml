@@ -6,23 +6,23 @@ autonumber
 box Se kreditering (UC01)
     participant ":Producer" as producer
     participant ":System" as system
-    participant ":EPG-system" as epg
+    'participant ":EPG-system" as epg
 end box
 
-producer -> system : showPrograms()
-system -> epg : getPrograms()
-system <-- epg : Programs
+activate producer
+
+producer -> system : getPrograms()
+'system -> epg : getPrograms()
+'system <-- epg : Programs
 producer <-- system : Programs
 
 opt Filtrér krediteringer (UC02)
-    producer -> system : search()
-    producer <-- system : Matching programs
+    ref over producer : UC02
 end
 
-producer -> system : showCredits(program)
-producer <-- system : Credits
+producer -> system : getCredits(program)
+producer <-- system : Program credits
 
-producer -> system : showCredit(credit)
-producer <-- system : Credit information
+ref over producer : UC03
 
 @enduml

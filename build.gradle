@@ -51,6 +51,22 @@ run {
     }
 }
 
+test {
+    if(file('.env').exists()) {
+        file('.env').readLines().each() {
+            if (!it.isEmpty() && !it.startsWith("#")) {
+                def pos = it.indexOf("=")
+                def key = it.substring(0, pos)
+                def value = it.substring(pos + 1)
+
+                if (System.getenv(key) == null) {
+                    environment key, value
+                }
+            }
+        }
+    }
+}
+
 javafx {
     version = "15.0.1"
     modules = [ 'javafx.controls', 'javafx.fxml' ]
@@ -64,4 +80,3 @@ compileJava.options.encoding = 'UTF-8'
 tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
 }
-
