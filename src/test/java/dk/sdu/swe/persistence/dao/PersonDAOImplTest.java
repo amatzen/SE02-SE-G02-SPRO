@@ -21,6 +21,7 @@ class PersonDAOImplTest {
     @BeforeEach
     void setUp() {
         EnvironmentSelector.getInstance().setEnvironment(Environment.LOCAL);
+        System.out.println("Username: " + System.getenv("DATABASE_LOCAL_USER"));
     }
 
     @Test
