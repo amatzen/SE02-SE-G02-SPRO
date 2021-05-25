@@ -5,6 +5,11 @@ variables:
 
 before_script:
     - export GRADLE_USER_HOME=`pwd`/.gradle
+    - touch .env
+    - echo DATABASE_LOCAL_HOST=containers-us-west-7.railway.app:6382 >> .env
+    - echo DATABASE_LOCAL_USER=postgres >> .env
+    - echo DATABASE_LOCAL_PASS=${DATABASE_LOCAL_PASS} >> .env
+    - echo DATABASE_LOCAL_DB=railway >> .env
 
 build:
     only:
