@@ -1,4 +1,4 @@
-package models;
+package dk.sdu.swe.domain.models;
 
 import dk.sdu.swe.cross_cutting.exceptions.InvalidNameException;
 import dk.sdu.swe.cross_cutting.exceptions.UserCreationException;
