@@ -32,6 +32,8 @@ public class Application extends javafx.application.Application {
             })).start();
         }
 
+        (new Thread(ConsumerSystemAPI::run)).start();
+
         try {
             launch();
         } catch (IllegalStateException e) {
