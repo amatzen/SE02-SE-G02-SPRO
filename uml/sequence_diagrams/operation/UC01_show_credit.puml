@@ -7,8 +7,10 @@ box Se kreditering (UC01)
     participant ":Producer" as producer <<Actor>>
     participant ":ProgrammeController" as programController <<Control>>
     participant ":Programme" as program <<Entity>>
-    participant ":Credit" as credit <<Entity>>
+    participant ":AuthController" as authController <<Control>>
+    participant ":CreditController" as creditController <<Control>>
     participant ":DB" as db
+    participant ":Credit" as credit <<Entity>>
 end box
 
 activate producer
@@ -26,6 +28,15 @@ end
 
 programController <-- db : Programs
 deactivate db
+
+programController -> authController : user = getUser()
+activate authController
+deactivate authController
+
+programController -> programController : filter programs\nby user company
+activate programController
+deactivate programController
+
 producer <-- programController : Programs
 deactivate programController
 
@@ -37,10 +48,10 @@ producer -> program: getCredits()
 activate program
 program -> programController : getCredits(this)
 activate programController
-programController -> credit : getCredits(programme)
-activate credit
+programController -> creditController : getCredits(programme)
+activate creditController
 
-credit -> db : getCredits()
+creditController -> db : getCredits()
 activate db
 
 loop for each program credit
@@ -50,11 +61,11 @@ db <-- credit : Insert credit in list
 deactivate credit
 end
 
-credit <-- db : Credits
+creditController <-- db : Credits
 deactivate db
 
-programController <-- credit : Program credits
-deactivate credit
+programController <-- creditController : Program credits
+deactivate creditController
 program <-- programController : Program credits
 deactivate programController
 producer <-- program : Program credits
