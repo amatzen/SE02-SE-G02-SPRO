@@ -43,15 +43,12 @@ public class ProgrammeController implements IProgrammeController {
     @Override
     public List<Programme> getAll() {
         List<Programme> programmes = ProgrammeDAOImpl.getInstance().getAll();
-        programmes.sort(Comparator.comparing(Programme::getTitle));
 
         if(AuthController.getInstance().getUser().hasPermission("programmes.list.all")) {
             return programmes;
         }
 
-        return
-            programmes
-            .stream()
+        programmes = programmes.stream()
             .filter(programme -> {
                 boolean ownsProgramme = false;
 
@@ -64,6 +61,10 @@ public class ProgrammeController implements IProgrammeController {
 
                 return ownsProgramme;
             }).collect(Collectors.toList());
+
+        programmes.sort(Comparator.comparing(Programme::getTitle));
+
+        return programmes;
     }
 
     @Override
