@@ -43,32 +43,28 @@ public class ProgrammeController implements IProgrammeController {
     @Override
     public List<Programme> getAll() {
         List<Programme> programmes = ProgrammeDAOImpl.getInstance().getAll();
-        programmes.sort(Comparator.comparing(Programme::getTitle));
 
         if(AuthController.getInstance().getUser().hasPermission("programmes.list.all")) {
             return programmes;
         }
 
-        return
-            programmes
-            .stream()
-            .filter(i -> {
-                if(Objects.isNull(i.getCompany())) return false;
+        programmes = programmes.stream()
+            .filter(programme -> {
+                boolean ownsProgramme = false;
 
-                Company x = i.getCompany();
+                Company currentCompany = programme.getCompany();
 
-                boolean userCompany = Objects.equals(x.getId(), AuthController.getInstance().getUser().getCompany().getId());
-                boolean subCompany = false;
-
-                Company currentCompany = x.getParentCompany();
-                while(Objects.nonNull(currentCompany)) {
-                    subCompany = Objects.equals(currentCompany.getId(), AuthController.getInstance().getUser().getCompany().getId());
+                while(currentCompany != null) {
+                    ownsProgramme = Objects.equals(currentCompany.getId(), AuthController.getInstance().getUser().getCompany().getId());
                     currentCompany = currentCompany.getParentCompany();
                 }
 
-                return userCompany || subCompany;
-            })
-            .collect(Collectors.toList());
+                return ownsProgramme;
+            }).collect(Collectors.toList());
+
+        programmes.sort(Comparator.comparing(Programme::getTitle));
+
+        return programmes;
     }
 
     @Override
