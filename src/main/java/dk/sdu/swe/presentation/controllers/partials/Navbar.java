@@ -10,6 +10,7 @@ import dk.sdu.swe.presentation.controllers.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 
@@ -90,7 +91,7 @@ public class Navbar extends VBox implements Observer {
 
     @FXML
     private void handle(ActionEvent e) {
-        switch (((JFXButton) e.getSource()).getId()) {
+        switch (((Button) e.getSource()).getId()) {
             case "progBtn" -> router.goTo(ProgrammesViewController.class);
             case "companyBtn" -> router.goTo(CompanyViewController.class);
             case "pplBtn" -> router.goTo(PersonsViewController.class);

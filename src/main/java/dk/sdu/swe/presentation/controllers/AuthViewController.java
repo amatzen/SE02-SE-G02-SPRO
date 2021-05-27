@@ -28,6 +28,8 @@ public class AuthViewController extends HBox {
 
     private String modelPassword;
 
+    private IAuthController authController;
+
     /**
      * The Main.
      */
@@ -80,6 +82,8 @@ public class AuthViewController extends HBox {
      * Instantiates a new Auth view controller.
      */
     public AuthViewController() {
+        authController = AuthController.getInstance();
+
         FXMLLoader fxmlLoader = new FXMLLoader(
             Objects.requireNonNull(
                 getClass().getClassLoader().getResource("dk/sdu/swe/presentation/views/auth/AuthView.fxml")));
@@ -169,7 +173,6 @@ public class AuthViewController extends HBox {
             return;
         }
 
-        IAuthController authController = AuthController.getInstance();
         boolean signIn = false;
         try {
             signIn = authController.signIn(textField.getText(), passwordField.getText());
