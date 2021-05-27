@@ -37,6 +37,8 @@ public class PersonModal extends Dialog<Person> {
     @FXML
     private DatePicker bday;
 
+    @FXML Label modalTitle;
+
     @FXML
     private TextField name, email, imageUrl;
 
@@ -93,13 +95,13 @@ public class PersonModal extends Dialog<Person> {
     private void initialize() {
 
         if (person != null) {
+            modalTitle.setText("Redigér person");
             email.setText(person.getEmail());
             name.setText(person.getName());
             bday.setValue(person.getZonedDate().toLocalDate());
             imageUrl.setText(person.getImage());
             image.setImage(new Image(person.getImage(), true));
         }
-
     }
 
     @FXML
