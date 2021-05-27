@@ -57,23 +57,23 @@ public class DataExportViewController extends VBox {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Fejl!");
             alert.setHeaderText(null);
-            alert.setContentText("Vælg venligst eksport data");
+            alert.setContentText("Vælg venligst data som skal eksporteres.");
             alert.showAndWait();
         }
         else if (csvBtn.isSelected() == false && jsonBtn.isSelected() == false) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Fejl!");
             alert.setHeaderText(null);
-            alert.setContentText("Vælg venligst data som skal eksporteres.");
+            alert.setContentText("Vælg venligst filtype.");
             alert.showAndWait();
         }
 
         // Midlertidigt indtil JSON eksportering er færdigt
         else if (jsonBtn.isSelected()) {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle(null);
+            alert.setTitle("JSON eksportering");
             alert.setHeaderText(null);
-            alert.setContentText("Eksportering til JSON er desværre ikke understøttet endnu");
+            alert.setContentText("Eksportering til JSON er desværre ikke understøttet endnu.");
             alert.showAndWait();
         }
 
