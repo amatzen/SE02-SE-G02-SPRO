@@ -11,7 +11,7 @@ import dk.sdu.swe.persistence.dao.UserDAOImpl;
  */
 public class AuthController implements IAuthController {
 
-    private static AuthController AuthControllerInstance;
+    private static IAuthController AuthControllerInstance;
     private User currentUser;
 
     private IUserDAO userDAO;

@@ -14,6 +14,11 @@ activate producer
 producer -> authController : signIn(username, password)
 activate authController
 authController -> db : getUserByUsername(username)
+
+opt user == null
+producer <-- authController : Unsuccessful
+end
+
 activate db
 db -> user : <<create>>
 activate user
