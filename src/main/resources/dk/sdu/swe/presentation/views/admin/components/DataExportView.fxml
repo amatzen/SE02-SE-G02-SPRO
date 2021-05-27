@@ -73,7 +73,7 @@
             <Insets top="15.0" />
          </VBox.margin>
       </VBox>
-      <JFXButton fx:id="exportBtn" minHeight="-Infinity" minWidth="-Infinity" onAction="#Export" prefHeight="35.0" prefWidth="70.0" style="-jfx-button-type: RAISED; -fx-background-color: #FF9800;" text="Eksport" textFill="WHITE">
+      <JFXButton fx:id="exportBtn" minHeight="-Infinity" minWidth="-Infinity" onAction="#export" prefHeight="35.0" prefWidth="70.0" style="-jfx-button-type: RAISED; -fx-background-color: #FF9800;" text="Eksport" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>

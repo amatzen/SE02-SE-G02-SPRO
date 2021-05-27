@@ -50,7 +50,7 @@ public class DataExportViewController extends VBox {
     }
 
     @FXML
-    private void Export(ActionEvent event) {
+    private void export(ActionEvent event) {
 
         if (creditData.isSelected() == false && programData.isSelected() == false &&
             companyData.isSelected() == false) {
