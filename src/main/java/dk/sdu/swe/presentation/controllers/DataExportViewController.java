@@ -64,7 +64,7 @@ public class DataExportViewController extends VBox {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Fejl!");
             alert.setHeaderText(null);
-            alert.setContentText("Vælg venligst eksport data");
+            alert.setContentText("Vælg venligst data som skal eksporteres.");
             alert.showAndWait();
         }
 

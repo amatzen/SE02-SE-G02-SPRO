@@ -8,6 +8,8 @@ import dk.sdu.swe.presentation.controllers.AuthViewController;
 import javafx.scene.Scene;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
 
 
 /**
@@ -21,6 +23,8 @@ public class Application extends javafx.application.Application {
      * @throws Exception the exception
      */
     public static void main(String[] args) throws Exception {
+        Logger.getRootLogger().setLevel(Level.OFF); //Disables log4j log warnings
+
         EnvironmentSelector.getInstance().setEnvironment(switch (System.getenv("DEFAULT_ENVIRONMENT")) {
             case "prod" -> Environment.PROD;
             default -> Environment.LOCAL;
