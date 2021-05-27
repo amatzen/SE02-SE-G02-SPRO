@@ -4,6 +4,7 @@ import com.jfoenix.controls.JFXButton;
 import dk.sdu.swe.domain.models.Category;
 import dk.sdu.swe.domain.models.Credit;
 import dk.sdu.swe.domain.models.Programme;
+import dk.sdu.swe.persistence.dao.CreditDAOImpl;
 import dk.sdu.swe.presentation.controllers.partials.CreditListItem;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -104,6 +105,7 @@ public class CreditListModal extends Dialog<Boolean> {
         Dialog<Credit> creditModal = new CreditModal(getDialogPane().getScene().getWindow(), programme);
         Optional<Credit> credit = creditModal.showAndWait();
         credit.ifPresent(creditObj -> {
+            CreditDAOImpl.getInstance().save(creditObj);
             creditsPane.getChildren().add(new CreditListItem(creditObj, creditsPane));
         });
     }
