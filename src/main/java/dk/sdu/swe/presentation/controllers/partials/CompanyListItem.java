@@ -24,8 +24,8 @@ import java.util.Optional;
 public class CompanyListItem extends VBox {
 
     private Map<String, Runnable> options = new LinkedHashMap<>() {{
-        put("Håndtér brugere", CompanyListItem.this::manageUsers);
-        put("Rediger", CompanyListItem.this::editCompany);
+        put("Brugeradministration", CompanyListItem.this::manageUsers);
+        put("Rediger virksomhed", CompanyListItem.this::editCompany);
         put("Slet", CompanyListItem.this::deleteCompany);
     }};
 
