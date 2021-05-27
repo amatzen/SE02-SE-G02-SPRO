@@ -1,15 +1,12 @@
 package dk.sdu.swe.domain.models;
 
 import dk.sdu.swe.domain.controllers.CreditController;
-import dk.sdu.swe.persistence.dao.CreditDAOImpl;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
 import javax.persistence.*;
 import java.util.List;
-import java.util.Objects;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 /**
  * The type Programme.
