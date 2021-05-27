@@ -52,8 +52,6 @@ public class Router {
      * @param container Container to fill with content.
      */
     private void goTo(Parent component, Pane container) {
-        //components.put(component.getClass(), component);
-
         if (doFadeAnimation && container.getChildren().size() > 0 && !container.getChildren().contains(component)){
             fadeOut(component, container);
         } else {
