@@ -59,7 +59,7 @@ public class ConsumerSystemAPI {
                 }
 
                 String title = rs.getString("programmeTitle");
-                List credits = new ArrayList();
+                List<Document> credits = new ArrayList<>();
                 do {
                     credits.add(new Document(Map.of(
                         "name", rs.getString("name"),

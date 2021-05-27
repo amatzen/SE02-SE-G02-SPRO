@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXComboBox?>
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.*?>
+
 <BorderPane prefHeight="366.0" prefWidth="542.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <center>
       <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="15.0" BorderPane.alignment="CENTER">
@@ -21,7 +21,7 @@
    <top>
       <HBox alignment="CENTER" prefHeight="79.0" prefWidth="508.0" style="-fx-background-color: #ffa500;" BorderPane.alignment="CENTER">
          <children>
-            <Label maxWidth="1.7976931348623157E308" prefHeight="30.0" prefWidth="419.0" text="Tilføj kreditering">
+            <Label fx:id="modalTitle" maxWidth="1.7976931348623157E308" prefHeight="30.0" prefWidth="419.0" text="Tilføj kreditering">
                <font>
                   <Font size="20.0" />
                </font>
