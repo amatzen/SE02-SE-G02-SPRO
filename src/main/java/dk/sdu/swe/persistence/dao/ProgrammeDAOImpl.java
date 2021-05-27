@@ -75,9 +75,9 @@ public class ProgrammeDAOImpl extends AbstractDAO<Programme> implements IProgram
         List<Programme> result;
         try {
             result = (List<Programme>) session.createQuery(
-                "FROM Programme as p " +
-                "INNER JOIN FETCH p.categories " +
-                "INNER JOIN FETCH p.channel").list().stream().distinct().collect(Collectors.toList());
+                "SELECT DISTINCT p FROM Programme as p " +
+                "LEFT JOIN FETCH p.categories " +
+                "LEFT JOIN FETCH p.channel").list();
         } finally {
             transaction.commit();
             session.close();

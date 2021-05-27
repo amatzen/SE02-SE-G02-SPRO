@@ -44,11 +44,18 @@ public class ProgrammeController implements IProgrammeController {
     public List<Programme> getAll() {
         List<Programme> programmes = ProgrammeDAOImpl.getInstance().getAll();
 
+        programmes = filterOwnedProgrammes(programmes);
+
+        programmes.sort(Comparator.comparing(Programme::getTitle));
+        return programmes;
+    }
+
+    private List<Programme> filterOwnedProgrammes(List<Programme> programmes) {
         if(AuthController.getInstance().getUser().hasPermission("programmes.list.all")) {
             return programmes;
         }
 
-        programmes = programmes.stream()
+        return programmes.stream()
             .filter(programme -> {
                 boolean ownsProgramme = false;
 
@@ -61,15 +68,14 @@ public class ProgrammeController implements IProgrammeController {
 
                 return ownsProgramme;
             }).collect(Collectors.toList());
-
-        programmes.sort(Comparator.comparing(Programme::getTitle));
-
-        return programmes;
     }
 
     @Override
     public List<Programme> search(String searchTerm, Channel channel, Category category) {
         List<Programme> programmes = ProgrammeDAOImpl.getInstance().search(searchTerm, channel, category);
+
+        programmes = filterOwnedProgrammes(programmes);
+
         programmes.sort(Comparator.comparing(Programme::getTitle));
         return programmes;
     }
