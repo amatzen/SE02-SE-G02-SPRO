@@ -8,6 +8,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Dialog;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.effect.GaussianBlur;
 import javafx.stage.Modality;
@@ -30,6 +31,9 @@ public class CompanyModal extends Dialog<Company> {
 
     @FXML
     private TextField address;
+
+    @FXML
+    private Label modalTitle;
 
     @FXML
     private JFXButton editBtn;
@@ -85,9 +89,12 @@ public class CompanyModal extends Dialog<Company> {
     @FXML
     private void initialize() {
         if (this.company != null) {
+            modalTitle.setText("Redigér virksomhed");
             companyName.setText(company.getName());
             cvrNumber.setText(company.getCompanyDetails().getNbr());
             address.setText(company.getCompanyDetails().getAddress());
+        } else {
+            modalTitle.setText("Tilføj virksomhed");
         }
     }
 
