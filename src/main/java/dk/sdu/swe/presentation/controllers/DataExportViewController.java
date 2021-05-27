@@ -61,7 +61,7 @@ public class DataExportViewController extends VBox {
             alert.setContentText("Vælg venligst eksport data");
             alert.showAndWait();
         }
-        if (csvBtn.isSelected() == false && jsonBtn.isSelected() == false) {
+        else if (csvBtn.isSelected() == false && jsonBtn.isSelected() == false) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Fejl!");
             alert.setHeaderText(null);
@@ -70,7 +70,7 @@ public class DataExportViewController extends VBox {
         }
 
         // Midlertidigt indtil JSON eksportering er færdigt
-        if (jsonBtn.isSelected()) {
+        else if (jsonBtn.isSelected()) {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle(null);
             alert.setHeaderText(null);
