@@ -2,10 +2,9 @@
 
 <?import com.jfoenix.controls.*?>
 <?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
-
 <fx:root type="VBox" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
     <children>
       <StackPane>
@@ -63,10 +62,7 @@
                               </JFXButton>
                         <HBox style="-fx-background-color: #FF9800;">
                            <children>
-                                    <JFXButton fx:id="profileBtn" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#handle" prefHeight="62.0" prefWidth="150.0" style="-fx-background-color: #FF9800;">
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font></JFXButton>
+                                    <JFXButton fx:id="profileBtn" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#handle" prefHeight="62.0" prefWidth="150.0" style="-fx-background-color: #FF9800;" />
                            </children>
                         </HBox>
                           </children>
