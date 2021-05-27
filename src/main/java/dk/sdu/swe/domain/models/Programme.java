@@ -30,7 +30,7 @@ public class Programme {
     @JoinTable(name = "programme_epg_entries")
     private List<EPGProgramme> epgProgrammes;
 
-    @ManyToMany(fetch = FetchType.EAGER)
+    @ManyToMany
     private Set<Category> categories;
 
     @ManyToOne
@@ -87,7 +87,7 @@ public class Programme {
      */
     public JSONArray getCreditsJson() {
         JSONArray a = new JSONArray();
-        getCredits().forEach(x -> a.put(x.toJson()));
+        getCredits().forEach(credit -> a.put(credit.toJson()));
         return a;
     }
 
@@ -220,6 +220,7 @@ public class Programme {
             return (Programme) super.clone();
         } catch (CloneNotSupportedException e) {
             Programme x = new Programme(this.title, this.channel, this.prodYear, this.categories, this.company);
+            x.id = id;
             return x;
         }
     }
