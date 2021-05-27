@@ -52,6 +52,15 @@ public class DataExportViewController extends VBox {
 
     @FXML
     private void Export(ActionEvent event) {
+
+        if (creditData.isSelected() == false && programData.isSelected() == false &&
+            companyData.isSelected() == false) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Fejl!");
+            alert.setHeaderText(null);
+            alert.setContentText("Vælg venligst eksport data");
+            alert.showAndWait();
+        }
         if (csvBtn.isSelected() == false && jsonBtn.isSelected() == false) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Fejl!");
@@ -59,12 +68,13 @@ public class DataExportViewController extends VBox {
             alert.setContentText("Vælg venligst en filtype");
             alert.showAndWait();
         }
-        if (creditData.isSelected() == false && programData.isSelected() == false &&
-            companyData.isSelected() == false) {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Fejl!");
+
+        // Midlertidigt indtil JSON eksportering er færdigt
+        if (jsonBtn.isSelected()) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle(null);
             alert.setHeaderText(null);
-            alert.setContentText("Vælg venligst eksport data");
+            alert.setContentText("Eksportering til JSON er desværre ikke understøttet endnu");
             alert.showAndWait();
         }
 
@@ -87,6 +97,7 @@ public class DataExportViewController extends VBox {
             fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("CSV", "*.csv"));
             CsvExport.csvExportCompanies(fileChooser.showSaveDialog(getScene().getWindow()));
         }
+        /*
         if (jsonBtn.isSelected() && creditData.isSelected()) {
             fileChooser.setTitle("Krediteringer - JSON");
             fileChooser.setInitialFileName("Krediteringer " + date);
@@ -105,6 +116,7 @@ public class DataExportViewController extends VBox {
             fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("JSON", "*.json"));
             JsonExport.JsonExportCompanies(fileChooser.showSaveDialog(getScene().getWindow()));
         }
+        */
     }
 
 }
