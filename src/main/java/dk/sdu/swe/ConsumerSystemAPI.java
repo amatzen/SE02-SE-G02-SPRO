@@ -46,7 +46,7 @@ public class ConsumerSystemAPI {
 
         app.get("/details/:programmeId", ctx -> {
             try {
-                Path sqlQuery = Paths.get(Application.class.getResource("sql/getDetails.sql").toURI());
+                Path sqlQuery = Paths.get(Application.class.getResource("/dk/sdu/swe/persistence/queries/getDetails.sql").toURI());
 
                 Connection conn = conn();
                 PreparedStatement stmt = conn.prepareStatement(Files.lines(sqlQuery).collect(Collectors.joining("\n")));
