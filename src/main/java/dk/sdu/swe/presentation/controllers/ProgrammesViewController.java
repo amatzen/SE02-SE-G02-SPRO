@@ -10,7 +10,6 @@ import dk.sdu.swe.domain.controllers.ProgrammeController;
 import dk.sdu.swe.domain.models.Category;
 import dk.sdu.swe.domain.models.Channel;
 import dk.sdu.swe.domain.models.Programme;
-import dk.sdu.swe.persistence.DB;
 import dk.sdu.swe.presentation.controllers.modals.programmes.ProgrammeModal;
 import dk.sdu.swe.presentation.controllers.partials.ProgrammeListItem;
 import javafx.event.ActionEvent;
