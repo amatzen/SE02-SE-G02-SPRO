@@ -101,6 +101,7 @@ public class CompanyListItem extends VBox {
     }
 
     private void deleteCompany() {
+        // Midlertidigt indtil at dette er implementeret
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Slet virksomhed");
         alert.setHeaderText(null);
