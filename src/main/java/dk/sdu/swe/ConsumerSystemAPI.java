@@ -40,6 +40,7 @@ public class ConsumerSystemAPI {
             } catch (Exception e) {
                 e.printStackTrace();
                 ctx.status(500).result("Internal error.");
+                return;
             }
             ctx.result("true");
         });
