@@ -27,8 +27,8 @@ public class PersonListItem extends VBox {
 
     private Map<String, Runnable> options = new LinkedHashMap<>() {{
         put("Rediger", PersonListItem.this::editPerson);
+        put("Sammenflet", PersonListItem.this::mergePerson);
         put("Slet", PersonListItem.this::deletePerson);
-        put("Flet", PersonListItem.this::mergePerson);
     }};
 
     private Person person;

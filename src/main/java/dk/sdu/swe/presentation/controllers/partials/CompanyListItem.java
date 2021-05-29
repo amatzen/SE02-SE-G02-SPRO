@@ -8,6 +8,7 @@ import dk.sdu.swe.presentation.controllers.modals.companies.CompanyModal;
 import dk.sdu.swe.presentation.controllers.modals.companies.UserAdministrationModal;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Dialog;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
@@ -24,8 +25,8 @@ import java.util.Optional;
 public class CompanyListItem extends VBox {
 
     private Map<String, Runnable> options = new LinkedHashMap<>() {{
-        put("Håndtér brugere", CompanyListItem.this::manageUsers);
-        put("Rediger", CompanyListItem.this::editCompany);
+        put("Brugeradministration", CompanyListItem.this::manageUsers);
+        put("Rediger virksomhed", CompanyListItem.this::editCompany);
         put("Slet", CompanyListItem.this::deleteCompany);
     }};
 
@@ -100,7 +101,12 @@ public class CompanyListItem extends VBox {
     }
 
     private void deleteCompany() {
-        System.out.println("Test2");
+        // Midlertidigt indtil at dette er implementeret
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Slet virksomhed");
+        alert.setHeaderText(null);
+        alert.setContentText("Sletning af virksomheder er desværre ikke understøttet endnu.");
+        alert.showAndWait();
     }
 
     private void manageUsers() {

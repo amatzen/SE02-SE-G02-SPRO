@@ -1,7 +1,6 @@
 package dk.sdu.swe.domain.controllers;
 
 import dk.sdu.swe.domain.controllers.contracts.IAuthController;
-import dk.sdu.swe.domain.controllers.contracts.IUserController;
 import dk.sdu.swe.domain.models.User;
 import dk.sdu.swe.domain.persistence.IUserDAO;
 import dk.sdu.swe.persistence.dao.UserDAOImpl;

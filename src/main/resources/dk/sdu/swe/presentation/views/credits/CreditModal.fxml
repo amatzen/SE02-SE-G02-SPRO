@@ -21,7 +21,7 @@
    <top>
       <HBox alignment="CENTER" prefHeight="79.0" prefWidth="508.0" style="-fx-background-color: #ffa500;" BorderPane.alignment="CENTER">
          <children>
-            <Label maxWidth="1.7976931348623157E308" prefHeight="30.0" prefWidth="419.0" text="Tilføj kreditering">
+            <Label fx:id="modalTitle" maxWidth="1.7976931348623157E308" prefHeight="30.0" prefWidth="419.0" text="Tilføj kreditering">
                <font>
                   <Font size="20.0" />
                </font>

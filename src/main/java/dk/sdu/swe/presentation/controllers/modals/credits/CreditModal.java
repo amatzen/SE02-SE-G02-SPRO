@@ -41,6 +41,10 @@ public class CreditModal extends Dialog<Credit> {
     private ImageView image;
 
     @FXML
+    private
+    Label modalTitle;
+
+    @FXML
     private TextField name;
 
     private Programme programme;
@@ -96,6 +100,7 @@ public class CreditModal extends Dialog<Credit> {
             Label label = new Label(creditRoleObj.getTitle());
             label.setUserData(creditRoleObj);
             creditRole.getItems().add(label);
+
             if (credit != null) {
                 if (credit.getRole().getId().equals(creditRoleObj.getId())) {
                     creditRole.getSelectionModel().select(label);
@@ -109,6 +114,7 @@ public class CreditModal extends Dialog<Credit> {
             label.setUserData(personObj);
             person.getItems().add(label);
             if (credit != null) {
+                modalTitle.setText("Redigér kreditering");
                 if (credit.getPerson().getId().equals(personObj.getId())) {
                     person.getSelectionModel().select(label);
                 }

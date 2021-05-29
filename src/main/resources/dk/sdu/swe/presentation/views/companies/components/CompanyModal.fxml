@@ -61,7 +61,7 @@
          <children>
             <HBox prefHeight="100.0" prefWidth="722.0">
                <children>
-                  <Label text="Tilføj virksomhed">
+                  <Label fx:id="modalTitle" text="Tilføj virksomhed">
                      <font>
                         <Font size="24.0" />
                      </font>

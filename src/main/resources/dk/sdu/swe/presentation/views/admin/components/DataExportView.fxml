@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
-<fx:root maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="20.0" type="VBox" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="20.0" type="VBox" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Label text="Dataeksport">
          <font>
@@ -39,7 +39,7 @@
             <Insets top="5.0" />
          </VBox.margin>
       </HBox>
-      <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="10.0">
+      <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="326.0" spacing="10.0">
          <children>
             <Label text="Vælg Filtype">
                <font>
@@ -69,11 +69,17 @@
                </selectedColor>
             </JFXRadioButton>
          </children>
+         <VBox.margin>
+            <Insets top="15.0" />
+         </VBox.margin>
       </VBox>
-      <JFXButton fx:id="exportBtn" minHeight="-Infinity" minWidth="-Infinity" onAction="#Export" prefHeight="35.0" prefWidth="70.0" style="-jfx-button-type: RAISED; -fx-background-color: #FF9800;" text="Eksport" textFill="WHITE">
+      <JFXButton fx:id="exportBtn" minHeight="-Infinity" minWidth="-Infinity" onAction="#export" prefHeight="35.0" prefWidth="70.0" style="-jfx-button-type: RAISED; -fx-background-color: #FF9800;" text="Eksport" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
+         <VBox.margin>
+            <Insets top="5.0" />
+         </VBox.margin>
       </JFXButton>
    </children>
    <padding>

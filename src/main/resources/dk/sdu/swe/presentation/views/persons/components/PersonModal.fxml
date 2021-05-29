@@ -61,7 +61,7 @@
             <children>
                 <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="722.0" HBox.hgrow="ALWAYS">
                     <children>
-                        <Label fx:id="modalTitle" text="Tilføj ny person">
+                        <Label fx:id="modalTitle" text="Tilføj person">
                             <font>
                                 <Font size="24.0" />
                             </font>
