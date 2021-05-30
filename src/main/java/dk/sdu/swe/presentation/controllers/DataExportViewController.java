@@ -103,26 +103,6 @@ public class DataExportViewController extends VBox {
             );
         }
 
-        /*
-        if (jsonBtn.isSelected() && creditData.isSelected()) {
-            fileChooser.setTitle("Krediteringer - JSON");
-            fileChooser.setInitialFileName("Krediteringer " + date);
-            fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("JSON", "*.json"));
-            JsonExport.JsonExportCredits(fileChooser.showSaveDialog(getScene().getWindow()));
-        }
-        if (jsonBtn.isSelected() && programData.isSelected()) {
-            fileChooser.setTitle("Programmer - JSON");
-            fileChooser.setInitialFileName("Programmer " + date);
-            fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("JSON", "*.json"));
-            JsonExport.JsonExportPrograms(fileChooser.showSaveDialog(getScene().getWindow()));
-        }
-        if (jsonBtn.isSelected() && companyData.isSelected()) {
-            fileChooser.setTitle("Virksomheder - JSON");
-            fileChooser.setInitialFileName("Virksomheder " + date);
-            fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("JSON", "*.json"));
-            JsonExport.JsonExportCompanies(fileChooser.showSaveDialog(getScene().getWindow()));
-        }
-        */
     }
 
 }

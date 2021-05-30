@@ -35,7 +35,7 @@ indent_style = space
 # ij_css_use_double_quotes = true
 # ij_css_value_alignment = do_not_align
 
-[{*.ant,*.fxml,*.jhm,*.jnlp,*.jrxml,*.pom,*.rng,*.tld,*.wadl,*.wsdd,*.wsdl,*.xjb,*.xml,*.xsd,*.xsl,*.xslt,*.xul}]
+[{*.ant, *.fxml, *.jhm, *.jnlp, *.jrxml, *.pom, *.rng, *.tld, *.wadl, *.wsdd, *.wsdl, *.xjb, *.xml, *.xsd, *.xsl, *.xslt, *.xul}]
 ij_xml_align_attributes = true
 # ij_xml_align_text = false
 # ij_xml_attribute_wrap = normal
@@ -54,7 +54,7 @@ ij_xml_space_after_tag_name = false
 # ij_xml_text_wrap = normal
 # ij_xml_use_custom_settings = false
 
-[{*.har,*.jsb2,*.jsb3,*.json,.babelrc,.eslintrc,.stylelintrc,bowerrc,jest.config}]
+[{*.har, *.jsb2, *.jsb3, *.json, .babelrc, .eslintrc, .stylelintrc, bowerrc, jest.config}]
 indent_size = 2
 # ij_json_keep_blank_lines_in_code = 0
 # ij_json_keep_indents_on_empty_lines = false
@@ -67,7 +67,7 @@ ij_json_space_after_comma = true
 # ij_json_spaces_within_brackets = false
 # ij_json_wrap_long_lines = false
 
-[{*.java,NotificationAnchorStack.java}]
+[{*.java, NotificationAnchorStack.java}]
 # ij_java_align_consecutive_assignments = false
 # ij_java_align_consecutive_variable_declarations = false
 # ij_java_align_group_field_declarations = false
@@ -316,7 +316,7 @@ ij_java_while_on_new_line = false
 # ij_java_wrap_first_method_in_call_chain = false
 # ij_java_wrap_long_lines = false
 
-[{*.yaml,*.yml,.analysis_options}]
+[{*.yaml, *.yml, .analysis_options}]
 # indent_size = 2
 # ij_yaml_align_values_properties = do_not_align
 # ij_yaml_autoinsert_sequence_marker = true

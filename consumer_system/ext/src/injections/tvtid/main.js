@@ -24,8 +24,8 @@ const r = () => {
 
         const req = await fetch(`http://localhost/exists/${programmeId}`);
         const res = await req.json();
-        
-        if(!res) {
+
+        if (!res) {
             return;
         }
 
@@ -33,7 +33,7 @@ const r = () => {
         creditLink.href = "#";
         creditLink.onclick = function (event) {
             event.preventDefault();
-            openCreditsModal({ channelId, programmeId });
+            openCreditsModal({channelId, programmeId});
             return false;
         };
         creditLink.innerText = "Krediteringer";
@@ -46,8 +46,8 @@ const r = () => {
 
 }
 
-var openCreditsModal = async ({ channelId, programmeId }) => {
-    if(modal != null ) {
+var openCreditsModal = async ({channelId, programmeId}) => {
+    if (modal != null) {
         modal.destroy();
     }
 
@@ -64,7 +64,7 @@ var openCreditsModal = async ({ channelId, programmeId }) => {
         <p class="programmeTitle">${res.title}</p>
         <ul class="crms-grid">
             ${res.credits.map(cr => {
-                return `
+        return `
                     <li>
                         <div class="card">
                             <img src="${cr.image}" alt="${cr.name} - ${cr.role}"/>
@@ -75,11 +75,11 @@ var openCreditsModal = async ({ channelId, programmeId }) => {
                         </div>
                     </li>
                 `;
-            })}
+    })}
         </ul>
     `);
 
-    modal.addFooterBtn('Luk', 'tingle-btn tingle-btn--primary', function() {
+    modal.addFooterBtn('Luk', 'tingle-btn tingle-btn--primary', function () {
         modal.close();
     });
 

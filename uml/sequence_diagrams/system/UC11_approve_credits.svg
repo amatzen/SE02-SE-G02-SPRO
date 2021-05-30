@@ -1,7 +1,102 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg xmlns="http://www.w3.org/2000/svg" contentScriptType="application/ecmascript" contentStyleType="text/css"
      height="299px" preserveAspectRatio="none" style="width:351px;height:299px;" version="1.1" viewBox="0 0 351 299"
-     width="351px" zoomAndPan="magnify"><defs><filter height="300%" id="f6h5c3w6p65tz" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><rect fill="#DDDDDD" height="287.5234" style="stroke:#A80036;stroke-width:1.0;" width="344.5" x="1" y="6"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="209" x="68.75" y="18.0669">Godkend kreditering (UC11)</text><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="87" x2="87" y1="60.4297" y2="255.2266"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="304.5" x2="304.5" y1="60.4297" y2="255.2266"/><rect fill="#FEFECE" filter="url(#f6h5c3w6p65tz)" height="30.2969" style="stroke:#A80036;stroke-width:1.5;" width="161" x="5" y="25.1328"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="147" x="12" y="45.1279">:SystemAdministrator</text><rect fill="#FEFECE" filter="url(#f6h5c3w6p65tz)" height="30.2969" style="stroke:#A80036;stroke-width:1.5;" width="161" x="5" y="254.2266"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="147" x="12" y="274.2217">:SystemAdministrator</text><rect fill="#FEFECE" filter="url(#f6h5c3w6p65tz)" height="30.2969" style="stroke:#A80036;stroke-width:1.5;" width="70" x="267.5" y="25.1328"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="56" x="274.5" y="45.1279">:System</text><rect fill="#FEFECE" filter="url(#f6h5c3w6p65tz)" height="30.2969" style="stroke:#A80036;stroke-width:1.5;" width="70" x="267.5" y="254.2266"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="56" x="274.5" y="274.2217">:System</text><polygon fill="#A80036" points="292.5,87.5625,302.5,91.5625,292.5,95.5625,296.5,91.5625" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="87.5" x2="298.5" y1="91.5625" y2="91.5625"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="9" x="94.5" y="86.4966">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="180" x="107.5" y="86.4966">signIn(username, password)</text><polygon fill="#A80036" points="98.5,116.6953,88.5,120.6953,98.5,124.6953,94.5,120.6953" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="92.5" x2="303.5" y1="120.6953" y2="120.6953"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="9" x="104.5" y="115.6294">2</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="156" x="117.5" y="115.6294">Authentication response</text><polygon fill="#A80036" points="292.5,145.8281,302.5,149.8281,292.5,153.8281,296.5,149.8281" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="87.5" x2="298.5" y1="149.8281" y2="149.8281"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="9" x="94.5" y="144.7622">3</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="115" x="107.5" y="144.7622">getWaitingCredit()</text><polygon fill="#A80036" points="98.5,174.9609,88.5,178.9609,98.5,182.9609,94.5,178.9609" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="92.5" x2="303.5" y1="178.9609" y2="178.9609"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="9" x="104.5" y="173.895">4</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="152" x="117.5" y="173.895">Credits waiting approval</text><polygon fill="#A80036" points="292.5,204.0938,302.5,208.0938,292.5,212.0938,296.5,208.0938" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="87.5" x2="298.5" y1="208.0938" y2="208.0938"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="9" x="94.5" y="203.0278">5</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="98" x="107.5" y="203.0278">approve(credit)</text><polygon fill="#A80036" points="98.5,233.2266,88.5,237.2266,98.5,241.2266,94.5,237.2266" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="92.5" x2="303.5" y1="237.2266" y2="237.2266"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="9" x="104.5" y="232.1606">6</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="53" x="117.5" y="232.1606">Success</text><!--MD5=[a237d8add3edf4e5878feab63a55325c]
+     width="351px" zoomAndPan="magnify">
+    <defs>
+        <filter height="300%" id="f6h5c3w6p65tz" width="300%" x="-1" y="-1">
+            <feGaussianBlur result="blurOut" stdDeviation="2.0"/>
+            <feColorMatrix in="blurOut" result="blurOut2" type="matrix"
+                           values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/>
+            <feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/>
+            <feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/>
+        </filter>
+    </defs>
+    <g>
+        <rect fill="#DDDDDD" height="287.5234" style="stroke:#A80036;stroke-width:1.0;" width="344.5" x="1" y="6"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing"
+              textLength="209" x="68.75" y="18.0669">Godkend kreditering (UC11)
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="87" x2="87" y1="60.4297"
+              y2="255.2266"/>
+        <line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="304.5" x2="304.5" y1="60.4297"
+              y2="255.2266"/>
+        <rect fill="#FEFECE" filter="url(#f6h5c3w6p65tz)" height="30.2969" style="stroke:#A80036;stroke-width:1.5;"
+              width="161" x="5" y="25.1328"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="147" x="12"
+              y="45.1279">:SystemAdministrator
+        </text>
+        <rect fill="#FEFECE" filter="url(#f6h5c3w6p65tz)" height="30.2969" style="stroke:#A80036;stroke-width:1.5;"
+              width="161" x="5" y="254.2266"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="147" x="12"
+              y="274.2217">:SystemAdministrator
+        </text>
+        <rect fill="#FEFECE" filter="url(#f6h5c3w6p65tz)" height="30.2969" style="stroke:#A80036;stroke-width:1.5;"
+              width="70" x="267.5" y="25.1328"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="56" x="274.5"
+              y="45.1279">:System
+        </text>
+        <rect fill="#FEFECE" filter="url(#f6h5c3w6p65tz)" height="30.2969" style="stroke:#A80036;stroke-width:1.5;"
+              width="70" x="267.5" y="254.2266"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="56" x="274.5"
+              y="274.2217">:System
+        </text>
+        <polygon fill="#A80036" points="292.5,87.5625,302.5,91.5625,292.5,95.5625,296.5,91.5625"
+                 style="stroke:#A80036;stroke-width:1.0;"/>
+        <line style="stroke:#A80036;stroke-width:1.0;" x1="87.5" x2="298.5" y1="91.5625" y2="91.5625"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing"
+              textLength="9" x="94.5" y="86.4966">1
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="180" x="107.5"
+              y="86.4966">signIn(username, password)
+        </text>
+        <polygon fill="#A80036" points="98.5,116.6953,88.5,120.6953,98.5,124.6953,94.5,120.6953"
+                 style="stroke:#A80036;stroke-width:1.0;"/>
+        <line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="92.5" x2="303.5" y1="120.6953"
+              y2="120.6953"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing"
+              textLength="9" x="104.5" y="115.6294">2
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="156" x="117.5"
+              y="115.6294">Authentication response
+        </text>
+        <polygon fill="#A80036" points="292.5,145.8281,302.5,149.8281,292.5,153.8281,296.5,149.8281"
+                 style="stroke:#A80036;stroke-width:1.0;"/>
+        <line style="stroke:#A80036;stroke-width:1.0;" x1="87.5" x2="298.5" y1="149.8281" y2="149.8281"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing"
+              textLength="9" x="94.5" y="144.7622">3
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="115" x="107.5"
+              y="144.7622">getWaitingCredit()
+        </text>
+        <polygon fill="#A80036" points="98.5,174.9609,88.5,178.9609,98.5,182.9609,94.5,178.9609"
+                 style="stroke:#A80036;stroke-width:1.0;"/>
+        <line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="92.5" x2="303.5" y1="178.9609"
+              y2="178.9609"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing"
+              textLength="9" x="104.5" y="173.895">4
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="152" x="117.5"
+              y="173.895">Credits waiting approval
+        </text>
+        <polygon fill="#A80036" points="292.5,204.0938,302.5,208.0938,292.5,212.0938,296.5,208.0938"
+                 style="stroke:#A80036;stroke-width:1.0;"/>
+        <line style="stroke:#A80036;stroke-width:1.0;" x1="87.5" x2="298.5" y1="208.0938" y2="208.0938"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing"
+              textLength="9" x="94.5" y="203.0278">5
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="98" x="107.5"
+              y="203.0278">approve(credit)
+        </text>
+        <polygon fill="#A80036" points="98.5,233.2266,88.5,237.2266,98.5,241.2266,94.5,237.2266"
+                 style="stroke:#A80036;stroke-width:1.0;"/>
+        <line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="92.5" x2="303.5" y1="237.2266"
+              y2="237.2266"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing"
+              textLength="9" x="104.5" y="232.1606">6
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="53" x="117.5"
+              y="232.1606">Success
+        </text><!--MD5=[a237d8add3edf4e5878feab63a55325c]
 @startuml
 'https://plantuml.com/sequence-diagram
 
@@ -50,4 +145,6 @@ JVM: OpenJDK 64-Bit Server VM
 Default Encoding: UTF-8
 Language: en
 Country: null
---></g></svg>
+-->
+    </g>
+</svg>

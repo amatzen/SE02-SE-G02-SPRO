@@ -50,7 +50,7 @@ module.exports = {
         new VueLoaderPlugin(),
         new CopyWebpackPlugin({
             patterns: [
-                { from: 'static' }
+                {from: 'static'}
             ]
         })
     ]

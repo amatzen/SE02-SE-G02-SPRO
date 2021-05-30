@@ -1,7 +1,6 @@
 package dk.sdu.swe.domain.controllers.contracts;
 
 import dk.sdu.swe.domain.controllers.ExportController;
-import javafx.stage.Window;
 
 import java.io.File;
 import java.util.Map;

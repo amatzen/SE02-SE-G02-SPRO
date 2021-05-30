@@ -8,7 +8,8 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
-<fx:root xmlns:fx="http://javafx.com/fxml/1" alignment="CENTER" prefHeight="100.0" prefWidth="310.0" style="-fx-background-color: #ededed;"
+<fx:root xmlns:fx="http://javafx.com/fxml/1" alignment="CENTER" prefHeight="100.0" prefWidth="310.0"
+         style="-fx-background-color: #ededed;"
          type="HBox" xmlns="http://javafx.com/javafx/11.0.1">
     <children>
         <ImageView fx:id="creditImageView" fitHeight="100.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
