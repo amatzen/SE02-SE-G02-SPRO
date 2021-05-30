@@ -14,6 +14,10 @@ import java.util.Optional;
 public class ChannelDAOImpl extends AbstractDAO<Channel> implements IChannelDAO {
     private static ChannelDAOImpl instance;
 
+    private ChannelDAOImpl() {
+        super(Channel.class);
+    }
+
     /**
      * Gets instance.
      *
@@ -24,10 +28,6 @@ public class ChannelDAOImpl extends AbstractDAO<Channel> implements IChannelDAO 
             instance = new ChannelDAOImpl();
         }
         return instance;
-    }
-
-    private ChannelDAOImpl() {
-        super(Channel.class);
     }
 
     @Override

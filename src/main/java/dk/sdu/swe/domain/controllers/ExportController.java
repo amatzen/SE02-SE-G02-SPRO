@@ -21,7 +21,8 @@ import java.util.*;
 public class ExportController implements IExportController {
     private volatile static ExportController instance = null;
 
-    private ExportController() {}
+    private ExportController() {
+    }
 
     public static synchronized ExportController getInstance() {
         if (Objects.isNull(instance)) {
@@ -31,18 +32,12 @@ public class ExportController implements IExportController {
         return instance;
     }
 
-    public enum ExportType {
-        CREDITS,
-        PROGRAMMES,
-        COMPANIES
-    }
-
     public void exportJson(File file, Map<ExportType, Boolean> exportTypes) {
         JsonDataExporter jsonDataExporter = new JsonDataExporter(file);
 
-        if(exportTypes.get(ExportType.CREDITS)) jsonDataExporter.exportCredits();
-        if(exportTypes.get(ExportType.PROGRAMMES)) jsonDataExporter.exportProgrammes();
-        if(exportTypes.get(ExportType.COMPANIES)) jsonDataExporter.exportCompanies();
+        if (exportTypes.get(ExportType.CREDITS)) jsonDataExporter.exportCredits();
+        if (exportTypes.get(ExportType.PROGRAMMES)) jsonDataExporter.exportProgrammes();
+        if (exportTypes.get(ExportType.COMPANIES)) jsonDataExporter.exportCompanies();
 
         jsonDataExporter.printToFile();
     }
@@ -50,17 +45,22 @@ public class ExportController implements IExportController {
     public void exportCsv(Map<ExportType, Boolean> exportTypes, Window window) {
         CsvDataExporter csvDataExporter = new CsvDataExporter(window);
 
-        if(exportTypes.get(ExportType.CREDITS)) csvDataExporter.exportCredits();
-        if(exportTypes.get(ExportType.PROGRAMMES)) csvDataExporter.exportProgrammes();
-        if(exportTypes.get(ExportType.COMPANIES)) csvDataExporter.exportCompanies();
+        if (exportTypes.get(ExportType.CREDITS)) csvDataExporter.exportCredits();
+        if (exportTypes.get(ExportType.PROGRAMMES)) csvDataExporter.exportProgrammes();
+        if (exportTypes.get(ExportType.COMPANIES)) csvDataExporter.exportCompanies();
 
     }
 
+    public enum ExportType {
+        CREDITS,
+        PROGRAMMES,
+        COMPANIES
+    }
 
     public class CsvDataExporter {
-        private FileChooser fileChooser = new FileChooser();
         private final String date = new SimpleDateFormat("yyyyMMdd").format(new Date());
         private final Window window;
+        private FileChooser fileChooser = new FileChooser();
 
         public CsvDataExporter(Window window) {
             this.window = window;
@@ -70,7 +70,7 @@ public class ExportController implements IExportController {
             fileChooser.setTitle("Krediteringer - CSV");
             fileChooser.setInitialFileName(String.format("CrMS_%s_credits", date));
             fileChooser.getExtensionFilters().addAll(
-                new FileChooser.ExtensionFilter("CSV","*.csv")
+                new FileChooser.ExtensionFilter("CSV", "*.csv")
             );
 
             List<Credit> credits = CreditController.getInstance().getAll();
@@ -108,7 +108,7 @@ public class ExportController implements IExportController {
             fileChooser.setTitle("Programmer - CSV");
             fileChooser.setInitialFileName(String.format("CrMS_%s_programmes", date));
             fileChooser.getExtensionFilters().addAll(
-                new FileChooser.ExtensionFilter("CSV","*.csv")
+                new FileChooser.ExtensionFilter("CSV", "*.csv")
             );
 
             List<Programme> programmes = ProgrammeController.getInstance().getAll();
@@ -141,7 +141,7 @@ public class ExportController implements IExportController {
             fileChooser.setTitle("Virksomheder - CSV");
             fileChooser.setInitialFileName(String.format("CrMS_%s_companies", date));
             fileChooser.getExtensionFilters().addAll(
-                new FileChooser.ExtensionFilter("CSV","*.csv")
+                new FileChooser.ExtensionFilter("CSV", "*.csv")
             );
 
             List<Company> companies = CompanyController.getInstance().getAll();
@@ -171,8 +171,8 @@ public class ExportController implements IExportController {
     }
 
     public class JsonDataExporter {
-        private Document jsonExport = new Document();
         private final File file;
+        private Document jsonExport = new Document();
 
         public JsonDataExporter(File file) {
             this.file = file;
@@ -194,7 +194,7 @@ public class ExportController implements IExportController {
                         "birthDay", person.getDateOfBirth(),
                         "image", person.getImage(),
                         "contactDetails", Document.parse(person.getContactDetails().toString())
-                        ),
+                    ),
                     "role", Map.of(
                         "id", credit.getRole().getId(),
                         "title", credit.getRole().getTitle()
@@ -226,13 +226,13 @@ public class ExportController implements IExportController {
 
             programmes.forEach(programme -> {
                 output.add(Map.of(
-                "title", programme.getTitle(),
-                "id", programme.getId(),
-                "company", Map.of(
-                    "id", programme.getCompany().getId(),
-                    "name", programme.getCompany().getName(),
-                    "logo", programme.getCompany().getLogo()
-                )));
+                    "title", programme.getTitle(),
+                    "id", programme.getId(),
+                    "company", Map.of(
+                        "id", programme.getCompany().getId(),
+                        "name", programme.getCompany().getName(),
+                        "logo", programme.getCompany().getLogo()
+                    )));
             });
 
             jsonExport.put("programmes", output);

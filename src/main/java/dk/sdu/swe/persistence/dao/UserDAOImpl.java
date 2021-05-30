@@ -15,6 +15,10 @@ import java.util.Optional;
 public class UserDAOImpl extends AbstractDAO<User> implements IUserDAO {
     private static UserDAOImpl instance;
 
+    private UserDAOImpl() {
+        super(User.class);
+    }
+
     /**
      * Gets instance.
      *
@@ -25,10 +29,6 @@ public class UserDAOImpl extends AbstractDAO<User> implements IUserDAO {
             instance = new UserDAOImpl();
         }
         return instance;
-    }
-
-    private UserDAOImpl() {
-        super(User.class);
     }
 
     @Override

@@ -29,9 +29,28 @@ public class Router {
     }
 
     /**
+     * Returns instance of Router, that controls the scene root.
+     *
+     * @return Scene root Router
+     */
+    public static Router getSceneRouter() {
+        return Router.sceneRouter;
+    }
+
+    /**
+     * Sets scene router.
+     *
+     * @param router the router
+     */
+    public static void setSceneRouter(Router router) {
+        Router.sceneRouter = router;
+    }
+
+    /**
      * Swap contents of given container with a new instance of given class type.
+     *
      * @param componentClass Class type of component.
-     * @param container Container to fill with content.
+     * @param container      Container to fill with content.
      */
     private void goTo(Class<? extends Parent> componentClass, Pane container) {
         Parent component = null;
@@ -48,11 +67,12 @@ public class Router {
 
     /**
      * Swap contents of given container to the given component instance.
+     *
      * @param component Content to show in container.
      * @param container Container to fill with content.
      */
     private void goTo(Parent component, Pane container) {
-        if (doFadeAnimation && container.getChildren().size() > 0 && !container.getChildren().contains(component)){
+        if (doFadeAnimation && container.getChildren().size() > 0 && !container.getChildren().contains(component)) {
             fadeOut(component, container);
         } else {
             container.getChildren().setAll(component);
@@ -63,6 +83,7 @@ public class Router {
 
     /**
      * Does a fade transition from the current content in the given container to the given component.
+     *
      * @param component Component to transition to.
      * @param container Container to fill with content.
      */
@@ -101,24 +122,6 @@ public class Router {
      */
     public void goTo(Parent component) {
         goTo(component, container);
-    }
-
-    /**
-     * Returns instance of Router, that controls the scene root.
-     *
-     * @return Scene root Router
-     */
-    public static Router getSceneRouter() {
-        return Router.sceneRouter;
-    }
-
-    /**
-     * Sets scene router.
-     *
-     * @param router the router
-     */
-    public static void setSceneRouter(Router router) {
-        Router.sceneRouter = router;
     }
 
     /**

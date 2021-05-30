@@ -20,9 +20,8 @@ import java.util.stream.Collectors;
  */
 public class ProgrammeController implements IProgrammeController {
 
-    private IProgrammeDAO programmeDAO;
-
     private static IProgrammeController instance;
+    private IProgrammeDAO programmeDAO;
 
     private ProgrammeController() {
         programmeDAO = ProgrammeDAOImpl.getInstance();
@@ -51,7 +50,7 @@ public class ProgrammeController implements IProgrammeController {
     }
 
     private List<Programme> filterOwnedProgrammes(List<Programme> programmes) {
-        if(AuthController.getInstance().getUser().hasPermission("programmes.list.all")) {
+        if (AuthController.getInstance().getUser().hasPermission("programmes.list.all")) {
             return programmes;
         }
 
@@ -61,7 +60,7 @@ public class ProgrammeController implements IProgrammeController {
 
                 Company currentCompany = programme.getCompany();
 
-                while(currentCompany != null) {
+                while (currentCompany != null) {
                     ownsProgramme = Objects.equals(currentCompany.getId(), AuthController.getInstance().getUser().getCompany().getId());
                     currentCompany = currentCompany.getParentCompany();
                 }

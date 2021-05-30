@@ -17,6 +17,10 @@ public class CreditDAOImpl extends AbstractDAO<Credit> implements ICreditDAO {
 
     private static CreditDAOImpl instance;
 
+    private CreditDAOImpl() {
+        super(Credit.class);
+    }
+
     /**
      * Gets instance.
      *
@@ -27,10 +31,6 @@ public class CreditDAOImpl extends AbstractDAO<Credit> implements ICreditDAO {
             instance = new CreditDAOImpl();
         }
         return instance;
-    }
-
-    private CreditDAOImpl() {
-        super(Credit.class);
     }
 
     @Override

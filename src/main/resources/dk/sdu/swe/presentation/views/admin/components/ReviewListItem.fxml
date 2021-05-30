@@ -9,11 +9,12 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.*?>
-<fx:root type="VBox" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root xmlns:fx="http://javafx.com/fxml/1" type="VBox" xmlns="http://javafx.com/javafx/15.0.1">
     <children>
         <HBox alignment="CENTER" prefHeight="119.0" prefWidth="1192.0" spacing="10.0">
             <children>
-                <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="1037.0" style="-fx-background-color: #ededed;">
+                <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="1037.0"
+                      style="-fx-background-color: #ededed;">
                     <children>
                         <VBox prefHeight="119.0" prefWidth="337.0">
                             <children>
@@ -21,30 +22,32 @@
                                     <children>
                                         <Label prefHeight="47.0" prefWidth="106.0" text="Ændring på:">
                                             <font>
-                                                <Font size="16.0" />
+                                                <Font size="16.0"/>
                                             </font>
                                             <HBox.margin>
-                                                <Insets left="15.0" top="5.0" />
+                                                <Insets left="15.0" top="5.0"/>
                                             </HBox.margin>
                                         </Label>
-                                        <Label fx:id="lbl_ProgramTitle" prefHeight="47.0" prefWidth="234.0" text="Program_her">
+                                        <Label fx:id="lbl_ProgramTitle" prefHeight="47.0" prefWidth="234.0"
+                                               text="Program_her">
                                             <font>
-                                                <Font name="System Bold" size="16.0" />
+                                                <Font name="System Bold" size="16.0"/>
                                             </font>
                                             <HBox.margin>
-                                                <Insets top="5.0" />
+                                                <Insets top="5.0"/>
                                             </HBox.margin>
                                         </Label>
                                     </children>
                                 </HBox>
                                 <VBox prefHeight="73.0" prefWidth="337.0">
                                     <VBox.margin>
-                                        <Insets left="15.0" />
+                                        <Insets left="15.0"/>
                                     </VBox.margin>
                                     <children>
-                                        <JFXTextArea fx:id="txt_Description" focusColor="#405aa800" prefHeight="69.0" prefWidth="322.0" text="Beskrivelse her&#10;">
+                                        <JFXTextArea fx:id="txt_Description" focusColor="#405aa800" prefHeight="69.0"
+                                                     prefWidth="322.0" text="Beskrivelse her&#10;">
                                             <font>
-                                                <Font size="14.0" />
+                                                <Font size="14.0"/>
                                             </font>
                                         </JFXTextArea>
                                     </children>
@@ -57,30 +60,32 @@
                                     <children>
                                         <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true">
                                             <HBox.margin>
-                                                <Insets left="20.0" />
+                                                <Insets left="20.0"/>
                                             </HBox.margin>
                                         </ImageView>
                                         <VBox alignment="CENTER" prefHeight="100.0" prefWidth="197.0">
                                             <HBox.margin>
-                                                <Insets left="20.0" />
+                                                <Insets left="20.0"/>
                                             </HBox.margin>
                                             <children>
-                                                <Label fx:id="lbl_RequesterName" prefHeight="30.0" prefWidth="199.0" text="Navn">
+                                                <Label fx:id="lbl_RequesterName" prefHeight="30.0" prefWidth="199.0"
+                                                       text="Navn">
                                                     <font>
-                                                        <Font name="System Bold" size="16.0" />
+                                                        <Font name="System Bold" size="16.0"/>
                                                     </font>
                                                 </Label>
-                                                <Label fx:id="lbl_RequesterCompany" prefHeight="21.0" prefWidth="199.0" text="Virksomhed">
+                                                <Label fx:id="lbl_RequesterCompany" prefHeight="21.0" prefWidth="199.0"
+                                                       text="Virksomhed">
                                                     <font>
-                                                        <Font size="15.0" />
+                                                        <Font size="15.0"/>
                                                     </font>
                                                 </Label>
                                             </children>
                                         </VBox>
                                     </children>
-                           <padding>
-                              <Insets left="30.0" />
-                           </padding>
+                                    <padding>
+                                        <Insets left="30.0"/>
+                                    </padding>
                                 </HBox>
                             </children>
                         </VBox>
@@ -88,17 +93,23 @@
                             <children>
                                 <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
                                     <children>
-                                        <JFXButton fx:id="btn_ApproveReview" prefHeight="46.0" prefWidth="113.0" ripplerFill="WHITE" style="-jfx-button-type: RAISED; -fx-background-color: #FF9800;" text="GODKEND" textFill="WHITE">
+                                        <JFXButton fx:id="btn_ApproveReview" prefHeight="46.0" prefWidth="113.0"
+                                                   ripplerFill="WHITE"
+                                                   style="-jfx-button-type: RAISED; -fx-background-color: #FF9800;"
+                                                   text="GODKEND" textFill="WHITE">
                                             <font>
-                                                <Font name="System Bold" size="12.0" />
+                                                <Font name="System Bold" size="12.0"/>
                                             </font>
-                                 <HBox.margin>
-                                    <Insets right="5.0" />
-                                 </HBox.margin>
+                                            <HBox.margin>
+                                                <Insets right="5.0"/>
+                                            </HBox.margin>
                                         </JFXButton>
-                                        <JFXButton fx:id="btn_DeclineReview" buttonType="RAISED" layoutX="10.0" layoutY="10.0" prefHeight="46.0" prefWidth="113.0" ripplerFill="WHITE" style="-fx-background-color: #FF3232;" text="AFVIS" textFill="WHITE">
+                                        <JFXButton fx:id="btn_DeclineReview" buttonType="RAISED" layoutX="10.0"
+                                                   layoutY="10.0" prefHeight="46.0" prefWidth="113.0"
+                                                   ripplerFill="WHITE" style="-fx-background-color: #FF3232;"
+                                                   text="AFVIS" textFill="WHITE">
                                             <font>
-                                                <Font name="System Bold" size="12.0" />
+                                                <Font name="System Bold" size="12.0"/>
                                             </font>
                                         </JFXButton>
                                     </children>
@@ -109,7 +120,7 @@
                     <effect>
                         <DropShadow offsetY="5.0">
                             <color>
-                                <Color opacity="0.643478274345398" />
+                                <Color opacity="0.643478274345398"/>
                             </color>
                         </DropShadow>
                     </effect>

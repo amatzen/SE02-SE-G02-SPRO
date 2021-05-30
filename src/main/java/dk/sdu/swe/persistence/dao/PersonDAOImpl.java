@@ -16,6 +16,10 @@ public class PersonDAOImpl extends AbstractDAO<Person> implements IPersonDAO {
 
     private static PersonDAOImpl instance;
 
+    private PersonDAOImpl() {
+        super(Person.class);
+    }
+
     /**
      * Gets instance.
      *
@@ -26,10 +30,6 @@ public class PersonDAOImpl extends AbstractDAO<Person> implements IPersonDAO {
             instance = new PersonDAOImpl();
         }
         return instance;
-    }
-
-    private PersonDAOImpl() {
-        super(Person.class);
     }
 
     @Override

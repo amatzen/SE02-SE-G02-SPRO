@@ -66,8 +66,7 @@ public class DataExportViewController extends VBox {
             alert.setHeaderText(null);
             alert.setContentText("Vælg venligst data som skal eksporteres.");
             alert.showAndWait();
-        }
-        else if (!csvBtn.isSelected() && !jsonBtn.isSelected()) {
+        } else if (!csvBtn.isSelected() && !jsonBtn.isSelected()) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Fejl!");
             alert.setHeaderText(null);
@@ -75,7 +74,7 @@ public class DataExportViewController extends VBox {
             alert.showAndWait();
         }
 
-        if(csvBtn.isSelected()) {
+        if (csvBtn.isSelected()) {
             exportController.exportCsv(Map.of(
                 ExportController.ExportType.CREDITS, creditData.isSelected(),
                 ExportController.ExportType.COMPANIES, companyData.isSelected(),
@@ -83,7 +82,7 @@ public class DataExportViewController extends VBox {
             ), getScene().getWindow());
         }
 
-        if(jsonBtn.isSelected()) {
+        if (jsonBtn.isSelected()) {
             FileChooser fileChooser = new FileChooser();
 
             fileChooser.setTitle("CrMS Data - JSON");

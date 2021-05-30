@@ -54,7 +54,7 @@ public class v3_CreateProgrammesForThisWeek {
         AtomicInteger i = new AtomicInteger();
 
         channelEpgIds.forEach(epgId -> {
-            if(i.getAndIncrement() == 0) {
+            if (i.getAndIncrement() == 0) {
                 epgUrl.append("?ch=" + epgId);
                 return;
             }
@@ -75,7 +75,7 @@ public class v3_CreateProgrammesForThisWeek {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(conn.getInputStream(), Charsets.UTF_8));
         String input;
         StringBuffer content = new StringBuffer();
-        while((input = bufferedReader.readLine()) != null) {
+        while ((input = bufferedReader.readLine()) != null) {
             content.append(input);
         }
         bufferedReader.close();
@@ -110,7 +110,7 @@ public class v3_CreateProgrammesForThisWeek {
                 ));
                 trans.commit();
 
-                if(!addedProgrammesTitle.contains(epgObj.getString("title")) && first) {
+                if (!addedProgrammesTitle.contains(epgObj.getString("title")) && first) {
                     Set<Category> categories = new HashSet<>();
                     JSONArray jsonCategories = epgObj.getJSONArray("categories");
 
@@ -132,7 +132,7 @@ public class v3_CreateProgrammesForThisWeek {
                     Programme programme = new Programme(
                         epgObj.getString("title"),
                         channelDAO.getByEpgId(channelObj.getLong("id")).orElse(null),
-                        (int)(Math.random() * ((2021 - 1980) + 1)) + 1980,
+                        (int) (Math.random() * ((2021 - 1980) + 1)) + 1980,
                         new HashSet(categories.stream().filter(distinctByKey(Category::getCategoryTitle)).collect(Collectors.toList())),
                         companyDAO.getById(2l).orElse(null)
                     );
@@ -156,8 +156,7 @@ public class v3_CreateProgrammesForThisWeek {
      * @return the predicate
      */
 // https://howtodoinjava.com/java8/java-stream-distinct-examples/
-    public static <T> Predicate<T> distinctByKey(Function<? super T, Object> keyExtractor)
-    {
+    public static <T> Predicate<T> distinctByKey(Function<? super T, Object> keyExtractor) {
         Map<Object, Boolean> map = new ConcurrentHashMap<>();
         return t -> map.putIfAbsent(keyExtractor.apply(t), Boolean.TRUE) == null;
     }

@@ -17,6 +17,10 @@ import java.util.Optional;
 public class ReviewDAOImpl extends AbstractDAO<Review> implements IReviewDAO {
     private static ReviewDAOImpl instance;
 
+    private ReviewDAOImpl() {
+        super(Review.class);
+    }
+
     /**
      * Gets instance.
      *
@@ -27,9 +31,6 @@ public class ReviewDAOImpl extends AbstractDAO<Review> implements IReviewDAO {
             instance = new ReviewDAOImpl();
         }
         return instance;
-    }
-    private ReviewDAOImpl() {
-        super(Review.class);
     }
 
     @Override

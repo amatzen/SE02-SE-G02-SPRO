@@ -41,8 +41,7 @@ public class SeederUtility {
 
             runSQLScript("v6_AddEPGProgrammesToProgrammes.sql");
 
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
             System.out.println("Failed one or more seeders!");
         }
@@ -55,7 +54,7 @@ public class SeederUtility {
      */
     public static void runSQLScript(String sqlFile) {
         Session s = DB.openSession();
-        InputStream is = SeederUtility.class.getResourceAsStream("./seeders/"+sqlFile);
+        InputStream is = SeederUtility.class.getResourceAsStream("./seeders/" + sqlFile);
         String rs = new BufferedReader(new InputStreamReader(is)).lines().collect(Collectors.joining(" "));
 
         Transaction transaction = s.beginTransaction();

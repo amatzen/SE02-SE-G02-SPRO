@@ -15,6 +15,10 @@ public class CategoryDAOImpl extends AbstractDAO<Category> implements ICategoryD
 
     private static CategoryDAOImpl instance;
 
+    private CategoryDAOImpl() {
+        super(Category.class);
+    }
+
     /**
      * Gets instance.
      *
@@ -25,10 +29,6 @@ public class CategoryDAOImpl extends AbstractDAO<Category> implements ICategoryD
             instance = new CategoryDAOImpl();
         }
         return instance;
-    }
-
-    private CategoryDAOImpl() {
-        super(Category.class);
     }
 
     @Override

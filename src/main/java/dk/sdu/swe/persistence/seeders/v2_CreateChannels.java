@@ -17,7 +17,7 @@ public class v2_CreateChannels {
         Session session = DB.openSession();
 
         int channels = ((Number) session.createSQLQuery("SELECT COUNT(*) FROM channels").getSingleResult()).intValue();
-        if(channels != 0) {
+        if (channels != 0) {
             return;
         }
 
@@ -28,8 +28,6 @@ public class v2_CreateChannels {
         Channel e = (new Channel("TV 2 News", "https://digitalt.tv/pics/kanalloger/tv2news.png"));
         Channel f = (new Channel("TV 2 Sport", "https://digitalt.tv/pics/kanalloger/tv2sport.png"));
         Channel g = (new Channel("TV 2 Sport X", "https://digitalt.tv/pics/kanalloger/tv2sportx.png"));
-
-
 
 
         // Values fetched from

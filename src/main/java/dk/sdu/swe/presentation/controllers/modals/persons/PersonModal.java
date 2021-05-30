@@ -29,16 +29,13 @@ import java.util.Optional;
 public class PersonModal extends Dialog<Person> {
 
     @FXML
+    Label modalTitle;
+    @FXML
     private ImageView image;
-
     @FXML
     private JFXButton editBtn, saveBtn, closeBtn;
-
     @FXML
     private DatePicker bday;
-
-    @FXML Label modalTitle;
-
     @FXML
     private TextField name, email, imageUrl;
 

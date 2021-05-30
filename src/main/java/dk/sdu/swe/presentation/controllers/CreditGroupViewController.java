@@ -1,4 +1,5 @@
 package dk.sdu.swe.presentation.controllers;
+
 import dk.sdu.swe.domain.controllers.CreditRoleController;
 import dk.sdu.swe.domain.models.CreditRole;
 import dk.sdu.swe.presentation.controllers.modals.credits.CreditGroupModal;

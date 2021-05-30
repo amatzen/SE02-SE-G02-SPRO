@@ -23,7 +23,7 @@ public class v1_CreateUsers {
 
         // Pre-condition
         int users = ((Number) session.createSQLQuery("SELECT COUNT(*) FROM users").getSingleResult()).intValue();
-        if(users != 0) {
+        if (users != 0) {
             return;
         }
 

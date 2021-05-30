@@ -90,7 +90,7 @@ public class ProgrammeListItem extends AnchorPane {
 
     private void checkReviewState() {
         review = ReviewController.getInstance().getLatestReview(programme).orElse(null);
-        if(!Objects.nonNull(review)) {
+        if (!Objects.nonNull(review)) {
             setReviewState(ReviewState.ACCEPTED);
         } else {
             setReviewState(review.getState());
@@ -98,7 +98,7 @@ public class ProgrammeListItem extends AnchorPane {
     }
 
     private Image getReviewStateButtonImg(String slug) {
-        InputStream is = Application.class.getResourceAsStream("presentation/images/review_btn/"+slug+".png");
+        InputStream is = Application.class.getResourceAsStream("presentation/images/review_btn/" + slug + ".png");
         return new Image(is);
     }
 
@@ -146,7 +146,7 @@ public class ProgrammeListItem extends AnchorPane {
 
     @FXML
     private void edit(ActionEvent event) {
-        if(Objects.nonNull(review) && review.getState() == ReviewState.AWAITING && !AuthController.getInstance().getUser().hasPermission("programmes.change.no_review")) {
+        if (Objects.nonNull(review) && review.getState() == ReviewState.AWAITING && !AuthController.getInstance().getUser().hasPermission("programmes.change.no_review")) {
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
 
             alert.setTitle("Bekræft overskrivning");
@@ -159,7 +159,7 @@ public class ProgrammeListItem extends AnchorPane {
             alert.getButtonTypes().setAll(continueBtn, cancelBtn);
             Optional<ButtonType> result = alert.showAndWait();
 
-            if(result.isEmpty() || result.get() != continueBtn) return;
+            if (result.isEmpty() || result.get() != continueBtn) return;
 
             review.setState(ReviewState.DENIED);
             ReviewController.getInstance().update(review);

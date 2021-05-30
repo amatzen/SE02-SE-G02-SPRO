@@ -6,7 +6,8 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
-<BorderPane prefHeight="469.0" prefWidth="698.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="469.0" prefWidth="698.0"
+            xmlns="http://javafx.com/javafx/15.0.1">
     <top>
         <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #FF9800;" BorderPane.alignment="CENTER">
             <children>
@@ -14,30 +15,31 @@
                     <children>
                         <Label text="Brugeradministration:">
                             <font>
-                                <Font size="24.0" />
+                                <Font size="24.0"/>
                             </font>
                             <HBox.margin>
-                                <Insets left="30.0" top="30.0" />
+                                <Insets left="30.0" top="30.0"/>
                             </HBox.margin>
                         </Label>
                         <Label fx:id="companyName" text="CompanyName">
                             <font>
-                                <Font name="System Bold" size="24.0" />
+                                <Font name="System Bold" size="24.0"/>
                             </font>
                             <HBox.margin>
-                                <Insets left="5.0" top="30.0" />
+                                <Insets left="5.0" top="30.0"/>
                             </HBox.margin>
                         </Label>
                     </children>
                 </HBox>
                 <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                     <children>
-                        <JFXButton fx:id="closeBtn" onAction="#handleClose" prefHeight="45.0" prefWidth="45.0" style="-fx-background-color: #FF9800;" text="X" textAlignment="RIGHT">
+                        <JFXButton fx:id="closeBtn" onAction="#handleClose" prefHeight="45.0" prefWidth="45.0"
+                                   style="-fx-background-color: #FF9800;" text="X" textAlignment="RIGHT">
                             <font>
-                                <Font name="Comic Sans MS" size="18.0" />
+                                <Font name="Comic Sans MS" size="18.0"/>
                             </font>
                             <HBox.margin>
-                                <Insets bottom="10.0" />
+                                <Insets bottom="10.0"/>
                             </HBox.margin>
                         </JFXButton>
                     </children>
@@ -50,21 +52,23 @@
             <children>
                 <HBox alignment="CENTER_RIGHT" prefWidth="699.0" spacing="10.0">
                     <children>
-                        <JFXButton fx:id="newUserButton" layoutX="601.0" layoutY="18.0" onAction="#addUser" prefHeight="35.0" prefWidth="90.0" style="-fx-background-color: #FF9800;" text="+ Ny Bruger" textAlignment="RIGHT" textFill="#515050">
+                        <JFXButton fx:id="newUserButton" layoutX="601.0" layoutY="18.0" onAction="#addUser"
+                                   prefHeight="35.0" prefWidth="90.0" style="-fx-background-color: #FF9800;"
+                                   text="+ Ny Bruger" textAlignment="RIGHT" textFill="#515050">
                             <HBox.margin>
-                                <Insets />
+                                <Insets/>
                             </HBox.margin>
                             <font>
-                                <Font name="System Bold" size="12.0" />
+                                <Font name="System Bold" size="12.0"/>
                             </font>
                         </JFXButton>
                     </children>
-               <HBox.margin>
-                  <Insets />
-               </HBox.margin>
-               <padding>
-                  <Insets right="30.0" />
-               </padding>
+                    <HBox.margin>
+                        <Insets/>
+                    </HBox.margin>
+                    <padding>
+                        <Insets right="30.0"/>
+                    </padding>
                 </HBox>
             </children>
         </HBox>
@@ -78,10 +82,10 @@
                             <children>
                                 <Label contentDisplay="CENTER" maxWidth="1.7976931348623157E308" text="Email">
                                     <HBox.margin>
-                                        <Insets left="10.0" />
+                                        <Insets left="10.0"/>
                                     </HBox.margin>
                                     <font>
-                                        <Font name="System Bold" size="16.0" />
+                                        <Font name="System Bold" size="16.0"/>
                                     </font>
                                 </Label>
                             </children>
@@ -90,35 +94,36 @@
                             <children>
                                 <Label maxWidth="1.7976931348623157E308" prefHeight="25.0" text="Brugernavn">
                                     <HBox.margin>
-                                        <Insets left="23.0" />
+                                        <Insets left="23.0"/>
                                     </HBox.margin>
                                     <font>
-                                        <Font name="System Bold" size="16.0" />
+                                        <Font name="System Bold" size="16.0"/>
                                     </font>
                                 </Label>
                             </children>
                         </HBox>
-                        <HBox alignment="CENTER_LEFT" layoutX="410.0" layoutY="10.0" prefHeight="47.0" prefWidth="138.0">
+                        <HBox alignment="CENTER_LEFT" layoutX="410.0" layoutY="10.0" prefHeight="47.0"
+                              prefWidth="138.0">
                             <children>
                                 <Label maxWidth="1.7976931348623157E308" text="Virk. adm">
                                     <font>
-                                        <Font name="System Bold" size="16.0" />
+                                        <Font name="System Bold" size="16.0"/>
                                     </font>
-                           <HBox.margin>
-                              <Insets left="14.0" />
-                           </HBox.margin>
+                                    <HBox.margin>
+                                        <Insets left="14.0"/>
+                                    </HBox.margin>
                                 </Label>
                             </children>
                         </HBox>
                     </children>
-               <VBox.margin>
-                  <Insets bottom="3.0" />
-               </VBox.margin>
-               <padding>
-                  <Insets left="20.0" />
-               </padding>
+                    <VBox.margin>
+                        <Insets bottom="3.0"/>
+                    </VBox.margin>
+                    <padding>
+                        <Insets left="20.0"/>
+                    </padding>
                 </HBox>
-            <JFXListView fx:id="usersListView" VBox.vgrow="ALWAYS" />
+                <JFXListView fx:id="usersListView" VBox.vgrow="ALWAYS"/>
             </children>
         </VBox>
     </center>

@@ -19,37 +19,19 @@ import java.util.Objects;
  */
 public class AdminViewController extends BorderPane implements Observer {
 
+    private static volatile AdminViewController instance = null;
     @FXML
     private JFXButton userControlBtn, creditGroupBtn, dataExportBtn, reviewsBtn;
-
     @FXML
     private Router router;
-
     @FXML
     private Pane contentPane;
-
-    @FXML
-    private void initialize() {
-        router = new Router(contentPane);
-        Platform.runLater(() -> router.goTo(ReviewViewController.class));
-    }
-
-    private static volatile AdminViewController instance = null;
-
-    /**
-     * Gets router.
-     *
-     * @return the router
-     */
-    public static Router getRouter() {
-        return instance.router;
-    }
 
     /**
      * Instantiates a new Admin view controller.
      */
     public AdminViewController() {
-        if(instance == null) {
+        if (instance == null) {
             instance = this;
         }
 
@@ -65,6 +47,21 @@ public class AdminViewController extends BorderPane implements Observer {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    /**
+     * Gets router.
+     *
+     * @return the router
+     */
+    public static Router getRouter() {
+        return instance.router;
+    }
+
+    @FXML
+    private void initialize() {
+        router = new Router(contentPane);
+        Platform.runLater(() -> router.goTo(ReviewViewController.class));
     }
 
     @FXML
@@ -96,8 +93,8 @@ public class AdminViewController extends BorderPane implements Observer {
         switch (routeName) {
             case "UserControlViewController" -> this.userControlBtn.getStyleClass().add("indicator");
             case "CreditGroupViewController" -> this.creditGroupBtn.getStyleClass().add("indicator");
-            case "DataExportViewController"  ->  this.dataExportBtn.getStyleClass().add("indicator");
-            default                          ->     this.reviewsBtn.getStyleClass().add("indicator");
+            case "DataExportViewController" -> this.dataExportBtn.getStyleClass().add("indicator");
+            default -> this.reviewsBtn.getStyleClass().add("indicator");
         }
     }
 

@@ -104,8 +104,7 @@ public class CreditListItem extends HBox {
         if (result.get() == delete) {
             CreditController.getInstance().delete(credit);
             container.getChildren().remove(this);
-        }
-        else if (result.get() == cancel) {
+        } else if (result.get() == cancel) {
             alert.close();
         }
     }

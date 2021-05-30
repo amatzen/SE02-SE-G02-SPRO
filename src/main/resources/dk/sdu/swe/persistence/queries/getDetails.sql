@@ -10,8 +10,12 @@ WHERE people.id IN (
         SELECT id
         FROM programme as p
         WHERE id IN (
-            SELECT programme_id FROM programme_epg_entries WHERE epgprogrammes_id IN (
-                SELECT id FROM programme_epg WHERE epgidentifier = ?
+            SELECT programme_id
+            FROM programme_epg_entries
+            WHERE epgprogrammes_id IN (
+                SELECT id
+                FROM programme_epg
+                WHERE epgidentifier = ?
             ))
     )
 );

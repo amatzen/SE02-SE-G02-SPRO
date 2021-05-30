@@ -47,7 +47,7 @@ public class v5_AddPeopleAndCredits {
         BufferedReader bufferedReader1 = new BufferedReader(new InputStreamReader(conn1.getInputStream(), Charsets.UTF_8));
         String input1;
         StringBuffer content1 = new StringBuffer();
-        while((input1 = bufferedReader1.readLine()) != null) {
+        while ((input1 = bufferedReader1.readLine()) != null) {
             content1.append(input1);
         }
         bufferedReader1.close();
@@ -57,7 +57,7 @@ public class v5_AddPeopleAndCredits {
         JSONArray randomPersonsResults = randomPersons.getJSONArray("results");
 
         addedProgrammes.forEach(programme -> {
-            int rnd = new Random().nextInt((randomPersonsResults.length() -1) + 1);
+            int rnd = new Random().nextInt((randomPersonsResults.length() - 1) + 1);
             JSONObject randomPerson = randomPersonsResults.getJSONObject(rnd);
             String name = randomPerson.getJSONObject("name").getString("first") + " " + randomPerson.getJSONObject("name").getString("last");
             String img = randomPerson.getJSONObject("picture").getString("large");

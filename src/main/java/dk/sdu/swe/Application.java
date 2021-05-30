@@ -30,7 +30,7 @@ public class Application extends javafx.application.Application {
             default -> Environment.LOCAL;
         });
 
-        if(EnvironmentSelector.getInstance().getEnvironment() == Environment.LOCAL) {
+        if (EnvironmentSelector.getInstance().getEnvironment() == Environment.LOCAL) {
             (new Thread(() -> {
                 SeederUtility.run();
             })).start();
@@ -43,6 +43,14 @@ public class Application extends javafx.application.Application {
         } catch (IllegalStateException e) {
             // Ignore JavaFX async whine
         }
+    }
+
+    /**
+     * Disable warning.
+     */
+    public static void disableWarning() {
+        System.err.close();
+        System.setErr(System.out);
     }
 
     /**
@@ -76,13 +84,5 @@ public class Application extends javafx.application.Application {
         Router.getSceneRouter().goTo(AuthViewController.class);
 
         stage.show();
-    }
-
-    /**
-     * Disable warning.
-     */
-    public static void disableWarning() {
-        System.err.close();
-        System.setErr(System.out);
     }
 }

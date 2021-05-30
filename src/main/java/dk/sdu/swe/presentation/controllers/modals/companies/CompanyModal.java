@@ -23,7 +23,7 @@ import java.util.Objects;
  */
 public class CompanyModal extends Dialog<Company> {
 
-   @FXML
+    @FXML
     private TextField companyName;
 
     @FXML

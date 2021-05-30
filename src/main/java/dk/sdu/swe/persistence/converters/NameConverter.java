@@ -18,7 +18,7 @@ public class NameConverter implements AttributeConverter<Name, String> {
      */
     @Override
     public String convertToDatabaseColumn(Name name) {
-        if(name == null) {
+        if (name == null) {
             return null;
         }
 
