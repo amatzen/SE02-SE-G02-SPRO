@@ -56,7 +56,7 @@ public class DataExportViewController extends VBox {
     }
 
     @FXML
-    private void Export(ActionEvent event) {
+    private void export(ActionEvent event) {
         IExportController exportController = ExportController.getInstance();
 
         if (!creditData.isSelected() && !programData.isSelected() &&
@@ -66,12 +66,14 @@ public class DataExportViewController extends VBox {
             alert.setHeaderText(null);
             alert.setContentText("Vælg venligst data som skal eksporteres.");
             alert.showAndWait();
+            return;
         } else if (!csvBtn.isSelected() && !jsonBtn.isSelected()) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Fejl!");
             alert.setHeaderText(null);
             alert.setContentText("Vælg venligst filtype.");
             alert.showAndWait();
+            return;
         }
 
         if (csvBtn.isSelected()) {

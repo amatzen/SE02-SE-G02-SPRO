@@ -247,7 +247,7 @@ public class ExportController implements IExportController {
                     "id", company.getId(),
                     "name", company.getName(),
                     "logo", company.getLogo(),
-                    "parentCompany", company.getParentCompany().getId()
+                    "parentCompany", company.getParentCompany() == null ? "" : company.getParentCompany().getId()
                 ));
             });
 
