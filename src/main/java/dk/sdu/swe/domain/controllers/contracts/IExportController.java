@@ -9,5 +9,5 @@ import java.util.Map;
 public interface IExportController {
     void exportJson(File file, Map<ExportController.ExportType, Boolean> exportTypes);
 
-    void exportCsv(Map<ExportController.ExportType, Boolean> exportTypes, Window window);
+    void exportCsv(Map<ExportController.ExportType, Boolean> exportTypes, File file);
 }
