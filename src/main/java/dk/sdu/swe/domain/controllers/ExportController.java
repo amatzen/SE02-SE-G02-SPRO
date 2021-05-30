@@ -1,5 +1,6 @@
 package dk.sdu.swe.domain.controllers;
 
+import dk.sdu.swe.domain.controllers.contracts.IExportController;
 import dk.sdu.swe.domain.models.Company;
 import dk.sdu.swe.domain.models.Credit;
 import dk.sdu.swe.domain.models.Person;
@@ -17,7 +18,7 @@ import java.nio.charset.StandardCharsets;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
-public class ExportController {
+public class ExportController implements IExportController {
     private volatile static ExportController instance = null;
 
     private ExportController() {}

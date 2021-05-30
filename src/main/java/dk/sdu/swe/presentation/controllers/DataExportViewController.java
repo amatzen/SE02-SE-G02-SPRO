@@ -57,7 +57,7 @@ public class DataExportViewController extends VBox {
 
     @FXML
     private void Export(ActionEvent event) {
-        ExportController exportController = ExportController.getInstance();
+        IExportController exportController = ExportController.getInstance();
 
         if (!creditData.isSelected() && !programData.isSelected() &&
             !companyData.isSelected()) {
