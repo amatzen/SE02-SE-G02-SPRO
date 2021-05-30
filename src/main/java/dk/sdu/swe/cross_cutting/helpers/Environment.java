@@ -15,11 +15,10 @@ public enum Environment {
     /**
      * Local environment.
      */
-    LOCAL("Developer (Postgres)"),
+    LOCAL("Developer (Postgres)");
     /**
      * Flatfile environment.
      */
-    FLATFILE("Developer (JSON)");
 
     private String label;
 
