@@ -71,6 +71,19 @@ public class Person {
 
     }
 
+    @Override
+    public String toString() {
+        return "Person{" +
+            "id=" + id +
+            ", name='" + name + '\'' +
+            ", dateOfBirth='" + dateOfBirth + '\'' +
+            ", image='" + image + '\'' +
+            ", dateTimeFormatter=" + dateTimeFormatter +
+            ", contactDetails=" + contactDetails +
+            ", credits=" + credits +
+            '}';
+    }
+
     /**
      * Gets id.
      *

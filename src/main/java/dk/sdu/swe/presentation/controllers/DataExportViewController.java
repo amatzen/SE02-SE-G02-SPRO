@@ -3,7 +3,7 @@ package dk.sdu.swe.presentation.controllers;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXCheckBox;
 import com.jfoenix.controls.JFXRadioButton;
-import dk.sdu.swe.domain.models.CsvExport;
+import dk.sdu.swe.domain.controllers.ExportController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -14,6 +14,7 @@ import javafx.stage.FileChooser;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -51,16 +52,17 @@ public class DataExportViewController extends VBox {
 
     @FXML
     private void Export(ActionEvent event) {
+        ExportController exportController = ExportController.getInstance();
 
-        if (creditData.isSelected() == false && programData.isSelected() == false &&
-            companyData.isSelected() == false) {
+        if (!creditData.isSelected() && !programData.isSelected() &&
+            !companyData.isSelected()) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Fejl!");
             alert.setHeaderText(null);
             alert.setContentText("Vælg venligst eksport data");
             alert.showAndWait();
         }
-        else if (csvBtn.isSelected() == false && jsonBtn.isSelected() == false) {
+        else if (!csvBtn.isSelected() && !jsonBtn.isSelected()) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Fejl!");
             alert.setHeaderText(null);
@@ -68,34 +70,31 @@ public class DataExportViewController extends VBox {
             alert.showAndWait();
         }
 
-        // Midlertidigt indtil JSON eksportering er færdigt
-        else if (jsonBtn.isSelected()) {
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle(null);
-            alert.setHeaderText(null);
-            alert.setContentText("Eksportering til JSON er desværre ikke understøttet endnu");
-            alert.showAndWait();
+        if(csvBtn.isSelected()) {
+            exportController.exportCsv(Map.of(
+                ExportController.ExportType.CREDITS, creditData.isSelected(),
+                ExportController.ExportType.COMPANIES, companyData.isSelected(),
+                ExportController.ExportType.PROGRAMMES, programData.isSelected()
+            ), getScene().getWindow());
         }
 
-        FileChooser fileChooser = new FileChooser();
-        if (csvBtn.isSelected() && creditData.isSelected()) {
-            fileChooser.setTitle("Krediteringer - CSV");
-            fileChooser.setInitialFileName("Krediteringer " + date);
-            fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("CSV","*.csv"));
-            CsvExport.csvExportCredits(fileChooser.showSaveDialog(getScene().getWindow()));
+        if(jsonBtn.isSelected()) {
+            FileChooser fileChooser = new FileChooser();
+
+            fileChooser.setTitle("CrMS Data - JSON");
+            fileChooser.setInitialFileName("crms_" + date);
+            fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("JSON", "*.json"));
+
+            ExportController.getInstance().exportJson(
+                fileChooser.showSaveDialog(getScene().getWindow()),
+                Map.of(
+                    ExportController.ExportType.CREDITS, creditData.isSelected(),
+                    ExportController.ExportType.COMPANIES, companyData.isSelected(),
+                    ExportController.ExportType.PROGRAMMES, programData.isSelected()
+                )
+            );
         }
-        if (csvBtn.isSelected() && programData.isSelected()) {
-            fileChooser.setTitle("Programmer - CSV");
-            fileChooser.setInitialFileName("Programmer " + date);
-            fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("CSV", "*.csv"));
-            CsvExport.csvExportPrograms(fileChooser.showSaveDialog(getScene().getWindow()));
-        }
-        if (csvBtn.isSelected() && companyData.isSelected()) {
-            fileChooser.setTitle("Virksomheder - CSV");
-            fileChooser.setInitialFileName("Virksomheder " + date);
-            fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("CSV", "*.csv"));
-            CsvExport.csvExportCompanies(fileChooser.showSaveDialog(getScene().getWindow()));
-        }
+
         /*
         if (jsonBtn.isSelected() && creditData.isSelected()) {
             fileChooser.setTitle("Krediteringer - JSON");
