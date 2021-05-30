@@ -19,6 +19,9 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class ExportController implements IExportController {
+
+    private String date = new SimpleDateFormat("yyyyMMdd").format(new Date());
+
     private volatile static ExportController instance = null;
 
     private ExportController() {
@@ -45,9 +48,9 @@ public class ExportController implements IExportController {
     public void exportCsv(Map<ExportType, Boolean> exportTypes, File folder) {
         CsvDataExporter csvDataExporter = new CsvDataExporter();
 
-        if (exportTypes.get(ExportType.CREDITS)) csvDataExporter.exportCredits(new File(folder, "credits.csv"));
-        if (exportTypes.get(ExportType.PROGRAMMES)) csvDataExporter.exportProgrammes(new File(folder, "programmes.csv"));
-        if (exportTypes.get(ExportType.COMPANIES)) csvDataExporter.exportCompanies(new File(folder, "companies.csv"));
+        if (exportTypes.get(ExportType.CREDITS)) csvDataExporter.exportCredits(new File(folder, "credits " + date + " .csv"));
+        if (exportTypes.get(ExportType.PROGRAMMES)) csvDataExporter.exportProgrammes(new File(folder, "programmes " + date + " .csv"));
+        if (exportTypes.get(ExportType.COMPANIES)) csvDataExporter.exportCompanies(new File(folder, "companies " + date + " .csv"));
 
     }
 
