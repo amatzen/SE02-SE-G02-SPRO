@@ -1,8 +1,9 @@
-package dk.sdu.swe.domain.models;
+package dk.sdu.swe.domain.controllers;
 
-import dk.sdu.swe.domain.controllers.CompanyController;
-import dk.sdu.swe.domain.controllers.CreditController;
-import dk.sdu.swe.domain.controllers.ProgrammeController;
+import dk.sdu.swe.domain.controllers.contracts.IExportController;
+import dk.sdu.swe.domain.models.Company;
+import dk.sdu.swe.domain.models.Credit;
+import dk.sdu.swe.domain.models.Programme;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVPrinter;
 
@@ -11,21 +12,23 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
 
-/**
- * The type Csv export.
- */
-public class CsvExport {
+public class ExportController implements IExportController {
 
-    /**
-     * Csv export credits.
-     *
-     * @param file the file
-     */
-    public static void csvExportCredits(File file) {
+    private static IExportController instance;
+
+    public static IExportController getInstance() {
+        if (instance == null) {
+            instance = new ExportController();
+        }
+        return instance;
+    }
+
+    @Override
+    public void csvExportCredits(File file) {
 
         List<Credit> credits = CreditController.getInstance().getAll();
 
-        String[] headers = {"person", "programme", "role"};
+        String[] headers = {"person_id", "person", "programme_id", "programme", "role"};
 
         try {
             FileWriter csvWriter = new FileWriter(file);
@@ -34,11 +37,13 @@ public class CsvExport {
                 .withDelimiter(';'));
 
             for (Credit credit : credits) {
+                Long personId = credit.getPerson().getId();
+                Long programmeId = credit.getProgramme().getId();
                 String person = credit.getPerson().getName();
                 String programme = credit.getProgramme().getTitle();
                 String role = credit.getRole().getTitle();
 
-                printer.printRecord(person, programme, role);
+                printer.printRecord(personId, person, programmeId, programme, role);
             }
 
             printer.flush();
@@ -55,7 +60,8 @@ public class CsvExport {
      *
      * @param file the file
      */
-    public static void csvExportPrograms(File file) {
+    @Override
+    public void csvExportPrograms(File file) {
 
         List<Programme> programmes = ProgrammeController.getInstance().getAll();
 
@@ -88,7 +94,8 @@ public class CsvExport {
      *
      * @param file the file
      */
-    public static void csvExportCompanies(File file) {
+    @Override
+    public void csvExportCompanies(File file) {
 
         List<Company> companies = CompanyController.getInstance().getAll();
 
