@@ -1,27 +1,185 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg xmlns="http://www.w3.org/2000/svg" contentScriptType="application/ecmascript" contentStyleType="text/css"
      height="669px" preserveAspectRatio="none" style="width:629px;height:669px;" version="1.1" viewBox="0 0 629 669"
-     width="629px" zoomAndPan="magnify"><defs><filter height="300%" id="ffylnr0uvrh24" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[03575d27d1848e7b7cc95049bc3cf4b6]
-cluster Credit Management System--><rect fill="#FFFFFF" filter="url(#ffylnr0uvrh24)" height="650" style="stroke:#000000;stroke-width:1.5;" width="233" x="233" y="7"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="217" x="241" y="21.9951">Credit Management System</text><ellipse cx="349.7318" cy="397.2464" fill="#FEFECE" filter="url(#ffylnr0uvrh24)" rx="89.2318" ry="20.2464" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="140" x="279.7318" y="400.093">Håndtere producere</text><ellipse cx="349.5118" cy="319.9024" fill="#FEFECE" filter="url(#ffylnr0uvrh24)" rx="95.0118" ry="21.4024" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="153" x="273.0118" y="322.749">Håndtere programmer</text><ellipse cx="349.3658" cy="621.7732" fill="#FEFECE" filter="url(#ffylnr0uvrh24)" rx="81.8658" ry="18.7732" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="123" x="286.8805" y="624.9463">Håndtere brugere</text><ellipse cx="349.3591" cy="242.1718" fill="#FEFECE" filter="url(#ffylnr0uvrh24)" rx="96.3591" ry="21.6718" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="156" x="271.3591" y="245.0185">Håndtere krediteringer</text><ellipse cx="349.5612" cy="151.2122" fill="#FEFECE" filter="url(#ffylnr0uvrh24)" rx="76.5612" ry="17.7122" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="110" x="291.5612" y="154.9598">Se krediteringer</text><ellipse cx="349.2915" cy="62.1583" fill="#FEFECE" filter="url(#ffylnr0uvrh24)" rx="88.7915" ry="20.1583" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="139" x="279.7915" y="65.005">Filtrere krediteringer</text><ellipse cx="349.4278" cy="474.9856" fill="#FEFECE" filter="url(#ffylnr0uvrh24)" rx="100.4278" ry="22.4856" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="165" x="266.9278" y="477.8322">Godkende krediteringer</text><ellipse cx="349.5612" cy="550.2122" fill="#FEFECE" filter="url(#ffylnr0uvrh24)" rx="76.5612" ry="17.7122" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="110" x="291.5612" y="553.9598">Eksportere data</text><!--MD5=[165794d66c29ca850eb712b279abb0ce]
-entity producer--><ellipse cx="96" cy="243" fill="#FEFECE" filter="url(#ffylnr0uvrh24)" rx="8" ry="8" style="stroke:#A80036;stroke-width:1.5;"/><path d="M96,251 L96,278 M83,259 L109,259 M96,278 L83,293 M96,278 L109,293 " fill="none" filter="url(#ffylnr0uvrh24)" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="124" x="34" y="311.4951">Producer (Bruger)</text><!--MD5=[65a041cd1922b3dee6e64063a2213939]
-entity administrator--><ellipse cx="96" cy="500" fill="#FEFECE" filter="url(#ffylnr0uvrh24)" rx="8" ry="8" style="stroke:#A80036;stroke-width:1.5;"/><path d="M96,508 L96,535 M83,516 L109,516 M96,535 L83,550 M96,535 L109,550 " fill="none" filter="url(#ffylnr0uvrh24)" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="141" x="25.5" y="568.4951">Systemadministrator</text><!--MD5=[0a3d477460fe7be82a5a28ff9aee024a]
-entity seer--><ellipse cx="96" cy="120" fill="#FEFECE" filter="url(#ffylnr0uvrh24)" rx="8" ry="8" style="stroke:#A80036;stroke-width:1.5;"/><path d="M96,128 L96,155 M83,136 L109,136 M96,155 L83,170 M96,155 L109,170 " fill="none" filter="url(#ffylnr0uvrh24)" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="32" x="80" y="188.4951">Seer</text><!--MD5=[635f57c6a5ffb3fed09f11a5a6885b6a]
-entity virksomhedsadministrator--><ellipse cx="96" cy="366" fill="#FEFECE" filter="url(#ffylnr0uvrh24)" rx="8" ry="8" style="stroke:#A80036;stroke-width:1.5;"/><path d="M96,374 L96,401 M83,382 L109,382 M96,401 L83,416 M96,401 L109,416 " fill="none" filter="url(#ffylnr0uvrh24)" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="180" x="6" y="434.4951">Virksomhedsadministrator</text><!--MD5=[d458c878d9747c7d2f74776a9dd85d19]
-entity epg--><rect fill="#FEFECE" filter="url(#ffylnr0uvrh24)" height="52.5938" style="stroke:#000000;stroke-width:1.5;" width="104" x="513" y="124.5"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="53" x="523" y="147.4951">«aktør»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="84" x="523" y="163.792">EPG-system</text><!--MD5=[4514b21014b49716983822ce1e3fa700]
-link Filtrere krediteringer to Se krediteringer--><path d="M349.5,82.03 C349.5,95.79 349.5,114.07 349.5,128.35 " fill="none" id="Filtrere krediteringer-to-Se krediteringer" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="349.5,133.42,353.5,124.42,349.5,128.42,345.5,124.42,349.5,133.42" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="60" x="308" y="112.3169">«extend»</text><!--MD5=[b55174079a31a761e667883a3ad33584]
-link producer to Håndtere programmer--><path d="M158.2,285.19 C191.74,291.33 233.68,299 269.65,305.58 " fill="none" id="producer-to-Håndtere programmer" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="274.91,306.54,266.7778,300.9841,269.9918,305.6393,265.3367,308.8533,274.91,306.54" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[b82a45ad4ed5f39ed909a6a743607020]
-link producer to Håndtere krediteringer--><path d="M158.2,266.21 C188.7,262.33 226.16,257.57 259.74,253.29 " fill="none" id="producer-to-Håndtere krediteringer" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="265.1,252.61,255.6683,249.7739,260.1397,253.239,256.6747,257.7104,265.1,252.61" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[96e7419a4da8cd5d36678a22a1a9fcc0]
-link administrator to Håndtere brugere--><path d="M166.55,561.95 C185.36,569.88 205.82,578.1 225,585 C246.25,592.64 269.94,600.01 290.84,606.13 " fill="none" id="administrator-to-Håndtere brugere" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="295.81,607.58,288.29,601.22,291.01,606.18,286.05,608.9,295.81,607.58" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[42803732e40c8a03a271faa14d3dfb3c]
-link virksomhedsadministrator to Håndtere producere--><path d="M186.02,397 C208.49,397 232.67,397 255.33,397 " fill="none" id="virksomhedsadministrator-to-Håndtere producere" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="260.44,397,251.44,393,255.44,397,251.44,401,260.44,397" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[ce5b5d6098de23b6078ec6a9192bb04c]
-link seer to Se krediteringer--><path d="M112.35,151 C142.69,151 212.19,151 267.98,151 " fill="none" id="seer-to-Se krediteringer" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="273,151,264,147,268,151,264,155,273,151" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[2e362849cd854491319ece246be3cd26]
-link seer to Filtrere krediteringer--><path d="M112.35,145.57 C148.09,132.92 238.19,101.03 296.2,80.51 " fill="none" id="seer-to-Filtrere krediteringer" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="301.01,78.8,291.1907,78.0374,296.2974,80.4708,293.864,85.5775,301.01,78.8" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[261c2d7a05de874bec7821f660a2aad4]
-reverse link Se krediteringer to epg--><path d="M431.17,151 C458.6,151 488.49,151 512.95,151 " fill="none" id="Se krediteringer-backto-epg" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="426.07,151,435.07,155,431.07,151,435.07,147,426.07,151" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[3ccf4a485e5eb4c56c761cd8280bdfc3]
-reverse link virksomhedsadministrator to administrator--><path d="M96,457.77 C96,468.66 96,479.55 96,490.43 " fill="none" id="virksomhedsadministrator-backto-administrator" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="none" points="89,457.51,96,437.51,103,457.51,89,457.51" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[72d18b765201b6f98c771a816e7b2f8d]
-reverse link producer to virksomhedsadministrator--><path d="M96,334.81 C96,341.93 96,349.04 96,356.16 " fill="none" id="producer-backto-virksomhedsadministrator" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="none" points="89,334.76,96,314.76,103,334.76,89,334.76" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[9c992049721d8650d96aff35af584c9f]
-reverse link seer to producer--><path d="M96,211.81 C96,218.93 96,226.04 96,233.16 " fill="none" id="seer-backto-producer" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="none" points="89,211.76,96,191.76,103,211.76,89,211.76" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[ccce39a8a581f6321e38ce094b4f7f91]
-reverse link Se krediteringer to Håndtere krediteringer--><path d="M349.5,173.81 C349.5,188.1 349.5,206.39 349.5,220.43 " fill="none" id="Se krediteringer-backto-Håndtere krediteringer" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="349.5,168.74,345.5,177.74,349.5,173.74,353.5,177.74,349.5,168.74" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="61" x="307.5" y="199.0669">«include»</text><!--MD5=[eabdebbce3f3db060177946f8baabff6]
-link administrator to Eksportere data--><path d="M166.72,536.27 C199.15,538.72 237.83,541.64 271.15,544.16 " fill="none" id="administrator-to-Eksportere data" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="276.45,544.56,267.7853,539.8777,271.4649,544.1743,267.1683,547.8539,276.45,544.56" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[8e6bb1a3eda562df47d51da6b5c607b1]
-link administrator to Godkende krediteringer--><path d="M166.72,515.48 C199.56,508.16 238.81,499.42 272.41,491.94 " fill="none" id="administrator-to-Godkende krediteringer" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="277.33,490.85,267.6754,488.9036,272.4497,491.9377,269.4157,496.712,277.33,490.85" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[a49ea5dbbfc3c132e83547e354cd7b65]
+     width="629px" zoomAndPan="magnify">
+    <defs>
+        <filter height="300%" id="ffylnr0uvrh24" width="300%" x="-1" y="-1">
+            <feGaussianBlur result="blurOut" stdDeviation="2.0"/>
+            <feColorMatrix in="blurOut" result="blurOut2" type="matrix"
+                           values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/>
+            <feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/>
+            <feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/>
+        </filter>
+    </defs>
+    <g><!--MD5=[03575d27d1848e7b7cc95049bc3cf4b6]
+cluster Credit Management System-->
+        <rect fill="#FFFFFF" filter="url(#ffylnr0uvrh24)" height="650" style="stroke:#000000;stroke-width:1.5;"
+              width="233" x="233" y="7"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing"
+              textLength="217" x="241" y="21.9951">Credit Management System
+        </text>
+        <ellipse cx="349.7318" cy="397.2464" fill="#FEFECE" filter="url(#ffylnr0uvrh24)" rx="89.2318" ry="20.2464"
+                 style="stroke:#A80036;stroke-width:1.5;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="140"
+              x="279.7318" y="400.093">Håndtere producere
+        </text>
+        <ellipse cx="349.5118" cy="319.9024" fill="#FEFECE" filter="url(#ffylnr0uvrh24)" rx="95.0118" ry="21.4024"
+                 style="stroke:#A80036;stroke-width:1.5;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="153"
+              x="273.0118" y="322.749">Håndtere programmer
+        </text>
+        <ellipse cx="349.3658" cy="621.7732" fill="#FEFECE" filter="url(#ffylnr0uvrh24)" rx="81.8658" ry="18.7732"
+                 style="stroke:#A80036;stroke-width:1.5;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="123"
+              x="286.8805" y="624.9463">Håndtere brugere
+        </text>
+        <ellipse cx="349.3591" cy="242.1718" fill="#FEFECE" filter="url(#ffylnr0uvrh24)" rx="96.3591" ry="21.6718"
+                 style="stroke:#A80036;stroke-width:1.5;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="156"
+              x="271.3591" y="245.0185">Håndtere krediteringer
+        </text>
+        <ellipse cx="349.5612" cy="151.2122" fill="#FEFECE" filter="url(#ffylnr0uvrh24)" rx="76.5612" ry="17.7122"
+                 style="stroke:#A80036;stroke-width:1.5;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="110"
+              x="291.5612" y="154.9598">Se krediteringer
+        </text>
+        <ellipse cx="349.2915" cy="62.1583" fill="#FEFECE" filter="url(#ffylnr0uvrh24)" rx="88.7915" ry="20.1583"
+                 style="stroke:#A80036;stroke-width:1.5;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="139"
+              x="279.7915" y="65.005">Filtrere krediteringer
+        </text>
+        <ellipse cx="349.4278" cy="474.9856" fill="#FEFECE" filter="url(#ffylnr0uvrh24)" rx="100.4278" ry="22.4856"
+                 style="stroke:#A80036;stroke-width:1.5;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="165"
+              x="266.9278" y="477.8322">Godkende krediteringer
+        </text>
+        <ellipse cx="349.5612" cy="550.2122" fill="#FEFECE" filter="url(#ffylnr0uvrh24)" rx="76.5612" ry="17.7122"
+                 style="stroke:#A80036;stroke-width:1.5;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="110"
+              x="291.5612" y="553.9598">Eksportere data
+        </text><!--MD5=[165794d66c29ca850eb712b279abb0ce]
+entity producer-->
+        <ellipse cx="96" cy="243" fill="#FEFECE" filter="url(#ffylnr0uvrh24)" rx="8" ry="8"
+                 style="stroke:#A80036;stroke-width:1.5;"/>
+        <path d="M96,251 L96,278 M83,259 L109,259 M96,278 L83,293 M96,278 L109,293 " fill="none"
+              filter="url(#ffylnr0uvrh24)" style="stroke:#A80036;stroke-width:1.5;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="124" x="34"
+              y="311.4951">Producer (Bruger)
+        </text><!--MD5=[65a041cd1922b3dee6e64063a2213939]
+entity administrator-->
+        <ellipse cx="96" cy="500" fill="#FEFECE" filter="url(#ffylnr0uvrh24)" rx="8" ry="8"
+                 style="stroke:#A80036;stroke-width:1.5;"/>
+        <path d="M96,508 L96,535 M83,516 L109,516 M96,535 L83,550 M96,535 L109,550 " fill="none"
+              filter="url(#ffylnr0uvrh24)" style="stroke:#A80036;stroke-width:1.5;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="141" x="25.5"
+              y="568.4951">Systemadministrator
+        </text><!--MD5=[0a3d477460fe7be82a5a28ff9aee024a]
+entity seer-->
+        <ellipse cx="96" cy="120" fill="#FEFECE" filter="url(#ffylnr0uvrh24)" rx="8" ry="8"
+                 style="stroke:#A80036;stroke-width:1.5;"/>
+        <path d="M96,128 L96,155 M83,136 L109,136 M96,155 L83,170 M96,155 L109,170 " fill="none"
+              filter="url(#ffylnr0uvrh24)" style="stroke:#A80036;stroke-width:1.5;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="32" x="80"
+              y="188.4951">Seer
+        </text><!--MD5=[635f57c6a5ffb3fed09f11a5a6885b6a]
+entity virksomhedsadministrator-->
+        <ellipse cx="96" cy="366" fill="#FEFECE" filter="url(#ffylnr0uvrh24)" rx="8" ry="8"
+                 style="stroke:#A80036;stroke-width:1.5;"/>
+        <path d="M96,374 L96,401 M83,382 L109,382 M96,401 L83,416 M96,401 L109,416 " fill="none"
+              filter="url(#ffylnr0uvrh24)" style="stroke:#A80036;stroke-width:1.5;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="180" x="6"
+              y="434.4951">Virksomhedsadministrator
+        </text><!--MD5=[d458c878d9747c7d2f74776a9dd85d19]
+entity epg-->
+        <rect fill="#FEFECE" filter="url(#ffylnr0uvrh24)" height="52.5938" style="stroke:#000000;stroke-width:1.5;"
+              width="104" x="513" y="124.5"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="53" x="523"
+              y="147.4951">«aktør»
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="84" x="523"
+              y="163.792">EPG-system
+        </text><!--MD5=[4514b21014b49716983822ce1e3fa700]
+link Filtrere krediteringer to Se krediteringer-->
+        <path d="M349.5,82.03 C349.5,95.79 349.5,114.07 349.5,128.35 " fill="none"
+              id="Filtrere krediteringer-to-Se krediteringer"
+              style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+        <polygon fill="#A80036" points="349.5,133.42,353.5,124.42,349.5,128.42,345.5,124.42,349.5,133.42"
+                 style="stroke:#A80036;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="60" x="308"
+              y="112.3169">«extend»
+        </text><!--MD5=[b55174079a31a761e667883a3ad33584]
+link producer to Håndtere programmer-->
+        <path d="M158.2,285.19 C191.74,291.33 233.68,299 269.65,305.58 " fill="none"
+              id="producer-to-Håndtere programmer" style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="#A80036"
+                 points="274.91,306.54,266.7778,300.9841,269.9918,305.6393,265.3367,308.8533,274.91,306.54"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[b82a45ad4ed5f39ed909a6a743607020]
+link producer to Håndtere krediteringer-->
+        <path d="M158.2,266.21 C188.7,262.33 226.16,257.57 259.74,253.29 " fill="none"
+              id="producer-to-Håndtere krediteringer" style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="#A80036" points="265.1,252.61,255.6683,249.7739,260.1397,253.239,256.6747,257.7104,265.1,252.61"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[96e7419a4da8cd5d36678a22a1a9fcc0]
+link administrator to Håndtere brugere-->
+        <path d="M166.55,561.95 C185.36,569.88 205.82,578.1 225,585 C246.25,592.64 269.94,600.01 290.84,606.13 "
+              fill="none" id="administrator-to-Håndtere brugere" style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="#A80036" points="295.81,607.58,288.29,601.22,291.01,606.18,286.05,608.9,295.81,607.58"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[42803732e40c8a03a271faa14d3dfb3c]
+link virksomhedsadministrator to Håndtere producere-->
+        <path d="M186.02,397 C208.49,397 232.67,397 255.33,397 " fill="none"
+              id="virksomhedsadministrator-to-Håndtere producere" style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="#A80036" points="260.44,397,251.44,393,255.44,397,251.44,401,260.44,397"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[ce5b5d6098de23b6078ec6a9192bb04c]
+link seer to Se krediteringer-->
+        <path d="M112.35,151 C142.69,151 212.19,151 267.98,151 " fill="none" id="seer-to-Se krediteringer"
+              style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="#A80036" points="273,151,264,147,268,151,264,155,273,151"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[2e362849cd854491319ece246be3cd26]
+link seer to Filtrere krediteringer-->
+        <path d="M112.35,145.57 C148.09,132.92 238.19,101.03 296.2,80.51 " fill="none"
+              id="seer-to-Filtrere krediteringer" style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="#A80036" points="301.01,78.8,291.1907,78.0374,296.2974,80.4708,293.864,85.5775,301.01,78.8"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[261c2d7a05de874bec7821f660a2aad4]
+reverse link Se krediteringer to epg-->
+        <path d="M431.17,151 C458.6,151 488.49,151 512.95,151 " fill="none" id="Se krediteringer-backto-epg"
+              style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="#A80036" points="426.07,151,435.07,155,431.07,151,435.07,147,426.07,151"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[3ccf4a485e5eb4c56c761cd8280bdfc3]
+reverse link virksomhedsadministrator to administrator-->
+        <path d="M96,457.77 C96,468.66 96,479.55 96,490.43 " fill="none"
+              id="virksomhedsadministrator-backto-administrator" style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="none" points="89,457.51,96,437.51,103,457.51,89,457.51"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[72d18b765201b6f98c771a816e7b2f8d]
+reverse link producer to virksomhedsadministrator-->
+        <path d="M96,334.81 C96,341.93 96,349.04 96,356.16 " fill="none" id="producer-backto-virksomhedsadministrator"
+              style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="none" points="89,334.76,96,314.76,103,334.76,89,334.76"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[9c992049721d8650d96aff35af584c9f]
+reverse link seer to producer-->
+        <path d="M96,211.81 C96,218.93 96,226.04 96,233.16 " fill="none" id="seer-backto-producer"
+              style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="none" points="89,211.76,96,191.76,103,211.76,89,211.76"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[ccce39a8a581f6321e38ce094b4f7f91]
+reverse link Se krediteringer to Håndtere krediteringer-->
+        <path d="M349.5,173.81 C349.5,188.1 349.5,206.39 349.5,220.43 " fill="none"
+              id="Se krediteringer-backto-Håndtere krediteringer"
+              style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+        <polygon fill="#A80036" points="349.5,168.74,345.5,177.74,349.5,173.74,353.5,177.74,349.5,168.74"
+                 style="stroke:#A80036;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="61" x="307.5"
+              y="199.0669">«include»
+        </text><!--MD5=[eabdebbce3f3db060177946f8baabff6]
+link administrator to Eksportere data-->
+        <path d="M166.72,536.27 C199.15,538.72 237.83,541.64 271.15,544.16 " fill="none"
+              id="administrator-to-Eksportere data" style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="#A80036"
+                 points="276.45,544.56,267.7853,539.8777,271.4649,544.1743,267.1683,547.8539,276.45,544.56"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[8e6bb1a3eda562df47d51da6b5c607b1]
+link administrator to Godkende krediteringer-->
+        <path d="M166.72,515.48 C199.56,508.16 238.81,499.42 272.41,491.94 " fill="none"
+              id="administrator-to-Godkende krediteringer" style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="#A80036"
+                 points="277.33,490.85,267.6754,488.9036,272.4497,491.9377,269.4157,496.712,277.33,490.85"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[a49ea5dbbfc3c132e83547e354cd7b65]
 @startuml
 'https://plantuml.com/use-case-diagram
 left to right direction
@@ -116,4 +274,6 @@ JVM: OpenJDK 64-Bit Server VM
 Default Encoding: UTF-8
 Language: en
 Country: null
---></g></svg>
+-->
+    </g>
+</svg>

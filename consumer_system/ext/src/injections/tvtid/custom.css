@@ -1,5 +1,5 @@
 .tingle-modal {
-    background: rgba(0,0,0,.45)!important;
+    background: rgba(0, 0, 0, .45) !important;
 }
 
 .crms-grid {
@@ -12,23 +12,27 @@
 }
 
 @media screen and (max-width: 600px) {
-    .crms-grid { grid-template-columns: repeat(1, 1fr); }
+    .crms-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
 }
 
 @media screen and (min-width: 1024px) {
-    .crms-grid { grid-template-columns: repeat(3, 1fr); }
+    .crms-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 .crms-grid .card {
     display: grid;
     grid-template: 1fr / 80px auto;
-    
+
     align-items: center;
     grid-column-gap: 15px;
     column-gap: 15px;
 
     background-color: #fff;
-    box-shadow: 0px 3px 6px 0px rgba(0,0,0, 0.39);
+    box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.39);
 
     overflow: hidden;
     border-radius: 4px;
@@ -57,5 +61,5 @@
 }
 
 .tingle-modal-box {
-    max-width: 960px!important;
+    max-width: 960px !important;
 }

@@ -17,7 +17,7 @@ public class UserTest {
     @Test
     void testUserCreation() {
         assertDoesNotThrow(() -> {
-            new User( "almat20", "alexander@alexander.dk", "Alexander Matzen", "alexander", null);
+            new User("almat20", "alexander@alexander.dk", "Alexander Matzen", "alexander", null);
         });
     }
 
@@ -47,7 +47,7 @@ public class UserTest {
     @Test
     void testUserCreationWithTooShortUsername() {
         assertThrows(UserCreationException.class, () -> {
-           new User("am", "alexander@alexander.dk", "Alexander Matzen", "alexander", null);
+            new User("am", "alexander@alexander.dk", "Alexander Matzen", "alexander", null);
         });
     }
 }

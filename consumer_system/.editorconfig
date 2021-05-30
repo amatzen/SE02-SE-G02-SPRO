@@ -16,7 +16,7 @@ tab_width = 4
 # ij_visual_guides = none
 # ij_wrap_on_typing = false
 
-[{*.cjs,*.js}]
+[{*.cjs, *.js}]
 # ij_continuation_indent_size = 4
 # ij_javascript_align_imports = false
 # ij_javascript_align_multiline_array_initializer_expression = false
@@ -181,7 +181,7 @@ tab_width = 4
 # ij_javascript_while_on_new_line = false
 # ij_javascript_wrap_comments = false
 
-[{*.java,NotificationAnchorStack.java}]
+[{*.java, NotificationAnchorStack.java}]
 # ij_java_align_consecutive_assignments = false
 # ij_java_align_consecutive_variable_declarations = false
 # ij_java_align_group_field_declarations = false

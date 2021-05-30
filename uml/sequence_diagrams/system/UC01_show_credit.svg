@@ -1,7 +1,163 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg xmlns="http://www.w3.org/2000/svg" contentScriptType="application/ecmascript" contentStyleType="text/css"
      height="447px" preserveAspectRatio="none" style="width:435px;height:447px;" version="1.1" viewBox="0 0 435 447"
-     width="435px" zoomAndPan="magnify"><defs><filter height="300%" id="fup4ws3xevgqr" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><rect fill="#DDDDDD" height="435.1875" style="stroke:#A80036;stroke-width:1.0;" width="413.5" x="16" y="6"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="160" x="142.75" y="18.0669">Se kreditering (UC01)</text><rect fill="#FFFFFF" filter="url(#fup4ws3xevgqr)" height="75.3984" style="stroke:#000000;stroke-width:2.0;" width="279" x="10" y="193.9609"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="63" x2="63" y1="60.4297" y2="402.8906"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="242" x2="242" y1="60.4297" y2="402.8906"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="371.5" x2="371.5" y1="60.4297" y2="402.8906"/><rect fill="#FEFECE" filter="url(#fup4ws3xevgqr)" height="30.2969" style="stroke:#A80036;stroke-width:1.5;" width="82" x="20" y="25.1328"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="68" x="27" y="45.1279">:Producer</text><rect fill="#FEFECE" filter="url(#fup4ws3xevgqr)" height="30.2969" style="stroke:#A80036;stroke-width:1.5;" width="82" x="20" y="401.8906"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="68" x="27" y="421.8857">:Producer</text><rect fill="#FEFECE" filter="url(#fup4ws3xevgqr)" height="30.2969" style="stroke:#A80036;stroke-width:1.5;" width="70" x="205" y="25.1328"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="56" x="212" y="45.1279">:System</text><rect fill="#FEFECE" filter="url(#fup4ws3xevgqr)" height="30.2969" style="stroke:#A80036;stroke-width:1.5;" width="70" x="205" y="401.8906"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="56" x="212" y="421.8857">:System</text><rect fill="#FEFECE" filter="url(#fup4ws3xevgqr)" height="30.2969" style="stroke:#A80036;stroke-width:1.5;" width="103" x="318.5" y="25.1328"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="89" x="325.5" y="45.1279">:EPG-system</text><rect fill="#FEFECE" filter="url(#fup4ws3xevgqr)" height="30.2969" style="stroke:#A80036;stroke-width:1.5;" width="103" x="318.5" y="401.8906"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="89" x="325.5" y="421.8857">:EPG-system</text><polygon fill="#A80036" points="230,87.5625,240,91.5625,230,95.5625,234,91.5625" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="63" x2="236" y1="91.5625" y2="91.5625"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="9" x="70" y="86.4966">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="104" x="83" y="86.4966">showPrograms()</text><polygon fill="#A80036" points="360,116.6953,370,120.6953,360,124.6953,364,120.6953" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="242" x2="366" y1="120.6953" y2="120.6953"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="9" x="249" y="115.6294">2</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="93" x="262" y="115.6294">getPrograms()</text><polygon fill="#A80036" points="253,145.8281,243,149.8281,253,153.8281,249,149.8281" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="247" x2="371" y1="149.8281" y2="149.8281"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="9" x="259" y="144.7622">3</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="62" x="272" y="144.7622">Programs</text><polygon fill="#A80036" points="74,174.9609,64,178.9609,74,182.9609,70,178.9609" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="68" x2="241" y1="178.9609" y2="178.9609"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="9" x="80" y="173.895">4</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="62" x="93" y="173.895">Programs</text><path d="M10,193.9609 L80,193.9609 L80,200.9609 L70,210.9609 L10,210.9609 L10,193.9609 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.0;"/><rect fill="none" height="75.3984" style="stroke:#000000;stroke-width:2.0;" width="279" x="10" y="193.9609"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="25" x="25" y="207.0278">opt</text><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="184" x="95" y="206.1714">[Filtrér krediteringer (UC02)]</text><polygon fill="#A80036" points="230,228.2266,240,232.2266,230,236.2266,234,232.2266" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="63" x2="236" y1="232.2266" y2="232.2266"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="9" x="70" y="227.1606">5</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="53" x="83" y="227.1606">search()</text><polygon fill="#A80036" points="74,257.3594,64,261.3594,74,265.3594,70,261.3594" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="68" x2="241" y1="261.3594" y2="261.3594"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="9" x="80" y="256.2935">6</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="124" x="93" y="256.2935">Matching programs</text><polygon fill="#A80036" points="230,293.4922,240,297.4922,230,301.4922,234,297.4922" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="63" x2="236" y1="297.4922" y2="297.4922"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="9" x="70" y="292.4263">7</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="142" x="83" y="292.4263">showCredits(program)</text><polygon fill="#A80036" points="74,322.625,64,326.625,74,330.625,70,326.625" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="68" x2="241" y1="326.625" y2="326.625"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="9" x="80" y="321.5591">8</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="45" x="93" y="321.5591">Credits</text><polygon fill="#A80036" points="230,351.7578,240,355.7578,230,359.7578,234,355.7578" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="63" x2="236" y1="355.7578" y2="355.7578"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="9" x="70" y="350.6919">9</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="116" x="83" y="350.6919">showCredit(credit)</text><polygon fill="#A80036" points="74,380.8906,64,384.8906,74,388.8906,70,384.8906" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="68" x2="241" y1="384.8906" y2="384.8906"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="18" x="80" y="379.8247">10</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="115" x="102" y="379.8247">Credit information</text><!--MD5=[74da6d68de42b4f10d019a613feea4f6]
+     width="435px" zoomAndPan="magnify">
+    <defs>
+        <filter height="300%" id="fup4ws3xevgqr" width="300%" x="-1" y="-1">
+            <feGaussianBlur result="blurOut" stdDeviation="2.0"/>
+            <feColorMatrix in="blurOut" result="blurOut2" type="matrix"
+                           values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/>
+            <feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/>
+            <feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/>
+        </filter>
+    </defs>
+    <g>
+        <rect fill="#DDDDDD" height="435.1875" style="stroke:#A80036;stroke-width:1.0;" width="413.5" x="16" y="6"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing"
+              textLength="160" x="142.75" y="18.0669">Se kreditering (UC01)
+        </text>
+        <rect fill="#FFFFFF" filter="url(#fup4ws3xevgqr)" height="75.3984" style="stroke:#000000;stroke-width:2.0;"
+              width="279" x="10" y="193.9609"/>
+        <line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="63" x2="63" y1="60.4297"
+              y2="402.8906"/>
+        <line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="242" x2="242" y1="60.4297"
+              y2="402.8906"/>
+        <line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="371.5" x2="371.5" y1="60.4297"
+              y2="402.8906"/>
+        <rect fill="#FEFECE" filter="url(#fup4ws3xevgqr)" height="30.2969" style="stroke:#A80036;stroke-width:1.5;"
+              width="82" x="20" y="25.1328"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="68" x="27"
+              y="45.1279">:Producer
+        </text>
+        <rect fill="#FEFECE" filter="url(#fup4ws3xevgqr)" height="30.2969" style="stroke:#A80036;stroke-width:1.5;"
+              width="82" x="20" y="401.8906"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="68" x="27"
+              y="421.8857">:Producer
+        </text>
+        <rect fill="#FEFECE" filter="url(#fup4ws3xevgqr)" height="30.2969" style="stroke:#A80036;stroke-width:1.5;"
+              width="70" x="205" y="25.1328"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="56" x="212"
+              y="45.1279">:System
+        </text>
+        <rect fill="#FEFECE" filter="url(#fup4ws3xevgqr)" height="30.2969" style="stroke:#A80036;stroke-width:1.5;"
+              width="70" x="205" y="401.8906"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="56" x="212"
+              y="421.8857">:System
+        </text>
+        <rect fill="#FEFECE" filter="url(#fup4ws3xevgqr)" height="30.2969" style="stroke:#A80036;stroke-width:1.5;"
+              width="103" x="318.5" y="25.1328"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="89" x="325.5"
+              y="45.1279">:EPG-system
+        </text>
+        <rect fill="#FEFECE" filter="url(#fup4ws3xevgqr)" height="30.2969" style="stroke:#A80036;stroke-width:1.5;"
+              width="103" x="318.5" y="401.8906"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="89" x="325.5"
+              y="421.8857">:EPG-system
+        </text>
+        <polygon fill="#A80036" points="230,87.5625,240,91.5625,230,95.5625,234,91.5625"
+                 style="stroke:#A80036;stroke-width:1.0;"/>
+        <line style="stroke:#A80036;stroke-width:1.0;" x1="63" x2="236" y1="91.5625" y2="91.5625"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing"
+              textLength="9" x="70" y="86.4966">1
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="104" x="83"
+              y="86.4966">showPrograms()
+        </text>
+        <polygon fill="#A80036" points="360,116.6953,370,120.6953,360,124.6953,364,120.6953"
+                 style="stroke:#A80036;stroke-width:1.0;"/>
+        <line style="stroke:#A80036;stroke-width:1.0;" x1="242" x2="366" y1="120.6953" y2="120.6953"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing"
+              textLength="9" x="249" y="115.6294">2
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="93" x="262"
+              y="115.6294">getPrograms()
+        </text>
+        <polygon fill="#A80036" points="253,145.8281,243,149.8281,253,153.8281,249,149.8281"
+                 style="stroke:#A80036;stroke-width:1.0;"/>
+        <line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="247" x2="371" y1="149.8281"
+              y2="149.8281"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing"
+              textLength="9" x="259" y="144.7622">3
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="62" x="272"
+              y="144.7622">Programs
+        </text>
+        <polygon fill="#A80036" points="74,174.9609,64,178.9609,74,182.9609,70,178.9609"
+                 style="stroke:#A80036;stroke-width:1.0;"/>
+        <line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="68" x2="241" y1="178.9609"
+              y2="178.9609"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing"
+              textLength="9" x="80" y="173.895">4
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="62" x="93"
+              y="173.895">Programs
+        </text>
+        <path d="M10,193.9609 L80,193.9609 L80,200.9609 L70,210.9609 L10,210.9609 L10,193.9609 " fill="#EEEEEE"
+              style="stroke:#000000;stroke-width:1.0;"/>
+        <rect fill="none" height="75.3984" style="stroke:#000000;stroke-width:2.0;" width="279" x="10" y="193.9609"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing"
+              textLength="25" x="25" y="207.0278">opt
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing"
+              textLength="184" x="95" y="206.1714">[Filtrér krediteringer (UC02)]
+        </text>
+        <polygon fill="#A80036" points="230,228.2266,240,232.2266,230,236.2266,234,232.2266"
+                 style="stroke:#A80036;stroke-width:1.0;"/>
+        <line style="stroke:#A80036;stroke-width:1.0;" x1="63" x2="236" y1="232.2266" y2="232.2266"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing"
+              textLength="9" x="70" y="227.1606">5
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="53" x="83"
+              y="227.1606">search()
+        </text>
+        <polygon fill="#A80036" points="74,257.3594,64,261.3594,74,265.3594,70,261.3594"
+                 style="stroke:#A80036;stroke-width:1.0;"/>
+        <line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="68" x2="241" y1="261.3594"
+              y2="261.3594"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing"
+              textLength="9" x="80" y="256.2935">6
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="124" x="93"
+              y="256.2935">Matching programs
+        </text>
+        <polygon fill="#A80036" points="230,293.4922,240,297.4922,230,301.4922,234,297.4922"
+                 style="stroke:#A80036;stroke-width:1.0;"/>
+        <line style="stroke:#A80036;stroke-width:1.0;" x1="63" x2="236" y1="297.4922" y2="297.4922"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing"
+              textLength="9" x="70" y="292.4263">7
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="142" x="83"
+              y="292.4263">showCredits(program)
+        </text>
+        <polygon fill="#A80036" points="74,322.625,64,326.625,74,330.625,70,326.625"
+                 style="stroke:#A80036;stroke-width:1.0;"/>
+        <line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="68" x2="241" y1="326.625"
+              y2="326.625"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing"
+              textLength="9" x="80" y="321.5591">8
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="45" x="93"
+              y="321.5591">Credits
+        </text>
+        <polygon fill="#A80036" points="230,351.7578,240,355.7578,230,359.7578,234,355.7578"
+                 style="stroke:#A80036;stroke-width:1.0;"/>
+        <line style="stroke:#A80036;stroke-width:1.0;" x1="63" x2="236" y1="355.7578" y2="355.7578"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing"
+              textLength="9" x="70" y="350.6919">9
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="116" x="83"
+              y="350.6919">showCredit(credit)
+        </text>
+        <polygon fill="#A80036" points="74,380.8906,64,384.8906,74,388.8906,70,384.8906"
+                 style="stroke:#A80036;stroke-width:1.0;"/>
+        <line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="68" x2="241" y1="384.8906"
+              y2="384.8906"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing"
+              textLength="18" x="80" y="379.8247">10
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="115" x="102"
+              y="379.8247">Credit information
+        </text><!--MD5=[74da6d68de42b4f10d019a613feea4f6]
 @startuml
 'https://plantuml.com/sequence-diagram
 
@@ -66,4 +222,6 @@ JVM: OpenJDK 64-Bit Server VM
 Default Encoding: UTF-8
 Language: en
 Country: null
---></g></svg>
+-->
+    </g>
+</svg>

@@ -44,7 +44,7 @@ dependencies {
 }
 
 run {
-    if(file('.env').exists()) {
+    if (file('.env').exists()) {
         file('.env').readLines().each() {
             if (!it.isEmpty() && !it.startsWith("#")) {
                 def pos = it.indexOf("=")
@@ -60,7 +60,7 @@ run {
 }
 
 test {
-    if(file('.env').exists()) {
+    if (file('.env').exists()) {
         file('.env').readLines().each() {
             if (!it.isEmpty() && !it.startsWith("#")) {
                 def pos = it.indexOf("=")
@@ -77,7 +77,7 @@ test {
 
 javafx {
     version = "15.0.1"
-    modules = [ 'javafx.controls', 'javafx.fxml' ]
+    modules = ['javafx.controls', 'javafx.fxml']
 }
 
 tasks.named('test') {

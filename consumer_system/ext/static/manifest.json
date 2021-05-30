@@ -1,10 +1,10 @@
 {
-    "manifest_version":         2,
-    "name":                     "CrMS Consumer System",
-    "short_name":               "CRMS-CS",
-    "version":                  "1.0.0",
-    "description":              "CrMS",
-    "author":                   "SE02-SE-GE02",
+    "manifest_version": 2,
+    "name": "CrMS Consumer System",
+    "short_name": "CRMS-CS",
+    "version": "1.0.0",
+    "description": "CrMS",
+    "author": "SE02-SE-GE02",
     "permissions": [
         "storage",
         "https://tvtid.tv2.dk/*",
@@ -13,11 +13,17 @@
     ],
     "content_scripts": [
         {
-            "matches":          ["https://tvtid.tv2.dk/*"],
-            "js":               ["cs_tvtid.js"],
-            "run_at":           "document_end"
+            "matches": [
+                "https://tvtid.tv2.dk/*"
+            ],
+            "js": [
+                "cs_tvtid.js"
+            ],
+            "run_at": "document_end"
         }
     ],
-    "web_accessible_resources": ["*"],
-    "content_security_policy":  "script-src 'self' 'unsafe-eval'; object-src 'self'"
+    "web_accessible_resources": [
+        "*"
+    ],
+    "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
 }

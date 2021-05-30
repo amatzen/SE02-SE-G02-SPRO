@@ -5,8 +5,6 @@ import dk.sdu.swe.domain.models.Company;
 import dk.sdu.swe.domain.models.Credit;
 import dk.sdu.swe.domain.models.Person;
 import dk.sdu.swe.domain.models.Programme;
-import javafx.stage.FileChooser;
-import javafx.stage.Window;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVPrinter;
 import org.bson.Document;
@@ -20,9 +18,8 @@ import java.util.*;
 
 public class ExportController implements IExportController {
 
-    private String date = new SimpleDateFormat("yyyyMMdd").format(new Date());
-
     private volatile static ExportController instance = null;
+    private String date = new SimpleDateFormat("yyyyMMdd").format(new Date());
 
     private ExportController() {
     }
@@ -48,9 +45,12 @@ public class ExportController implements IExportController {
     public void exportCsv(Map<ExportType, Boolean> exportTypes, File folder) {
         CsvDataExporter csvDataExporter = new CsvDataExporter();
 
-        if (exportTypes.get(ExportType.CREDITS)) csvDataExporter.exportCredits(new File(folder, "credits " + date + " .csv"));
-        if (exportTypes.get(ExportType.PROGRAMMES)) csvDataExporter.exportProgrammes(new File(folder, "programmes " + date + " .csv"));
-        if (exportTypes.get(ExportType.COMPANIES)) csvDataExporter.exportCompanies(new File(folder, "companies " + date + " .csv"));
+        if (exportTypes.get(ExportType.CREDITS))
+            csvDataExporter.exportCredits(new File(folder, "credits " + date + " .csv"));
+        if (exportTypes.get(ExportType.PROGRAMMES))
+            csvDataExporter.exportProgrammes(new File(folder, "programmes " + date + " .csv"));
+        if (exportTypes.get(ExportType.COMPANIES))
+            csvDataExporter.exportCompanies(new File(folder, "companies " + date + " .csv"));
 
     }
 

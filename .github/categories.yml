@@ -1,8 +1,8 @@
 Domain:
-    - all: ['**/*.java', 'src/main/java/dk/sdu/swe/**', '!src/main/java/dk/sdu/swe/views/**']
+    -   all: [ '**/*.java', 'src/main/java/dk/sdu/swe/**', '!src/main/java/dk/sdu/swe/views/**' ]
 
 Presentation:
-    - any: ['**/*.fxml', 'src/main/*/dk/sdu/swe/views/**']
+    -   any: [ '**/*.fxml', 'src/main/*/dk/sdu/swe/views/**' ]
 
 Data:
-    - any: ['**/*.json', '**/*.yaml', '**/*.yml', '**/*.csv', '**/*.xml']
+    -   any: [ '**/*.json', '**/*.yaml', '**/*.yml', '**/*.csv', '**/*.xml' ]
