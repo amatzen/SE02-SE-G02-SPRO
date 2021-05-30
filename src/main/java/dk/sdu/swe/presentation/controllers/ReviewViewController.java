@@ -11,6 +11,7 @@ import dk.sdu.swe.presentation.controllers.partials.ReviewListItem;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.VBox;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -20,7 +21,7 @@ import java.util.Objects;
 /**
  * The type Review view controller.
  */
-public class ReviewViewController extends AnchorPane implements Observer {
+public class ReviewViewController extends VBox implements Observer {
 
     private List<Review> reviews_ = new ArrayList<>();
 
