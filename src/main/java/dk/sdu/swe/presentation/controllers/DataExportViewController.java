@@ -4,6 +4,7 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXCheckBox;
 import com.jfoenix.controls.JFXRadioButton;
 import dk.sdu.swe.domain.controllers.ExportController;
+import dk.sdu.swe.domain.controllers.contracts.IExportController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -33,10 +34,14 @@ public class DataExportViewController extends VBox {
 
     private String date = new SimpleDateFormat("yyyyMMdd").format(new Date());
 
+    private IExportController exportController;
+
     /**
      * Instantiates a new Data export view controller.
      */
     public DataExportViewController() {
+        exportController = ExportController.getInstance();
+
         FXMLLoader fxmlLoader = new FXMLLoader(
             Objects.requireNonNull(
                 getClass().getClassLoader().getResource("dk/sdu/swe/presentation/views/admin/components/DataExportView.fxml")));
@@ -59,14 +64,14 @@ public class DataExportViewController extends VBox {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Fejl!");
             alert.setHeaderText(null);
-            alert.setContentText("Vælg venligst eksport data");
+            alert.setContentText("Vælg venligst data som skal eksporteres.");
             alert.showAndWait();
         }
         else if (!csvBtn.isSelected() && !jsonBtn.isSelected()) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Fejl!");
             alert.setHeaderText(null);
-            alert.setContentText("Vælg venligst data som skal eksporteres.");
+            alert.setContentText("Vælg venligst filtype.");
             alert.showAndWait();
         }
 
