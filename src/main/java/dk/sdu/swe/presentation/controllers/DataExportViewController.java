@@ -3,7 +3,8 @@ package dk.sdu.swe.presentation.controllers;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXCheckBox;
 import com.jfoenix.controls.JFXRadioButton;
-import dk.sdu.swe.domain.models.CsvExport;
+import dk.sdu.swe.domain.controllers.ExportController;
+import dk.sdu.swe.domain.controllers.contracts.IExportController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -32,10 +33,14 @@ public class DataExportViewController extends VBox {
 
     private String date = new SimpleDateFormat("yyyyMMdd").format(new Date());
 
+    private IExportController exportController;
+
     /**
      * Instantiates a new Data export view controller.
      */
     public DataExportViewController() {
+        exportController = ExportController.getInstance();
+
         FXMLLoader fxmlLoader = new FXMLLoader(
             Objects.requireNonNull(
                 getClass().getClassLoader().getResource("dk/sdu/swe/presentation/views/admin/components/DataExportView.fxml")));
@@ -82,19 +87,19 @@ public class DataExportViewController extends VBox {
             fileChooser.setTitle("Krediteringer - CSV");
             fileChooser.setInitialFileName("Krediteringer " + date);
             fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("CSV","*.csv"));
-            CsvExport.csvExportCredits(fileChooser.showSaveDialog(getScene().getWindow()));
+            exportController.csvExportCredits(fileChooser.showSaveDialog(getScene().getWindow()));
         }
         if (csvBtn.isSelected() && programData.isSelected()) {
             fileChooser.setTitle("Programmer - CSV");
             fileChooser.setInitialFileName("Programmer " + date);
             fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("CSV", "*.csv"));
-            CsvExport.csvExportPrograms(fileChooser.showSaveDialog(getScene().getWindow()));
+            exportController.csvExportPrograms(fileChooser.showSaveDialog(getScene().getWindow()));
         }
         if (csvBtn.isSelected() && companyData.isSelected()) {
             fileChooser.setTitle("Virksomheder - CSV");
             fileChooser.setInitialFileName("Virksomheder " + date);
             fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("CSV", "*.csv"));
-            CsvExport.csvExportCompanies(fileChooser.showSaveDialog(getScene().getWindow()));
+            exportController.csvExportCompanies(fileChooser.showSaveDialog(getScene().getWindow()));
         }
         /*
         if (jsonBtn.isSelected() && creditData.isSelected()) {
