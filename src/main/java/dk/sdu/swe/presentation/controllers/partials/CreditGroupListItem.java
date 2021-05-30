@@ -23,20 +23,16 @@ import java.util.Optional;
  */
 public class CreditGroupListItem extends HBox {
 
+    private CreditRole creditRole;
+    @FXML
+    private Button actionsBtn;
+    @FXML
+    private Label role;
+    private ListView<CreditGroupListItem> container;
     private Map<String, Runnable> options = new LinkedHashMap<>() {{
         put("Rediger", CreditGroupListItem.this::editGroup);
         put("Slet", CreditGroupListItem.this::deleteGroup);
     }};
-
-    private CreditRole creditRole;
-
-    @FXML
-    private Button actionsBtn;
-
-    @FXML
-    private Label role;
-
-    private ListView<CreditGroupListItem> container;
 
     /**
      * Instantiates a new Credit group list item.

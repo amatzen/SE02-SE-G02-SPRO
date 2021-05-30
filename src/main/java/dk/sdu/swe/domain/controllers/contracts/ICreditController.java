@@ -46,6 +46,7 @@ public interface ICreditController {
 
     /**
      * Returns a list of credits for a given programme.
+     *
      * @param programme Programme to get credits for.
      * @return List of credits associated with the programme.
      */

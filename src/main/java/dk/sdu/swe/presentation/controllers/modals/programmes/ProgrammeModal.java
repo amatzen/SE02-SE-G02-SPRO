@@ -152,7 +152,7 @@ public class ProgrammeModal extends Dialog<Programme> {
         String title = this.title.getText();
         int prodYear = 0;
         try {
-             prodYear = Integer.parseInt(this.prodYear.getText());
+            prodYear = Integer.parseInt(this.prodYear.getText());
         } catch (NumberFormatException e) {
             AlertHelper.show(Alert.AlertType.ERROR,
                 getOwner(), "Ikke et tal",
@@ -180,7 +180,7 @@ public class ProgrammeModal extends Dialog<Programme> {
 
             boolean existingProgramme = Objects.nonNull(programme);
 
-            if(!existingProgramme) {
+            if (!existingProgramme) {
                 Programme newProgramme = new Programme(title, channel, prodYear, Set.of(category), company);
                 updated = newProgramme.toJson();
 

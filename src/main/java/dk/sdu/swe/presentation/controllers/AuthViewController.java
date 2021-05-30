@@ -26,57 +26,48 @@ import java.util.Objects;
  */
 public class AuthViewController extends HBox {
 
-    private String modelPassword;
-
-    private IAuthController authController;
-
     /**
      * The Main.
      */
     @FXML
     VBox main;
-
     /**
      * The Button.
      */
     @FXML
     JFXButton button;
-
     /**
      * The Text field.
      */
     @FXML
     TextField textField;
-
     /**
      * The Password field.
      */
     @FXML
     PasswordField passwordField;
-
     /**
      * The Password field 1.
      */
     @FXML
     TextField passwordField1;
-
     /**
      * The Show pswd.
      */
     @FXML
     Label showPswd;
-
     /**
      * The Hs button.
      */
     @FXML
     Button hs_button;
-
     /**
      * The Environment selector.
      */
     @FXML
     JFXComboBox<String> environmentSelector;
+    private String modelPassword;
+    private IAuthController authController;
 
     /**
      * Instantiates a new Auth view controller.
@@ -111,7 +102,7 @@ public class AuthViewController extends HBox {
         environmentSelector.setItems(FXCollections.observableArrayList(environments));
         environmentSelector.valueProperty().setValue(EnvironmentSelector.getInstance().getEnvironment().getLabel());
         environmentSelector.setOnAction((event) -> {
-                EnvironmentSelector.getInstance().setEnvironment(Environment.getEnvFromString(environmentSelector.valueProperty().getValue()));
+            EnvironmentSelector.getInstance().setEnvironment(Environment.getEnvFromString(environmentSelector.valueProperty().getValue()));
         });
 
         // Login button
@@ -131,7 +122,7 @@ public class AuthViewController extends HBox {
     }
 
     private void togglePasswordVisibility() {
-        if(this.passwordField.isVisible()) {
+        if (this.passwordField.isVisible()) {
             this.passwordField.setVisible(false);
             this.passwordField1.setVisible(true);
         } else {

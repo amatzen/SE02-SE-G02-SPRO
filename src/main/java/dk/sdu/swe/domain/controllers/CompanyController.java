@@ -17,8 +17,8 @@ import java.util.stream.Collectors;
  */
 public class CompanyController implements ICompanyController {
 
-    private ICompanyDAO companyDAO;
     private static ICompanyController instance;
+    private ICompanyDAO companyDAO;
 
     private CompanyController() {
         companyDAO = CompanyDAOImpl.getInstance();

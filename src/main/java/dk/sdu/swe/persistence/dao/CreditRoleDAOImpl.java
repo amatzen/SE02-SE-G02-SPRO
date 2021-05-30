@@ -13,6 +13,13 @@ public class CreditRoleDAOImpl extends AbstractDAO<CreditRole> implements ICredi
     private static CreditRoleDAOImpl instance;
 
     /**
+     * Instantiates a new Credit role dao.
+     */
+    public CreditRoleDAOImpl() {
+        super(CreditRole.class);
+    }
+
+    /**
      * Gets instance.
      *
      * @return the instance
@@ -22,13 +29,6 @@ public class CreditRoleDAOImpl extends AbstractDAO<CreditRole> implements ICredi
             instance = new CreditRoleDAOImpl();
         }
         return instance;
-    }
-
-    /**
-     * Instantiates a new Credit role dao.
-     */
-    public CreditRoleDAOImpl() {
-        super(CreditRole.class);
     }
 
     @Override

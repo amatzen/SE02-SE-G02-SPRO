@@ -29,7 +29,7 @@ public class v0_CreateCompanies {
                     "969500TVFVKI682L1144",
                     "499797041"
                 ),
-            "https://screenshots.amatzen.dk/gicyaqEXonuKwOV02M.png"
+                "https://screenshots.amatzen.dk/gicyaqEXonuKwOV02M.png"
             )
         );
 

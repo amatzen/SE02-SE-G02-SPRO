@@ -64,7 +64,7 @@ public class ReviewController implements IReviewController {
         for (int i = 0; i < jsonCategories.length(); i++) {
             int catId = (int) jsonCategories.get(i);
             Category category = CategoryDAOImpl.getInstance().getById(Long.parseLong(String.valueOf(catId))).orElse(null);
-            if(!Objects.isNull(category)) {
+            if (!Objects.isNull(category)) {
                 categories.add(category);
             }
         }
@@ -74,7 +74,7 @@ public class ReviewController implements IReviewController {
 
         Channel channel = ChannelController.getInstance().get(updated.getInt("channel")).orElse(null);
 
-        if(Objects.nonNull(channel)) {
+        if (Objects.nonNull(channel)) {
             programme.setChannel(channel);
         }
 

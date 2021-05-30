@@ -7,25 +7,6 @@ import './custom.css';
 
 let modal = null;
 
-const checkIfProgrammeExistsInCrMS = programmeId => {
-    var b = false;
-    fetch(`http://localhost/exists/${programmeId}`)
-        .then(response => {
-            console.log(response);
-            if(response.status == 200) {
-                console.log("ja")
-                b = true;
-                return true;
-            }
-        })
-        .catch(err => {
-            console.error(err);
-            b = false;
-        })
-
-    return b;
-}
-
 const r = () => {
     let programmeLinkNodes = document.querySelectorAll(".tv2epg-program-details-link:not(.crms)");
 
@@ -66,9 +47,6 @@ const r = () => {
 }
 
 var openCreditsModal = async ({ channelId, programmeId }) => {
-    const req = await fetch(`http://localhost/details/${programmeId}`);
-    const res = await req.json();
-
     if(modal != null ) {
         modal.destroy();
     }
@@ -77,6 +55,9 @@ var openCreditsModal = async ({ channelId, programmeId }) => {
         closeMethods: ['overlay', 'button', 'escape'],
         footer: true,
     })
+
+    const req = await fetch(`http://localhost/details/${programmeId}`);
+    const res = await req.json();
 
     modal.setContent(`
         <h2>Krediteringer</h2>
@@ -99,7 +80,6 @@ var openCreditsModal = async ({ channelId, programmeId }) => {
     `);
 
     modal.addFooterBtn('Luk', 'tingle-btn tingle-btn--primary', function() {
-        // here goes some logic
         modal.close();
     });
 

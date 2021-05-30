@@ -7,9 +7,8 @@ import dk.sdu.swe.persistence.DB;
  */
 public class EnvironmentSelector {
 
-    private volatile Environment environment;
-
     private static EnvironmentSelector environmentSelectorInstance;
+    private volatile Environment environment;
 
     private EnvironmentSelector() {
     }
@@ -27,6 +26,15 @@ public class EnvironmentSelector {
     }
 
     /**
+     * Gets environment.
+     *
+     * @return the environment
+     */
+    public Environment getEnvironment() {
+        return environment;
+    }
+
+    /**
      * Sets environment.
      *
      * @param input the input
@@ -34,15 +42,6 @@ public class EnvironmentSelector {
     public synchronized void setEnvironment(Environment input) {
         environment = input;
         DB.resetSessionFactory();
-    }
-
-    /**
-     * Gets environment.
-     *
-     * @return the environment
-     */
-    public Environment getEnvironment() {
-        return environment;
     }
 
 }

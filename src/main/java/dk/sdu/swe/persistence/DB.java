@@ -26,7 +26,7 @@ public class DB {
      * @return the session factory
      */
     public synchronized static SessionFactory getSessionFactory() {
-        if(sessionFactory == null) {
+        if (sessionFactory == null) {
             dk.sdu.swe.cross_cutting.helpers.Environment env = EnvironmentSelector.getInstance().getEnvironment();
             String DB_HOST = System.getenv("DATABASE_LOCAL_HOST");
             String DB_NAME = System.getenv("DATABASE_LOCAL_DB");
@@ -34,7 +34,7 @@ public class DB {
             String DB_PASS = System.getenv("DATABASE_LOCAL_PASS");
             String HIBERNATE_DDL = "create-drop";
 
-            if(env == dk.sdu.swe.cross_cutting.helpers.Environment.PROD) {
+            if (env == dk.sdu.swe.cross_cutting.helpers.Environment.PROD) {
                 DB_HOST = System.getenv("DATABASE_PROD_HOST");
                 DB_NAME = System.getenv("DATABASE_PROD_DB");
                 DB_USER = System.getenv("DATABASE_PROD_USER");

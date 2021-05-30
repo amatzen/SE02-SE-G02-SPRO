@@ -50,7 +50,7 @@ public class UserControlListItem extends HBox {
         FXMLLoader fxmlLoader = new FXMLLoader(
             Objects.requireNonNull(
                 getClass().getClassLoader().getResource(
-                        "dk/sdu/swe/presentation/views/admin/components/UserControlListItem.fxml")));
+                    "dk/sdu/swe/presentation/views/admin/components/UserControlListItem.fxml")));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
 

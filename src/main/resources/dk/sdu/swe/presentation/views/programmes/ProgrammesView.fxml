@@ -5,90 +5,97 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
-<fx:root prefHeight="1024.0" type="BorderPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root xmlns:fx="http://javafx.com/fxml/1" prefHeight="1024.0" type="BorderPane"
+         xmlns="http://javafx.com/javafx/11.0.1">
     <top>
         <VBox prefHeight="366.0" prefWidth="1440.0" BorderPane.alignment="CENTER">
             <children>
-                <HBox style="-fx-background-color: #263238;" />
-                <VBox maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="1440.0" style="-fx-background-color: #E0E0E0;">
+                <HBox style="-fx-background-color: #263238;"/>
+                <VBox maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity"
+                      prefHeight="200.0" prefWidth="1440.0" style="-fx-background-color: #E0E0E0;">
                     <children>
                         <Label text="Programmer">
                             <font>
-                                <Font name="System Bold" size="36.0" />
+                                <Font name="System Bold" size="36.0"/>
                             </font>
                             <VBox.margin>
-                                <Insets left="50.0" top="50.0" />
+                                <Insets left="50.0" top="50.0"/>
                             </VBox.margin>
                         </Label>
                         <Label text="Liste over programmer, hvor der kan tilføjes krediteringer">
                             <font>
-                                <Font size="18.0" />
+                                <Font size="18.0"/>
                             </font>
                             <VBox.margin>
-                                <Insets left="50.0" top="10.0" />
+                                <Insets left="50.0" top="10.0"/>
                             </VBox.margin>
                         </Label>
                     </children>
                 </VBox>
-                <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="111.0" prefWidth="1440.0" spacing="100.0" style="-fx-background-color: #F5F5F5;">
+                <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="111.0"
+                      prefWidth="1440.0" spacing="100.0" style="-fx-background-color: #F5F5F5;">
                     <children>
                         <VBox prefHeight="115.0" prefWidth="278.0" spacing="5.0">
                             <HBox.margin>
-                                <Insets />
+                                <Insets/>
                             </HBox.margin>
                             <children>
                                 <Label text="Programtitel">
                                     <font>
-                                        <Font size="14.0" />
+                                        <Font size="14.0"/>
                                     </font>
                                     <VBox.margin>
-                                        <Insets />
+                                        <Insets/>
                                     </VBox.margin>
                                 </Label>
-                                <JFXTextField fx:id="searchField" onAction="#onSearchFieldAction" prefHeight="45.0" prefWidth="278.0">
-                           <VBox.margin>
-                              <Insets />
-                           </VBox.margin></JFXTextField>
+                                <JFXTextField fx:id="searchField" onAction="#onSearchFieldAction" prefHeight="45.0"
+                                              prefWidth="278.0">
+                                    <VBox.margin>
+                                        <Insets/>
+                                    </VBox.margin>
+                                </JFXTextField>
                             </children>
                         </VBox>
                         <VBox prefWidth="100.0" spacing="5.0">
                             <children>
                                 <Label text="Kanal">
                                     <VBox.margin>
-                                        <Insets />
+                                        <Insets/>
                                     </VBox.margin>
                                     <font>
-                                        <Font size="14.0" />
+                                        <Font size="14.0"/>
                                     </font>
                                 </Label>
-                                <JFXComboBox fx:id="channels" onAction="#onChannelChange" prefHeight="45.0" prefWidth="120.0">
+                                <JFXComboBox fx:id="channels" onAction="#onChannelChange" prefHeight="45.0"
+                                             prefWidth="120.0">
                                     <VBox.margin>
-                                        <Insets />
+                                        <Insets/>
                                     </VBox.margin>
                                 </JFXComboBox>
                             </children>
                             <HBox.margin>
-                                <Insets />
+                                <Insets/>
                             </HBox.margin>
                         </VBox>
                         <VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0">
                             <children>
                                 <Label text="Kategori">
                                     <VBox.margin>
-                                        <Insets />
+                                        <Insets/>
                                     </VBox.margin>
                                     <font>
-                                        <Font size="14.0" />
+                                        <Font size="14.0"/>
                                     </font>
                                 </Label>
-                                <JFXComboBox fx:id="categories" onAction="#onCategoryChange" prefHeight="45.0" prefWidth="120.0">
+                                <JFXComboBox fx:id="categories" onAction="#onCategoryChange" prefHeight="45.0"
+                                             prefWidth="120.0">
                                     <VBox.margin>
-                                        <Insets />
+                                        <Insets/>
                                     </VBox.margin>
                                 </JFXComboBox>
                             </children>
                             <HBox.margin>
-                                <Insets />
+                                <Insets/>
                             </HBox.margin>
                         </VBox>
                         <!--<JFXDatePicker defaultColor="#ff9800" showWeekNumbers="true">
@@ -96,35 +103,43 @@
                               <Insets left="100.0" top="47.0" />
                            </HBox.margin>
                         </JFXDatePicker>-->
-                        <JFXButton buttonType="RAISED" onAction="#resetSearch" prefHeight="38.0" prefWidth="82.0" style="-fx-background-color: #FF9800;" text="Nulstil" textFill="WHITE">
+                        <JFXButton buttonType="RAISED" onAction="#resetSearch" prefHeight="38.0" prefWidth="82.0"
+                                   style="-fx-background-color: #FF9800;" text="Nulstil" textFill="WHITE">
                             <HBox.margin>
-                                <Insets top="20.0" />
+                                <Insets top="20.0"/>
                             </HBox.margin>
                             <font>
-                                <Font name="System Bold" size="15.0" />
+                                <Font name="System Bold" size="15.0"/>
                             </font>
                         </JFXButton>
                     </children>
-               <padding>
-                  <Insets left="50.0" top="25.0" />
-               </padding>
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
+                    <padding>
+                        <Insets left="50.0" top="25.0"/>
+                    </padding>
+                    <VBox.margin>
+                        <Insets/>
+                    </VBox.margin>
                 </HBox>
             </children>
         </VBox>
     </top>
     <center>
-        <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+        <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="100.0"
+              BorderPane.alignment="CENTER">
             <children>
-                <fx:include source="ProgrammeListViewBar.fxml" />
+                <fx:include source="ProgrammeListViewBar.fxml"/>
                 <AnchorPane prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
                     <children>
-                  <JFXListView fx:id="programmesListView" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-selection-bar: #ebebeb;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                        <JFXButton fx:id="fabBtn" buttonType="RAISED" onAction="#addProgramme" prefHeight="45.0" prefWidth="45.0" style="-fx-background-color: #FF9800; -fx-background-radius: 30;" text="+" textFill="WHITE" AnchorPane.bottomAnchor="25.0" AnchorPane.rightAnchor="25.0">
+                        <JFXListView fx:id="programmesListView" maxHeight="1.7976931348623157E308"
+                                     maxWidth="1.7976931348623157E308" style="-fx-selection-bar: #ebebeb;"
+                                     AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                                     AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0"/>
+                        <JFXButton fx:id="fabBtn" buttonType="RAISED" onAction="#addProgramme" prefHeight="45.0"
+                                   prefWidth="45.0" style="-fx-background-color: #FF9800; -fx-background-radius: 30;"
+                                   text="+" textFill="WHITE" AnchorPane.bottomAnchor="25.0"
+                                   AnchorPane.rightAnchor="25.0">
                             <font>
-                                <Font size="18.0" />
+                                <Font size="18.0"/>
                             </font>
                         </JFXButton>
                     </children>

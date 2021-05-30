@@ -13,9 +13,12 @@ import java.util.List;
  */
 public class CreditRoleController implements ICreditRoleController {
 
+    private static ICreditRoleController instance;
     private ICreditRoleDAO creditRoleDAO;
 
-    private static ICreditRoleController instance;
+    private CreditRoleController() {
+        creditRoleDAO = CreditRoleDAOImpl.getInstance();
+    }
 
     /**
      * Gets instance.
@@ -27,10 +30,6 @@ public class CreditRoleController implements ICreditRoleController {
             instance = new CreditRoleController();
         }
         return instance;
-    }
-
-    private CreditRoleController() {
-        creditRoleDAO = CreditRoleDAOImpl.getInstance();
     }
 
     @Override

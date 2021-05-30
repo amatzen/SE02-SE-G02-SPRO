@@ -18,22 +18,8 @@ import java.util.Map;
 @Table(name = "people")
 public class Person {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    private String name;
-
-    @SerializedName("dob")
-    @Column(name = "dob")
-    private String dateOfBirth;
-
-    private String image;
-
     @Transient
     private final DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ISO_DATE_TIME;
-
-
     @ElementCollection
     @CollectionTable(
         name = "people_contact_details",
@@ -43,7 +29,14 @@ public class Person {
     @MapKeyColumn(name = "key")
     @Column(name = "value")
     private final Map<String, String> contactDetails = new HashMap<>();
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String name;
+    @SerializedName("dob")
+    @Column(name = "dob")
+    private String dateOfBirth;
+    private String image;
     @OneToMany(mappedBy = "person")
     private List<Credit> credits;
 
@@ -69,6 +62,19 @@ public class Person {
         setDateOfBirth(dateOfBirth);
         setImage(image);
 
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+            "id=" + id +
+            ", name='" + name + '\'' +
+            ", dateOfBirth='" + dateOfBirth + '\'' +
+            ", image='" + image + '\'' +
+            ", dateTimeFormatter=" + dateTimeFormatter +
+            ", contactDetails=" + contactDetails +
+            ", credits=" + credits +
+            '}';
     }
 
     /**

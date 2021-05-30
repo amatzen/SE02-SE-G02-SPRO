@@ -24,28 +24,22 @@ import java.util.Optional;
  */
 public class CompanyListItem extends VBox {
 
+    private Company company;
+    @FXML
+    private JFXButton actionsBtn;
+    @FXML
+    private Label cvrLabel;
+    @FXML
+    private Label ceoLabel;
+    @FXML
+    private Label adminLabel;
+    @FXML
+    private Label companyNameLabel;
     private Map<String, Runnable> options = new LinkedHashMap<>() {{
         put("Brugeradministration", CompanyListItem.this::manageUsers);
         put("Rediger virksomhed", CompanyListItem.this::editCompany);
         put("Slet", CompanyListItem.this::deleteCompany);
     }};
-
-    private Company company;
-
-    @FXML
-    private JFXButton actionsBtn;
-
-    @FXML
-    private Label cvrLabel;
-
-    @FXML
-    private Label ceoLabel;
-
-    @FXML
-    private Label adminLabel;
-
-    @FXML
-    private Label companyNameLabel;
 
     /**
      * Instantiates a new Company list item.
@@ -70,7 +64,7 @@ public class CompanyListItem extends VBox {
 
     @FXML
     private void initialize() {
-        if(company.getUsers().size() > 0) options.remove("Slet");
+        if (company.getUsers().size() > 0) options.remove("Slet");
         PopupListMenu popupList = new PopupListMenu(options);
 
         actionsBtn.setOnMouseClicked(e -> {
@@ -82,7 +76,7 @@ public class CompanyListItem extends VBox {
 
     private void updateState() {
         companyNameLabel.setText(company.getName());
-        if(company.getCompanyDetails().getNbr().isEmpty()) {
+        if (company.getCompanyDetails().getNbr().isEmpty()) {
             cvrLabel.setText("");
         } else {
             cvrLabel.setText("CVR: " + company.getCompanyDetails().getNbr());

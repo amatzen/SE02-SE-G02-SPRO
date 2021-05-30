@@ -18,7 +18,7 @@ import java.util.stream.Collectors;
 public class ConsumerSystemAPI {
     public static void run() {
         int PORT = 80;
-        if(Objects.nonNull(System.getenv("PORT"))) {
+        if (Objects.nonNull(System.getenv("PORT"))) {
             PORT = Integer.parseInt(System.getenv("PORT"));
         }
 
@@ -40,6 +40,7 @@ public class ConsumerSystemAPI {
             } catch (Exception e) {
                 e.printStackTrace();
                 ctx.status(500).result("Internal error.");
+                return;
             }
             ctx.result("true");
         });
@@ -90,7 +91,7 @@ public class ConsumerSystemAPI {
         String DB_USER = System.getenv("DATABASE_LOCAL_USER");
         String DB_PASS = System.getenv("DATABASE_LOCAL_PASS");
 
-        if(env == dk.sdu.swe.cross_cutting.helpers.Environment.PROD) {
+        if (env == dk.sdu.swe.cross_cutting.helpers.Environment.PROD) {
             DB_HOST = System.getenv("DATABASE_PROD_HOST");
             DB_NAME = System.getenv("DATABASE_PROD_DB");
             DB_USER = System.getenv("DATABASE_PROD_USER");

@@ -6,22 +6,28 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
-<BorderPane prefHeight="469.0" prefWidth="698.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="469.0" prefWidth="698.0"
+            xmlns="http://javafx.com/javafx/11.0.1">
     <center>
-      <AnchorPane BorderPane.alignment="CENTER">
-         <children>
-              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="698.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                  <children>
-                        <JFXTextField fx:id="creditRole" prefHeight="50.0" prefWidth="309.0" promptText="Krediteringsgruppe" style="-fx-border-color: #cccccc; -fx-border-radius: 5px;                                 -fx-padding: 0.333333em 1em 0.333333em 1em;                                 -fx-background-color: transparent; -jfx-unfocus-color: transparent;                                 -jfx-focus-color: transparent;" />
-                  </children>
-              </HBox>
-                    <JFXButton fx:id="save" buttonType="RAISED" onAction="#save" prefHeight="35.0" prefWidth="78.0" style="-fx-background-color: #FF9800;" text="Gem" textAlignment="RIGHT" textFill="WHITE" AnchorPane.bottomAnchor="25.0" AnchorPane.rightAnchor="25.0">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-                    </JFXButton>
-         </children>
-      </AnchorPane>
+        <AnchorPane BorderPane.alignment="CENTER">
+            <children>
+                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="698.0" AnchorPane.bottomAnchor="0.0"
+                      AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <children>
+                        <JFXTextField fx:id="creditRole" prefHeight="50.0" prefWidth="309.0"
+                                      promptText="Krediteringsgruppe"
+                                      style="-fx-border-color: #cccccc; -fx-border-radius: 5px;                                 -fx-padding: 0.333333em 1em 0.333333em 1em;                                 -fx-background-color: transparent; -jfx-unfocus-color: transparent;                                 -jfx-focus-color: transparent;"/>
+                    </children>
+                </HBox>
+                <JFXButton fx:id="save" buttonType="RAISED" onAction="#save" prefHeight="35.0" prefWidth="78.0"
+                           style="-fx-background-color: #FF9800;" text="Gem" textAlignment="RIGHT" textFill="WHITE"
+                           AnchorPane.bottomAnchor="25.0" AnchorPane.rightAnchor="25.0">
+                    <font>
+                        <Font name="System Bold" size="12.0"/>
+                    </font>
+                </JFXButton>
+            </children>
+        </AnchorPane>
     </center>
     <top>
         <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #FF9800;" BorderPane.alignment="CENTER">
@@ -30,22 +36,23 @@
                     <children>
                         <Label text="Redigér krediteringsgruppe">
                             <font>
-                                <Font size="24.0" />
+                                <Font size="24.0"/>
                             </font>
                             <HBox.margin>
-                                <Insets left="30.0" top="30.0" />
+                                <Insets left="30.0" top="30.0"/>
                             </HBox.margin>
                         </Label>
                     </children>
                 </HBox>
                 <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                     <children>
-                        <JFXButton onAction="#handleClose" prefHeight="45.0" prefWidth="45.0" style="-fx-background-color: #FF9800;" text="X" textAlignment="RIGHT">
+                        <JFXButton onAction="#handleClose" prefHeight="45.0" prefWidth="45.0"
+                                   style="-fx-background-color: #FF9800;" text="X" textAlignment="RIGHT">
                             <font>
-                                <Font name="Comic Sans MS" size="18.0" />
+                                <Font name="Comic Sans MS" size="18.0"/>
                             </font>
                             <HBox.margin>
-                                <Insets bottom="10.0" />
+                                <Insets bottom="10.0"/>
                             </HBox.margin>
                         </JFXButton>
                     </children>

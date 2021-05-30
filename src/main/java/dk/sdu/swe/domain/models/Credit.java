@@ -53,6 +53,10 @@ public class Credit {
             '}';
     }
 
+    public Long getId() {
+        return id;
+    }
+
     /**
      * To json json object.
      *

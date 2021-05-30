@@ -18,6 +18,10 @@ import java.util.stream.Collectors;
 public class ProgrammeDAOImpl extends AbstractDAO<Programme> implements IProgrammeDAO {
     private static ProgrammeDAOImpl instance;
 
+    private ProgrammeDAOImpl() {
+        super(Programme.class);
+    }
+
     /**
      * Gets instance.
      *
@@ -28,10 +32,6 @@ public class ProgrammeDAOImpl extends AbstractDAO<Programme> implements IProgram
             instance = new ProgrammeDAOImpl();
         }
         return instance;
-    }
-
-    private ProgrammeDAOImpl() {
-        super(Programme.class);
     }
 
     public List<Programme> search(String searchTerm, Channel channel, Category category) {
@@ -76,8 +76,8 @@ public class ProgrammeDAOImpl extends AbstractDAO<Programme> implements IProgram
         try {
             result = (List<Programme>) session.createQuery(
                 "SELECT DISTINCT p FROM Programme as p " +
-                "LEFT JOIN FETCH p.categories " +
-                "LEFT JOIN FETCH p.channel").list();
+                    "LEFT JOIN FETCH p.categories " +
+                    "LEFT JOIN FETCH p.channel").list();
         } finally {
             transaction.commit();
             session.close();

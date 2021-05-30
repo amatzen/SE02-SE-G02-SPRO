@@ -5,62 +5,65 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
-<HBox maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="66.0" prefWidth="1192.0" style="-fx-background-color: #CFD8DC;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<HBox xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity"
+      minWidth="-Infinity" prefHeight="66.0" prefWidth="1192.0"
+      style="-fx-background-color: #CFD8DC;" xmlns="http://javafx.com/javafx/15.0.1">
     <children>
         <HBox alignment="CENTER_LEFT" spacing="150.0" HBox.hgrow="ALWAYS">
             <children>
                 <Label text="Programtitel">
                     <font>
-                        <Font size="18.0" />
+                        <Font size="18.0"/>
                     </font>
                     <HBox.margin>
-                        <Insets />
+                        <Insets/>
                     </HBox.margin>
                 </Label>
                 <Label text="Kanal">
                     <font>
-                        <Font size="18.0" />
+                        <Font size="18.0"/>
                     </font>
                     <HBox.margin>
-                        <Insets left="20.0" />
+                        <Insets left="20.0"/>
                     </HBox.margin>
                 </Label>
                 <Label text="Produktionsår">
                     <font>
-                        <Font size="18.0" />
+                        <Font size="18.0"/>
                     </font>
                     <HBox.margin>
-                        <Insets />
+                        <Insets/>
                     </HBox.margin>
                 </Label>
                 <Label text="Kategori">
                     <HBox.margin>
-                        <Insets left="10.0" />
+                        <Insets left="10.0"/>
                     </HBox.margin>
                     <font>
-                        <Font size="18.0" />
+                        <Font size="18.0"/>
                     </font>
                 </Label>
             </children>
             <padding>
-                <Insets left="50.0" />
+                <Insets left="50.0"/>
             </padding>
         </HBox>
         <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
             <children>
-                <JFXButton prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: #424242;" text="Liste" textFill="WHITE">
+                <JFXButton prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: #424242;" text="Liste"
+                           textFill="WHITE">
                     <HBox.margin>
-                        <Insets />
+                        <Insets/>
                     </HBox.margin>
                 </JFXButton>
                 <JFXButton prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: #ffffff;" text="EPG">
                     <HBox.margin>
-                        <Insets />
+                        <Insets/>
                     </HBox.margin>
                 </JFXButton>
             </children>
             <padding>
-                <Insets right="25.0" />
+                <Insets right="25.0"/>
             </padding>
         </HBox>
     </children>

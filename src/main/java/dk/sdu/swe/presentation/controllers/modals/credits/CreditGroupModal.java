@@ -98,7 +98,7 @@ public class CreditGroupModal extends Dialog<CreditRole> {
 
         CreditRole creditRole = null;
         if (this.creditRoleObj == null) {
-             creditRole = CreditRoleController.getInstance().createRole(role);
+            creditRole = CreditRoleController.getInstance().createRole(role);
         } else {
             this.creditRoleObj.setTitle(role);
             creditRole = this.creditRoleObj;

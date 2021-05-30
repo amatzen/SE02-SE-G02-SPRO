@@ -25,24 +25,19 @@ import java.util.Optional;
  */
 public class PersonListItem extends VBox {
 
+    private Person person;
+    @FXML
+    private Label nameLbl, dobLbl, emailLbl;
+    @FXML
+    private ImageView personImageView;
+    @FXML
+    private JFXButton actionBtn;
+    private ListView<PersonListItem> container;
     private Map<String, Runnable> options = new LinkedHashMap<>() {{
         put("Rediger", PersonListItem.this::editPerson);
         put("Sammenflet", PersonListItem.this::mergePerson);
         put("Slet", PersonListItem.this::deletePerson);
     }};
-
-    private Person person;
-
-    @FXML
-    private Label nameLbl, dobLbl, emailLbl;
-
-    @FXML
-    private ImageView personImageView;
-
-    @FXML
-    private JFXButton actionBtn;
-
-    private ListView<PersonListItem> container;
 
     /**
      * Instantiates a new Person list item.
@@ -112,8 +107,7 @@ public class PersonListItem extends VBox {
         if (result.get() == delete) {
             container.getItems().remove(this);
             PersonController.getInstance().delete(person);
-        }
-        else if (result.get() == cancel) {
+        } else if (result.get() == cancel) {
             alert.close();
         }
     }

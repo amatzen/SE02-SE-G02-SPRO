@@ -16,6 +16,10 @@ public class CompanyDAOImpl extends AbstractDAO<Company> implements ICompanyDAO 
 
     private static CompanyDAOImpl instance;
 
+    private CompanyDAOImpl() {
+        super(Company.class);
+    }
+
     /**
      * Gets instance.
      *
@@ -26,10 +30,6 @@ public class CompanyDAOImpl extends AbstractDAO<Company> implements ICompanyDAO 
             instance = new CompanyDAOImpl();
         }
         return instance;
-    }
-
-    private CompanyDAOImpl() {
-        super(Company.class);
     }
 
     @Override
