@@ -42,12 +42,12 @@ public class ExportController implements IExportController {
         jsonDataExporter.printToFile();
     }
 
-    public void exportCsv(Map<ExportType, Boolean> exportTypes, Window window) {
-        CsvDataExporter csvDataExporter = new CsvDataExporter(window);
+    public void exportCsv(Map<ExportType, Boolean> exportTypes, File folder) {
+        CsvDataExporter csvDataExporter = new CsvDataExporter();
 
-        if (exportTypes.get(ExportType.CREDITS)) csvDataExporter.exportCredits();
-        if (exportTypes.get(ExportType.PROGRAMMES)) csvDataExporter.exportProgrammes();
-        if (exportTypes.get(ExportType.COMPANIES)) csvDataExporter.exportCompanies();
+        if (exportTypes.get(ExportType.CREDITS)) csvDataExporter.exportCredits(new File(folder, "credits.csv"));
+        if (exportTypes.get(ExportType.PROGRAMMES)) csvDataExporter.exportProgrammes(new File(folder, "programmes.csv"));
+        if (exportTypes.get(ExportType.COMPANIES)) csvDataExporter.exportCompanies(new File(folder, "companies.csv"));
 
     }
 
@@ -59,26 +59,14 @@ public class ExportController implements IExportController {
 
     public class CsvDataExporter {
         private final String date = new SimpleDateFormat("yyyyMMdd").format(new Date());
-        private final Window window;
-        private FileChooser fileChooser = new FileChooser();
 
-        public CsvDataExporter(Window window) {
-            this.window = window;
-        }
-
-        public void exportCredits() {
-            fileChooser.setTitle("Krediteringer - CSV");
-            fileChooser.setInitialFileName(String.format("CrMS_%s_credits", date));
-            fileChooser.getExtensionFilters().addAll(
-                new FileChooser.ExtensionFilter("CSV", "*.csv")
-            );
-
+        public void exportCredits(File file) {
             List<Credit> credits = CreditController.getInstance().getAll();
 
             String[] headers = {"credit_id", "person_id", "person_name", "person_dob", "programme_id", "role_id", "role_title"};
 
             try {
-                FileWriter csvWriter = new FileWriter(fileChooser.showSaveDialog(this.window));
+                FileWriter csvWriter = new FileWriter(file);
                 CSVPrinter printer = new CSVPrinter(csvWriter, CSVFormat.DEFAULT
                     .withHeader(headers)
                     .withDelimiter(';'));
@@ -101,22 +89,15 @@ public class ExportController implements IExportController {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
         }
 
-        public void exportProgrammes() {
-            fileChooser.setTitle("Programmer - CSV");
-            fileChooser.setInitialFileName(String.format("CrMS_%s_programmes", date));
-            fileChooser.getExtensionFilters().addAll(
-                new FileChooser.ExtensionFilter("CSV", "*.csv")
-            );
-
+        public void exportProgrammes(File file) {
             List<Programme> programmes = ProgrammeController.getInstance().getAll();
 
             String[] headers = {"title", "prodYear", "channel", "company"};
 
             try {
-                FileWriter csvWriter = new FileWriter(fileChooser.showSaveDialog(this.window));
+                FileWriter csvWriter = new FileWriter(file);
                 CSVPrinter printer = new CSVPrinter(csvWriter, CSVFormat.DEFAULT
                     .withHeader(headers)
                     .withDelimiter(';'));
@@ -137,19 +118,13 @@ public class ExportController implements IExportController {
             }
         }
 
-        public void exportCompanies() {
-            fileChooser.setTitle("Virksomheder - CSV");
-            fileChooser.setInitialFileName(String.format("CrMS_%s_companies", date));
-            fileChooser.getExtensionFilters().addAll(
-                new FileChooser.ExtensionFilter("CSV", "*.csv")
-            );
-
+        public void exportCompanies(File file) {
             List<Company> companies = CompanyController.getInstance().getAll();
 
             String[] headers = {"name", "address", "nbr"};
 
             try {
-                FileWriter csvWriter = new FileWriter(fileChooser.showSaveDialog(this.window));
+                FileWriter csvWriter = new FileWriter(file);
                 CSVPrinter printer = new CSVPrinter(csvWriter, CSVFormat.DEFAULT
                     .withHeader(headers)
                     .withDelimiter(';'));

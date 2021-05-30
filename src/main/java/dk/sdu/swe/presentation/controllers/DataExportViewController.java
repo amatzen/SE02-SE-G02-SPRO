@@ -10,6 +10,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Alert;
 import javafx.scene.layout.VBox;
+import javafx.stage.DirectoryChooser;
 import javafx.stage.FileChooser;
 
 import java.io.IOException;
@@ -32,9 +33,9 @@ public class DataExportViewController extends VBox {
     @FXML
     private JFXButton exportBtn;
 
-    private String date = new SimpleDateFormat("yyyyMMdd").format(new Date());
-
     private IExportController exportController;
+
+    private String date = new SimpleDateFormat("yyyyMMdd").format(new Date());
 
     /**
      * Instantiates a new Data export view controller.
@@ -57,8 +58,6 @@ public class DataExportViewController extends VBox {
 
     @FXML
     private void export(ActionEvent event) {
-        IExportController exportController = ExportController.getInstance();
-
         if (!creditData.isSelected() && !programData.isSelected() &&
             !companyData.isSelected()) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -77,11 +76,14 @@ public class DataExportViewController extends VBox {
         }
 
         if (csvBtn.isSelected()) {
+            DirectoryChooser chooser = new DirectoryChooser();
+            chooser.setTitle("Eksportmappe");
+
             exportController.exportCsv(Map.of(
                 ExportController.ExportType.CREDITS, creditData.isSelected(),
                 ExportController.ExportType.COMPANIES, companyData.isSelected(),
                 ExportController.ExportType.PROGRAMMES, programData.isSelected()
-            ), getScene().getWindow());
+            ), chooser.showDialog(getScene().getWindow()));
         }
 
         if (jsonBtn.isSelected()) {
@@ -91,7 +93,7 @@ public class DataExportViewController extends VBox {
             fileChooser.setInitialFileName("crms_" + date);
             fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("JSON", "*.json"));
 
-            ExportController.getInstance().exportJson(
+            exportController.exportJson(
                 fileChooser.showSaveDialog(getScene().getWindow()),
                 Map.of(
                     ExportController.ExportType.CREDITS, creditData.isSelected(),
